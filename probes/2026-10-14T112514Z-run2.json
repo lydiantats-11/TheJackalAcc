@@ -1,0 +1,393 @@
+{
+  "probed_at": "2026-10-14T11:25:13.528Z",
+  "rows": 1001,
+  "status_counts": {
+    "31094501": 640,
+    "31094502": 361
+  },
+  "passed_all_deadlines": {
+    "count": 592,
+    "by_status": {
+      "31094501": 352,
+      "31094502": 240
+    },
+    "examples": [
+      {
+        "id": "CEF-E-2023-PCI-STUDIES",
+        "deadlines": [
+          "2023-09-05T17:00:00.000+0000"
+        ]
+      },
+      {
+        "id": "CEF-E-2023-PCI-WORKS",
+        "deadlines": [
+          "2023-09-05T17:00:00.000+0000"
+        ]
+      },
+      {
+        "id": "CEF-T-2021-AFIFCOEN-UNITS",
+        "deadlines": [
+          "2022-01-19T17:00:00.000+0000",
+          "2022-06-07T17:00:00.000+0000",
+          "2022-11-10T17:00:00.000+0000",
+          "2023-04-13T17:00:00.000+0000",
+          "2023-11-07T17:00:00.000+0000"
+        ]
+      },
+      {
+        "id": "CEF-T-2021-AFIFCOEN-WORKS-LNG",
+        "deadlines": [
+          "2022-01-19T17:00:00.000+0000",
+          "2022-06-07T17:00:00.000+0000",
+          "2022-11-10T17:00:00.000+0000",
+          "2023-04-13T17:00:00.000+0000",
+          "2023-11-07T17:00:00.000+0000"
+        ]
+      },
+      {
+        "id": "CEF-T-2021-AFIFCOEN-WORKS-ZE",
+        "deadlines": [
+          "2022-01-19T17:00:00.000+0000",
+          "2022-06-07T17:00:00.000+0000",
+          "2022-11-10T17:00:00.000+0000",
+          "2023-04-13T17:00:00.000+0000",
+          "2023-11-07T17:00:00.000+0000"
+        ]
+      },
+      {
+        "id": "CEF-T-2021-AFIFGEN-UNITS",
+        "deadlines": [
+          "2022-01-19T17:00:00.000+0000",
+          "2022-06-07T17:00:00.000+0000",
+          "2022-11-10T17:00:00.000+0000",
+          "2023-04-13T17:00:00.000+0000",
+          "2023-11-07T17:00:00.000+0000"
+        ]
+      },
+      {
+        "id": "CEF-T-2021-AFIFGEN-WORKS-LNG",
+        "deadlines": [
+          "2022-01-19T17:00:00.000+0000",
+          "2022-06-07T17:00:00.000+0000",
+          "2022-11-10T17:00:00.000+0000",
+          "2023-04-13T17:00:00.000+0000",
+          "2023-11-07T17:00:00.000+0000"
+        ]
+      },
+      {
+        "id": "CEF-T-2021-AFIFGEN-WORKS-ZE",
+        "deadlines": [
+          "2022-01-19T17:00:00.000+0000",
+          "2022-06-07T17:00:00.000+0000",
+          "2022-11-10T17:00:00.000+0000",
+          "2023-04-13T17:00:00.000+0000",
+          "2023-11-07T17:00:00.000+0000"
+        ]
+      }
+    ]
+  },
+  "without_deadline": 0,
+  "upcoming": 409,
+  "deadline_clock_times": [
+    [
+      "T17:00:00.000+0000",
+      714
+    ],
+    [
+      "T00:00:00.000+0000",
+      448
+    ]
+  ],
+  "compare_with_topic_pages": [
+    {
+      "id": "CEF-DIG-2026-CABLE-REPAIR-CAPACITIES-WORKS",
+      "page_url": "https://ec.europa.eu/info/funding-tenders/opportunities/portal/screen/opportunities/topic-details/CEF-DIG-2026-CABLE-REPAIR-CAPACITIES-WORKS",
+      "search_api_deadlines": [
+        "2026-11-25T00:00:00.000+0000"
+      ],
+      "topic_data_http": 200,
+      "topic_data": {
+        "deadlineDates": null,
+        "deadlineModel": null,
+        "actions": [
+          {
+            "deadlineDates": [
+              "1795564800000"
+            ],
+            "deadlineModel": null
+          }
+        ],
+        "keys": [
+          "type",
+          "ccm2Id",
+          "identifier",
+          "title",
+          "publicationDateLong",
+          "callIdentifier",
+          "callTitle",
+          "callccm2Id",
+          "allowPartnerSearch",
+          "frameworkProgramme",
+          "programmeDivision",
+          "topicMGAs",
+          "keywords",
+          "tags",
+          "sme",
+          "actions",
+          "latestInfos",
+          "budgetOverviewJSONItem",
+          "description",
+          "conditions",
+          "supportInfo",
+          "sepTemplate",
+          "links",
+          "additionalDossiers",
+          "infoPackDossiers",
+          "callDetailsJSONItem"
+        ]
+      }
+    },
+    {
+      "id": "HORIZON-CL2-2027-01-TRANSFO-05",
+      "page_url": "https://ec.europa.eu/info/funding-tenders/opportunities/portal/screen/opportunities/topic-details/HORIZON-CL2-2027-01-TRANSFO-05",
+      "search_api_deadlines": [
+        "2027-09-23T00:00:00.000+0000"
+      ],
+      "topic_data_http": 200,
+      "topic_data": {
+        "deadlineDates": null,
+        "deadlineModel": null,
+        "actions": [
+          {
+            "deadlineDates": [
+              "1821657600000"
+            ],
+            "deadlineModel": null
+          }
+        ],
+        "keys": [
+          "type",
+          "ccm2Id",
+          "identifier",
+          "title",
+          "publicationDateLong",
+          "callIdentifier",
+          "callTitle",
+          "callccm2Id",
+          "allowPartnerSearch",
+          "frameworkProgramme",
+          "programmeDivision",
+          "topicMGAs",
+          "keywords",
+          "tags",
+          "sme",
+          "actions",
+          "latestInfos",
+          "budgetOverviewJSONItem",
+          "description",
+          "conditions",
+          "supportInfo",
+          "sepTemplate",
+          "links",
+          "additionalDossiers",
+          "infoPackDossiers",
+          "callDetailsJSONItem"
+        ]
+      }
+    },
+    {
+      "id": "HORIZON-CL4-2027-SPACE-07-84",
+      "page_url": "https://ec.europa.eu/info/funding-tenders/opportunities/portal/screen/opportunities/topic-details/HORIZON-CL4-2027-SPACE-07-84",
+      "search_api_deadlines": [
+        "2028-01-20T00:00:00.000+0000"
+      ],
+      "topic_data_http": 200,
+      "topic_data": {
+        "deadlineDates": null,
+        "deadlineModel": null,
+        "actions": [
+          {
+            "deadlineDates": [
+              "1831939200000"
+            ],
+            "deadlineModel": null
+          }
+        ],
+        "keys": [
+          "type",
+          "ccm2Id",
+          "identifier",
+          "title",
+          "publicationDateLong",
+          "callIdentifier",
+          "callTitle",
+          "callccm2Id",
+          "allowPartnerSearch",
+          "frameworkProgramme",
+          "programmeDivision",
+          "topicMGAs",
+          "keywords",
+          "tags",
+          "sme",
+          "actions",
+          "latestInfos",
+          "budgetOverviewJSONItem",
+          "description",
+          "conditions",
+          "supportInfo",
+          "sepTemplate",
+          "links",
+          "additionalDossiers",
+          "infoPackDossiers",
+          "callDetailsJSONItem"
+        ]
+      }
+    },
+    {
+      "id": "HORIZON-CL6-2027-02-CLIMATE-01",
+      "page_url": "https://ec.europa.eu/info/funding-tenders/opportunities/portal/screen/opportunities/topic-details/HORIZON-CL6-2027-02-CLIMATE-01",
+      "search_api_deadlines": [
+        "2027-09-23T00:00:00.000+0000"
+      ],
+      "topic_data_http": 200,
+      "topic_data": {
+        "deadlineDates": null,
+        "deadlineModel": null,
+        "actions": [
+          {
+            "deadlineDates": [
+              "1821657600000"
+            ],
+            "deadlineModel": null
+          }
+        ],
+        "keys": [
+          "type",
+          "ccm2Id",
+          "identifier",
+          "title",
+          "publicationDateLong",
+          "callIdentifier",
+          "callTitle",
+          "callccm2Id",
+          "allowPartnerSearch",
+          "frameworkProgramme",
+          "programmeDivision",
+          "topicMGAs",
+          "keywords",
+          "tags",
+          "sme",
+          "actions",
+          "latestInfos",
+          "budgetOverviewJSONItem",
+          "description",
+          "conditions",
+          "supportInfo",
+          "sepTemplate",
+          "links",
+          "additionalDossiers",
+          "infoPackDossiers",
+          "callDetailsJSONItem"
+        ]
+      }
+    },
+    {
+      "id": "HORIZON-MISS-2027-02-CANCER-06",
+      "page_url": "https://ec.europa.eu/info/funding-tenders/opportunities/portal/screen/opportunities/topic-details/HORIZON-MISS-2027-02-CANCER-06",
+      "search_api_deadlines": [
+        "2027-09-16T00:00:00.000+0000"
+      ],
+      "topic_data_http": 200,
+      "topic_data": {
+        "deadlineDates": null,
+        "deadlineModel": null,
+        "actions": [
+          {
+            "deadlineDates": [
+              "1821052800000"
+            ],
+            "deadlineModel": null
+          }
+        ],
+        "keys": [
+          "type",
+          "ccm2Id",
+          "identifier",
+          "title",
+          "publicationDateLong",
+          "callIdentifier",
+          "callTitle",
+          "callccm2Id",
+          "allowPartnerSearch",
+          "frameworkProgramme",
+          "programmeDivision",
+          "topicMGAs",
+          "keywords",
+          "tags",
+          "sme",
+          "actions",
+          "latestInfos",
+          "budgetOverviewJSONItem",
+          "description",
+          "conditions",
+          "supportInfo",
+          "sepTemplate",
+          "links",
+          "additionalDossiers",
+          "infoPackDossiers",
+          "callDetailsJSONItem"
+        ]
+      }
+    },
+    {
+      "id": "JTM-2026-PSLF-STANDALONE-PROJECTS",
+      "page_url": "https://ec.europa.eu/info/funding-tenders/opportunities/portal/screen/opportunities/topic-details/JTM-2026-PSLF-STANDALONE-PROJECTS",
+      "search_api_deadlines": [
+        "2026-01-27T00:00:00.000+0000",
+        "2027-09-22T00:00:00.000+0000"
+      ],
+      "topic_data_http": 200,
+      "topic_data": {
+        "deadlineDates": null,
+        "deadlineModel": null,
+        "actions": [
+          {
+            "deadlineDates": [
+              "1769472000000",
+              "1821571200000"
+            ],
+            "deadlineModel": null
+          }
+        ],
+        "keys": [
+          "type",
+          "ccm2Id",
+          "identifier",
+          "title",
+          "publicationDateLong",
+          "callIdentifier",
+          "callTitle",
+          "callccm2Id",
+          "allowPartnerSearch",
+          "frameworkProgramme",
+          "programmeDivision",
+          "topicMGAs",
+          "keywords",
+          "tags",
+          "sme",
+          "actions",
+          "latestInfos",
+          "budgetOverviewJSONItem",
+          "description",
+          "conditions",
+          "supportInfo",
+          "sepTemplate",
+          "links",
+          "additionalDossiers",
+          "infoPackDossiers",
+          "callDetailsJSONItem"
+        ]
+      }
+    }
+  ]
+}
