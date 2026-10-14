@@ -5,6 +5,7 @@
  * Read-only; ~25 requests per variant with a pause between requests.
  * Usage: npx tsx scripts/eu-ft-paging-probe.ts > probe.json
  */
+export {}; // ES module: allows top-level await
 const ENDPOINT = "https://api.tech.ec.europa.eu/search-api/prod/rest/search";
 const QUERY = { bool: { must: [{ terms: { type: ["1"] } }, { terms: { status: ["31094501", "31094502"] } }] } };
 const sleep = (ms: number) => new Promise((r) => setTimeout(r, ms));

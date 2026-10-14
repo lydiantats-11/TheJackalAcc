@@ -16,6 +16,9 @@ jobs:
   live-test:
     runs-on: ubuntu-latest
     timeout-minutes: 30
+    defaults:
+      run:
+        shell: bash   # bash -eo pipefail: a failing command piped into `tee` fails its step
     services:
       postgres:
         image: postgres:16
@@ -72,9 +75,9 @@ jobs:
           mkdir -p "$OUT"; cp -f install.log typecheck.log tests.log migrate.log build.log "$OUT"/ 2>/dev/null || true
           {
             echo "## Setup"
-            echo "- Typecheck: $(grep -q 'error TS' typecheck.log 2>/dev/null && echo '❌ errors (see typecheck.log)' || echo '✅ passed')"
+            echo "- Typecheck: $(grep -q 'error TS' typecheck.log 2>/dev/null && echo "❌ $(grep -c 'error TS' typecheck.log) errors (see typecheck.log)" || echo '✅ passed')"
             echo "- Tests: \`$(grep -E 'Tests +[0-9]' tests.log | tail -1 | sed 's/\x1b\[[0-9;]*m//g' | xargs)\`"
-            echo "- Build: $(grep -qE 'Compiled successfully|Generating static pages' build.log 2>/dev/null && echo '✅ passed' || echo '❌ see build.log')"
+            echo "- Build: $([ -f .next/BUILD_ID ] && ! grep -q 'Failed to' build.log && echo '✅ passed' || echo '❌ failed (see build.log)')"
             echo
             cat "$OUT/LIVE_TEST_REPORT.md" 2>/dev/null || echo "Live test did not run (an earlier step failed)."
           } >> "$GITHUB_STEP_SUMMARY"
