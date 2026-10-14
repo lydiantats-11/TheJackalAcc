@@ -1,0 +1,84 @@
+# Manual only: runs when someone presses "Run workflow". No schedule — this is a test, not automatic updates.
+# Runs on a throwaway GitHub machine with a throwaway PostgreSQL that is deleted when the job ends.
+# No secrets, no paid services, nothing is deployed.
+name: Live connector test (EU Funding & Tenders)
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  live-test:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    services:
+      postgres:
+        image: postgres:16
+        env: { POSTGRES_USER: app, POSTGRES_PASSWORD: app, POSTGRES_DB: jackal }
+        ports: ["5432:5432"]
+        options: >-
+          --health-cmd "pg_isready -U app" --health-interval 5s --health-timeout 5s --health-retries 10
+    env:
+      DATABASE_URL: postgres://app:app@127.0.0.1:5432/jackal
+      TEST_DATABASE_URL: postgres://app:app@127.0.0.1:5432/funding_test
+      PGPASSWORD: app
+      APP_BASE_URL: http://127.0.0.1:3000
+      COOKIE_SECURE: "false"
+      AI_EXTRACTION_ENABLED: "false"
+      MONITOR_CONTACT_EMAIL: jackal-accountant-test@users.noreply.github.com
+      OUT: live-test-output
+      NEXT_TELEMETRY_DISABLED: "1"
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with: { node-version: 22 }
+
+      - name: 0a. Install
+        run: npm install --no-audit --no-fund 2>&1 | tee install.log
+
+      - name: 0b. Typecheck
+        continue-on-error: true
+        run: npm run typecheck 2>&1 | tee typecheck.log
+
+      - name: 0c. All tests, including the database tests
+        continue-on-error: true
+        run: |
+          psql -h 127.0.0.1 -U app -d jackal -c "CREATE DATABASE funding_test"
+          npm test 2>&1 | tee tests.log
+
+      - name: 0d. Migrate, seed, load the 9 verified records (pending review)
+        run: |
+          npm run db:migrate 2>&1 | tee migrate.log
+          npm run db:seed 2>&1 | tee -a migrate.log
+          psql "$DATABASE_URL" -v ON_ERROR_STOP=1 -f db/seed/official-records-2026-10-14.sql 2>&1 | tee -a migrate.log
+
+      - name: 0e. Production build
+        run: npm run build 2>&1 | tee build.log
+
+      - name: Screenshot tool
+        run: npm install --no-save --no-audit --no-fund playwright && npx playwright install --with-deps chromium
+
+      - name: 1–7. Live connector test against the official EU API
+        run: bash scripts/live-connector-test.sh
+
+      - name: Summary
+        if: always()
+        run: |
+          mkdir -p "$OUT"; cp -f install.log typecheck.log tests.log migrate.log build.log "$OUT"/ 2>/dev/null || true
+          {
+            echo "## Setup"
+            echo "- Typecheck: $(grep -q 'error TS' typecheck.log 2>/dev/null && echo '❌ errors (see typecheck.log)' || echo '✅ passed')"
+            echo "- Tests: \`$(grep -E 'Tests +[0-9]' tests.log | tail -1 | sed 's/\x1b\[[0-9;]*m//g' | xargs)\`"
+            echo "- Build: $(grep -qE 'Compiled successfully|Generating static pages' build.log 2>/dev/null && echo '✅ passed' || echo '❌ see build.log')"
+            echo
+            cat "$OUT/LIVE_TEST_REPORT.md" 2>/dev/null || echo "Live test did not run (an earlier step failed)."
+          } >> "$GITHUB_STEP_SUMMARY"
+
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: live-test-output
+          path: live-test-output/
+          retention-days: 30
