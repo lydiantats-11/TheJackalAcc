@@ -155,6 +155,17 @@ monthly cap. Email notifications stay out of scope until their cost and privacy 
 | Email (Phase 5) | Transactional provider free tier | €0 at low volume; paid above provider limits |
 
 ## Build log
+- 2026-10-14 (Consolidation branch `consolidation`, on the 112-test code) — Migration 0007 (public_benefit type,
+  record_kind, per-record stale window, uncertainties, manual_review origin, residents-abroad profile answers);
+  ten new deterministic requirement categories + residence by citizenship / residence-or-citizenship; profile section
+  for living abroad / moving to Greece; the 12 hand-checked official records (data/…v2.json) → generated seed
+  `db/seed/official-records-2026-10-14.sql` (9 imported as review_status = pending; TED, Spain, EIC skipped).
+  **Executed here:** migrations 0001–0007 + seed applied twice on PostgreSQL 16 (idempotent); all 27 stored
+  requirements pass the engine schema; 9 database→engine cases (tests/manual/db-records-check.ts) as expected;
+  pure test files 97/97 (engine 27, real-calls 22, scenarios 8, sources 12, personas 13, residence 15) run with a
+  local vitest/fast-check stand-in and zod v4 from the zod 3.25 package — the stand-in reproduced the baseline
+  counts exactly. **Not run:** the 6 PostgreSQL test files (no postgres driver package), the real typecheck and
+  `next build` (registry blocked). Run `npm run test:db && npm run typecheck && npm run build` locally.
 - 2026-10-14 (Merge, provisional) — Persona changeset merged into this 112-test codebase (tag `fr112-personas-merged`);
   the unmerged branch `personas-changeset` is kept. **This is not the canonical Jackal Accountant version** — the
   131-test version must still be recovered and the merge repeated there. Profile saving is now a patch update: only

@@ -1,0 +1,1774 @@
+{
+  "schema_version": "jackal-records/2",
+  "checked_on": "2026-10-14",
+  "checked_by": "manual review of official pages (Claude), not an automated connector",
+  "note": "Demo records for import into the Jackal Accountant codebase after review. Not proof of live connectivity. Fields absent from the source are null with status 'not_stated'.",
+  "records": [
+    {
+      "id": "discovereu",
+      "record_kind": "round",
+      "demo_type": "mobility",
+      "suggested_opportunity_type": "other",
+      "scope": "eu",
+      "official_title": {
+        "el": "DiscoverEU — δωρεάν ταξιδιωτικό πάσο για 18χρονους",
+        "en": "DiscoverEU — free travel pass for 18-year-olds"
+      },
+      "issuing_authority": {
+        "el": "Ευρωπαϊκή Επιτροπή · Erasmus+",
+        "en": "European Commission · Erasmus+"
+      },
+      "summary": {
+        "el": "Περίπου 40.000 ταξιδιωτικά πάσα, κυρίως για τρένο, με κάρτα εκπτώσεων και υποστήριξη για ταξιδιώτες με αναπηρία. Ταξίδι μεταξύ 1/3/2027 και 31/5/2028, μόνοι ή με έως 4 φίλους.",
+        "en": "About 40,000 travel passes, mainly for trains, with a discount card and support for travellers with a disability. Travel between 1 Mar 2027 and 31 May 2028, alone or with up to 4 friends."
+      },
+      "application_status": {
+        "value": "open",
+        "verified_on": "2026-10-14",
+        "stale_after_days": 1,
+        "deadline_original_wording": {
+          "el": "15/10/2026, 12:00 ώρα Βρυξελλών",
+          "en": "15 Oct 2026, 12:00 Brussels time"
+        },
+        "timezone": "Europe/Brussels",
+        "verified_time_precision": "date",
+        "opens_at": "2026-10-01T10:00:00Z",
+        "closes_at": "2026-10-15T10:00:00Z",
+        "milestones": [
+          {
+            "label": "travel period",
+            "from": "2027-03-01",
+            "to": "2028-05-31"
+          }
+        ]
+      },
+      "funding_or_benefit": {
+        "value": {
+          "el": "Ταξιδιωτικό πάσο + κάρτα εκπτώσεων (όχι χρηματικό ποσό)",
+          "en": "Travel pass + discount card (not a cash amount)"
+        },
+        "state": "verified"
+      },
+      "conflicts": [
+        {
+          "el": "Διάρκεια ταξιδιού: η κύρια σελίδα γράφει «έως 7 ημέρες μέσα σε έναν μήνα», η ανακοίνωση της 28/9/2026 γράφει «1 έως 30 ημέρες».",
+          "en": "Travel length: the main page says \"up to 7 days within one month\", the 28 Sep 2026 notice says \"1 to 30 days\"."
+        }
+      ],
+      "eligibility_rules": [
+        {
+          "field": "birthYear",
+          "op": "eq",
+          "value": 2008,
+          "label": {
+            "el": "Γέννηση από 1/1/2008 έως 31/12/2008",
+            "en": "Born between 1 Jan 2008 and 31 Dec 2008"
+          },
+          "official_quote": "born between 1 January 2008 (included) and 31 December 2008 (included)",
+          "db_category": "NEW:birth_date_range",
+          "db_kind": "mandatory",
+          "evidence_state": "quoted",
+          "evidence": {
+            "source_url": "https://youth.europa.eu/discoverEU",
+            "excerpt": "born between 1 January 2008 (included) and 31 December 2008 (included)",
+            "location": null,
+            "checked_on": "2026-10-14"
+          }
+        },
+        {
+          "any": [
+            {
+              "field": "residence",
+              "op": "in",
+              "value": [
+                "GR",
+                "EU",
+                "IS_LI_NO",
+                "MK_RS_TR"
+              ]
+            },
+            {
+              "field": "citizenship",
+              "op": "in",
+              "value": [
+                "GR",
+                "EU",
+                "IS_LI_NO",
+                "MK_RS_TR"
+              ]
+            }
+          ],
+          "label": {
+            "el": "Πολίτης ή κάτοικος κράτους ΕΕ ή Ισλανδίας, Λιχτενστάιν, Β. Μακεδονίας, Νορβηγίας, Σερβίας, Τουρκίας",
+            "en": "Citizen or resident of an EU state or Iceland, Liechtenstein, North Macedonia, Norway, Serbia, Türkiye"
+          },
+          "official_quote": "citizen or resident of an EU Member State … Iceland, Liechtenstein, North Macedonia, Norway, Serbia, or Türkiye",
+          "db_category": "EXTEND:residence(any of residence, citizenship)",
+          "db_kind": "mandatory",
+          "evidence_state": "quoted",
+          "evidence": {
+            "source_url": "https://youth.europa.eu/discoverEU",
+            "excerpt": "citizen or resident of an EU Member State … Iceland, Liechtenstein, North Macedonia, Norway, Serbia, or Türkiye",
+            "location": null,
+            "checked_on": "2026-10-14"
+          }
+        }
+      ],
+      "application_steps": {
+        "el": [
+          "Αίτηση στη σελίδα DiscoverEU (εμφανίζεται κουμπί «Apply now» όσο είναι ανοιχτός ο γύρος).",
+          "Χρειάζεται αριθμός ταυτότητας, διαβατηρίου ή άδειας διαμονής και συμπλήρωση κουίζ."
+        ],
+        "en": [
+          "Apply on the DiscoverEU page (an \"Apply now\" button appears while the round is open).",
+          "You need an ID, passport or residence-permit number and must complete a quiz."
+        ]
+      },
+      "official_sources": [
+        {
+          "label": "youth.europa.eu/discoverEU",
+          "url": "https://youth.europa.eu/discoverEU",
+          "checked_on": "2026-10-14"
+        },
+        {
+          "label": "youth.europa.eu — ανακοίνωση γύρου (ενημ. 28/9/2026)",
+          "url": "https://youth.europa.eu/news/get-ready-discovereu-call_en",
+          "checked_on": "2026-10-14"
+        }
+      ],
+      "official_application_url": "https://youth.europa.eu/discoverEU",
+      "persona_tags": [
+        "young"
+      ],
+      "interest_tag": "mobility",
+      "information_only": false,
+      "automated_access_plan": {
+        "el": "Δεν βρέθηκε API ή feed· μόνο παρακολούθηση σελίδας (robots.txt μη ελεγμένο)",
+        "en": "No API or feed found; page monitoring only (robots.txt not checked)"
+      },
+      "record_class": "opportunity",
+      "db_mapping": {
+        "target_table": "opportunities",
+        "import": true,
+        "opportunity_type": "other",
+        "needs_new_type": false,
+        "status": "open",
+        "deadline_kind": "official",
+        "publication_basis": "manual",
+        "requirement_origin": "admin",
+        "is_synthetic": false,
+        "canonical_url": "https://youth.europa.eu/discoverEU",
+        "application_url": "https://youth.europa.eu/discoverEU",
+        "last_verified_at": "2026-10-14",
+        "title_origin": "platform-written, not the verbatim official title"
+      },
+      "uncertainties": [
+        "CONFLICT: travel length \"up to 7 days within one month\" (main page) vs \"1 to 30 days\" (notice updated 28 Sep 2026)"
+      ]
+    },
+    {
+      "id": "esc",
+      "record_kind": "programme",
+      "demo_type": "mobility",
+      "suggested_opportunity_type": "other",
+      "scope": "eu",
+      "official_title": {
+        "el": "Ευρωπαϊκό Σώμα Αλληλεγγύης — εθελοντισμός",
+        "en": "European Solidarity Corps — volunteering"
+      },
+      "issuing_authority": {
+        "el": "Ευρωπαϊκή Επιτροπή",
+        "en": "European Commission"
+      },
+      "summary": {
+        "el": "Εθελοντισμός στο εξωτερικό ατομικά ή ομαδικά, δικά σας έργα αλληλεγγύης στην κοινότητά σας, και ανθρωπιστικός εθελοντισμός.",
+        "en": "Volunteering abroad alone or in a team, your own solidarity projects in your community, and humanitarian aid volunteering."
+      },
+      "application_status": {
+        "value": "rolling",
+        "verified_on": "2026-10-14",
+        "stale_after_days": 30,
+        "deadline_original_wording": null,
+        "timezone": null,
+        "verified_time_precision": "date",
+        "opens_at": null,
+        "closes_at": null,
+        "milestones": []
+      },
+      "funding_or_benefit": {
+        "value": null,
+        "state": "not_stated"
+      },
+      "conflicts": [],
+      "eligibility_rules": [
+        {
+          "field": "birthYear",
+          "op": "ageBetween",
+          "value": [
+            18,
+            30
+          ],
+          "label": {
+            "el": "Ηλικία 18–30 (ανθρωπιστικός εθελοντισμός: έως 35)",
+            "en": "Age 18–30 (humanitarian volunteering: up to 35)"
+          },
+          "official_quote": "between 18 and 30 … up to 35 years old",
+          "db_category": "age",
+          "db_kind": "mandatory",
+          "evidence_state": "quoted",
+          "evidence": {
+            "source_url": "https://youth.europa.eu/solidarity_en",
+            "excerpt": "between 18 and 30 … up to 35 years old",
+            "location": null,
+            "checked_on": "2026-10-14"
+          }
+        },
+        {
+          "field": null,
+          "op": "authority",
+          "value": null,
+          "label": {
+            "el": "Χώρες που καλύπτονται: σε ξεχωριστή σελίδα που δεν ελέγχθηκε",
+            "en": "Countries covered: on a separate page that was not checked"
+          },
+          "official_quote": null,
+          "db_category": "other",
+          "db_kind": "informational",
+          "evidence_state": "not_evaluated: checked by the authority",
+          "evidence": {
+            "source_url": "https://youth.europa.eu/solidarity_en",
+            "excerpt": null,
+            "location": null,
+            "checked_on": "2026-10-14"
+          }
+        }
+      ],
+      "application_steps": {
+        "el": [
+          "Εγγραφή στην πύλη του Ευρωπαϊκού Σώματος Αλληλεγγύης.",
+          "Επικοινωνία με χρηματοδοτούμενους φορείς για συγκεκριμένα έργα."
+        ],
+        "en": [
+          "Register on the European Solidarity Corps portal.",
+          "Connect with funded organisations for specific projects."
+        ]
+      },
+      "official_sources": [
+        {
+          "label": "youth.europa.eu/solidarity",
+          "url": "https://youth.europa.eu/solidarity_en",
+          "checked_on": "2026-10-14"
+        }
+      ],
+      "official_application_url": "https://youth.europa.eu/solidarity_en",
+      "persona_tags": [
+        "young",
+        "jobseeker"
+      ],
+      "interest_tag": "mobility",
+      "information_only": false,
+      "automated_access_plan": {
+        "el": "Δεν βρέθηκε API ή feed· παρακολούθηση σελίδας",
+        "en": "No API or feed found; page monitoring"
+      },
+      "record_class": "opportunity",
+      "db_mapping": {
+        "target_table": "opportunities",
+        "import": true,
+        "opportunity_type": "other",
+        "needs_new_type": false,
+        "status": "open",
+        "deadline_kind": "not_applicable",
+        "publication_basis": "manual",
+        "requirement_origin": "admin",
+        "is_synthetic": false,
+        "canonical_url": "https://youth.europa.eu/solidarity_en",
+        "application_url": "https://youth.europa.eu/solidarity_en",
+        "last_verified_at": "2026-10-14",
+        "title_origin": "platform-written, not the verbatim official title"
+      },
+      "uncertainties": [
+        "UNVERIFIED: countries/residence page could not be read",
+        "Individual projects carry their own dates"
+      ]
+    },
+    {
+      "id": "eic",
+      "record_kind": "call",
+      "demo_type": "grant",
+      "suggested_opportunity_type": "mixed",
+      "scope": "eu",
+      "official_title": {
+        "el": "EIC Accelerator — χρηματοδότηση καινοτόμων νεοφυών και ΜμΕ",
+        "en": "EIC Accelerator — funding for innovative start-ups and SMEs"
+      },
+      "issuing_authority": {
+        "el": "Ευρωπαϊκό Συμβούλιο Καινοτομίας (EIC)",
+        "en": "European Innovation Council (EIC)"
+      },
+      "summary": {
+        "el": "Επιχορήγηση για δραστηριότητες καινοτομίας TRL 6–8 σε 24 μήνες, ή/και επένδυση σε μετοχές. Οι πλήρεις αιτήσεις αξιολογούνται σε τακτικές ημερομηνίες.",
+        "en": "Grant for TRL 6–8 innovation activities over 24 months, and/or equity investment. Full applications are batched on set dates."
+      },
+      "application_status": {
+        "value": "rolling",
+        "verified_on": "2026-10-14",
+        "stale_after_days": 7,
+        "deadline_original_wording": {
+          "el": "Επόμενη ημερομηνία αξιολόγησης πλήρων αιτήσεων: 4/11/2026, 17:00 Βρυξελλών",
+          "en": "Next batching date for full applications: 4 Nov 2026, 17:00 Brussels"
+        },
+        "timezone": "Europe/Brussels",
+        "verified_time_precision": "date",
+        "opens_at": null,
+        "closes_at": "2026-11-04T16:00:00Z",
+        "milestones": [
+          {
+            "label": "full-application batching dates 2026",
+            "dates": [
+              "2026-01-07",
+              "2026-03-04",
+              "2026-05-06",
+              "2026-07-08",
+              "2026-09-02",
+              "2026-11-04"
+            ],
+            "time": "17:00 Brussels"
+          }
+        ]
+      },
+      "funding_or_benefit": {
+        "value": {
+          "el": "Επιχορήγηση < 2,5 εκ. € · επένδυση 1–10 εκ. €",
+          "en": "Grant < €2.5m · investment €1–10m"
+        },
+        "state": "verified"
+      },
+      "conflicts": [],
+      "eligibility_rules": [
+        {
+          "field": "applyingAs",
+          "op": "in",
+          "value": [
+            "planning_business",
+            "startup_sme",
+            "small_midcap"
+          ],
+          "label": {
+            "el": "Νεοφυής ή ΜμΕ, φυσικό πρόσωπο που σκοπεύει να ιδρύσει ΜμΕ, ή μικρή μεσαία κεφαλαιοποίηση (μόνο επένδυση)",
+            "en": "Start-up or SME, a person intending to launch an SME, or a small mid-cap (equity only)"
+          },
+          "official_quote": "Single start-ups and SMEs, individuals intending to launch a SME and small mid-caps (can apply for equity only)",
+          "db_category": "applicant_type",
+          "db_kind": "mandatory",
+          "evidence_state": "quoted",
+          "evidence": {
+            "source_url": "https://eic.ec.europa.eu/eic-funding-opportunities/eic-accelerator_en",
+            "excerpt": "Single start-ups and SMEs, individuals intending to launch a SME and small mid-caps (can apply for equity only)",
+            "location": null,
+            "checked_on": "2026-10-14"
+          }
+        },
+        {
+          "field": "employees",
+          "op": "lte",
+          "value": 499,
+          "label": {
+            "el": "Μικρές μεσαίες κεφαλαιοποιήσεις: έως 499 εργαζόμενοι",
+            "en": "Small mid-caps: up to 499 employees"
+          },
+          "official_quote": "small mid-caps with up to 499 employees",
+          "applies_when": "applicant is a start-up/SME or a small mid-cap",
+          "db_category": "company_size",
+          "db_kind": "mandatory",
+          "evidence_state": "quoted",
+          "evidence": {
+            "source_url": "https://eic.ec.europa.eu/eic-funding-opportunities/eic-accelerator_en",
+            "excerpt": "small mid-caps with up to 499 employees",
+            "location": null,
+            "checked_on": "2026-10-14"
+          }
+        }
+      ],
+      "application_steps": {
+        "el": [
+          "Σύντομη αίτηση και μετά πλήρης αίτηση στην πλατφόρμα του EIC.",
+          "Οι πλήρεις αιτήσεις συγκεντρώνονται για αξιολόγηση στις 7/1, 4/3, 6/5, 8/7, 2/9 και 4/11/2026."
+        ],
+        "en": [
+          "Short application, then full application on the EIC platform.",
+          "Full applications are batched on 7 Jan, 4 Mar, 6 May, 8 Jul, 2 Sep and 4 Nov 2026."
+        ]
+      },
+      "official_sources": [
+        {
+          "label": "eic.ec.europa.eu — EIC Accelerator",
+          "url": "https://eic.ec.europa.eu/eic-funding-opportunities/eic-accelerator_en",
+          "checked_on": "2026-10-14"
+        }
+      ],
+      "official_application_url": "https://eic.ec.europa.eu/eic-funding-opportunities/eic-accelerator_en",
+      "persona_tags": [
+        "entrepreneur",
+        "business"
+      ],
+      "interest_tag": "entrepreneurship",
+      "information_only": false,
+      "automated_access_plan": {
+        "el": "EU Funding & Tenders Portal — ο connector υπάρχει στον κώδικα, δοκιμασμένος μόνο με δεδομένα δοκιμής",
+        "en": "EU Funding & Tenders Portal — connector exists in the code, tested with fixtures only"
+      },
+      "record_class": "opportunity",
+      "db_mapping": {
+        "target_table": "opportunities",
+        "import": true,
+        "opportunity_type": "mixed",
+        "needs_new_type": false,
+        "status": "open",
+        "deadline_kind": "official",
+        "publication_basis": "manual",
+        "requirement_origin": "admin",
+        "is_synthetic": false,
+        "canonical_url": "https://eic.ec.europa.eu/eic-funding-opportunities/eic-accelerator_en",
+        "application_url": "https://eic.ec.europa.eu/eic-funding-opportunities/eic-accelerator_en",
+        "last_verified_at": "2026-10-14",
+        "title_origin": "platform-written, not the verbatim official title"
+      },
+      "uncertainties": [
+        "UNVERIFIED: 2027 cut-off dates not checked"
+      ]
+    },
+    {
+      "id": "art5c",
+      "record_kind": "tax",
+      "demo_type": "tax",
+      "suggested_opportunity_type": "tax_incentive",
+      "scope": "gr",
+      "official_title": {
+        "el": "Άρθρο 5Γ ΚΦΕ — 50% απαλλαγή φόρου για όσους μεταφέρουν τη φορολογική κατοικία τους στην Ελλάδα",
+        "en": "Article 5C — 50% income-tax exemption for people moving tax residence to Greece"
+      },
+      "issuing_authority": {
+        "el": "ΑΑΔΕ",
+        "en": "ΑΑΔΕ (tax authority)"
+      },
+      "summary": {
+        "el": "Απαλλαγή από τον φόρο εισοδήματος για το 50% του εισοδήματος από μισθωτή εργασία ή επιχειρηματική δραστηριότητα στην Ελλάδα, για 7 φορολογικά έτη. Είναι φορολογικό κίνητρο, όχι επιχορήγηση.",
+        "en": "Income tax is exempted on 50% of income from employment or business activity in Greece, for 7 tax years. It is a tax incentive, not a grant."
+      },
+      "application_status": {
+        "value": "rolling",
+        "verified_on": "2026-10-14",
+        "stale_after_days": 30,
+        "deadline_original_wording": {
+          "el": "Έναρξη εργασίας έως 2/7: αίτηση έως το τέλος του ίδιου έτους · μετά τις 2/7: έως το τέλος του επόμενου",
+          "en": "Work starts by 2 Jul: apply by the end of that year · after 2 Jul: by the end of the next year"
+        },
+        "timezone": "Europe/Athens",
+        "verified_time_precision": "date",
+        "opens_at": null,
+        "closes_at": null,
+        "milestones": [
+          {
+            "label": "deadline rule",
+            "rule": "work starts on/before 2 Jul → by end of that year; after 2 Jul → by end of next year"
+          }
+        ]
+      },
+      "funding_or_benefit": {
+        "value": {
+          "el": "50% απαλλαγή για 7 φορολογικά έτη",
+          "en": "50% exemption for 7 tax years"
+        },
+        "state": "verified"
+      },
+      "conflicts": [],
+      "eligibility_rules": [
+        {
+          "field": "returnPlan",
+          "op": "in",
+          "value": [
+            "planning",
+            "moved"
+          ],
+          "label": {
+            "el": "Μεταφορά φορολογικής κατοικίας στην Ελλάδα",
+            "en": "Moving tax residence to Greece"
+          },
+          "official_quote": "μεταφέρει τη φορολογική του κατοικία",
+          "db_category": "NEW:tax_residence_transfer",
+          "db_kind": "mandatory",
+          "evidence_state": "quoted",
+          "evidence": {
+            "source_url": "https://www.aade.gr/sites/default/files/2025-10/FAQS_5G_KFE.pdf",
+            "excerpt": "μεταφέρει τη φορολογική του κατοικία",
+            "location": null,
+            "checked_on": "2026-10-14"
+          }
+        },
+        {
+          "field": "grRes6",
+          "op": "in",
+          "value": [
+            "0",
+            "1"
+          ],
+          "label": {
+            "el": "Μη φορολογικός κάτοικος Ελλάδας τα 5 από τα 6 προηγούμενα έτη",
+            "en": "Not a Greek tax resident in 5 of the 6 previous years"
+          },
+          "official_quote": "δεν ήταν φορολογικός κάτοικος της Ελλάδος τα προηγούμενα πέντε (5) από τα έξι (6) έτη",
+          "db_category": "NEW:prior_tax_residence",
+          "db_kind": "mandatory",
+          "evidence_state": "quoted",
+          "evidence": {
+            "source_url": "https://www.aade.gr/sites/default/files/2025-10/FAQS_5G_KFE.pdf",
+            "excerpt": "δεν ήταν φορολογικός κάτοικος της Ελλάδος τα προηγούμενα πέντε (5) από τα έξι (6) έτη",
+            "location": null,
+            "checked_on": "2026-10-14"
+          }
+        },
+        {
+          "field": "movingFrom",
+          "op": "in",
+          "value": [
+            "eu_eea",
+            "agreement"
+          ],
+          "label": {
+            "el": "Από κράτος ΕΕ/ΕΟΧ ή χώρα με συμφωνία διοικητικής συνεργασίας",
+            "en": "From an EU/EEA state or a country with an administrative cooperation agreement"
+          },
+          "official_quote": "μεταφέρει τη φορολογική του κατοικία από κράτος μέλος της Ε.Ε. ή του Ε.Ο.Χ.",
+          "db_category": "NEW:moving_from_country_group",
+          "db_kind": "mandatory",
+          "evidence_state": "quoted",
+          "evidence": {
+            "source_url": "https://www.aade.gr/sites/default/files/2025-10/FAQS_5G_KFE.pdf",
+            "excerpt": "μεταφέρει τη φορολογική του κατοικία από κράτος μέλος της Ε.Ε. ή του Ε.Ο.Χ.",
+            "location": null,
+            "checked_on": "2026-10-14"
+          }
+        },
+        {
+          "field": "workGr",
+          "op": "in",
+          "value": [
+            "employee_gr",
+            "own_business"
+          ],
+          "label": {
+            "el": "Μισθωτή εργασία σε ελληνική οντότητα/μόνιμη εγκατάσταση ή ατομική επιχείρηση στην Ελλάδα",
+            "en": "Employment with a Greek entity/permanent establishment, or a sole proprietorship in Greece"
+          },
+          "official_quote": "παρέχει υπηρεσίες στην Ελλάδα στο πλαίσιο εργασιακής σχέσης … δήλωση έναρξης εργασιών ατομικής επιχείρησης",
+          "db_category": "NEW:activity_in_greece",
+          "db_kind": "mandatory",
+          "evidence_state": "quoted",
+          "evidence": {
+            "source_url": "https://www.aade.gr/sites/default/files/2025-10/FAQS_5G_KFE.pdf",
+            "excerpt": "παρέχει υπηρεσίες στην Ελλάδα στο πλαίσιο εργασιακής σχέσης … δήλωση έναρξης εργασιών ατομικής επιχείρησης",
+            "location": null,
+            "checked_on": "2026-10-14"
+          }
+        },
+        {
+          "field": "stay2y",
+          "op": "eq",
+          "value": "yes",
+          "label": {
+            "el": "Δήλωση παραμονής στην Ελλάδα τουλάχιστον 2 έτη",
+            "en": "Declares intention to stay in Greece for at least 2 years"
+          },
+          "official_quote": null,
+          "db_category": "NEW:intent_to_stay",
+          "db_kind": "mandatory",
+          "evidence_state": "paraphrased: verbatim quote still to capture",
+          "evidence": {
+            "source_url": "https://www.aade.gr/sites/default/files/2025-10/FAQS_5G_KFE.pdf",
+            "excerpt": null,
+            "location": null,
+            "checked_on": "2026-10-14"
+          }
+        }
+      ],
+      "application_steps": {
+        "el": [
+          "Αίτηση ψηφιακά μέσω myAADE με κωδικούς TAXISnet.",
+          "Δείτε τις συχνές ερωτήσεις και τον οδηγό της ΑΑΔΕ."
+        ],
+        "en": [
+          "Apply online through myAADE with TAXISnet credentials.",
+          "See ΑΑΔΕ's FAQ and user guide."
+        ]
+      },
+      "official_sources": [
+        {
+          "label": "ΑΑΔΕ — υπηρεσία άρθρου 5Γ",
+          "url": "https://www.aade.gr/en/psifiakes-ypiresies/eisodima/ypoboli-aitisis-ypagogis-se-eidiko-tropo-forologisis-arthro-5g-toy-kfe",
+          "checked_on": "2026-10-14"
+        },
+        {
+          "label": "ΑΑΔΕ — Συχνές ερωτήσεις 5Γ (PDF, 2/10/2025)",
+          "url": "https://www.aade.gr/sites/default/files/2025-10/FAQS_5G_KFE.pdf",
+          "checked_on": "2026-10-14"
+        }
+      ],
+      "official_application_url": "https://www1.aade.gr/aadeapps2/article5c",
+      "persona_tags": [
+        "young",
+        "jobseeker",
+        "entrepreneur"
+      ],
+      "interest_tag": "tax",
+      "information_only": false,
+      "automated_access_plan": {
+        "el": "Χωρίς API· παρακολούθηση σελίδων/PDF ΑΑΔΕ και ΦΕΚ",
+        "en": "No API; monitor ΑΑΔΕ pages/PDFs and the Government Gazette"
+      },
+      "record_class": "tax_regime",
+      "db_mapping": {
+        "target_table": "opportunities",
+        "import": true,
+        "opportunity_type": "tax_incentive",
+        "needs_new_type": false,
+        "status": "open",
+        "deadline_kind": "rolling",
+        "publication_basis": "manual",
+        "requirement_origin": "admin",
+        "is_synthetic": false,
+        "canonical_url": "https://www.aade.gr/en/psifiakes-ypiresies/eisodima/ypoboli-aitisis-ypagogis-se-eidiko-tropo-forologisis-arthro-5g-toy-kfe",
+        "application_url": "https://www1.aade.gr/aadeapps2/article5c",
+        "last_verified_at": "2026-10-14",
+        "title_origin": "platform-written, not the verbatim official title"
+      },
+      "uncertainties": [
+        "NOT MODELLED: extension by Decision Α.1096/2026 to people providing services to the Greek State"
+      ]
+    },
+    {
+      "id": "art5b",
+      "record_kind": "tax",
+      "demo_type": "tax",
+      "suggested_opportunity_type": "tax_incentive",
+      "scope": "gr",
+      "official_title": {
+        "el": "Άρθρο 5Β ΚΦΕ — 7% φόρος για συνταξιούχους με σύνταξη εξωτερικού",
+        "en": "Article 5B — 7% tax for pensioners with a foreign pension"
+      },
+      "issuing_authority": {
+        "el": "ΑΑΔΕ",
+        "en": "ΑΑΔΕ (tax authority)"
+      },
+      "summary": {
+        "el": "Συντελεστής 7% στο σύνολο του εισοδήματος αλλοδαπής προέλευσης, για 15 φορολογικά έτη από το έτος μετά την αίτηση.",
+        "en": "A flat 7% rate on all foreign-sourced income, for 15 tax years from the year after the application."
+      },
+      "application_status": {
+        "value": "rolling",
+        "verified_on": "2026-10-14",
+        "stale_after_days": 30,
+        "deadline_original_wording": {
+          "el": "Έως 31 Μαρτίου του φορολογικού έτους",
+          "en": "By 31 March of the tax year"
+        },
+        "timezone": "Europe/Athens",
+        "verified_time_precision": "date",
+        "opens_at": null,
+        "closes_at": null,
+        "milestones": [
+          {
+            "label": "annual deadline",
+            "rule": "31 March of the tax year"
+          }
+        ]
+      },
+      "funding_or_benefit": {
+        "value": {
+          "el": "Φόρος 7% για 15 έτη",
+          "en": "7% tax for 15 years"
+        },
+        "state": "verified"
+      },
+      "conflicts": [],
+      "eligibility_rules": [
+        {
+          "field": "returnPlan",
+          "op": "in",
+          "value": [
+            "planning",
+            "moved"
+          ],
+          "label": {
+            "el": "Μεταφορά φορολογικής κατοικίας στην Ελλάδα",
+            "en": "Moving tax residence to Greece"
+          },
+          "official_quote": null,
+          "db_category": "NEW:tax_residence_transfer",
+          "db_kind": "mandatory",
+          "evidence_state": "paraphrased: verbatim quote still to capture",
+          "evidence": {
+            "source_url": "https://www.aade.gr/sites/default/files/2023-09/forolologika_kinitra_pros_newn_forol_kat_kfe_new_EL.pdf",
+            "excerpt": null,
+            "location": null,
+            "checked_on": "2026-10-14"
+          }
+        },
+        {
+          "field": "grRes6",
+          "op": "in",
+          "value": [
+            "0",
+            "1"
+          ],
+          "label": {
+            "el": "Μη φορολογικός κάτοικος Ελλάδας τα 5 από τα 6 προηγούμενα έτη",
+            "en": "Not a Greek tax resident in 5 of the 6 previous years"
+          },
+          "official_quote": null,
+          "db_category": "NEW:prior_tax_residence",
+          "db_kind": "mandatory",
+          "evidence_state": "paraphrased: verbatim quote still to capture",
+          "evidence": {
+            "source_url": "https://www.aade.gr/sites/default/files/2023-09/forolologika_kinitra_pros_newn_forol_kat_kfe_new_EL.pdf",
+            "excerpt": null,
+            "location": null,
+            "checked_on": "2026-10-14"
+          }
+        },
+        {
+          "field": "movingFrom",
+          "op": "in",
+          "value": [
+            "eu_eea",
+            "agreement"
+          ],
+          "label": {
+            "el": "Από χώρα με συμφωνία διοικητικής συνεργασίας σε φορολογικά θέματα",
+            "en": "From a country with an administrative tax cooperation agreement"
+          },
+          "official_quote": null,
+          "db_category": "NEW:moving_from_country_group",
+          "db_kind": "mandatory",
+          "evidence_state": "paraphrased: verbatim quote still to capture",
+          "evidence": {
+            "source_url": "https://www.aade.gr/sites/default/files/2023-09/forolologika_kinitra_pros_newn_forol_kat_kfe_new_EL.pdf",
+            "excerpt": null,
+            "location": null,
+            "checked_on": "2026-10-14"
+          }
+        },
+        {
+          "field": "workGr",
+          "op": "eq",
+          "value": "pension",
+          "label": {
+            "el": "Λήψη σύνταξης αλλοδαπής προέλευσης",
+            "en": "Receives foreign-source pension income"
+          },
+          "official_quote": null,
+          "db_category": "NEW:pension_income",
+          "db_kind": "mandatory",
+          "evidence_state": "paraphrased: verbatim quote still to capture",
+          "evidence": {
+            "source_url": "https://www.aade.gr/sites/default/files/2023-09/forolologika_kinitra_pros_newn_forol_kat_kfe_new_EL.pdf",
+            "excerpt": null,
+            "location": null,
+            "checked_on": "2026-10-14"
+          }
+        }
+      ],
+      "application_steps": {
+        "el": [
+          "Αίτηση στην ΑΑΔΕ έως 31 Μαρτίου του φορολογικού έτους."
+        ],
+        "en": [
+          "Apply to ΑΑΔΕ by 31 March of the tax year."
+        ]
+      },
+      "official_sources": [
+        {
+          "label": "ΑΑΔΕ — Φορολογικά κίνητρα άρθρων 5Α, 5Β, 5Γ (PDF)",
+          "url": "https://www.aade.gr/sites/default/files/2023-09/forolologika_kinitra_pros_newn_forol_kat_kfe_new_EL.pdf",
+          "checked_on": "2026-10-14"
+        }
+      ],
+      "official_application_url": null,
+      "persona_tags": [],
+      "interest_tag": "tax",
+      "information_only": false,
+      "automated_access_plan": {
+        "el": "Χωρίς API· παρακολούθηση σελίδων/PDF ΑΑΔΕ και ΦΕΚ",
+        "en": "No API; monitor ΑΑΔΕ pages/PDFs and the Government Gazette"
+      },
+      "record_class": "tax_regime",
+      "db_mapping": {
+        "target_table": "opportunities",
+        "import": true,
+        "opportunity_type": "tax_incentive",
+        "needs_new_type": false,
+        "status": "open",
+        "deadline_kind": "official",
+        "publication_basis": "manual",
+        "requirement_origin": "admin",
+        "is_synthetic": false,
+        "canonical_url": "https://www.aade.gr/sites/default/files/2023-09/forolologika_kinitra_pros_newn_forol_kat_kfe_new_EL.pdf",
+        "application_url": null,
+        "last_verified_at": "2026-10-14",
+        "title_origin": "platform-written, not the verbatim official title"
+      },
+      "uncertainties": [
+        "POSSIBLY OUTDATED: guide PDF dated 2023; later amendments not checked"
+      ]
+    },
+    {
+      "id": "art5a",
+      "record_kind": "tax",
+      "demo_type": "tax",
+      "suggested_opportunity_type": "tax_incentive",
+      "scope": "gr",
+      "official_title": {
+        "el": "Άρθρο 5Α ΚΦΕ — εναλλακτική φορολόγηση επενδυτών",
+        "en": "Article 5A — alternative taxation for investors"
+      },
+      "issuing_authority": {
+        "el": "ΑΑΔΕ",
+        "en": "ΑΑΔΕ (tax authority)"
+      },
+      "summary": {
+        "el": "Σταθερός ετήσιος φόρος 100.000 € για όλο το εισόδημα αλλοδαπής προέλευσης, για 15 φορολογικά έτη, με επένδυση τουλάχιστον 500.000 € στην Ελλάδα.",
+        "en": "A flat €100,000 a year on all foreign-sourced income, for 15 tax years, with an investment of at least €500,000 in Greece."
+      },
+      "application_status": {
+        "value": "rolling",
+        "verified_on": "2026-10-14",
+        "stale_after_days": 30,
+        "deadline_original_wording": {
+          "el": "Έως 31 Μαρτίου του φορολογικού έτους",
+          "en": "By 31 March of the tax year"
+        },
+        "timezone": "Europe/Athens",
+        "verified_time_precision": "date",
+        "opens_at": null,
+        "closes_at": null,
+        "milestones": [
+          {
+            "label": "annual deadline",
+            "rule": "31 March of the tax year"
+          }
+        ]
+      },
+      "funding_or_benefit": {
+        "value": {
+          "el": "100.000 €/έτος ανεξαρτήτως εισοδήματος αλλοδαπής, 15 έτη",
+          "en": "€100,000/year regardless of foreign income, 15 years"
+        },
+        "state": "verified"
+      },
+      "conflicts": [],
+      "eligibility_rules": [
+        {
+          "field": "grRes8",
+          "op": "in",
+          "value": [
+            "0",
+            "1"
+          ],
+          "label": {
+            "el": "Μη φορολογικός κάτοικος Ελλάδας τα 7 από τα 8 προηγούμενα έτη",
+            "en": "Not a Greek tax resident in 7 of the 8 previous years"
+          },
+          "official_quote": null,
+          "db_category": "NEW:prior_tax_residence",
+          "db_kind": "mandatory",
+          "evidence_state": "paraphrased: verbatim quote still to capture",
+          "evidence": {
+            "source_url": "https://www.aade.gr/sites/default/files/2023-09/forolologika_kinitra_pros_newn_forol_kat_kfe_new_EL.pdf",
+            "excerpt": null,
+            "location": null,
+            "checked_on": "2026-10-14"
+          }
+        },
+        {
+          "field": "invest500",
+          "op": "eq",
+          "value": "yes",
+          "label": {
+            "el": "Επένδυση τουλάχιστον 500.000 € (ακίνητα, επιχειρήσεις, κινητές αξίες) εντός 3 ετών",
+            "en": "Investment of at least €500,000 (property, businesses, securities) within 3 years"
+          },
+          "official_quote": "πεντακοσίων χιλιάδων (500.000) ευρώ",
+          "db_category": "NEW:investment_amount",
+          "db_kind": "mandatory",
+          "evidence_state": "quoted",
+          "evidence": {
+            "source_url": "https://www.aade.gr/sites/default/files/2023-09/forolologika_kinitra_pros_newn_forol_kat_kfe_new_EL.pdf",
+            "excerpt": "πεντακοσίων χιλιάδων (500.000) ευρώ",
+            "location": null,
+            "checked_on": "2026-10-14"
+          }
+        }
+      ],
+      "application_steps": {
+        "el": [
+          "Αίτηση στην ΑΑΔΕ έως 31 Μαρτίου του φορολογικού έτους."
+        ],
+        "en": [
+          "Apply to ΑΑΔΕ by 31 March of the tax year."
+        ]
+      },
+      "official_sources": [
+        {
+          "label": "ΑΑΔΕ — Φορολογικά κίνητρα άρθρων 5Α, 5Β, 5Γ (PDF)",
+          "url": "https://www.aade.gr/sites/default/files/2023-09/forolologika_kinitra_pros_newn_forol_kat_kfe_new_EL.pdf",
+          "checked_on": "2026-10-14"
+        }
+      ],
+      "official_application_url": null,
+      "persona_tags": [
+        "business"
+      ],
+      "interest_tag": "tax",
+      "information_only": false,
+      "automated_access_plan": {
+        "el": "Χωρίς API· παρακολούθηση σελίδων/PDF ΑΑΔΕ και ΦΕΚ",
+        "en": "No API; monitor ΑΑΔΕ pages/PDFs and the Government Gazette"
+      },
+      "record_class": "tax_regime",
+      "db_mapping": {
+        "target_table": "opportunities",
+        "import": true,
+        "opportunity_type": "tax_incentive",
+        "needs_new_type": false,
+        "status": "open",
+        "deadline_kind": "official",
+        "publication_basis": "manual",
+        "requirement_origin": "admin",
+        "is_synthetic": false,
+        "canonical_url": "https://www.aade.gr/sites/default/files/2023-09/forolologika_kinitra_pros_newn_forol_kat_kfe_new_EL.pdf",
+        "application_url": null,
+        "last_verified_at": "2026-10-14",
+        "title_origin": "platform-written, not the verbatim official title"
+      },
+      "uncertainties": [
+        "POSSIBLY OUTDATED: guide PDF dated 2023; later amendments not checked"
+      ]
+    },
+    {
+      "id": "beckham",
+      "record_kind": "tax",
+      "demo_type": "tax",
+      "suggested_opportunity_type": "tax_incentive",
+      "scope": "es",
+      "official_title": {
+        "el": "Ισπανία — ειδικό καθεστώς μετακινούμενων εργαζομένων («Beckham Law»)",
+        "en": "Spain — special regime for relocated workers (\"Beckham Law\")"
+      },
+      "issuing_authority": {
+        "el": "Agencia Tributaria (Ισπανία)",
+        "en": "Agencia Tributaria (Spain)"
+      },
+      "summary": {
+        "el": "Όσοι αποκτούν φορολογική κατοικία στην Ισπανία λόγω μετακίνησης για εργασία μπορούν να φορολογηθούν με τους κανόνες των μη κατοίκων (IRNR), για το έτος αλλαγής κατοικίας και τα 5 επόμενα. Επιλογή με το έντυπο 149, δήλωση με το 151. Συντελεστές και προθεσμία δεν επιβεβαιώθηκαν από τη σελίδα που ελέγχθηκε.",
+        "en": "People who become Spanish tax residents because they relocate for work can be taxed under non-resident (IRNR) rules, for the year of the change and the next 5. Opt in with form 149, file with form 151. Rates and deadline were not confirmed on the page checked."
+      },
+      "application_status": {
+        "value": "future",
+        "verified_on": "2026-10-14",
+        "stale_after_days": 90,
+        "deadline_original_wording": null,
+        "timezone": null,
+        "verified_time_precision": "date",
+        "opens_at": null,
+        "closes_at": null,
+        "milestones": []
+      },
+      "funding_or_benefit": {
+        "value": null,
+        "state": "not_stated"
+      },
+      "conflicts": [],
+      "eligibility_rules": [],
+      "application_steps": {
+        "el": [
+          "Δεν παρακολουθείται ακόμη από την πλατφόρμα — τεκμηριωμένη μελλοντική επέκταση."
+        ],
+        "en": [
+          "Not yet monitored by the platform — a documented future expansion."
+        ]
+      },
+      "official_sources": [
+        {
+          "label": "Agencia Tributaria — Régimen especial",
+          "url": "https://sede.agenciatributaria.gob.es/Sede/irpf/tengo-que-presentar-declaracion/regimen-fiscal-aplicable-trabajadores-desplazados/regimen-especial.html",
+          "checked_on": "2026-10-14"
+        },
+        {
+          "label": "Agencia Tributaria — Modelo 149",
+          "url": "https://sede.agenciatributaria.gob.es/Sede/procedimientoini/G606.shtml",
+          "checked_on": "2026-10-14"
+        }
+      ],
+      "official_application_url": null,
+      "persona_tags": [
+        "young",
+        "jobseeker"
+      ],
+      "interest_tag": "tax",
+      "information_only": true,
+      "automated_access_plan": {
+        "el": "Εκτός πεδίου — δεν παρακολουθείται",
+        "en": "Out of scope — not monitored"
+      },
+      "record_class": "tax_regime",
+      "db_mapping": {
+        "target_table": "opportunities",
+        "import": false,
+        "opportunity_type": "tax_incentive",
+        "needs_new_type": false,
+        "status": "unverified",
+        "deadline_kind": "not_announced",
+        "publication_basis": "manual",
+        "requirement_origin": "admin",
+        "is_synthetic": false,
+        "canonical_url": "https://sede.agenciatributaria.gob.es/Sede/irpf/tengo-que-presentar-declaracion/regimen-fiscal-aplicable-trabajadores-desplazados/regimen-especial.html",
+        "application_url": null,
+        "last_verified_at": "2026-10-14",
+        "title_origin": "platform-written, not the verbatim official title"
+      },
+      "uncertainties": [
+        "NOT STATED on page checked: tax rates, opt-in deadline, prior non-residence period",
+        "OUT OF SCOPE: not to be imported until Spain is added"
+      ]
+    },
+    {
+      "id": "spiti2",
+      "record_kind": "programme",
+      "demo_type": "loan",
+      "suggested_opportunity_type": "loan",
+      "scope": "gr",
+      "official_title": {
+        "el": "«Σπίτι μου ΙΙ» — δάνεια πρώτης κατοικίας",
+        "en": "\"Spiti mou II\" — first-home loans"
+      },
+      "issuing_authority": {
+        "el": "Υπ. Κοινωνικής Συνοχής & Οικογένειας · Ελληνική Αναπτυξιακή Τράπεζα",
+        "en": "Ministry of Social Cohesion & Family · Hellenic Development Bank"
+      },
+      "summary": {
+        "el": "Δάνεια πρώτης κατοικίας για ηλικίες 25–50, έως 190.000 € (έως 90% της αξίας, ακίνητο έως 250.000 €). Οι αιτήσεις έκλεισαν στις 31/5/2026 και οι συμβάσεις στις 31/8/2026· εγκρίθηκαν 15.097 δάνεια και υπογράφηκαν 14.114 συμβάσεις. Δεν αναφέρεται νέα περίοδος αιτήσεων.",
+        "en": "First-home loans for ages 25–50, up to €190,000 (up to 90% of the value, property up to €250,000). Applications closed on 31 May 2026 and contracts on 31 Aug 2026; 15,097 loans were approved and 14,114 contracts signed. No new application period is announced."
+      },
+      "application_status": {
+        "value": "closed",
+        "verified_on": "2026-10-14",
+        "stale_after_days": 30,
+        "deadline_original_wording": {
+          "el": "Αιτήσεις υπαγωγής: έως 31/5/2026 · Υπογραφή συμβάσεων δανείου: έως 31/8/2026",
+          "en": "Applications (enrolment): until 31 May 2026 · Loan contract signing: until 31 Aug 2026"
+        },
+        "timezone": "Europe/Athens",
+        "verified_time_precision": "date",
+        "opens_at": null,
+        "closes_at": "2026-05-31",
+        "milestones": [
+          {
+            "label": "applications (υπαγωγή) deadline",
+            "date": "2026-05-31"
+          },
+          {
+            "label": "loan contract signing deadline",
+            "date": "2026-08-31"
+          }
+        ]
+      },
+      "funding_or_benefit": {
+        "value": {
+          "el": "Δάνειο (όχι επιχορήγηση)",
+          "en": "Loan (not a grant)"
+        },
+        "state": "verified"
+      },
+      "conflicts": [],
+      "eligibility_rules": [],
+      "application_steps": {
+        "el": [
+          "Κανένα — το πρόγραμμα έκλεισε. Παρακολουθήστε την Πύλη Στεγαστικής Πολιτικής για νέα προγράμματα."
+        ],
+        "en": [
+          "None — the programme has closed. Watch the Housing Policy Portal for new programmes."
+        ]
+      },
+      "official_sources": [
+        {
+          "label": "minscfa.gov.gr — ανακοίνωση 3/9/2026",
+          "url": "https://minscfa.gov.gr/epitychis-i-oloklirosi-tou-spiti-mou-ii-pano-apo-14-100-sybolites-mas-vrikan-stegi/",
+          "checked_on": "2026-10-14"
+        },
+        {
+          "label": "stegasi.gov.gr — Σπίτι μου ΙΙ (ενημ. 14/7/2026)",
+          "url": "https://stegasi.gov.gr/programs/spiti-mou-ii/",
+          "checked_on": "2026-10-14"
+        },
+        {
+          "label": "greece20.gov.gr — νέες προθεσμίες (21/11/2025)",
+          "url": "https://greece20.gov.gr/spiti-mou-ii-nees-rythmiseis/",
+          "checked_on": "2026-10-14"
+        }
+      ],
+      "official_application_url": null,
+      "persona_tags": [
+        "young",
+        "household"
+      ],
+      "interest_tag": "housing",
+      "information_only": true,
+      "automated_access_plan": {
+        "el": "Παρακολούθηση σελίδας stegasi.gov.gr",
+        "en": "Monitor the stegasi.gov.gr page"
+      },
+      "record_class": "opportunity",
+      "db_mapping": {
+        "target_table": "opportunities",
+        "import": true,
+        "opportunity_type": "loan",
+        "needs_new_type": false,
+        "status": "closed",
+        "deadline_kind": "official",
+        "publication_basis": "manual",
+        "requirement_origin": "admin",
+        "is_synthetic": false,
+        "canonical_url": "https://minscfa.gov.gr/epitychis-i-oloklirosi-tou-spiti-mou-ii-pano-apo-14-100-sybolites-mas-vrikan-stegi/",
+        "application_url": null,
+        "last_verified_at": "2026-10-14",
+        "title_origin": "platform-written, not the verbatim official title"
+      },
+      "uncertainties": [
+        "CONFLICT: \"at a glance\" income range (€10k–€44k) vs detailed income table on stegasi.gov.gr",
+        "CORRECTION v3: 31 Aug 2026 is the loan-contract deadline; applications closed 31 May 2026"
+      ]
+    },
+    {
+      "id": "studenthousing",
+      "record_kind": "round",
+      "demo_type": "benefit",
+      "suggested_opportunity_type": "public_benefit (NEW TYPE NEEDED)",
+      "scope": "gr",
+      "official_title": {
+        "el": "Φοιτητικό στεγαστικό επίδομα",
+        "en": "Student housing allowance"
+      },
+      "issuing_authority": {
+        "el": "Υπουργείο Παιδείας",
+        "en": "Ministry of Education"
+      },
+      "summary": {
+        "el": "Ετήσιο επίδομα για φοιτητές που σπουδάζουν μακριά από τον τόπο κατοικίας τους. Οι αιτήσεις για το 2025–26 έκλεισαν.",
+        "en": "Annual allowance for students who study away from home. Applications for 2025–26 have closed."
+      },
+      "application_status": {
+        "value": "closed",
+        "verified_on": "2026-10-14",
+        "stale_after_days": 7,
+        "deadline_original_wording": {
+          "el": "2025–26: 30/6–31/7/2026 και 17–22/9/2026 · 2026–27: δεν έχει ανακοινωθεί",
+          "en": "2025–26: 30 Jun–31 Jul 2026 and 17–22 Sep 2026 · 2026–27: not announced"
+        },
+        "timezone": "Europe/Athens",
+        "verified_time_precision": "date",
+        "opens_at": "2026-06-30",
+        "closes_at": "2026-07-31",
+        "milestones": [
+          {
+            "label": "re-submission window (did not apply in first window)",
+            "from": "2026-09-17",
+            "to": "2026-09-22"
+          },
+          {
+            "label": "2026–27 round",
+            "state": "not_announced"
+          }
+        ]
+      },
+      "funding_or_benefit": {
+        "value": {
+          "el": "Κατά το Υπουργείο (29/7/2026): 1.500 € ή 2.000 € με συγκατοίκηση· 2.000 € ή 2.500 € εκτός Αττικής/Θεσσαλονίκης. Δεν δηλώνεται ρητά για το 2025–26.",
+          "en": "Per the Ministry (29 Jul 2026): €1,500, or €2,000 if sharing; €2,000 or €2,500 outside Attica/Thessaloniki. Not stated explicitly for 2025–26."
+        },
+        "state": "stated_with_caveat"
+      },
+      "conflicts": [],
+      "eligibility_rules": [
+        {
+          "field": "student",
+          "op": "eq",
+          "value": "yes",
+          "label": {
+            "el": "Ενεργή ακαδημαϊκή ταυτότητα",
+            "en": "Valid academic ID"
+          },
+          "official_quote": null,
+          "db_category": "NEW:student_status",
+          "db_kind": "mandatory",
+          "evidence_state": "paraphrased: verbatim quote still to capture",
+          "evidence": {
+            "source_url": "https://portal.stegastiko.minedu.gov.gr/conditions",
+            "excerpt": null,
+            "location": null,
+            "checked_on": "2026-10-14"
+          }
+        },
+        {
+          "field": "citizenship",
+          "op": "in",
+          "value": [
+            "GR",
+            "EU"
+          ],
+          "label": {
+            "el": "Έλληνας ή πολίτης ΕΕ",
+            "en": "Greek or EU citizen"
+          },
+          "official_quote": null,
+          "db_category": "EXTEND:residence(basis=citizenship)",
+          "db_kind": "mandatory",
+          "evidence_state": "paraphrased: verbatim quote still to capture",
+          "evidence": {
+            "source_url": "https://portal.stegastiko.minedu.gov.gr/conditions",
+            "excerpt": null,
+            "location": null,
+            "checked_on": "2026-10-14"
+          }
+        },
+        {
+          "field": "taxres",
+          "op": "eq",
+          "value": "GR",
+          "label": {
+            "el": "Φορολογικός κάτοικος εσωτερικού, με ΑΦΜ και υποβληθείσα φορολογική δήλωση",
+            "en": "Tax resident in Greece, with a tax number and a filed tax return"
+          },
+          "official_quote": "φορολογικός κάτοικος εσωτερικού",
+          "db_category": "residence(basis=tax_residence)",
+          "db_kind": "mandatory",
+          "evidence_state": "quoted",
+          "evidence": {
+            "source_url": "https://portal.stegastiko.minedu.gov.gr/conditions",
+            "excerpt": "φορολογικός κάτοικος εσωτερικού",
+            "location": null,
+            "checked_on": "2026-10-14"
+          }
+        },
+        {
+          "field": null,
+          "op": "authority",
+          "value": null,
+          "label": {
+            "el": "Εισοδηματικά και λοιπά κριτήρια: στην εγκύκλιο, δεν ελέγχθηκαν",
+            "en": "Income and other criteria: in the circular, not checked"
+          },
+          "official_quote": null,
+          "db_category": "other",
+          "db_kind": "informational",
+          "evidence_state": "not_evaluated: checked by the authority",
+          "evidence": {
+            "source_url": "https://portal.stegastiko.minedu.gov.gr/conditions",
+            "excerpt": null,
+            "location": null,
+            "checked_on": "2026-10-14"
+          }
+        }
+      ],
+      "application_steps": {
+        "el": [
+          "Αίτηση στο stegastiko.minedu.gov.gr με κωδικούς TAXISnet, όταν ανοίξει η επόμενη περίοδος."
+        ],
+        "en": [
+          "Apply at stegastiko.minedu.gov.gr with TAXISnet credentials when the next period opens."
+        ]
+      },
+      "official_sources": [
+        {
+          "label": "minedu.gov.gr — ανακοίνωση 17/9/2026",
+          "url": "https://www.minedu.gov.gr/site/70856-17-09-26-enarxe-ypoboles-elektronikes-aiteses-gia-to-stegastiko-epidoma",
+          "checked_on": "2026-10-14"
+        },
+        {
+          "label": "Portal — Προθεσμίες & προϋποθέσεις",
+          "url": "https://portal.stegastiko.minedu.gov.gr/conditions",
+          "checked_on": "2026-10-14"
+        },
+        {
+          "label": "minedu.gov.gr — ανακοίνωση 29/7/2026",
+          "url": "https://www.minedu.gov.gr/site/70568-29-07-26-auxemeno-kata-115-to-phoitetiko-stegastiko-epidoma-legei-ten-paraskeue-31-iouliou-e-prothesmia-ypoboles-aiteseon-akademaikou-etous-2025-2026",
+          "checked_on": "2026-10-14"
+        }
+      ],
+      "official_application_url": "https://stegastiko.minedu.gov.gr",
+      "persona_tags": [
+        "young"
+      ],
+      "interest_tag": "education",
+      "information_only": false,
+      "automated_access_plan": {
+        "el": "Μίτος (καταχώριση «Στεγαστικό επίδομα σε φοιτητές») — API με εκκρεμή επιβεβαίωση όρων χρήσης",
+        "en": "Μίτος (entry \"Student housing allowance\") — API, terms of use pending confirmation"
+      },
+      "record_class": "opportunity",
+      "db_mapping": {
+        "target_table": "opportunities",
+        "import": true,
+        "opportunity_type": "public_benefit",
+        "needs_new_type": true,
+        "status": "closed",
+        "deadline_kind": "official",
+        "publication_basis": "manual",
+        "requirement_origin": "admin",
+        "is_synthetic": false,
+        "canonical_url": "https://www.minedu.gov.gr/site/70856-17-09-26-enarxe-ypoboles-elektronikes-aiteses-gia-to-stegastiko-epidoma",
+        "application_url": "https://stegastiko.minedu.gov.gr",
+        "last_verified_at": "2026-10-14",
+        "title_origin": "platform-written, not the verbatim official title"
+      },
+      "uncertainties": [
+        "NOT STATED for 2025–26: amounts (Ministry quotes €1,500/€2,000; €2,000/€2,500 outside Attica/Thessaloniki)",
+        "UNVERIFIED: income criteria are in the circular, not checked"
+      ]
+    },
+    {
+      "id": "a21",
+      "record_kind": "round",
+      "demo_type": "benefit",
+      "suggested_opportunity_type": "public_benefit (NEW TYPE NEEDED)",
+      "scope": "gr",
+      "official_title": {
+        "el": "Α21 — Επίδομα παιδιού",
+        "en": "A21 — Child benefit"
+      },
+      "issuing_authority": {
+        "el": "ΟΠΕΚΑ",
+        "en": "OPEKA"
+      },
+      "summary": {
+        "el": "Μηνιαίο επίδομα ανά παιδί, σε έξι διμηνιαίες δόσεις, με βάση την τελευταία εκκαθαρισμένη φορολογική δήλωση. Το ποσό εξαρτάται από την εισοδηματική κατηγορία.",
+        "en": "A monthly benefit per child, paid in six bimonthly instalments, based on the latest assessed tax return. The amount depends on the income category."
+      },
+      "application_status": {
+        "value": "open",
+        "verified_on": "2026-10-14",
+        "stale_after_days": 3,
+        "deadline_original_wording": {
+          "el": "Νέες ή τροποποιητικές αιτήσεις έως Παρ. 13/11/2026, 18:00 (επαναλειτουργία πλατφόρμας 5/10/2026)",
+          "en": "New or amended applications until Fri 13 Nov 2026, 18:00 Athens time (platform reopened 5 Oct 2026)"
+        },
+        "timezone": "Europe/Athens",
+        "verified_time_precision": "date",
+        "opens_at": "2026-10-05",
+        "closes_at": "2026-11-13T16:00:00Z",
+        "milestones": [
+          {
+            "label": "supplementary payment",
+            "date": "2026-10-09"
+          }
+        ]
+      },
+      "funding_or_benefit": {
+        "value": {
+          "el": "1ο–2ο παιδί: 70 / 42 / 28 € τον μήνα · 3ο+: 140 / 84 / 56 € τον μήνα",
+          "en": "1st–2nd child: €70 / €42 / €28 a month · 3rd+: €140 / €84 / €56 a month"
+        },
+        "state": "verified"
+      },
+      "conflicts": [],
+      "eligibility_rules": [
+        {
+          "field": "children",
+          "op": "gte",
+          "value": 1,
+          "label": {
+            "el": "Τουλάχιστον ένα εξαρτώμενο παιδί",
+            "en": "At least one dependent child"
+          },
+          "official_quote": null,
+          "db_category": "NEW:dependent_children",
+          "db_kind": "mandatory",
+          "evidence_state": "paraphrased: verbatim quote still to capture",
+          "evidence": {
+            "source_url": "https://opeka.gov.gr/oikogeneia/epidoma-paidiou-a21/",
+            "excerpt": null,
+            "location": null,
+            "checked_on": "2026-10-14"
+          }
+        },
+        {
+          "field": "residence",
+          "op": "eq",
+          "value": "GR",
+          "label": {
+            "el": "Διαμονή στην Ελλάδα (ομογενείς και αλλοδαποί χρειάζονται έγκυρη άδεια διαμονής)",
+            "en": "Living in Greece (overseas Greeks and foreign nationals need a valid residence permit)"
+          },
+          "official_quote": null,
+          "db_category": "residence",
+          "db_kind": "mandatory",
+          "evidence_state": "paraphrased: verbatim quote still to capture",
+          "evidence": {
+            "source_url": "https://opeka.gov.gr/oikogeneia/epidoma-paidiou-a21/",
+            "excerpt": null,
+            "location": null,
+            "checked_on": "2026-10-14"
+          }
+        },
+        {
+          "field": null,
+          "op": "authority",
+          "value": null,
+          "label": {
+            "el": "Εισοδηματική κατηγορία: τα όρια δεν αναφέρονται στη σελίδα που ελέγχθηκε",
+            "en": "Income category: limits are not stated on the page checked"
+          },
+          "official_quote": null,
+          "db_category": "other",
+          "db_kind": "informational",
+          "evidence_state": "not_evaluated: checked by the authority",
+          "evidence": {
+            "source_url": "https://opeka.gov.gr/oikogeneia/epidoma-paidiou-a21/",
+            "excerpt": null,
+            "location": null,
+            "checked_on": "2026-10-14"
+          }
+        }
+      ],
+      "application_steps": {
+        "el": [
+          "Αίτηση ηλεκτρονικά στο opeka.gr ή idika.gr με κωδικούς TAXISnet.",
+          "Η αίτηση μετράει μόνο όταν υποβληθεί οριστικά και εγκριθεί."
+        ],
+        "en": [
+          "Apply online at opeka.gr or idika.gr with TAXISnet credentials.",
+          "An application counts only once finally submitted and approved."
+        ]
+      },
+      "official_sources": [
+        {
+          "label": "ΟΠΕΚΑ — Επίδομα παιδιού Α21",
+          "url": "https://opeka.gov.gr/oikogeneia/epidoma-paidiou-a21/",
+          "checked_on": "2026-10-14"
+        },
+        {
+          "label": "ΟΠΕΚΑ — ανακοίνωση 8/10/2026 (προθεσμία 13/11/2026)",
+          "url": "https://opeka.gov.gr/katavoli-tis-sympliromatikis-pliromis-epidomatos-paidioy-a21-ypovoli-neon-aitiseon/",
+          "checked_on": "2026-10-14"
+        },
+        {
+          "label": "ΟΠΕΚΑ — ανακοίνωση 29/9/2026 (επαναλειτουργία 5/10/2026)",
+          "url": "https://opeka.gov.gr/oloklirosi-tis-diadikasias-elegchoy-ekkatharisis-kai-pliromis-toy-epidomatos-paidioy-a21-metathesi-tis-imerominias-epanaleitoyrgias-tis-efarmogis-ti-deytera-5-10-2026/",
+          "checked_on": "2026-10-14"
+        }
+      ],
+      "official_application_url": "https://opeka.gov.gr/oikogeneia/epidoma-paidiou-a21/",
+      "persona_tags": [
+        "household"
+      ],
+      "interest_tag": "family",
+      "information_only": false,
+      "automated_access_plan": {
+        "el": "RSS του ΟΠΕΚΑ (opeka.gov.gr/feed — έγκυρο RSS 2.0, περιέχει τις ανακοινώσεις Α21)· robots.txt μη ελεγμένο",
+        "en": "OPEKA RSS (opeka.gov.gr/feed — valid RSS 2.0, carries A21 notices); robots.txt not checked"
+      },
+      "record_class": "opportunity",
+      "db_mapping": {
+        "target_table": "opportunities",
+        "import": true,
+        "opportunity_type": "public_benefit",
+        "needs_new_type": true,
+        "status": "open",
+        "deadline_kind": "official",
+        "publication_basis": "manual",
+        "requirement_origin": "admin",
+        "is_synthetic": false,
+        "canonical_url": "https://opeka.gov.gr/oikogeneia/epidoma-paidiou-a21/",
+        "application_url": "https://opeka.gov.gr/oikogeneia/epidoma-paidiou-a21/",
+        "last_verified_at": "2026-10-14",
+        "title_origin": "platform-written, not the verbatim official title"
+      },
+      "uncertainties": [
+        "NOT STATED: income-category limits",
+        "Benefit page last modified 2024; status taken from notices of 29 Sep and 8 Oct 2026",
+        "CORRECTION v3: status was \"unconfirmed\" in v2; it is open"
+      ]
+    },
+    {
+      "id": "unemployment",
+      "record_kind": "service",
+      "demo_type": "benefit",
+      "suggested_opportunity_type": "public_benefit (NEW TYPE NEEDED)",
+      "scope": "gr",
+      "official_title": {
+        "el": "Τακτική επιδότηση ανεργίας",
+        "en": "Regular unemployment benefit"
+      },
+      "issuing_authority": {
+        "el": "ΔΥΠΑ",
+        "en": "ΔΥΠΑ (Public Employment Service)"
+      },
+      "summary": {
+        "el": "Επίδομα για όσους έχασαν μισθωτή εργασία, διάρκειας 5 έως 12 μηνών ανάλογα με τις ημέρες ασφάλισης. Προσαύξηση 10% για προστατευόμενα μέλη, υπό προϋποθέσεις.",
+        "en": "A benefit for people who lost salaried work, lasting 5 to 12 months depending on insured days. A 10% increase for dependants, subject to conditions."
+      },
+      "application_status": {
+        "value": "rolling",
+        "verified_on": "2026-10-14",
+        "stale_after_days": 30,
+        "deadline_original_wording": null,
+        "timezone": "Europe/Athens",
+        "verified_time_precision": "date",
+        "opens_at": null,
+        "closes_at": null,
+        "milestones": []
+      },
+      "funding_or_benefit": {
+        "value": {
+          "el": "Διάρκεια 5–12 μήνες · ποσό: δεν αναφέρεται στη σελίδα",
+          "en": "Duration 5–12 months · amount: not stated on the page"
+        },
+        "state": "partially_stated"
+      },
+      "conflicts": [
+        {
+          "el": "Από το 2025 εφαρμόζεται πιλοτικά νέο επίδομα ανεργίας σε τυχαία επιλεγμένους δικαιούχους, με άλλο ποσό και διάρκεια (έως 16 μήνες κατά την ανακοίνωση, έως 24 κατά τις συχνές ερωτήσεις). Η αίτηση είναι η ίδια.",
+          "en": "Since 2025 a new unemployment benefit is piloted for randomly selected claimants, with a different amount and duration (up to 16 months per the announcement, up to 24 per the FAQ). The application is the same."
+        }
+      ],
+      "eligibility_rules": [
+        {
+          "field": "employment",
+          "op": "eq",
+          "value": "unemployed",
+          "label": {
+            "el": "Άνεργος/η την ημέρα της αίτησης",
+            "en": "Unemployed on the day of the application"
+          },
+          "official_quote": null,
+          "db_category": "employment",
+          "db_kind": "mandatory",
+          "evidence_state": "paraphrased: verbatim quote still to capture",
+          "evidence": {
+            "source_url": "https://mitos.gov.gr/index.php/%CE%94%CE%94:%CE%A4%CE%B1%CE%BA%CF%84%CE%B9%CE%BA%CE%AE_%CE%95%CF%80%CE%B9%CE%B4%CF%8C%CF%84%CE%B7%CF%83%CE%B7_%CE%91%CE%BD%CE%B5%CF%81%CE%B3%CE%AF%CE%B1%CF%82",
+            "excerpt": null,
+            "location": null,
+            "checked_on": "2026-10-14"
+          }
+        },
+        {
+          "field": "lostJob",
+          "op": "eq",
+          "value": "yes",
+          "label": {
+            "el": "Λήξη ή καταγγελία μισθωτής σχέσης από τον εργοδότη, με εισφορές στον κλάδο ανεργίας",
+            "en": "Salaried job ended or terminated by the employer, with contributions to the unemployment branch"
+          },
+          "official_quote": null,
+          "db_category": "NEW:employment_end_reason",
+          "db_kind": "mandatory",
+          "evidence_state": "paraphrased: verbatim quote still to capture",
+          "evidence": {
+            "source_url": "https://mitos.gov.gr/index.php/%CE%94%CE%94:%CE%A4%CE%B1%CE%BA%CF%84%CE%B9%CE%BA%CE%AE_%CE%95%CF%80%CE%B9%CE%B4%CF%8C%CF%84%CE%B7%CF%83%CE%B7_%CE%91%CE%BD%CE%B5%CF%81%CE%B3%CE%AF%CE%B1%CF%82",
+            "excerpt": null,
+            "location": null,
+            "checked_on": "2026-10-14"
+          }
+        },
+        {
+          "field": "dypaCard",
+          "op": "eq",
+          "value": "yes",
+          "label": {
+            "el": "Έκδοση Δελτίου Ανεργίας",
+            "en": "Unemployment card issued"
+          },
+          "official_quote": null,
+          "db_category": "unemployment_registration",
+          "db_kind": "mandatory",
+          "evidence_state": "paraphrased: verbatim quote still to capture",
+          "evidence": {
+            "source_url": "https://mitos.gov.gr/index.php/%CE%94%CE%94:%CE%A4%CE%B1%CE%BA%CF%84%CE%B9%CE%BA%CE%AE_%CE%95%CF%80%CE%B9%CE%B4%CF%8C%CF%84%CE%B7%CF%83%CE%B7_%CE%91%CE%BD%CE%B5%CF%81%CE%B3%CE%AF%CE%B1%CF%82",
+            "excerpt": null,
+            "location": null,
+            "checked_on": "2026-10-14"
+          }
+        },
+        {
+          "field": null,
+          "op": "authority",
+          "value": null,
+          "label": {
+            "el": "Απαιτούμενες ημέρες ασφάλισης σε κρίσιμα διαστήματα: ο αριθμός δεν αναφέρεται",
+            "en": "Required insured days in critical periods: the number is not stated"
+          },
+          "official_quote": null,
+          "db_category": "other",
+          "db_kind": "informational",
+          "evidence_state": "not_evaluated: checked by the authority",
+          "evidence": {
+            "source_url": "https://mitos.gov.gr/index.php/%CE%94%CE%94:%CE%A4%CE%B1%CE%BA%CF%84%CE%B9%CE%BA%CE%AE_%CE%95%CF%80%CE%B9%CE%B4%CF%8C%CF%84%CE%B7%CF%83%CE%B7_%CE%91%CE%BD%CE%B5%CF%81%CE%B3%CE%AF%CE%B1%CF%82",
+            "excerpt": null,
+            "location": null,
+            "checked_on": "2026-10-14"
+          }
+        }
+      ],
+      "application_steps": {
+        "el": [
+          "Αίτηση στο gov.gr ή στις e-υπηρεσίες ΔΥΠΑ με κωδικούς TAXISnet, ή σε ΚΠΑ2.",
+          "Έντυπο Ε6 (καταγγελία) ή Ε7 (λήξη ορισμένου χρόνου), IBAN."
+        ],
+        "en": [
+          "Apply on gov.gr or ΔΥΠΑ e-services with TAXISnet credentials, or at a ΚΠΑ2 office.",
+          "Form Ε6 (termination) or Ε7 (fixed-term end), IBAN."
+        ]
+      },
+      "official_sources": [
+        {
+          "label": "Μίτος — Τακτική επιδότηση ανεργίας (ενημ. 25/9/2026)",
+          "url": "https://mitos.gov.gr/index.php/%CE%94%CE%94:%CE%A4%CE%B1%CE%BA%CF%84%CE%B9%CE%BA%CE%AE_%CE%95%CF%80%CE%B9%CE%B4%CF%8C%CF%84%CE%B7%CF%83%CE%B7_%CE%91%CE%BD%CE%B5%CF%81%CE%B3%CE%AF%CE%B1%CF%82",
+          "checked_on": "2026-10-14"
+        },
+        {
+          "label": "gov.gr — Αίτηση επιδόματος ανεργίας",
+          "url": "https://www.gov.gr/el/services/1001289/aitese-epidomatos-anergias",
+          "checked_on": "2026-10-14"
+        },
+        {
+          "label": "ypergasias.gov.gr — νέο επίδομα ανεργίας (πιλοτικό, 23/12/2024)",
+          "url": "https://ypergasias.gov.gr/neo-epidoma-anergias-me-perissotera-kinitra-gia-ergasia-pio-dikaio-pio-antapodotiko/",
+          "checked_on": "2026-10-14"
+        }
+      ],
+      "official_application_url": "https://www.gov.gr/el/services/1001289/aitese-epidomatos-anergias",
+      "persona_tags": [
+        "jobseeker"
+      ],
+      "interest_tag": "employment",
+      "information_only": false,
+      "automated_access_plan": {
+        "el": "Μίτος API — με εκκρεμή επιβεβαίωση όρων χρήσης (email στο api@mitos.gov.gr)",
+        "en": "Μίτος API — terms of use pending confirmation (email api@mitos.gov.gr)"
+      },
+      "record_class": "opportunity",
+      "db_mapping": {
+        "target_table": "opportunities",
+        "import": true,
+        "opportunity_type": "public_benefit",
+        "needs_new_type": true,
+        "status": "open",
+        "deadline_kind": "not_applicable",
+        "publication_basis": "manual",
+        "requirement_origin": "admin",
+        "is_synthetic": false,
+        "canonical_url": "https://mitos.gov.gr/index.php/%CE%94%CE%94:%CE%A4%CE%B1%CE%BA%CF%84%CE%B9%CE%BA%CE%AE_%CE%95%CF%80%CE%B9%CE%B4%CF%8C%CF%84%CE%B7%CF%83%CE%B7_%CE%91%CE%BD%CE%B5%CF%81%CE%B3%CE%AF%CE%B1%CF%82",
+        "application_url": "https://www.gov.gr/el/services/1001289/aitese-epidomatos-anergias",
+        "last_verified_at": "2026-10-14",
+        "title_origin": "platform-written, not the verbatim official title"
+      },
+      "uncertainties": [
+        "NOT STATED: required insured days and amount",
+        "ADDITIONAL/CONFLICT: pilot new benefit since 2025 for randomly selected claimants — duration up to 16 months (announcement) vs up to 24 (FAQ)"
+      ]
+    },
+    {
+      "id": "ted",
+      "record_kind": "directory",
+      "demo_type": "tender",
+      "suggested_opportunity_type": "— (source, not an opportunity)",
+      "scope": "eu",
+      "official_title": {
+        "el": "TED — δημόσιοι διαγωνισμοί σε Ελλάδα και ΕΕ",
+        "en": "TED — public tenders in Greece and the EU"
+      },
+      "issuing_authority": {
+        "el": "Υπηρεσία Εκδόσεων της ΕΕ",
+        "en": "Publications Office of the EU"
+      },
+      "summary": {
+        "el": "Η επίσημη πύλη για προκηρύξεις δημόσιων συμβάσεων του Συμπληρώματος της Επίσημης Εφημερίδας της ΕΕ. Είναι πηγή αναζήτησης, όχι μία πρόσκληση· οι διαγωνισμοί δεν έχουν συνδεθεί ακόμη ένας-ένας.",
+        "en": "The official portal for public procurement notices in the Supplement to the Official Journal of the EU. It is a search source, not a single call; individual tenders are not yet connected."
+      },
+      "application_status": {
+        "value": "rolling",
+        "verified_on": "2026-10-14",
+        "stale_after_days": 30,
+        "deadline_original_wording": null,
+        "timezone": null,
+        "verified_time_precision": "date",
+        "opens_at": null,
+        "closes_at": null,
+        "milestones": []
+      },
+      "funding_or_benefit": {
+        "value": null,
+        "state": "not_stated"
+      },
+      "conflicts": [],
+      "eligibility_rules": [],
+      "application_steps": {
+        "el": [
+          "Αναζήτηση στο ted.europa.eu με φίλτρο χώρας «Ελλάδα» και κωδικούς CPV.",
+          "Η πλατφόρμα σχεδιάζει να συνδέσει το επίσημο API του TED."
+        ],
+        "en": [
+          "Search ted.europa.eu filtering by country \"Greece\" and CPV codes.",
+          "The platform plans to connect TED's official API."
+        ]
+      },
+      "official_sources": [
+        {
+          "label": "ted.europa.eu",
+          "url": "https://ted.europa.eu/en/",
+          "checked_on": "2026-10-14"
+        },
+        {
+          "label": "TED Developer Portal",
+          "url": "https://developer.ted.europa.eu",
+          "checked_on": "2026-10-14"
+        }
+      ],
+      "official_application_url": "https://ted.europa.eu/en/",
+      "persona_tags": [
+        "business"
+      ],
+      "interest_tag": "tenders",
+      "information_only": true,
+      "automated_access_plan": {
+        "el": "Επίσημο τεκμηριωμένο API (developer.ted.europa.eu) — δεν έχει συνδεθεί",
+        "en": "Official documented API (developer.ted.europa.eu) — not connected"
+      },
+      "record_class": "source_directory",
+      "db_mapping": {
+        "target_table": "sources",
+        "import": false,
+        "opportunity_type": null,
+        "needs_new_type": false,
+        "status": "open",
+        "deadline_kind": "not_applicable",
+        "publication_basis": "manual",
+        "requirement_origin": "admin",
+        "is_synthetic": false,
+        "canonical_url": "https://ted.europa.eu/en/",
+        "application_url": "https://ted.europa.eu/en/",
+        "last_verified_at": "2026-10-14",
+        "title_origin": "platform-written, not the verbatim official title"
+      },
+      "uncertainties": [
+        "NOT AN OPPORTUNITY: import into the source registry, not the opportunity table"
+      ]
+    }
+  ],
+  "supersedes": "official-records-2026-10-14.json (jackal-records/1) — kept unchanged as reference",
+  "verification": {
+    "checked_on": "2026-10-14",
+    "time_precision": "date",
+    "note": "Pages were read between about 11:30 and 12:45 Athens time on 14 Oct 2026; exact per-page times were not recorded.",
+    "method": "manual reading of official pages; no connector"
+  }
+}

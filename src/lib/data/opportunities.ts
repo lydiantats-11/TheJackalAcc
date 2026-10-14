@@ -43,6 +43,10 @@ export interface OpportunityRow {
   geographic_scope: unknown;
   source_name: string | null;
   source_stale_after_hours: number | null;
+  /** 0007: per-record re-check window for manually reviewed records (e.g. 3 days for an open benefit window). */
+  stale_after_days: number | null;
+  record_kind: "call" | "application_round" | "standing_procedure" | "programme" | "tax_regime";
+  uncertainties: string[];
 }
 
 export interface OpportunityFilters {
@@ -120,7 +124,7 @@ export function toMatchable(row: OpportunityRow, requirements: RequirementRecord
     closes_at: row.closes_at,
     deadline_kind: row.deadline_kind,
     last_verified_at: row.last_verified_at,
-    stale_after_hours: row.is_synthetic ? 24 * 365 * 10 : row.source_stale_after_hours ?? 72,
+    stale_after_hours: row.is_synthetic ? 24 * 365 * 10 : row.stale_after_days ? row.stale_after_days * 24 : row.source_stale_after_hours ?? 72,
     has_conflict: row.has_conflict,
     budget_exhausted: row.budget_exhausted,
     requirement_set_completeness: row.requirement_set_completeness,
