@@ -1,0 +1,30 @@
+# Diagnostic only, on demand: measures whether paging the EU search API returns a complete, stable list.
+# Read-only requests to the public API; saves the result to the live-test-results branch.
+name: EU F&T paging probe
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [probe]
+
+permissions:
+  contents: write   # only to save the result to the `live-test-results` branch
+
+jobs:
+  probe:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with: { node-version: 22 }
+      - name: Probe
+        run: npx --yes tsx@4 scripts/eu-ft-paging-probe.ts > probe.json
+      - name: Save result
+        if: always()
+        run: |
+          cp probe.json /tmp/probe.json 2>/dev/null || echo '{"error":"probe produced no output"}' > /tmp/probe.json
+          git config user.name "jackal-live-test"; git config user.email "actions@users.noreply.github.com"
+          git fetch --depth 1 origin live-test-results && git checkout -B live-test-results FETCH_HEAD
+          mkdir -p probes && cp /tmp/probe.json "probes/$(date -u +%Y-%m-%dT%H%M%SZ)-run${GITHUB_RUN_NUMBER}.json" && cp /tmp/probe.json probes/latest.json
+          git add probes && git commit -qm "Paging probe, run ${GITHUB_RUN_NUMBER}" && git push origin live-test-results
