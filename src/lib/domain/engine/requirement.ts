@@ -9,7 +9,11 @@ export const REQUIREMENT_CATEGORIES = [
   "applicant_type", "geography", "business_location", "residence", "age", "education", "employment",
   "unemployment_registration", "business_stage", "business_age", "legal_form", "sector", "company_size",
   "turnover", "cofinancing", "no_expenditure_before_application", "de_minimis", "registration_timing", "sme_status",
-  "consortium", "other",
+  "consortium",
+  // 0007: verified records (Greek tax regimes, benefits, EU youth programmes)
+  "birth_date_range", "tax_residence_transfer", "prior_tax_residence", "moving_from", "activity_in_greece", "intent_to_stay",
+  "investment_amount", "student_status", "dependent_children", "employment_end",
+  "other",
 ] as const;
 export type RequirementCategory = (typeof REQUIREMENT_CATEGORIES)[number];
 
@@ -67,7 +71,8 @@ export const VALUE_SCHEMAS: Record<RequirementCategory, z.ZodTypeAny | null> = {
   applicant_type: z.object({ types: z.array(z.string()).min(1) }),
   geography: z.object({ regions: z.array(nuts).min(1), exclude_areas: z.array(excludedArea).optional() }),
   business_location: z.object({ regions: z.array(nuts).min(1) }),
-  residence: z.object({ countries: z.array(z.string().length(2)).min(1), basis: z.enum(["residence", "tax_residence"]).default("residence") }),
+  /** basis: where the person lives, their tax residence, their citizenship, or either residence or citizenship. */
+  residence: z.object({ countries: z.array(z.string().length(2)).min(1), basis: z.enum(["residence", "tax_residence", "citizenship", "residence_or_citizenship"]).default("residence") }),
   age: z.object({ min: z.number().int().optional(), max: z.number().int().optional(), reference_date: referenceDate.optional() })
     .refine((v) => v.min !== undefined || v.max !== undefined),
   education: z.object({ min_level: z.enum(EDUCATION_ORDER) }),
@@ -99,6 +104,20 @@ export const VALUE_SCHEMAS: Record<RequirementCategory, z.ZodTypeAny | null> = {
   /** EU SME definition (Recommendation 2003/361/EC): headcount AND (turnover OR balance sheet), incl. partner/linked data. */
   sme_status: z.object({ max_class: z.enum(["micro", "small", "medium"]) }),
   consortium: z.object({ min_entities: z.number().int().min(2), min_countries: z.number().int().min(1).optional() }),
+  /** Born within [from, to] (inclusive), e.g. DiscoverEU: 2008-01-01 … 2008-12-31. */
+  birth_date_range: z.object({ from: z.string().regex(/^\d{4}-\d{2}-\d{2}$/), to: z.string().regex(/^\d{4}-\d{2}-\d{2}$/) }),
+  /** The applicant is moving (or has moved) tax residence to Greece. */
+  tax_residence_transfer: z.object({ required: z.literal(true) }),
+  /** Greek tax resident in at most `max_resident_years` of the `window_years` before the move (5A: 1 of 8; 5B/5C: 1 of 6). */
+  prior_tax_residence: z.object({ window_years: z.union([z.literal(6), z.literal(8)]), max_resident_years: z.number().int().min(0) }),
+  moving_from: z.object({ groups: z.array(z.enum(["eu_eea", "agreement"])).min(1) }),
+  activity_in_greece: z.object({ activities: z.array(z.enum(["employee_gr", "own_business", "remote_foreign", "pension"])).min(1) }),
+  intent_to_stay: z.object({ min_years: z.number().int().positive() }),
+  investment_amount: z.object({ min_eur: z.number().positive() }),
+  student_status: z.object({ required: z.literal(true) }),
+  dependent_children: z.object({ min: z.number().int().min(1) }),
+  /** How the last salaried job ended, e.g. unemployment benefit: ended or terminated by the employer. */
+  employment_end: z.object({ reasons: z.array(z.enum(["ended_by_employer", "contract_ended", "resigned"])).min(1) }),
   other: null, // free-text requirement: never machine-evaluated
 };
 

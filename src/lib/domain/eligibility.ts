@@ -72,6 +72,7 @@ const FACTOR_OF: Partial<Record<string, Factor>> = {
   applicant_type: "business_stage", business_stage: "business_stage", business_age: "business_stage", legal_form: "business_stage",
   registration_timing: "business_stage", sme_status: "business_stage",
   geography: "geography", business_location: "geography", sector: "sector", cofinancing: "capital", age: "age", education: "education",
+  birth_date_range: "age",
 };
 
 export interface DeadlineFactor {

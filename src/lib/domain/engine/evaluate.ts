@@ -11,7 +11,7 @@
  */
 import { EDUCATION_ORDER, type EducationLevel } from "../requirements";
 import {
-  AGE_RANGE_BOUNDS, CONTRIBUTION_BOUNDS, EMPLOYEE_BOUNDS, SME_CEILINGS, TURNOVER_BOUNDS, isSentinel, type MatchProfile,
+  AGE_RANGE_BOUNDS, CONTRIBUTION_BOUNDS, EMPLOYEE_BOUNDS, INVESTMENT_BOUNDS, SME_CEILINGS, TURNOVER_BOUNDS, isSentinel, type MatchProfile,
 } from "../profile";
 import { isKnownCategory, VALUE_SCHEMAS, type RequirementRecord } from "./requirement";
 
@@ -152,11 +152,20 @@ const CHECKS: Record<string, (v: any, p: MatchProfile, ctx: EvalContext) => Part
     return inRegions(r, v.regions) ? sat("bizloc_pass", params) : fail("bizloc_fail", params);
   },
 
-  residence(v: { countries: string[]; basis: "residence" | "tax_residence" }, p) {
-    const c = v.basis === "tax_residence" ? p.tax_residence_country : p.country_of_residence;
-    const q = v.basis === "tax_residence" ? "tax_residence_country" : "country_of_residence";
-    if (!c || isSentinel(c)) return unk("residence_unanswered", q, { countries: v.countries });
-    return v.countries.includes(c) ? sat("residence_pass", { countries: v.countries }) : fail("residence_fail", { countries: v.countries });
+  residence(v: { countries: string[]; basis: "residence" | "tax_residence" | "citizenship" | "residence_or_citizenship" }, p) {
+    const params = { countries: v.countries };
+    const FIELD = { residence: "country_of_residence", tax_residence: "tax_residence_country", citizenship: "citizenship_country" } as const;
+    const one = (b: keyof typeof FIELD): Partial => {
+      const c = p[FIELD[b]];
+      if (!c || isSentinel(c)) return unk("residence_unanswered", FIELD[b], params);
+      return v.countries.includes(c) ? sat("residence_pass", params) : fail("residence_fail", params);
+    };
+    if (v.basis !== "residence_or_citizenship") return one(v.basis);
+    // Either is enough: a pass on one side wins; a fail needs both sides answered and failing.
+    const r = one("residence"), c = one("citizenship");
+    if (r.state === "satisfied" || c.state === "satisfied") return sat("residence_pass", params);
+    if (r.state === "not_satisfied" && c.state === "not_satisfied") return fail("residence_fail", params);
+    return r.state === "unknown" ? r : c;
   },
 
   age(v: { min?: number; max?: number; reference_date?: string }, p, ctx) {
@@ -356,6 +365,87 @@ const CHECKS: Record<string, (v: any, p: MatchProfile, ctx: EvalContext) => Part
     if (t === true || b === true) return sat("sme_pass", params); // headcount AND (turnover OR balance sheet)
     if (t === false && b === false) return fail("sme_financial_exceeds", params);
     return unk("sme_financials_unanswered", t === null ? "turnover_range" : "balance_sheet_range", params);
+  },
+
+  birth_date_range(v: { from: string; to: string }, p) {
+    const params = { from: v.from, to: v.to };
+    const y = p.birth_year;
+    if (!y) return unk("birthdate_unanswered", "birth_year", params);
+    const start = `${y}-01-01`, end = `${y}-12-31`;
+    if (start >= v.from && end <= v.to) return sat("birthdate_pass", params);
+    if (end < v.from || start > v.to) return fail("birthdate_fail", params);
+    return unk("birthdate_boundary", undefined, params); // depends on the exact date, which we do not collect
+  },
+
+  tax_residence_transfer(_v, p) {
+    const m = p.tax_residence_move;
+    if (m === "planning" || m === "moved") return sat("taxmove_pass", { move: m });
+    if (m === "stay_abroad" || m === "already_gr") return fail("taxmove_fail", { move: m });
+    return unk("taxmove_unanswered", "tax_residence_move");
+  },
+
+  prior_tax_residence(v: { window_years: 6 | 8; max_resident_years: number }, p) {
+    const field = v.window_years === 8 ? "gr_tax_resident_prev8" : "gr_tax_resident_prev6";
+    const params = { window: v.window_years, max_years: v.max_resident_years };
+    const a = p[field];
+    if (!a || a === "not_sure" || a === "prefer_not") return unk("prior_res_unanswered", field, params);
+    const atLeast = a === "2plus" ? 2 : Number(a);
+    if (a !== "2plus" && atLeast <= v.max_resident_years) return sat("prior_res_pass", params);
+    if (atLeast > v.max_resident_years) return fail("prior_res_fail", params);
+    return unk("prior_res_boundary", field, params); // "2 or more" against a limit of 2+
+  },
+
+  moving_from(v: { groups: string[] }, p) {
+    const m = p.moving_from;
+    if (!m || m === "not_sure" || m === "prefer_not") return unk("moving_from_unanswered", "moving_from", { groups: v.groups });
+    // "other" can still be a treaty country the person does not know about; we fail only on an explicit answer.
+    return v.groups.includes(m) ? sat("moving_from_pass", { groups: v.groups }) : fail("moving_from_fail", { groups: v.groups });
+  },
+
+  activity_in_greece(v: { activities: string[] }, p) {
+    const a = p.activity_in_greece;
+    if (!a || a === "not_sure" || a === "prefer_not") return unk("activity_unanswered", "activity_in_greece", { activities: v.activities });
+    return v.activities.includes(a) ? sat("activity_pass", { activities: v.activities }) : fail("activity_fail", { activities: v.activities });
+  },
+
+  intent_to_stay(v: { min_years: number }, p) {
+    const params = { min_years: v.min_years };
+    if (v.min_years > 2) return unk("stay_longer_than_asked", undefined, params); // the profile only asks about 2 years
+    if (p.intends_to_stay_2y === "yes") return sat("stay_pass", params);
+    if (p.intends_to_stay_2y === "no") return fail("stay_fail", params);
+    return unk("stay_unanswered", "intends_to_stay_2y", params);
+  },
+
+  investment_amount(v: { min_eur: number }, p) {
+    const params = { min_eur: v.min_eur };
+    const r = p.planned_investment_range;
+    if (!r || r === "not_sure" || r === "prefer_not") return unk("investment_unanswered", "planned_investment_range", params);
+    const [lo, hi] = INVESTMENT_BOUNDS[r];
+    if (lo >= v.min_eur) return sat("investment_pass", params);
+    if (hi !== null && hi < v.min_eur) return fail("investment_fail", params);
+    return unk("investment_boundary", "planned_investment_range", params);
+  },
+
+  student_status(_v, p) {
+    if (p.has_academic_id === "yes") return sat("student_pass");
+    if (p.has_academic_id === "no") return fail("student_fail");
+    return unk("student_unanswered", "has_academic_id");
+  },
+
+  dependent_children(v: { min: number }, p) {
+    const params = { min: v.min };
+    const c = p.dependent_children;
+    if (!c || c === "prefer_not") return unk("children_unanswered", "dependent_children", params);
+    const atLeast = c === "3_plus" ? 3 : Number(c);
+    if (atLeast >= v.min) return sat("children_pass", params);
+    if (c !== "3_plus") return fail("children_fail", params);
+    return unk("children_boundary", "dependent_children", params);
+  },
+
+  employment_end(v: { reasons: string[] }, p) {
+    const e = p.last_job_end;
+    if (!e || e === "not_sure" || e === "prefer_not") return unk("jobend_unanswered", "last_job_end", { reasons: v.reasons });
+    return v.reasons.includes(e) ? sat("jobend_pass", { reasons: v.reasons }) : fail("jobend_fail", { reasons: v.reasons });
   },
 
   consortium(v: { min_entities: number; min_countries?: number }, p) {

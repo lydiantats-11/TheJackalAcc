@@ -42,6 +42,19 @@ export interface MatchProfile {
   dependent_children?: "0" | "1" | "2" | "3_plus" | "prefer_not" | null;
   household_income_range?: HouseholdIncomeRange | null;
   property_owned?: "yes" | "no" | "not_sure" | "prefer_not" | null;
+  // ── residence abroad / moving to Greece (Persona 1 §8, brief A4) — citizenship, residence and tax residence differ ──
+  citizenship_country?: string | null; // ISO 3166-1 alpha-2, or not_sure / prefer_not
+  tax_residence_move?: "planning" | "moved" | "stay_abroad" | "already_gr" | "not_sure" | "prefer_not" | null;
+  /** Years of Greek tax residence within the 6 / 8 years before the move. */
+  gr_tax_resident_prev6?: "0" | "1" | "2plus" | "not_sure" | "prefer_not" | null;
+  gr_tax_resident_prev8?: "0" | "1" | "2plus" | "not_sure" | "prefer_not" | null;
+  moving_from?: "eu_eea" | "agreement" | "other" | "not_sure" | "prefer_not" | null;
+  activity_in_greece?: "employee_gr" | "own_business" | "remote_foreign" | "pension" | "none" | "not_sure" | "prefer_not" | null;
+  intends_to_stay_2y?: "yes" | "no" | "not_sure" | null;
+  planned_investment_range?: "none" | "under_100k" | "100k_500k" | "500k_plus" | "not_sure" | "prefer_not" | null;
+  // ── studies & work ──
+  has_academic_id?: "yes" | "no" | "not_sure" | null;
+  last_job_end?: "ended_by_employer" | "contract_ended" | "resigned" | "still_employed" | "never_salaried" | "not_sure" | "prefer_not" | null;
   // ── where ──
   country_of_residence?: string | null;
   tax_residence_country?: string | null; // only asked when a call requires it
@@ -110,6 +123,11 @@ export const SME_CEILINGS = {
   small: { staff: 50, turnover: 10_000_000, balance: 10_000_000 },
   medium: { staff: 250, turnover: 50_000_000, balance: 43_000_000 },
 } as const;
+
+/** [lower, upper] in EUR of planned investment ranges; null upper = unbounded. */
+export const INVESTMENT_BOUNDS: Record<"none" | "under_100k" | "100k_500k" | "500k_plus", [number, number | null]> = {
+  none: [0, 0], under_100k: [0, 100_000], "100k_500k": [100_000, 500_000], "500k_plus": [500_000, null],
+};
 
 export const TURNOVER_BOUNDS: Record<Exclude<TurnoverRange, "not_sure" | "prefer_not">, [number, number | null]> = {
   under_100k: [0, 100_000], "100k_2m": [100_000, 2_000_000], "2m_10m": [2_000_000, 10_000_000],

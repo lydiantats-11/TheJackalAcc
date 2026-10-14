@@ -30,14 +30,17 @@ export const SECTION_FIELDS: Record<Section, Field[]> = {
   applying_as: ["persona"],
   location: ["region_codes", "municipality", "willing_to_relocate"],
   person: ["age_range", "birth_year"],
-  work: ["education_level", "employment_status", "dypa_registered"],
+  work: ["education_level", "employment_status", "dypa_registered", "last_job_end", "has_academic_id"],
   entrepreneurship: ["business_stage", "own_contribution_range", "sectors"],
   business: [
     "legal_form", "business_registration_date", "business_region", "employees_range", "turnover_range", "balance_sheet_range",
     "enterprise_relationship", "public_ownership_25", "has_consortium_partners",
   ],
   household: ["housing_status", "first_home_purchase", "household_size", "dependent_children", "household_income_range", "property_owned"],
-  international: ["tax_residence_country"],
+  international: [
+    "country_of_residence", "citizenship_country", "tax_residence_country", "tax_residence_move", "gr_tax_resident_prev6",
+    "moving_from", "activity_in_greece", "intends_to_stay_2y", "planned_investment_range", "gr_tax_resident_prev8",
+  ],
   project: ["project_budget_eur", "planned_project_start", "de_minimis_received_3y_eur"],
 };
 
@@ -58,6 +61,17 @@ const OPENED_BY: Record<Section, "always" | { personas: PersonaId[]; interests: 
 const FIELD_CONDITIONS: Partial<Record<Field, (p: MatchProfile) => boolean>> = {
   // Only ask about DYPA registration when the person is (or may be) unemployed.
   dypa_registered: (p) => !["employed", "self_employed", "student", "inactive"].includes(String(p.employment_status ?? "")),
+  // Only people who lost a salaried job are asked how it ended (unemployment benefit rule).
+  last_job_end: (p) => p.employment_status === "unemployed",
+  // Academic ID only for students, or when employment is not yet answered.
+  has_academic_id: (p) => !p.employment_status || p.employment_status === "student" || p.employment_status === "not_sure",
+  // Return-to-Greece questions only once a move of tax residence is planned or done.
+  gr_tax_resident_prev6: (p) => p.tax_residence_move === "planning" || p.tax_residence_move === "moved",
+  moving_from: (p) => p.tax_residence_move === "planning" || p.tax_residence_move === "moved",
+  activity_in_greece: (p) => p.tax_residence_move === "planning" || p.tax_residence_move === "moved",
+  planned_investment_range: (p) => p.tax_residence_move === "planning" || p.tax_residence_move === "moved",
+  intends_to_stay_2y: (p) => p.activity_in_greece === "employee_gr" || p.activity_in_greece === "own_business",
+  gr_tax_resident_prev8: (p) => p.planned_investment_range === "500k_plus",
   // Homeowners are not first-time buyers.
   first_home_purchase: (p) => p.housing_status !== "owner",
   // Only asked when an opportunity needs them (unchanged behaviour).
@@ -106,6 +120,9 @@ export function visibleSections(p: MatchProfile, ask: string[] = []): Set<Sectio
       fields.some((f) => isAnswered(p[f as Field]))
     ) out.add(s);
   }
+  // Someone living or tax-resident outside Greece always sees the residence-abroad questions.
+  const abroad = (c: unknown) => typeof c === "string" && /^[A-Z]{2}$/.test(c) && c !== "GR";
+  if (abroad(p.country_of_residence) || abroad(p.tax_residence_country)) out.add("international");
   // A registered business always sees the business questions (unchanged behaviour).
   if (p.business_stage === "registered_new" || p.business_stage === "established") out.add("business");
   return out;
