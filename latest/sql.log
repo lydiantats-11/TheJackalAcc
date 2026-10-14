@@ -1,7 +1,7 @@
 
 ===== 1. retrieval (run1) =====
 {
-  "run_id": "e427f9c4-76f1-4dd9-b05b-e3e6db8f779d",
+  "run_id": "78eede1b-0831-4a77-9aa3-3f552467e0e1",
   "status": "succeeded",
   "outcomes": {
     "new": 1000
@@ -55,15 +55,15 @@
  CEF-T-2021-AFIFCOEN-WORKS-LNG              | status   | https://ec.europa.eu/info/funding-tenders/opportunities/data/topicDetails/CEF-T-2021-AFIFCOEN-WORKS-LNG.json                                 | parser |             2
 (10 rows)
 
-                  id                  |  status   |          started_at           |        finished_at         | items_seen | items_new | items_changed | connector_version | error 
---------------------------------------+-----------+-------------------------------+----------------------------+------------+-----------+---------------+-------------------+-------
- e427f9c4-76f1-4dd9-b05b-e3e6db8f779d | succeeded | 2026-10-14 11:18:04.268734+00 | 2026-10-14 11:18:22.232+00 |       1000 |      1000 |             0 | 0.2.0             | 
+                  id                  |  status   |          started_at          |        finished_at         | items_seen | items_new | items_changed | connector_version | error 
+--------------------------------------+-----------+------------------------------+----------------------------+------------+-----------+---------------+-------------------+-------
+ 78eede1b-0831-4a77-9aa3-3f552467e0e1 | succeeded | 2026-10-14 11:22:31.43633+00 | 2026-10-14 11:22:55.981+00 |       1000 |      1000 |             0 | 0.2.0             | 
 (1 row)
 
 
 ===== 4. repeat import (run2) =====
 {
-  "run_id": "e3563e2c-fed9-489b-83a4-70bf3d711c06",
+  "run_id": "76dee0b2-e689-4a62-a089-750a239e342a",
   "status": "succeeded",
   "outcomes": {
     "unchanged": 1000
@@ -79,12 +79,12 @@
 ===== 5. simulated amendment (run3) =====
                   id                  |            official_identifier             |       closes_at        
 --------------------------------------+--------------------------------------------+------------------------
- 50ba8e05-0acf-4365-b60d-c81a9a186861 | CEF-DIG-2026-CABLE-REPAIR-CAPACITIES-WORKS | 2026-12-25 00:00:00+00
+ eaedebd8-e231-4205-91ff-67a90dfa958e | CEF-DIG-2026-CABLE-REPAIR-CAPACITIES-WORKS | 2026-12-25 00:00:00+00
 (1 row)
 
 UPDATE 1
 {
-  "run_id": "33fb7a76-6c8c-4930-99c8-80a5dc0e63e2",
+  "run_id": "92dc73c8-35ca-44fc-a322-dd566d6f5086",
   "status": "succeeded",
   "outcomes": {
     "changed": 1,
@@ -99,40 +99,24 @@ UPDATE 1
 }
  version | change_kind |          created_at           
 ---------+-------------+-------------------------------
-       1 | created     | 2026-10-14 11:18:18.379924+00
-       2 | amendment   | 2026-10-14 11:18:48.869459+00
+       1 | created     | 2026-10-14 11:22:45.899911+00
+       2 | amendment   | 2026-10-14 11:23:26.462258+00
 (2 rows)
 
 
 ===== 6. display =====
-node:internal/modules/run_main:123
-    triggerUncaughtException(
-    ^
-
-page.goto: net::ERR_CONNECTION_REFUSED at http://127.0.0.1:3000/opportunities
-Call log:
-  - navigating to "http://127.0.0.1:3000/opportunities", waiting until "networkidle"
-
-    at /home/runner/work/TheJackalAcc/TheJackalAcc/scripts/live-test-screenshots.mjs:7:12 {
-  log: [
-    '  - navigating to "http://127.0.0.1:3000/opportunities", waiting until "networkidle"'
-  ],
-  name: 'Error'
-}
-
-Node.js v22.23.3
-screenshots failed
+screenshots saved
 
 ===== 7a. freshness =====
         slug        | lifecycle |      last_success_at       |       last_check_at        | consecutive_failures 
 --------------------+-----------+----------------------------+----------------------------+----------------------
- eu-funding-tenders | tested    | 2026-10-14 11:18:50.585+00 | 2026-10-14 11:18:50.585+00 |                    0
+ eu-funding-tenders | tested    | 2026-10-14 11:23:28.486+00 | 2026-10-14 11:23:28.486+00 |                    0
 (1 row)
 
 
 ===== 7b. failure (official host made unreachable) =====
 {
-  "run_id": "02213789-9c73-4190-aba9-b954d406605c",
+  "run_id": "46811f87-7a32-4c03-be7c-6f5a5f98c6d2",
   "status": "failed",
   "error": "Error: host resolves to a non-public address: api.tech.ec.europa.eu",
   "outcomes": {},

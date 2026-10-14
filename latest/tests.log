@@ -5,23 +5,30 @@
 
 [1m[30m[46m RUN [49m[39m[22m [36mv5.0.4 [39m[90m/home/runner/work/TheJackalAcc/TheJackalAcc[39m
 
- [32m✓[39m tests/ingestion.test.ts [2m([22m[2m21 tests[22m[2m)[22m[33m 2099[2mms[22m[39m
- [32m✓[39m tests/engine.test.ts [2m([22m[2m27 tests[22m[2m)[22m[32m 68[2mms[22m[39m
- [32m✓[39m tests/extraction.test.ts [2m([22m[2m13 tests[22m[2m)[22m[33m 1027[2mms[22m[39m
- [32m✓[39m tests/real-calls.test.ts [2m([22m[2m22 tests[22m[2m)[22m[32m 23[2mms[22m[39m
- [32m✓[39m tests/auth-and-access.test.ts [2m([22m[2m11 tests[22m[2m)[22m[33m 778[2mms[22m[39m
- [32m✓[39m tests/personas.test.ts [2m([22m[2m13 tests[22m[2m)[22m[32m 49[2mms[22m[39m
- [32m✓[39m tests/residence-and-records.test.ts [2m([22m[2m15 tests[22m[2m)[22m[32m 11[2mms[22m[39m
- [32m✓[39m tests/end-to-end-flow.test.ts [2m([22m[2m3 tests[22m[2m)[22m[33m 405[2mms[22m[39m
- [32m✓[39m tests/status-and-sources.test.ts [2m([22m[2m12 tests[22m[2m)[22m[32m 46[2mms[22m[39m
- [32m✓[39m tests/scenarios-and-money.test.ts [2m([22m[2m8 tests[22m[2m)[22m[32m 17[2mms[22m[39m
- [32m✓[39m tests/profile-update.test.ts [2m([22m[2m5 tests[22m[2m)[22m[32m 214[2mms[22m[39m
+ [32m✓[39m tests/ingestion.test.ts [2m([22m[2m21 tests[22m[2m)[22m[33m 5629[2mms[22m[39m
+   [32m✓[39m ingestion pipeline + worker (PostgreSQL) [2m(13)[22m
+     [33m[2m✓[22m[39m #1/#2 paginates, creates one record per topic, and a re-run creates no duplicates or extra events[33m 523[2mms[22m[39m
+     [33m[2m✓[22m[39m #13/#14 an extension is versioned, re-labelled 'extended', emits events and recalculates matches[33m 514[2mms[22m[39m
+     [33m[2m✓[22m[39m #24 a closed call is not reopened by stale data; newer evidence may reopen it[33m 563[2mms[22m[39m
+     [33m[2m✓[22m[39m scheduled runs skip disabled sources; 'manual' sources have no adapter to run[33m 344[2mms[22m[39m
+ [32m✓[39m tests/engine.test.ts [2m([22m[2m27 tests[22m[2m)[22m[32m 88[2mms[22m[39m
+ [32m✓[39m tests/extraction.test.ts [2m([22m[2m13 tests[22m[2m)[22m[33m 2109[2mms[22m[39m
+ [32m✓[39m tests/real-calls.test.ts [2m([22m[2m22 tests[22m[2m)[22m[32m 29[2mms[22m[39m
+ [32m✓[39m tests/auth-and-access.test.ts [2m([22m[2m11 tests[22m[2m)[22m[33m 1234[2mms[22m[39m
+   [32m✓[39m auth & access control (PostgreSQL) [2m(11)[22m
+     [33m[2m✓[22m[39m rate-limits repeated failed logins[33m 431[2mms[22m[39m
+ [32m✓[39m tests/personas.test.ts [2m([22m[2m13 tests[22m[2m)[22m[32m 61[2mms[22m[39m
+ [32m✓[39m tests/residence-and-records.test.ts [2m([22m[2m15 tests[22m[2m)[22m[32m 14[2mms[22m[39m
+ [32m✓[39m tests/end-to-end-flow.test.ts [2m([22m[2m3 tests[22m[2m)[22m[33m 529[2mms[22m[39m
+ [32m✓[39m tests/status-and-sources.test.ts [2m([22m[2m12 tests[22m[2m)[22m[32m 32[2mms[22m[39m
+ [32m✓[39m tests/scenarios-and-money.test.ts [2m([22m[2m8 tests[22m[2m)[22m[32m 21[2mms[22m[39m
+ [32m✓[39m tests/profile-update.test.ts [2m([22m[2m5 tests[22m[2m)[22m[33m 325[2mms[22m[39m
 
 [2m Test Files [22m [1m[32m11 passed[39m[22m[90m (11)[39m
 [2m      Tests [22m [1m[32m150 passed[39m[22m[90m (150)[39m
-[2m   Start at [22m 11:17:30
-[2m   Duration [22m 6.28s[2m (tests 85%, import 10%, transform 5%)[22m
+[2m   Start at [22m 11:21:35
+[2m   Duration [22m 12.03s[2m (tests 90%, import 7%, transform 3%)[22m
 
-[2m    Isolate [22m [33m11 workers spawned[39m[2m · ~59ms startup each (spawn + environment, per file)[22m
-[2m            [22m [2mat least ~589ms faster with [22m[33misolate: false[39m[2m — reuses workers across files instead of one per file[22m
+[2m    Isolate [22m [33m11 workers spawned[39m[2m · ~74ms startup each (spawn + environment, per file)[22m
+[2m            [22m [2mat least ~737ms faster with [22m[33misolate: false[39m[2m — reuses workers across files instead of one per file[22m
 
