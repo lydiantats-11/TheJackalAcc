@@ -19,10 +19,28 @@ function tzOffsetMinutes(tz: string, at: Date): number {
   return Math.round((asUtc - at.getTime()) / 60_000);
 }
 
-export function normaliseDeadline(raw: string | null | undefined, sourceTimezone: string): NormalisedDeadline {
+export interface DeadlineReading {
+  /**
+   * The source writes LOCAL wall-clock time with a "+0000"/"Z" label (EU Funding & Tenders, measured live 2026-10-14:
+   * deadlines arrive as either T00:00:00.000+0000 = a date with no time, or T17:00:00.000+0000 where EU calls close at
+   * 17:00 Brussels time). With this flag a +0000/Z offset is ignored: 00:00:00 → date-only, any other time → that time
+   * in the source's timezone. Never later than the literal reading, since Brussels is always ahead of UTC.
+   * A non-zero offset is still trusted.
+   */
+  utcLabelIsLocalTime?: boolean;
+}
+
+export function normaliseDeadline(raw: string | null | undefined, sourceTimezone: string, reading: DeadlineReading = {}): NormalisedDeadline {
   const none: NormalisedDeadline = { closes_at: null, deadline_kind: "not_announced", deadline_is_date_only: false, deadline_original_text: raw ?? null, deadline_timezone: sourceTimezone };
   if (!raw || !raw.trim()) return none;
   const s = raw.trim();
+  if (reading.utcLabelIsLocalTime) {
+    const m = s.match(/^(\d{4}-\d{2}-\d{2})T(\d{2}:\d{2}(?::\d{2})?)(?:\.\d+)?(?:Z|\+00:?00)$/);
+    if (m) {
+      const local = /^00:00(:00)?$/.test(m[2]!) ? m[1]! : `${m[1]}T${m[2]}`;
+      return { ...normaliseDeadline(local, sourceTimezone), deadline_original_text: raw };
+    }
+  }
   // Full timestamp with explicit offset or Z → exact instant.
   if (/^\d{4}-\d{2}-\d{2}T\d{2}:\d{2}(:\d{2}(\.\d+)?)?(Z|[+-]\d{2}:?\d{2})$/.test(s)) {
     const d = new Date(s);

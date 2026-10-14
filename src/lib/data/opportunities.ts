@@ -74,7 +74,9 @@ export async function listOpportunities(sql: postgres.Sql, f: OpportunityFilters
       ${f.type ? sql`AND o.opportunity_type = ${f.type}` : sql``}
       ${f.category ? sql`AND EXISTS (SELECT 1 FROM opportunity_category_links c WHERE c.opportunity_id = o.id AND c.category_code = ${f.category})` : sql``}
     GROUP BY o.id, s.name, s.stale_after_hours
-    ORDER BY (o.status IN ('closed','cancelled','archived')), o.closes_at NULLS LAST, o.official_title
+    -- Still-available first: closed records last, and records whose deadline has passed after those still open
+    -- (the EU portal keeps hundreds of expired topics labelled "open"; listing them first hid the current ones).
+    ORDER BY (o.status IN ('closed','cancelled','archived')), (o.closes_at IS NOT NULL AND o.closes_at < now()), o.closes_at NULLS LAST, o.official_title
     LIMIT 500`;
 }
 

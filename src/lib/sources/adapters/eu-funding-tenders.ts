@@ -109,6 +109,7 @@ export function mapResult(raw: unknown, allowedHosts: string[]): DiscoveredItem 
     deadline_raw: deadlines[0] ?? null,
     additional_deadlines_raw: deadlines.slice(1),
     deadline_timezone: "Europe/Brussels", // the portal publishes deadlines in Brussels time
+    deadline_utc_label_is_local: true,     // measured 2026-10-14: "T17:00:00.000+0000" = 17:00 Brussels; "T00:00:00.000+0000" = date only
     application_url: null,
   };
   return {

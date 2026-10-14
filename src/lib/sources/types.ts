@@ -33,6 +33,8 @@ export interface NormalisedFacts {
   deadline_raw?: string | null;
   additional_deadlines_raw?: string[];
   deadline_timezone: string;
+  /** The source labels local wall-clock times as UTC (see DeadlineReading in domain/deadline.ts). */
+  deadline_utc_label_is_local?: boolean;
   application_url?: string | null;
 }
 

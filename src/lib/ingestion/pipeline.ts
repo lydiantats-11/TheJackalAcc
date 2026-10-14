@@ -72,8 +72,9 @@ export async function ingestItem(tx: Tx, source: SourceConfig, runId: string, it
   // 2. Normalise facts. Unknown stays unknown.
   const f = item.facts;
   const status: OpportunityStatus = f?.status ?? "unverified";
-  const dl = normaliseDeadline(f?.deadline_raw, f?.deadline_timezone ?? "Europe/Athens");
-  const opens = f?.opens_at_raw ? normaliseDeadline(f.opens_at_raw, f.deadline_timezone).closes_at : null;
+  const reading = { utcLabelIsLocalTime: f?.deadline_utc_label_is_local === true };
+  const dl = normaliseDeadline(f?.deadline_raw, f?.deadline_timezone ?? "Europe/Athens", reading);
+  const opens = f?.opens_at_raw ? normaliseDeadline(f.opens_at_raw, f.deadline_timezone, reading).closes_at : null;
   const modifiedAt = item.source_modified_at ? new Date(item.source_modified_at) : null;
   const validModified = modifiedAt && !Number.isNaN(modifiedAt.getTime()) ? modifiedAt : null;
 
