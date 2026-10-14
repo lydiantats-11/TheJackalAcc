@@ -83,10 +83,12 @@ run_worker run2
 n2=$(qv "SELECT count(*) $EU_FROM"); new2=$(jf run2 .outcomes.new); unch2=$(jf run2 .outcomes.unchanged); ch2=$(jf run2 .outcomes.changed)
 dups=$(qv "SELECT count(*) FROM (SELECT external_key FROM opportunities WHERE external_key IS NOT NULL GROUP BY 1 HAVING count(*)>1) d")
 cat "$OUT/run2.json" | tee -a "$OUT/sql.log"
-if [ "$(cat "$OUT/run2.exit")" = 0 ] && [ "$dups" = 0 ] && [ $((n2 - n1)) = "${new2:-0}" ]; then
-  pass "4. Duplicate detection / safe repeat import" "before $n1, after $n2; run 2: new ${new2:-0}, changed ${ch2:-0}, unchanged ${unch2:-0}; 0 duplicate keys (any new = genuinely new on the portal between runs)"
+st2=$(jf run2 .status); unl2=$(jf run2 .unlisted_marked_unverified)
+lst1=$(grep -o '"rows":[0-9]*,"total":[0-9]*' "$OUT/run1.raw.log" | head -1); lst2=$(grep -o '"rows":[0-9]*,"total":[0-9]*' "$OUT/run2.raw.log" | head -1)
+if [ "$(cat "$OUT/run2.exit")" = 0 ] && [ "$st2" = succeeded ] && [ "$dups" = 0 ] && [ "${unl2:-0}" = 0 ] && [ $((n2 - n1)) = "${new2:-0}" ] && [ "${new2:-0}" -le 5 ]; then
+  pass "4. Duplicate detection / safe repeat import" "before $n1, after $n2; run 2: new ${new2:-0}, changed ${ch2:-0}, unchanged ${unch2:-0}, wrongly unverified 0; 0 duplicate keys; listing run1 {$lst1} run2 {$lst2}"
 else
-  fail "4. Duplicate detection / safe repeat import" "before $n1, after $n2, run 2 new=${new2:-?}, duplicate keys=$dups"
+  fail "4. Duplicate detection / safe repeat import" "before $n1, after $n2; run 2 status \`${st2:-?}\`, new=${new2:-?}, marked unverified=${unl2:-?}, duplicate keys=$dups; listing run1 {$lst1} run2 {$lst2}"
 fi
 
 # ── 5. Amendment / deadline change (simulated locally, corrected by the live source) ──
@@ -99,10 +101,11 @@ cat "$OUT/run3.json" | tee -a "$OUT/sql.log"
 q "SELECT version, change_kind, created_at FROM opportunity_versions WHERE opportunity_id='$id' ORDER BY version;" | tee -a "$OUT/sql.log"
 after=$(qv "SELECT closes_at FROM opportunities WHERE id='$id'"); v1=$(qv "SELECT version FROM opportunities WHERE id='$id'")
 vers=$(qv "SELECT count(*) FROM opportunity_versions WHERE opportunity_id='$id'"); ch3=$(jf run3 .outcomes.changed)
-if [ "$after" = "$orig" ] && [ "${v1:-0}" -gt "${v0:-0}" ] && [ "${ch3:-0}" -ge 1 ]; then
-  pass "5. Amendment / deadline change (SIMULATED)" "deadline falsified +30 days locally; run 3 restored the official \`$orig\`, version $v0 → $v1, $vers version rows kept"
+unl3=$(jf run3 .unlisted_marked_unverified)
+if [ "$after" = "$orig" ] && [ "${v1:-0}" -gt "${v0:-0}" ] && [ "${ch3:-0}" -ge 1 ] && [ "${unl3:-0}" = 0 ]; then
+  pass "5. Amendment / deadline change (SIMULATED)" "deadline falsified +30 days locally; run 3 restored the official \`$orig\`, version $v0 → $v1, $vers version rows kept; run 3 changed ${ch3} in total, wrongly unverified 0"
 else
-  fail "5. Amendment / deadline change (SIMULATED)" "official \`$orig\`, after run 3 \`$after\`, version $v0 → $v1, changed=${ch3:-?}"
+  fail "5. Amendment / deadline change (SIMULATED)" "official \`$orig\`, after run 3 \`$after\`, version $v0 → $v1, changed=${ch3:-?}, marked unverified=${unl3:-?}"
 fi
 
 # ── 6. Display in Ευκαιρίες ──────────────────────────────────────────────────

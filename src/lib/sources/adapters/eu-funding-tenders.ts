@@ -9,7 +9,17 @@
  * is unrecognisable raises SchemaDriftError so nothing is ingested.
  *
  * Request: POST {endpoint}?apiKey=SEDIA&text=***&pageSize=N&pageNumber=P
- *          multipart parts "query" and "languages", each with Content-Type: application/json.
+ *          multipart parts "query", "languages" and "sort", each with Content-Type: application/json.
+ *
+ * LIVE FINDINGS (GitHub Actions, 2026-10-14; probe in scripts/eu-ft-paging-probe.ts, results on branch live-test-results):
+ *  - The endpoint works: 1,001 rows for forthcoming + open grant topics.
+ *  - WITHOUT a sort, page order is unstable between requests: two passes returned 844 and 902 distinct topics
+ *    (only 782 in both). Paging then silently misses topics, and treating "not seen" as "no longer listed"
+ *    wrongly marked real open topics 'unverified' (69 and 186 in live runs 2 and 3).
+ *  - Sorted by identifier ASC, both passes returned the same 1,000 distinct topics in the same order
+ *    (1,001 rows: one topic is listed twice by the portal itself, on adjacent rows).
+ *  So: sort by identifier, and treat a listing as INCOMPLETE (run "partial", nothing marked unverified) when fewer rows
+ *  arrive than totalResults, or when an identifier repeats on non-adjacent rows (the sign of unstable paging).
  * Response: { results: [{ url?, metadata: { <key>: [<value>] } }], totalResults? }  (metadata values are 1-element arrays)
  */
 import type { OpportunityStatus } from "@/lib/domain/eligibility";
@@ -30,6 +40,8 @@ interface EuFtConfig {
   types: string[];
   statuses: string[];
   languages: string[];
+  /** Deterministic order is required for complete paging (see LIVE FINDINGS). */
+  sort: { field: string; order: "ASC" | "DESC" } | null;
 }
 
 const DEFAULTS: EuFtConfig = {
@@ -39,6 +51,7 @@ const DEFAULTS: EuFtConfig = {
   types: ["1"],                     // 1 = grant call topics
   statuses: ["31094501", "31094502"], // forthcoming + open; closures are detected when items move to 31094503
   languages: ["en"],
+  sort: { field: "identifier", order: "ASC" },
 };
 
 /** Metadata values arrive as single-element arrays; some are JSON encoded as strings. */
@@ -65,6 +78,7 @@ export function buildRequestBody(cfg: EuFtConfig): FormData {
   const fd = new FormData();
   fd.append("query", new Blob([JSON.stringify(query)], { type: "application/json" }), "query.json");
   fd.append("languages", new Blob([JSON.stringify(cfg.languages)], { type: "application/json" }), "languages.json");
+  if (cfg.sort) fd.append("sort", new Blob([JSON.stringify(cfg.sort)], { type: "application/json" }), "sort.json");
   return fd;
 }
 
@@ -116,8 +130,8 @@ export function mapResult(raw: unknown, allowedHosts: string[]): DiscoveredItem 
 
 export const euFundingTendersAdapter: SourceAdapter = {
   key: "eu-funding-tenders-search",
-  version: "0.1.0",
-  description: "EU Funding & Tenders Portal search endpoint (undocumented, public). Grants call topics, forthcoming and open.",
+  version: "0.2.0",
+  description: "EU Funding & Tenders Portal search endpoint (undocumented, public). Grants call topics, forthcoming and open, sorted by identifier.",
   async discover(source: SourceConfig, ctx: AdapterContext): Promise<DiscoverResult> {
     const cfg: EuFtConfig = { ...DEFAULTS, ...(source.config as Partial<EuFtConfig>) };
     cfg.pageSize = Math.min(Math.max(1, cfg.pageSize), 100);
@@ -125,6 +139,11 @@ export const euFundingTendersAdapter: SourceAdapter = {
     const skipped: DiscoverResult["skipped"] = [];
     let pages = 0;
     let truncated = false;
+    let rows = 0;
+    let total = NaN;
+    let lastId: string | undefined;
+    const ids = new Set<string>();
+    let scatteredRepeats = 0;
     for (let page = 1; page <= cfg.maxPages; page++) {
       const url = `${cfg.endpoint}?apiKey=SEDIA&text=${encodeURIComponent("***")}&pageSize=${cfg.pageSize}&pageNumber=${page}`;
       const res = await ctx.fetch(url, { method: "POST", body: buildRequestBody(cfg), headers: { accept: "application/json" } });
@@ -139,20 +158,36 @@ export const euFundingTendersAdapter: SourceAdapter = {
       if (!Array.isArray(results)) throw new SchemaDriftError("response has no results array");
       let parsedOnPage = 0;
       for (const raw of results) {
+        rows++;
+        const m = (raw as { metadata?: Record<string, unknown> } | null)?.metadata ?? {};
+        const rid = (first(m.identifier) ?? first(m.callIdentifier))?.toUpperCase();
+        if (rid) {
+          if (ids.has(rid) && rid !== lastId) scatteredRepeats++;
+          ids.add(rid);
+          lastId = rid;
+        }
         const mapped = mapResult(raw, source.allowed_hosts);
         if ("skip" in mapped) skipped.push({ reason: mapped.skip, ref: mapped.ref });
         else { items.push(mapped); parsedOnPage++; }
       }
       if (results.length > 0 && parsedOnPage === 0 && skipped.every((s) => s.reason === "no_identifier" || s.reason === "not_an_object"))
         throw new SchemaDriftError("no result on the page had a recognisable identifier");
-      const total = Number((json as { totalResults?: unknown }).totalResults);
+      total = Number((json as { totalResults?: unknown }).totalResults);
       if (results.length < cfg.pageSize || (Number.isFinite(total) && page * cfg.pageSize >= total)) break;
       if (page === cfg.maxPages) truncated = true;
+    }
+    // Completeness: a listing that is not provably complete must never be used to mark topics as no longer listed.
+    const incomplete: string[] = [];
+    if (Number.isFinite(total) && rows < total) incomplete.push(`received ${rows} of ${total} rows`);
+    if (scatteredRepeats > 0) incomplete.push(`${scatteredRepeats} identifiers repeated on non-adjacent rows (unstable paging)`);
+    if (incomplete.length) {
+      truncated = true;
+      ctx.log("eu-ft listing incomplete: not marking unlisted topics", { reasons: incomplete });
     }
     // Deduplicate within the run (the same topic can appear on two pages if the index shifts between requests).
     const seen = new Map<string, DiscoveredItem>();
     for (const it of items) seen.set(it.external_key ?? it.canonical_url, it);
-    ctx.log("eu-ft discover finished", { pages, items: seen.size, skipped: skipped.length, truncated });
+    ctx.log("eu-ft discover finished", { pages, rows, total, items: seen.size, skipped: skipped.length, truncated });
     return { items: [...seen.values()], skipped, pages_fetched: pages, truncated };
   },
 };

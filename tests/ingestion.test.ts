@@ -4,7 +4,8 @@ import { freshDatabase, TEST_DB_URL } from "./db-helper";
 import { fakeFetch, page, topic } from "./fixtures/eu-ft";
 import { runSource, recoverInterruptedRuns } from "@/lib/ingestion/worker";
 import { sweepPassedDeadlines } from "@/lib/ingestion/pipeline";
-import { mapResult } from "@/lib/sources/adapters/eu-funding-tenders";
+import { euFundingTendersAdapter, mapResult } from "@/lib/sources/adapters/eu-funding-tenders";
+import type { SourceConfig } from "@/lib/sources/types";
 import { registerAdapter } from "@/lib/sources/adapters";
 import { registerUser } from "@/lib/auth/service";
 import { updateProfile } from "@/lib/data/user";
@@ -38,6 +39,47 @@ describe("EU F&T result mapping (pure)", () => {
   });
 });
 
+describe("EU F&T listing completeness (pure; from the 2026-10-14 live finding)", () => {
+  const src = { id: "s", slug: "eu-funding-tenders", name: "EU", authority: "EC", base_url: "https://ec.europa.eu/",
+    allowed_hosts: ["ec.europa.eu", "api.tech.ec.europa.eu"], access_method: "api", adapter: "eu-funding-tenders-search",
+    config: { pageSize: 2, maxPages: 5 }, lifecycle: "configured", enabled: true } as SourceConfig;
+  const discover = async (pages: string[]) => {
+    const bodies: string[] = [];
+    const logs: string[] = [];
+    const ctx = {
+      policy: {} as never,
+      log: (msg: string) => { logs.push(msg); },
+      fetch: async (url: string, init?: { body?: unknown }) => {
+        const n = Number(new URL(url).searchParams.get("pageNumber"));
+        const sort = init?.body instanceof FormData ? await (init.body.get("sort") as Blob | null)?.text() : undefined;
+        bodies.push(sort ?? "");
+        return { url, status: 200, contentType: "application/json", body: Buffer.from(pages[n - 1] ?? pages.at(-1)!), fetchedAt: new Date() };
+      },
+    };
+    const r = await euFundingTendersAdapter.discover(src, ctx as never);
+    return { r, bodies, logs };
+  };
+
+  it("asks for a deterministic order (identifier ascending) on every page", async () => {
+    const { bodies } = await discover([page([topic("TEST-A"), topic("TEST-B")], 3), page([topic("TEST-C")], 3)]);
+    expect(bodies).toEqual([JSON.stringify({ field: "identifier", order: "ASC" }), JSON.stringify({ field: "identifier", order: "ASC" })]);
+  });
+  it("a complete listing is not truncated; a topic the portal lists twice on adjacent rows is fine", async () => {
+    const { r } = await discover([page([topic("TEST-A"), topic("TEST-A")], 3), page([topic("TEST-B")], 3)]);
+    expect(r.truncated).toBe(false);
+    expect(r.items.map((i) => i.official_identifier)).toEqual(["TEST-A", "TEST-B"]);
+  });
+  it("unstable paging (an identifier repeating on non-adjacent rows) makes the listing incomplete", async () => {
+    const { r, logs } = await discover([page([topic("TEST-A"), topic("TEST-C")], 3), page([topic("TEST-A")], 3)]);
+    expect(r.truncated).toBe(true);
+    expect(logs).toContain("eu-ft listing incomplete: not marking unlisted topics");
+  });
+  it("fewer rows than totalResults makes the listing incomplete", async () => {
+    const { r } = await discover([page([topic("TEST-A"), topic("TEST-B")], 5), page([topic("TEST-C")], 5)]);
+    expect(r.truncated).toBe(true);
+  });
+});
+
 describe.skipIf(!TEST_DB_URL)("ingestion pipeline + worker (PostgreSQL)", () => {
   let sql: postgres.Sql;
   let euId: string;
@@ -66,7 +108,7 @@ describe.skipIf(!TEST_DB_URL)("ingestion pipeline + worker (PostgreSQL)", () => 
     expect(first.r.outcomes.new).toBe(3);
     expect(first.calls).toHaveLength(2);
     expect(first.calls[0]!.method).toBe("POST");
-    expect(first.calls[0]!.parts).toEqual(["query", "languages"]);
+    expect(first.calls[0]!.parts).toEqual(["query", "languages", "sort"]);
     const second = await run(pages);
     expect(second.r.outcomes.unchanged).toBe(3);
     const [c] = await sql`SELECT (SELECT count(*) FROM opportunities)::int AS opps, (SELECT count(*) FROM source_documents)::int AS docs,
@@ -153,6 +195,16 @@ describe.skipIf(!TEST_DB_URL)("ingestion pipeline + worker (PostgreSQL)", () => 
     expect(r.r.unlisted_marked_unverified).toBe(1);
     const rows = await sql`SELECT external_key, status, status_reason FROM opportunities ORDER BY external_key`;
     expect(rows[1]).toMatchObject({ external_key: "eu-topic:TEST-B", status: "unverified", status_reason: "no_longer_listed_by_source" });
+  });
+
+  it("live finding 2026-10-14: an incomplete listing marks nothing unverified and the run is 'partial'", async () => {
+    await run([page([topic("TEST-A"), topic("TEST-B")], 3), page([topic("TEST-C")], 3)]);
+    // Unstable paging: TEST-A comes back on two non-adjacent rows and TEST-B is missed.
+    const r = await run([page([topic("TEST-A"), topic("TEST-C")], 3), page([topic("TEST-A")], 3)]);
+    expect(r.r.status).toBe("partial");
+    expect(r.r.unlisted_marked_unverified).toBe(0);
+    const rows = await sql`SELECT external_key, status FROM opportunities ORDER BY external_key`;
+    expect(rows.map((x) => x.status)).toEqual(["open", "open", "open"]);
   });
 
   it("a passed deadline is swept to 'unverified', not 'closed'", async () => {
