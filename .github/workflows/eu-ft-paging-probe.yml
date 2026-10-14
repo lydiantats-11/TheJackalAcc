@@ -1,6 +1,6 @@
 # Diagnostic only, on demand: measures whether paging the EU search API returns a complete, stable list.
 # Read-only requests to the public API; saves the result to the live-test-results branch.
-name: EU F&T paging probe
+name: EU F&T probe (paging / deadlines)
 
 on:
   workflow_dispatch:
@@ -19,7 +19,7 @@ jobs:
       - uses: actions/setup-node@v4
         with: { node-version: 22 }
       - name: Probe
-        run: npx --yes tsx@4 scripts/eu-ft-paging-probe.ts > probe.json
+        run: npx --yes tsx@4 scripts/${PROBE:-eu-ft-deadline-probe}.ts > probe.json
       - name: Save result
         if: always()
         run: |
