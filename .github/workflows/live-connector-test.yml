@@ -1,13 +1,16 @@
-# Manual only: runs when someone presses "Run workflow". No schedule — this is a test, not automatic updates.
+# Runs only on demand: "Run workflow" in the Actions tab, or a push to the dedicated `live-test` branch.
+# No schedule — this is a test, not automatic updates.
 # Runs on a throwaway GitHub machine with a throwaway PostgreSQL that is deleted when the job ends.
 # No secrets, no paid services, nothing is deployed.
 name: Live connector test (EU Funding & Tenders)
 
 on:
   workflow_dispatch:
+  push:
+    branches: [live-test]
 
 permissions:
-  contents: read
+  contents: write   # only to save the report to the `live-test-results` branch
 
 jobs:
   live-test:
@@ -82,3 +85,20 @@ jobs:
           name: live-test-output
           path: live-test-output/
           retention-days: 30
+
+      - name: Save the report to the live-test-results branch
+        if: always()
+        run: |
+          set -x
+          RUN_DIR="runs/$(date -u +%Y-%m-%dT%H%M%SZ)-run${GITHUB_RUN_NUMBER}"
+          cp -r live-test-output /tmp/out
+          cat "$GITHUB_STEP_SUMMARY" > /tmp/out/SUMMARY.md 2>/dev/null || true
+          git config user.name "jackal-live-test"; git config user.email "actions@users.noreply.github.com"
+          if git ls-remote --exit-code --heads origin live-test-results >/dev/null; then
+            git fetch --depth 1 origin live-test-results && git checkout -B live-test-results FETCH_HEAD
+          else
+            git checkout --orphan live-test-results && git rm -rqf . && git clean -fdxq
+          fi
+          mkdir -p "$RUN_DIR" && cp -r /tmp/out/. "$RUN_DIR"/
+          rm -rf latest && cp -r "$RUN_DIR" latest
+          git add runs latest && git commit -qm "Live test results, run ${GITHUB_RUN_NUMBER} (${GITHUB_SHA::7})" && git push origin live-test-results
