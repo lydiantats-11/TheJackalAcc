@@ -218,3 +218,10 @@ Run on `lydiantats-11/TheJackalAcc`, branch `live-test`; reports and screenshots
 - Live run (commit a8cdb6b): 156/156 tests, typecheck 0, build OK, 7/7 checks; 409 current + 591 expired-unverified.
 - `.github/workflows/scheduled-updater.yml` + `docs/AUTOMATIC_UPDATES.md`: manual trigger only, needs a DATABASE_URL
   secret, and the worker runs only sources an admin enabled. Not switched on: hosting not yet approved.
+
+### 2026-10-14 (evening) — industries added, volunteering removed (owner request)
+- 30 industry categories + "All industries" / "Not decided yet": separate from personas and interests, multi-select,
+  mapped indicatively to NACE Rev. 2.1 sections; discovery only (property test: eligibility never changes).
+- Migration 0008 (user_profiles.industries, opportunities.industries; NULL = not restricted); Ευκαιρίες industry filter.
+- European Solidarity Corps (volunteering) removed from the demo and from the seed: 8 verified records imported.
+- GitHub run 7a7475d: 162/162 tests, typecheck 0, build OK, live checks 7/7. Demo republished as version 4.
