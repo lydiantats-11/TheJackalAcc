@@ -12,7 +12,7 @@ Legend: ✅ done & verified locally · 🌐 externally verified (real source) ·
 | 1 Foundation | ✅ |
 | 2 Source monitoring | 🟡 connector + worker built and tested locally; ⛔ **live source test blocked by workspace network** |
 | 3 Opportunity intelligence (AI extraction) | 🟡 built and tested with a scripted provider; **switched off** until the owner approves the cost (estimate below) |
-| 4 Profiles & matching | 🟡 engine v2, adaptive profile, scenarios done; onboarding wizard pending |
+| 4 Profiles & matching | 🟡 engine v2, adaptive profile, scenarios done; **five personas + conditional questionnaire done (2026-10-14, tests not yet run — see build log)**; onboarding wizard pending |
 | 5 Notifications | 🟡 notification-ready events + match change tracking; no sending yet |
 | 6 Dashboard & admin | 🟡 dashboard, source health, test-now; review/correction UI pending |
 | 7 Hardening & deployment | ⬜ (see SECURITY_REVIEW.md open gaps) |
@@ -155,6 +155,17 @@ monthly cap. Email notifications stay out of scope until their cost and privacy 
 | Email (Phase 5) | Transactional provider free tier | €0 at low volume; paid above provider limits |
 
 ## Build log
+- 2026-10-14 (Personas) — Five non-exclusive personas (young adults, aspiring entrepreneurs, employees & jobseekers,
+  households & property, businesses & organisations) and 11 interests, chosen as chips on the profile page. They open
+  only the relevant profile sections (`src/lib/domain/personas.ts`); answered sections never hide; hidden sections stay in
+  the form so switching a persona off never erases answers. New household fields (housing status, first home, household
+  size, children, income range, property) — stored, not yet evaluated by the engine. The old single `persona` stays as
+  the applicant type ("Applying as"). Migration 0006 (backfills personas from the old field without guessing).
+  Also fixed: saving the profile wiped `tax_residence_country` because the form never sent it.
+  **Verification so far:** migrations 0001–0006 applied on PostgreSQL 16 (backfill, CHECK rejection, anon lockdown);
+  persona visibility logic 20/20 checks; strict `tsc` on the new domain files. **Not yet run:** `npm run test:db`
+  (new `tests/personas.test.ts`, incl. a property test that personas/interests never change any assessment),
+  `npm run typecheck`, `next build` — the workspace could not install npm packages. Run them on your machine.
 - 2026-10-13 (Interpretations + AI extraction) — 9 questions resolved against real calls; migrations 0004/0005;
   engine rules for reference dates, exclusions, registration timing, SME, consortium; extraction pipeline + review
   queue + admin UI; 112/112 tests; build passes. No paid API calls made.

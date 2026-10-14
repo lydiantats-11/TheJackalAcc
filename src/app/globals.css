@@ -111,3 +111,4 @@ table.crit th { font-size: .78rem; color: var(--muted); text-transform: uppercas
 .meter { height: 8px; background: var(--neutral-bg); border-radius: 999px; overflow: hidden; } .meter > span { display: block; height: 100%; background: var(--accent); }
 .kpi { font-size: 1.8rem; font-weight: 750; } .kpi-label { color: var(--muted); font-size: .85rem; }
 .hero { padding: 30px 0 10px; } .hero p.lead { font-size: 1.12rem; color: var(--ink-soft); max-width: 680px; }
+[hidden] { display: none !important; }

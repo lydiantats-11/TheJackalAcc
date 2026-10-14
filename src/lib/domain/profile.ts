@@ -6,7 +6,9 @@
  *   "prefer_not" the user declined to answer       → requirement stays unknown (never held against them)
  *   "not_applicable" the question does not apply   → only satisfies a requirement if the rule explicitly allows it
  */
-export type Answer = "yes" | "no" | "not_sure" | "prefer_not";
+import type { InterestId, PersonaId } from "./personas";
+
+export type Answer ="yes" | "no" | "not_sure" | "prefer_not";
 export type Sentinel = "not_sure" | "prefer_not" | "not_applicable";
 
 export type AgeRange =
@@ -24,8 +26,22 @@ export type EmployeesRange = "0" | "1_9" | "10_49" | "50_249" | "250_plus" | "no
 export type TurnoverRange = "under_100k" | "100k_2m" | "2m_10m" | "10m_50m" | "over_50m" | "not_sure" | "prefer_not";
 export type LegalForm = "sole_proprietor" | "company" | "partnership" | "cooperative" | "nonprofit" | "not_sure";
 
+export type HousingStatus = "renting" | "with_family" | "owner" | "other" | "not_sure" | "prefer_not";
+export type HouseholdIncomeRange = "under_10k" | "10k_20k" | "20k_35k" | "35k_60k" | "over_60k" | "not_sure" | "prefer_not";
+
 export interface MatchProfile {
+  /** Applicant type ("Applying as"). The only persona-like field the engine reads, and only for applicant type. */
   persona?: "individual" | "aspiring_entrepreneur" | "existing_business" | "tender_applicant" | "adviser" | null;
+  /** The five non-exclusive personas. They choose which questions are shown; they never decide eligibility. */
+  personas?: PersonaId[] | null;
+  interests?: InterestId[] | null;
+  // ── household (Persona 4) — stored for future household requirements; not yet evaluated by the engine ──
+  housing_status?: HousingStatus | null;
+  first_home_purchase?: "yes" | "no" | "not_sure" | null;
+  household_size?: "1" | "2" | "3" | "4" | "5_plus" | "prefer_not" | null;
+  dependent_children?: "0" | "1" | "2" | "3_plus" | "prefer_not" | null;
+  household_income_range?: HouseholdIncomeRange | null;
+  property_owned?: "yes" | "no" | "not_sure" | "prefer_not" | null;
   // ── where ──
   country_of_residence?: string | null;
   tax_residence_country?: string | null; // only asked when a call requires it

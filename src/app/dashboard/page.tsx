@@ -5,11 +5,12 @@ import { requireUser } from "@/lib/auth/session";
 import { getProfile, listSavedIds } from "@/lib/data/user";
 import { listOpportunities, loadRequirements, toMatchable } from "@/lib/data/opportunities";
 import { assess, rankKey } from "@/lib/domain/eligibility";
+import { isAnswered } from "@/lib/domain/personas";
 import { AvailabilityBadge, EligibilityBadge, SyntheticLabel } from "@/components/badges";
 import { deadlineText } from "@/components/opportunity-facts";
 
 export const metadata = { title: "Dashboard" };
-const PROFILE_FIELDS = ["persona", "region_codes", "age_range", "employment_status", "education_level", "sectors", "business_stage", "own_contribution_range"] as const;
+const PROFILE_FIELDS = ["personas", "persona", "region_codes", "age_range", "employment_status", "education_level", "sectors", "business_stage", "own_contribution_range"] as const;
 
 export default async function Dashboard({ searchParams }: { searchParams: Promise<{ denied?: string }> }) {
   const user = await requireUser();
@@ -17,7 +18,7 @@ export default async function Dashboard({ searchParams }: { searchParams: Promis
   const [profile, rows, savedIds] = await Promise.all([getProfile(sql(), user), listOpportunities(sql()), listSavedIds(sql(), user)]);
   const reqs = await loadRequirements(sql(), rows.map((r) => r.id));
   const now = new Date();
-  const filled = PROFILE_FIELDS.filter((f) => profile[f] !== null && profile[f] !== undefined).length;
+  const filled = PROFILE_FIELDS.filter((f) => isAnswered(profile[f])).length;
   const pct = Math.round((filled / PROFILE_FIELDS.length) * 100);
 
   const ranked = rows

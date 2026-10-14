@@ -106,6 +106,10 @@ const el = {
     birthYear: "Ζητείται μόνο αν μια πρόσκληση έχει ηλικιακό όριο μέσα στην ηλικιακή σας ομάδα.",
     sme: "Ο ορισμός ΜμΕ της ΕΕ μετρά και τα στοιχεία συνεργαζόμενων (25–50%) και συνδεδεμένων (>50%) επιχειρήσεων.",
     municipality: "Ζητείται μόνο όταν μια πρόσκληση εξαιρεί συγκεκριμένες περιοχές.",
+    personas: "Επιλέξτε όσες σας ταιριάζουν. Ανοίγουν τις σχετικές ερωτήσεις — δεν κρίνουν αν είστε επιλέξιμος/η.",
+    applyingAs: "Ορισμένες προσκλήσεις δέχονται μόνο φυσικά πρόσωπα ή μόνο επιχειρήσεις.",
+    household: "Προαιρετικό. Τα προγράμματα στέγασης και οικογένειας θέτουν όρια εισοδήματος και μεγέθους νοικοκυριού. Δεν το κοινοποιούμε.",
+    taxResidence: "Η φορολογική κατοικία είναι διαφορετική από την υπηκοότητα και τον τόπο διαμονής.",
   },
   review: {
     title: "Έλεγχος προτάσεων ΤΝ", intro: "Η ΤΝ προτείνει, ο έλεγχος επαληθεύει, εσείς αποφασίζετε. Τίποτα δεν επηρεάζει την επιλεξιμότητα πριν την έγκρισή σας.",
@@ -163,6 +167,9 @@ const el = {
     tax_residence_country: "Χώρα φορολογικής κατοικίας", de_minimis_received_3y_eur: "Ενισχύσεις de minimis (τελευταία 3 έτη, €)",
     enterprise_relationship: "Σχέση με άλλες επιχειρήσεις (συνεργαζόμενες/συνδεδεμένες)", public_ownership_25: "Δημόσιοι φορείς ελέγχουν ≥25%;",
     balance_sheet_range: "Σύνολο ισολογισμού", municipality: "Δήμος επένδυσης", has_consortium_partners: "Έχετε εταίρους για κοινοπραξία;",
+    persona: "Κάνετε αίτηση ως", personas: "Ποιος/ποια είστε;", interests: "Τι σας ενδιαφέρει;",
+    housing_status: "Πού μένετε;", first_home_purchase: "Σχεδιάζετε αγορά πρώτης κατοικίας;", household_size: "Μέλη νοικοκυριού",
+    dependent_children: "Εξαρτώμενα παιδιά", household_income_range: "Ετήσιο εισόδημα νοικοκυριού", property_owned: "Έχετε ακίνητη περιουσία;",
   } as Record<string, string>,
   dash: {
     title: "Ο πίνακάς μου", completeness: "Πληρότητα προφίλ", completeProfile: "Συμπληρώστε το προφίλ σας",
@@ -175,6 +182,11 @@ const el = {
     save: "Αποθήκευση", saved: "Το προφίλ αποθηκεύτηκε.", notAnswered: "— Δεν έχει απαντηθεί —",
     privacy: "Τα δεδομένα μου", export: "Λήψη όλων των δεδομένων μου (JSON)", delete: "Οριστική διαγραφή λογαριασμού",
     deleteConfirm: "Πληκτρολογήστε ΔΙΑΓΡΑΦΗ για επιβεβαίωση", anyRegion: "Οπουδήποτε στην Ελλάδα / δεν έχω αποφασίσει", anySector: "Οποιοσδήποτε κλάδος",
+    sections: {
+      applying_as: "Αίτηση ως", location: "Περιοχή", person: "Ηλικία", work: "Εκπαίδευση & εργασία",
+      entrepreneurship: "Η επιχειρηματική σας ιδέα", business: "Η επιχείρηση ή ο φορέας σας", household: "Κατοικία & νοικοκυριό",
+      international: "Φορολογική κατοικία & μετεγκατάσταση", project: "Έργο & ενισχύσεις",
+    } as Record<string, string>,
   },
   admin: {
     title: "Διαχείριση", sources: "Πηγές & υγεία παρακολούθησης", lifecycle: "Κατάσταση", enabled: "Ενεργή", lastSuccess: "Τελευταία επιτυχία",
@@ -190,6 +202,13 @@ const el = {
   opt: {
     not_sure: "Δεν είμαι σίγουρος/η", prefer_not: "Προτιμώ να μην απαντήσω", yes: "Ναι", no: "Όχι",
     persona: { individual: "Ιδιώτης", aspiring_entrepreneur: "Σχεδιάζω επιχείρηση", existing_business: "Υφιστάμενη επιχείρηση", tender_applicant: "Συμμετοχή σε διαγωνισμούς", adviser: "Σύμβουλος / λογιστής" },
+    personas: { young_adult: "Νέοι 18–29", aspiring_entrepreneur: "Μελλοντικοί επιχειρηματίες", employee_jobseeker: "Εργαζόμενοι & άνεργοι", household: "Νοικοκυριά & κατοικία", business_org: "Επιχειρήσεις & φορείς" },
+    interests: { housing: "Στέγαση & ενοίκιο", education: "Εκπαίδευση & υποτροφίες", employment: "Εργασία & κατάρτιση", entrepreneurship: "Επιχειρηματικότητα", mobility: "Κινητικότητα & μετεγκατάσταση", financial_support: "Οικονομική στήριξη", energy: "Ενέργεια", family: "Οικογένεια", tax_residency: "Φορολογικά κίνητρα & κατοικία", tenders: "Δημόσιοι διαγωνισμοί", eu_programmes: "Προγράμματα ΕΕ" },
+    housing_status: { renting: "Με ενοίκιο", with_family: "Με την οικογένεια", owner: "Σε δική μου κατοικία", other: "Άλλο" },
+    household_size: { "1": "1", "2": "2", "3": "3", "4": "4", "5_plus": "5+" },
+    dependent_children: { "0": "Κανένα", "1": "1", "2": "2", "3_plus": "3+" },
+    household_income_range: { under_10k: "Έως 10.000 €", "10k_20k": "10.000–20.000 €", "20k_35k": "20.000–35.000 €", "35k_60k": "35.000–60.000 €", over_60k: "Πάνω από 60.000 €" },
+    tax_residence_country: { GR: "Ελλάδα", CY: "Κύπρος", DE: "Γερμανία", ES: "Ισπανία", FR: "Γαλλία", IT: "Ιταλία", NL: "Ολλανδία", BE: "Βέλγιο", IE: "Ιρλανδία", GB: "Ηνωμένο Βασίλειο", US: "ΗΠΑ", AE: "ΗΑΕ" } as Record<string, string>,
     age_range: { under_18: "Κάτω από 18", "18_24": "18–24", "25_29": "25–29", "30_34": "30–34", "35_39": "35–39", "40_44": "40–44", "45_54": "45–54", "55_64": "55–64", "65_plus": "65+" },
     employment_status: { employed: "Μισθωτός/ή", self_employed: "Αυτοαπασχολούμενος/η", unemployed: "Άνεργος/η", student: "Φοιτητής/τρια", inactive: "Εκτός αγοράς εργασίας" },
     education_level: { none: "Χωρίς τυπική εκπαίδευση", secondary: "Δευτεροβάθμια", post_secondary: "Μεταδευτεροβάθμια", bachelor: "Πτυχίο", master: "Μεταπτυχιακό", doctorate: "Διδακτορικό", master_or_doctorate: "Μεταπτυχιακό ή διδακτορικό" },
@@ -305,6 +324,10 @@ const en: Dictionary = {
     birthYear: "Only asked when a call's age limit falls inside your age range.",
     sme: "The EU SME definition also counts data of partner (25–50%) and linked (>50%) enterprises.",
     municipality: "Only asked when a call excludes specific areas.",
+    personas: "Choose all that fit. They open the relevant questions — they don't decide whether you are eligible.",
+    applyingAs: "Some calls accept only individuals, others only businesses.",
+    household: "Optional. Housing and family programmes set income and household-size limits. Never shared.",
+    taxResidence: "Tax residence is different from nationality and from where you live.",
   },
   review: {
     title: "Review AI proposals", intro: "AI proposes, checks verify, you decide. Nothing affects eligibility before you approve it.",
@@ -362,6 +385,9 @@ const en: Dictionary = {
     tax_residence_country: "Country of tax residence", de_minimis_received_3y_eur: "De minimis aid received (last 3 years, €)",
     enterprise_relationship: "Links to other enterprises (partner/linked)", public_ownership_25: "Do public bodies control ≥25%?",
     balance_sheet_range: "Balance-sheet total", municipality: "Municipality of the investment", has_consortium_partners: "Do you have consortium partners?",
+    persona: "Applying as", personas: "Who are you?", interests: "What are you interested in?",
+    housing_status: "Where do you live?", first_home_purchase: "Planning to buy a first home?", household_size: "People in your household",
+    dependent_children: "Dependent children", household_income_range: "Annual household income", property_owned: "Do you own property?",
   },
   dash: {
     title: "My dashboard", completeness: "Profile completeness", completeProfile: "Complete your profile",
@@ -373,6 +399,11 @@ const en: Dictionary = {
     title: "My profile", intro: "Every field is optional. We only ask for what is needed to check requirements. You can choose “Not sure” or “Prefer not to answer”.",
     save: "Save", saved: "Profile saved.", notAnswered: "— Not answered —", privacy: "My data", export: "Download all my data (JSON)",
     delete: "Permanently delete my account", deleteConfirm: "Type DELETE to confirm", anyRegion: "Anywhere in Greece / not decided", anySector: "Any sector",
+    sections: {
+      applying_as: "Applying as", location: "Location", person: "Age", work: "Education & work",
+      entrepreneurship: "Your business idea", business: "Your business or organisation", household: "Home & household",
+      international: "Tax residence & relocation", project: "Project & state aid",
+    },
   },
   admin: {
     title: "Admin", sources: "Sources & monitoring health", lifecycle: "Status", enabled: "Enabled", lastSuccess: "Last success",
@@ -388,6 +419,13 @@ const en: Dictionary = {
   opt: {
     not_sure: "Not sure", prefer_not: "Prefer not to answer", yes: "Yes", no: "No",
     persona: { individual: "Individual", aspiring_entrepreneur: "Planning a business", existing_business: "Existing business", tender_applicant: "Tender applicant", adviser: "Adviser / accountant" },
+    personas: { young_adult: "Young adults 18–29", aspiring_entrepreneur: "Aspiring entrepreneurs", employee_jobseeker: "Employees & jobseekers", household: "Households & property", business_org: "Businesses & organisations" },
+    interests: { housing: "Housing & rent", education: "Education & scholarships", employment: "Work & training", entrepreneurship: "Entrepreneurship", mobility: "Mobility & relocation", financial_support: "Financial support", energy: "Energy", family: "Family", tax_residency: "Tax incentives & residence", tenders: "Public tenders", eu_programmes: "EU programmes" },
+    housing_status: { renting: "Renting", with_family: "Living with family", owner: "In my own home", other: "Other" },
+    household_size: { "1": "1", "2": "2", "3": "3", "4": "4", "5_plus": "5+" },
+    dependent_children: { "0": "None", "1": "1", "2": "2", "3_plus": "3+" },
+    household_income_range: { under_10k: "Up to €10,000", "10k_20k": "€10,000–20,000", "20k_35k": "€20,000–35,000", "35k_60k": "€35,000–60,000", over_60k: "Over €60,000" },
+    tax_residence_country: { GR: "Greece", CY: "Cyprus", DE: "Germany", ES: "Spain", FR: "France", IT: "Italy", NL: "Netherlands", BE: "Belgium", IE: "Ireland", GB: "United Kingdom", US: "United States", AE: "UAE" },
     age_range: { under_18: "Under 18", "18_24": "18–24", "25_29": "25–29", "30_34": "30–34", "35_39": "35–39", "40_44": "40–44", "45_54": "45–54", "55_64": "55–64", "65_plus": "65+" },
     employment_status: { employed: "Employed", self_employed: "Self-employed", unemployed: "Unemployed", student: "Student", inactive: "Not in the labour market" },
     education_level: { none: "No formal education", secondary: "Secondary", post_secondary: "Post-secondary", bachelor: "Bachelor's", master: "Master's", doctorate: "Doctorate", master_or_doctorate: "Master's or doctorate" },
