@@ -1,0 +1,13 @@
+{
+  "run_id": "7fb98fe8-8a3d-4498-878a-9acb496242ce",
+  "status": "succeeded",
+  "outcomes": {
+    "unchanged": 1000
+  },
+  "skipped_by_adapter": 0,
+  "unlisted_marked_unverified": 0,
+  "matches": {
+    "assessed": 0,
+    "changed": 0
+  }
+}
