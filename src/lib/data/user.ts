@@ -6,6 +6,7 @@ import type postgres from "postgres";
 import { z } from "zod";
 import type { SessionUser } from "@/lib/auth/service";
 import type { MatchProfile } from "@/lib/domain/profile";
+import { INTEREST_IDS, PERSONA_IDS } from "@/lib/domain/personas";
 
 const opt = <T extends [string, ...string[]]>(values: T) => z.enum(values).nullable().optional();
 const isoDate = z.string().regex(/^\d{4}-\d{2}-\d{2}$/).refine((d) => !Number.isNaN(new Date(d).getTime()));
@@ -13,6 +14,14 @@ const amount = z.union([z.number().int().nonnegative().max(9_999_999_999), z.enu
 
 export const profileInputSchema = z.object({
   persona: opt(["individual", "aspiring_entrepreneur", "existing_business", "tender_applicant", "adviser"]),
+  personas: z.array(z.enum(PERSONA_IDS)).max(PERSONA_IDS.length).nullable().optional(),
+  interests: z.array(z.enum(INTEREST_IDS)).max(INTEREST_IDS.length).nullable().optional(),
+  housing_status: opt(["renting", "with_family", "owner", "other", "not_sure", "prefer_not"]),
+  first_home_purchase: opt(["yes", "no", "not_sure"]),
+  household_size: opt(["1", "2", "3", "4", "5_plus", "prefer_not"]),
+  dependent_children: opt(["0", "1", "2", "3_plus", "prefer_not"]),
+  household_income_range: opt(["under_10k", "10k_20k", "20k_35k", "35k_60k", "over_60k", "not_sure", "prefer_not"]),
+  property_owned: opt(["yes", "no", "not_sure", "prefer_not"]),
   country_of_residence: z.string().regex(/^[A-Z]{2}$/).nullable().optional(),
   tax_residence_country: z.string().regex(/^([A-Z]{2}|not_sure|prefer_not)$/).nullable().optional(),
   application_country: z.string().regex(/^[A-Z]{2}$/).nullable().optional(),

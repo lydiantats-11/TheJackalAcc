@@ -53,6 +53,8 @@ const multi = (form: FormData, key: string): string[] | null => {
   const v = form.getAll(key).map(String).filter(Boolean);
   return v.length ? v : null;
 };
+/** Persona/interest chips are always in the form, so an empty selection is a real answer ("none"), not "not asked". */
+const chips = (form: FormData, key: string): string[] => [...new Set(form.getAll(key).map(String).filter(Boolean))];
 const single = (form: FormData, key: string): string | null => {
   const v = form.get(key);
   return typeof v === "string" && v !== "" ? v : null;
@@ -72,7 +74,16 @@ export async function saveProfileAction(_: FormState, form: FormData): Promise<F
   try {
     await updateProfile(sql(), user, {
       persona: single(form, "persona"),
+      personas: chips(form, "personas"),
+      interests: chips(form, "interests"),
+      housing_status: single(form, "housing_status"),
+      first_home_purchase: single(form, "first_home_purchase"),
+      household_size: single(form, "household_size"),
+      dependent_children: single(form, "dependent_children"),
+      household_income_range: single(form, "household_income_range"),
+      property_owned: single(form, "property_owned"),
       application_country: "GR",
+      tax_residence_country: single(form, "tax_residence_country"),
       region_codes: multi(form, "region_codes"),
       willing_to_relocate: single(form, "willing_to_relocate"),
       age_range: single(form, "age_range"),
