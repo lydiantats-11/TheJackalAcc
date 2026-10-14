@@ -1,0 +1,64 @@
+# Automatic updates — PREPARED, SWITCHED OFF. Nothing here runs by itself.
+#
+# Three locks, all of which the owner opens deliberately:
+#   1. No schedule: this file only runs when someone presses "Run workflow". To switch automatic updates on, uncomment
+#      the `schedule` lines below (every 6 hours, at minute 17) — only after hosting is approved.
+#   2. It needs a DATABASE_URL repository secret (Settings → Secrets and variables → Actions). Without it, it stops.
+#   3. The worker only checks sources an admin has set to enabled + active. Until then a run changes nothing.
+#
+# Each run: apply new database migrations, then one worker pass (due sources → deadline sweep → retention purge),
+# then a short summary on the run page. No secrets are printed; no paid service is used by this file.
+name: Scheduled updater (off)
+
+on:
+  workflow_dispatch:
+  # schedule:
+  #   - cron: "17 */6 * * *"
+
+permissions:
+  contents: read
+
+concurrency:
+  group: scheduled-updater
+  cancel-in-progress: false   # never two updaters on one database at once
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    defaults:
+      run:
+        shell: bash
+    env:
+      DATABASE_URL: ${{ secrets.DATABASE_URL }}
+      MONITOR_CONTACT_EMAIL: jackal-accountant-updater@users.noreply.github.com
+      AI_EXTRACTION_ENABLED: "false"
+    steps:
+      - name: Lock 2 — database secret present?
+        run: |
+          if [ -z "$DATABASE_URL" ]; then
+            echo "::error::No DATABASE_URL secret. Add it under Settings → Secrets and variables → Actions. Nothing was run."
+            exit 1
+          fi
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with: { node-version: 22 }
+      - run: npm install --no-audit --no-fund
+      - name: Apply new migrations (idempotent)
+        run: npm run db:migrate
+      - name: One worker pass
+        run: npm run worker -- --once 2>&1 | tee worker.log
+      - name: Summary
+        if: always()
+        run: |
+          sudo apt-get install -y -qq postgresql-client >/dev/null 2>&1 || true
+          {
+            echo "## Updater run"
+            echo '```'
+            psql "$DATABASE_URL" -At -F ' | ' -c "SELECT slug, enabled, lifecycle, last_success_at, consecutive_failures FROM sources ORDER BY slug" 2>&1 | head -20
+            echo '```'
+            echo "Worker log (last lines):"
+            echo '```'
+            tail -15 worker.log 2>/dev/null
+            echo '```'
+          } >> "$GITHUB_STEP_SUMMARY"

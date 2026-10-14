@@ -208,3 +208,13 @@ Run on `lydiantats-11/TheJackalAcc`, branch `live-test`; reports and screenshots
   runs 1–3: 1,001 rows / 1,001 total each, 1,000 topics, 0 wrongly unverified; simulated amendment → exactly 1 change.
 - NOT yet done: automatic scheduled updates (worker loop not deployed); a human spot-check of 2 deadlines against the
   portal pages in a browser; eligibility conditions are not read from this API (Phase 3).
+
+### 2026-10-14 (afternoon, unattended) — flip-flop and multi-cut-off fixes; updater prepared, OFF
+- Import now applies the deadline-sweep rule: a call the source lists as open/upcoming after its LAST deadline is
+  stored 'unverified' (reason `deadline_passed_source_still_lists_open`). Before, sweep and import flipped 592 records
+  open ⇄ unverified every cycle, each time with a new version and a status alert.
+- Multi-cut-off calls: the next cut-off still ahead is the current deadline (was: the first, often passed); a cut-off
+  passing moves on quietly — status_reason `next_cutoff`, no "extended", no deadline-change alert.
+- Live run (commit a8cdb6b): 156/156 tests, typecheck 0, build OK, 7/7 checks; 409 current + 591 expired-unverified.
+- `.github/workflows/scheduled-updater.yml` + `docs/AUTOMATIC_UPDATES.md`: manual trigger only, needs a DATABASE_URL
+  secret, and the worker runs only sources an admin enabled. Not switched on: hosting not yet approved.
