@@ -192,3 +192,19 @@ monthly cap. Email notifications stay out of scope until their cost and privacy 
   modules; EU F&T connector; ingestion pipeline; worker; UI for availability, official wording, scenarios, source
   health with test-now; security fixes. 77/77 tests. Live EU run attempted from workspace: failed (`ENOTFOUND`),
   recorded as a failed run, no data changed.
+
+### 2026-10-14 — First live connector test (EU Funding & Tenders), on GitHub Actions
+Run on `lydiantats-11/TheJackalAcc`, branch `live-test`; reports and screenshots on branch `live-test-results`.
+- Run 1 (connector 0.1.0): all 7 checks passed, but the counts revealed a defect: without a sort the API pages in an
+  unstable order (913 / 931 / 814 distinct topics of 1,001 rows), and topics missed by a run were wrongly marked
+  `unverified` (69, then 186). Paging probe: only `sort: identifier ASC` returned a complete, identical list twice.
+- Connector 0.2.0: sorts by identifier; a listing with fewer rows than `totalResults` or with an identifier repeating on
+  non-adjacent rows is incomplete → run `partial`, nothing marked unverified.
+- Deadline probe: the API labels local times as +0000 (T17:00 = 17:00 Brussels closing time; T00:00 = date only).
+  Literal reading showed deadlines 1–2 h late. Now read as Brussels wall-clock; original wording unchanged.
+- 592 of 1,001 topics the portal labels open/forthcoming have only passed deadlines; the listing put them first and
+  (LIMIT 500) hid current calls. Listing now shows still-available records first.
+- Final run (commit 56eff0f): typecheck 0 errors, 154/154 tests (incl. 6 DB files), build OK, 7/7 live checks;
+  runs 1–3: 1,001 rows / 1,001 total each, 1,000 topics, 0 wrongly unverified; simulated amendment → exactly 1 change.
+- NOT yet done: automatic scheduled updates (worker loop not deployed); a human spot-check of 2 deadlines against the
+  portal pages in a browser; eligibility conditions are not read from this API (Phase 3).
