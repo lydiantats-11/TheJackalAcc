@@ -3,13 +3,36 @@
 > next build
 
 ▲ Next.js 16.4.0 (Turbopack)
-✓ Running next.config.ts took 25ms
+✓ Running next.config.ts took 29ms
 ⚠ No build cache found. Please configure build caching for faster rebuilds. Read more: https://nextjs.org/docs/messages/no-cache
 
   Creating an optimized production build ...
-✓ Compiled successfully in 4.9s
+✓ Compiled successfully in 4.8s
   Running TypeScript ...
-scripts/eu-ft-paging-probe.ts(52,13): error TS1375: 'await' expressions are only allowed at the top level of a file when that file is a module, but this file has no imports or exports. Consider adding an empty 'export {}' to make this file a module.
-scripts/eu-ft-paging-probe.ts(53,13): error TS1375: 'await' expressions are only allowed at the top level of a file when that file is a module, but this file has no imports or exports. Consider adding an empty 'export {}' to make this file a module.
-Failed to type check.
+  Finished TypeScript in 5.8s ...
+  Collecting page data using 3 workers ...
+  Generating static pages using 3 workers (0/11) ...
+  Generating static pages using 3 workers (2/11) 
+  Generating static pages using 3 workers (5/11) 
+  Generating static pages using 3 workers (8/11) 
+✓ Generating static pages using 3 workers (11/11) in 209ms
+  Finalizing page optimization ...
+
+Route (app)
+┌ ƒ /
+├ ƒ /_not-found
+├ ƒ /admin
+├ ƒ /admin/review
+├ ƒ /admin/sources
+├ ƒ /api/health
+├ ƒ /api/me/export
+├ ƒ /dashboard
+├ ƒ /login
+├ ƒ /opportunities
+├ ƒ /opportunities/[id]
+├ ƒ /profile
+└ ƒ /register
+
+
+ƒ  (Dynamic)  server-rendered on demand
 
