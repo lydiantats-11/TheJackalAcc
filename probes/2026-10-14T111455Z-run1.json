@@ -1,0 +1,101 @@
+{
+  "probed_at": "2026-10-14T11:14:55.330Z",
+  "results": [
+    {
+      "variant": "current (no sort, 100/page)",
+      "totalResults": 1001,
+      "pages": 11,
+      "pass1": {
+        "rows": 1001,
+        "unique": 844
+      },
+      "pass2": {
+        "rows": 1001,
+        "unique": 902
+      },
+      "in_both_passes": 782,
+      "union": 964,
+      "complete_and_stable": false
+    },
+    {
+      "variant": "no sort, 50/page",
+      "totalResults": 1001,
+      "pages": 21,
+      "pass1": {
+        "rows": 1001,
+        "unique": 798
+      },
+      "pass2": {
+        "rows": 1001,
+        "unique": 830
+      },
+      "in_both_passes": 744,
+      "union": 884,
+      "complete_and_stable": false
+    },
+    {
+      "variant": "sort identifier ASC",
+      "totalResults": 1001,
+      "pages": 11,
+      "pass1": {
+        "rows": 1001,
+        "unique": 1000
+      },
+      "pass2": {
+        "rows": 1001,
+        "unique": 1000
+      },
+      "in_both_passes": 1000,
+      "union": 1000,
+      "complete_and_stable": false
+    },
+    {
+      "variant": "sort reference ASC",
+      "totalResults": 1001,
+      "pages": 11,
+      "pass1": {
+        "rows": 1001,
+        "unique": 865
+      },
+      "pass2": {
+        "rows": 1001,
+        "unique": 857
+      },
+      "in_both_passes": 751,
+      "union": 971,
+      "complete_and_stable": false
+    },
+    {
+      "variant": "sort startDate DESC",
+      "totalResults": 1001,
+      "pages": 11,
+      "pass1": {
+        "rows": 1001,
+        "unique": 985
+      },
+      "pass2": {
+        "rows": 1001,
+        "unique": 999
+      },
+      "in_both_passes": 985,
+      "union": 999,
+      "complete_and_stable": false
+    },
+    {
+      "variant": "sort deadlineDate ASC",
+      "totalResults": 1001,
+      "pages": 11,
+      "pass1": {
+        "rows": 1001,
+        "unique": 980
+      },
+      "pass2": {
+        "rows": 1001,
+        "unique": 974
+      },
+      "in_both_passes": 972,
+      "union": 982,
+      "complete_and_stable": false
+    }
+  ]
+}
