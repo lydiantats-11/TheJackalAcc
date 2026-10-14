@@ -54,7 +54,7 @@ jobs:
           psql -h 127.0.0.1 -U app -d jackal -c "CREATE DATABASE funding_test"
           npm test 2>&1 | tee tests.log
 
-      - name: 0d. Migrate, seed, load the 9 verified records (pending review)
+      - name: 0d. Migrate, seed, load the 8 verified records (pending review)
         run: |
           npm run db:migrate 2>&1 | tee migrate.log
           npm run db:seed 2>&1 | tee -a migrate.log
