@@ -1,0 +1,6 @@
+
+> funding-radar@0.1.0 typecheck
+> tsc --noEmit
+
+scripts/eu-ft-paging-probe.ts(52,13): error TS1375: 'await' expressions are only allowed at the top level of a file when that file is a module, but this file has no imports or exports. Consider adding an empty 'export {}' to make this file a module.
+scripts/eu-ft-paging-probe.ts(53,13): error TS1375: 'await' expressions are only allowed at the top level of a file when that file is a module, but this file has no imports or exports. Consider adding an empty 'export {}' to make this file a module.

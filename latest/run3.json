@@ -1,12 +1,12 @@
 {
-  "run_id": "67db9fef-bdfe-4019-9aa8-472fa207f687",
+  "run_id": "33fb7a76-6c8c-4930-99c8-80a5dc0e63e2",
   "status": "succeeded",
   "outcomes": {
-    "unchanged": 743,
-    "changed": 71
+    "changed": 1,
+    "unchanged": 999
   },
   "skipped_by_adapter": 0,
-  "unlisted_marked_unverified": 186,
+  "unlisted_marked_unverified": 0,
   "matches": {
     "assessed": 0,
     "changed": 0

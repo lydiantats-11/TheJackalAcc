@@ -1,0 +1,9 @@
+{"t":"2026-10-14T11:19:52.110Z","msg":"source run failed","source":"eu-funding-tenders","error":"Error: host resolves to a non-public address: api.tech.ec.europa.eu"}
+{
+  "run_id": "02213789-9c73-4190-aba9-b954d406605c",
+  "status": "failed",
+  "error": "Error: host resolves to a non-public address: api.tech.ec.europa.eu",
+  "outcomes": {},
+  "skipped_by_adapter": 0,
+  "unlisted_marked_unverified": 0
+}

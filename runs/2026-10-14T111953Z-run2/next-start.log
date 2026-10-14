@@ -1,0 +1,11 @@
+
+> funding-radar@0.1.0 start
+> next start
+
+▲ Next.js 16.4.0
+- Local:         http://localhost:3000
+- Network:       http://10.1.1.217:3000
+✓ Ready in 77ms
+✓ Running next.config.ts took 24ms
+Error: Could not find a production build in the '.next' directory. Try building your app with 'next build' before starting the production server. https://nextjs.org/docs/messages/production-start-no-build-id
+    at ignore-listed frames
