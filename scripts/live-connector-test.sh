@@ -54,13 +54,19 @@ section "2. parsing and classification"
 q "SELECT official_identifier, left(official_title,60) title, opportunity_type, status, deadline_kind, closes_at, deadline_original_text, publication_basis, is_synthetic
    $EU_FROM ORDER BY closes_at NULLS LAST LIMIT 15;" | tee -a "$OUT/sql.log"
 total=$(qv "SELECT count(*) $EU_FROM")
+# Status rule: a current call is open/upcoming with its next deadline ahead; a call the portal still lists after its LAST
+# deadline must be 'unverified' for exactly that reason (live finding 2026-10-14).
 bad=$(qv "SELECT count(*) $EU_FROM AND (is_synthetic OR publication_basis <> 'official_structured' OR official_identifier IS NULL
-         OR status NOT IN ('open','upcoming') OR canonical_url NOT LIKE 'https://%europa.eu/%')")
+         OR canonical_url NOT LIKE 'https://%europa.eu/%'
+         OR NOT ((status IN ('open','upcoming') AND (closes_at IS NULL OR closes_at >= now()))
+              OR (status = 'unverified' AND status_reason = 'deadline_passed_source_still_lists_open' AND closes_at < now())))")
+current=$(qv "SELECT count(*) $EU_FROM AND status IN ('open','upcoming')")
+expired=$(qv "SELECT count(*) $EU_FROM AND status = 'unverified'")
 nodl=$(qv "SELECT count(*) $EU_FROM AND closes_at IS NOT NULL AND deadline_original_text IS NULL")
 withdl=$(qv "SELECT count(*) $EU_FROM AND closes_at IS NOT NULL")
 sample=$(qv "SELECT string_agg(official_identifier, ', ') FROM (SELECT official_identifier $EU_FROM ORDER BY official_identifier LIMIT 3) x")
 [ "$bad" = 0 ] && [ "$nodl" = 0 ] \
-  && pass "2. Parsing and classification" "$total records; 0 synthetic / non-official / wrong-status; $withdl with a deadline, all with original wording. e.g. $sample" \
+  && pass "2. Parsing and classification" "$total records: $current current (next deadline ahead), $expired listed by the portal after their last deadline → unverified; 0 synthetic / non-official / wrong-status; $withdl with a deadline, all with original wording. e.g. $sample" \
   || fail "2. Parsing and classification" "$bad records break the rules, $nodl deadlines without original wording (of $total)"
 
 # ── 3. Evidence-based storage ────────────────────────────────────────────────
@@ -93,7 +99,7 @@ fi
 
 # ── 5. Amendment / deadline change (simulated locally, corrected by the live source) ──
 section "5. simulated amendment (run3)"
-row=$(qv "SELECT o.id || '|' || o.closes_at || '|' || o.version $EU_FROM AND o.closes_at IS NOT NULL ORDER BY o.official_identifier LIMIT 1")
+row=$(qv "SELECT o.id || '|' || o.closes_at || '|' || o.version $EU_FROM AND o.closes_at > now() + interval '45 days' ORDER BY o.official_identifier LIMIT 1")
 id=${row%%|*}; rest=${row#*|}; orig=${rest%|*}; v0=${rest##*|}
 q "UPDATE opportunities SET closes_at = closes_at + interval '30 days', content_fingerprint='simulated' WHERE id='$id' RETURNING id, official_identifier, closes_at;" | tee -a "$OUT/sql.log"
 run_worker run3

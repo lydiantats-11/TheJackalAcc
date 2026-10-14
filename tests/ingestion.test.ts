@@ -242,6 +242,39 @@ describe.skipIf(!TEST_DB_URL)("ingestion pipeline + worker (PostgreSQL)", () => 
     expect((await sql`SELECT status, status_reason FROM opportunities`)[0]).toMatchObject({ status: "unverified", status_reason: "deadline_passed_pending_recheck" });
   });
 
+  it("live finding 2026-10-14: a call the source still lists as open after its last deadline imports as unverified and stays put (no flip-flop)", async () => {
+    await run([page([topic("TEST-OLD", { deadline: "2023-09-05T17:00:00.000+0000" })])]);
+    const [o] = await sql`SELECT id, status, status_reason, version FROM opportunities`;
+    expect(o).toMatchObject({ status: "unverified", status_reason: "deadline_passed_source_still_lists_open", version: 1 });
+    expect(await sql.begin((tx) => sweepPassedDeadlines(tx, t0))).toBe(0); // nothing left for the sweep to flip
+    const again = await run([page([topic("TEST-OLD", { deadline: "2023-09-05T17:00:00.000+0000" })])]);
+    expect(again.r.outcomes.unchanged).toBe(1);
+    const [after] = await sql`SELECT status, version FROM opportunities`;
+    expect(after).toMatchObject({ status: "unverified", version: 1 });
+    const events = await sql`SELECT event_type FROM opportunity_events WHERE opportunity_id = ${o!.id}`;
+    expect(events.map((e) => e.event_type)).toEqual(["new_opportunity"]);
+  });
+
+  it("live finding 2026-10-14: a multi-cut-off call shows its NEXT cut-off; a cut-off passing moves on quietly", async () => {
+    const two = () => [page([topic("TEST-MULTI", { deadline: ["2026-11-01T17:00:00.000+0100", "2027-03-01T17:00:00.000+0100"] })])];
+    await run(two());
+    const [o] = await sql`SELECT id, status, closes_at, additional_deadlines FROM opportunities`;
+    expect(o!.status).toBe("open");
+    expect((o!.closes_at as Date).toISOString()).toBe("2026-11-01T16:00:00.000Z");
+    expect(o!.additional_deadlines).toEqual(["2027-03-01T17:00:00.000+0100"]);
+    // After the first cut-off: the second becomes current; still "open", not "extended"; no deadline-change alert
+    const later = await run(two(), "manual", new Date("2026-12-01T00:00:00Z"));
+    expect(later.r.outcomes.changed).toBe(1);
+    const [p] = await sql`SELECT status, status_reason, closes_at, additional_deadlines FROM opportunities`;
+    expect(p).toMatchObject({ status: "open", status_reason: "next_cutoff" });
+    expect((p!.closes_at as Date).toISOString()).toBe("2027-03-01T16:00:00.000Z");
+    expect(p!.additional_deadlines).toEqual(["2026-11-01T17:00:00.000+0100"]);
+    const events = await sql`SELECT event_type FROM opportunity_events WHERE opportunity_id = ${o!.id} ORDER BY id`;
+    expect(events.map((e) => e.event_type)).toEqual(["new_opportunity"]);
+    // Same moment again → unchanged
+    expect((await run(two(), "manual", new Date("2026-12-01T06:00:00Z"))).r.outcomes.unchanged).toBe(1);
+  });
+
   it("#17/#18 the same call from another source is not duplicated; a differing deadline is flagged as a conflict", async () => {
     await run([page([topic("TEST-A", { deadline: "2026-12-03T17:00:00.000+0100" })])]);
     registerAdapter({

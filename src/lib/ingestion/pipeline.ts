@@ -71,10 +71,23 @@ export async function ingestItem(tx: Tx, source: SourceConfig, runId: string, it
 
   // 2. Normalise facts. Unknown stays unknown.
   const f = item.facts;
-  const status: OpportunityStatus = f?.status ?? "unverified";
+  const tz = f?.deadline_timezone ?? "Europe/Athens";
   const reading = { utcLabelIsLocalTime: f?.deadline_utc_label_is_local === true };
-  const dl = normaliseDeadline(f?.deadline_raw, f?.deadline_timezone ?? "Europe/Athens", reading);
-  const opens = f?.opens_at_raw ? normaliseDeadline(f.opens_at_raw, f.deadline_timezone, reading).closes_at : null;
+  // Multi-cut-off calls: the deadline that matters is the NEXT one still ahead; when all have passed, the latest.
+  // (Live finding 2026-10-14: using the first cut-off showed calls with a 2027 cut-off as "deadline passed".)
+  const rawDeadlines = [f?.deadline_raw, ...(f?.additional_deadlines_raw ?? [])].filter((x): x is string => !!x && !!x.trim());
+  const timed = rawDeadlines.map((raw) => ({ raw, n: normaliseDeadline(raw, tz, reading) })).filter((d) => d.n.closes_at)
+    .sort((a, b) => a.n.closes_at!.getTime() - b.n.closes_at!.getTime());
+  const chosen = timed.find((d) => d.n.closes_at! >= now) ?? timed.at(-1);
+  const dl = chosen ? chosen.n : normaliseDeadline(f?.deadline_raw, tz, reading);
+  const otherDeadlines = chosen ? rawDeadlines.filter((r) => r !== chosen.raw) : (f?.additional_deadlines_raw ?? []);
+  // A source that still lists a call as open/upcoming after its last deadline is not evidence that it is open.
+  // Same rule as sweepPassedDeadlines, applied at import, so import and sweep agree (no open ⇄ unverified flip-flop).
+  const sourceStatus: OpportunityStatus = f?.status ?? "unverified";
+  const pastLastDeadline = !!dl.closes_at && dl.deadline_kind === "official" && dl.closes_at < now && LIVE.includes(sourceStatus);
+  const status: OpportunityStatus = pastLastDeadline ? "unverified" : sourceStatus;
+  const statusReasonNew = pastLastDeadline ? "deadline_passed_source_still_lists_open" : f?.status ? "source_status" : "source_status_unrecognised";
+  const opens = f?.opens_at_raw ? normaliseDeadline(f.opens_at_raw, tz, reading).closes_at : null;
   const modifiedAt = item.source_modified_at ? new Date(item.source_modified_at) : null;
   const validModified = modifiedAt && !Number.isNaN(modifiedAt.getTime()) ? modifiedAt : null;
 
@@ -102,8 +115,8 @@ export async function ingestItem(tx: Tx, source: SourceConfig, runId: string, it
         ${f?.title_lang ?? "el"}, ${f?.opportunity_type ?? "unknown"}, ${f?.publishing_authority ?? source.authority}, ${f?.programme ?? null},
         ${canonical}, ${f?.application_url ?? null}, ${opens}, ${dl.closes_at}, ${dl.closes_at ? "known" : "unknown"}, ${dl.deadline_kind},
         ${dl.deadline_original_text}, ${dl.deadline_is_date_only}, ${dl.deadline_timezone},
-        ${f?.additional_deadlines_raw?.length ? tx.json(f.additional_deadlines_raw as never) : null},
-        ${status}, ${f?.status ? "high" : "low"}, ${f?.status ? "source_status" : "source_status_unrecognised"},
+        ${otherDeadlines.length ? tx.json(otherDeadlines as never) : null},
+        ${status}, ${f?.status && !pastLastDeadline ? "high" : "low"}, ${statusReasonNew},
         ${tx.json({ source_url: canonical, status_raw: f?.status_raw ?? null, document_id: docId } as never)},
         ${now}, ${now}, ${validModified}, ${item.trust}, ${item.trust === "official_structured" ? "approved" : "pending"}, ${hash}, 'unknown')
       RETURNING id`;
@@ -145,7 +158,8 @@ export async function ingestItem(tx: Tx, source: SourceConfig, runId: string, it
   }
 
   // 4c. Same source, nothing material changed → just record that we re-verified it.
-  if (existing.content_fingerprint === hash && existing.status === status) {
+  const deadlineChanged = (existing.closes_at?.getTime() ?? null) !== (dl.closes_at?.getTime() ?? null);
+  if (existing.content_fingerprint === hash && existing.status === status && !deadlineChanged) {
     await tx`UPDATE opportunities SET last_retrieved_at = ${now}, last_verified_at = ${now},
                source_modified_at = GREATEST(source_modified_at, ${validModified}) WHERE id = ${id}`;
     return { outcome: "unchanged", opportunity_id: id };
@@ -163,30 +177,33 @@ export async function ingestItem(tx: Tx, source: SourceConfig, runId: string, it
 
   // 4e. Material change: snapshot the previous state, then update.
   const newVersion = existing.version + 1;
-  const deadlineChanged = (existing.closes_at?.getTime() ?? null) !== (dl.closes_at?.getTime() ?? null);
   const statusChanged = existing.status !== status;
-  const kind = deadlineChanged && dl.closes_at && existing.closes_at && dl.closes_at > existing.closes_at ? "extension"
+  // Same official facts, but time moved past a cut-off: the next cut-off becomes current. Not an extension or amendment.
+  const nextCutoff = existing.content_fingerprint === hash && deadlineChanged;
+  const kind = nextCutoff ? (statusChanged ? "status" : "amendment")
+    : deadlineChanged && dl.closes_at && existing.closes_at && dl.closes_at > existing.closes_at ? "extension"
     : deadlineChanged ? "amendment" : statusChanged ? "status" : "amendment";
   await snapshot(tx, id, existing.version, existing.version === 1 ? "created" : "amendment", "state before update", docId);
   const finalStatus: OpportunityStatus = kind === "extension" && status === "open" ? "extended" : status;
+  const reason = pastLastDeadline ? "deadline_passed_source_still_lists_open" : nextCutoff ? "next_cutoff" : kind;
   await tx`
     UPDATE opportunities SET
       official_title = ${(f?.official_title ?? item.title).slice(0, 1000)}, programme = ${f?.programme ?? null},
       opens_at = ${opens}, closes_at = ${dl.closes_at}, deadline_state = ${dl.closes_at ? "known" : "unknown"}, deadline_kind = ${dl.deadline_kind},
       deadline_original_text = ${dl.deadline_original_text}, deadline_is_date_only = ${dl.deadline_is_date_only},
-      additional_deadlines = ${f?.additional_deadlines_raw?.length ? tx.json(f.additional_deadlines_raw as never) : null},
-      status = ${finalStatus}, status_confidence = ${f?.status ? "high" : "low"}, status_reason = ${kind},
+      additional_deadlines = ${otherDeadlines.length ? tx.json(otherDeadlines as never) : null},
+      status = ${finalStatus}, status_confidence = ${f?.status && !pastLastDeadline ? "high" : "low"}, status_reason = ${reason},
       status_evidence = ${tx.json({ source_url: canonical, status_raw: f?.status_raw ?? null, document_id: docId } as never)},
       last_retrieved_at = ${now}, last_verified_at = ${now}, source_modified_at = GREATEST(source_modified_at, ${validModified}),
       content_fingerprint = ${hash}, version = ${newVersion}, updated_at = now()
     WHERE id = ${id}`;
-  await snapshot(tx, id, newVersion, kind, `${kind} detected by ${source.slug}`, docId);
+  await snapshot(tx, id, newVersion, kind, nextCutoff ? `next cut-off now current (${source.slug})` : `${kind} detected by ${source.slug}`, docId);
   if (statusChanged || finalStatus !== existing.status) {
     await tx`INSERT INTO opportunity_status_history (opportunity_id, from_status, to_status, reason, evidence, actor)
              VALUES (${id}, ${existing.status}, ${finalStatus}, ${kind}, ${tx.json({ source_url: canonical, status_raw: f?.status_raw ?? null } as never)}, 'system')`;
     await recordEvent(tx, id, "status_changed", `status_changed:${id}:v${newVersion}`, { from: existing.status, to: finalStatus });
   }
-  if (deadlineChanged) {
+  if (deadlineChanged && !nextCutoff) { // a cut-off simply passing is not a change to the official schedule: no alert
     await evidence(tx, id, "deadline", { closes_at: dl.closes_at, original: dl.deadline_original_text }, canonical, docId, rank, "approved");
     await recordEvent(tx, id, "deadline_changed", `deadline_changed:${id}:v${newVersion}`, { from: existing.closes_at, to: dl.closes_at, kind });
   }
