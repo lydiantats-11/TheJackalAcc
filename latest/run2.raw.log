@@ -1,10 +1,10 @@
-{"t":"2026-10-14T12:00:56.010Z","msg":"eu-ft discover finished","pages":11,"rows":1001,"total":1001,"items":1000,"skipped":0,"truncated":false}
-{"t":"2026-10-14T12:00:58.335Z","msg":"source run finished","source":"eu-funding-tenders","status":"succeeded","outcomes":{"unchanged":1000},"unlisted":0}
+{"t":"2026-10-14T16:23:21.451Z","msg":"eu-ft discover finished","pages":10,"rows":1000,"total":1000,"items":999,"skipped":0,"truncated":false}
+{"t":"2026-10-14T16:23:24.018Z","msg":"source run finished","source":"eu-funding-tenders","status":"succeeded","outcomes":{"unchanged":999},"unlisted":0}
 {
-  "run_id": "2b1d17ca-0269-41aa-8ae6-6a6785fdf42b",
+  "run_id": "0e1ead93-c42f-44d2-834f-2b9b21903f42",
   "status": "succeeded",
   "outcomes": {
-    "unchanged": 1000
+    "unchanged": 999
   },
   "skipped_by_adapter": 0,
   "unlisted_marked_unverified": 0,

@@ -9,7 +9,8 @@ applied 0004_interpretation_fields.sql
 applied 0005_ai_extraction.sql
 applied 0006_personas_and_household.sql
 applied 0007_records_and_residence.sql
-7 migration(s) applied
+applied 0008_industries.sql
+8 migration(s) applied
 
 > funding-radar@0.1.0 db:seed
 > tsx scripts/seed.ts
@@ -17,7 +18,6 @@ applied 0007_records_and_residence.sql
 seed complete: { sources: '9', categories: '12', synthetic_opportunities: '6' }
 BEGIN
 DELETE 0
-INSERT 0 2
 INSERT 0 2
 INSERT 0 5
 INSERT 0 4

@@ -3,19 +3,19 @@
 > next build
 
 ▲ Next.js 16.4.0 (Turbopack)
-✓ Running next.config.ts took 22ms
+✓ Running next.config.ts took 23ms
 ⚠ No build cache found. Please configure build caching for faster rebuilds. Read more: https://nextjs.org/docs/messages/no-cache
 
   Creating an optimized production build ...
-✓ Compiled successfully in 4.7s
+✓ Compiled successfully in 4.9s
   Running TypeScript ...
-  Finished TypeScript in 5.3s ...
+  Finished TypeScript in 5.7s ...
   Collecting page data using 3 workers ...
   Generating static pages using 3 workers (0/11) ...
   Generating static pages using 3 workers (2/11) 
   Generating static pages using 3 workers (5/11) 
   Generating static pages using 3 workers (8/11) 
-✓ Generating static pages using 3 workers (11/11) in 187ms
+✓ Generating static pages using 3 workers (11/11) in 195ms
   Finalizing page optimization ...
 
 Route (app)
