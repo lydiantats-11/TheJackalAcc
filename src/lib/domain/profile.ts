@@ -7,6 +7,7 @@
  *   "not_applicable" the question does not apply   → only satisfies a requirement if the rule explicitly allows it
  */
 import type { InterestId, PersonaId } from "./personas";
+import type { IndustryChoice } from "./industries";
 
 export type Answer ="yes" | "no" | "not_sure" | "prefer_not";
 export type Sentinel = "not_sure" | "prefer_not" | "not_applicable";
@@ -35,6 +36,8 @@ export interface MatchProfile {
   /** The five non-exclusive personas. They choose which questions are shown; they never decide eligibility. */
   personas?: PersonaId[] | null;
   interests?: InterestId[] | null;
+  /** Industries the person works in or plans to enter (+ "all" / "undecided"). Discovery only — never eligibility. */
+  industries?: IndustryChoice[] | null;
   // ── household (Persona 4) — stored for future household requirements; not yet evaluated by the engine ──
   housing_status?: HousingStatus | null;
   first_home_purchase?: "yes" | "no" | "not_sure" | null;

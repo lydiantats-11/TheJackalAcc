@@ -7,7 +7,8 @@ The records were checked by hand on official pages on 14 Oct 2026. They are impo
   requirement_set_completeness = 'partial'  (nobody has confirmed the rule list is complete)
 so they appear in Ευκαιρίες only after the owner approves them, and can never be shown as fully verified.
 
-Not imported: TED (a source directory, already in the source registry), Spain (future expansion),
+Not imported: TED (a source directory, already in the source registry), Spain (future expansion), the European
+Solidarity Corps (volunteering, removed from scope by the owner on 14 Oct 2026),
 EIC Accelerator (the EU Funding & Tenders connector will bring it with an official identifier; importing it by hand
 would create a duplicate).
 
@@ -25,6 +26,7 @@ CHECKED_AT = "2026-10-14T00:00:00+03:00"  # date precision: exact per-page times
 EU27 = ["AT", "BE", "BG", "HR", "CY", "CZ", "DK", "EE", "FI", "FR", "DE", "GR", "HU", "IE", "IT", "LV", "LT", "LU", "MT",
         "NL", "PL", "PT", "RO", "SK", "SI", "ES", "SE"]
 SKIP = {"ted": "source directory — kept in the sources table", "beckham": "Spain — future expansion, not monitored",
+        "esc": "volunteering — removed from scope by the owner on 14 Oct 2026",
         "eic": "will be imported by the EU Funding & Tenders connector with its official identifier"}
 
 KIND = {"round": "application_round", "call": "call", "service": "standing_procedure", "programme": "programme", "tax": "tax_regime"}

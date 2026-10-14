@@ -38,6 +38,13 @@ describe.skipIf(!TEST_DB_URL)("end-to-end: source to explained match (PostgreSQL
     expect(run.status).toBe("succeeded");
     const [opp] = await listOpportunities(sql);
     expect(opp!.publication_basis).toBe("official_structured");
+    // Industry filter (0008): a record not restricted to any industry is listed under every industry; a restricted one only under its own
+    expect(opp!.industries).toBeNull();
+    expect(await listOpportunities(sql, { industry: "tourism_hospitality" })).toHaveLength(1);
+    await sql`UPDATE opportunities SET industries = '{agriculture}' WHERE id = ${opp!.id}`;
+    expect(await listOpportunities(sql, { industry: "tourism_hospitality" })).toHaveLength(0);
+    expect(await listOpportunities(sql, { industry: "agriculture" })).toHaveLength(1);
+    await sql`UPDATE opportunities SET industries = NULL WHERE id = ${opp!.id}`;
 
     // No requirements extracted yet → never "eligible", always "insufficient information"
     const before = await listMyMatches(sql, ana);

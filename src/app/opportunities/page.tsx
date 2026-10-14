@@ -7,6 +7,7 @@ import { getProfile } from "@/lib/data/user";
 import { assess, type OpportunityStatus } from "@/lib/domain/eligibility";
 import { AvailabilityBadge, EligibilityBadge, SyntheticLabel } from "@/components/badges";
 import { OpportunityFacts } from "@/components/opportunity-facts";
+import { INDUSTRY_IDS } from "@/lib/domain/industries";
 
 export const metadata = { title: "Opportunities" };
 const STATUSES: OpportunityStatus[] = ["open", "upcoming", "extended", "suspended", "unverified", "closed"];
@@ -21,6 +22,7 @@ export default async function OpportunitiesPage({ searchParams }: { searchParams
     category: sp.category || undefined,
     status: STATUSES.includes(sp.status as OpportunityStatus) ? (sp.status as OpportunityStatus) : undefined,
     type: TYPES.includes(sp.type ?? "") ? sp.type : undefined,
+    industry: (INDUSTRY_IDS as string[]).includes(sp.industry ?? "") ? sp.industry : undefined,
   };
   const [rows, categories, user] = await Promise.all([listOpportunities(sql(), filters), listCategories(sql()), currentUser()]);
   const [profile, reqs] = await Promise.all([user ? getProfile(sql(), user) : null, loadRequirements(sql(), rows.map((r) => r.id))]);
@@ -45,6 +47,11 @@ export default async function OpportunitiesPage({ searchParams }: { searchParams
           <select id="type" name="type" defaultValue={filters.type ?? ""}>
             <option value="">{t.opp.allTypes}</option>
             {TYPES.map((s) => <option key={s} value={s}>{t.type[s]}</option>)}
+          </select></div>
+        <div><label htmlFor="industry">{t.opp.industry}</label>
+          <select id="industry" name="industry" defaultValue={filters.industry ?? ""}>
+            <option value="">{t.opp.allIndustries}</option>
+            {INDUSTRY_IDS.map((s) => <option key={s} value={s}>{t.opt.industries[s]}</option>)}
           </select></div>
         <button className="btn btn-primary">{t.opp.search}</button>
       </form>

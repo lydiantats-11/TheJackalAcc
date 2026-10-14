@@ -47,6 +47,8 @@ export interface OpportunityRow {
   stale_after_days: number | null;
   record_kind: "call" | "application_round" | "standing_procedure" | "programme" | "tax_regime";
   uncertainties: string[];
+  /** 0008: industries a record is restricted to; null = not restricted (discovery only, never eligibility). */
+  industries: string[] | null;
 }
 
 export interface OpportunityFilters {
@@ -54,6 +56,8 @@ export interface OpportunityFilters {
   category?: string;
   status?: OpportunityStatus;
   type?: string;
+  /** An industry id: keeps records restricted to it AND records not restricted to any industry. */
+  industry?: string;
 }
 
 const SELECT = (sql: postgres.Sql) => sql`
@@ -72,6 +76,7 @@ export async function listOpportunities(sql: postgres.Sql, f: OpportunityFilters
       ${q ? sql`AND (o.official_title ILIKE ${"%" + q + "%"} OR o.summary_plain ILIKE ${"%" + q + "%"} OR o.official_identifier ILIKE ${"%" + q + "%"})` : sql``}
       ${f.status ? sql`AND o.status = ${f.status}` : sql``}
       ${f.type ? sql`AND o.opportunity_type = ${f.type}` : sql``}
+      ${f.industry ? sql`AND (o.industries IS NULL OR ${f.industry} = ANY(o.industries))` : sql``}
       ${f.category ? sql`AND EXISTS (SELECT 1 FROM opportunity_category_links c WHERE c.opportunity_id = o.id AND c.category_code = ${f.category})` : sql``}
     GROUP BY o.id, s.name, s.stale_after_hours
     -- Still-available first: closed records last, and records whose deadline has passed after those still open

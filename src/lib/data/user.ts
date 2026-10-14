@@ -7,6 +7,7 @@ import { z } from "zod";
 import type { SessionUser } from "@/lib/auth/service";
 import type { MatchProfile } from "@/lib/domain/profile";
 import { INTEREST_IDS, PERSONA_IDS } from "@/lib/domain/personas";
+import { INDUSTRY_CHOICES, normaliseIndustries } from "@/lib/domain/industries";
 
 const opt = <T extends [string, ...string[]]>(values: T) => z.enum(values).nullable().optional();
 const isoDate = z.string().regex(/^\d{4}-\d{2}-\d{2}$/).refine((d) => !Number.isNaN(new Date(d).getTime()));
@@ -16,6 +17,8 @@ export const profileInputSchema = z.object({
   persona: opt(["individual", "aspiring_entrepreneur", "existing_business", "tender_applicant", "adviser"]),
   personas: z.array(z.enum(PERSONA_IDS)).max(PERSONA_IDS.length).nullable().optional(),
   interests: z.array(z.enum(INTEREST_IDS)).max(INTEREST_IDS.length).nullable().optional(),
+  industries: z.array(z.enum(INDUSTRY_CHOICES as [string, ...string[]])).max(INDUSTRY_CHOICES.length)
+    .transform((v) => normaliseIndustries(v)).nullable().optional(),
   housing_status: opt(["renting", "with_family", "owner", "other", "not_sure", "prefer_not"]),
   first_home_purchase: opt(["yes", "no", "not_sure"]),
   household_size: opt(["1", "2", "3", "4", "5_plus", "prefer_not"]),

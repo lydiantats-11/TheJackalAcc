@@ -50,6 +50,16 @@ describe.skipIf(!TEST_DB_URL)("profile saves never erase unrelated answers (Post
     expect(p.first_home_purchase).toBeNull();
   });
 
+  it("industries (owner request 14 Oct 2026): saved as patch; 'all' with specific industries keeps the specific ones", async () => {
+    await updateProfile(sql, u, { industries: ["all", "tourism_hospitality", "technology_it"] });
+    expect((await getProfile(sql, u)).industries).toEqual(["tourism_hospitality", "technology_it"]);
+    await updateProfile(sql, u, { employment_status: "employed" }); // a save without industries keeps them
+    expect((await getProfile(sql, u)).industries).toEqual(["tourism_hospitality", "technology_it"]);
+    await updateProfile(sql, u, { industries: ["undecided"] });
+    expect((await getProfile(sql, u)).industries).toEqual(["undecided"]);
+    await expect(updateProfile(sql, u, { industries: ["wizard"] })).rejects.toThrow();
+  });
+
   it("rejects unknown personas instead of storing them", async () => {
     await expect(updateProfile(sql, u, { personas: ["wizard"] })).rejects.toThrow();
   });

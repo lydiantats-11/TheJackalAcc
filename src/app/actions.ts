@@ -83,6 +83,7 @@ export async function saveProfileAction(_: FormState, form: FormData): Promise<F
       persona: single(form, "persona"),
       personas: chips(form, "personas"),
       interests: chips(form, "interests"),
+      industries: chips(form, "industries"),
       housing_status: single(form, "housing_status"),
       first_home_purchase: single(form, "first_home_purchase"),
       household_size: single(form, "household_size"),

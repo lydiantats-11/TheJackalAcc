@@ -10,6 +10,7 @@ import { useActionState, useState } from "react";
 import type { FormState } from "@/app/actions";
 import type { MatchProfile } from "@/lib/domain/profile";
 import { INTEREST_IDS, PERSONA_IDS, personasOf, visibleFields, visibleSections, type InterestId, type PersonaId, type Section } from "@/lib/domain/personas";
+import { INDUSTRY_CHOICES, INDUSTRY_SPECIAL, type IndustryChoice } from "@/lib/domain/industries";
 import type { Dictionary } from "@/lib/i18n/dictionaries";
 
 const NUTS2_GR: Array<[string, string]> = [
@@ -82,6 +83,13 @@ export function ProfileForm({ action, profile, t, ask }: { action: (s: FormState
   const [state, formAction, pending] = useActionState(action, undefined);
   const [personas, setPersonas] = useState<PersonaId[]>(personasOf(profile));
   const [interests, setInterests] = useState<InterestId[]>(profile.interests ?? []);
+  const [industries, setIndustries] = useState<IndustryChoice[]>(profile.industries ?? []);
+  // "All industries" / "Not decided yet" are exclusive with specific industries (normaliseIndustries enforces it on save too).
+  const toggleIndustry = (id: IndustryChoice, on: boolean) => setIndustries((prev) => {
+    if (!on) return prev.filter((x) => x !== id);
+    const special = (INDUSTRY_SPECIAL as readonly string[]).includes(id);
+    return special ? [id] : [...prev.filter((x) => !(INDUSTRY_SPECIAL as readonly string[]).includes(x)), id];
+  });
   const [stage, setStage] = useState<string>(profile.business_stage ?? "");
   const [employment, setEmployment] = useState<string>(profile.employment_status ?? "");
   const [housing, setHousing] = useState<string>(profile.housing_status ?? "");
@@ -120,7 +128,7 @@ export function ProfileForm({ action, profile, t, ask }: { action: (s: FormState
   return (
     <form action={formAction} className="stack">
       {/* Checkbox groups send nothing when empty; declare them so an empty choice is saved and nothing else is erased. */}
-      {["personas", "interests", "region_codes", "sectors"].map((k) => <input key={k} type="hidden" name="__present" value={k} />)}
+      {["personas", "interests", "industries", "region_codes", "sectors"].map((k) => <input key={k} type="hidden" name="__present" value={k} />)}
       {state?.ok && <div className="notice info" role="status">{t.profile.saved}</div>}
       {state?.error && <div className="notice bad" role="alert">{t.auth.errors.invalid_input}</div>}
 
@@ -131,6 +139,11 @@ export function ProfileForm({ action, profile, t, ask }: { action: (s: FormState
 
       <fieldset><legend>{t.question.interests}</legend>
         <Chips name="interests" ids={INTEREST_IDS} labels={t.opt.interests} selected={interests} onToggle={toggle(setInterests)} />
+      </fieldset>
+
+      <fieldset><legend>{t.question.industries}</legend>
+        <p className="small muted" style={{ marginTop: 0 }}>{t.why.industries}</p>
+        <Chips name="industries" ids={INDUSTRY_CHOICES} labels={t.opt.industries} selected={industries} onToggle={toggleIndustry} />
       </fieldset>
 
       <fieldset><legend>{legend("applying_as")}</legend>
