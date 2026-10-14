@@ -1,0 +1,126 @@
+
+===== 1. retrieval (run1) =====
+{
+  "run_id": "a0db020b-50e9-4e0e-a85e-f3bef1907c18",
+  "status": "succeeded",
+  "outcomes": {
+    "new": 913
+  },
+  "skipped_by_adapter": 0,
+  "unlisted_marked_unverified": 0,
+  "matches": {
+    "assessed": 0,
+    "changed": 0
+  }
+}
+
+===== 2. parsing and classification =====
+            official_identifier            |                            title                             | opportunity_type | status | deadline_kind |       closes_at        |    deadline_original_text    |  publication_basis  | is_synthetic 
+-------------------------------------------+--------------------------------------------------------------+------------------+--------+---------------+------------------------+------------------------------+---------------------+--------------
+ CEF-T-2021-AFIFGEN-UNITS                  | Alternative Fuel Infrastructure Facility - Unit Contribution | unknown          | open   | official      | 2022-01-19 17:00:00+00 | 2022-01-19T17:00:00.000+0000 | official_structured | f
+ CEF-T-2021-AFIFCOEN-UNITS                 | Alternative Fuel Infrastructure Facility - Unit Contribution | unknown          | open   | official      | 2022-01-19 17:00:00+00 | 2022-01-19T17:00:00.000+0000 | official_structured | f
+ CEF-T-2021-AFIFGEN-WORKS-ZE               | Alternative Fuel Infrastructure Facility - Works - Zero Emis | unknown          | open   | official      | 2022-01-19 17:00:00+00 | 2022-01-19T17:00:00.000+0000 | official_structured | f
+ CEF-T-2021-AFIFCOEN-WORKS-ZE              | Alternative Fuel Infrastructure Facility - Works - Zero Emis | unknown          | open   | official      | 2022-01-19 17:00:00+00 | 2022-01-19T17:00:00.000+0000 | official_structured | f
+ CEF-T-2021-AFIFGEN-WORKS-LNG              | Alternative Fuel Infrastructure Facility - Works - LNG       | unknown          | open   | official      | 2022-01-19 17:00:00+00 | 2022-01-19T17:00:00.000+0000 | official_structured | f
+ CEF-T-2021-AFIFCOEN-WORKS-LNG             | Alternative Fuel Infrastructure Facility - Works - LNG       | unknown          | open   | official      | 2022-01-19 17:00:00+00 | 2022-01-19T17:00:00.000+0000 | official_structured | f
+ ERASMUS-EDU-2022-ECHE-CERT-FP             | Erasmus Charter for Higher Education                         | unknown          | open   | official      | 2022-05-03 17:00:00+00 | 2022-05-03T17:00:00.000+0000 | official_structured | f
+ JTM-2022-2025-PSLF-STANDALONE-PROJECTS    | PSLF-PROJECTS                                                | unknown          | open   | official      | 2022-10-19 17:00:00+00 | 2022-10-19T17:00:00.000+0000 | official_structured | f
+ JTM-2022-2025-PSLF-LOAN-SCHEMES           | PSLF-LOAN SCHEMES                                            | unknown          | open   | official      | 2022-10-19 17:00:00+00 | 2022-10-19T17:00:00.000+0000 | official_structured | f
+ HORIZON-EIC-2023-ACCELERATORCHALLENGES-04 | EIC Accelerator Challenge: New European Bauhaus and Architec | unknown          | open   | official      | 2023-01-11 17:00:00+00 | 2023-01-11T17:00:00.000+0000 | official_structured | f
+ HORIZON-EIC-2023-ACCELERATOROPEN-01       | EIC Accelerator Open 2023                                    | unknown          | open   | official      | 2023-01-11 17:00:00+00 | 2023-01-11T17:00:00.000+0000 | official_structured | f
+ HORIZON-EIC-2023-ACCELERATORCHALLENGES-03 | EIC Accelerator Challenge: Energy storage                    | unknown          | open   | official      | 2023-01-11 17:00:00+00 | 2023-01-11T17:00:00.000+0000 | official_structured | f
+ ERC-2023-POC                              | ERC PROOF OF CONCEPT GRANTS                                  | unknown          | open   | official      | 2023-01-24 17:00:00+00 | 2023-01-24T17:00:00.000+0000 | official_structured | f
+ CREA-MEDIA-2023-FILMOVE                   | Films on the Move                                            | unknown          | open   | official      | 2023-03-14 17:00:00+00 | 2023-03-14T17:00:00.000+0000 | official_structured | f
+ HORIZON-EIC-2023-TRANSITIONOPEN-01        | Transition Open 2023                                         | unknown          | open   | official      | 2023-04-12 17:00:00+00 | 2023-04-12T17:00:00.000+0000 | official_structured | f
+(15 rows)
+
+
+===== 3. evidence storage =====
+ docs | distinct_hashes 
+------+-----------------
+  913 |             905
+(1 row)
+
+            official_identifier             |  field   |                                                                  source_url                                                                  | method | evidence_rank 
+--------------------------------------------+----------+----------------------------------------------------------------------------------------------------------------------------------------------+--------+---------------
+ CEF-DIG-2026-CABLE-REPAIR-CAPACITIES-WORKS | deadline | https://ec.europa.eu/info/funding-tenders/opportunities/portal/screen/opportunities/topic-details/CEF-DIG-2026-CABLE-REPAIR-CAPACITIES-WORKS | parser |             2
+ CEF-DIG-2026-CABLE-REPAIR-CAPACITIES-WORKS | status   | https://ec.europa.eu/info/funding-tenders/opportunities/portal/screen/opportunities/topic-details/CEF-DIG-2026-CABLE-REPAIR-CAPACITIES-WORKS | parser |             2
+ CEF-E-2023-PCI-STUDIES                     | deadline | https://ec.europa.eu/info/funding-tenders/opportunities/data/topicDetails/CEF-E-2023-PCI-STUDIES.json                                        | parser |             2
+ CEF-E-2023-PCI-STUDIES                     | status   | https://ec.europa.eu/info/funding-tenders/opportunities/data/topicDetails/CEF-E-2023-PCI-STUDIES.json                                        | parser |             2
+ CEF-E-2023-PCI-WORKS                       | deadline | https://ec.europa.eu/info/funding-tenders/opportunities/data/topicDetails/CEF-E-2023-PCI-WORKS.json                                          | parser |             2
+ CEF-E-2023-PCI-WORKS                       | status   | https://ec.europa.eu/info/funding-tenders/opportunities/data/topicDetails/CEF-E-2023-PCI-WORKS.json                                          | parser |             2
+ CEF-T-2021-AFIFCOEN-UNITS                  | deadline | https://ec.europa.eu/info/funding-tenders/opportunities/data/topicDetails/CEF-T-2021-AFIFCOEN-UNITS.json                                     | parser |             2
+ CEF-T-2021-AFIFCOEN-UNITS                  | status   | https://ec.europa.eu/info/funding-tenders/opportunities/data/topicDetails/CEF-T-2021-AFIFCOEN-UNITS.json                                     | parser |             2
+ CEF-T-2021-AFIFCOEN-WORKS-LNG              | deadline | https://ec.europa.eu/info/funding-tenders/opportunities/data/topicDetails/CEF-T-2021-AFIFCOEN-WORKS-LNG.json                                 | parser |             2
+ CEF-T-2021-AFIFCOEN-WORKS-LNG              | status   | https://ec.europa.eu/info/funding-tenders/opportunities/data/topicDetails/CEF-T-2021-AFIFCOEN-WORKS-LNG.json                                 | parser |             2
+(10 rows)
+
+                  id                  |  status   |          started_at          |        finished_at         | items_seen | items_new | items_changed | connector_version | error 
+--------------------------------------+-----------+------------------------------+----------------------------+------------+-----------+---------------+-------------------+-------
+ a0db020b-50e9-4e0e-a85e-f3bef1907c18 | succeeded | 2026-10-14 11:07:28.56784+00 | 2026-10-14 11:07:45.559+00 |        913 |       913 |             0 | 0.1.0             | 
+(1 row)
+
+
+===== 4. repeat import (run2) =====
+{
+  "run_id": "8a1fd60b-2d44-4c12-85f8-be5c484faf7a",
+  "status": "succeeded",
+  "outcomes": {
+    "unchanged": 844,
+    "new": 87
+  },
+  "skipped_by_adapter": 0,
+  "unlisted_marked_unverified": 69,
+  "matches": {
+    "assessed": 0,
+    "changed": 0
+  }
+}
+
+===== 5. simulated amendment (run3) =====
+                  id                  |            official_identifier             |       closes_at        
+--------------------------------------+--------------------------------------------+------------------------
+ 5f7635c6-bb36-4356-87ce-7e4a364019b7 | CEF-DIG-2026-CABLE-REPAIR-CAPACITIES-WORKS | 2026-12-25 00:00:00+00
+(1 row)
+
+UPDATE 1
+{
+  "run_id": "67db9fef-bdfe-4019-9aa8-472fa207f687",
+  "status": "succeeded",
+  "outcomes": {
+    "unchanged": 743,
+    "changed": 71
+  },
+  "skipped_by_adapter": 0,
+  "unlisted_marked_unverified": 186,
+  "matches": {
+    "assessed": 0,
+    "changed": 0
+  }
+}
+ version | change_kind |          created_at           
+---------+-------------+-------------------------------
+       1 | created     | 2026-10-14 11:07:41.81009+00
+       2 | amendment   | 2026-10-14 11:08:12.366695+00
+(2 rows)
+
+
+===== 6. display =====
+screenshots saved
+
+===== 7a. freshness =====
+        slug        | lifecycle |      last_success_at       |       last_check_at        | consecutive_failures 
+--------------------+-----------+----------------------------+----------------------------+----------------------
+ eu-funding-tenders | tested    | 2026-10-14 11:08:14.007+00 | 2026-10-14 11:08:14.007+00 |                    0
+(1 row)
+
+
+===== 7b. failure (official host made unreachable) =====
+{
+  "run_id": "ab6ffc98-52dc-4f46-ba7d-c874fabccbc8",
+  "status": "failed",
+  "error": "Error: host resolves to a non-public address: api.tech.ec.europa.eu",
+  "outcomes": {},
+  "skipped_by_adapter": 0,
+  "unlisted_marked_unverified": 0
+}
