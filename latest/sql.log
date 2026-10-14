@@ -1,7 +1,7 @@
 
 ===== 1. retrieval (run1) =====
 {
-  "run_id": "83535ac9-2eb2-4eb9-bda9-80dadc98f179",
+  "run_id": "fc75ef20-d0e4-4e60-ab7a-0e9cc68f55a0",
   "status": "succeeded",
   "outcomes": {
     "new": 1000
@@ -15,23 +15,23 @@
 }
 
 ===== 2. parsing and classification =====
-            official_identifier            |                            title                             | opportunity_type | status | deadline_kind |       closes_at        |    deadline_original_text    |  publication_basis  | is_synthetic 
--------------------------------------------+--------------------------------------------------------------+------------------+--------+---------------+------------------------+------------------------------+---------------------+--------------
- ESC-HUMAID-2021-QUAL-LABEL-FP             | Quality Label Humanitarian Aid - Full Procedure              | unknown          | open   | official      | 2021-09-22 17:00:00+00 | 2021-09-22T17:00:00.000+0000 | official_structured | f
- CEF-T-2021-AFIFCOEN-WORKS-LNG             | Alternative Fuel Infrastructure Facility - Works - LNG       | unknown          | open   | official      | 2022-01-19 17:00:00+00 | 2022-01-19T17:00:00.000+0000 | official_structured | f
- CEF-T-2021-AFIFCOEN-UNITS                 | Alternative Fuel Infrastructure Facility - Unit Contribution | unknown          | open   | official      | 2022-01-19 17:00:00+00 | 2022-01-19T17:00:00.000+0000 | official_structured | f
- CEF-T-2021-AFIFGEN-WORKS-ZE               | Alternative Fuel Infrastructure Facility - Works - Zero Emis | unknown          | open   | official      | 2022-01-19 17:00:00+00 | 2022-01-19T17:00:00.000+0000 | official_structured | f
- CEF-T-2021-AFIFCOEN-WORKS-ZE              | Alternative Fuel Infrastructure Facility - Works - Zero Emis | unknown          | open   | official      | 2022-01-19 17:00:00+00 | 2022-01-19T17:00:00.000+0000 | official_structured | f
- CEF-T-2021-AFIFGEN-WORKS-LNG              | Alternative Fuel Infrastructure Facility - Works - LNG       | unknown          | open   | official      | 2022-01-19 17:00:00+00 | 2022-01-19T17:00:00.000+0000 | official_structured | f
- CEF-T-2021-AFIFGEN-UNITS                  | Alternative Fuel Infrastructure Facility - Unit Contribution | unknown          | open   | official      | 2022-01-19 17:00:00+00 | 2022-01-19T17:00:00.000+0000 | official_structured | f
- ERASMUS-EDU-2022-ECHE-CERT-FP             | Erasmus Charter for Higher Education                         | unknown          | open   | official      | 2022-05-03 17:00:00+00 | 2022-05-03T17:00:00.000+0000 | official_structured | f
- JTM-2022-2025-PSLF-LOAN-SCHEMES           | PSLF-LOAN SCHEMES                                            | unknown          | open   | official      | 2022-10-19 17:00:00+00 | 2022-10-19T17:00:00.000+0000 | official_structured | f
- JTM-2022-2025-PSLF-STANDALONE-PROJECTS    | PSLF-PROJECTS                                                | unknown          | open   | official      | 2022-10-19 17:00:00+00 | 2022-10-19T17:00:00.000+0000 | official_structured | f
- HORIZON-EIC-2023-ACCELERATORCHALLENGES-03 | EIC Accelerator Challenge: Energy storage                    | unknown          | open   | official      | 2023-01-11 17:00:00+00 | 2023-01-11T17:00:00.000+0000 | official_structured | f
- HORIZON-EIC-2023-ACCELERATORCHALLENGES-04 | EIC Accelerator Challenge: New European Bauhaus and Architec | unknown          | open   | official      | 2023-01-11 17:00:00+00 | 2023-01-11T17:00:00.000+0000 | official_structured | f
- HORIZON-EIC-2023-ACCELERATORCHALLENGES-05 | EIC Accelerator Challenge: Emerging semiconductor or quantum | unknown          | open   | official      | 2023-01-11 17:00:00+00 | 2023-01-11T17:00:00.000+0000 | official_structured | f
- HORIZON-EIC-2023-ACCELERATORCHALLENGES-02 | EIC Accelerator Challenge: Aerosol and surface decontaminati | unknown          | open   | official      | 2023-01-11 17:00:00+00 | 2023-01-11T17:00:00.000+0000 | official_structured | f
- HORIZON-EIC-2023-ACCELERATORCHALLENGES-01 | EIC Accelerator Challenge: Novel biomarker-based assays to g | unknown          | open   | official      | 2023-01-11 17:00:00+00 | 2023-01-11T17:00:00.000+0000 | official_structured | f
+         official_identifier          |                            title                             | opportunity_type |   status   | deadline_kind |       closes_at        |    deadline_original_text    |  publication_basis  | is_synthetic 
+--------------------------------------+--------------------------------------------------------------+------------------+------------+---------------+------------------------+------------------------------+---------------------+--------------
+ HORIZON-EIC-2023-EUSIC-PRIZES-04     | The European Social Innovation Competition 2023              | unknown          | unverified | official      | 2023-05-30 15:00:00+00 | 2023-05-30T17:00:00.000+0000 | official_structured | f
+ SMP-COSME-2023-EENEE-01              | Enterprise Europe Network Energy Efficiency Action           | unknown          | unverified | official      | 2023-05-31 15:00:00+00 | 2023-05-31T17:00:00.000+0000 | official_structured | f
+ SOCPL-2023-INFO-WK                   | Information and training measures for workers' organisations | unknown          | unverified | official      | 2023-05-31 15:00:00+00 | 2023-05-31T17:00:00.000+0000 | official_structured | f
+ CREA-MEDIA-2023-DEVMINISLATE         | European mini-slate development                              | unknown          | unverified | official      | 2023-06-01 15:00:00+00 | 2023-06-01T17:00:00.000+0000 | official_structured | f
+ CERV-2023-CITIZENS-REM               | European Remembrance - 2023                                  | unknown          | unverified | official      | 2023-06-06 15:00:00+00 | 2023-06-06T17:00:00.000+0000 | official_structured | f
+ HORIZON-MSCA-2023-FTP-01-01          | MSCA Feedback To Policy 2023                                 | unknown          | unverified | official      | 2023-06-06 15:00:00+00 | 2023-06-06T17:00:00.000+0000 | official_structured | f
+ ESF-2023-EPOCH                       | Support to the European Platform on Combatting Homelessness  | unknown          | unverified | official      | 2023-06-06 15:00:00+00 | 2023-06-06T17:00:00.000+0000 | official_structured | f
+ ERASMUS-EDU-2023-PEX-COVE            | Partnership for Excellence - Centres of Vocational Excellenc | unknown          | unverified | official      | 2023-06-08 15:00:00+00 | 2023-06-08T17:00:00.000+0000 | official_structured | f
+ HORIZON-EUROHPC-JU-2023-COE-01-01    | Call on Centres Of Excellence For Exascale HPC Applications  | unknown          | unverified | official      | 2023-06-08 15:00:00+00 | 2023-06-08T17:00:00.000+0000 | official_structured | f
+ ESF-2023-ETS                         | Implementation of a European Tracking Service for pensions   | unknown          | unverified | official      | 2023-06-15 15:00:00+00 | 2023-06-15T17:00:00.000+0000 | official_structured | f
+ NDICI-2023-MOBAF                     | Intra-Africa Academic Mobility Scheme                        | unknown          | unverified | official      | 2023-06-15 15:00:00+00 | 2023-06-15T17:00:00.000+0000 | official_structured | f
+ CERV-2023-EQUAL                      | Call for proposals to promote equality and to fight against  | unknown          | unverified | official      | 2023-06-20 15:00:00+00 | 2023-06-20T17:00:00.000+0000 | official_structured | f
+ CREA-MEDIA-2023-FILMSALES            | European Film sales agent                                    | unknown          | unverified | official      | 2023-06-20 15:00:00+00 | 2023-06-20T17:00:00.000+0000 | official_structured | f
+ SOCPL-2023-SOC-DIALOG                | Support for social dialogue                                  | unknown          | unverified | official      | 2023-06-28 15:00:00+00 | 2023-06-28T17:00:00.000+0000 | official_structured | f
+ HORIZON-EIC-2023-ICAPITAL-PRIZE-02-2 | The European Capital of Innovation Awards Rising 2023        | unknown          | unverified | official      | 2023-06-29 15:00:00+00 | 2023-06-29T17:00:00.000+0000 | official_structured | f
 (15 rows)
 
 
@@ -57,13 +57,13 @@
 
                   id                  |  status   |          started_at           |        finished_at         | items_seen | items_new | items_changed | connector_version | error 
 --------------------------------------+-----------+-------------------------------+----------------------------+------------+-----------+---------------+-------------------+-------
- 83535ac9-2eb2-4eb9-bda9-80dadc98f179 | succeeded | 2026-10-14 11:46:07.409405+00 | 2026-10-14 11:46:24.676+00 |       1000 |      1000 |             0 | 0.2.0             | 
+ fc75ef20-d0e4-4e60-ab7a-0e9cc68f55a0 | succeeded | 2026-10-14 12:00:27.033874+00 | 2026-10-14 12:00:44.109+00 |       1000 |      1000 |             0 | 0.2.0             | 
 (1 row)
 
 
 ===== 4. repeat import (run2) =====
 {
-  "run_id": "7fb98fe8-8a3d-4498-878a-9acb496242ce",
+  "run_id": "2b1d17ca-0269-41aa-8ae6-6a6785fdf42b",
   "status": "succeeded",
   "outcomes": {
     "unchanged": 1000
@@ -77,18 +77,18 @@
 }
 
 ===== 5. simulated amendment (run3) =====
-                  id                  |            official_identifier             |       closes_at        
---------------------------------------+--------------------------------------------+------------------------
- 4e9dcc35-9c05-4eed-b461-b6f24dce5db4 | CEF-DIG-2026-CABLE-REPAIR-CAPACITIES-WORKS | 2026-12-25 00:00:00+00
+                  id                  |        official_identifier        |       closes_at        
+--------------------------------------+-----------------------------------+------------------------
+ 04ba654d-d79d-481a-8b0f-79e34cda7f13 | CERV-2026-CITIZENS-REM-GENCRIME-1 | 2027-03-25 23:00:00+00
 (1 row)
 
 UPDATE 1
 {
-  "run_id": "b4b87557-c2f2-4b3e-915e-179c23ad219b",
+  "run_id": "488b0451-9c71-4353-b5fc-f65667e62028",
   "status": "succeeded",
   "outcomes": {
-    "changed": 1,
-    "unchanged": 999
+    "unchanged": 999,
+    "changed": 1
   },
   "skipped_by_adapter": 0,
   "unlisted_marked_unverified": 0,
@@ -99,40 +99,24 @@ UPDATE 1
 }
  version | change_kind |          created_at           
 ---------+-------------+-------------------------------
-       1 | created     | 2026-10-14 11:46:19.603526+00
-       2 | amendment   | 2026-10-14 11:46:51.55011+00
+       1 | created     | 2026-10-14 12:00:38.937127+00
+       2 | amendment   | 2026-10-14 12:01:09.686171+00
 (2 rows)
 
 
 ===== 6. display =====
-node:internal/modules/run_main:123
-    triggerUncaughtException(
-    ^
-
-page.goto: net::ERR_CONNECTION_REFUSED at http://127.0.0.1:3000/opportunities
-Call log:
-  - navigating to "http://127.0.0.1:3000/opportunities", waiting until "networkidle"
-
-    at /home/runner/work/TheJackalAcc/TheJackalAcc/scripts/live-test-screenshots.mjs:7:12 {
-  log: [
-    '  - navigating to "http://127.0.0.1:3000/opportunities", waiting until "networkidle"'
-  ],
-  name: 'Error'
-}
-
-Node.js v22.23.3
-screenshots failed
+screenshots saved
 
 ===== 7a. freshness =====
-        slug        | lifecycle |      last_success_at      |       last_check_at       | consecutive_failures 
---------------------+-----------+---------------------------+---------------------------+----------------------
- eu-funding-tenders | tested    | 2026-10-14 11:46:53.92+00 | 2026-10-14 11:46:53.92+00 |                    0
+        slug        | lifecycle |      last_success_at       |       last_check_at        | consecutive_failures 
+--------------------+-----------+----------------------------+----------------------------+----------------------
+ eu-funding-tenders | tested    | 2026-10-14 12:01:12.225+00 | 2026-10-14 12:01:12.225+00 |                    0
 (1 row)
 
 
 ===== 7b. failure (official host made unreachable) =====
 {
-  "run_id": "98f01b3f-fa91-45e5-b038-a943929f10d7",
+  "run_id": "91ed543e-818e-41e0-9a77-746485994601",
   "status": "failed",
   "error": "Error: host resolves to a non-public address: api.tech.ec.europa.eu",
   "outcomes": {},
