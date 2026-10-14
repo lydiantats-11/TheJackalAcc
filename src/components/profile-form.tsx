@@ -85,6 +85,11 @@ export function ProfileForm({ action, profile, t, ask }: { action: (s: FormState
   const [stage, setStage] = useState<string>(profile.business_stage ?? "");
   const [employment, setEmployment] = useState<string>(profile.employment_status ?? "");
   const [housing, setHousing] = useState<string>(profile.housing_status ?? "");
+  const [taxMove, setTaxMove] = useState<string>(profile.tax_residence_move ?? "");
+  const [activity, setActivity] = useState<string>(profile.activity_in_greece ?? "");
+  const [investment, setInvestment] = useState<string>(profile.planned_investment_range ?? "");
+  const [residenceCountry, setResidenceCountry] = useState<string>(profile.country_of_residence ?? "");
+  const [taxCountry, setTaxCountry] = useState<string>(profile.tax_residence_country ?? "");
   const toggle = <K,>(set: (f: (prev: K[]) => K[]) => void) => (id: K, on: boolean) => set((prev) => (on ? [...prev, id] : prev.filter((x) => x !== id)));
 
   // The live profile decides what is shown while the user edits; answers saved earlier keep their sections open.
@@ -93,6 +98,11 @@ export function ProfileForm({ action, profile, t, ask }: { action: (s: FormState
     business_stage: (stage || null) as MatchProfile["business_stage"],
     employment_status: (employment || null) as MatchProfile["employment_status"],
     housing_status: (housing || null) as MatchProfile["housing_status"],
+    tax_residence_move: (taxMove || null) as MatchProfile["tax_residence_move"],
+    activity_in_greece: (activity || null) as MatchProfile["activity_in_greece"],
+    planned_investment_range: (investment || null) as MatchProfile["planned_investment_range"],
+    country_of_residence: residenceCountry || null,
+    tax_residence_country: taxCountry || null,
   };
   const sections = visibleSections(live, ask);
   const fields = new Set<string>(visibleFields(live, ask));
@@ -103,10 +113,9 @@ export function ProfileForm({ action, profile, t, ask }: { action: (s: FormState
   const regions = profile.region_codes ?? [];
   const sectors = profile.sectors ?? [];
   const legend = (s: Section) => t.profile.sections[s];
-  // Keep a saved country that is not in the short list, so saving the form never drops it.
-  const savedTax = profile.tax_residence_country;
-  const taxCountries: Record<string, string> = savedTax && /^[A-Z]{2}$/.test(savedTax) && !(savedTax in t.opt.tax_residence_country)
-    ? { ...t.opt.tax_residence_country, [savedTax]: savedTax } : t.opt.tax_residence_country;
+  // Keep a saved country that is not in the list, so saving the form never drops it.
+  const countriesWith = (saved: string | null | undefined): Record<string, string> =>
+    saved && /^[A-Z]{2}$/.test(saved) && !(saved in t.opt.country) ? { ...t.opt.country, [saved]: saved } : t.opt.country;
 
   return (
     <form action={formAction} className="stack">
@@ -149,6 +158,12 @@ export function ProfileForm({ action, profile, t, ask }: { action: (s: FormState
           <Select name="employment_status" label={t.question.employment_status} value={profile.employment_status} options={t.opt.employment_status} t={t} highlight={asked("employment_status")} onChange={setEmployment} />
           <div hidden={!has("dypa_registered")}>
             <Select name="dypa_registered" label={t.question.dypa_registered} value={profile.dypa_registered} options={yn} t={t} highlight={asked("dypa_registered")} />
+          </div>
+          <div hidden={!has("last_job_end")}>
+            <Select name="last_job_end" label={t.question.last_job_end} value={profile.last_job_end} options={t.opt.last_job_end} t={t} highlight={asked("last_job_end")} />
+          </div>
+          <div hidden={!has("has_academic_id")}>
+            <Select name="has_academic_id" label={t.question.has_academic_id} value={profile.has_academic_id} options={yn} t={t} extra={["not_sure"]} highlight={asked("has_academic_id")} />
           </div>
         </div>
       </fieldset>
@@ -200,8 +215,30 @@ export function ProfileForm({ action, profile, t, ask }: { action: (s: FormState
       </fieldset>
 
       <fieldset hidden={!show("international")}><legend>{legend("international")}</legend>
+        <p className="small muted" style={{ marginTop: 0 }}>{t.why.abroad}</p>
         <div className="formgrid">
-          <Select name="tax_residence_country" label={t.question.tax_residence_country} value={profile.tax_residence_country} options={taxCountries} t={t} hint={t.why.taxResidence} highlight={asked("tax_residence_country")} />
+          <Select name="country_of_residence" label={t.question.country_of_residence} value={profile.country_of_residence} options={countriesWith(profile.country_of_residence)} t={t} onChange={setResidenceCountry} highlight={asked("country_of_residence")} />
+          <Select name="citizenship_country" label={t.question.citizenship_country} value={profile.citizenship_country} options={countriesWith(profile.citizenship_country)} t={t} highlight={asked("citizenship_country")} />
+          <Select name="tax_residence_country" label={t.question.tax_residence_country} value={profile.tax_residence_country} options={countriesWith(profile.tax_residence_country)} t={t} hint={t.why.taxResidence} onChange={setTaxCountry} highlight={asked("tax_residence_country")} />
+          <Select name="tax_residence_move" label={t.question.tax_residence_move} value={profile.tax_residence_move} options={t.opt.tax_residence_move} t={t} onChange={setTaxMove} highlight={asked("tax_residence_move")} />
+          <div hidden={!has("gr_tax_resident_prev6")}>
+            <Select name="gr_tax_resident_prev6" label={t.question.gr_tax_resident_prev6} value={profile.gr_tax_resident_prev6} options={t.opt.prior_years} t={t} highlight={asked("gr_tax_resident_prev6")} />
+          </div>
+          <div hidden={!has("moving_from")}>
+            <Select name="moving_from" label={t.question.moving_from} value={profile.moving_from} options={t.opt.moving_from} t={t} highlight={asked("moving_from")} />
+          </div>
+          <div hidden={!has("activity_in_greece")}>
+            <Select name="activity_in_greece" label={t.question.activity_in_greece} value={profile.activity_in_greece} options={t.opt.activity_in_greece} t={t} onChange={setActivity} highlight={asked("activity_in_greece")} />
+          </div>
+          <div hidden={!has("intends_to_stay_2y")}>
+            <Select name="intends_to_stay_2y" label={t.question.intends_to_stay_2y} value={profile.intends_to_stay_2y} options={yn} t={t} extra={["not_sure"]} highlight={asked("intends_to_stay_2y")} />
+          </div>
+          <div hidden={!has("planned_investment_range")}>
+            <Select name="planned_investment_range" label={t.question.planned_investment_range} value={profile.planned_investment_range} options={t.opt.planned_investment_range} t={t} hint={t.why.financial} onChange={setInvestment} highlight={asked("planned_investment_range")} />
+          </div>
+          <div hidden={!has("gr_tax_resident_prev8")}>
+            <Select name="gr_tax_resident_prev8" label={t.question.gr_tax_resident_prev8} value={profile.gr_tax_resident_prev8} options={t.opt.prior_years} t={t} highlight={asked("gr_tax_resident_prev8")} />
+          </div>
         </div>
       </fieldset>
 
