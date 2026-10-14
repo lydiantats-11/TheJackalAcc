@@ -1,0 +1,8 @@
+{
+  "run_id": "bd305e81-c362-4ab7-a2e3-fa8bebd3ca00",
+  "status": "failed",
+  "error": "Error: host resolves to a non-public address: api.tech.ec.europa.eu",
+  "outcomes": {},
+  "skipped_by_adapter": 0,
+  "unlisted_marked_unverified": 0
+}

@@ -1,6 +1,6 @@
 # Live connector test — EU Funding & Tenders
 
-- Started: 2026-10-14T16:22:48Z on GitHub Actions (`Linux 6.17.0-1022-azure`), commit `83f062b4a482619ad3efedb07a0e034f1f089f32`
+- Started: 2026-10-14T16:25:43Z on GitHub Actions (`Linux 6.17.0-1022-azure`), commit `7a7475d7589ab38f57e5e7956f17c7d3dbc21fd4`
 - Endpoint: `POST https://api.tech.ec.europa.eu/search-api/prod/rest/search?apiKey=SEDIA` (undocumented, public)
 - Database: throwaway PostgreSQL 16, deleted when the job ends. No real users or personal data.
 

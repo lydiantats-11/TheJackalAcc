@@ -1,7 +1,7 @@
 
 ===== 1. retrieval (run1) =====
 {
-  "run_id": "b628b2d6-561f-4ddc-84d8-51649bf45ba8",
+  "run_id": "1960cf1b-2d2a-4c74-88f8-6571f8a06c4d",
   "status": "succeeded",
   "outcomes": {
     "new": 999
@@ -55,15 +55,15 @@
  CEF-T-2021-AFIFCOEN-WORKS-LNG              | status   | https://ec.europa.eu/info/funding-tenders/opportunities/data/topicDetails/CEF-T-2021-AFIFCOEN-WORKS-LNG.json                                 | parser |             2
 (10 rows)
 
-                  id                  |  status   |          started_at           |        finished_at        | items_seen | items_new | items_changed | connector_version | error 
---------------------------------------+-----------+-------------------------------+---------------------------+------------+-----------+---------------+-------------------+-------
- b628b2d6-561f-4ddc-84d8-51649bf45ba8 | succeeded | 2026-10-14 16:22:49.447351+00 | 2026-10-14 16:23:07.69+00 |        999 |       999 |             0 | 0.2.0             | 
+                  id                  |  status   |          started_at           |        finished_at         | items_seen | items_new | items_changed | connector_version | error 
+--------------------------------------+-----------+-------------------------------+----------------------------+------------+-----------+---------------+-------------------+-------
+ 1960cf1b-2d2a-4c74-88f8-6571f8a06c4d | succeeded | 2026-10-14 16:25:43.508277+00 | 2026-10-14 16:25:59.246+00 |        999 |       999 |             0 | 0.2.0             | 
 (1 row)
 
 
 ===== 4. repeat import (run2) =====
 {
-  "run_id": "0e1ead93-c42f-44d2-834f-2b9b21903f42",
+  "run_id": "00a3f144-da9a-4b73-a0a9-0b80b271c692",
   "status": "succeeded",
   "outcomes": {
     "unchanged": 999
@@ -79,12 +79,12 @@
 ===== 5. simulated amendment (run3) =====
                   id                  |        official_identifier        |       closes_at        
 --------------------------------------+-----------------------------------+------------------------
- f4d92669-2da7-4e60-a17e-c503a72cfdce | CERV-2026-CITIZENS-REM-GENCRIME-1 | 2027-03-25 23:00:00+00
+ f2b2db44-8d36-4dce-b129-16a08af9bc2b | CERV-2026-CITIZENS-REM-GENCRIME-1 | 2027-03-25 23:00:00+00
 (1 row)
 
 UPDATE 1
 {
-  "run_id": "38c146ab-4276-491e-a925-c244851c3987",
+  "run_id": "8ccf1f51-4d45-4ba8-8e9b-98f6771a089d",
   "status": "succeeded",
   "outcomes": {
     "unchanged": 998,
@@ -99,8 +99,8 @@ UPDATE 1
 }
  version | change_kind |          created_at           
 ---------+-------------+-------------------------------
-       1 | created     | 2026-10-14 16:23:03.53928+00
-       2 | amendment   | 2026-10-14 16:23:37.448078+00
+       1 | created     | 2026-10-14 16:25:55.786435+00
+       2 | amendment   | 2026-10-14 16:26:24.872813+00
 (2 rows)
 
 
@@ -110,13 +110,13 @@ screenshots saved
 ===== 7a. freshness =====
         slug        | lifecycle |      last_success_at       |       last_check_at        | consecutive_failures 
 --------------------+-----------+----------------------------+----------------------------+----------------------
- eu-funding-tenders | tested    | 2026-10-14 16:23:39.613+00 | 2026-10-14 16:23:39.613+00 |                    0
+ eu-funding-tenders | tested    | 2026-10-14 16:26:26.937+00 | 2026-10-14 16:26:26.937+00 |                    0
 (1 row)
 
 
 ===== 7b. failure (official host made unreachable) =====
 {
-  "run_id": "b5743c4f-f6f2-46b4-93cd-59e864a943fa",
+  "run_id": "bd305e81-c362-4ab7-a2e3-fa8bebd3ca00",
   "status": "failed",
   "error": "Error: host resolves to a non-public address: api.tech.ec.europa.eu",
   "outcomes": {},

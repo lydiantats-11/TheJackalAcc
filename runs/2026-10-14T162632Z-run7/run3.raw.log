@@ -1,0 +1,16 @@
+{"t":"2026-10-14T16:26:24.822Z","msg":"eu-ft discover finished","pages":10,"rows":1000,"total":1000,"items":999,"skipped":0,"truncated":false}
+{"t":"2026-10-14T16:26:26.962Z","msg":"source run finished","source":"eu-funding-tenders","status":"succeeded","outcomes":{"unchanged":998,"changed":1},"unlisted":0}
+{
+  "run_id": "8ccf1f51-4d45-4ba8-8e9b-98f6771a089d",
+  "status": "succeeded",
+  "outcomes": {
+    "unchanged": 998,
+    "changed": 1
+  },
+  "skipped_by_adapter": 0,
+  "unlisted_marked_unverified": 0,
+  "matches": {
+    "assessed": 0,
+    "changed": 0
+  }
+}
