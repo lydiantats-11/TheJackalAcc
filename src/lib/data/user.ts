@@ -64,11 +64,16 @@ export async function getProfile(sql: postgres.Sql, actor: SessionUser): Promise
   return p as MatchProfile;
 }
 
-/** Full replace of the matching profile (fields not sent become "not asked"). */
+/**
+ * Patch update of the matching profile: only fields present in `input` are written; every other stored answer is
+ * left untouched. A field sent as null is cleared ("not answered"). This keeps answers that a form did not show
+ * (e.g. a section hidden because a persona was switched off, or a field the form never asks) from being erased.
+ */
 export async function updateProfile(sql: postgres.Sql, actor: SessionUser, input: unknown): Promise<void> {
   const parsed = profileInputSchema.parse(input);
+  const sent = PROFILE_COLUMNS.filter((k) => Object.prototype.hasOwnProperty.call(parsed, k));
   const row: Record<string, any> = { user_id: actor.id, updated_at: new Date() };
-  for (const k of PROFILE_COLUMNS) {
+  for (const k of sent) {
     const v = parsed[k];
     row[k] = v === undefined ? null : NUMERIC_TEXT.has(k) && typeof v === "number" ? String(v) : v;
   }

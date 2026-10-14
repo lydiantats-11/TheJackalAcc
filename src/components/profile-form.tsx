@@ -110,6 +110,8 @@ export function ProfileForm({ action, profile, t, ask }: { action: (s: FormState
 
   return (
     <form action={formAction} className="stack">
+      {/* Checkbox groups send nothing when empty; declare them so an empty choice is saved and nothing else is erased. */}
+      {["personas", "interests", "region_codes", "sectors"].map((k) => <input key={k} type="hidden" name="__present" value={k} />)}
       {state?.ok && <div className="notice info" role="status">{t.profile.saved}</div>}
       {state?.error && <div className="notice bad" role="alert">{t.auth.errors.invalid_input}</div>}
 

@@ -68,11 +68,18 @@ const amount = (form: FormData, key: string): number | "not_sure" | "prefer_not"
   return Number.isInteger(n) && n >= 0 ? n : null;
 };
 
+/**
+ * True when the submitted form actually contained this field. Checkbox groups send nothing when nothing is ticked,
+ * so the form declares them with a hidden `__present` input; amount fields arrive as `<name>_mode`.
+ */
+const sent = (form: FormData, key: string): boolean =>
+  form.has(key) || form.has(`${key}_mode`) || form.getAll("__present").map(String).includes(key);
+
 export async function saveProfileAction(_: FormState, form: FormData): Promise<FormState> {
   const user = await requireUser();
   const birth = single(form, "birth_year");
   try {
-    await updateProfile(sql(), user, {
+    const answers: Record<string, unknown> = {
       persona: single(form, "persona"),
       personas: chips(form, "personas"),
       interests: chips(form, "interests"),
@@ -107,7 +114,10 @@ export async function saveProfileAction(_: FormState, form: FormData): Promise<F
       public_ownership_25: single(form, "public_ownership_25"),
       municipality: single(form, "municipality"),
       has_consortium_partners: single(form, "has_consortium_partners"),
-    });
+    };
+    // Write only what this form sent; application_country is fixed by the product, not asked.
+    const patch = Object.fromEntries(Object.entries(answers).filter(([k]) => k === "application_country" || sent(form, k)));
+    await updateProfile(sql(), user, patch);
   } catch {
     return { error: "invalid_input" };
   }

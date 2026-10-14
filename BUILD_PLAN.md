@@ -155,6 +155,13 @@ monthly cap. Email notifications stay out of scope until their cost and privacy 
 | Email (Phase 5) | Transactional provider free tier | €0 at low volume; paid above provider limits |
 
 ## Build log
+- 2026-10-14 (Merge, provisional) — Persona changeset merged into this 112-test codebase (tag `fr112-personas-merged`);
+  the unmerged branch `personas-changeset` is kept. **This is not the canonical Jackal Accountant version** — the
+  131-test version must still be recovered and the merge repeated there. Profile saving is now a patch update: only
+  fields the form sent are written (`__present` markers for checkbox groups), so hidden sections, switched-off
+  personas and fields the form does not ask are never erased. New `tests/profile-update.test.ts` (5 DB tests).
+  **Not yet run:** `npm run test:db`, `npm run typecheck`, `next build` (npm registry blocked in the workspace).
+  Executed: strict tsc on the domain files; persona visibility checks 20/20; migrations 0001–0006 on PostgreSQL 16.
 - 2026-10-14 (Personas) — Five non-exclusive personas (young adults, aspiring entrepreneurs, employees & jobseekers,
   households & property, businesses & organisations) and 11 interests, chosen as chips on the profile page. They open
   only the relevant profile sections (`src/lib/domain/personas.ts`); answered sections never hide; hidden sections stay in
