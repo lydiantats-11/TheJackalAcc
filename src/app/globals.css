@@ -81,7 +81,8 @@ footer.site { border-top: 1px solid var(--line); color: var(--muted); font-size:
 .notice.bad { border-color: var(--bad); background: var(--bad-bg); }
 .synthetic { display: inline-block; font-size: .72rem; font-weight: 700; letter-spacing: .03em; text-transform: uppercase; color: var(--warn); border: 1px dashed var(--warn); padding: 2px 7px; border-radius: 5px; }
 
-form.filters { display: grid; gap: 10px; grid-template-columns: 2fr 1fr 1fr 1fr auto; align-items: end; }
+form.filters { display: grid; gap: 10px; grid-template-columns: 2fr repeat(4, minmax(0, 1fr)) auto; align-items: end; }
+@media (max-width: 1000px) { form.filters { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
 @media (max-width: 760px) { form.filters { grid-template-columns: 1fr; } }
 label { display: block; font-size: .85rem; font-weight: 600; color: var(--ink-soft); margin-bottom: 4px; }
 input, select, textarea { font: inherit; width: 100%; padding: 9px 11px; border: 1px solid var(--line); border-radius: 8px; background: var(--card); color: var(--ink); }
