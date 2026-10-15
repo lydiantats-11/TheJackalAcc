@@ -1,0 +1,31 @@
+{
+  "about": "Gold-standard eligibility cases (core capability 5). Each expected outcome is set from the official conditions of a hand-checked record (data/official-records-2026-10-14.v2.json), NOT from the engine's output. 'potentially_eligible' cases expect certainty 'needs_confirmation' wherever the official conditions are not all recorded (e.g. income limits not stated on the page checked). To be re-checked independently before any accuracy figure is published.",
+  "version": "2026-10-15.1",
+  "author": "Platform team (draft — awaiting independent review)",
+  "cases": [
+    { "id": "a21-household-2-children-gr", "record": "manual:a21", "profile": { "dependent_children": "2", "country_of_residence": "GR" }, "expected": { "class": "potentially_eligible", "certainty": "needs_confirmation" }, "basis": "At least one dependent child; living in Greece. Income limits not stated on the page checked → needs confirmation." },
+    { "id": "a21-no-children", "record": "manual:a21", "profile": { "dependent_children": "0", "country_of_residence": "GR" }, "expected": { "class": "ineligible" }, "basis": "At least one dependent child." },
+    { "id": "a21-lives-abroad", "record": "manual:a21", "profile": { "dependent_children": "1", "country_of_residence": "DE" }, "expected": { "class": "ineligible" }, "basis": "Living in Greece." },
+    { "id": "a21-nothing-answered", "record": "manual:a21", "profile": {}, "expected": { "class": "information_needed" }, "basis": "No answers → cannot be assessed." },
+
+    { "id": "unemp-dismissed-registered", "record": "manual:unemployment", "profile": { "employment_status": "unemployed", "last_job_end": "ended_by_employer", "dypa_registered": "yes" }, "expected": { "class": "potentially_eligible", "certainty": "needs_confirmation" }, "basis": "Unemployed; salaried job ended by the employer; unemployment card. Required insured days not stated → needs confirmation." },
+    { "id": "unemp-resigned", "record": "manual:unemployment", "profile": { "employment_status": "unemployed", "last_job_end": "resigned", "dypa_registered": "yes" }, "expected": { "class": "ineligible" }, "basis": "Salaried job ended or terminated by the employer (not a resignation)." },
+    { "id": "unemp-employed", "record": "manual:unemployment", "profile": { "employment_status": "employed", "last_job_end": "still_employed", "dypa_registered": "no" }, "expected": { "class": "ineligible" }, "basis": "Unemployed on the day of the application." },
+    { "id": "unemp-not-registered", "record": "manual:unemployment", "profile": { "employment_status": "unemployed", "last_job_end": "contract_ended", "dypa_registered": "no" }, "expected": { "class": "ineligible" }, "basis": "Unemployment card issued (registration with ΔΥΠΑ)." },
+    { "id": "unemp-nothing-answered", "record": "manual:unemployment", "profile": {}, "expected": { "class": "information_needed" }, "basis": "No answers → cannot be assessed." },
+
+    { "id": "discovereu-born-2008-gr", "record": "manual:discovereu", "profile": { "birth_year": 2008, "country_of_residence": "GR" }, "expected": { "class": "potentially_eligible", "certainty": "needs_confirmation" }, "basis": "Born 1 Jan–31 Dec 2008; resident of an EU state. Not every condition recorded (e.g. quiz) → needs confirmation." },
+    { "id": "discovereu-born-2007", "record": "manual:discovereu", "profile": { "birth_year": 2007, "country_of_residence": "GR" }, "expected": { "class": "ineligible" }, "basis": "Born between 1 Jan 2008 and 31 Dec 2008." },
+    { "id": "discovereu-outside-eu", "record": "manual:discovereu", "profile": { "birth_year": 2008, "country_of_residence": "US", "citizenship_country": "US" }, "expected": { "class": "ineligible" }, "basis": "Citizen or resident of an EU state or Iceland, Liechtenstein, North Macedonia, Norway, Serbia, Türkiye." },
+
+    { "id": "art5c-employee-moving", "record": "manual:art5c", "profile": { "tax_residence_move": "planning", "gr_tax_resident_prev6": "0", "moving_from": "eu_eea", "activity_in_greece": "employee_gr", "intends_to_stay_2y": "yes" }, "expected": { "class": "potentially_eligible", "certainty": "needs_confirmation" }, "basis": "Moving tax residence; not resident in 5 of the 6 previous years; from EU/EEA; employment with a Greek entity; intends to stay 2 years." },
+    { "id": "art5c-recent-resident", "record": "manual:art5c", "profile": { "tax_residence_move": "planning", "gr_tax_resident_prev6": "2plus", "moving_from": "eu_eea", "activity_in_greece": "employee_gr", "intends_to_stay_2y": "yes" }, "expected": { "class": "ineligible" }, "basis": "Not a Greek tax resident in 5 of the 6 previous years." },
+    { "id": "art5c-remote-for-foreign-employer", "record": "manual:art5c", "profile": { "tax_residence_move": "planning", "gr_tax_resident_prev6": "0", "moving_from": "eu_eea", "activity_in_greece": "remote_foreign", "intends_to_stay_2y": "yes" }, "expected": { "class": "ineligible" }, "basis": "Employment with a Greek entity/permanent establishment, or a sole proprietorship in Greece." },
+
+    { "id": "art5a-investor", "record": "manual:art5a", "profile": { "gr_tax_resident_prev8": "0", "planned_investment_range": "500k_plus" }, "expected": { "class": "potentially_eligible", "certainty": "needs_confirmation" }, "basis": "Not resident in 7 of the 8 previous years; investment of at least €500,000." },
+    { "id": "art5a-small-investment", "record": "manual:art5a", "profile": { "gr_tax_resident_prev8": "0", "planned_investment_range": "under_100k" }, "expected": { "class": "ineligible" }, "basis": "Investment of at least €500,000." },
+
+    { "id": "student-eligible-basics", "record": "manual:studenthousing", "profile": { "has_academic_id": "yes", "citizenship_country": "GR", "tax_residence_country": "GR" }, "expected": { "class": "potentially_eligible", "certainty": "needs_confirmation" }, "basis": "Valid academic ID; Greek/EU citizen; tax resident in Greece. Income criteria in the circular not checked → needs confirmation." },
+    { "id": "student-no-academic-id", "record": "manual:studenthousing", "profile": { "has_academic_id": "no", "citizenship_country": "GR", "tax_residence_country": "GR" }, "expected": { "class": "ineligible" }, "basis": "Valid academic ID." }
+  ]
+}

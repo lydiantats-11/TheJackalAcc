@@ -158,3 +158,23 @@ export function geographyOf(row: OpportunityRow) {
 export async function listCategories(sql: postgres.Sql) {
   return sql<{ code: string; name_el: string; name_en: string }[]>`SELECT code, name_el, name_en FROM opportunity_categories ORDER BY sort`;
 }
+
+export interface HistoryEntry { at: Date; kind: string; summary: string | null; fields?: string[]; budget_before?: number | null; budget_after?: number | null }
+
+/**
+ * Change history of one record (core capability 3): versions (created, amendments, extensions, status changes) and
+ * logged events (official details changed, sources disagree, deadline passed awaiting confirmation), newest first.
+ */
+export async function loadHistory(sql: postgres.Sql, id: string, limit = 20): Promise<HistoryEntry[]> {
+  const versions = await sql<{ at: Date; kind: string; summary: string | null }[]>`
+    SELECT created_at AS at, change_kind AS kind, change_summary AS summary FROM opportunity_versions
+    WHERE opportunity_id = ${id} AND change_summary IS DISTINCT FROM 'state before update' ORDER BY created_at DESC LIMIT ${limit}`;
+  const events = await sql<{ at: Date; kind: string; payload: { fields?: string[]; budget_before?: number | null; budget_after?: number | null } }[]>`
+    SELECT created_at AS at, event_type AS kind, payload FROM opportunity_events
+    WHERE opportunity_id = ${id} AND event_type IN ('official_details_changed', 'conflict_detected', 'status_unverified')
+    ORDER BY created_at DESC LIMIT ${limit}`;
+  return [
+    ...versions.map((v) => ({ at: v.at, kind: v.kind, summary: v.summary })),
+    ...events.map((e) => ({ at: e.at, kind: e.kind, summary: null, fields: e.payload?.fields, budget_before: e.payload?.budget_before ?? null, budget_after: e.payload?.budget_after ?? null })),
+  ].sort((a, b) => b.at.getTime() - a.at.getTime()).slice(0, limit);
+}

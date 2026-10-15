@@ -352,3 +352,11 @@ details.quote { margin-top: 4px; }
 details.quote summary { cursor: pointer; color: var(--accent); font-size: .8rem; font-weight: 600; }
 details.quote blockquote { margin: 6px 0 0; padding-left: var(--sp-3); border-left: 2px solid var(--line-strong); color: var(--muted); font-style: italic; }
 .steps-list { margin: var(--sp-2) 0 var(--sp-4); padding-left: 1.3rem; display: grid; gap: 6px; }
+details.audit { margin-top: var(--sp-4); border: 1px solid var(--line); border-radius: var(--radius); padding: var(--sp-3) var(--sp-4); background: var(--surface); }
+details.audit > summary { cursor: pointer; font-weight: 650; display: flex; align-items: center; gap: 8px; color: var(--ink); }
+details.audit[open] > summary { margin-bottom: var(--sp-2); }
+ul.plain { list-style: none; margin: 0; padding: 0; display: grid; gap: 2px; }
+ol.timeline { list-style: none; margin: 0; padding: 0 0 0 var(--sp-4); border-left: 2px solid var(--line); display: grid; gap: var(--sp-3); }
+ol.timeline li { position: relative; display: flex; flex-wrap: wrap; gap: 4px 8px; align-items: baseline; }
+ol.timeline li::before { content: ""; position: absolute; left: calc(-1 * var(--sp-4) - 6px); top: .45em; width: 10px; height: 10px; border-radius: 50%; background: var(--accent); }
+ol.timeline time { color: var(--muted); min-width: 9.5rem; }

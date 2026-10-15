@@ -11,7 +11,7 @@
 import type postgres from "postgres";
 import { normaliseDeadline } from "@/lib/domain/deadline";
 import type { OpportunityStatus } from "@/lib/domain/eligibility";
-import { canonicalizeUrl, contentFingerprint, type DiscoveredItem, type SourceConfig } from "@/lib/sources/types";
+import { canonicalizeUrl, contentFingerprint, stableJson, type DiscoveredItem, type OfficialDetails, type SourceConfig } from "@/lib/sources/types";
 import { PROGRAMME_DEFAULTS } from "@/lib/domain/programme-defaults";
 
 type Tx = postgres.TransactionSql | postgres.Sql;
@@ -59,7 +59,36 @@ async function evidence(tx: Tx, oppId: string, field: string, value: unknown, ur
 /** Display-only official details: refreshed on every run, never part of the fingerprint or the version history. */
 async function writeDetails(tx: Tx, id: string, item: DiscoveredItem, now: Date): Promise<void> {
   if (item.details === undefined) return;
+  const [prev] = await tx<{ official_details: OfficialDetails | null }[]>`SELECT official_details FROM opportunities WHERE id = ${id}`;
   await tx`UPDATE opportunities SET official_details = ${tx.json({ ...item.details, retrieved_at: now.toISOString() } as never)} WHERE id = ${id}`;
+  // Core capability 3: a change in what the source publishes about the call is a regulatory change worth logging.
+  const changed = detailsChanged(prev?.official_details ?? null, item.details);
+  if (changed.length) {
+    await recordEvent(tx, id, "official_details_changed", `details:${id}:${contentFingerprint(stableJson(materialDetails(item.details))).slice(0, 24)}`, {
+      fields: changed,
+      budget_before: prev?.official_details?.budget?.total_eur ?? null,
+      budget_after: item.details.budget?.total_eur ?? null,
+    });
+  }
+}
+
+/** The parts of the official details whose change matters to applicants (not timestamps or text excerpts). */
+export function materialDetails(d: OfficialDetails): Record<string, unknown> {
+  return {
+    budget: d.budget ?? null,
+    conditions: (d.conditions ?? []).map((c) => `${c.heading}: ${c.text}`),
+    submission: d.submission ?? null,
+    action_type: d.action_type ?? null,
+    documents: (d.documents ?? []).map((x) => x.url).sort(),
+    call: d.call?.identifier ?? null,
+  };
+}
+
+/** Which material fields differ. Nothing is reported the first time details arrive (no "before" to compare). */
+export function detailsChanged(before: OfficialDetails | null, after: OfficialDetails): string[] {
+  if (!before) return [];
+  const a = materialDetails(before), b = materialDetails(after);
+  return Object.keys(b).filter((k) => stableJson(a[k]) !== stableJson(b[k]));
 }
 
 export async function ingestItem(tx: Tx, source: SourceConfig, runId: string, item: DiscoveredItem, now: Date): Promise<ItemResult> {

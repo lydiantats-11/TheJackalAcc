@@ -5,6 +5,7 @@ import { currentUser } from "@/lib/auth/session";
 import { getProfile, listSavedIds } from "@/lib/data/user";
 import { loadRequirements, toMatchable } from "@/lib/data/opportunities";
 import { assess, rankKey, type Assessment } from "@/lib/domain/eligibility";
+import { rankQuestions } from "@/lib/domain/question-impact";
 import { isAnswered } from "@/lib/domain/personas";
 import { SITE } from "@/lib/site/copy";
 import { loadListing, type ListedOpportunity } from "@/lib/site/listing";
@@ -74,7 +75,9 @@ export default async function ForMePage({ searchParams }: { searchParams: Promis
     .map((x) => ({ x, a: assess(toMatchable(x.row, reqs.get(x.row.id) ?? []), profile, { now }) }))
     .sort((p, q) => fit(q.x) - fit(p.x) || rankKey(p.a) - rankKey(q.a));
   const groups = GROUPS.map((g) => ({ g, items: assessed.filter(({ a }) => a.eligibility === g) })).filter((x) => x.items.length > 0);
-  const missing = [...new Set(assessed.filter(({ a }) => a.eligibility !== "unlikely_eligible" && a.eligibility !== "ineligible_verified").flatMap(({ a }) => a.questions))];
+  // Ranked by how many current opportunities each answer would help decide (ask only what matters).
+  const ranked = rankQuestions(assessed.map(({ a }) => a));
+  const missing = ranked.map((r) => r.question);
   const saved = list.filter((x) => savedIds.includes(x.row.id));
 
   const why = (a: Assessment, x: ListedOpportunity) => {
@@ -115,7 +118,7 @@ export default async function ForMePage({ searchParams }: { searchParams: Promis
             {missing.length === 0 ? <p className="small muted" style={{ margin: "8px 0 0" }}>—</p> : (
               <>
                 <p className="xs muted" style={{ margin: "6px 0 10px" }}>{f.missingNote}</p>
-                <ul className="checklist small">{missing.slice(0, 6).map((q) => <li key={q}><Icon name="info" size={16} /><span>{t.question[q] ?? q}</span></li>)}</ul>
+                <ul className="checklist small">{ranked.slice(0, 6).map((r) => <li key={r.question}><Icon name="info" size={16} /><span>{t.question[r.question] ?? r.question} <span className="muted">· {f.unlocks(r.unlocks)}</span></span></li>)}</ul>
                 <Link href={`/profile?ask=${missing.slice(0, 12).join(",")}`} className="btn btn-primary btn-sm btn-block" style={{ marginTop: 12 }}>{f.answer}</Link>
               </>
             )}

@@ -236,3 +236,23 @@ Run on `lydiantats-11/TheJackalAcc`, branch `live-test`; reports and screenshots
 - Preview workflow (design-preview.yml): screenshots desktop/phone, EL/EN, guest/demo user, on throwaway data.
 - Backend untouched (engine, data, connectors, auth); only listOpportunities gained an optional limit and the row type
   declares external_key. For Me selects/orders by group & interest fit — never eligibility.
+
+### 2026-10-15 — Owner approvals, private live preview, opportunity details
+- 8 hand-checked records approved by the owner (db/seed/approvals-2026-10-15.sql → admin_reviews + audit_logs).
+- Private live preview prepared: password gate (src/proxy.ts, SITE_PASSWORD), Frankfurt region, manual
+  "Set up live database" workflow, owner guide docs/PRIVATE_LIVE_PREVIEW.md. Nothing switched on.
+- Key facts on every record: verified benefit/period/conditions/steps (bilingual, from the checked file); EU portal
+  budget, grant size, action type, submission, cut-offs, scope text, condition headings + documents (0009 official_details,
+  display only, outside the fingerprint).
+
+### 2026-10-15 — Core capabilities (governing reference: docs/CORE_CAPABILITIES.md)
+- (2) Decision record per assessment (src/lib/domain/decision-record.ts): official wording, source, verification date,
+  rule type, the profile answers each rule actually read (observed), outcome in four classes + certainty, reproducible
+  decision reference; shown on the detail page to the signed-in person and downloadable as JSON (/opportunities/[id]/decision).
+- (3) Changes in official budget/conditions/submission/action type/documents logged as 'official_details_changed'
+  (0010); change history section on every detail page.
+- (4) Missing questions ranked by how many current opportunities they affect (src/lib/domain/question-impact.ts);
+  answers that cannot change a result are not asked for.
+- (5) Gold-standard cases from official conditions (data/gold/eligibility-gold-2026-10-15.json) and a reproducible
+  quality report (scripts/quality-report.ts): gold accuracy, coverage, freshness, ingestion efficiency. Baseline only —
+  not independently validated, not to be published as a claim.

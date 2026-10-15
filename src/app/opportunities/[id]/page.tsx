@@ -2,7 +2,8 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { getDict } from "@/lib/i18n/server";
 import { isDatabaseConfigured, sql } from "@/lib/db";
-import { getOpportunity, loadRequirements, toMatchable } from "@/lib/data/opportunities";
+import { getOpportunity, loadHistory, loadRequirements, toMatchable } from "@/lib/data/opportunities";
+import { ChangeHistory } from "@/components/change-history";
 import { currentUser } from "@/lib/auth/session";
 import { getProfile, listSavedIds } from "@/lib/data/user";
 import { assess } from "@/lib/domain/eligibility";
@@ -14,6 +15,8 @@ import { audiencesOf, categoriesOf, categoryBySlug, guideOf, scopeOf, supportTyp
 import { AvailabilityBadge, EligibilityBadge, StateBadge, SyntheticLabel } from "@/components/badges";
 import { deadlineText } from "@/components/opportunity-facts";
 import { RequirementsTable } from "@/components/requirements-table";
+import { DecisionRecordView } from "@/components/decision-record";
+import { buildDecisionRecord } from "@/lib/domain/decision-record";
 import { KeyFacts, OfficialConditions, OfficialScope, VerifiedSteps, keyAmount } from "@/components/opportunity-details";
 import { displayTitle, verifiedFor } from "@/lib/site/verified";
 import { Icon } from "@/components/icons";
@@ -41,14 +44,16 @@ export default async function OpportunityPage({ params, searchParams }: { params
   const o = await getOpportunity(sql(), id);
   if (!o) notFound();
   const user = await currentUser();
-  const [profile, savedIds, reqMap] = await Promise.all([
+  const [profile, savedIds, reqMap, history] = await Promise.all([
     user ? getProfile(sql(), user) : Promise.resolve(null),
     user ? listSavedIds(sql(), user) : Promise.resolve([] as string[]),
     loadRequirements(sql(), [o.id]),
+    loadHistory(sql(), o.id).catch(() => []),
   ]);
   const now = new Date();
   const matchable = toMatchable(o, reqMap.get(o.id) ?? []);
   const a = assess(matchable, profile ?? {}, { now });
+  const record = user && profile ? buildDecisionRecord(matchable, profile, { now }) : null;
   const regionReq = matchable.requirements.find((r) => r.category === "geography" || r.category === "business_location");
   const regions = ((regionReq?.value as { regions?: string[] } | undefined)?.regions ?? []).filter((r) => r.length > 2);
   const scenarioKind = (await searchParams).scenario;
@@ -97,6 +102,7 @@ export default async function OpportunityPage({ params, searchParams }: { params
             <a href="#eligibility">{s.detail.eligibility}</a>
             <a href="#apply">{s.detail.howToApply}</a>
             <a href="#sources">{s.detail.sources}</a>
+            <a href="#history">{s.history.title}</a>
           </nav>
 
           <div className="stack-lg">
@@ -149,6 +155,7 @@ export default async function OpportunityPage({ params, searchParams }: { params
               {o.requirement_set_completeness !== "complete" && <div className="notice small" style={{ marginBottom: 12 }}><Icon name="alert" size={18} /><span>{t.ui.requirementsIncomplete}</span></div>}
               <div className="section-label sl-unverified" style={{ marginTop: 10 }}>{t.opp.sectionRequirements}</div>
               <RequirementsTable results={a.results} t={t} copy={s.detail.req} />
+              {record && <DecisionRecordView record={record} s={s} t={t} opportunityId={o.id} />}
               <p className="small muted" style={{ marginBottom: 0 }}>{t.opp.authorityDecides}</p>
             </section>
 
@@ -221,6 +228,8 @@ export default async function OpportunityPage({ params, searchParams }: { params
                 {o.deadline_original_text && <li><Icon name="info" size={16} /><span>{t.ui.originalDeadline}: <code>{o.deadline_original_text}</code>{o.deadline_is_date_only ? ` — ${t.ui.dateOnly}` : ""}</span></li>}
               </ul>
             </section>
+
+            <ChangeHistory entries={history} s={s} locale={locale} />
           </div>
         </div>
 

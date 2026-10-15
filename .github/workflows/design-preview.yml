@@ -56,6 +56,9 @@ jobs:
           psql "$DATABASE_URL" -v ON_ERROR_STOP=1 -q -f db/seed/approvals-2026-10-15.sql   # the owner's approval of 15 Oct 2026
           psql "$DATABASE_URL" -c "UPDATE opportunities SET review_status = 'rejected' WHERE is_synthetic" || true
           npm run worker -- --test eu-funding-tenders | tail -15
+      - name: Quality report (gold set, coverage, freshness, efficiency)
+        continue-on-error: true
+        run: npx tsx scripts/quality-report.ts > quality-report.json && cat quality-report.json | head -60
       - name: Build
         run: npm run build 2>&1 | tee build.log
       - name: Screenshots
@@ -69,7 +72,7 @@ jobs:
       - name: Save to the live-test-results branch
         if: always()
         run: |
-          mkdir -p "$OUT"; cp -f typecheck.log tests.log build.log next.log "$OUT"/ 2>/dev/null || true
+          mkdir -p "$OUT"; cp -f typecheck.log tests.log build.log next.log quality-report.json "$OUT"/ 2>/dev/null || true
           cp -r "$OUT" /tmp/out
           git config user.name "jackal-live-test"; git config user.email "actions@users.noreply.github.com"
           git fetch --depth 1 origin live-test-results && git checkout -B live-test-results FETCH_HEAD
