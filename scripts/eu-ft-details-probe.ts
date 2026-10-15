@@ -23,7 +23,7 @@ for (const r of results) for (const k of Object.keys(r.metadata ?? {})) keyCount
 const pick = [0, Math.floor(results.length / 2), results.length - 1].filter((i, j, a) => results[i] && a.indexOf(i) === j);
 const samples = [];
 for (const i of pick) {
-  const m = results[i].metadata ?? {};
+  const m = results[i]?.metadata ?? {};
   const id = String(arr(m.identifier)[0]);
   const interesting: Record<string, unknown> = {};
   for (const k of Object.keys(m)) if (/budget|action|type|programme|call|deadline|start|description|condition|keyword|tags|crossCutting|focusArea|destination/i.test(k)) interesting[k] = short(m[k], 900);
