@@ -106,6 +106,13 @@ export const CATEGORIES: Category[] = [
   },
 ];
 
+/** Which categories each profile interest points to — for ordering and selecting "For Me" results only. */
+export const INTEREST_CATEGORIES: Record<string, string[]> = {
+  housing: ["housing-energy"], education: ["education"], employment: ["employment"], entrepreneurship: ["entrepreneurship", "business"],
+  mobility: ["education", "tax"], financial_support: ["family", "employment"], energy: ["housing-energy", "environment"], family: ["family"],
+  tax_residency: ["tax"], tenders: ["tenders"], eu_programmes: ["innovation", "environment", "business"],
+};
+
 export const categoryBySlug = (slug: string | undefined) => CATEGORIES.find((c) => c.slug === slug);
 
 /** Hand-checked records (external_key "manual:<id>"): their category, audience and guide are known. */

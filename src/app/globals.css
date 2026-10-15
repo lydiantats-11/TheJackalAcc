@@ -334,3 +334,6 @@ footer.site .fine { border-top: 1px solid #22335a; margin-top: var(--sp-6); padd
   .auth-wrap .form { padding: var(--sp-5); }
   .match-panel { padding: var(--sp-5); }
 }
+.why-box { display: grid; gap: 6px; justify-items: start; background: var(--info-bg); border-radius: var(--radius-sm); padding: 10px 12px; font-size: var(--fs-sm); }
+details.mobile-nav .panel .lang button { display: inline-block; width: auto; padding: 6px 14px; border-radius: var(--radius-pill); }
+details.mobile-nav .panel .lang button[aria-pressed="true"] { background: var(--brand); color: var(--brand-ink); }

@@ -8,6 +8,8 @@ import { assess, rankKey, type Assessment } from "@/lib/domain/eligibility";
 import { isAnswered } from "@/lib/domain/personas";
 import { SITE } from "@/lib/site/copy";
 import { loadListing, type ListedOpportunity } from "@/lib/site/listing";
+import { INTEREST_CATEGORIES } from "@/lib/site/taxonomy";
+import { personasOf } from "@/lib/domain/personas";
 import { EligibilityBadge } from "@/components/badges";
 import { Icon } from "@/components/icons";
 import { OpportunityCard } from "@/components/opportunity-card";
@@ -58,18 +60,32 @@ export default async function ForMePage({ searchParams }: { searchParams: Promis
   const pct = Math.round((filled / PROFILE_FIELDS.length) * 100);
   const hasProfile = isAnswered(profile.personas) || isAnswered(profile.interests) || filled >= 2;
 
+  // Discovery fit (ordering and selection only — never eligibility): the person's groups vs the listing's audience,
+  // and their interests vs its category. With groups or interests chosen, only listings that fit them are shown here.
+  const myPersonas = personasOf(profile);
+  const myCats = new Set((profile.interests ?? []).flatMap((i) => INTEREST_CATEGORIES[i] ?? []));
+  const fit = (x: ListedOpportunity) => (x.audiences.some((a) => myPersonas.includes(a)) ? 2 : 0) + (x.categories.some((c) => myCats.has(c)) ? 2 : 0);
+  const selective = myPersonas.length > 0 || myCats.size > 0;
   // Only opportunities that can be applied to now or soon are matched.
-  const current = list.filter((x) => x.status === "open" || x.status === "upcoming");
+  const current = list.filter((x) => (x.status === "open" || x.status === "upcoming") && (!selective || fit(x) > 0));
   const reqs = await loadRequirements(sql(), current.map((x) => x.row.id));
   const now = new Date();
   const assessed: Array<{ x: ListedOpportunity; a: Assessment }> = current
     .map((x) => ({ x, a: assess(toMatchable(x.row, reqs.get(x.row.id) ?? []), profile, { now }) }))
-    .sort((p, q) => rankKey(p.a) - rankKey(q.a));
+    .sort((p, q) => fit(q.x) - fit(p.x) || rankKey(p.a) - rankKey(q.a));
   const groups = GROUPS.map((g) => ({ g, items: assessed.filter(({ a }) => a.eligibility === g) })).filter((x) => x.items.length > 0);
   const missing = [...new Set(assessed.filter(({ a }) => a.eligibility !== "unlikely_eligible" && a.eligibility !== "ineligible_verified").flatMap(({ a }) => a.questions))];
   const saved = list.filter((x) => savedIds.includes(x.row.id));
 
-  const why = (a: Assessment) => {
+  const why = (a: Assessment, x: ListedOpportunity) => {
+    const reasons: string[] = [];
+    if (x.audiences.some((p) => myPersonas.includes(p))) reasons.push(locale === "el" ? "ταιριάζει με την ομάδα σου" : "fits your group");
+    if (x.categories.some((c) => myCats.has(c))) reasons.push(locale === "el" ? "ταιριάζει με τα ενδιαφέροντά σου" : "matches your interests");
+    const joined = reasons.join(" · ");
+    const head = joined ? `${joined.charAt(0).toUpperCase()}${joined.slice(1)}. ` : "";
+    return head + requirementsLine(a);
+  };
+  const requirementsLine = (a: Assessment) => {
     const met = a.results.filter((r) => r.state === "satisfied").length;
     const unknown = a.results.filter((r) => r.state === "unknown").length;
     const total = a.results.filter((r) => r.state !== "not_applicable").length;
@@ -82,6 +98,7 @@ export default async function ForMePage({ searchParams }: { searchParams: Promis
       <div className="page-head">
         <h1>{f.title}</h1>
         <p className="lead">{f.lead}</p>
+        {selective && <p className="small muted" style={{ margin: "8px 0 0" }}>{f.selectiveNote} <Link href="/opportunities">{s.home.allOpps} →</Link></p>}
       </div>
       {denied && <div className="notice bad" style={{ marginBottom: 16 }}>{t.dash.denied}</div>}
 
@@ -131,7 +148,7 @@ export default async function ForMePage({ searchParams }: { searchParams: Promis
                   <div className="opp-grid">
                     {items.slice(0, PER_GROUP).map(({ x, a }) => (
                       <OpportunityCard key={x.row.id} item={x} t={t} s={s} locale={locale}
-                        extra={<div className="notice info small" style={{ padding: "8px 12px" }}><EligibilityBadge status={a.eligibility} t={t} /><span><strong>{f.why}:</strong> {why(a)}</span></div>} />
+                        extra={<div className="why-box"><EligibilityBadge status={a.eligibility} t={t} /><span><strong>{f.why}:</strong> {why(a, x)}</span></div>} />
                     ))}
                   </div>
                   {items.length > PER_GROUP && <p className="small muted" style={{ marginTop: 10 }}>{f.more(items.length - PER_GROUP)} · <Link href="/opportunities?status=open">{f.showAll}</Link></p>}

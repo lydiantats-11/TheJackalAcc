@@ -77,7 +77,7 @@ const el = {
     profile: "Πληρότητα προφίλ", completeProfile: "Συμπλήρωσε το προφίλ", editProfile: "Επεξεργασία προφίλ",
     missing: "Στοιχεία που λείπουν", missingNote: "Απαντώντας σε αυτά, περισσότερες ευκαιρίες μπορούν να ελεγχθούν.", answer: "Απάντησε",
     saved: "Αποθηκευμένες", noSaved: "Δεν έχεις αποθηκεύσει ευκαιρίες ακόμη. Πάτα «Αποθήκευση» σε όποια σε ενδιαφέρει.",
-    groupsTitle: "Οι ευκαιρίες σου", why: "Γιατί εμφανίζεται", noProfileTitle: "Ξεκίνα από το προφίλ σου",
+    groupsTitle: "Οι ευκαιρίες σου", selectiveNote: "Εμφανίζονται όσες ταιριάζουν με τις ομάδες και τα ενδιαφέροντά σου. Η επιλεξιμότητα κρίνεται μόνο από τις προϋποθέσεις.", why: "Γιατί εμφανίζεται", noProfileTitle: "Ξεκίνα από το προφίλ σου",
     noProfile: "Δεν έχεις απαντήσει ακόμη σε ερωτήσεις. Επίλεξε ποιος/ποια είσαι και τι σε ενδιαφέρει για να δεις προσωπικά αποτελέσματα.",
     groups: { potentially_eligible: "Πιθανώς επιλέξιμος/η", potentially_eligible_verification_required: "Πιθανώς — χρειάζεται επιβεβαίωση", insufficient_information: "Χρειάζονται περισσότερα στοιχεία", under_review: "Υπό έλεγχο", unlikely_eligible: "Μάλλον μη επιλέξιμος/η", ineligible_verified: "Μη επιλέξιμος/η κατά την επίσημη πηγή" } as Record<string, string>,
     groupNotes: {
@@ -198,7 +198,7 @@ const en: Copy = {
     profile: "Profile completeness", completeProfile: "Complete your profile", editProfile: "Edit profile",
     missing: "Missing information", missingNote: "Answering these lets more opportunities be checked.", answer: "Answer",
     saved: "Saved", noSaved: "You haven't saved any opportunities yet. Press \"Save\" on any that interest you.",
-    groupsTitle: "Your opportunities", why: "Why it appears", noProfileTitle: "Start with your profile",
+    groupsTitle: "Your opportunities", selectiveNote: "Showing the ones that fit your groups and interests. Eligibility is decided only by the requirements.", why: "Why it appears", noProfileTitle: "Start with your profile",
     noProfile: "You haven't answered any questions yet. Choose who you are and what interests you to see personal results.",
     groups: { potentially_eligible: "Potentially eligible", potentially_eligible_verification_required: "Potentially — needs confirmation", insufficient_information: "More information needed", under_review: "Under review", unlikely_eligible: "Probably not eligible", ineligible_verified: "Not eligible per the official source" } as Record<string, string>,
     groupNotes: {
