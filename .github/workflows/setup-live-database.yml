@@ -1,0 +1,51 @@
+# Private live preview: prepare the hosted database (Neon, EU). Manual only ("Run workflow"); never scheduled.
+# Needs the repository secret LIVE_DATABASE_URL (added by the owner in GitHub → Settings → Secrets and variables → Actions).
+# Safe to run more than once. The scheduled updater stays OFF: the EU Funding & Tenders import below is a single, dated run.
+name: Set up live database (manual)
+
+on:
+  workflow_dispatch:
+    inputs:
+      import_eu_calls:
+        description: "Also run the EU Funding & Tenders import once now"
+        type: boolean
+        default: true
+
+permissions:
+  contents: read
+
+jobs:
+  setup:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    defaults:
+      run:
+        shell: bash
+    env:
+      DATABASE_URL: ${{ secrets.LIVE_DATABASE_URL }}
+      AI_EXTRACTION_ENABLED: "false"
+      MONITOR_CONTACT_EMAIL: jackal-accountant-test@users.noreply.github.com
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with: { node-version: 22 }
+      - name: Check the secret is set
+        run: test -n "$DATABASE_URL" || { echo "::error::Add the LIVE_DATABASE_URL repository secret first (see docs/PRIVATE_LIVE_PREVIEW.md)"; exit 1; }
+      - run: sudo apt-get install -y -q postgresql-client >/dev/null
+      - run: npm install --no-audit --no-fund
+      - name: Tables and sources
+        run: |
+          npm run db:migrate
+          npm run db:seed
+          psql "$DATABASE_URL" -c "UPDATE opportunities SET review_status = 'rejected' WHERE is_synthetic AND review_status <> 'rejected'"   # demo records never shown on the live preview
+      - name: Hand-checked official records (imported once) and the owner's approval of 15 Oct 2026
+        run: |
+          n=$(psql "$DATABASE_URL" -At -c "SELECT count(*) FROM opportunities WHERE external_key LIKE 'manual:%'")
+          if [ "$n" = "0" ]; then psql "$DATABASE_URL" -v ON_ERROR_STOP=1 -q -f db/seed/official-records-2026-10-14.sql; else echo "already imported ($n)"; fi
+          psql "$DATABASE_URL" -v ON_ERROR_STOP=1 -q -f db/seed/approvals-2026-10-15.sql
+          psql "$DATABASE_URL" -At -c "SELECT external_key || ' → ' || review_status FROM opportunities WHERE external_key LIKE 'manual:%' ORDER BY 1"
+      - name: EU Funding & Tenders, one run now
+        if: ${{ inputs.import_eu_calls }}
+        run: npm run worker -- --test eu-funding-tenders | tail -15
+      - name: Summary
+        run: psql "$DATABASE_URL" -c "SELECT review_status, count(*) FROM opportunities GROUP BY 1 ORDER BY 1"

@@ -1,7 +1,6 @@
 # Design preview of the MVP: build the app with real data on a throwaway machine and screenshot every key screen.
 # Runs on demand ("Run workflow") or on a push to the `preview` branch. No secrets, no deployment, no paid services.
-# The 8 hand-checked official records are approved IN THIS THROWAWAY PREVIEW DATABASE ONLY, so they can be shown;
-# in production they stay "pending" until the owner approves each one.
+# The 8 hand-checked official records are approved with db/seed/approvals-2026-10-15.sql (owner's approval, 15 Oct 2026).
 name: Design preview (screenshots)
 
 on:
@@ -54,7 +53,7 @@ jobs:
           npm run db:migrate
           npm run db:seed
           psql "$DATABASE_URL" -v ON_ERROR_STOP=1 -q -f db/seed/official-records-2026-10-14.sql
-          psql "$DATABASE_URL" -c "UPDATE opportunities SET review_status = 'approved' WHERE external_key LIKE 'manual:%'"   # preview DB only
+          psql "$DATABASE_URL" -v ON_ERROR_STOP=1 -q -f db/seed/approvals-2026-10-15.sql   # the owner's approval of 15 Oct 2026
           psql "$DATABASE_URL" -c "UPDATE opportunities SET review_status = 'rejected' WHERE is_synthetic" || true
           npm run worker -- --test eu-funding-tenders | tail -15
       - name: Build
