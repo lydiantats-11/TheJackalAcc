@@ -37,3 +37,19 @@ Set by the owner on 15 Oct 2026. This is what the project is **for**; every chan
 Each "New" item is built and tested in the repository (see `BUILD_PLAN.md`, entry of 15 Oct 2026). None of them changes
 who is eligible for what: they make the existing decisions inspectable, keep track of what changed in official
 sources, reduce what people are asked, and measure quality.
+
+## Baseline measured on 15 Oct 2026 (scripts/quality-report.ts, preview database, engine 2026-10-13.2)
+
+| Measure | Value | Reading |
+| --- | --- | --- |
+| Gold cases passed | 19 / 19 | The gold set was written by the same team that built the rules, from the same 8 hand-checked records. A full score shows the engine applies those rules as written — it is **not** an independent accuracy result. Next: a third party writes and checks cases. |
+| Records with amount information | 40.9 % of 1,011 | Verified benefit, per-applicant amount or the official call budget. |
+| Records with a per-project amount | 35.7 % | Only where the source publishes it. |
+| Records with structured conditions | 80.6 % | Mostly programme-level defaults for EU calls; few call-specific rules. |
+| Records with a complete set of conditions | 0 % | No record yet has every official condition recorded — the main gap for capability 1. |
+| Records with official condition text | 41.6 % | EU condition headings + hand-checked rules. |
+| Bilingual records | 0.8 % | The 8 hand-checked records. |
+| Deadline passed but still listed open by the source | 58.7 % | Shown as "awaiting confirmation", never as open. |
+| Ingestion speed (EU portal) | 1,003 items in 22.5 s (≈ 22 ms per item) | One run on GitHub's machines. |
+
+Rule: these figures are a starting point to improve against, not claims. Nothing here is published until independently re-checked.
