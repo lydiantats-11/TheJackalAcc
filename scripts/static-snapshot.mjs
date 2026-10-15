@@ -107,8 +107,10 @@ for (const locale of ["el", "en"]) {
   for (const v of ["employee_jobseeker", "household"]) await page.check(`input[name="personas"][value="${v}"]`);
   for (const v of ["employment", "family"]) await page.check(`input[name="interests"][value="${v}"]`);
   await page.selectOption('select[name="employment_status"]', "unemployed").catch(() => {});
-  await Promise.all([page.waitForLoadState("networkidle"), page.locator("form button.btn-primary").last().click()]);
+  await Promise.all([page.waitForResponse((r) => r.request().method() === "POST"), page.locator("form button.btn-primary").last().click()]);
+  await page.waitForLoadState("networkidle");
   await page.goto(BASE + "/for-me", { waitUntil: "networkidle" });
+  if (await page.locator(".empty").count()) throw new Error(`${locale}: demo profile did not save — For Me is empty`);
   const demo = await capture(page, ctx, locale);
   pages[locale].set("#demo", { html: demo.html.replace(/<body([^>]*)>/, `<body$1>${DEMO_BANNER[locale]}`), file: `${locale}--for-me-demo.html` });
   await ctx.close();
