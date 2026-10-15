@@ -225,7 +225,7 @@ details.filters-mobile > summary { display: none; }
   details.filters-mobile:not([open]) > .card { display: none; }
   details.filters-mobile[open] > .card { margin-top: var(--sp-3); }
 }
-@media (min-width: 961px) { details.filters-mobile > .card { display: block !important; } }
+
 .searchbar { display: flex; align-items: center; gap: 8px; background: var(--surface); border: 1px solid var(--line-strong); border-radius: var(--radius-pill); padding: 6px 6px 6px 18px; box-shadow: var(--shadow); color: var(--muted); }
 .searchbar input { border: 0; padding: 10px 4px; background: transparent; }
 .searchbar input:focus { outline: none; }
@@ -317,3 +317,20 @@ footer.site .logo { color: #fff; } footer.site .logo small { color: #9aa6bf; }
 footer.site .fine { border-top: 1px solid #22335a; margin-top: var(--sp-6); padding-top: var(--sp-4); color: #9aa6bf; font-size: .82rem; }
 @media (max-width: 760px) { footer.site .cols { grid-template-columns: 1fr; gap: var(--sp-5); } }
 @media (prefers-color-scheme: dark) { footer.site { background: #080e1b; } }
+.filters-desktop { display: block; }
+@media (max-width: 960px) { .filters-desktop { display: none; } }
+@media (min-width: 961px) { details.filters-mobile { display: none; } }
+/* phone safety: long official URLs, codes and labels wrap instead of widening the page */
+.checklist span, .checklist a, .keyinfo dd, table.crit td, .notice span, .crumbs, .opp-card h3, .detail-head h1 { overflow-wrap: anywhere; }
+@media (max-width: 600px) {
+  .tag, .badge { white-space: normal; }
+  .match-demo .item { flex-wrap: wrap; }
+  .keyinfo dl > div { grid-template-columns: 1fr; gap: 2px; }
+  .hero h1 { font-size: 2rem; }
+  .section-head h2 { font-size: 1.45rem; }
+  .card { padding: var(--sp-4); }
+  .opp-card { padding: var(--sp-4); }
+  .opp-grid { grid-template-columns: 1fr; }
+  .auth-wrap .form { padding: var(--sp-5); }
+  .match-panel { padding: var(--sp-5); }
+}

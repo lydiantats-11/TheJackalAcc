@@ -16,7 +16,7 @@ export default async function Home() {
   const list: ListedOpportunity[] = isDatabaseConfigured() ? await loadListing(sql()).catch(() => []) : [];
   const counts = countByCategory(list);
   const top = featured(list, 3);
-  const guides = [GENERAL_GUIDES[0]!, ...PROGRAMME_GUIDES.filter((g) => g.status !== "closed").slice(0, 2)];
+  const guides = [GENERAL_GUIDES[0]!, ...["a21", "unemployment"].map((slug) => PROGRAMME_GUIDES.find((g) => g.slug === slug)).filter((g) => !!g)];
 
   return (
     <>

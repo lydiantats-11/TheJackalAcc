@@ -16,7 +16,7 @@ import { OpportunityCard } from "@/components/opportunity-card";
 
 export const metadata = { title: "Ευκαιρίες / Opportunities" };
 const PAGE_SIZE = 24;
-const STATUS = ["open", "upcoming", "passed", "closed"] as const;
+const STATUS = ["open", "upcoming", "passed", "closed", "all"] as const;
 
 export default async function OpportunitiesPage({ searchParams }: { searchParams: Promise<Record<string, string | undefined>> }) {
   const { t, locale } = await getDict();
@@ -30,10 +30,12 @@ export default async function OpportunitiesPage({ searchParams }: { searchParams
     type: pick(sp.type, SUPPORT_TYPES),
     audience: pick(sp.audience, PERSONA_IDS),
     scope: pick(sp.scope, ["eu", "gr"] as const),
-    status: pick(sp.status, STATUS),
+    status: pick(sp.status, STATUS) ?? "current",
     industry: pick(sp.industry, INDUSTRY_IDS),
   };
   const list = await loadListing(sql(), f);
+  // Empty category: tell "nothing connected yet" apart from "nothing open right now".
+  const expiredOnly = list.length === 0 && f.status === "current" ? (await loadListing(sql(), { ...f, status: "all" })).length : 0;
   const pages = Math.max(1, Math.ceil(list.length / PAGE_SIZE));
   const page = Math.min(Math.max(1, Number(sp.page) || 1), pages);
   const shown = list.slice((page - 1) * PAGE_SIZE, page * PAGE_SIZE);
@@ -47,19 +49,37 @@ export default async function OpportunitiesPage({ searchParams }: { searchParams
   const cat = categoryBySlug(f.cat);
   const qs = (patch: Record<string, string | undefined>) => {
     const p = new URLSearchParams();
-    for (const [k, v] of Object.entries({ ...f, page: undefined, ...patch })) if (v) p.set(k, String(v));
+    for (const [k, v] of Object.entries({ ...f, page: undefined, ...patch })) if (v && !(k === "status" && v === "current")) p.set(k, String(v));
     const str = p.toString();
     return `/opportunities${str ? `?${str}` : ""}`;
   };
-  const anyFilter = Object.values(f).some(Boolean);
-  const select = (name: string, label: string, value: string | undefined, options: Array<[string, string]>) => (
+  const anyFilter = Object.entries(f).some(([k, v]) => v && !(k === "status" && v === "current"));
+  const select = (px: string, name: string, label: string, value: string | undefined, options: Array<[string, string]>, allLabel = s.opps.all) => (
     <div>
-      <label htmlFor={`f-${name}`}>{label}</label>
-      <select id={`f-${name}`} name={name} defaultValue={value ?? ""}>
-        <option value="">{s.opps.all}</option>
+      <label htmlFor={`${px}-${name}`}>{label}</label>
+      <select id={`${px}-${name}`} name={name} defaultValue={value ?? ""}>
+        <option value="">{allLabel}</option>
         {options.map(([v, l]) => <option key={v} value={v}>{l}</option>)}
       </select>
     </div>
+  );
+  const filterForm = (px: string) => (
+    <form className="card filter-panel" role="search" action="/opportunities">
+      {f.cat && <input type="hidden" name="cat" value={f.cat} />}
+      <div>
+        <label htmlFor={`${px}-q`}>{s.opps.search}</label>
+        <input id={`${px}-q`} name="q" type="search" defaultValue={f.q} placeholder={s.opps.searchPlaceholder} />
+      </div>
+      {select(px, "type", s.opps.type, f.type, SUPPORT_TYPES.map((x) => [x, s.supportType[x]]))}
+      {select(px, "audience", s.opps.audience, f.audience, PERSONA_IDS.map((x) => [x, t.opt.personas[x] ?? x]))}
+      {select(px, "scope", s.opps.scope, f.scope, [["gr", s.scope.gr], ["eu", s.scope.eu]])}
+      {select(px, "status", s.opps.status, f.status === "current" ? undefined : f.status, STATUS.map((x) => [x, s.status[x]]), `${s.status.open} + ${s.status.upcoming}`)}
+      {select(px, "industry", s.opps.industry, f.industry, INDUSTRY_IDS.map((x) => [x, t.opt.industries[x] ?? x]))}
+      <div className="actions">
+        <button className="btn btn-primary btn-sm">{s.opps.apply}</button>
+        {anyFilter && <Link href="/opportunities" className="btn btn-ghost btn-sm">{s.opps.clear}</Link>}
+      </div>
+    </form>
   );
 
   return (
@@ -81,38 +101,26 @@ export default async function OpportunitiesPage({ searchParams }: { searchParams
 
       <div className="with-aside">
         <aside className="sticky">
+          <div className="filters-desktop">{filterForm("d")}</div>
           <details className="filters-mobile">
             <summary className="btn btn-ghost btn-sm"><Icon name="layers" size={16} />{s.opps.filters}</summary>
-            <form className="card filter-panel" role="search" action="/opportunities">
-              {f.cat && <input type="hidden" name="cat" value={f.cat} />}
-              <div>
-                <label htmlFor="f-q">{s.opps.search}</label>
-                <input id="f-q" name="q" type="search" defaultValue={f.q} placeholder={s.opps.searchPlaceholder} />
-              </div>
-              {select("type", s.opps.type, f.type, SUPPORT_TYPES.map((x) => [x, s.supportType[x]]))}
-              {select("audience", s.opps.audience, f.audience, PERSONA_IDS.map((x) => [x, t.opt.personas[x] ?? x]))}
-              {select("scope", s.opps.scope, f.scope, [["gr", s.scope.gr], ["eu", s.scope.eu]])}
-              {select("status", s.opps.status, f.status, STATUS.map((x) => [x, s.status[x]]))}
-              {select("industry", s.opps.industry, f.industry, INDUSTRY_IDS.map((x) => [x, t.opt.industries[x] ?? x]))}
-              <div className="actions">
-                <button className="btn btn-primary btn-sm">{s.opps.apply}</button>
-                {anyFilter && <Link href="/opportunities" className="btn btn-ghost btn-sm">{s.opps.clear}</Link>}
-              </div>
-            </form>
+            {filterForm("m")}
           </details>
         </aside>
 
         <section aria-live="polite">
           <div className="row" style={{ justifyContent: "space-between", marginBottom: 14 }}>
-            <strong>{s.opps.results(list.length)}</strong>
+            <span><strong>{s.opps.results(list.length)}</strong>{f.status === "current" && <span className="small muted"> · {s.opps.currentOnly} <Link href={qs({ status: "all" })}>{s.opps.showExpired}</Link></span>}</span>
             {(f.cat || f.audience) && <span className="xs muted" style={{ maxWidth: 520 }}>{s.opps.indicative}</span>}
           </div>
           {list.length === 0 ? (
             <div className="empty">
               <span className="icon-tile"><Icon name="search" /></span>
               <h3>{s.opps.emptyTitle}</h3>
-              <p>{f.cat && !f.q && !f.type && !f.audience && !f.scope && !f.status && !f.industry ? s.opps.categoryEmpty : s.opps.emptyBody}</p>
-              <Link href="/opportunities" className="btn btn-ghost btn-sm">{s.opps.clear}</Link>
+              <p>{expiredOnly > 0 ? s.opps.noneOpen : f.cat && !f.q && !f.type && !f.audience && !f.scope && !f.industry ? s.opps.categoryEmpty : s.opps.emptyBody}</p>
+              {expiredOnly > 0
+                ? <Link href={qs({ status: "all" })} className="btn btn-ghost btn-sm">{s.opps.showExpired}</Link>
+                : <Link href="/opportunities" className="btn btn-ghost btn-sm">{s.opps.clear}</Link>}
             </div>
           ) : (
             <div className="opp-grid">

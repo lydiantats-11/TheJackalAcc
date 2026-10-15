@@ -17,7 +17,12 @@ async function shoot(page, name, path, opts = {}) {
   await page.screenshot({ path: `${out}/${file}`, fullPage: opts.full !== false, type: "jpeg", quality: 82 });
   const overflow = await page.evaluate(() => document.documentElement.scrollWidth > window.innerWidth + 1);
   shots.push({ name, path, file, status: res?.status() ?? 0, overflow });
-  if (overflow) errors.push(`${name}: horizontal scroll`);
+  if (overflow) {
+    const culprits = await page.evaluate(() => [...document.querySelectorAll("body *")]
+      .filter((el) => el.getBoundingClientRect().right > window.innerWidth + 1 && el.children.length === 0)
+      .slice(0, 5).map((el) => `${el.tagName.toLowerCase()}.${String(el.className).split(" ")[0]}: ${(el.textContent ?? "").trim().slice(0, 40)} (${Math.round(el.getBoundingClientRect().right)}px)`));
+    errors.push(`${name}: horizontal scroll — ${culprits.join(" | ")}`);
+  }
 }
 
 const browser = await chromium.launch();

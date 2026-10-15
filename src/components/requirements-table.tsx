@@ -11,23 +11,31 @@ function paramsText(r: RequirementResult): string {
     .join(" · ");
 }
 
-/** Every row shows the platform's evaluation AND lets the user open the official wording and its source. */
-export function RequirementsTable({ results, t }: { results: RequirementResult[]; t: Dictionary }) {
+export interface RequirementsCopy { state: string; needs: string; kinds: Record<string, string> }
+
+/**
+ * Every row shows the platform's evaluation AND lets the user open the official wording and its source.
+ * With `copy` (design sprint) the row speaks plain language: requirement kind in words, and which profile answer
+ * would resolve an unknown — instead of the engine's parameter dump (still shown when `copy` is not given).
+ */
+export function RequirementsTable({ results, t, copy }: { results: RequirementResult[]; t: Dictionary; copy?: RequirementsCopy }) {
   if (results.length === 0) return <p className="small muted">{t.ui.requirementsUnknown}</p>;
   return (
     <div className="scroll">
       <table className="crit">
-        <thead><tr><th>{t.opp.sectionRequirements}</th><th>Status</th><th>{t.ui.officialWording}</th></tr></thead>
+        <thead><tr><th>{t.opp.sectionRequirements}</th><th>{copy?.state ?? "Status"}</th><th>{t.ui.officialWording}</th></tr></thead>
         <tbody>
           {results.map((r) => (
             <tr key={r.requirement_id}>
               <td>
                 {t.criterion[r.category] ?? r.category}{r.kind === "mandatory" ? " *" : ""}
-                <div className="small muted">{r.kind}</div>
+                <div className="small muted">{copy?.kinds[r.kind] ?? r.kind}</div>
               </td>
               <td>
                 <StateBadge state={r.state} t={t} />
-                <div className="small muted">{paramsText(r)}{r.question ? ` → ${t.question[r.question] ?? r.question}` : ""}</div>
+                {copy
+                  ? (r.state === "unknown" && r.question ? <div className="small muted">{copy.needs}: {t.question[r.question] ?? r.question}</div> : null)
+                  : <div className="small muted">{paramsText(r)}{r.question ? ` → ${t.question[r.question] ?? r.question}` : ""}</div>}
               </td>
               <td className="small">
                 <details>

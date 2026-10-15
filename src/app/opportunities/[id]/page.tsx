@@ -132,7 +132,7 @@ export default async function OpportunityPage({ params, searchParams }: { params
               )}
               {o.requirement_set_completeness !== "complete" && <div className="notice small" style={{ marginBottom: 12 }}><Icon name="alert" size={18} /><span>{t.ui.requirementsIncomplete}</span></div>}
               <div className="section-label sl-unverified" style={{ marginTop: 10 }}>{t.opp.sectionRequirements}</div>
-              <RequirementsTable results={a.results} t={t} />
+              <RequirementsTable results={a.results} t={t} copy={s.detail.req} />
               <p className="small muted" style={{ marginBottom: 0 }}>{t.opp.authorityDecides}</p>
             </section>
 

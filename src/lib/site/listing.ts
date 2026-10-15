@@ -50,7 +50,7 @@ export async function loadListing(sql: postgres.Sql, f: ListingFilters = {}, now
     .filter((x) => !f.type || x.support === f.type)
     .filter((x) => !f.audience || x.audiences.includes(f.audience as PersonaId))
     .filter((x) => !f.scope || x.scope === f.scope)
-    .filter((x) => !f.status || x.status === f.status)
+    .filter((x) => !f.status || f.status === "all" || (f.status === "current" ? x.status === "open" || x.status === "upcoming" : x.status === f.status))
     .sort((a, b) => RANK[a.status] - RANK[b.status]
       || (a.row.closes_at?.getTime() ?? Number.MAX_SAFE_INTEGER) - (b.row.closes_at?.getTime() ?? Number.MAX_SAFE_INTEGER)
       || a.row.official_title.localeCompare(b.row.official_title));
@@ -61,7 +61,15 @@ export function featured(list: ListedOpportunity[], n = 6): ListedOpportunity[] 
   const open = list.filter((x) => x.status === "open" && !x.row.is_synthetic);
   const manual = open.filter((x) => x.row.external_key?.startsWith("manual:"));
   const rest = open.filter((x) => !x.row.external_key?.startsWith("manual:") && x.row.closes_at);
-  return [...manual, ...rest].slice(0, n);
+  // One card per category, so the homepage shows the range of what exists.
+  const seen = new Set<string>(); const out: ListedOpportunity[] = [];
+  for (const x of [...manual, ...rest]) {
+    const key = x.categories[0] ?? x.row.id;
+    if (seen.has(key)) continue;
+    seen.add(key); out.push(x);
+    if (out.length === n) break;
+  }
+  return out;
 }
 
 /** Per category: listings open or upcoming now, and all listings (incl. expired / unconfirmed). */
