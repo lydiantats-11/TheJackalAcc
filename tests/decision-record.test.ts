@@ -38,7 +38,7 @@ describe("decision record (core capability 2: auditable decisions)", () => {
 
   it("gives a reproducible reference: same inputs → same reference; any input change → a different one", () => {
     const a = buildDecisionRecord(opp([geo]), { application_country: "GR" }, { now: NOW });
-    const b = buildDecisionRecord(opp([geo]), { application_country: "GR", household_income_range: "x" }, { now: NOW });
+    const b = buildDecisionRecord(opp([geo]), { application_country: "GR", household_income_range: "under_10k" }, { now: NOW });
     const c = buildDecisionRecord(opp([geo]), { application_country: "DE" }, { now: NOW });
     const d = buildDecisionRecord(opp([geo], { version: 2 }), { application_country: "GR" }, { now: NOW });
     expect(a.reference).toMatch(/^JA-.+-[0-9a-f]{16}$/);
