@@ -2,4 +2,3 @@
 > funding-radar@0.1.0 typecheck
 > tsc --noEmit
 
-tests/decision-record.test.ts(41,76): error TS2322: Type '"x"' is not assignable to type 'HouseholdIncomeRange | null | undefined'.
