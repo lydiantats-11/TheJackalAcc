@@ -58,6 +58,8 @@ export interface OpportunityFilters {
   type?: string;
   /** An industry id: keeps records restricted to it AND records not restricted to any industry. */
   industry?: string;
+  /** Maximum rows (default 500, at most 5000). The public listing pages and filters by category in memory. */
+  limit?: number;
 }
 
 const SELECT = (sql: postgres.Sql) => sql`
@@ -82,7 +84,7 @@ export async function listOpportunities(sql: postgres.Sql, f: OpportunityFilters
     -- Still-available first: closed records last, and records whose deadline has passed after those still open
     -- (the EU portal keeps hundreds of expired topics labelled "open"; listing them first hid the current ones).
     ORDER BY (o.status IN ('closed','cancelled','archived')), (o.closes_at IS NOT NULL AND o.closes_at < now()), o.closes_at NULLS LAST, o.official_title
-    LIMIT 500`;
+    LIMIT ${Math.min(Math.max(f.limit ?? 500, 1), 5000)}`;
 }
 
 export async function getOpportunity(sql: postgres.Sql, id: string): Promise<OpportunityRow | null> {

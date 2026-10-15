@@ -2,7 +2,7 @@ export type Locale = "el" | "en";
 export const LOCALES: Locale[] = ["el", "en"];
 
 const el = {
-  brand: "Funding Radar",
+  brand: "Jackal Accountant",
   tagline: "Επίσημες ευκαιρίες χρηματοδότησης, με σαφή εικόνα επιλεξιμότητας.",
   nav: { opportunities: "Ευκαιρίες", dashboard: "Ο πίνακάς μου", profile: "Προφίλ", admin: "Διαχείριση", review: "Έλεγχος ΤΝ", login: "Σύνδεση", register: "Εγγραφή", logout: "Αποσύνδεση" },
   disclaimer:
@@ -243,7 +243,7 @@ const el = {
 export type Dictionary = typeof el;
 
 const en: Dictionary = {
-  brand: "Funding Radar",
+  brand: "Jackal Accountant",
   tagline: "Official funding opportunities, with an honest view of eligibility.",
   nav: { opportunities: "Opportunities", dashboard: "My dashboard", profile: "Profile", admin: "Admin", review: "AI review", login: "Log in", register: "Sign up", logout: "Log out" },
   disclaimer: "Independent platform — not a government service. Final eligibility and funding decisions are made solely by the responsible authority.",

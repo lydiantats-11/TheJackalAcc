@@ -1,0 +1,146 @@
+import Link from "next/link";
+import { getDict } from "@/lib/i18n/server";
+import { isDatabaseConfigured, sql } from "@/lib/db";
+import { currentUser } from "@/lib/auth/session";
+import { getProfile, listSavedIds } from "@/lib/data/user";
+import { loadRequirements, toMatchable } from "@/lib/data/opportunities";
+import { assess, rankKey, type Assessment } from "@/lib/domain/eligibility";
+import { isAnswered } from "@/lib/domain/personas";
+import { SITE } from "@/lib/site/copy";
+import { loadListing, type ListedOpportunity } from "@/lib/site/listing";
+import { EligibilityBadge } from "@/components/badges";
+import { Icon } from "@/components/icons";
+import { OpportunityCard } from "@/components/opportunity-card";
+
+export const metadata = { title: "Για Εμένα / For Me" };
+
+const PROFILE_FIELDS = ["personas", "interests", "industries", "persona", "region_codes", "age_range", "employment_status", "education_level", "business_stage", "housing_status"] as const;
+const GROUPS = ["potentially_eligible", "potentially_eligible_verification_required", "insufficient_information", "under_review", "unlikely_eligible", "ineligible_verified"] as const;
+const PER_GROUP = 6;
+
+export default async function ForMePage({ searchParams }: { searchParams: Promise<{ denied?: string }> }) {
+  const { t, locale } = await getDict();
+  const s = SITE[locale];
+  const f = s.forMe;
+  const user = await currentUser().catch(() => null);
+  const denied = (await searchParams).denied;
+
+  if (!user) {
+    return (
+      <div className="container">
+        <div className="page-head"><h1>{f.title}</h1></div>
+        <div className="match-panel">
+          <div>
+            <h2>{f.guestTitle}</h2>
+            <p>{f.guestLead}</p>
+            <ul>{s.home.matchPoints.map((p) => <li key={p}><Icon name="check" size={20} />{p}</li>)}</ul>
+            <div className="row" style={{ gap: 12 }}>
+              <Link href="/register" className="btn btn-primary btn-lg">{f.guestCta}</Link>
+              <Link href="/login" className="btn btn-on-dark btn-lg">{f.guestLogin}</Link>
+            </div>
+          </div>
+          <div className="match-demo">
+            <div className="row" style={{ justifyContent: "space-between" }}><strong>{s.home.matchDemoTitle}</strong><span className="tag gold">{locale === "el" ? "Ενδεικτικό" : "Illustration"}</span></div>
+            {(["potentially_eligible", "potentially_eligible_verification_required", "insufficient_information"] as const).map((g) => (
+              <div key={g} className="item"><span className="small">{f.groupNotes[g]}</span><EligibilityBadge status={g} t={t} /></div>
+            ))}
+            <p className="xs muted" style={{ margin: "12px 0 0" }}>{s.home.matchDemoNote}</p>
+          </div>
+        </div>
+        <p className="center" style={{ marginTop: 24 }}><Link href="/opportunities">{f.guestBrowse} →</Link></p>
+      </div>
+    );
+  }
+
+  if (!isDatabaseConfigured()) return <div className="container"><div className="notice bad">{t.noDb}</div></div>;
+  const [profile, savedIds, list] = await Promise.all([getProfile(sql(), user), listSavedIds(sql(), user), loadListing(sql())]);
+  const filled = PROFILE_FIELDS.filter((k) => isAnswered(profile[k])).length;
+  const pct = Math.round((filled / PROFILE_FIELDS.length) * 100);
+  const hasProfile = isAnswered(profile.personas) || isAnswered(profile.interests) || filled >= 2;
+
+  // Only opportunities that can be applied to now or soon are matched.
+  const current = list.filter((x) => x.status === "open" || x.status === "upcoming");
+  const reqs = await loadRequirements(sql(), current.map((x) => x.row.id));
+  const now = new Date();
+  const assessed: Array<{ x: ListedOpportunity; a: Assessment }> = current
+    .map((x) => ({ x, a: assess(toMatchable(x.row, reqs.get(x.row.id) ?? []), profile, { now }) }))
+    .sort((p, q) => rankKey(p.a) - rankKey(q.a));
+  const groups = GROUPS.map((g) => ({ g, items: assessed.filter(({ a }) => a.eligibility === g) })).filter((x) => x.items.length > 0);
+  const missing = [...new Set(assessed.filter(({ a }) => a.eligibility !== "unlikely_eligible" && a.eligibility !== "ineligible_verified").flatMap(({ a }) => a.questions))];
+  const saved = list.filter((x) => savedIds.includes(x.row.id));
+
+  const why = (a: Assessment) => {
+    const met = a.results.filter((r) => r.state === "satisfied").length;
+    const unknown = a.results.filter((r) => r.state === "unknown").length;
+    const total = a.results.filter((r) => r.state !== "not_applicable").length;
+    if (total === 0) return locale === "el" ? "Οι προϋποθέσεις δεν έχουν καταγραφεί ακόμη." : "Requirements not recorded yet.";
+    return locale === "el" ? `${met} από ${total} προϋποθέσεις ικανοποιούνται${unknown ? ` · ${unknown} χωρίς απάντηση` : ""}` : `${met} of ${total} requirements met${unknown ? ` · ${unknown} unanswered` : ""}`;
+  };
+
+  return (
+    <div className="container">
+      <div className="page-head">
+        <h1>{f.title}</h1>
+        <p className="lead">{f.lead}</p>
+      </div>
+      {denied && <div className="notice bad" style={{ marginBottom: 16 }}>{t.dash.denied}</div>}
+
+      <div className="with-aside">
+        <aside className="stack sticky">
+          <div className="card">
+            <div className="kpi-label">{f.profile}</div>
+            <div className="kpi">{pct}%</div>
+            <div className="meter" aria-hidden="true" style={{ margin: "10px 0 14px" }}><span style={{ width: `${pct}%` }} /></div>
+            <Link href="/profile" className="btn btn-ghost btn-sm btn-block">{pct < 100 ? f.completeProfile : f.editProfile}</Link>
+          </div>
+          <div className="card">
+            <div className="kpi-label">{f.missing}</div>
+            {missing.length === 0 ? <p className="small muted" style={{ margin: "8px 0 0" }}>—</p> : (
+              <>
+                <p className="xs muted" style={{ margin: "6px 0 10px" }}>{f.missingNote}</p>
+                <ul className="checklist small">{missing.slice(0, 6).map((q) => <li key={q}><Icon name="info" size={16} /><span>{t.question[q] ?? q}</span></li>)}</ul>
+                <Link href={`/profile?ask=${missing.slice(0, 12).join(",")}`} className="btn btn-primary btn-sm btn-block" style={{ marginTop: 12 }}>{f.answer}</Link>
+              </>
+            )}
+          </div>
+          <div className="card">
+            <div className="kpi-label">{f.saved}</div>
+            {saved.length === 0 ? <p className="small muted" style={{ margin: "8px 0 0" }}>{f.noSaved}</p> : (
+              <ul className="checklist small" style={{ marginTop: 10 }}>{saved.map((x) => <li key={x.row.id}><Icon name="bookmark" size={16} /><Link href={`/opportunities/${x.row.id}`}>{x.row.official_title}</Link></li>)}</ul>
+            )}
+          </div>
+        </aside>
+
+        <section>
+          {!hasProfile ? (
+            <div className="empty">
+              <span className="icon-tile"><Icon name="user" /></span>
+              <h3>{f.noProfileTitle}</h3>
+              <p>{f.noProfile}</p>
+              <Link href="/profile" className="btn btn-primary">{f.completeProfile}</Link>
+            </div>
+          ) : (
+            <div className="stack-lg">
+              <p className="small muted" style={{ margin: 0 }}>{t.dash.note}</p>
+              {groups.map(({ g, items }) => (
+                <div key={g}>
+                  <div className="row" style={{ justifyContent: "space-between", marginBottom: 6 }}>
+                    <h2 style={{ margin: 0, fontSize: "1.15rem" }}>{f.groups[g]} <span className="muted" style={{ fontWeight: 500 }}>· {items.length}</span></h2>
+                  </div>
+                  <p className="small muted" style={{ marginTop: 0 }}>{f.groupNotes[g]}</p>
+                  <div className="opp-grid">
+                    {items.slice(0, PER_GROUP).map(({ x, a }) => (
+                      <OpportunityCard key={x.row.id} item={x} t={t} s={s} locale={locale}
+                        extra={<div className="notice info small" style={{ padding: "8px 12px" }}><EligibilityBadge status={a.eligibility} t={t} /><span><strong>{f.why}:</strong> {why(a)}</span></div>} />
+                    ))}
+                  </div>
+                  {items.length > PER_GROUP && <p className="small muted" style={{ marginTop: 10 }}>{f.more(items.length - PER_GROUP)} · <Link href="/opportunities?status=open">{f.showAll}</Link></p>}
+                </div>
+              ))}
+            </div>
+          )}
+        </section>
+      </div>
+    </div>
+  );
+}

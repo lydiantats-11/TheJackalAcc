@@ -9,9 +9,12 @@ import { assess } from "@/lib/domain/eligibility";
 import { runScenario, type Scenario } from "@/lib/domain/scenarios";
 import { estimateAward } from "@/lib/domain/funding";
 import { formatDate } from "@/lib/format";
+import { SITE } from "@/lib/site/copy";
+import { audiencesOf, categoriesOf, categoryBySlug, guideOf, scopeOf, supportTypeOf } from "@/lib/site/taxonomy";
 import { AvailabilityBadge, EligibilityBadge, StateBadge, SyntheticLabel } from "@/components/badges";
-import { OpportunityFacts } from "@/components/opportunity-facts";
+import { amountText, deadlineText } from "@/components/opportunity-facts";
 import { RequirementsTable } from "@/components/requirements-table";
+import { Icon } from "@/components/icons";
 import { toggleSaveAction } from "@/app/actions";
 
 const SCENARIO_KINDS = ["register_business", "establish_in_region", "increase_cofinancing", "change_project_start", "obtain_dypa_registration"] as const;
@@ -30,7 +33,8 @@ function buildScenario(kind: string, regions: string[], now: Date): Scenario | n
 
 export default async function OpportunityPage({ params, searchParams }: { params: Promise<{ id: string }>; searchParams: Promise<{ scenario?: string }> }) {
   const { t, locale } = await getDict();
-  if (!isDatabaseConfigured()) return <div className="notice bad">{t.noDb}</div>;
+  const s = SITE[locale];
+  if (!isDatabaseConfigured()) return <div className="container"><div className="notice bad">{t.noDb}</div></div>;
   const { id } = await params;
   const o = await getOpportunity(sql(), id);
   if (!o) notFound();
@@ -53,119 +57,177 @@ export default async function OpportunityPage({ params, searchParams }: { params
     ? estimateAward({ eligible_expenditure: budget, intensity_pct: Number(o.funding_intensity_pct), min_award: o.funding_min ? Number(o.funding_min) : null, max_award: o.funding_max ? Number(o.funding_max) : null, currency: o.currency ?? "EUR" })
     : null;
 
+  const cats = categoriesOf(o).map((c) => categoryBySlug(c)).filter((c) => !!c);
+  const audiences = audiencesOf(o);
+  const scope = scopeOf(o);
+  const guide = guideOf(o);
+  const saved = savedIds.includes(o.id);
+
   return (
-    <article className="stack">
-      <div className="row"><AvailabilityBadge value={a.availability} t={t} />{o.is_synthetic && <SyntheticLabel t={t} />}</div>
-      <h1 lang={o.title_lang}>{o.official_title}</h1>
-      {o.is_synthetic && <div className="notice">{t.synthetic}.</div>}
-      {o.has_conflict && <div className="notice bad" role="alert">{t.ui.conflict}</div>}
-
-      <section className="card">
-        <div className="section-label sl-official">{t.opp.sectionFacts}</div>
-        <p className="small muted" style={{ marginTop: 0 }}>{t.opp.sectionFactsNote}</p>
-        <OpportunityFacts o={o} t={t} locale={locale} />
-        <dl className="facts">
-          <div><dt>{t.opp.authority}</dt><dd>{o.publishing_authority ?? <span className="unknown">{t.opp.deadlineUnknown}</span>}</dd></div>
-          {o.programme && <div><dt>{t.ui.programme}</dt><dd>{o.programme}</dd></div>}
-          {o.funding_intensity_pct && <div><dt>{t.opp.intensity}</dt><dd>{Number(o.funding_intensity_pct)}%</dd></div>}
-          <div><dt>{t.ui.freshness}</dt><dd>{formatDate(o.last_verified_at, locale) ?? <span className="unknown">{t.opp.never}</span>}{o.source_name ? ` · ${o.source_name}` : ""}</dd></div>
-        </dl>
-        {o.deadline_original_text && (
-          <p className="small muted">{t.ui.originalDeadline}: <code>{o.deadline_original_text}</code>{o.deadline_is_date_only ? ` — ${t.ui.dateOnly}` : ""}</p>
-        )}
-        <div className="row" style={{ marginTop: 14 }}>
-          <a className="btn btn-primary btn-sm" href={o.canonical_url} target="_blank" rel="noopener noreferrer">{t.opp.official} ↗</a>
-          {o.application_url && <a className="btn btn-ghost btn-sm" href={o.application_url} target="_blank" rel="noopener noreferrer">{t.opp.apply} ↗</a>}
-          {user && (
-            <form action={toggleSaveAction}>
-              <input type="hidden" name="opportunity_id" value={o.id} />
-              <button className="btn btn-ghost btn-sm">{savedIds.includes(o.id) ? t.opp.unsave : t.opp.save}</button>
-            </form>
-          )}
+    <div className="container">
+      <nav className="crumbs" aria-label="breadcrumb">
+        <Link href="/opportunities">{s.detail.back}</Link>
+        {cats[0] && <> / <Link href={`/opportunities?cat=${cats[0].slug}`}>{cats[0].name[locale]}</Link></>}
+      </nav>
+      <header className="detail-head">
+        <div className="tags" style={{ marginBottom: 12 }}>
+          <AvailabilityBadge value={a.availability} t={t} />
+          {cats.map((c) => <span key={c.slug} className="tag cat">{c.name[locale]}</span>)}
+          <span className="tag">{s.supportType[supportTypeOf(o.opportunity_type)]}</span>
+          <span className="tag navy">{s.scope[scope]}</span>
+          {o.is_synthetic && <SyntheticLabel t={t} />}
         </div>
-      </section>
+        <h1 lang={o.title_lang}>{o.official_title}</h1>
+        <p className="muted" style={{ margin: 0 }}>{o.publishing_authority}{o.official_identifier ? ` · ${o.official_identifier}` : ""}</p>
+      </header>
+      {o.is_synthetic && <div className="notice" style={{ marginBottom: 16 }}>{t.synthetic}.</div>}
+      {o.has_conflict && <div className="notice bad" role="alert" style={{ marginBottom: 16 }}>{t.ui.conflict}</div>}
 
-      {o.summary_plain && (
-        <section className="card">
-          <div className="section-label sl-ai">{t.opp.sectionSummary}</div>
-          <p className="small muted" style={{ marginTop: 0 }}>{o.summary_origin === "ai" ? t.opp.summaryAi : t.opp.summaryAdmin}</p>
-          <p>{o.summary_plain}</p>
-        </section>
-      )}
+      <div className="with-aside-r">
+        <div>
+          <nav className="toc" aria-label={s.detail.overview}>
+            <a href="#overview">{s.detail.overview}</a>
+            <a href="#eligibility">{s.detail.eligibility}</a>
+            <a href="#apply">{s.detail.howToApply}</a>
+            <a href="#sources">{s.detail.sources}</a>
+          </nav>
 
-      <section className="card">
-        <div className="section-label sl-score">{t.opp.sectionMatch}</div>
-        <p className="small muted" style={{ marginTop: 0 }}>{t.opp.sectionMatchNote}</p>
-        {!user ? <p><Link href="/login">{t.opp.loginForMatch}</Link></p> : (
-          <>
-            <div className="row" style={{ marginBottom: 10 }}>
-              <EligibilityBadge status={a.eligibility} t={t} />
-              <span className="badge b-plain">{t.opp.relevance}: {a.relevance_score ?? "—"}/100</span>
-              <span className="badge b-plain">{t.opp.coverage}: {Math.round(a.evidence_coverage * 100)}%</span>
-              <span className="badge b-plain">{t.opp.unresolved}: {a.unresolved_count}</span>
-            </div>
-            {a.questions.length > 0 && (
-              <div className="notice info" style={{ marginBottom: 12 }}>
-                {t.opp.questions} {a.questions.map((q) => t.question[q] ?? q).join(" · ")} <Link href={`/profile?ask=${a.questions.join(",")}`}>{t.opp.answerInProfile} →</Link>
-              </div>
+          <div className="stack-lg">
+            <section id="overview" className="card">
+              <div className="section-label sl-official">{t.opp.sectionFacts}</div>
+              {o.summary_plain ? (
+                <>
+                  <p style={{ fontSize: "1.05rem" }}>{o.summary_plain}</p>
+                  <p className="xs muted" style={{ margin: 0 }}>{o.summary_origin === "ai" ? t.opp.summaryAi : t.opp.summaryAdmin}</p>
+                </>
+              ) : <p className="muted" style={{ margin: 0 }}>{t.opp.sectionFactsNote}</p>}
+            </section>
+
+            <section id="eligibility" className="card">
+              <div className="section-label sl-score">{t.opp.sectionMatch}</div>
+              <p className="small muted" style={{ marginTop: 0 }}>{t.opp.sectionMatchNote}</p>
+              {!user ? (
+                <div className="notice info"><Icon name="user" size={18} /><span>{s.detail.saveHint} <Link href="/login">{t.nav.login}</Link> · <Link href="/register">{t.nav.register}</Link></span></div>
+              ) : (
+                <>
+                  <div className="row" style={{ marginBottom: 12 }}>
+                    <EligibilityBadge status={a.eligibility} t={t} />
+                    <span className="badge b-plain">{t.opp.relevance}: {a.relevance_score ?? "—"}/100</span>
+                    <span className="badge b-plain">{t.opp.coverage}: {Math.round(a.evidence_coverage * 100)}%</span>
+                    <span className="badge b-plain">{t.opp.unresolved}: {a.unresolved_count}</span>
+                  </div>
+                  {a.questions.length > 0 && (
+                    <div className="notice info" style={{ marginBottom: 12 }}>
+                      <Icon name="info" size={18} />
+                      <span>{t.opp.questions} {a.questions.map((q) => t.question[q] ?? q).join(" · ")} <Link href={`/profile?ask=${a.questions.join(",")}`}>{t.opp.answerInProfile} →</Link></span>
+                    </div>
+                  )}
+                </>
+              )}
+              {user && a.obligations.length > 0 && (
+                <div className="notice info" style={{ marginBottom: 12 }}>
+                  <div><strong>{t.obligations.title}</strong>
+                    <ul className="small" style={{ margin: "6px 0 0" }}>{a.obligations.map((ob) => <li key={ob}>{t.obligations[ob] ?? ob}</li>)}</ul></div>
+                </div>
+              )}
+              {o.requirement_set_completeness !== "complete" && <div className="notice small" style={{ marginBottom: 12 }}><Icon name="alert" size={18} /><span>{t.ui.requirementsIncomplete}</span></div>}
+              <div className="section-label sl-unverified" style={{ marginTop: 10 }}>{t.opp.sectionRequirements}</div>
+              <RequirementsTable results={a.results} t={t} />
+              <p className="small muted" style={{ marginBottom: 0 }}>{t.opp.authorityDecides}</p>
+            </section>
+
+            {estimate && (
+              <section className="card">
+                <div className="section-label sl-score">{t.ui.estimate}</div>
+                <p className="small muted" style={{ marginTop: 0 }}>{t.ui.estimateNote}</p>
+                <p className="kpi">{estimate.estimated_award !== null ? new Intl.NumberFormat(locale === "el" ? "el-GR" : "en-GB", { style: "currency", currency: estimate.currency }).format(estimate.estimated_award) : "—"}</p>
+                <details><summary>{t.ui.howCalculated}</summary>
+                  <p className="small">{t.ui.formula}: <code>{estimate.formula}</code></p>
+                  <ul className="small">{estimate.steps.map((st) => <li key={st}>{st}</li>)}</ul>
+                  <p className="small muted">{estimate.rounding}</p>
+                </details>
+              </section>
             )}
-          </>
-        )}
-        {user && a.obligations.length > 0 && (
-          <div className="notice info" style={{ marginBottom: 12 }}>
-            <strong>{t.obligations.title}</strong>
-            <ul className="small" style={{ margin: "6px 0 0" }}>{a.obligations.map((ob) => <li key={ob}>{t.obligations[ob] ?? ob}</li>)}</ul>
-          </div>
-        )}
-        {o.requirement_set_completeness !== "complete" && <p className="small notice">{t.ui.requirementsIncomplete}</p>}
-        <div className="section-label sl-unverified" style={{ marginTop: 10 }}>{t.opp.sectionRequirements}</div>
-        <RequirementsTable results={a.results} t={t} />
-        <p className="small muted">{t.opp.authorityDecides}</p>
-      </section>
 
-      {estimate && (
-        <section className="card">
-          <div className="section-label sl-score">{t.ui.estimate}</div>
-          <p className="small muted" style={{ marginTop: 0 }}>{t.ui.estimateNote}</p>
-          <p className="kpi">{estimate.estimated_award !== null ? new Intl.NumberFormat(locale === "el" ? "el-GR" : "en-GB", { style: "currency", currency: estimate.currency }).format(estimate.estimated_award) : "—"}</p>
-          <details><summary>{t.ui.howCalculated}</summary>
-            <p className="small">{t.ui.formula}: <code>{estimate.formula}</code></p>
-            <ul className="small">{estimate.steps.map((s) => <li key={s}>{s}</li>)}</ul>
-            <p className="small muted">{estimate.rounding}</p>
-          </details>
-        </section>
-      )}
+            {user && (
+              <section className="card">
+                <div className="section-label sl-ai">{t.ui.scenarios}</div>
+                <form className="row">
+                  <select name="scenario" defaultValue={scenarioKind ?? ""} aria-label={t.ui.scenarios} style={{ maxWidth: 420 }}>
+                    <option value="">—</option>
+                    {SCENARIO_KINDS.filter((k) => k !== "establish_in_region" || regions.length > 0).map((k) => <option key={k} value={k}>{t.scenario[k]}</option>)}
+                  </select>
+                  <button className="btn btn-ghost btn-sm">{t.ui.run}</button>
+                </form>
+                {sr && (
+                  <div className="stack" style={{ marginTop: 12 }}>
+                    <div className="notice info">{t.ui.scenarioNote}</div>
+                    <div className="row">
+                      <span className="small">{t.ui.permissible}</span>
+                      <span className={`badge ${sr.permissible === "no" ? "b-bad" : sr.permissible === "yes" ? "b-ok" : "b-warn"}`}>{t.ui[sr.permissible]}</span>
+                      <EligibilityBadge status={sr.outcome.eligibility} t={t} hypothetical />
+                    </div>
+                    {sr.permissibility_reasons.length > 0 && <ul className="small">{sr.permissibility_reasons.map((r) => <li key={r}>{t.scenario.reasons[r] ?? r}</li>)}</ul>}
+                    <div><strong className="small">{t.ui.changes}</strong>
+                      {sr.changes.length === 0 ? <p className="small muted">{t.ui.none}</p> : (
+                        <ul className="small">{sr.changes.map((c) => <li key={c.requirement_key}>{t.criterion[c.category] ?? c.category}: <StateBadge state={c.from} t={t} /> → <StateBadge state={c.to} t={t} /></li>)}</ul>
+                      )}</div>
+                    {sr.evidence_needed.length > 0 && <div><strong className="small">{t.ui.evidenceNeeded}</strong><ul className="small">{sr.evidence_needed.map((e) => <li key={e}>{e.replaceAll("_", " ")}</li>)}</ul></div>}
+                    {sr.remaining_blockers.length > 0 && <div><strong className="small">{t.ui.blockers}</strong>
+                      <ul className="small">{sr.remaining_blockers.map((b) => <li key={b.requirement_key}><StateBadge state={b.state} t={t} /> {b.original_text}</li>)}</ul></div>}
+                  </div>
+                )}
+              </section>
+            )}
 
-      {user && (
-        <section className="card">
-          <div className="section-label sl-ai">{t.ui.scenarios}</div>
-          <form className="row">
-            <select name="scenario" defaultValue={scenarioKind ?? ""} aria-label={t.ui.scenarios} style={{ maxWidth: 420 }}>
-              <option value="">—</option>
-              {SCENARIO_KINDS.filter((k) => k !== "establish_in_region" || regions.length > 0).map((k) => <option key={k} value={k}>{t.scenario[k]}</option>)}
-            </select>
-            <button className="btn btn-ghost btn-sm">{t.ui.run}</button>
-          </form>
-          {sr && (
-            <div className="stack" style={{ marginTop: 12 }}>
-              <div className="notice info">{t.ui.scenarioNote}</div>
+            <section id="apply" className="card">
+              <h2 style={{ marginTop: 0 }}>{s.detail.howToApply}</h2>
+              <p>{s.detail.applySteps}</p>
               <div className="row">
-                <span className="small">{t.ui.permissible}</span>
-                <span className={`badge ${sr.permissible === "no" ? "b-bad" : sr.permissible === "yes" ? "b-ok" : "b-warn"}`}>{t.ui[sr.permissible]}</span>
-                <EligibilityBadge status={sr.outcome.eligibility} t={t} hypothetical />
+                <a className="btn btn-primary" href={o.application_url ?? o.canonical_url} target="_blank" rel="noopener noreferrer">{o.application_url ? t.opp.apply : t.opp.official} <Icon name="external" size={16} /></a>
+                {guide && <Link className="btn btn-ghost" href={`/guides/${guide}`}><Icon name="book" size={16} />{s.detail.guideCta}</Link>}
               </div>
-              {sr.permissibility_reasons.length > 0 && <ul className="small">{sr.permissibility_reasons.map((r) => <li key={r}>{t.scenario.reasons[r] ?? r}</li>)}</ul>}
-              <div><strong className="small">{t.ui.changes}</strong>
-                {sr.changes.length === 0 ? <p className="small muted">{t.ui.none}</p> : (
-                  <ul className="small">{sr.changes.map((c) => <li key={c.requirement_key}>{t.criterion[c.category] ?? c.category}: <StateBadge state={c.from} t={t} /> → <StateBadge state={c.to} t={t} /></li>)}</ul>
-                )}</div>
-              {sr.evidence_needed.length > 0 && <div><strong className="small">{t.ui.evidenceNeeded}</strong><ul className="small">{sr.evidence_needed.map((e) => <li key={e}>{e.replaceAll("_", " ")}</li>)}</ul></div>}
-              {sr.remaining_blockers.length > 0 && <div><strong className="small">{t.ui.blockers}</strong>
-                <ul className="small">{sr.remaining_blockers.map((b) => <li key={b.requirement_key}><StateBadge state={b.state} t={t} /> {b.original_text}</li>)}</ul></div>}
+            </section>
+
+            <section id="sources" className="card">
+              <h2 style={{ marginTop: 0 }}>{s.detail.sources}</h2>
+              <ul className="checklist small">
+                <li><Icon name="shield" size={16} /><span><a href={o.canonical_url} target="_blank" rel="noopener noreferrer">{o.canonical_url}</a></span></li>
+                {o.application_url && o.application_url !== o.canonical_url && <li><Icon name="external" size={16} /><span><a href={o.application_url} target="_blank" rel="noopener noreferrer">{o.application_url}</a></span></li>}
+                <li><Icon name="calendar" size={16} /><span>{t.ui.freshness}: {formatDate(o.last_verified_at, locale) ?? <span className="unknown">{t.opp.never}</span>}{o.source_name ? ` · ${o.source_name}` : ""}</span></li>
+                {o.deadline_original_text && <li><Icon name="info" size={16} /><span>{t.ui.originalDeadline}: <code>{o.deadline_original_text}</code>{o.deadline_is_date_only ? ` — ${t.ui.dateOnly}` : ""}</span></li>}
+              </ul>
+            </section>
+          </div>
+        </div>
+
+        <aside className="sticky stack">
+          <div className="card keyinfo">
+            <h2 style={{ marginTop: 0, fontSize: "1.05rem" }}>{s.detail.keyInfo}</h2>
+            <dl>
+              <div><dt>{t.opp.deadline}</dt><dd>{deadlineText(o, t, locale)}</dd></div>
+              <div><dt>{t.opp.amount}</dt><dd>{amountText(o, t, locale)}</dd></div>
+              <div><dt>{s.opps.type}</dt><dd>{s.supportType[supportTypeOf(o.opportunity_type)]}</dd></div>
+              {cats.length > 0 && <div><dt>{s.detail.category}</dt><dd>{cats.map((c) => c.name[locale]).join(", ")}</dd></div>}
+              {audiences.length > 0 && <div><dt>{s.detail.forWhom}</dt><dd>{audiences.map((p) => t.opt.personas[p] ?? p).join(", ")}</dd></div>}
+              <div><dt>{s.opps.scope}</dt><dd>{s.scope[scope]}</dd></div>
+              <div><dt>{t.opp.authority}</dt><dd>{o.publishing_authority ?? <span className="unknown">{t.opp.deadlineUnknown}</span>}</dd></div>
+              {o.funding_intensity_pct && <div><dt>{t.opp.intensity}</dt><dd>{Number(o.funding_intensity_pct)}%</dd></div>}
+              <div><dt>{s.card.checked}</dt><dd>{formatDate(o.last_verified_at, locale) ?? "—"}</dd></div>
+            </dl>
+            <div className="stack" style={{ marginTop: 16 }}>
+              <a className="btn btn-primary btn-block" href={o.canonical_url} target="_blank" rel="noopener noreferrer">{t.opp.official} <Icon name="external" size={16} /></a>
+              {user ? (
+                <form action={toggleSaveAction}>
+                  <input type="hidden" name="opportunity_id" value={o.id} />
+                  <button className="btn btn-ghost btn-block"><Icon name="bookmark" size={16} />{saved ? t.opp.unsave : t.opp.save}</button>
+                </form>
+              ) : <Link className="btn btn-ghost btn-block" href="/login"><Icon name="bookmark" size={16} />{t.opp.save}</Link>}
             </div>
-          )}
-        </section>
-      )}
-    </article>
+          </div>
+          {(cats.length > 0 || audiences.length > 0) && <p className="xs muted" style={{ padding: "0 4px" }}>{s.opps.indicative}</p>}
+        </aside>
+      </div>
+    </div>
   );
 }

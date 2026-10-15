@@ -21,7 +21,7 @@ export async function loginAction(_: FormState, form: FormData): Promise<FormSta
     if (e instanceof AuthError) return { error: e.code };
     throw e;
   }
-  redirect("/dashboard");
+  redirect("/for-me");
 }
 
 export async function registerAction(_: FormState, form: FormData): Promise<FormState> {

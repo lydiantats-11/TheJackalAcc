@@ -1,0 +1,78 @@
+# Design preview of the MVP: build the app with real data on a throwaway machine and screenshot every key screen.
+# Runs on demand ("Run workflow") or on a push to the `preview` branch. No secrets, no deployment, no paid services.
+# The 8 hand-checked official records are approved IN THIS THROWAWAY PREVIEW DATABASE ONLY, so they can be shown;
+# in production they stay "pending" until the owner approves each one.
+name: Design preview (screenshots)
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [preview]
+
+permissions:
+  contents: write   # only to save the screenshots to the `live-test-results` branch
+
+jobs:
+  preview:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    defaults:
+      run:
+        shell: bash
+    services:
+      postgres:
+        image: postgres:16
+        env: { POSTGRES_USER: app, POSTGRES_PASSWORD: app, POSTGRES_DB: jackal }
+        ports: ["5432:5432"]
+        options: >-
+          --health-cmd "pg_isready -U app" --health-interval 5s --health-timeout 5s --health-retries 10
+    env:
+      DATABASE_URL: postgres://app:app@127.0.0.1:5432/jackal
+      TEST_DATABASE_URL: postgres://app:app@127.0.0.1:5432/funding_test
+      PGPASSWORD: app
+      APP_BASE_URL: http://127.0.0.1:3000
+      COOKIE_SECURE: "false"
+      AI_EXTRACTION_ENABLED: "false"
+      MONITOR_CONTACT_EMAIL: jackal-accountant-test@users.noreply.github.com
+      NEXT_TELEMETRY_DISABLED: "1"
+      OUT: design-preview
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with: { node-version: 22 }
+      - run: npm install --no-audit --no-fund
+      - name: Typecheck
+        continue-on-error: true
+        run: npm run typecheck 2>&1 | tee typecheck.log
+      - name: Tests (incl. database tests)
+        continue-on-error: true
+        run: |
+          psql -h 127.0.0.1 -U app -d jackal -c "CREATE DATABASE funding_test"
+          npm test 2>&1 | tee tests.log
+      - name: Database with real data
+        run: |
+          npm run db:migrate
+          npm run db:seed
+          psql "$DATABASE_URL" -v ON_ERROR_STOP=1 -q -f db/seed/official-records-2026-10-14.sql
+          psql "$DATABASE_URL" -c "UPDATE opportunities SET review_status = 'approved' WHERE external_key LIKE 'manual:%'"   # preview DB only
+          psql "$DATABASE_URL" -c "UPDATE opportunities SET review_status = 'rejected' WHERE is_synthetic" || true
+          npm run worker -- --test eu-funding-tenders | tail -15
+      - name: Build
+        run: npm run build 2>&1 | tee build.log
+      - name: Screenshots
+        run: |
+          npm install --no-save --no-audit --no-fund playwright && npx playwright install --with-deps chromium
+          export PREVIEW_IDS=$(psql "$DATABASE_URL" -At -c "SELECT json_build_object('a21',(SELECT id FROM opportunities WHERE external_key='manual:a21'),'eu',(SELECT o.id FROM opportunities o WHERE external_key LIKE 'eu-topic:HORIZON%' AND status='open' ORDER BY closes_at LIMIT 1))")
+          echo "$PREVIEW_IDS"
+          PORT=3000 npm start > next.log 2>&1 &
+          for i in $(seq 1 60); do curl -fs -o /dev/null http://127.0.0.1:3000/ && break; sleep 1; done
+          node scripts/design-preview.mjs "$OUT"
+      - name: Save to the live-test-results branch
+        if: always()
+        run: |
+          mkdir -p "$OUT"; cp -f typecheck.log tests.log build.log next.log "$OUT"/ 2>/dev/null || true
+          cp -r "$OUT" /tmp/out
+          git config user.name "jackal-live-test"; git config user.email "actions@users.noreply.github.com"
+          git fetch --depth 1 origin live-test-results && git checkout -B live-test-results FETCH_HEAD
+          rm -rf previews/latest && mkdir -p previews/latest && cp -r /tmp/out/. previews/latest/
+          git add previews && git commit -qm "Design preview, run ${GITHUB_RUN_NUMBER} (${GITHUB_SHA::7})" && git push origin live-test-results
