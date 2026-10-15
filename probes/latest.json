@@ -1,122 +1,93 @@
 {
-  "probed_at": "2026-10-14T11:25:13.528Z",
-  "rows": 1001,
-  "status_counts": {
-    "31094501": 640,
-    "31094502": 361
+  "when": "2026-10-15T11:11:27.369Z",
+  "totalResults": 375,
+  "metadataKeys": {
+    "latestInfos": 15,
+    "es_SortDate": 50,
+    "sepTemplate": 15,
+    "keywords": 50,
+    "sortStatus": 50,
+    "language": 50,
+    "topicConditions": 15,
+    "title": 50,
+    "type": 50,
+    "esST_checksum": 49,
+    "focusArea": 50,
+    "esST_FileName": 50,
+    "typeOfMGAs": 50,
+    "callIdentifier": 50,
+    "ccm2Id": 50,
+    "callccm2Id": 50,
+    "DATASOURCE": 50,
+    "REFERENCE": 15,
+    "links": 15,
+    "callTitle": 15,
+    "frameworkProgramme": 50,
+    "descriptionByte": 15,
+    "identifier": 50,
+    "es_ContentType": 50,
+    "programmeDivision": 50,
+    "crossCuttingPriorities": 50,
+    "esDA_FirstIngestDate": 15,
+    "programmePeriod": 50,
+    "deadlineDate": 50,
+    "esDA_IngestDate": 50,
+    "typesOfAction": 50,
+    "url": 50,
+    "es_Combine": 50,
+    "esST_URL": 50,
+    "tags": 15,
+    "cenTagsA": 50,
+    "esDA_QueueDate": 50,
+    "actions": 15,
+    "allowPartnerSearch": 15,
+    "budgetOverview": 15,
+    "startDate": 50,
+    "deadlineModel": 50,
+    "specificObjective": 15,
+    "supportInfo": 15,
+    "status": 50,
+    "ccmTags2": 35,
+    "cftId": 35,
+    "esIN_ccmTags": 35,
+    "ccmTags": 35,
+    "corporate-search-version": 35,
+    "datasource": 35,
+    "esIN_ccmTags2": 35,
+    "destination": 1,
+    "destinationGroup": 1,
+    "mission": 1,
+    "missionGroup": 1
   },
-  "passed_all_deadlines": {
-    "count": 592,
-    "by_status": {
-      "31094501": 352,
-      "31094502": 240
-    },
-    "examples": [
-      {
-        "id": "CEF-E-2023-PCI-STUDIES",
-        "deadlines": [
-          "2023-09-05T17:00:00.000+0000"
-        ]
-      },
-      {
-        "id": "CEF-E-2023-PCI-WORKS",
-        "deadlines": [
-          "2023-09-05T17:00:00.000+0000"
-        ]
-      },
-      {
-        "id": "CEF-T-2021-AFIFCOEN-UNITS",
-        "deadlines": [
-          "2022-01-19T17:00:00.000+0000",
-          "2022-06-07T17:00:00.000+0000",
-          "2022-11-10T17:00:00.000+0000",
-          "2023-04-13T17:00:00.000+0000",
-          "2023-11-07T17:00:00.000+0000"
-        ]
-      },
-      {
-        "id": "CEF-T-2021-AFIFCOEN-WORKS-LNG",
-        "deadlines": [
-          "2022-01-19T17:00:00.000+0000",
-          "2022-06-07T17:00:00.000+0000",
-          "2022-11-10T17:00:00.000+0000",
-          "2023-04-13T17:00:00.000+0000",
-          "2023-11-07T17:00:00.000+0000"
-        ]
-      },
-      {
-        "id": "CEF-T-2021-AFIFCOEN-WORKS-ZE",
-        "deadlines": [
-          "2022-01-19T17:00:00.000+0000",
-          "2022-06-07T17:00:00.000+0000",
-          "2022-11-10T17:00:00.000+0000",
-          "2023-04-13T17:00:00.000+0000",
-          "2023-11-07T17:00:00.000+0000"
-        ]
-      },
-      {
-        "id": "CEF-T-2021-AFIFGEN-UNITS",
-        "deadlines": [
-          "2022-01-19T17:00:00.000+0000",
-          "2022-06-07T17:00:00.000+0000",
-          "2022-11-10T17:00:00.000+0000",
-          "2023-04-13T17:00:00.000+0000",
-          "2023-11-07T17:00:00.000+0000"
-        ]
-      },
-      {
-        "id": "CEF-T-2021-AFIFGEN-WORKS-LNG",
-        "deadlines": [
-          "2022-01-19T17:00:00.000+0000",
-          "2022-06-07T17:00:00.000+0000",
-          "2022-11-10T17:00:00.000+0000",
-          "2023-04-13T17:00:00.000+0000",
-          "2023-11-07T17:00:00.000+0000"
-        ]
-      },
-      {
-        "id": "CEF-T-2021-AFIFGEN-WORKS-ZE",
-        "deadlines": [
-          "2022-01-19T17:00:00.000+0000",
-          "2022-06-07T17:00:00.000+0000",
-          "2022-11-10T17:00:00.000+0000",
-          "2023-04-13T17:00:00.000+0000",
-          "2023-11-07T17:00:00.000+0000"
-        ]
-      }
-    ]
-  },
-  "without_deadline": 0,
-  "upcoming": 409,
-  "deadline_clock_times": [
-    [
-      "T17:00:00.000+0000",
-      714
-    ],
-    [
-      "T00:00:00.000+0000",
-      448
-    ]
-  ],
-  "compare_with_topic_pages": [
+  "samples": [
     {
       "id": "CEF-DIG-2026-CABLE-REPAIR-CAPACITIES-WORKS",
-      "page_url": "https://ec.europa.eu/info/funding-tenders/opportunities/portal/screen/opportunities/topic-details/CEF-DIG-2026-CABLE-REPAIR-CAPACITIES-WORKS",
-      "search_api_deadlines": [
-        "2026-11-25T00:00:00.000+0000"
-      ],
-      "topic_data_http": 200,
-      "topic_data": {
-        "deadlineDates": null,
-        "deadlineModel": null,
-        "actions": [
-          {
-            "deadlineDates": [
-              "1795564800000"
-            ],
-            "deadlineModel": null
-          }
-        ],
+      "search_metadata": {
+        "keywords": "[\"CEF-DIG-2026-CABLE-REPAIR-CAPACITIES-WORKS\",\"CEF-DIG-2026-CABLE-REPAIR-CAPACITIES\"]",
+        "topicConditions": "[\"<div class=\\\"eui-u-mt-l>\\\"><h4>Conditions</h4><div class=\\\"eui-u-mt-s\\\"><p><strong>1.</strong> <strong>Admissibility Conditions:</strong> described in section 5 of the call document.</p><p><strong>2. Proposal page limits and layout:</strong> described in Part B of the Application Form available in the Submission System</p><p><strong>3. Eligible countries: </strong>described in section 6 of of the call document</p><p><strong>4. Other eligibility conditions:</strong> described in section 6 of the call document</p><p><strong>5. Financial and operational capacity and exclusion: </strong>described in section 7 of the call document</p><p><strong>6. Submission and evaluation processes:</strong> described section 8 of the call document and the <a href=\\\"https://ec.europa.eu/info/funding-tenders/opportunities/docs/2021-2027/common/guidance/om_en.pdf\\\" rel=\\\"noopener noreferrer\\\" target=\\\"_blank…",
+        "type": "[\"1\"]",
+        "focusArea": "[]",
+        "typeOfMGAs": "[\"43249539\"]",
+        "callIdentifier": "[\"CEF-DIG-2026-CABLE-REPAIR-CAPACITIES\"]",
+        "callccm2Id": "[\"51426233\"]",
+        "callTitle": "[\"Submarine Cable Repair Capacities\"]",
+        "frameworkProgramme": "[\"43251567\"]",
+        "descriptionByte": "[\"<p class=\\\"topicdescriptionkind\\\">Expected Impact:</p><p>The expected benefits of the supported project: </p><ul level=\\\"0\\\"><li> <p>Provide quick response to emergency situations identified by the relevant Regional Cable Hub or other entity declaring the emergency situation (Key Performance Indicator). </p> </li><li> <p>Provide quick average estimated time-to-repair for cable systems in the targeted EU sea basins with at least one landing point in an EU territory (Key Performance Indicator). </p> </li><li> <p>Increase operational repair capacity in the main European sea basins (Key Performance Indicator). </p> </li><li> <p>Strengthen the resilience of cable systems in the main European sea basins. </p> </li><li> <p>Ensure digital sovereignty and strategic autonomy of the EU in the main European sea basins. </p> </li> </ul><p class=\\\"topicdescriptionkind\\\">Objective:</p><p>This call ai…",
+        "es_ContentType": "[\"text/plain\"]",
+        "programmeDivision": "[\"45101705\"]",
+        "crossCuttingPriorities": "[\"DigitalAgenda\",\"AI\"]",
+        "programmePeriod": "[\"2021 - 2027\"]",
+        "deadlineDate": "[\"2026-11-25T00:00:00.000+0000\"]",
+        "typesOfAction": "[\"CEF Infrastructure Projects\"]",
+        "tags": "[]",
+        "cenTagsA": "[\"TOPICS-000266\",\"TOPICS-000125\",\"TOPICS-030135\",\"TOPICS-000061\",\"TOPICS-003867\",\"TOPICS-003100\",\"TOPICS-000026\"]",
+        "actions": "[\"[{\\\"types\\\":[{\\\"typeOfAction\\\":\\\"CEF-INFRA CEF Infrastructure Projects\\\",\\\"typeOfMGA\\\":[{\\\"id\\\":43249539,\\\"abbreviation\\\":\\\"CEF-AG\\\",\\\"description\\\":\\\"CEF Action Grant Budget-Based\\\"}]}],\\\"status\\\":{\\\"id\\\":31094502,\\\"abbreviation\\\":\\\"Open\\\",\\\"description\\\":\\\"Open\\\"},\\\"plannedOpeningDate\\\":\\\"2026-06-23\\\",\\\"submissionProcedure\\\":{\\\"id\\\":31094504,\\\"abbreviation\\\":\\\"single-stage\\\",\\\"description\\\":\\\"single-stage\\\"},\\\"deadlineDates\\\":[\\\"2026-11-25\\\"]}]\"]",
+        "budgetOverview": "[\"{\\\"budgetYearsColumns\\\":[\\\"2026\\\"],\\\"budgetTopicActionMap\\\":{\\\"115101\\\":[{\\\"action\\\":\\\"CEF-DIG-2026-CABLE-REPAIR-CAPACITIES-WORKS - CEF-INFRA CEF Infrastructure Projects\\\",\\\"expectedGrants\\\":0,\\\"minContribution\\\":0,\\\"maxContribution\\\":0,\\\"budgetYearMap\\\":{\\\"2026\\\":\\\"40000000\\\"},\\\"plannedOpeningDate\\\":\\\"2026-06-23\\\",\\\"deadlineModel\\\":\\\"single-stage\\\",\\\"deadlineDates\\\":[\\\"2026-11-25\\\"]}]}}\"]",
+        "startDate": "[\"2026-06-23T00:00:00.000+0000\"]",
+        "deadlineModel": "[\"single-stage\"]"
+      },
+      "topic_details": {
+        "status": 200,
         "keys": [
           "type",
           "ccm2Id",
@@ -144,27 +115,41 @@
           "additionalDossiers",
           "infoPackDossiers",
           "callDetailsJSONItem"
-        ]
+        ],
+        "actions": "[{\"status\":{\"id\":31094502,\"abbreviation\":\"Open\",\"description\":\"Open\"},\"types\":[{\"typeOfAction\":\"CEF-INFRA CEF Infrastructure Projects\",\"typeOfMGA\":[{\"id\":43249539,\"abbreviation\":\"CEF-AG\",\"description\":\"CEF Action Grant Budget-Based\"}]}],\"plannedOpeningDate\":\"1782172800000\",\"submissionProcedure\":{},\"deadlineDates\":[\"1795564800000\"]}]",
+        "budgetOverviewJSONItem": "{\"budgetTopicActionMap\":{\"115101\":[{\"action\":\"CEF-DIG-2026-CABLE-REPAIR-CAPACITIES-WORKS - CEF-INFRA CEF Infrastructure Projects\",\"plannedOpeningDate\":\"1782172800000\",\"deadlineModel\":\"single-stage\",\"deadlineDates\":[\"1795564800000\"],\"budgetYearMap\":{\"2026\":\"40000000\"},\"expectedGrants\":0,\"minContribution\":0,\"maxContribution\":0}]},\"budgetYearsColumns\":[\"2026\"]}",
+        "description": "<p class=\"topicdescriptionkind\">Expected Impact:</p><p>The expected benefits of the supported project: </p><ul level=\"0\"><li> <p>Provide quick response to emergency situations identified by the relevant Regional Cable Hub or other entity declaring the emergency situation (Key Performance Indicator). </p> </li><li> <p>Provide quick average estimated time-to-repair for cable systems in the targeted EU sea basins with at least one landing point in an EU territory (Key Performance Indicator). </p> </li><li> <p>Increase operational repair capacity in the main European sea basins (Key Performance Indicator). </p> </li><li> <p>Strengthen the resilience of cable systems in the main European sea basins. </p> </li><li> <p>Ensure digital sovereignty and strategic autonomy of the EU in the main European sea basins. </p> </li> </ul><p class=\"topicdescriptionkind\">Objective:</p><p>This call aims to en…",
+        "conditions": "<div class=\"eui-u-mt-l>\"><h4>Conditions</h4><div class=\"eui-u-mt-s\"><p><strong>1.</strong> <strong>Admissibility Conditions:</strong> described in section 5 of the call document.</p><p><strong>2. Proposal page limits and layout:</strong> described in Part B of the Application Form available in the Submission System</p><p><strong>3. Eligible countries: </strong>described in section 6 of of the call document</p><p><strong>4. Other eligibility conditions:</strong> described in section 6 of the call document</p><p><strong>5. Financial and operational capacity and exclusion: </strong>described in section 7 of the call document</p><p><strong>6. Submission and evaluation processes:</strong> described section 8 of the call document and the <a href=\"https://ec.europa.eu/info/funding-tenders/opportunities/docs/2021-2027/common/guidance/om_en.pdf\" rel=\"noopener noreferrer\" target=\"_blank\">Online Ma…"
       }
     },
     {
-      "id": "HORIZON-CL2-2027-01-TRANSFO-05",
-      "page_url": "https://ec.europa.eu/info/funding-tenders/opportunities/portal/screen/opportunities/topic-details/HORIZON-CL2-2027-01-TRANSFO-05",
-      "search_api_deadlines": [
-        "2027-09-23T00:00:00.000+0000"
-      ],
-      "topic_data_http": 200,
-      "topic_data": {
-        "deadlineDates": null,
-        "deadlineModel": null,
-        "actions": [
-          {
-            "deadlineDates": [
-              "1821657600000"
-            ],
-            "deadlineModel": null
-          }
-        ],
+      "id": "CREA-MEDIA-2027-DEVVGIM",
+      "search_metadata": {
+        "keywords": "[\"CREA-MEDIA-2027-DEVVGIM\",\"CREA-MEDIA-2027-DEVVGIM\",\"Animation\",\"Augmented Reality\",\"Computer games\",\"Development of audiovisual works\",\"Documentary\",\"Entertainment software development\",\"Extended Reality (XR)\",\"Fiction\",\"Game design\",\"Game development\",\"Gaming industry\",\"Gaming technology\",\"Immersive audiovisual projects\",\"Mixed Reality\",\"Production of video-games\",\"Publishing of video games\",\"Video Game development\",\"Video Games\",\"Video game publishing\",\"Video-Games developer and producer - Media\",\"Virtual Reality\"]",
+        "topicConditions": "[\"<div class=\\\"eui-u-mt-l>\\\"><h4>Conditions</h4><div><h4>1. Admissibility conditions: Proposal page limit and layout</h4><div class=\\\"eui-u-mt-s\\\"><p>described in the <u><a href=\\\"https://ec.europa.eu/info/funding-tenders/opportunities/docs/2021-2027/crea/wp-call/2027/call-fiche_crea-media-2027-devvgim_en.pdf\\\" rel=\\\"noopener noreferrer\\\" target=\\\"_blank\\\">call document</a></u>.</p><p><strong>Proposal page limits and layout:</strong> described in Part B of the Application Form available in the Submission System.</p></div></div><div><h4>2. Eligible countries</h4><div class=\\\"eui-u-mt-s\\\"><p>described in the <u><a href=\\\"https://ec.europa.eu/info/funding-tenders/opportunities/docs/2021-2027/crea/wp-call/2027/call-fiche_crea-media-2027-devvgim_en.pdf\\\" rel=\\\"noopener noreferrer\\\" target=\\\"_blank\\\">call document</a></u>.</p></div></div><div><h4>3. Other eligibility conditions</h4><div class=…",
+        "type": "[\"1\"]",
+        "focusArea": "[]",
+        "typeOfMGAs": "[\"43249888\"]",
+        "callIdentifier": "[\"CREA-MEDIA-2027-DEVVGIM\"]",
+        "callccm2Id": "[\"52519615\"]",
+        "callTitle": "[\"European video games and immersive content\"]",
+        "frameworkProgramme": "[\"43251814\"]",
+        "descriptionByte": "[\"<p class=\\\"topicdescriptionkind\\\">Scope:</p><p>The objective of the support to Video games and immersive content development is to increase the capacity of European video game producers, XR studios and audiovisual production companies to develop video games and interactive immersive experiences with the potential to reach global audiences. The support also aims to improve the competiveness of the European video games industry and other companies producing interactive immersive content in European and international markets by enabling the retention of intellectual property by European developers.</p><p><u>Expected results</u></p><ul level=\\\"0\\\"><li>Increased quality, appeal, feasibility and cross-border potential for selected projects.</li><li>A stronger position on the European and international market for video games developers and companies producing interactive immersive experiences…",
+        "es_ContentType": "[\"text/plain\"]",
+        "programmeDivision": "[\"43435059\"]",
+        "crossCuttingPriorities": "[\"DigitalAgenda\",\"AI\"]",
+        "programmePeriod": "[\"2021 - 2027\"]",
+        "deadlineDate": "[\"2027-02-02T00:00:00.000+0000\"]",
+        "typesOfAction": "[\"CREA Lump Sum Grants\"]",
+        "tags": "[\"Immersive content\",\"Video games\"]",
+        "cenTagsA": "[\"TOPICS-011022\",\"TOPICS-011023\",\"TOPICS-011133\",\"TOPICS-011024\",\"TOPICS-001436\",\"TOPICS-009187\",\"TOPICS-005732\",\"TOPICS-009866\",\"TOPICS-011025\",\"TOPICS-011026\",\"TOPICS-009867\",\"TOPICS-005735\",\"TOPICS-003231\",\"TOPICS-011027\",\"TOPICS-011134\",\"TOPICS-011135\",\"TOPICS-011028\",\"TOPICS-003800\",\"TOPICS-011029\",\"TOPICS-003240\",\"TOPICS-007173\",\"TOPICS-009870\",\"TOPICS-005747\",\"TOPICS-010280\",\"TOPICS-010275\"]",
+        "actions": "[\"[{\\\"types\\\":[{\\\"typeOfAction\\\":\\\"CREA-LS CREA Lump Sum Grants\\\",\\\"typeOfMGA\\\":[{\\\"id\\\":43249888,\\\"abbreviation\\\":\\\"CREA-AG-LS\\\",\\\"description\\\":\\\"CREA Lump Sum Grant\\\"}]}],\\\"status\\\":{\\\"id\\\":31094502,\\\"abbreviation\\\":\\\"Open\\\",\\\"description\\\":\\\"Open\\\"},\\\"plannedOpeningDate\\\":\\\"2026-09-30\\\",\\\"submissionProcedure\\\":{\\\"id\\\":31094504,\\\"abbreviation\\\":\\\"single-stage\\\",\\\"description\\\":\\\"single-stage\\\"},\\\"deadlineDates\\\":[\\\"2027-02-02\\\"]}]\"]",
+        "budgetOverview": "[\"{\\\"budgetYearsColumns\\\":[\\\"2027\\\"],\\\"budgetTopicActionMap\\\":{\\\"115583\\\":[{\\\"action\\\":\\\"CREA-MEDIA-2027-DEVVGIM - CREA-LS CREA Lump Sum Grants\\\",\\\"expectedGrants\\\":0,\\\"minContribution\\\":0,\\\"maxContribution\\\":0,\\\"budgetYearMap\\\":{\\\"2027\\\":\\\"13500000\\\"},\\\"plannedOpeningDate\\\":\\\"2026-09-30\\\",\\\"deadlineModel\\\":\\\"single-stage\\\",\\\"deadlineDates\\\":[\\\"2027-02-02\\\"]}]}}\"]",
+        "startDate": "[\"2026-09-30T00:00:00.000+0000\"]",
+        "deadlineModel": "[\"single-stage\"]"
+      },
+      "topic_details": {
+        "status": 200,
         "keys": [
           "type",
           "ccm2Id",
@@ -192,27 +177,39 @@
           "additionalDossiers",
           "infoPackDossiers",
           "callDetailsJSONItem"
-        ]
+        ],
+        "actions": "[{\"status\":{\"id\":31094502,\"abbreviation\":\"Open\",\"description\":\"Open\"},\"types\":[{\"typeOfAction\":\"CREA-LS CREA Lump Sum Grants\",\"typeOfMGA\":[{\"id\":43249888,\"abbreviation\":\"CREA-AG-LS\",\"description\":\"CREA Lump Sum Grant\"}]}],\"plannedOpeningDate\":\"1790726400000\",\"submissionProcedure\":{},\"deadlineDates\":[\"1801526400000\"]}]",
+        "budgetOverviewJSONItem": "{\"budgetTopicActionMap\":{\"115583\":[{\"action\":\"CREA-MEDIA-2027-DEVVGIM - CREA-LS CREA Lump Sum Grants\",\"plannedOpeningDate\":\"1790726400000\",\"deadlineModel\":\"single-stage\",\"deadlineDates\":[\"1801526400000\"],\"budgetYearMap\":{\"2027\":\"13500000\"},\"expectedGrants\":0,\"minContribution\":0,\"maxContribution\":0}]},\"budgetYearsColumns\":[\"2027\"]}",
+        "description": "<p class=\"topicdescriptionkind\">Scope:</p><p>The objective of the support to Video games and immersive content development is to increase the capacity of European video game producers, XR studios and audiovisual production companies to develop video games and interactive immersive experiences with the potential to reach global audiences. The support also aims to improve the competiveness of the European video games industry and other companies producing interactive immersive content in European and international markets by enabling the retention of intellectual property by European developers.</p><p><u>Expected results</u></p><ul level=\"0\"><li>Increased quality, appeal, feasibility and cross-border potential for selected projects.</li><li>A stronger position on the European and international market for video games developers and companies producing interactive immersive experiences.</li>…",
+        "conditions": "<div class=\"eui-u-mt-l>\"><h4>Conditions</h4><div><h4>1. Admissibility conditions: Proposal page limit and layout</h4><div class=\"eui-u-mt-s\"><p>described in the <u><a href=\"https://ec.europa.eu/info/funding-tenders/opportunities/docs/2021-2027/crea/wp-call/2027/call-fiche_crea-media-2027-devvgim_en.pdf\" rel=\"noopener noreferrer\" target=\"_blank\">call document</a></u>.</p><p><strong>Proposal page limits and layout:</strong> described in Part B of the Application Form available in the Submission System.</p></div></div><div><h4>2. Eligible countries</h4><div class=\"eui-u-mt-s\"><p>described in the <u><a href=\"https://ec.europa.eu/info/funding-tenders/opportunities/docs/2021-2027/crea/wp-call/2027/call-fiche_crea-media-2027-devvgim_en.pdf\" rel=\"noopener noreferrer\" target=\"_blank\">call document</a></u>.</p></div></div><div><h4>3. Other eligibility conditions</h4><div class=\"eui-u-mt-s\"><p>desc…"
       }
     },
     {
-      "id": "HORIZON-CL4-2027-SPACE-07-84",
-      "page_url": "https://ec.europa.eu/info/funding-tenders/opportunities/portal/screen/opportunities/topic-details/HORIZON-CL4-2027-SPACE-07-84",
-      "search_api_deadlines": [
-        "2028-01-20T00:00:00.000+0000"
-      ],
-      "topic_data_http": 200,
-      "topic_data": {
-        "deadlineDates": null,
-        "deadlineModel": null,
-        "actions": [
-          {
-            "deadlineDates": [
-              "1831939200000"
-            ],
-            "deadlineModel": null
-          }
-        ],
+      "id": "DIGITAL-ECCC-2023-DEPLOY-CYBER-04-CIVIL-DEFENCE",
+      "search_metadata": {
+        "keywords": "[\"[\\\"Network security\\\",\\\"Cybersecurity\\\",\\\"Security\\\",\\\"Data Security and Privacy\\\",\\\"Trust\\\",\\\"European Defence Fund\\\",\\\"Cybersecurity education\\\",\\\"Cybersecurity coordination\\\",\\\"Cybersecurity threat intelligence\\\",\\\"Cyber threats\\\",\\\"Cybersecurity Resilience\\\",\\\"European Defence Agency\\\",\\\"Cybersecurity\\\",\\\"Cybersecurity incidents\\\"]\"]",
+        "ccmTags2": "[\"HCCM_31053795\",\"HCCM_31049914\",\"HCCM_31053798\",\"HCCM_42849020\",\"HCCM_42849203\",\"HTAG_000004442\",\"HTAG_000004434\",\"HTAG_000004389\",\"HTAG_000004428\",\"HCCM_31053795\",\"HTAG_000007196\",\"HTAG_000004452\",\"HTAG_000004430\",\"HTAG_000007195\",\"HTITLE_000014464\",\"MTAGS_000032591\",\"MTAGS_000084760\",\"MTAGS_000032591\",\"MTAGS_000066772\",\"MTAGS_000048783\",\"MTAGS_000064413\",\"MTAGS_000064413\",\"MTAGS_000032591\",\"MTAGS_000000160\",\"MTAGS_000033278\",\"MTAGS_000071969\",\"MTAGS_000065221\",\"MTAGS_000052967\"]",
+        "type": "[\"1\"]",
+        "focusArea": "[]",
+        "typeOfMGAs": "[\"43140990\"]",
+        "callIdentifier": "[\"DIGITAL-ECCC-2023-DEPLOY-CYBER-04\"]",
+        "callccm2Id": "[\"46040500\"]",
+        "esIN_ccmTags": "[\"HCCM_31053795\",\"HCCM_31049914\",\"HCCM_31053798\",\"HCCM_42849020\",\"HCCM_42849203\",\"HTAG_000004442\",\"HTAG_000004434\",\"HTAG_000004389\",\"HTAG_000004428\",\"HCCM_31053795\",\"HTAG_000007196\",\"HTAG_000004452\",\"HTAG_000004430\",\"HTAG_000007195\",\"HTITLE_000014464\",\"MTAGS_000032591\",\"MTAGS_000084760\",\"MTAGS_000032591\",\"MTAGS_000066772\",\"MTAGS_000048783\",\"MTAGS_000064413\",\"MTAGS_000064413\",\"MTAGS_000032591\",\"MTAGS_000000160\",\"MTAGS_000033278\",\"MTAGS_000071969\",\"MTAGS_000065221\",\"MTAGS_000052967\"]",
+        "frameworkProgramme": "[\"43152860\"]",
+        "es_ContentType": "[\"text/plain\"]",
+        "programmeDivision": "[\"43152869\",\"43152865\"]",
+        "crossCuttingPriorities": "[]",
+        "programmePeriod": "[\"2021 - 2027\"]",
+        "deadlineDate": "[\"2023-09-26T17:00:00.000+0000\"]",
+        "ccmTags": "[\"HCCM_31053795\",\"HCCM_31049914\",\"HCCM_31053798\",\"HCCM_42849020\",\"HCCM_42849203\",\"HTAG_000004442\",\"HTAG_000004434\",\"HTAG_000004389\",\"HTAG_000004428\",\"HCCM_31053795\",\"HTAG_000007196\",\"HTAG_000004452\",\"HTAG_000004430\",\"HTAG_000007195\",\"HTITLE_000014464\",\"MTAGS_000032591\",\"MTAGS_000084760\",\"MTAGS_000032591\",\"MTAGS_000066772\",\"MTAGS_000048783\",\"MTAGS_000064413\",\"MTAGS_000064413\",\"MTAGS_000032591\",\"MTAGS_000000160\",\"MTAGS_000033278\",\"MTAGS_000071969\",\"MTAGS_000065221\",\"MTAGS_000052967\"]",
+        "typesOfAction": "[\"DIGITAL JU Coordination and Support Actions\"]",
+        "cenTagsA": "[\"TOPICS-012507\",\"TOPICS-012508\",\"TOPICS-012509\",\"TOPICS-012510\",\"TOPICS-012511\",\"TOPICS-012512\",\"TOPICS-012513\",\"TOPICS-012514\",\"TOPICS-012515\",\"TOPICS-001225\",\"TOPICS-006054\",\"TOPICS-010630\",\"TOPICS-011794\",\"TOPICS-012516\",\"TOPICS-011795\",\"TOPICS-011796\",\"TOPICS-011950\",\"TOPICS-006029\",\"TOPICS-000174\",\"TOPICS-004461\",\"TOPICS-005314\"]",
+        "startDate": "[\"2023-05-25T00:00:00.000+0000\"]",
+        "esIN_ccmTags2": "[\"TTG_00130550\",\"TTG_00033186\",\"TTG_00033257\",\"TTG_00033257\",\"TTG_00033257\",\"TTG_00033328\",\"TTG_00033328\",\"TTG_00034052\",\"TTL_00096957\",\"TTG_00033186\",\"TCM_00038473\",\"TCM_00032229\",\"TCM_00032230\",\"TCM_00039420\",\"TCM_00036704\"]",
+        "deadlineModel": "[\"single-stage\"]"
+      },
+      "topic_details": {
+        "status": 200,
         "keys": [
           "type",
           "ccm2Id",
@@ -240,153 +237,11 @@
           "additionalDossiers",
           "infoPackDossiers",
           "callDetailsJSONItem"
-        ]
-      }
-    },
-    {
-      "id": "HORIZON-CL6-2027-02-CLIMATE-01",
-      "page_url": "https://ec.europa.eu/info/funding-tenders/opportunities/portal/screen/opportunities/topic-details/HORIZON-CL6-2027-02-CLIMATE-01",
-      "search_api_deadlines": [
-        "2027-09-23T00:00:00.000+0000"
-      ],
-      "topic_data_http": 200,
-      "topic_data": {
-        "deadlineDates": null,
-        "deadlineModel": null,
-        "actions": [
-          {
-            "deadlineDates": [
-              "1821657600000"
-            ],
-            "deadlineModel": null
-          }
         ],
-        "keys": [
-          "type",
-          "ccm2Id",
-          "identifier",
-          "title",
-          "publicationDateLong",
-          "callIdentifier",
-          "callTitle",
-          "callccm2Id",
-          "allowPartnerSearch",
-          "frameworkProgramme",
-          "programmeDivision",
-          "topicMGAs",
-          "keywords",
-          "tags",
-          "sme",
-          "actions",
-          "latestInfos",
-          "budgetOverviewJSONItem",
-          "description",
-          "conditions",
-          "supportInfo",
-          "sepTemplate",
-          "links",
-          "additionalDossiers",
-          "infoPackDossiers",
-          "callDetailsJSONItem"
-        ]
-      }
-    },
-    {
-      "id": "HORIZON-MISS-2027-02-CANCER-06",
-      "page_url": "https://ec.europa.eu/info/funding-tenders/opportunities/portal/screen/opportunities/topic-details/HORIZON-MISS-2027-02-CANCER-06",
-      "search_api_deadlines": [
-        "2027-09-16T00:00:00.000+0000"
-      ],
-      "topic_data_http": 200,
-      "topic_data": {
-        "deadlineDates": null,
-        "deadlineModel": null,
-        "actions": [
-          {
-            "deadlineDates": [
-              "1821052800000"
-            ],
-            "deadlineModel": null
-          }
-        ],
-        "keys": [
-          "type",
-          "ccm2Id",
-          "identifier",
-          "title",
-          "publicationDateLong",
-          "callIdentifier",
-          "callTitle",
-          "callccm2Id",
-          "allowPartnerSearch",
-          "frameworkProgramme",
-          "programmeDivision",
-          "topicMGAs",
-          "keywords",
-          "tags",
-          "sme",
-          "actions",
-          "latestInfos",
-          "budgetOverviewJSONItem",
-          "description",
-          "conditions",
-          "supportInfo",
-          "sepTemplate",
-          "links",
-          "additionalDossiers",
-          "infoPackDossiers",
-          "callDetailsJSONItem"
-        ]
-      }
-    },
-    {
-      "id": "JTM-2026-PSLF-STANDALONE-PROJECTS",
-      "page_url": "https://ec.europa.eu/info/funding-tenders/opportunities/portal/screen/opportunities/topic-details/JTM-2026-PSLF-STANDALONE-PROJECTS",
-      "search_api_deadlines": [
-        "2026-01-27T00:00:00.000+0000",
-        "2027-09-22T00:00:00.000+0000"
-      ],
-      "topic_data_http": 200,
-      "topic_data": {
-        "deadlineDates": null,
-        "deadlineModel": null,
-        "actions": [
-          {
-            "deadlineDates": [
-              "1769472000000",
-              "1821571200000"
-            ],
-            "deadlineModel": null
-          }
-        ],
-        "keys": [
-          "type",
-          "ccm2Id",
-          "identifier",
-          "title",
-          "publicationDateLong",
-          "callIdentifier",
-          "callTitle",
-          "callccm2Id",
-          "allowPartnerSearch",
-          "frameworkProgramme",
-          "programmeDivision",
-          "topicMGAs",
-          "keywords",
-          "tags",
-          "sme",
-          "actions",
-          "latestInfos",
-          "budgetOverviewJSONItem",
-          "description",
-          "conditions",
-          "supportInfo",
-          "sepTemplate",
-          "links",
-          "additionalDossiers",
-          "infoPackDossiers",
-          "callDetailsJSONItem"
-        ]
+        "actions": "[{\"status\":{\"id\":31094503,\"abbreviation\":\"Closed\",\"description\":\"Closed\"},\"types\":[{\"typeOfAction\":\"DIGITAL-JU-CSA DIGITAL JU Coordination and Support Actions\",\"typeOfMGA\":[{\"id\":43140990,\"abbreviation\":\"DIGITAL-AG\",\"description\":\"DIGITAL Action Grant Budget-Based\"}]}],\"plannedOpeningDate\":\"1684972800000\",\"submissionProcedure\":{},\"deadlineDates\":[\"1695686400000\"]}]",
+        "budgetOverviewJSONItem": "{\"budgetTopicActionMap\":{\"103797\":[{\"action\":\"DIGITAL-ECCC-2023-DEPLOY-CYBER-04-SUPPORT-ASSIST - DIGITAL-JU-GFS DIGITAL JU Grants for Financial Support\",\"plannedOpeningDate\":\"1684972800000\",\"deadlineModel\":\"single-stage\",\"deadlineDates\":[\"1695686400000\"],\"budgetYearMap\":{\"2023\":\"35000000\"},\"expectedGrants\":7,\"minContribution\":0,\"maxContribution\":0}],\"103798\":[{\"action\":\"DIGITAL-ECCC-2023-DEPLOY-CYBER-04-CIVIL-DEFENCE - DIGITAL-JU-CSA DIGITAL JU Coordination and Support Actions\",\"plannedOpeningDate\":\"1684972800000\",\"deadlineModel\":\"single-stage\",\"deadlineDates\":[\"1695686400000\"],\"budgetYearMap\":{\"2023\":\"3000000\"},\"expectedGrants\":1,\"minContribution\":0,\"maxContribution\":0}],\"103799\":[{\"action\":\"DIGITAL-ECCC-2023-DEPLOY-CYBER-04-EULEGISLATION - DIGITAL-JU-SIMPLE DIGITAL JU Simple Grants\",\"plannedOpeningDate\":\"1684972800000\",\"deadlineModel\":\"single-stage\",\"deadlineDates\":[\"1695686400000\"],\"b…",
+        "description": "<span class=\"topicdescriptionkind\">Expected Outcome:</span><ul level=\"0\"><li>Concrete activities such as discussions, meetings, white papers, workshops, which strengthen the links between the cybersecurity civilian and defence spheres.</li><li>Synergies between these communities, such as common activities to exchange know-how and information.</li> </ul><span class=\"topicdescriptionkind\">Objective:</span><p>The objective is to enhance exchange and coordination between the cybersecurity civilian (including CSIRTs, law enforcement and cyber diplomacy communities) and defence spheres. This should in particular foster synergies between cybersecurity actions in Horizon Europe, Digital Europe and defence related actions carried out by the Union through its bodies and programmes, such as the European Defence Agency and the European Defence Fund.</p><span class=\"topicdescriptionkind\">Scope:</span…",
+        "conditions": "<div class=\"eui-u-mt-l>\"><h4>Conditions</h4><div><h4> </h4><div class=\"eui-u-mt-s\"><p><b>Conditions<br>\r\n<br>\r\n</br></br></b></p>\r\n<p><b>1.&#xa0;</b><b>Admissibility conditions: </b>described in section 5 of the <a href=\"https://ec.europa.eu/info/funding-tenders/opportunities/docs/2021-2027/digital/wp-call/2023/call-fiche_digital-eccc-2023-deploy-cyber-04_en.pdf\" target=\"_blank\">call document</a><a href=\"https://ec.europa.eu/info/funding-tenders/opportunities/docs/2021-2027/digital/wp-call/2023/call-fiche_digital-eccc-2023-deploy-cyber-04_en.pdf\" target=\"_blank\">.</a></p><p><b>Proposal page limits and layout:</b>&#xa0;described in Part B of the Application Form available in the Submission System</p></div></div><div><h4> </h4><div class=\"eui-u-mt-s\"><p><b>2. Eligible countries:&#xa0;</b>described in section 6 of of the&#xa0;<a href=\"https://ec.europa.eu/info/funding-tenders/opportunities/…"
       }
     }
   ]
