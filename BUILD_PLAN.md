@@ -225,3 +225,14 @@ Run on `lydiantats-11/TheJackalAcc`, branch `live-test`; reports and screenshots
 - Migration 0008 (user_profiles.industries, opportunities.industries; NULL = not restricted); Ευκαιρίες industry filter.
 - European Solidarity Corps (volunteering) removed from the demo and from the seed: 8 verified records imported.
 - GitHub run 7a7475d: 162/162 tests, typecheck 0, build OK, live checks 7/7. Demo republished as version 4.
+
+### 2026-10-15 — MVP design & UX sprint
+- Design system "Aegean Ledger" (navy · teal · warm off-white · restrained gold · grey), Inter (Greek), tokens with dark mode.
+- Brand Jackal Accountant: original jackal mark + Acropolis line illustration (inline SVG, no stock imagery).
+- IA: primary nav Ευκαιρίες · Κατηγορίες · Για Εμένα · Οδηγοί; About / How it works / FAQ / Sources in the footer.
+- Taxonomy: 11 categories, separate from support type, audience, industry (src/lib/site/taxonomy.ts).
+- New: home, /categories, /for-me, /guides (+ guide pages from verified records only), /about, loading, 404.
+- Redesigned: listing (current by default, filters, cards, pagination), detail (key-info panel), profile, auth.
+- Preview workflow (design-preview.yml): screenshots desktop/phone, EL/EN, guest/demo user, on throwaway data.
+- Backend untouched (engine, data, connectors, auth); only listOpportunities gained an optional limit and the row type
+  declares external_key. For Me selects/orders by group & interest fit — never eligibility.
