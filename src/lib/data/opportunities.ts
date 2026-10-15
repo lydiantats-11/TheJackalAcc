@@ -16,6 +16,8 @@ export interface OpportunityRow {
   canonical_url: string;
   application_url: string | null;
   official_identifier: string | null;
+  /** Stable key from the source or "manual:<id>" for hand-checked records (selected by o.*). */
+  external_key: string | null;
   status: OpportunityStatus;
   status_reason: string | null;
   status_confidence: string;
