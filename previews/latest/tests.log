@@ -5,28 +5,29 @@
 
 [1m[30m[46m RUN [49m[39m[22m [36mv5.0.4 [39m[90m/home/runner/work/TheJackalAcc/TheJackalAcc[39m
 
- [32m✓[39m tests/ingestion.test.ts [2m([22m[2m27 tests[22m[2m)[22m[33m 1623[2mms[22m[39m
- [32m✓[39m tests/engine.test.ts [2m([22m[2m27 tests[22m[2m)[22m[32m 134[2mms[22m[39m
- [32m✓[39m tests/extraction.test.ts [2m([22m[2m13 tests[22m[2m)[22m[33m 1266[2mms[22m[39m
- [32m✓[39m tests/real-calls.test.ts [2m([22m[2m22 tests[22m[2m)[22m[32m 39[2mms[22m[39m
- [32m✓[39m tests/auth-and-access.test.ts [2m([22m[2m11 tests[22m[2m)[22m[33m 1185[2mms[22m[39m
+ [32m✓[39m tests/ingestion.test.ts [2m([22m[2m27 tests[22m[2m)[22m[33m 1314[2mms[22m[39m
+ [32m✓[39m tests/engine.test.ts [2m([22m[2m27 tests[22m[2m)[22m[32m 108[2mms[22m[39m
+ [32m✓[39m tests/extraction.test.ts [2m([22m[2m13 tests[22m[2m)[22m[33m 1076[2mms[22m[39m
+ [32m✓[39m tests/real-calls.test.ts [2m([22m[2m22 tests[22m[2m)[22m[32m 36[2mms[22m[39m
+ [32m✓[39m tests/auth-and-access.test.ts [2m([22m[2m11 tests[22m[2m)[22m[33m 1152[2mms[22m[39m
    [32m✓[39m auth & access control (PostgreSQL) [2m(11)[22m
-     [33m[2m✓[22m[39m rate-limits repeated failed logins[33m 390[2mms[22m[39m
- [32m✓[39m tests/end-to-end-flow.test.ts [2m([22m[2m3 tests[22m[2m)[22m[33m 530[2mms[22m[39m
- [32m✓[39m tests/personas.test.ts [2m([22m[2m13 tests[22m[2m)[22m[32m 89[2mms[22m[39m
- [32m✓[39m tests/residence-and-records.test.ts [2m([22m[2m15 tests[22m[2m)[22m[32m 20[2mms[22m[39m
- [32m✓[39m tests/status-and-sources.test.ts [2m([22m[2m12 tests[22m[2m)[22m[32m 40[2mms[22m[39m
- [32m✓[39m tests/scenarios-and-money.test.ts [2m([22m[2m8 tests[22m[2m)[22m[32m 28[2mms[22m[39m
- [32m✓[39m tests/industries.test.ts [2m([22m[2m5 tests[22m[2m)[22m[32m 69[2mms[22m[39m
- [32m✓[39m tests/profile-update.test.ts [2m([22m[2m6 tests[22m[2m)[22m[33m 359[2mms[22m[39m
+     [33m[2m✓[22m[39m rate-limits repeated failed logins[33m 399[2mms[22m[39m
+ [32m✓[39m tests/end-to-end-flow.test.ts [2m([22m[2m3 tests[22m[2m)[22m[33m 499[2mms[22m[39m
+ [32m✓[39m tests/personas.test.ts [2m([22m[2m13 tests[22m[2m)[22m[32m 77[2mms[22m[39m
+ [32m✓[39m tests/residence-and-records.test.ts [2m([22m[2m15 tests[22m[2m)[22m[32m 17[2mms[22m[39m
+ [32m✓[39m tests/official-details.test.ts [2m([22m[2m7 tests[22m[2m)[22m[32m 10[2mms[22m[39m
+ [32m✓[39m tests/status-and-sources.test.ts [2m([22m[2m12 tests[22m[2m)[22m[32m 47[2mms[22m[39m
+ [32m✓[39m tests/scenarios-and-money.test.ts [2m([22m[2m8 tests[22m[2m)[22m[32m 26[2mms[22m[39m
+ [32m✓[39m tests/industries.test.ts [2m([22m[2m5 tests[22m[2m)[22m[32m 59[2mms[22m[39m
+ [32m✓[39m tests/profile-update.test.ts [2m([22m[2m6 tests[22m[2m)[22m[33m 329[2mms[22m[39m
  [32m✓[39m tests/taxonomy.test.ts [2m([22m[2m5 tests[22m[2m)[22m[32m 8[2mms[22m[39m
- [32m✓[39m tests/proxy.test.ts [2m([22m[2m2 tests[22m[2m)[22m[32m 12[2mms[22m[39m
+ [32m✓[39m tests/proxy.test.ts [2m([22m[2m2 tests[22m[2m)[22m[32m 10[2mms[22m[39m
 
-[2m Test Files [22m [1m[32m14 passed[39m[22m[90m (14)[39m
-[2m      Tests [22m [1m[32m169 passed[39m[22m[90m (169)[39m
-[2m   Start at [22m 10:49:18
-[2m   Duration [22m 8.62s[2m (tests 75%, import 17%, transform 7%, worker 1%)[22m
+[2m Test Files [22m [1m[32m15 passed[39m[22m[90m (15)[39m
+[2m      Tests [22m [1m[32m176 passed[39m[22m[90m (176)[39m
+[2m   Start at [22m 11:17:31
+[2m   Duration [22m 7.84s[2m (tests 75%, import 17%, transform 7%, worker 1%)[22m
 
-[2m    Isolate [22m [33m14 workers spawned[39m[2m · ~96ms startup each (spawn + environment, per file)[22m
-[2m            [22m [2mat least ~1.25s faster with [22m[33misolate: false[39m[2m — reuses workers across files instead of one per file[22m
+[2m    Isolate [22m [33m15 workers spawned[39m[2m · ~90ms startup each (spawn + environment, per file)[22m
+[2m            [22m [2mat least ~1.26s faster with [22m[33misolate: false[39m[2m — reuses workers across files instead of one per file[22m
 

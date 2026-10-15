@@ -2,3 +2,4 @@
 > funding-radar@0.1.0 typecheck
 > tsc --noEmit
 
+scripts/eu-ft-details-probe.ts(26,13): error TS2532: Object is possibly 'undefined'.

@@ -3,43 +3,12 @@
 > next build
 
 ▲ Next.js 16.4.0 (Turbopack)
-✓ Running next.config.ts took 26ms
+✓ Running next.config.ts took 25ms
 ⚠ No build cache found. Please configure build caching for faster rebuilds. Read more: https://nextjs.org/docs/messages/no-cache
 
   Creating an optimized production build ...
 ✓ Compiled successfully in 5.3s
   Running TypeScript ...
-  Finished TypeScript in 7.6s ...
-  Collecting page data using 3 workers ...
-  Generating static pages using 3 workers (0/15) ...
-  Generating static pages using 3 workers (3/15) 
-  Generating static pages using 3 workers (7/15) 
-  Generating static pages using 3 workers (11/15) 
-✓ Generating static pages using 3 workers (15/15) in 264ms
-  Finalizing page optimization ...
-
-Route (app)
-┌ ƒ /
-├ ƒ /_not-found
-├ ƒ /about
-├ ƒ /admin
-├ ƒ /admin/review
-├ ƒ /admin/sources
-├ ƒ /api/health
-├ ƒ /api/me/export
-├ ƒ /categories
-├ ƒ /dashboard
-├ ƒ /for-me
-├ ƒ /guides
-├ ƒ /guides/[slug]
-├ ƒ /login
-├ ƒ /opportunities
-├ ƒ /opportunities/[id]
-├ ƒ /profile
-└ ƒ /register
-
-
-ƒ Proxy (Middleware)
-
-ƒ  (Dynamic)  server-rendered on demand
+scripts/eu-ft-details-probe.ts(26,13): error TS2532: Object is possibly 'undefined'.
+Failed to type check.
 
