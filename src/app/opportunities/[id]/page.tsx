@@ -12,8 +12,10 @@ import { formatDate } from "@/lib/format";
 import { SITE } from "@/lib/site/copy";
 import { audiencesOf, categoriesOf, categoryBySlug, guideOf, scopeOf, supportTypeOf } from "@/lib/site/taxonomy";
 import { AvailabilityBadge, EligibilityBadge, StateBadge, SyntheticLabel } from "@/components/badges";
-import { amountText, deadlineText } from "@/components/opportunity-facts";
+import { deadlineText } from "@/components/opportunity-facts";
 import { RequirementsTable } from "@/components/requirements-table";
+import { KeyFacts, OfficialConditions, OfficialScope, VerifiedSteps, keyAmount } from "@/components/opportunity-details";
+import { displayTitle, verifiedFor } from "@/lib/site/verified";
 import { Icon } from "@/components/icons";
 import { toggleSaveAction } from "@/app/actions";
 
@@ -62,6 +64,9 @@ export default async function OpportunityPage({ params, searchParams }: { params
   const scope = scopeOf(o);
   const guide = guideOf(o);
   const saved = savedIds.includes(o.id);
+  const title = displayTitle(o, locale);
+  const verified = verifiedFor(o.external_key);
+  const amount = keyAmount(o, t, s, locale);
 
   return (
     <div className="container">
@@ -77,7 +82,8 @@ export default async function OpportunityPage({ params, searchParams }: { params
           <span className="tag navy">{s.scope[scope]}</span>
           {o.is_synthetic && <SyntheticLabel t={t} />}
         </div>
-        <h1 lang={o.title_lang}>{o.official_title}</h1>
+        <h1 lang={title.lang}>{title.text}</h1>
+        {title.text !== o.official_title && <p className="small muted" style={{ margin: "0 0 4px" }} lang={o.title_lang}>{o.official_title}</p>}
         <p className="muted" style={{ margin: 0 }}>{o.publishing_authority}{o.official_identifier ? ` · ${o.official_identifier}` : ""}</p>
       </header>
       {o.is_synthetic && <div className="notice" style={{ marginBottom: 16 }}>{t.synthetic}.</div>}
@@ -87,6 +93,7 @@ export default async function OpportunityPage({ params, searchParams }: { params
         <div>
           <nav className="toc" aria-label={s.detail.overview}>
             <a href="#overview">{s.detail.overview}</a>
+            <a href="#details">{s.facts.title}</a>
             <a href="#eligibility">{s.detail.eligibility}</a>
             <a href="#apply">{s.detail.howToApply}</a>
             <a href="#sources">{s.detail.sources}</a>
@@ -95,17 +102,26 @@ export default async function OpportunityPage({ params, searchParams }: { params
           <div className="stack-lg">
             <section id="overview" className="card">
               <div className="section-label sl-official">{t.opp.sectionFacts}</div>
-              {o.summary_plain ? (
+              {verified ? (
+                <>
+                  <p style={{ fontSize: "1.05rem" }}>{verified.summary[locale]}</p>
+                  <p className="xs muted" style={{ margin: 0 }}>{t.opp.summaryAdmin}</p>
+                </>
+              ) : o.summary_plain ? (
                 <>
                   <p style={{ fontSize: "1.05rem" }}>{o.summary_plain}</p>
                   <p className="xs muted" style={{ margin: 0 }}>{o.summary_origin === "ai" ? t.opp.summaryAi : t.opp.summaryAdmin}</p>
                 </>
-              ) : <p className="muted" style={{ margin: 0 }}>{t.opp.sectionFactsNote}</p>}
+              ) : !o.official_details?.scope_excerpt ? <p className="muted" style={{ margin: 0 }}>{t.opp.sectionFactsNote}</p> : null}
+              <OfficialScope o={o} s={s} />
             </section>
+
+            <KeyFacts o={o} s={s} locale={locale} t={t} />
 
             <section id="eligibility" className="card">
               <div className="section-label sl-score">{t.opp.sectionMatch}</div>
               <p className="small muted" style={{ marginTop: 0 }}>{t.opp.sectionMatchNote}</p>
+              <OfficialConditions o={o} s={s} locale={locale} />
               {!user ? (
                 <div className="notice info"><Icon name="user" size={18} /><span>{s.detail.saveHint} <Link href="/login">{t.nav.login}</Link> · <Link href="/register">{t.nav.register}</Link></span></div>
               ) : (
@@ -182,6 +198,7 @@ export default async function OpportunityPage({ params, searchParams }: { params
 
             <section id="apply" className="card">
               <h2 style={{ marginTop: 0 }}>{s.detail.howToApply}</h2>
+              <VerifiedSteps o={o} s={s} locale={locale} />
               <p>{s.detail.applySteps}</p>
               <div className="row">
                 <a className="btn btn-primary" href={o.application_url ?? o.canonical_url} target="_blank" rel="noopener noreferrer">{o.application_url ? t.opp.apply : t.opp.official} <Icon name="external" size={16} /></a>
@@ -193,6 +210,12 @@ export default async function OpportunityPage({ params, searchParams }: { params
               <h2 style={{ marginTop: 0 }}>{s.detail.sources}</h2>
               <ul className="checklist small">
                 <li><Icon name="shield" size={16} /><span><a href={o.canonical_url} target="_blank" rel="noopener noreferrer">{o.canonical_url}</a></span></li>
+                {verified?.sources.filter((src) => src.url !== o.canonical_url).map((src) => (
+                  <li key={src.url}><Icon name="shield" size={16} /><span><a href={src.url} target="_blank" rel="noopener noreferrer">{src.label}</a> <span className="muted">· {s.card.checked} {src.checkedOn}</span></span></li>
+                ))}
+                {o.official_details?.documents?.map((doc) => (
+                  <li key={doc.url}><Icon name="book" size={16} /><span><a href={doc.url} target="_blank" rel="noopener noreferrer" lang="en">{doc.label}</a></span></li>
+                ))}
                 {o.application_url && o.application_url !== o.canonical_url && <li><Icon name="external" size={16} /><span><a href={o.application_url} target="_blank" rel="noopener noreferrer">{o.application_url}</a></span></li>}
                 <li><Icon name="calendar" size={16} /><span>{t.ui.freshness}: {formatDate(o.last_verified_at, locale) ?? <span className="unknown">{t.opp.never}</span>}{o.source_name ? ` · ${o.source_name}` : ""}</span></li>
                 {o.deadline_original_text && <li><Icon name="info" size={16} /><span>{t.ui.originalDeadline}: <code>{o.deadline_original_text}</code>{o.deadline_is_date_only ? ` — ${t.ui.dateOnly}` : ""}</span></li>}
@@ -206,7 +229,7 @@ export default async function OpportunityPage({ params, searchParams }: { params
             <h2 style={{ marginTop: 0, fontSize: "1.05rem" }}>{s.detail.keyInfo}</h2>
             <dl>
               <div><dt>{t.opp.deadline}</dt><dd>{deadlineText(o, t, locale)}</dd></div>
-              <div><dt>{t.opp.amount}</dt><dd>{amountText(o, t, locale)}</dd></div>
+              <div><dt>{amount.label}</dt><dd>{amount.value}</dd></div>
               <div><dt>{s.opps.type}</dt><dd>{s.supportType[supportTypeOf(o.opportunity_type)]}</dd></div>
               {cats.length > 0 && <div><dt>{s.detail.category}</dt><dd>{cats.map((c) => c.name[locale]).join(", ")}</dd></div>}
               {audiences.length > 0 && <div><dt>{s.detail.forWhom}</dt><dd>{audiences.map((p) => t.opt.personas[p] ?? p).join(", ")}</dd></div>}

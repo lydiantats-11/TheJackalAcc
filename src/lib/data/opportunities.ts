@@ -2,6 +2,7 @@ import type postgres from "postgres";
 import { geographyValue, parseRequirement } from "@/lib/domain/requirements";
 import type { OpportunityForMatching, OpportunityStatus } from "@/lib/domain/eligibility";
 import { requirementRecordSchema, type RequirementRecord } from "@/lib/domain/engine/requirement";
+import type { OfficialDetails } from "@/lib/sources/types";
 
 export interface OpportunityRow {
   id: string;
@@ -51,6 +52,10 @@ export interface OpportunityRow {
   uncertainties: string[];
   /** 0008: industries a record is restricted to; null = not restricted (discovery only, never eligibility). */
   industries: string[] | null;
+  /** 0009: what the source publishes in structured form (budget, action type, conditions…); display only. */
+  official_details: OfficialDetails | null;
+  /** 0002: other official cut-off dates, as published. */
+  additional_deadlines: unknown;
 }
 
 export interface OpportunityFilters {

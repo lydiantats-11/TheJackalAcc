@@ -55,6 +55,13 @@ async function evidence(tx: Tx, oppId: string, field: string, value: unknown, ur
            VALUES (${oppId}, ${field}, ${tx.json(value as never)}, ${url}, ${docId}, 'parser', ${rank}, 'high', ${review})`;
 }
 
+
+/** Display-only official details: refreshed on every run, never part of the fingerprint or the version history. */
+async function writeDetails(tx: Tx, id: string, item: DiscoveredItem, now: Date): Promise<void> {
+  if (item.details === undefined) return;
+  await tx`UPDATE opportunities SET official_details = ${tx.json({ ...item.details, retrieved_at: now.toISOString() } as never)} WHERE id = ${id}`;
+}
+
 export async function ingestItem(tx: Tx, source: SourceConfig, runId: string, item: DiscoveredItem, now: Date): Promise<ItemResult> {
   const canonical = canonicalizeUrl(item.canonical_url);
   if (!canonical.startsWith("https://")) return { outcome: "skipped_stale", opportunity_id: null, detail: "non_https_url" };
@@ -133,6 +140,7 @@ export async function ingestItem(tx: Tx, source: SourceConfig, runId: string, it
                        ${tx.json(d.evidence as never)}, ${d.evidence_rank}, ${d.confidence}, ${d.flags}, 'programme_default')
                ON CONFLICT (opportunity_id, requirement_key, version) DO NOTHING`;
     }
+    await writeDetails(tx, id, item, now);
     await recordEvent(tx, id, "new_opportunity", `new_opportunity:${id}`, { source: source.slug, status });
     return { outcome: "new", opportunity_id: id };
   }
@@ -162,6 +170,7 @@ export async function ingestItem(tx: Tx, source: SourceConfig, runId: string, it
   if (existing.content_fingerprint === hash && existing.status === status && !deadlineChanged) {
     await tx`UPDATE opportunities SET last_retrieved_at = ${now}, last_verified_at = ${now},
                source_modified_at = GREATEST(source_modified_at, ${validModified}) WHERE id = ${id}`;
+    await writeDetails(tx, id, item, now);
     return { outcome: "unchanged", opportunity_id: id };
   }
 
@@ -197,6 +206,7 @@ export async function ingestItem(tx: Tx, source: SourceConfig, runId: string, it
       last_retrieved_at = ${now}, last_verified_at = ${now}, source_modified_at = GREATEST(source_modified_at, ${validModified}),
       content_fingerprint = ${hash}, version = ${newVersion}, updated_at = now()
     WHERE id = ${id}`;
+  await writeDetails(tx, id, item, now);
   await snapshot(tx, id, newVersion, kind, nextCutoff ? `next cut-off now current (${source.slug})` : `${kind} detected by ${source.slug}`, docId);
   if (statusChanged || finalStatus !== existing.status) {
     await tx`INSERT INTO opportunity_status_history (opportunity_id, from_status, to_status, reason, evidence, actor)

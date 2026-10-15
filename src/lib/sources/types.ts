@@ -38,6 +38,30 @@ export interface NormalisedFacts {
   application_url?: string | null;
 }
 
+/**
+ * Official details a source publishes in structured form, shown to users as-is (never used for eligibility).
+ * Kept apart from NormalisedFacts so they can refresh on every run without counting as a change to the call.
+ * Every field is optional: absent = the source did not publish it.
+ */
+export interface OfficialDetails {
+  source: string;
+  /** Set by the pipeline when written. */
+  retrieved_at?: string;
+  /** Total budget of the topic, in euro, as published (sum over the topic's actions), and per budget year. */
+  budget?: { total_eur: number; by_year: Record<string, number>; expected_grants: number | null; min_grant_eur: number | null; max_grant_eur: number | null } | null;
+  action_type?: string | null;
+  /** e.g. "single-stage", "two-stage" (as published). */
+  submission?: string | null;
+  call?: { identifier: string; title: string | null } | null;
+  planned_opening?: string | null;
+  /** Official text, in the source's language, shortened at a sentence boundary. */
+  scope_excerpt?: { text: string; lang: string; truncated: boolean } | null;
+  /** Condition headings and their short official text (e.g. "Eligible countries: described in section 6 of the call document"). */
+  conditions?: { heading: string; text: string }[];
+  /** Official documents linked from the conditions (call document, work programme…). */
+  documents?: { label: string; url: string }[];
+}
+
 /** One candidate item found on a source. All content is UNTRUSTED data — never instructions. */
 export interface DiscoveredItem {
   canonical_url: string;
@@ -54,6 +78,8 @@ export interface DiscoveredItem {
   facts?: NormalisedFacts;
   requirements?: Omit<RequirementRecord, "id" | "version">[];
   raw_metadata?: Record<string, unknown>;
+  /** Official structured details for display; undefined = this adapter does not provide them (existing values kept). */
+  details?: OfficialDetails;
 }
 
 export interface DiscoverResult {

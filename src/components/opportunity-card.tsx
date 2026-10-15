@@ -6,7 +6,8 @@ import type { ListedOpportunity } from "@/lib/site/listing";
 import { categoryBySlug, guideOf } from "@/lib/site/taxonomy";
 import { formatDate, formatDay } from "@/lib/format";
 import { AvailabilityBadge, SyntheticLabel } from "./badges";
-import { amountText } from "./opportunity-facts";
+import { cardAmount } from "./opportunity-details";
+import { displayTitle } from "@/lib/site/verified";
 
 /** Short deadline for cards: date (and time when stated), naming Brussels time only when it applies. */
 function cardDeadline(o: ListedOpportunity["row"], t: Dictionary, s: SiteCopy, locale: Locale) {
@@ -22,6 +23,8 @@ export function OpportunityCard({ item, t, s, locale, extra }: {
   const o = item.row;
   const cat = categoryBySlug(item.categories[0]);
   const guide = guideOf(o);
+  const title = displayTitle(o, locale);
+  const amount = cardAmount(o, t, s, locale);
   return (
     <article className="opp-card">
       <div className="tags">
@@ -31,12 +34,12 @@ export function OpportunityCard({ item, t, s, locale, extra }: {
         <span className="tag navy">{s.scope[item.scope]}</span>
         {o.is_synthetic && <SyntheticLabel t={t} />}
       </div>
-      <h3 lang={o.title_lang}><Link href={`/opportunities/${o.id}`}>{o.official_title}</Link></h3>
+      <h3 lang={title.lang}><Link href={`/opportunities/${o.id}`}>{title.text}</Link></h3>
       <p className="authority">{o.publishing_authority}</p>
       {extra}
       <dl className="meta">
         <div><dt>{s.card.deadline}</dt><dd>{cardDeadline(o, t, s, locale)}</dd></div>
-        <div><dt>{s.card.amount}</dt><dd>{o.funding_amount_state === "known" ? amountText(o, t, locale) : <span className="muted" style={{ fontWeight: 500 }}>{s.card.amountNone}</span>}</dd></div>
+        <div><dt>{amount.label}</dt><dd>{amount.value}</dd></div>
       </dl>
       <div className="foot">
         <span>{s.card.checked}: {formatDay(o.last_verified_at, locale) ?? "—"}</span>

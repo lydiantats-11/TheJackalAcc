@@ -26,6 +26,7 @@ import type { OpportunityStatus } from "@/lib/domain/eligibility";
 import {
   SchemaDriftError, stableJson, type AdapterContext, type DiscoveredItem, type DiscoverResult, type SourceAdapter, type SourceConfig,
 } from "../types";
+import { extractDetails } from "./eu-ft-details";
 
 export const EU_FT_STATUS: Record<string, OpportunityStatus> = {
   "31094501": "upcoming", // Forthcoming
@@ -126,12 +127,14 @@ export function mapResult(raw: unknown, allowedHosts: string[]): DiscoveredItem 
     // They will be extracted from the official topic conditions (Phase 3) and reviewed.
     requirements: [],
     raw_metadata: { status_raw: statusRaw, deadlines },
+    // Budget, grant size, action type, scope text and condition headings, as published (display only; not in the fingerprint).
+    details: extractDetails(m, identifier, allowedHosts) ?? { source: "eu-funding-tenders" },
   };
 }
 
 export const euFundingTendersAdapter: SourceAdapter = {
   key: "eu-funding-tenders-search",
-  version: "0.2.0",
+  version: "0.3.0",
   description: "EU Funding & Tenders Portal search endpoint (undocumented, public). Grants call topics, forthcoming and open, sorted by identifier.",
   async discover(source: SourceConfig, ctx: AdapterContext): Promise<DiscoverResult> {
     const cfg: EuFtConfig = { ...DEFAULTS, ...(source.config as Partial<EuFtConfig>) };
