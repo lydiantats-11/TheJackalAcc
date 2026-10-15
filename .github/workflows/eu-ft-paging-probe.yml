@@ -19,7 +19,7 @@ jobs:
       - uses: actions/setup-node@v4
         with: { node-version: 22 }
       - name: Probe
-        run: npx --yes tsx@4 scripts/${PROBE:-eu-ft-deadline-probe}.ts > probe.json
+        run: npx --yes tsx@4 scripts/${PROBE:-$(cat scripts/probe-name 2>/dev/null || echo eu-ft-deadline-probe)}.ts > probe.json
       - name: Save result
         if: always()
         run: |
