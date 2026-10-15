@@ -1,0 +1,43 @@
+
+> funding-radar@0.1.0 build
+> next build
+
+▲ Next.js 16.4.0 (Turbopack)
+✓ Running next.config.ts took 21ms
+⚠ No build cache found. Please configure build caching for faster rebuilds. Read more: https://nextjs.org/docs/messages/no-cache
+
+  Creating an optimized production build ...
+✓ Compiled successfully in 4.5s
+  Running TypeScript ...
+  Finished TypeScript in 5.5s ...
+  Collecting page data using 3 workers ...
+  Generating static pages using 3 workers (0/15) ...
+  Generating static pages using 3 workers (3/15) 
+  Generating static pages using 3 workers (7/15) 
+  Generating static pages using 3 workers (11/15) 
+✓ Generating static pages using 3 workers (15/15) in 179ms
+  Finalizing page optimization ...
+
+Route (app)
+┌ ƒ /
+├ ƒ /_not-found
+├ ƒ /about
+├ ƒ /admin
+├ ƒ /admin/review
+├ ƒ /admin/sources
+├ ƒ /api/health
+├ ƒ /api/me/export
+├ ƒ /categories
+├ ƒ /dashboard
+├ ƒ /for-me
+├ ƒ /guides
+├ ƒ /guides/[slug]
+├ ƒ /login
+├ ƒ /opportunities
+├ ƒ /opportunities/[id]
+├ ƒ /profile
+└ ƒ /register
+
+
+ƒ  (Dynamic)  server-rendered on demand
+
