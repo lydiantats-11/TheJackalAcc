@@ -8,7 +8,7 @@ const HOSTS = ["ec.europa.eu", "api.tech.ec.europa.eu"];
 
 // Shapes copied from the live probe of 15 Oct 2026 (scripts/eu-ft-details-probe.ts), shortened.
 const BUDGET_CEF = JSON.stringify({ budgetYearsColumns: ["2026"], budgetTopicActionMap: { "115101": [{ action: "CEF-DIG-2026-CABLE-REPAIR-CAPACITIES-WORKS - CEF-INFRA CEF Infrastructure Projects", expectedGrants: 0, minContribution: 0, maxContribution: 0, budgetYearMap: { "2026": "40000000" }, deadlineModel: "single-stage", deadlineDates: ["2026-11-25"] }] } });
-const CONDITIONS_CREA = `<div class="eui-u-mt-l>"><h4>Conditions</h4><div><h4>1. Admissibility conditions: Proposal page limit and layout</h4><div class="eui-u-mt-s"><p>described in the <u><a href="https://ec.europa.eu/info/funding-tenders/opportunities/docs/2021-2027/crea/wp-call/2027/call-fiche_crea-media-2027-devvgim_en.pdf" rel="noopener noreferrer" target="_blank">call document</a></u>.</p></div></div><div><h4>2. Eligible countries</h4><div class="eui-u-mt-s"><p>described in the call document &amp; annex</p></div></div><div><h4>3. Other</h4><p>see <a href="https://evil.example/x.pdf">this</a></p></div></div>`;
+const CONDITIONS_CREA = `<div class="eui-u-mt-l>"><h4>Conditions</h4><div><h4>1. Admissibility conditions: Proposal page limit and layout</h4><div class="eui-u-mt-s"><p>described in the <u><a href="https://ec.europa.eu/info/funding-tenders/opportunities/docs/2021-2027/crea/wp-call/2027/call-fiche_crea-media-2027-devvgim_en.pdf" rel="noopener noreferrer" target="_blank">call document</a></u>.</p></div></div><div><h4>2. Eligible countries</h4><div class="eui-u-mt-s"><p>described in the call document &amp; annex</p></div></div><div><h4>3. Other</h4><p>5a. Evaluation and award: Described in Section II</p><p>see <a href="https://evil.example/x.pdf">this</a></p></div></div>`;
 
 describe("EU portal official details (display only)", () => {
   it("reads the topic budget; zero grant sizes mean 'not published', not €0", () => {
@@ -28,7 +28,7 @@ describe("EU portal official details (display only)", () => {
 
   it("turns condition HTML into headings + text, and keeps only official https document links", () => {
     const c = parseConditions(CONDITIONS_CREA, HOSTS);
-    expect(c.conditions!.map((x) => x.heading)).toEqual(["Admissibility conditions", "Eligible countries", "Other"]);
+    expect(c.conditions!.map((x) => x.heading)).toEqual(["Admissibility conditions", "Eligible countries", "Other", "Evaluation and award"]);
     expect(c.conditions![1]!.text).toBe("described in the call document & annex");
     expect(c.documents).toEqual([{ label: "call document", url: "https://ec.europa.eu/info/funding-tenders/opportunities/docs/2021-2027/crea/wp-call/2027/call-fiche_crea-media-2027-devvgim_en.pdf" }]);
   });

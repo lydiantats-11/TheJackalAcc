@@ -84,7 +84,7 @@ export function parseConditions(html: string | undefined, allowedHosts: string[]
   let current: { heading: string; text: string } | null = null;
   for (const line of htmlToLines(html)) {
     if (/^conditions$/i.test(line)) continue;
-    const m = line.match(/^(\d{1,2})\s*\.\s*(.*)$/);
+    const m = line.match(/^(\d{1,2}[a-z]?)\s*\.\s*(.*)$/);
     if (m) {
       if (current) conditions.push(current);
       const rest = m[2]!;
