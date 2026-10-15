@@ -5,26 +5,36 @@
 
 [1m[30m[46m RUN [49m[39m[22m [36mv5.0.4 [39m[90m/home/runner/work/TheJackalAcc/TheJackalAcc[39m
 
- [32m✓[39m tests/ingestion.test.ts [2m([22m[2m27 tests[22m[2m)[22m[33m 1564[2mms[22m[39m
- [32m✓[39m tests/engine.test.ts [2m([22m[2m27 tests[22m[2m)[22m[32m 140[2mms[22m[39m
- [32m✓[39m tests/extraction.test.ts [2m([22m[2m13 tests[22m[2m)[22m[33m 1245[2mms[22m[39m
- [32m✓[39m tests/real-calls.test.ts [2m([22m[2m22 tests[22m[2m)[22m[32m 39[2mms[22m[39m
- [32m✓[39m tests/auth-and-access.test.ts [2m([22m[2m11 tests[22m[2m)[22m[33m 1154[2mms[22m[39m
+ [32m✓[39m tests/ingestion.test.ts [2m([22m[2m27 tests[22m[2m)[22m[33m 4491[2mms[22m[39m
+   [32m✓[39m ingestion pipeline + worker (PostgreSQL) [2m(15)[22m
+     [33m[2m✓[22m[39m #13/#14 an extension is versioned, re-labelled 'extended', emits events and recalculates matches[33m 356[2mms[22m[39m
+     [33m[2m✓[22m[39m live finding 2026-10-14: an incomplete listing marks nothing unverified and the run is 'partial'[33m 348[2mms[22m[39m
+     [33m[2m✓[22m[39m a passed deadline is swept to 'unverified', not 'closed'[33m 357[2mms[22m[39m
+     [33m[2m✓[22m[39m live finding 2026-10-14: a call the source still lists as open after its last deadline imports as unverified and stays put (no flip-flop)[33m 540[2mms[22m[39m
+     [33m[2m✓[22m[39m #17/#18 the same call from another source is not duplicated; a differing deadline is flagged as a conflict[33m 368[2mms[22m[39m
+     [33m[2m✓[22m[39m only one run per source at a time (advisory lock)[33m 656[2mms[22m[39m
+ [32m✓[39m tests/engine.test.ts [2m([22m[2m27 tests[22m[2m)[22m[32m 92[2mms[22m[39m
+ [32m✓[39m tests/extraction.test.ts [2m([22m[2m13 tests[22m[2m)[22m[33m 3007[2mms[22m[39m
+   [32m✓[39m AI extraction with human review (PostgreSQL) [2m(9)[22m
+     [33m[2m✓[22m[39m stages candidates as pending; nothing reaches eligibility before review; quotes are verified verbatim[33m 400[2mms[22m[39m
+     [33m[2m✓[22m[39m a later extraction proposing a different rule is flagged; approving it creates version 2 and keeps version 1[33m 637[2mms[22m[39m
+ [32m✓[39m tests/real-calls.test.ts [2m([22m[2m22 tests[22m[2m)[22m[32m 29[2mms[22m[39m
+ [32m✓[39m tests/auth-and-access.test.ts [2m([22m[2m11 tests[22m[2m)[22m[33m 1544[2mms[22m[39m
    [32m✓[39m auth & access control (PostgreSQL) [2m(11)[22m
-     [33m[2m✓[22m[39m rate-limits repeated failed logins[33m 387[2mms[22m[39m
- [32m✓[39m tests/end-to-end-flow.test.ts [2m([22m[2m3 tests[22m[2m)[22m[33m 596[2mms[22m[39m
- [32m✓[39m tests/personas.test.ts [2m([22m[2m13 tests[22m[2m)[22m[32m 90[2mms[22m[39m
- [32m✓[39m tests/residence-and-records.test.ts [2m([22m[2m15 tests[22m[2m)[22m[32m 18[2mms[22m[39m
- [32m✓[39m tests/status-and-sources.test.ts [2m([22m[2m12 tests[22m[2m)[22m[32m 40[2mms[22m[39m
- [32m✓[39m tests/scenarios-and-money.test.ts [2m([22m[2m8 tests[22m[2m)[22m[32m 28[2mms[22m[39m
- [32m✓[39m tests/industries.test.ts [2m([22m[2m5 tests[22m[2m)[22m[32m 71[2mms[22m[39m
- [32m✓[39m tests/profile-update.test.ts [2m([22m[2m6 tests[22m[2m)[22m[33m 360[2mms[22m[39m
+     [33m[2m✓[22m[39m rate-limits repeated failed logins[33m 393[2mms[22m[39m
+ [32m✓[39m tests/end-to-end-flow.test.ts [2m([22m[2m3 tests[22m[2m)[22m[33m 1073[2mms[22m[39m
+ [32m✓[39m tests/personas.test.ts [2m([22m[2m13 tests[22m[2m)[22m[32m 63[2mms[22m[39m
+ [32m✓[39m tests/residence-and-records.test.ts [2m([22m[2m15 tests[22m[2m)[22m[32m 14[2mms[22m[39m
+ [32m✓[39m tests/status-and-sources.test.ts [2m([22m[2m12 tests[22m[2m)[22m[32m 38[2mms[22m[39m
+ [32m✓[39m tests/scenarios-and-money.test.ts [2m([22m[2m8 tests[22m[2m)[22m[32m 21[2mms[22m[39m
+ [32m✓[39m tests/industries.test.ts [2m([22m[2m5 tests[22m[2m)[22m[32m 45[2mms[22m[39m
+ [32m✓[39m tests/profile-update.test.ts [2m([22m[2m6 tests[22m[2m)[22m[33m 306[2mms[22m[39m
 
 [2m Test Files [22m [1m[32m12 passed[39m[22m[90m (12)[39m
 [2m      Tests [22m [1m[32m162 passed[39m[22m[90m (162)[39m
-[2m   Start at [22m 09:40:26
-[2m   Duration [22m 8.11s[2m (tests 78%, import 16%, transform 6%, worker 1%)[22m
+[2m   Start at [22m 09:44:30
+[2m   Duration [22m 12.85s[2m (tests 90%, import 7%, transform 3%)[22m
 
-[2m    Isolate [22m [33m12 workers spawned[39m[2m · ~95ms startup each (spawn + environment, per file)[22m
-[2m            [22m [2mat least ~1.05s faster with [22m[33misolate: false[39m[2m — reuses workers across files instead of one per file[22m
+[2m    Isolate [22m [33m12 workers spawned[39m[2m · ~74ms startup each (spawn + environment, per file)[22m
+[2m            [22m [2mat least ~813ms faster with [22m[33misolate: false[39m[2m — reuses workers across files instead of one per file[22m
 
