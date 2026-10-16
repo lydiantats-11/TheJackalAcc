@@ -5,36 +5,111 @@
 
 [1m[30m[46m RUN [49m[39m[22m [36mv5.0.4 [39m[90m/home/runner/work/TheJackalAcc/TheJackalAcc[39m
 
- [32m✓[39m tests/ingestion.test.ts [2m([22m[2m27 tests[22m[2m)[22m[33m 4028[2mms[22m[39m
-   [32m✓[39m ingestion pipeline + worker (PostgreSQL) [2m(15)[22m
-     [33m[2m✓[22m[39m #1/#2 paginates, creates one record per topic, and a re-run creates no duplicates or extra events[33m 352[2mms[22m[39m
- [32m✓[39m tests/engine.test.ts [2m([22m[2m27 tests[22m[2m)[22m[32m 88[2mms[22m[39m
- [32m✓[39m tests/extraction.test.ts [2m([22m[2m13 tests[22m[2m)[22m[33m 1494[2mms[22m[39m
- [32m✓[39m tests/real-calls.test.ts [2m([22m[2m22 tests[22m[2m)[22m[32m 29[2mms[22m[39m
- [32m✓[39m tests/auth-and-access.test.ts [2m([22m[2m11 tests[22m[2m)[22m[33m 1025[2mms[22m[39m
-   [32m✓[39m auth & access control (PostgreSQL) [2m(11)[22m
-     [33m[2m✓[22m[39m rate-limits repeated failed logins[33m 352[2mms[22m[39m
- [32m✓[39m tests/end-to-end-flow.test.ts [2m([22m[2m3 tests[22m[2m)[22m[33m 437[2mms[22m[39m
- [32m✓[39m tests/personas.test.ts [2m([22m[2m13 tests[22m[2m)[22m[32m 64[2mms[22m[39m
- [32m✓[39m tests/residence-and-records.test.ts [2m([22m[2m15 tests[22m[2m)[22m[32m 14[2mms[22m[39m
- [32m✓[39m tests/official-details.test.ts [2m([22m[2m7 tests[22m[2m)[22m[32m 8[2mms[22m[39m
- [32m✓[39m tests/guide-status.test.ts [2m([22m[2m15 tests[22m[2m)[22m[32m 20[2mms[22m[39m
- [32m✓[39m tests/status-and-sources.test.ts [2m([22m[2m12 tests[22m[2m)[22m[32m 42[2mms[22m[39m
- [32m✓[39m tests/scenarios-and-money.test.ts [2m([22m[2m8 tests[22m[2m)[22m[32m 21[2mms[22m[39m
- [32m✓[39m tests/i18n.test.ts [2m([22m[2m21 tests[22m[2m)[22m[32m 10[2mms[22m[39m
- [32m✓[39m tests/industries.test.ts [2m([22m[2m5 tests[22m[2m)[22m[32m 61[2mms[22m[39m
- [32m✓[39m tests/profile-update.test.ts [2m([22m[2m6 tests[22m[2m)[22m[33m 506[2mms[22m[39m
- [32m✓[39m tests/decision-record.test.ts [2m([22m[2m5 tests[22m[2m)[22m[32m 11[2mms[22m[39m
- [32m✓[39m tests/taxonomy.test.ts [2m([22m[2m5 tests[22m[2m)[22m[32m 6[2mms[22m[39m
- [32m✓[39m tests/change-detection.test.ts [2m([22m[2m2 tests[22m[2m)[22m[32m 3[2mms[22m[39m
- [32m✓[39m tests/proxy.test.ts [2m([22m[2m2 tests[22m[2m)[22m[32m 8[2mms[22m[39m
- [32m✓[39m tests/question-impact.test.ts [2m([22m[2m2 tests[22m[2m)[22m[32m 6[2mms[22m[39m
+ [32m✓[39m tests/ingestion.test.ts [2m([22m[2m27 tests[22m[2m)[22m[33m 1465[2mms[22m[39m
+ [32m✓[39m tests/engine.test.ts [2m([22m[2m27 tests[22m[2m)[22m[32m 65[2mms[22m[39m
+ [32m✓[39m tests/extraction.test.ts [2m([22m[2m13 tests[22m[2m)[22m[33m 906[2mms[22m[39m
+ [32m✓[39m tests/real-calls.test.ts [2m([22m[2m22 tests[22m[2m)[22m[32m 22[2mms[22m[39m
+ [32m✓[39m tests/auth-and-access.test.ts [2m([22m[2m11 tests[22m[2m)[22m[33m 739[2mms[22m[39m
+ [32m✓[39m tests/end-to-end-flow.test.ts [2m([22m[2m3 tests[22m[2m)[22m[33m 353[2mms[22m[39m
+ [32m✓[39m tests/personas.test.ts [2m([22m[2m13 tests[22m[2m)[22m[32m 46[2mms[22m[39m
+ [32m✓[39m tests/residence-and-records.test.ts [2m([22m[2m15 tests[22m[2m)[22m[32m 11[2mms[22m[39m
+ [32m✓[39m tests/official-details.test.ts [2m([22m[2m7 tests[22m[2m)[22m[32m 6[2mms[22m[39m
+ [31m❯[39m tests/guides-catalog.test.ts [2m([22m[2m14 tests[22m[2m | [22m[31m3 failed[39m[2m)[22m[32m 13[2mms[22m[39m
+   [32m✓[39m guide categories [2m(2)[22m
+     [32m✓[39m are exactly the eight approved categories, in the approved order and wording[32m 1[2mms[22m[39m
+     [32m✓[39m have Greek and English descriptions, with no Greek in the English text[32m 0[2mms[22m[39m
+   [32m✓[39m articles [2m(3)[22m
+     [32m✓[39m have unique slugs, known categories and https sources[32m 1[2mms[22m[39m
+     [32m✓[39m approved records match the owner's approval file[32m 0[2mms[22m[39m
+     [32m✓[39m a guide for an unapproved record is a draft, hidden from the list but reachable for review[32m 1[2mms[22m[39m
+   [31m❯[39m verification state (about the content, never the application status) [2m(4)[22m
+[31m     [31m×[31m reflects what the checked records say[39m[32m 4[2mms[22m[39m
+[31m     [31m×[31m asks for a new check after the review interval (a trigger, not a verdict)[39m[32m 1[2mms[22m[39m
+[31m     [31m×[31m stays independent of the programme's application status[39m[32m 1[2mms[22m[39m
+     [32m✓[39m every state has a Greek and English label and explanation[32m 0[2mms[22m[39m
+   [32m✓[39m search and filtering [2m(5)[22m
+     [32m✓[39m folds accents, case and final sigma[32m 0[2mms[22m[39m
+     [32m✓[39m finds guides in Greek without accents and in English[32m 1[2mms[22m[39m
+     [32m✓[39m requires every word to match[32m 0[2mms[22m[39m
+     [32m✓[39m filters by category, and combines category with words[32m 0[2mms[22m[39m
+     [32m✓[39m counts only public guides per category[32m 0[2mms[22m[39m
+ [32m✓[39m tests/guide-status.test.ts [2m([22m[2m15 tests[22m[2m)[22m[32m 15[2mms[22m[39m
+ [32m✓[39m tests/status-and-sources.test.ts [2m([22m[2m12 tests[22m[2m)[22m[32m 39[2mms[22m[39m
+ [32m✓[39m tests/scenarios-and-money.test.ts [2m([22m[2m8 tests[22m[2m)[22m[32m 16[2mms[22m[39m
+ [32m✓[39m tests/i18n.test.ts [2m([22m[2m21 tests[22m[2m)[22m[32m 8[2mms[22m[39m
+ [32m✓[39m tests/industries.test.ts [2m([22m[2m5 tests[22m[2m)[22m[32m 41[2mms[22m[39m
+ [32m✓[39m tests/profile-update.test.ts [2m([22m[2m6 tests[22m[2m)[22m[32m 239[2mms[22m[39m
+ [32m✓[39m tests/decision-record.test.ts [2m([22m[2m5 tests[22m[2m)[22m[32m 9[2mms[22m[39m
+ [32m✓[39m tests/taxonomy.test.ts [2m([22m[2m5 tests[22m[2m)[22m[32m 4[2mms[22m[39m
+ [32m✓[39m tests/change-detection.test.ts [2m([22m[2m2 tests[22m[2m)[22m[32m 2[2mms[22m[39m
+ [32m✓[39m tests/proxy.test.ts [2m([22m[2m2 tests[22m[2m)[22m[32m 6[2mms[22m[39m
+ [32m✓[39m tests/question-impact.test.ts [2m([22m[2m2 tests[22m[2m)[22m[32m 4[2mms[22m[39m
 
-[2m Test Files [22m [1m[32m20 passed[39m[22m[90m (20)[39m
-[2m      Tests [22m [1m[32m221 passed[39m[22m[90m (221)[39m
-[2m   Start at [22m 17:03:49
-[2m   Duration [22m 11.03s[2m (tests 83%, import 11%, transform 5%, worker 1%)[22m
+[31m⎯⎯⎯⎯⎯⎯⎯[39m[1m[41m Failed Tests 3 [49m[22m[31m⎯⎯⎯⎯⎯⎯⎯[39m
 
-[2m    Isolate [22m [33m20 workers spawned[39m[2m · ~73ms startup each (spawn + environment, per file)[22m
-[2m            [22m [2mat least ~1.40s faster with [22m[33misolate: false[39m[2m — reuses workers across files instead of one per file[22m
+[41m[1m FAIL [22m[49m tests/guides-catalog.test.ts[2m > [22mverification state (about the content, never the application status)[2m > [22mreflects what the checked records say
+[31m[1mAssertionError[22m: expected 'needs_reverification' to be 'conflicting' // Object.is equality[39m
 
+Expected: [32m"[7mconfl[27mictin[7mg[27m"[39m
+Received: [31m"[7mneeds_reverif[27mic[7ma[27mti[7mo[27mn"[39m
+
+[36m [2m❯[22m tests/guides-catalog.test.ts:[2m65:33[22m[39m
+    [90m 63|[39m
+    [90m 64|[39m   it("reflects what the checked records say", () => {
+    [90m 65|[39m     expect(state("discovereu")).toBe("conflicting");
+    [90m   |[39m                                 [31m^[39m
+    [90m 66|[39m     expect(state("spiti2")).toBe("conflicting");
+    [90m 67|[39m     expect(state("unemployment")).toBe("conflicting");
+
+[31m[2m⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/3]⎯[22m[39m
+
+[41m[1m FAIL [22m[49m tests/guides-catalog.test.ts[2m > [22mverification state (about the content, never the application status)[2m > [22masks for a new check after the review interval (a trigger, not a verdict)
+[31m[1mAssertionError[22m: expected true to be false // Object.is equality[39m
+
+[32m- Expected[39m
+[31m+ Received[39m
+
+[32m- false[39m
+[31m+ true[39m
+
+[36m [2m❯[22m tests/guides-catalog.test.ts:[2m77:62[22m[39m
+    [90m 75|[39m   it("asks for a new check after the review interval (a trigger, not a…
+    [90m 76|[39m     const a21 = articleBySlug("a21")!;
+    [90m 77|[39m     expect(reviewDue(a21, new Date("2026-11-13T00:00:00Z"))).toBe(fals…
+    [90m   |[39m                                                              [31m^[39m
+    [90m 78|[39m     expect(reviewDue(a21, new Date("2026-11-14T12:00:00Z"))).toBe(true…
+    [90m 79|[39m     expect(state("a21", new Date("2026-11-14T12:00:00Z"))).toBe("needs…
+
+[31m[2m⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[2/3]⎯[22m[39m
+
+[41m[1m FAIL [22m[49m tests/guides-catalog.test.ts[2m > [22mverification state (about the content, never the application status)[2m > [22mstays independent of the programme's application status
+[31m[1mAssertionError[22m: expected 'needs_reverification' to be 'conflicting' // Object.is equality[39m
+
+Expected: [32m"[7mconfl[27mictin[7mg[27m"[39m
+Received: [31m"[7mneeds_reverif[27mic[7ma[27mti[7mo[27mn"[39m
+
+[36m [2m❯[22m tests/guides-catalog.test.ts:[2m85:36[22m[39m
+    [90m 83|[39m     const d = articleBySlug("discovereu")!;
+    [90m 84|[39m     expect(programmeStatus(d.recordKey!, NOW)).toBe("deadline_passed");
+    [90m 85|[39m     expect(verificationOf(d, NOW)).toBe("conflicting");
+    [90m   |[39m                                    [31m^[39m
+    [90m 86|[39m   });
+    [90m 87|[39m
+
+[31m[2m⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[3/3]⎯[22m[39m
+
+
+[2m Test Files [22m [1m[31m1 failed[39m[22m[2m | [22m[1m[32m20 passed[39m[22m[90m (21)[39m
+[2m      Tests [22m [1m[31m3 failed[39m[22m[2m | [22m[1m[32m232 passed[39m[22m[90m (235)[39m
+[2m   Start at [22m 18:22:29
+[2m   Duration [22m 6.50s[2m (tests 77%, import 15%, transform 7%, worker 1%)[22m
+
+[2m    Isolate [22m [33m21 workers spawned[39m[2m · ~57ms startup each (spawn + environment, per file)[22m
+[2m            [22m [2mat least ~1.14s faster with [22m[33misolate: false[39m[2m — reuses workers across files instead of one per file[22m
+
+
+::error file=/home/runner/work/TheJackalAcc/TheJackalAcc/tests/guides-catalog.test.ts,title=tests/guides-catalog.test.ts > verification state (about the content%2C never the application status) > reflects what the checked records say,line=65,column=33::AssertionError: expected 'needs_reverification' to be 'conflicting' // Object.is equality%0A%0AExpected: "conflicting"%0AReceived: "needs_reverification"%0A%0A ❯ tests/guides-catalog.test.ts:65:33%0A%0A
+
+::error file=/home/runner/work/TheJackalAcc/TheJackalAcc/tests/guides-catalog.test.ts,title=tests/guides-catalog.test.ts > verification state (about the content%2C never the application status) > asks for a new check after the review interval (a trigger%2C not a verdict),line=77,column=62::AssertionError: expected true to be false // Object.is equality%0A%0A- Expected%0A+ Received%0A%0A- false%0A+ true%0A%0A ❯ tests/guides-catalog.test.ts:77:62%0A%0A
+
+::error file=/home/runner/work/TheJackalAcc/TheJackalAcc/tests/guides-catalog.test.ts,title=tests/guides-catalog.test.ts > verification state (about the content%2C never the application status) > stays independent of the programme's application status,line=85,column=36::AssertionError: expected 'needs_reverification' to be 'conflicting' // Object.is equality%0A%0AExpected: "conflicting"%0AReceived: "needs_reverification"%0A%0A ❯ tests/guides-catalog.test.ts:85:36%0A%0A
