@@ -378,3 +378,6 @@ ol.timeline time { color: var(--muted); min-width: 9.5rem; }
 /* Key information: room for longer Greek labels such as «Προϋπολογισμός πρόσκλησης». */
 .keyinfo dl > div { grid-template-columns: 132px 1fr; }
 @media (max-width: 600px) { .keyinfo dl > div { grid-template-columns: 1fr; } }
+/* Grid children may shrink below their content (the one-row section links scroll inside, not the page). */
+.with-aside > *, .with-aside-r > * { min-width: 0; }
+@media (max-width: 960px) { .with-aside, .with-aside-r { grid-template-columns: minmax(0, 1fr); } }
