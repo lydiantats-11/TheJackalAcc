@@ -9,8 +9,8 @@
    "change": "add",
    "previous": "Required insured days in critical periods: the number is not stated",
    "proposed": {
-    "el": "Τουλάχιστον 125 ημέρες εργασίας (100 για οικοδόμους) στο 14μηνο πριν από τη λήξη, χωρίς τους 2 τελευταίους μήνες· ή 200 ημέρες (180 για οικοδόμους) στη διετία, με 80 ημέρες εξαρτημένης εργασίας σε κάθε έτος",
-    "en": "At least 125 days of work (100 for construction workers) in the 14 months before the end of work, excluding the last 2 months; or 200 days (180 for construction workers) over two years, with 80 days of salaried work in each year"
+    "el": "Τουλάχιστον 125 ημέρες εργασίας (100 για οικοδόμους) στο 14μηνο πριν από τη λήξη, χωρίς τους 2 τελευταίους μήνες· ή 200 ημέρες (180 για οικοδόμους) στη διετία πριν από τη λήξη. Η σελίδα αναφέρει και 80 ημέρες εξαρτημένης εργασίας σε κάθε ένα από τα 2 προηγούμενα έτη, χωρίς να είναι σαφές σε ποια περίπτωση εφαρμόζεται.",
+    "en": "At least 125 days of work (100 for construction workers) in the 14 months before the end of work, excluding the last 2 months; or 200 days (180 for construction workers) in the two years before. The page also mentions 80 days of salaried work in each of the 2 previous years, without making clear which case it applies to."
    },
    "evidence": [
     {
@@ -20,7 +20,8 @@
     }
    ],
    "material": true,
-   "status": "pending_approval"
+   "status": "pending_approval",
+   "reason": "The record said the number of days was not stated; ΔΥΠΑ's Greek page states it. The 80-day condition is kept as an open question rather than guessed."
   },
   {
    "id": "unemployment-deadline",
@@ -40,7 +41,8 @@
     }
    ],
    "material": true,
-   "status": "pending_approval"
+   "status": "pending_approval",
+   "reason": "The record had no application deadline; ΔΥΠΑ states 60 days."
   },
   {
    "id": "unemployment-amounts",
@@ -57,6 +59,11 @@
      "url": "https://prosvasis.dypa.gov.gr/anerghia-parokhes-asfalisis-misthotwn",
      "quote": "493.09€ ΚΑΙ ΑΝΩ | 22.60€ | 565.00€",
      "read_on": "2026-10-16"
+    },
+    {
+     "url": "https://ypergasias.gov.gr/nea-afxisi-katotatou-misthou-ena-akomi-simantiko-vima-gia-ti-dievrynsi-tou-diathesimou-eisodimatos-ergazomenon/",
+     "quote": "Το ημερομίσθιο των εργατοτεχνιτών από 39,30 ευρώ σε 41,09 ευρώ",
+     "read_on": "2026-10-16"
     }
    ],
    "conflict": {
@@ -64,7 +71,8 @@
     "note": "The English version of the same ΔΥΠΑ page shows €479.00 / €359.25 / €239.50. Record as a conflict until ΔΥΠΑ confirms; show the Greek page."
    },
    "material": true,
-   "status": "pending_approval"
+   "status": "pending_approval",
+   "reason": "The record said the amount was not stated. ΔΥΠΑ's Greek page states it; the English page shows older figures. €22.60 a day = 55% of the €41.09 daily wage in force from 1/4/2026 (Ministry, 26/3/2026) — our calculation, shown as such."
   },
   {
    "id": "unemployment-documents",
@@ -89,7 +97,8 @@
     }
    ],
    "material": false,
-   "status": "pending_approval"
+   "status": "pending_approval",
+   "reason": "The record had no document list; ΔΥΠΑ and Mitos list them (see data/document-lists-2026-10-16.json)."
   },
   {
    "id": "unemployment-mitos-date",
@@ -109,7 +118,8 @@
     }
    ],
    "material": false,
-   "status": "pending_approval"
+   "status": "pending_approval",
+   "reason": "Mitos was updated on 14/10/2026, the day of the check; the label showed the previous date."
   },
   {
    "id": "a21-residence-groups",
@@ -129,16 +139,77 @@
     }
    ],
    "material": false,
+   "status": "pending_approval",
+   "reason": "More precise wording of who is eligible, as OPEKA lists it."
+  },
+  {
+   "id": "studenthousing-second-window",
+   "record": "studenthousing",
+   "field": "application_status.milestones / deadline wording",
+   "change": "add",
+   "previous": "Applications for 2025–26 closed 31 Jul 2026 (status: closed)",
+   "proposed": {
+    "el": "2025–26: αιτήσεις 30/6–31/7/2026 και εκ νέου 17/9–22/9/2026 για όσους δεν υπέβαλαν στην πρώτη προθεσμία. Κλειστό.",
+    "en": "2025–26: applications 30/6–31/7/2026 and again 17/9–22/9/2026 for those who missed the first deadline. Closed."
+   },
+   "evidence": [
+    {
+     "url": "https://www.minedu.gov.gr/site/70856-17-09-26-enarxe-ypoboles-elektronikes-aiteses-gia-to-stegastiko-epidoma",
+     "quote": "από σήμερα Πέμπτη 17 Σεπτεμβρίου 2026 έως και την Τρίτη 22 Σεπτεμβρίου 2026",
+     "read_on": "2026-10-16"
+    }
+   ],
+   "reason": "The record missed the second window. The status 'closed' is correct today (the window ended 22 Sep 2026), so no status change.",
+   "material": false,
+   "status": "pending_approval"
+  },
+  {
+   "id": "art5c-deadline-and-extension",
+   "record": "art5c",
+   "field": "application timing + new rule",
+   "change": "add",
+   "previous": "Application timing not recorded; Decision Α.1096/2026 not modelled",
+   "proposed": {
+    "el": "Αίτηση έως το τέλος του ίδιου έτους αν η δραστηριότητα αρχίζει έως 2 Ιουλίου, αλλιώς έως το τέλος του επόμενου. Με την Α.1096/2026 το καθεστώς επεκτείνεται σε όσους μεταφέρουν τη φορολογική τους κατοικία για να παρέχουν υπηρεσίες στο Ελληνικό Δημόσιο.",
+    "en": "Apply by the end of the same year if the activity starts by 2 July, otherwise by the end of the following year. Decision Α.1096/2026 extends the regime to people moving tax residence to provide services to the Greek State."
+   },
+   "evidence": [
+    {
+     "url": "https://www.aade.gr/en/psifiakes-ypiresies/eisodima/ypoboli-aitisis-ypagogis-se-eidiko-tropo-forologisis-arthro-5g-toy-kfe",
+     "quote": "must be submitted by the end of that same year",
+     "read_on": "2026-10-16"
+    }
+   ],
+   "reason": "Fills the 'dates' gap and the 'outdated' flag from the audit.",
+   "material": true,
+   "status": "pending_approval"
+  },
+  {
+   "id": "art5a-5b-deadline",
+   "record": "art5a",
+   "also_records": [
+    "art5b"
+   ],
+   "field": "application timing",
+   "change": "add",
+   "previous": "Application timing not recorded",
+   "proposed": {
+    "el": "Αίτηση έως τις 31 Μαρτίου του εκάστοτε φορολογικού έτους (οδηγός ΑΑΔΕ 2023).",
+    "en": "Apply by 31 March of the tax year concerned (AADE guide, 2023)."
+   },
+   "evidence": [
+    {
+     "url": "https://www.aade.gr/sites/default/files/2023-09/forolologika_kinitra_pros_newn_forol_kat_kfe_new_EL.pdf",
+     "quote": "μέχρι τις 31 Μαρτίου του εκάστοτε φορολογικού έτους",
+     "read_on": "2026-10-16"
+    }
+   ],
+   "reason": "Fills the 'dates' gap; the source is still the 2023 guide, so the 'outdated' flag stays until a current source confirms it.",
+   "material": true,
    "status": "pending_approval"
   }
  ],
  "blocked_follow_ups": [
-  {
-   "record": "studenthousing",
-   "issue": "A Ministry notice titled 'start of electronic applications for the housing allowance' (URL dated 17-09-26) is listed as a source, but the record says applications closed on 31 Jul 2026. If it opened a new round, the record's status is wrong.",
-   "blocker": "Re-reading minedu.gov.gr and portal.stegastiko.minedu.gov.gr on 16 Oct needed a permission that was not answered in time.",
-   "action": "Open both pages; record which academic year and dates the notice covers; update status and amounts (pending approval)."
-  },
   {
    "record": "studenthousing",
    "issue": "Income criteria are in the Ministry circular, not checked.",
@@ -153,9 +224,9 @@
   },
   {
    "record": "art5c",
-   "issue": "Extension by Decision Α.1096/2026 not modelled.",
-   "blocker": "Not attempted in this session (scope: 8 records, priority to unemployment).",
-   "action": "Read Α.1096/2026 on aade.gr; propose a rule (pending approval)."
+   "issue": "Decision Α.1096/2026 found on AADE (16 Oct) — see revision art5c-deadline-and-extension; itemised documents in Α.1087/2021 article 3 not yet read.",
+   "blocker": "None.",
+   "action": "Read Α.1087/2021 article 3."
   },
   {
    "record": "art5b",
@@ -183,9 +254,9 @@
   },
   {
    "record": "all",
-   "issue": "Required documents not recorded for 7 of 8 records.",
-   "blocker": "The 14 Oct check recorded steps, not document lists.",
-   "action": "Record the official document list per programme, starting with A21."
+   "issue": "Document lists: found for A21, unemployment, DiscoverEU; partly for 5Γ and 5Α; not published for 5Β, Spiti mou II, student housing (data/document-lists-2026-10-16.json).",
+   "blocker": "Not on the official pages read.",
+   "action": "Read the Α.1087/2021 decision, the student housing circular and the bank FAQ."
   }
  ]
 }

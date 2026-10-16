@@ -128,6 +128,15 @@ describe("unemployment benefit application guide (draft)", () => {
     expect(verificationOf(a, NOW)).toBe("draft");
     expect(searchGuides({ q: "ανεργίας" }).some((x) => x.slug === a.slug)).toBe(false);
   });
+  it("explains each official-source conflict instead of picking a value silently", () => {
+    const text = a.limitations.map((l) => l.en).join(" ");
+    expect(text).toMatch(/€565\.00/);
+    expect(text).toMatch(/€479\.00/);
+    expect(text).toMatch(/COVID-19/);
+    expect(text).toMatch(/16 months/);
+    expect(text).toMatch(/24 months/);
+    expect(text).toMatch(/our own calculation/);
+  });
   it("cites only official sources", () => {
     for (const s of a.sources) expect(new URL(s.url).hostname, s.url).toMatch(/(^|\.)(gov\.gr)$/);
   });

@@ -13,6 +13,10 @@
  *       administrative appeal, free of charge.
  *  [G]  gov.gr — «Αίτηση επιδόματος ανεργίας»: registered unemployed apply online with TAXISnet credentials.
  *  [Y]  Υπουργείο Εργασίας — pilot new unemployment benefit (23/12/2024), from the 14 Oct record.
+ *  [P]  ΔΥΠΑ — launch of the pilot new unemployment benefit (28/3/2025): up to 24 months, ~15,000 randomly selected.
+ *  [W]  Υπουργείο Εργασίας — minimum wage from 1/4/2026 (26/3/2026): daily wage €41.09; benefits such as the
+ *       unemployment benefit are calculated on it.
+ * Conflicts investigated on 16 Oct (owner request): see `limitations` for what each difference is explained by.
  * No screenshots were available; screens that the sources do not describe are marked as awaiting confirmation.
  */
 import type { Article } from "@/lib/site/guide-catalog";
@@ -23,6 +27,8 @@ const D3 = "https://prosvasis.dypa.gov.gr/eggrafh-sto-mhtroo-anergon-deltia-aner
 const M = "https://mitos.gov.gr/index.php/%CE%94%CE%94:%CE%A4%CE%B1%CE%BA%CF%84%CE%B9%CE%BA%CE%AE_%CE%95%CF%80%CE%B9%CE%B4%CF%8C%CF%84%CE%B7%CF%83%CE%B7_%CE%91%CE%BD%CE%B5%CF%81%CE%B3%CE%AF%CE%B1%CF%82";
 const G = "https://www.gov.gr/el/services/1001289/aitese-epidomatos-anergias";
 const Y = "https://ypergasias.gov.gr/neo-epidoma-anergias-me-perissotera-kinitra-gia-ergasia-pio-dikaio-pio-antapodotiko/";
+const P = "https://prosvasis.dypa.gov.gr/en/ksekinise-to-pilotiko-proghramma-ghia-to-neo-epidoma-anerghias";
+const W = "https://ypergasias.gov.gr/nea-afxisi-katotatou-misthou-ena-akomi-simantiko-vima-gia-ti-dievrynsi-tou-diathesimou-eisodimatos-ergazomenon/";
 
 export const UNEMPLOYMENT_APPLICATION: Article = {
   slug: "unemployment-benefit-application",
@@ -42,14 +48,15 @@ export const UNEMPLOYMENT_APPLICATION: Article = {
     { el: "Όσοι κάνουν αίτηση για πρώτη φορά. Για όσους έχουν επιδοτηθεί ξανά ισχύουν πρόσθετοι όροι στην επίσημη σελίδα.", en: "First-time applicants. People who received the benefit before have extra conditions on the official page." },
   ],
   provides: {
-    el: "Μηνιαίο επίδομα για 5 έως 12 μήνες, ανάλογα με τις ημέρες ασφάλισης. Κατά την ελληνική σελίδα της ΔΥΠΑ: 565,00 € τον μήνα για μέσο μηνιαίο μισθό 493,09 € και άνω, 423,75 € για 246,55–493,08 € και 282,50 € έως 246,54 €. Προσαύξηση 10% για κάθε προστατευόμενο μέλος.",
-    en: "A monthly benefit for 5 to 12 months, depending on insured days. According to ΔΥΠΑ's Greek page: €565.00 a month for average monthly pay of €493.09 or more, €423.75 for €246.55–€493.08 and €282.50 up to €246.54. A 10% increase for each dependent family member.",
+    el: "Μηνιαίο επίδομα για 5 έως 12 μήνες, ανάλογα με τις ημέρες ασφάλισης. Το ποσό υπολογίζεται με βάση τον κατώτατο μισθό, γι' αυτό αλλάζει όταν αλλάζει εκείνος. Η ελληνική σελίδα της ΔΥΠΑ (χωρίς ημερομηνία) αναφέρει σήμερα 565,00 € τον μήνα για μέσο μηνιαίο μισθό 493,09 € και άνω, 423,75 € για 246,55–493,08 € και 282,50 € έως 246,54 €, με προσαύξηση 10% για κάθε προστατευόμενο μέλος. Το ποσό που ισχύει για εσάς ορίζεται στην απόφαση της ΔΥΠΑ.",
+    en: "A monthly benefit for 5 to 12 months, depending on insured days. The amount is calculated on the minimum wage, so it changes when that changes. ΔΥΠΑ's Greek page (undated) currently gives €565.00 a month for average monthly pay of €493.09 or more, €423.75 for €246.55–€493.08 and €282.50 up to €246.54, plus 10% for each dependent family member. The amount that applies to you is set in ΔΥΠΑ's decision.",
   },
   eligibility: [
     { el: "Η σχέση εξαρτημένης εργασίας έληξε ή καταγγέλθηκε από τον εργοδότη.", en: "Your salaried employment ended or was terminated by the employer." },
     { el: "Την ημέρα της αίτησης δεν εργάζεστε σε άλλον εργοδότη ή ως ελεύθερος επαγγελματίας και είστε ικανός/ή και διαθέσιμος/η για εργασία.", en: "On the day you apply you do not work for another employer or as self-employed, and you are able and available to work." },
     { el: "Πρώτη περίπτωση: τουλάχιστον 125 ημέρες εργασίας (100 για οικοδόμους) μέσα στους 14 μήνες πριν από τη λήξη, χωρίς τους δύο τελευταίους μήνες.", en: "Case one: at least 125 days of work (100 for construction workers) in the 14 months before the end of work, not counting the last two months." },
-    { el: "Δεύτερη περίπτωση: τουλάχιστον 200 ημέρες εργασίας (180 για οικοδόμους) στα δύο προηγούμενα έτη, με 80 ημέρες εξαρτημένης εργασίας σε κάθε έτος.", en: "Case two: at least 200 days of work (180 for construction workers) in the two previous years, with 80 days of salaried work in each year." },
+    { el: "Δεύτερη περίπτωση: τουλάχιστον 200 ημέρες εργασίας (180 για οικοδόμους) στα δύο προηγούμενα έτη πριν από τη λήξη.", en: "Case two: at least 200 days of work (180 for construction workers) in the two years before the end of work." },
+    { el: "Η σελίδα αναφέρει επίσης 80 ημέρες εξαρτημένης εργασίας σε κάθε ένα από τα δύο προηγούμενα έτη· σε ποια περίπτωση εφαρμόζεται, επιβεβαιώστε το με τη ΔΥΠΑ.", en: "The page also mentions 80 days of salaried work in each of the two previous years; confirm with ΔΥΠΑ which case this applies to." },
     { el: "Εγγραφή στο μητρώο ανέργων με ενεργό Δελτίο Ανεργίας.", en: "Registration as unemployed with a valid unemployment card." },
   ],
   documents: [
@@ -104,7 +111,9 @@ export const UNEMPLOYMENT_APPLICATION: Article = {
     { q: { el: "Πόσο διαρκεί η επιδότηση;", en: "How long is the benefit paid?" },
       a: { el: "Για 125–149 ημέρες: 5 μήνες· 150–179: 6· 180–219: 8· 220–249: 10· 250 και άνω: 12 μήνες (πίνακας 1.Α της ΔΥΠΑ για το 14μηνο). Για τη διετία και τους οικοδόμους ισχύουν άλλοι πίνακες.", en: "125–149 days: 5 months; 150–179: 6; 180–219: 8; 220–249: 10; 250 or more: 12 months (ΔΥΠΑ table 1.A, 14-month period). Other tables apply to the two-year period and to construction workers." } },
     { q: { el: "Τι είναι το νέο πιλοτικό επίδομα ανεργίας;", en: "What is the new pilot unemployment benefit?" },
-      a: { el: "Από το 2025 εφαρμόζεται πιλοτικά νέο επίδομα σε τυχαία επιλεγμένους δικαιούχους, με άλλο ποσό και διάρκεια. Η αίτηση είναι η ίδια. Οι όροι του δεν περιγράφονται σε αυτόν τον οδηγό.", en: "Since 2025 a new benefit is piloted for randomly selected claimants, with a different amount and duration. The application is the same. Its terms are not covered in this guide." } },
+      a: { el: "Από τις 28/3/2025 η ΔΥΠΑ εφαρμόζει πιλοτικά νέο επίδομα σε περίπου 15.000 τυχαία επιλεγμένους δικαιούχους που δεν είχαν λάβει επίδομα ανεργίας τα 4 προηγούμενα χρόνια. Διαρκεί έως 24 μήνες, με άλλον τρόπο υπολογισμού. Δεν το επιλέγετε εσείς· η αίτηση είναι η ίδια. Οι όροι του δεν περιγράφονται σε αυτόν τον οδηγό.", en: "Since 28/3/2025 ΔΥΠΑ has piloted a new benefit for about 15,000 randomly selected claimants who had no unemployment benefit in the previous 4 years. It lasts up to 24 months and is calculated differently. You do not choose it; the application is the same. Its terms are not covered in this guide." } },
+    { q: { el: "Μπορώ να κάνω την αίτηση αυτοπροσώπως;", en: "Can I apply in person?" },
+      a: { el: "Η ηλεκτρονική αίτηση είναι ο βασικός τρόπος. Ο Μίτος αναφέρει και αυτοπρόσωπη υποβολή στο ΚΠΑ2 και ότι η αποκλειστικά ηλεκτρονική υποβολή ίσχυε στα μέτρα για τον COVID-19. Αν χρειάζεστε βοήθεια, επικοινωνήστε πρώτα με το ΚΠΑ2 σας.", en: "Applying online is the main way. Mitos also lists applying in person at a ΚΠΑ2 office and says the online-only rule applied under the COVID-19 measures. If you need help, contact your ΚΠΑ2 office first." } },
   ],
   sections: [],
   sources: [
@@ -113,14 +122,16 @@ export const UNEMPLOYMENT_APPLICATION: Article = {
     { label: "Μίτος — Τακτική Επιδότηση Ανεργίας (ενημ. 14/10/2026)", url: M },
     { label: "gov.gr — Αίτηση επιδόματος ανεργίας", url: G },
     { label: "ΔΥΠΑ — Unemployment & insurance benefits of employees (English)", url: D2 },
+    { label: "ΔΥΠΑ — Έναρξη πιλοτικού νέου επιδόματος ανεργίας (28/3/2025)", url: P },
     { label: "Υπουργείο Εργασίας — νέο επίδομα ανεργίας (πιλοτικό, 23/12/2024)", url: Y },
+    { label: "Υπουργείο Εργασίας — αύξηση κατώτατου μισθού από 1/4/2026 (26/3/2026)", url: W },
   ],
   checkedOn: "2026-10-16",
   reviewAfterDays: 30,
   limitations: [
-    { el: "Τα ποσά διαφέρουν μεταξύ της ελληνικής σελίδας της ΔΥΠΑ (ανώτερο 565,00 €) και της αγγλικής (ανώτερο 479,00 €). Ο οδηγός δείχνει την ελληνική σελίδα· η τελική επιβεβαίωση ανήκει στη ΔΥΠΑ.", en: "Amounts differ between ΔΥΠΑ's Greek page (top band €565.00) and its English page (top band €479.00). This guide shows the Greek page; ΔΥΠΑ is responsible for confirming." },
-    { el: "Η ελληνική σελίδα αναφέρει ότι η αίτηση γίνεται «μόνο» ηλεκτρονικά, αλλά και ότι μπορεί να γίνει αυτοπροσώπως στο ΚΠΑ2. Ρωτήστε το ΚΠΑ2 σας αν χρειάζεστε αυτοπρόσωπη εξυπηρέτηση.", en: "The Greek page says applications are made «only» online, but also that you can apply in person at a ΚΠΑ2 office. Ask your ΚΠΑ2 office if you need in-person help." },
-    { el: "Για το πιλοτικό νέο επίδομα οι επίσημες πηγές αναφέρουν διάρκεια έως 16 μήνες (ανακοίνωση) ή έως 24 (συχνές ερωτήσεις).", en: "For the pilot new benefit, official sources give a duration of up to 16 months (announcement) or up to 24 (FAQ)." },
+    { el: "Ποσά: η ελληνική σελίδα της ΔΥΠΑ δίνει 565,00 € (ανώτερο κλιμάκιο), η αγγλική 479,00 €. Καμία δεν έχει ημερομηνία. Το ημερήσιο ποσό της ελληνικής σελίδας (22,60 €) αντιστοιχεί στο 55% του ημερομισθίου 41,09 € που ισχύει από 1/4/2026, άρα η αγγλική σελίδα πιθανότατα δείχνει παλαιότερα ποσά. Αυτό είναι δικός μας υπολογισμός· το ποσό επιβεβαιώνεται μόνο από τη ΔΥΠΑ.", en: "Amounts: ΔΥΠΑ's Greek page gives €565.00 (top band), the English page €479.00. Neither is dated. The Greek page's daily amount (€22.60) equals 55% of the €41.09 daily wage in force from 1/4/2026, so the English page most likely shows older amounts. This is our own calculation; only ΔΥΠΑ can confirm the amount." },
+    { el: "Τρόπος υποβολής: η ελληνική σελίδα της ΔΥΠΑ γράφει «μόνο» ηλεκτρονικά αλλά και αυτοπροσώπως στο ΚΠΑ2. Ο Μίτος (ενημ. 14/10/2026) εξηγεί ότι η αποκλειστικά ηλεκτρονική υποβολή αφορούσε τα μέτρα για τον COVID-19. Δεν βρήκαμε επίσημη ανακοίνωση για το αν δέχονται σήμερα όλα τα ΚΠΑ2 αυτοπρόσωπες αιτήσεις.", en: "How to apply: ΔΥΠΑ's Greek page says «only» online but also in person at a ΚΠΑ2 office. Mitos (updated 14/10/2026) explains the online-only rule belonged to the COVID-19 measures. We found no official notice on whether every ΚΠΑ2 office accepts in-person applications today." },
+    { el: "Πιλοτικό νέο επίδομα: η ανακοίνωση του Υπουργείου (23/12/2024, πριν από την έναρξη) ανέφερε έως 16 μήνες· η ανακοίνωση έναρξης της ΔΥΠΑ (28/3/2025) αναφέρει έως 24 μήνες. Ο οδηγός ακολουθεί τη νεότερη ανακοίνωση του φορέα που το εφαρμόζει.", en: "Pilot new benefit: the Ministry's announcement (23/12/2024, before launch) said up to 16 months; ΔΥΠΑ's launch notice (28/3/2025) says up to 24 months. This guide follows the later notice of the body that runs it." },
     { el: "Οι οθόνες μετά την επιλογή της αίτησης δεν έχουν επιβεβαιωθεί με στιγμιότυπα· τα αντίστοιχα βήματα σημειώνονται.", en: "The screens after choosing the application have not been confirmed with screenshots; those steps are marked." },
   ],
   recordKey: "manual:unemployment",

@@ -77,8 +77,8 @@
      "note": ""
     },
     "documents": {
-     "status": "missing",
-     "note": "Not recorded"
+     "status": "awaiting_confirmation",
+     "note": "Found 16 Oct: ID/passport/residence-permit number only — pending approval"
     },
     "dates": {
      "status": "verified",
@@ -151,20 +151,20 @@
      "note": ""
     },
     "documents": {
-     "status": "missing",
-     "note": "Not recorded"
+     "status": "awaiting_confirmation",
+     "note": "Partly published: documents only if not checked digitally (Α.1087/2021 art. 3, not yet read)"
     },
     "dates": {
      "status": "awaiting_confirmation",
-     "note": "Application timing not recorded"
+     "note": "Found 16 Oct: by end of same/next year depending on start date — pending approval"
     },
     "amounts": {
      "status": "verified",
      "note": "50% exemption for 7 tax years"
     },
     "amendments": {
-     "status": "outdated",
-     "note": "Extension by Decision Α.1096/2026 not modelled"
+     "status": "awaiting_confirmation",
+     "note": "Α.1096/2026 found 16 Oct — pending approval"
     },
     "last_verified": {
      "status": "verified",
@@ -230,7 +230,7 @@
     },
     "dates": {
      "status": "awaiting_confirmation",
-     "note": "Application timing not recorded"
+     "note": "Found 16 Oct: by 31 March of the tax year (2023 guide) — pending approval"
     },
     "amounts": {
      "status": "verified",
@@ -299,12 +299,12 @@
      "note": ""
     },
     "documents": {
-     "status": "missing",
-     "note": "Not recorded"
+     "status": "awaiting_confirmation",
+     "note": "Found 16 Oct: proof of €500,000 transfer — pending approval"
     },
     "dates": {
      "status": "awaiting_confirmation",
-     "note": "Application timing not recorded"
+     "note": "Found 16 Oct: by 31 March of the tax year (2023 guide) — pending approval"
     },
     "amounts": {
      "status": "verified",
@@ -448,19 +448,19 @@
     },
     "documents": {
      "status": "missing",
-     "note": "Not recorded"
+     "note": "Not published on the pages read (16 Oct); circular next"
     },
     "dates": {
-     "status": "awaiting_confirmation",
-     "note": "Recorded closed (31 Jul 2026), but a Ministry notice dated 17 Sep 2026 is titled 'start of applications'; re-read blocked on 16 Oct"
+     "status": "verified",
+     "note": "Closed — confirmed 16 Oct: second window 17–22 Sep 2026 for 2025–26 has ended (revision adds it)"
     },
     "amounts": {
      "status": "missing",
-     "note": "2025–26 amounts not stated on the official page"
+     "note": "2025–26 amounts not stated on the official page (re-checked 16 Oct)"
     },
     "amendments": {
-     "status": "awaiting_confirmation",
-     "note": "See dates"
+     "status": "verified",
+     "note": "Ministry notices of 29 Jul and 17 Sep 2026 read"
     },
     "last_verified": {
      "status": "verified",
@@ -521,8 +521,8 @@
      "note": ""
     },
     "documents": {
-     "status": "missing",
-     "note": "Not recorded"
+     "status": "awaiting_confirmation",
+     "note": "Found 16 Oct: ΑΜΚΑ for all members, IBAN, plus case-specific uploads — pending approval"
     },
     "dates": {
      "status": "verified",
@@ -627,7 +627,7 @@
   "art5b": "matching, partial (re-check source)",
   "art5a": "matching, partial (re-check source)",
   "spiti2": "informational (closed)",
-  "studenthousing": "informational (income criteria and status unconfirmed)",
+  "studenthousing": "informational (closed; income criteria not published on the pages read)",
   "a21": "matching, partial (income limits missing → 'more information needed')",
   "unemployment": "matching after the proposed revision is approved"
  }
