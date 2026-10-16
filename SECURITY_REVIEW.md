@@ -1,4 +1,7 @@
-# Security & privacy gap assessment — Phase 2 (2026-10-13)
+# Security & privacy gap assessment
+
+First written 2026-10-13 (Phase 2); reviewed and extended 2026-10-16 (Workstream E2) — see the section at the end.
+Related: `docs/PRIVACY_DATA_INVENTORY.md`, `docs/GDPR_READINESS_CHECKLIST.md`.
 
 This is an engineering review, not a legal or GDPR compliance certification.
 
@@ -51,3 +54,37 @@ This is an engineering review, not a legal or GDPR compliance certification.
 - No identity numbers, tax IDs, bank details or documents are collected.
 - Birth year is only requested when an age rule's boundary falls inside the user's age range.
 - Every sensitive question offers "Not sure" / "Prefer not to answer"; declining never counts against eligibility.
+
+## Review of 16 Oct 2026 (Workstream E2)
+
+Method: read of the code, migrations and configuration on commit `a466de9`, plus the automated tests listed above (they
+run on every push). Nothing was tested against a hosted system, because none exists. **Verified** = seen in code and
+covered by a test; **Seen in code** = read, not tested; **Assumption** = needs checking once hosted.
+
+| Area | Finding | Status |
+|---|---|---|
+| Authentication | scrypt password hashes; minimum 10 characters; login limited per email (5 failures / 15 min) and per IP (20, only with `TRUST_PROXY=true`); sessions 14 days, token stored as SHA-256 | Verified |
+| Session cookie | httpOnly, SameSite=Lax, Secure only when `COOKIE_SECURE=true` | Seen in code — **must be `true` on any host** (in the setup guide) |
+| Authorization | Users reach only their own profile, saved items, matches and export; admin actions require the admin role | Verified (#15, #16, #20) |
+| Database permissions | Supabase-style API roles have no privileges; the app still connects as the table owner | Verified / **open gap 1** |
+| Secrets | Only in environment variables / GitHub secrets; none in the repository (searched: no keys, passwords or connection strings committed) | Seen in code |
+| Input validation | zod schemas and database CHECK constraints on every profile field; guide search query trimmed to 100 characters and rendered as text | Verified (profile) / Seen in code (search) |
+| Injection | All app SQL through the `postgres` tagged-template client (parameterised); the only raw SQL is the migration runner executing the repository's own migration files | Seen in code |
+| XSS | React escapes output; no `dangerouslySetInnerHTML` with user data; CSP same-origin, but `'unsafe-inline'` scripts | Seen in code / **open gap 2** |
+| File uploads | None for users (only admins trigger fetches of official documents, from an allow-list) | Verified |
+| Error logging | No request or profile data is written to logs by the app; hosting logs not yet chosen | Seen in code / Assumption |
+| Backups and deletion | Account deletion cascades (verified); backups not set up, so deleted data cannot linger in backups yet | Verified / **open gap 7** |
+| Dependencies | Locked in `package-lock.json`; no automated vulnerability scan configured | **New gap 10** |
+| Private preview gate | HTTP Basic password on every page when `SITE_PASSWORD` is set, constant-time comparison, noindex | Verified (`proxy.test.ts`) |
+| Account enumeration | Registration says when an email is already registered | **New gap 11** (low) |
+| Free-text notes | Saved-item notes accept 5,000 characters of free text, which could hold personal data | **New gap 12** (low) |
+
+### New gaps added 16 Oct 2026
+| # | Gap | Plan |
+|---|---|---|
+| 10 | No automated dependency vulnerability scanning. | Enable GitHub Dependabot alerts (free) — owner action in repository settings. |
+| 11 | Registration reveals whether an email is already registered. | Accept for the private preview; before public launch, switch to an email-confirmation flow with a neutral message. |
+| 12 | Saved-item notes are free text. | Add a short "do not enter personal data" hint, or drop notes, before real users. |
+
+No defect found today needed an immediate code fix; none of the gaps is exploitable on the private preview with
+made-up profiles. Priority order for remediation is in `docs/GDPR_READINESS_CHECKLIST.md`.
