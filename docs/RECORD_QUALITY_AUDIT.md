@@ -11,9 +11,9 @@ Legend: ✔ verified · ✖ missing · ⚠ conflicting · ⌛ outdated · … aw
 | Record | Verified | Missing | Conflicting | Outdated | Awaiting | Applicable fields complete | Can support |
 |---|---|---|---|---|---|---|---|
 | DiscoverEU — free travel pass for 18-year-olds | 13 | 0 | 1 | 0 | 1 | 87% (13/15) | informational (round closed; next round not announced) |
-| Article 5C — 50% income-tax exemption for people moving tax residence to Greece | 10 | 0 | 0 | 0 | 5 | 67% (10/15) | matching, partial |
-| Article 5B — 7% tax for pensioners with a foreign pension | 9 | 2 | 0 | 1 | 3 | 60% (9/15) | matching, partial (re-check source) |
-| Article 5A — alternative taxation for investors | 10 | 1 | 0 | 1 | 4 | 62% (10/16) | matching, partial (re-check source) |
+| Article 5C — 50% income-tax exemption for people moving tax residence to Greece | 11 | 0 | 0 | 0 | 4 | 73% (11/15) | matching, partial |
+| Article 5B — 7% tax for pensioners with a foreign pension | 10 | 2 | 0 | 1 | 2 | 67% (10/15) | matching, partial (re-check source) |
+| Article 5A — alternative taxation for investors | 11 | 1 | 0 | 1 | 3 | 69% (11/16) | matching, partial (re-check source) |
 | "Spiti mou II" — first-home loans | 11 | 3 | 2 | 0 | 0 | 69% (11/16) | informational (closed) |
 | Student housing allowance | 10 | 3 | 0 | 0 | 3 | 62% (10/16) | informational (closed; income criteria not published on the pages read) |
 | A21 — Child benefit | 12 | 2 | 0 | 0 | 2 | 75% (12/16) | matching, partial (income limits missing → 'more information needed') |
@@ -38,7 +38,7 @@ the owner's approval (document lists in `data/document-lists-2026-10-16.json`, r
 | Age and residency conditions | ✔ verified | ✔ verified | ✔ verified | ✔ verified | ✔ verified | … awaiting | ✔ verified | — n/a |
 | ΚΑΔ / business-sector requirements | — n/a | — n/a | — n/a | — n/a | — n/a | — n/a | — n/a | — n/a |
 | Required documents | … awaiting | … awaiting | ✖ missing | … awaiting | ✖ missing | ✖ missing | … awaiting | … awaiting |
-| Opening and closing dates | ✔ verified | … awaiting | … awaiting | … awaiting | ✔ verified | ✔ verified | ✔ verified | … awaiting |
+| Opening and closing dates | ✔ verified | ✔ verified | ✔ verified | ✔ verified | ✔ verified | ✔ verified | ✔ verified | … awaiting |
 | Amounts / support calculation | ✔ verified | ✔ verified | ✔ verified | ✔ verified | ✔ verified | ✖ missing | ✔ verified | ⚠ conflicting |
 | Programme amendments | ✔ verified | … awaiting | ⌛ outdated | ⌛ outdated | ✔ verified | ✔ verified | ✔ verified | … awaiting |
 | Last verification timestamp | ✔ verified | ✔ verified | ✔ verified | ✔ verified | ✔ verified | ✔ verified | ✔ verified | ✔ verified |
@@ -53,21 +53,18 @@ the owner's approval (document lists in `data/document-lists-2026-10-16.json`, r
 ### Article 5C — 50% income-tax exemption for people moving tax residence to Greece
 - **Eligibility requirements**: Some rules paraphrased; verbatim quotes still to capture
 - **Required documents**: Partly published: documents only if not checked digitally (Α.1087/2021 art. 3, not yet read)
-- **Opening and closing dates**: Found 16 Oct: by end of same/next year depending on start date — pending approval
 - **Programme amendments**: Α.1096/2026 found 16 Oct — pending approval
 - **Evidence for each material field**: verbatim quotes still to capture
 
 ### Article 5B — 7% tax for pensioners with a foreign pension
 - **Eligibility requirements**: Paraphrased; verbatim quotes still to capture
 - **Required documents**: Not recorded
-- **Opening and closing dates**: Found 16 Oct: by 31 March of the tax year (2023 guide) — pending approval
 - **Programme amendments**: Source is a 2023 guide; later amendments not checked
 - **Evidence for each material field**: verbatim quotes still to capture
 
 ### Article 5A — alternative taxation for investors
 - **Eligibility requirements**: Some rules paraphrased
 - **Required documents**: Found 16 Oct: proof of €500,000 transfer — pending approval
-- **Opening and closing dates**: Found 16 Oct: by 31 March of the tax year (2023 guide) — pending approval
 - **Programme amendments**: Source is a 2023 guide; later amendments not checked
 - **Evidence for each material field**: verbatim quotes still to capture
 
@@ -100,23 +97,25 @@ the owner's approval (document lists in `data/document-lists-2026-10-16.json`, r
 
 ## Quality report (B5) — 16 Oct 2026, after the second pass
 
-**Measure.** Average share of applicable fields verified for the 8 approved records: **66 %** (range 57 % – 87 %).
-It does not rise until the owner approves the pending revisions; facts found but not approved count as "awaiting".
-If all 9 revisions and the document lists are approved, every record's "dates" and most "documents" fields become verified.
+**Measure.** Average share of applicable fields verified for the 8 approved records: **70 %** (range 57 % – 87 %).
+Facts found on 16 Oct but not yet approved count as "awaiting"; the figure rises only after the owner approves them.
 
-**Revisions pending approval: 9** (`data/proposed-revisions-2026-10-16.json`) — unemployment ×5, A21 ×1, student
-housing ×1, Article 5Γ ×1, Articles 5Α/5Β ×1. Each has an official URL, a quote, the read date and the reason.
+**Revisions pending approval: 7** (`data/proposed-revisions-2026-10-16.json`) — unemployment ×5, A21 ×1, Article 5Γ ×1.
+Each has an official URL, a quote, the read date and the reason.
+
+**Correction to the first pass.** The first pass flagged the student housing status as possibly wrong and listed the
+application timing of the three tax regimes as "not recorded". Both were already in the approved file on 14 Oct
+(student housing: 30 Jun–31 Jul and 17–22 Sep 2026; 5Α/5Β: by 31 March; 5Γ: by the end of the same or next year).
+The first pass read the records' uncertainty notes but not their deadline fields. The matrix is corrected, two proposals
+were withdrawn (logged in the revisions file) and the student housing status "closed" is confirmed against the
+Ministry's 17 Sep 2026 notice: the second window for 2025–26 ended on 22 Sep 2026.
 
 **Document lists** (`data/document-lists-2026-10-16.json`): found for A21, unemployment and DiscoverEU; partly for 5Γ
 (attached only when conditions cannot be checked digitally) and 5Α (proof of the €500,000 transfer); not published on
 the pages read for 5Β, Spiti mou II and student housing. Documents are kept apart from eligibility conditions.
 
-**Student housing status — resolved.** The 17 Sep 2026 notice re-opened applications for **2025–26** from 17 to 22 Sep
-2026 for people who missed the first deadline (30 Jun – 31 Jul 2026). That window has ended, so the record's status
-"closed" is correct; the revision only adds the second window.
-
 **Unresolved conflicts:** DiscoverEU travel length; Spiti mou II income range; unemployment amounts (Greek vs English
-ΔΥΠΑ page — explained as an outdated English page, not yet confirmed by ΔΥΠΑ); the 80-day condition's case.
+ΔΥΠΑ page — most likely an outdated English page, not yet confirmed by ΔΥΠΑ); which case the 80-day condition belongs to.
 
 **Engine protection (B4).** Covered by tests: a high relevance score cannot override ineligibility (`tests/engine.test.ts`,
 #23); a requirement set not verified complete never yields plain "potentially eligible"; an unknown binding requirement

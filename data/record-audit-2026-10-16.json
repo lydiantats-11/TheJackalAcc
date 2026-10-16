@@ -155,8 +155,8 @@
      "note": "Partly published: documents only if not checked digitally (Α.1087/2021 art. 3, not yet read)"
     },
     "dates": {
-     "status": "awaiting_confirmation",
-     "note": "Found 16 Oct: by end of same/next year depending on start date — pending approval"
+     "status": "verified",
+     "note": "Rule recorded 14 Oct: by end of same/next year depending on start date (re-confirmed 16 Oct)"
     },
     "amounts": {
      "status": "verified",
@@ -229,8 +229,8 @@
      "note": "Not recorded"
     },
     "dates": {
-     "status": "awaiting_confirmation",
-     "note": "Found 16 Oct: by 31 March of the tax year (2023 guide) — pending approval"
+     "status": "verified",
+     "note": "Recorded 14 Oct: by 31 March of the tax year (2023 guide)"
     },
     "amounts": {
      "status": "verified",
@@ -303,8 +303,8 @@
      "note": "Found 16 Oct: proof of €500,000 transfer — pending approval"
     },
     "dates": {
-     "status": "awaiting_confirmation",
-     "note": "Found 16 Oct: by 31 March of the tax year (2023 guide) — pending approval"
+     "status": "verified",
+     "note": "Recorded 14 Oct: by 31 March of the tax year (2023 guide)"
     },
     "amounts": {
      "status": "verified",
@@ -452,7 +452,7 @@
     },
     "dates": {
      "status": "verified",
-     "note": "Closed — confirmed 16 Oct: second window 17–22 Sep 2026 for 2025–26 has ended (revision adds it)"
+     "note": "Both 2025–26 windows recorded 14 Oct (30 Jun–31 Jul, 17–22 Sep 2026); re-confirmed 16 Oct — closed"
     },
     "amounts": {
      "status": "missing",

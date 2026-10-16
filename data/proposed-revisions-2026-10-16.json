@@ -143,68 +143,23 @@
    "reason": "More precise wording of who is eligible, as OPEKA lists it."
   },
   {
-   "id": "studenthousing-second-window",
-   "record": "studenthousing",
-   "field": "application_status.milestones / deadline wording",
-   "change": "add",
-   "previous": "Applications for 2025–26 closed 31 Jul 2026 (status: closed)",
-   "proposed": {
-    "el": "2025–26: αιτήσεις 30/6–31/7/2026 και εκ νέου 17/9–22/9/2026 για όσους δεν υπέβαλαν στην πρώτη προθεσμία. Κλειστό.",
-    "en": "2025–26: applications 30/6–31/7/2026 and again 17/9–22/9/2026 for those who missed the first deadline. Closed."
-   },
-   "evidence": [
-    {
-     "url": "https://www.minedu.gov.gr/site/70856-17-09-26-enarxe-ypoboles-elektronikes-aiteses-gia-to-stegastiko-epidoma",
-     "quote": "από σήμερα Πέμπτη 17 Σεπτεμβρίου 2026 έως και την Τρίτη 22 Σεπτεμβρίου 2026",
-     "read_on": "2026-10-16"
-    }
-   ],
-   "reason": "The record missed the second window. The status 'closed' is correct today (the window ended 22 Sep 2026), so no status change.",
-   "material": false,
-   "status": "pending_approval"
-  },
-  {
-   "id": "art5c-deadline-and-extension",
+   "id": "art5c-extension-a1096",
    "record": "art5c",
-   "field": "application timing + new rule",
+   "field": "eligibility_rules (new rule) + uncertainties",
    "change": "add",
-   "previous": "Application timing not recorded; Decision Α.1096/2026 not modelled",
+   "previous": "NOT MODELLED: extension by Decision Α.1096/2026 to people providing services to the Greek State",
    "proposed": {
-    "el": "Αίτηση έως το τέλος του ίδιου έτους αν η δραστηριότητα αρχίζει έως 2 Ιουλίου, αλλιώς έως το τέλος του επόμενου. Με την Α.1096/2026 το καθεστώς επεκτείνεται σε όσους μεταφέρουν τη φορολογική τους κατοικία για να παρέχουν υπηρεσίες στο Ελληνικό Δημόσιο.",
-    "en": "Apply by the end of the same year if the activity starts by 2 July, otherwise by the end of the following year. Decision Α.1096/2026 extends the regime to people moving tax residence to provide services to the Greek State."
+    "el": "Με την απόφαση Α.1096/2026 το καθεστώς επεκτείνεται σε φυσικά πρόσωπα που μεταφέρουν τη φορολογική τους κατοικία στην Ελλάδα για να παρέχουν υπηρεσίες στο Ελληνικό Δημόσιο (αιτήσεις από τη δημοσίευσή της, από 28/07/2025 και εκκρεμείς στις 28/07/2025).",
+    "en": "Decision Α.1096/2026 extends the regime to individuals who move their tax residence to Greece to provide services to the Greek State (applications from its publication, from 28/07/2025, and those pending on 28/07/2025)."
    },
    "evidence": [
     {
      "url": "https://www.aade.gr/en/psifiakes-ypiresies/eisodima/ypoboli-aitisis-ypagogis-se-eidiko-tropo-forologisis-arthro-5g-toy-kfe",
-     "quote": "must be submitted by the end of that same year",
+     "quote": "the option of inclusion under the special tax regime is extended to natural persons",
      "read_on": "2026-10-16"
     }
    ],
-   "reason": "Fills the 'dates' gap and the 'outdated' flag from the audit.",
-   "material": true,
-   "status": "pending_approval"
-  },
-  {
-   "id": "art5a-5b-deadline",
-   "record": "art5a",
-   "also_records": [
-    "art5b"
-   ],
-   "field": "application timing",
-   "change": "add",
-   "previous": "Application timing not recorded",
-   "proposed": {
-    "el": "Αίτηση έως τις 31 Μαρτίου του εκάστοτε φορολογικού έτους (οδηγός ΑΑΔΕ 2023).",
-    "en": "Apply by 31 March of the tax year concerned (AADE guide, 2023)."
-   },
-   "evidence": [
-    {
-     "url": "https://www.aade.gr/sites/default/files/2023-09/forolologika_kinitra_pros_newn_forol_kat_kfe_new_EL.pdf",
-     "quote": "μέχρι τις 31 Μαρτίου του εκάστοτε φορολογικού έτους",
-     "read_on": "2026-10-16"
-    }
-   ],
-   "reason": "Fills the 'dates' gap; the source is still the 2023 guide, so the 'outdated' flag stays until a current source confirms it.",
+   "reason": "Closes the 'not modelled' gap. The application-timing rule was already in the approved record (14 Oct) and is unchanged.",
    "material": true,
    "status": "pending_approval"
   }
@@ -258,5 +213,8 @@
    "blocker": "Not on the official pages read.",
    "action": "Read the Α.1087/2021 decision, the student housing circular and the bank FAQ."
   }
+ ],
+ "corrections_log": [
+  "16 Oct, second pass: two proposals were withdrawn because the approved file already contained them (student housing second window 17–22 Sep 2026; Articles 5Α/5Β deadline 31 March). The first-pass audit had missed fields recorded in application_status; the audit matrix was corrected."
  ]
 }

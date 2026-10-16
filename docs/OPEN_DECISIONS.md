@@ -8,7 +8,7 @@ private hosting postponed; fictional test profiles only.
 
 ## Decisions needed
 
-- Review the before-and-after table of the 9 proposed record revisions (data/proposed-revisions-2026-10-16.json) and approve item by item.
+- Review the before-and-after table of the 7 proposed record revisions (data/proposed-revisions-2026-10-16.json) and approve item by item.
 - Approve the official document lists (data/document-lists-2026-10-16.json) for A21, unemployment, DiscoverEU, 5Γ and 5Α.
 - Tax-regime guides: choose A (keep), B (ninth category «Φορολογία & Φορολογικά Κίνητρα») or C (rename category 3 to «Επιχειρηματικότητα, Επιδοτήσεις & Φορολογικά Κίνητρα»).
 - ΕΣΠΑ guide: choose one current official ΕΣΠΑ business call as the worked example.
