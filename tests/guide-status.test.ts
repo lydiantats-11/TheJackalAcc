@@ -58,6 +58,7 @@ describe("programme status on guides", () => {
     expect(programmeStatus("manual:art5c", now, { availability: "closed", rolling: true })).toBe("closed");
     expect(programmeStatus("manual:beckham", now, { availability: "open", rolling: false })).toBe("open");
     expect(programmeStatus("manual:unemployment", now, { availability: "open", rolling: true })).toBe("rolling");
+    expect(programmeStatus("manual:art5b", now, { availability: "open", rolling: false })).toBe("rolling");
   });
 
   it("a stale or unverified live record falls back to the verified dates", () => {

@@ -81,5 +81,7 @@ export function programmeStatus(recordKey: string, now: Date, live?: LiveRecord 
   // A verified deadline that has passed is never overridden by an "open" answer (an extension needs a new check).
   const closes = verifiedCloses(recordKey);
   if (ACTIONABLE.has(fromLive) && closes && closes.getTime() < now.getTime()) return fromFile;
+  // Live record open with no fixed deadline in the database, verified file says rolling: show rolling.
+  if (fromLive === "open" && fromFile === "rolling") return "rolling";
   return fromLive;
 }
