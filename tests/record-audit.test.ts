@@ -5,6 +5,8 @@ import { APPROVED_RECORDS } from "@/lib/site/guide-catalog";
 
 const audit = JSON.parse(readFileSync("data/record-audit-2026-10-16.json", "utf8"));
 const rev = JSON.parse(readFileSync("data/proposed-revisions-2026-10-16.json", "utf8"));
+/** Official Greek and EU domains (ΑΑΔΕ publishes on aade.gr, not gov.gr). */
+const OFFICIAL_HOSTS = /(^|\.)(gov\.gr|europa\.eu|aade\.gr)$/;
 const original = readFileSync("data/official-records-2026-10-14.v2.json", "utf8");
 
 describe("record quality audit", () => {
@@ -25,7 +27,7 @@ describe("proposed revisions", () => {
       expect(APPROVED_RECORDS.has(r.record), r.id).toBe(true);
       expect(r.evidence.length, r.id).toBeGreaterThan(0);
       for (const e of r.evidence) {
-        expect(new URL(e.url).hostname, r.id).toMatch(/(^|\.)(gov\.gr|europa\.eu)$/);
+        expect(new URL(e.url).hostname, r.id).toMatch(OFFICIAL_HOSTS);
         expect(e.quote.length, r.id).toBeGreaterThan(5);
         expect(e.read_on, r.id).toMatch(/^\d{4}-\d{2}-\d{2}$/);
       }
