@@ -8,6 +8,7 @@ import { dictionaries } from "@/lib/i18n/dictionaries";
 import { SITE } from "@/lib/site/copy";
 import { CATEGORIES } from "@/lib/site/taxonomy";
 import { GENERAL_GUIDES } from "@/lib/site/guides";
+import { GUIDE_CATEGORIES } from "@/lib/site/guide-catalog";
 
 type Flat = Map<string, string>;
 function flat(o: unknown, p = "", out: Flat = new Map()): Flat {
@@ -27,7 +28,11 @@ const guidesEn = new Map(GENERAL_GUIDES.flatMap((g) => [g.title.en, g.summary.en
 const catsEl = new Map(CATEGORIES.flatMap((c) => [c.name.el, c.description.el, ...c.subcategories.map((x) => x.el)].map((v, i) => [`${c.slug}.${i}`, v] as [string, string])));
 const catsEn = new Map(CATEGORIES.flatMap((c) => [c.name.en, c.description.en, ...c.subcategories.map((x) => x.en)].map((v, i) => [`${c.slug}.${i}`, v] as [string, string])));
 
+const gcatsEl = new Map(GUIDE_CATEGORIES.flatMap((c) => [c.name.el, c.desc.el].map((v, i) => [`${c.slug}.${i}`, v] as [string, string])));
+const gcatsEn = new Map(GUIDE_CATEGORIES.flatMap((c) => [c.name.en, c.desc.en].map((v, i) => [`${c.slug}.${i}`, v] as [string, string])));
+
 const SETS: Array<[string, Flat, Flat]> = [
+  ["guide categories", gcatsEl, gcatsEn],
   ["dictionary", flat(dictionaries.el), flat(dictionaries.en)],
   ["site copy", flat(SITE.el), flat(SITE.en)],
   ["guides", guidesEl, guidesEn],

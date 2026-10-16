@@ -118,7 +118,7 @@ export default async function OpportunityPage({ params, searchParams }: { params
               {verified ? (
                 <>
                   <p style={{ fontSize: "1.05rem" }}>{verified.summary[locale]}</p>
-                  <p className="xs muted" style={{ margin: 0 }}>{t.opp.summaryAdmin}</p>
+                  <p className="xs muted" style={{ margin: 0 }}>{t.opp.summaryAdmin}{locale === "en" && scope === "gr" ? ` ${s.facts.translatedNote}` : ""}</p>
                 </>
               ) : o.summary_plain ? (
                 <>

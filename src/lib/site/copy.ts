@@ -6,6 +6,8 @@
 import type { Locale } from "@/lib/i18n/dictionaries";
 
 const el = {
+  /** Language of this copy (lets shared components tell which language they render in). */
+  lang: "el" as "el" | "en",
   brand: "Jackal Accountant",
   meta: { description: "Επιδοτήσεις, επιδόματα και προγράμματα χρηματοδότησης από την Ελλάδα και την ΕΕ, σε ένα μέρος, από επίσημες πηγές και με σαφή εικόνα για το ποιος μπορεί να κάνει αίτηση." },
   nav: { opportunities: "Ευκαιρίες", categories: "Κατηγορίες", forMe: "Για Εμένα", guides: "Οδηγοί", menu: "Μενού", profile: "Το προφίλ μου", admin: "Διαχείριση" },
@@ -184,6 +186,8 @@ const el = {
     budget: "Συνολικός προϋπολογισμός πρόσκλησης", budgetNote: "Το ποσό που διατίθεται για όλα τα έργα μαζί, όχι ανά αίτηση.", budgetYear: "Έτος",
     grants: "Αναμενόμενος αριθμός έργων", grantSize: "Ποσό ανά έργο", notPublished: "Δεν δημοσιεύεται στην πύλη· βλ. το έγγραφο της πρόσκλησης",
     actionType: "Είδος δράσης", submission: "Υποβολή", stages: { "single-stage": "Σε ένα στάδιο", "two-stage": "Σε δύο στάδια", "multiple cut-off": "Πολλαπλές ημερομηνίες" } as Record<string, string>,
+    originalOnly: "Το επίσημο κείμενο δημοσιεύεται μόνο στα αγγλικά. Το παραθέτουμε όπως είναι, χωρίς μετάφραση, για να μην αλλοιωθεί η σημασία του.",
+    translatedNote: "Το κείμενο βασίζεται στις ελληνικές επίσημες πηγές.",
     call: "Πρόσκληση", fromPortal: "Από την Πύλη Χρηματοδοτήσεων & Διαγωνισμών της ΕΕ, όπως δημοσιεύεται", retrieved: "ανακτήθηκε",
     scope: "Αντικείμενο (επίσημο κείμενο, στα αγγλικά)", scopeMore: "Συνέχεια στην επίσημη σελίδα",
     noneTitle: "Τα στοιχεία δεν δημοσιεύονται σε δομημένη μορφή", none: "Η πηγή δεν δίνει ακόμη ποσό, προϋπολογισμό ή όρους σε μορφή που μπορούμε να εμφανίσουμε με ασφάλεια. Δείτε την επίσημη σελίδα.",
@@ -203,6 +207,7 @@ const el = {
 type Copy = typeof el;
 
 const en: Copy = {
+  lang: "en",
   brand: "Jackal Accountant",
   meta: { description: "Grants, benefits and funding programmes from Greece and the EU in one place, from official sources, with a clear picture of who can apply." },
   nav: { opportunities: "Opportunities", categories: "Categories", forMe: "For Me", guides: "Guides", menu: "Menu", profile: "My profile", admin: "Admin" },
@@ -381,6 +386,8 @@ const en: Copy = {
     budget: "Total budget of the call", budgetNote: "The amount available for all projects together, not per application.", budgetYear: "Year",
     grants: "Expected number of projects", grantSize: "Amount per project", notPublished: "Not published on the portal; see the call document",
     actionType: "Type of action", submission: "Submission", stages: { "single-stage": "Single stage", "two-stage": "Two stages", "multiple cut-off": "Multiple cut-off dates" } as Record<string, string>,
+    originalOnly: "The official text is published in English only and is shown as published.",
+    translatedNote: "English text is the platform's translation of the Greek official sources, not an official translation.",
     call: "Call", fromPortal: "From the EU Funding & Tenders Portal, as published", retrieved: "retrieved",
     scope: "Scope (official text)", scopeMore: "Continue on the official page",
     noneTitle: "Details are not published in structured form", none: "The source does not yet give an amount, budget or conditions in a form we can show safely. See the official page.",

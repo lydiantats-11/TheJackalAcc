@@ -141,6 +141,7 @@ export function OfficialScope({ o, s }: { o: OpportunityRow; s: SiteCopy }) {
   return (
     <div style={{ marginTop: 8 }}>
       <div className="kpi-label">{s.facts.scope}</div>
+      {s.lang === "el" && sc.lang === "en" && <p className="xs muted" style={{ margin: "0 0 6px" }}>{s.facts.originalOnly}</p>}
       <div lang={sc.lang} className="official-text">{sc.text.split("\n").map((p, i) => <p key={i}>{p}</p>)}</div>
       {sc.truncated && <p className="small" style={{ margin: 0 }}><a href={o.canonical_url} target="_blank" rel="noopener noreferrer">{s.facts.scopeMore} →</a></p>}
     </div>
