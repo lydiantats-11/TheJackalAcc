@@ -417,3 +417,5 @@ main:has(> section.band:last-child) { padding-bottom: 0; }
 .faq-card details:last-child { border-bottom: 0; }
 .faq-card details p { color: var(--ink-2); margin: var(--sp-3) 0 0; max-width: 62ch; }
 @media (max-width: 860px) { .faq-layout { grid-template-columns: 1fr; gap: var(--sp-4); } .faq-card { padding: 0 var(--sp-4); } }
+.opp-grid > *, .opp-card { min-width: 0; }
+.opp-card .tags { max-width: 100%; }
