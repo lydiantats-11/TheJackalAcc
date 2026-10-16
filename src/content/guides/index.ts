@@ -4,5 +4,6 @@
  * and are only published after the owner approves them.
  */
 import type { Article } from "@/lib/site/guide-catalog";
+import { UNEMPLOYMENT_APPLICATION } from "./unemployment-application";
 
-export const PROCEDURE_ARTICLES: Article[] = [];
+export const PROCEDURE_ARTICLES: Article[] = [UNEMPLOYMENT_APPLICATION];

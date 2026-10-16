@@ -120,3 +120,32 @@ describe("search and filtering", () => {
     expect(n["eu-programmes"]).toBe(1); // DiscoverEU; EIC is a draft
   });
 });
+
+describe("unemployment benefit application guide (draft)", () => {
+  const a = articleBySlug("unemployment-benefit-application")!;
+  it("is a draft until the owner approves it, so it is not listed", () => {
+    expect(a).toBeTruthy();
+    expect(verificationOf(a, NOW)).toBe("draft");
+    expect(searchGuides({ q: "ανεργίας" }).some((x) => x.slug === a.slug)).toBe(false);
+  });
+  it("cites only official sources", () => {
+    for (const s of a.sources) expect(new URL(s.url).hostname, s.url).toMatch(/(^|\.)(gov\.gr)$/);
+  });
+  it("marks the screens it has not seen and never asks for credentials", () => {
+    expect(a.steps.filter((s) => !s.confirmed).length).toBeGreaterThan(0);
+    expect(a.steps.filter((s) => s.confirmed).length).toBeGreaterThan(0);
+    const text = JSON.stringify(a);
+    expect(text).not.toMatch(/εγγυ[άα]ται|θα εγκριθ|guaranteed|will be approved/i);
+  });
+  it("English text has Greek only inside «» official names or known acronyms", () => {
+    const en = JSON.stringify([a.title.en, a.intro.en, a.provides?.en, a.timing?.en, ...a.audience, ...a.eligibility, ...(a.documents ?? []),
+      ...a.steps.flatMap((s) => [s.text, ...(s.details ?? [])]), ...a.afterSubmission, ...a.mistakes, ...a.faq.flatMap((f) => [f.q, f.a]), ...a.limitations]
+      .map((x) => (x && typeof x === "object" ? (x as { en: string }).en : x)));
+    const stripped = en.replace(/«[^»]*»/g, "").replace(/ΔΥΠΑ|ΚΠΑ2|Ε6|Ε7|ΑΑΔΕ/g, "");
+    expect(GREEK.test(stripped)).toBe(false);
+  });
+  it("Greek text addresses the reader formally", () => {
+    const el = JSON.stringify(a).match(/"el":"[^"]*"/g)!.join(" ");
+    expect(el).not.toMatch(/(?<!\p{L})(σου|είσαι|έχεις|μπορείς|κάνε|Κάνε|Συνδέσου|Επίλεξε)(?!\p{L})/u);
+  });
+});
