@@ -1,0 +1,191 @@
+{
+ "created_on": "2026-10-16",
+ "status_rule": "Nothing here changes the approved dataset. Each item stays 'pending_approval' until the owner approves it; approved items are then applied as a new version of the checked file, keeping the 14 Oct values in its history.",
+ "revisions": [
+  {
+   "id": "unemployment-insured-days",
+   "record": "unemployment",
+   "field": "eligibility_rules",
+   "change": "add",
+   "previous": "Required insured days in critical periods: the number is not stated",
+   "proposed": {
+    "el": "Τουλάχιστον 125 ημέρες εργασίας (100 για οικοδόμους) στο 14μηνο πριν από τη λήξη, χωρίς τους 2 τελευταίους μήνες· ή 200 ημέρες (180 για οικοδόμους) στη διετία, με 80 ημέρες εξαρτημένης εργασίας σε κάθε έτος",
+    "en": "At least 125 days of work (100 for construction workers) in the 14 months before the end of work, excluding the last 2 months; or 200 days (180 for construction workers) over two years, with 80 days of salaried work in each year"
+   },
+   "evidence": [
+    {
+     "url": "https://prosvasis.dypa.gov.gr/anerghia-parokhes-asfalisis-misthotwn",
+     "quote": "τουλάχιστον εκατόν είκοσι πέντε (125) ημέρες εργασίας ή εκατό (100) ημέρες για οικοδόμους",
+     "read_on": "2026-10-16"
+    }
+   ],
+   "material": true,
+   "status": "pending_approval"
+  },
+  {
+   "id": "unemployment-deadline",
+   "record": "unemployment",
+   "field": "application_status.deadline_original_wording",
+   "change": "set",
+   "previous": null,
+   "proposed": {
+    "el": "Αίτηση μέσα σε 60 ημέρες από την επομένη της λήξης ή λύσης της εργασιακής σχέσης",
+    "en": "Apply within 60 days from the day after the employment ended"
+   },
+   "evidence": [
+    {
+     "url": "https://prosvasis.dypa.gov.gr/anerghia-parokhes-asfalisis-misthotwn",
+     "quote": "εξήντα (60) ημέρες από την επομένη της ημερομηνίας λήξης ή λύσης της εργασιακής σχέσης",
+     "read_on": "2026-10-16"
+    }
+   ],
+   "material": true,
+   "status": "pending_approval"
+  },
+  {
+   "id": "unemployment-amounts",
+   "record": "unemployment",
+   "field": "funding_or_benefit",
+   "change": "set",
+   "previous": "Duration 5–12 months · amount: not stated on the page",
+   "proposed": {
+    "el": "Διάρκεια 5–12 μήνες · 565,00 / 423,75 / 282,50 € τον μήνα ανάλογα με τον μέσο μηνιαίο μισθό · +10% ανά προστατευόμενο μέλος",
+    "en": "Duration 5–12 months · €565.00 / €423.75 / €282.50 a month depending on average monthly pay · +10% per dependant"
+   },
+   "evidence": [
+    {
+     "url": "https://prosvasis.dypa.gov.gr/anerghia-parokhes-asfalisis-misthotwn",
+     "quote": "493.09€ ΚΑΙ ΑΝΩ | 22.60€ | 565.00€",
+     "read_on": "2026-10-16"
+    }
+   ],
+   "conflict": {
+    "url": "https://prosvasis.dypa.gov.gr/en/anerghia-parokhes-asfalisis-misthotwn",
+    "note": "The English version of the same ΔΥΠΑ page shows €479.00 / €359.25 / €239.50. Record as a conflict until ΔΥΠΑ confirms; show the Greek page."
+   },
+   "material": true,
+   "status": "pending_approval"
+  },
+  {
+   "id": "unemployment-documents",
+   "record": "unemployment",
+   "field": "documents (new)",
+   "change": "add",
+   "previous": null,
+   "proposed": {
+    "el": "Ε6 ή Ε7 (αυτεπάγγελτα)· έμμεση ασφαλιστική ικανότητα προστατευόμενων μελών, εφόσον υπάρχουν· IBAN αν δεν έχει δηλωθεί ή άλλαξε",
+    "en": "Ε6 or Ε7 (retrieved automatically); dependants' indirect insurance cover, if any; IBAN if not declared or changed"
+   },
+   "evidence": [
+    {
+     "url": "https://prosvasis.dypa.gov.gr/anerghia-parokhes-asfalisis-misthotwn",
+     "quote": "Καταγγελία Σύμβασης Εργασίας (Έντυπο Ε6) υπογεγραμμένη από τον άνεργο",
+     "read_on": "2026-10-16"
+    },
+    {
+     "url": "https://mitos.gov.gr/index.php/%CE%94%CE%94:%CE%A4%CE%B1%CE%BA%CF%84%CE%B9%CE%BA%CE%AE_%CE%95%CF%80%CE%B9%CE%B4%CF%8C%CF%84%CE%B7%CF%83%CE%B7_%CE%91%CE%BD%CE%B5%CF%81%CE%B3%CE%AF%CE%B1%CF%82",
+     "quote": "submitted ex officio (υποβάλλεται αυτεπάγγελτα)",
+     "read_on": "2026-10-16"
+    }
+   ],
+   "material": false,
+   "status": "pending_approval"
+  },
+  {
+   "id": "unemployment-mitos-date",
+   "record": "unemployment",
+   "field": "official_sources[0].label",
+   "change": "set",
+   "previous": "Μίτος — Τακτική επιδότηση ανεργίας (ενημ. 25/9/2026)",
+   "proposed": {
+    "el": "Μίτος — Τακτική επιδότηση ανεργίας (ενημ. 14/10/2026)",
+    "en": "Mitos — Regular unemployment benefit (updated 14/10/2026)"
+   },
+   "evidence": [
+    {
+     "url": "https://mitos.gov.gr/index.php/%CE%94%CE%94:%CE%A4%CE%B1%CE%BA%CF%84%CE%B9%CE%BA%CE%AE_%CE%95%CF%80%CE%B9%CE%B4%CF%8C%CF%84%CE%B7%CF%83%CE%B7_%CE%91%CE%BD%CE%B5%CF%81%CE%B3%CE%AF%CE%B1%CF%82",
+     "quote": "Last update: 14/10/2026",
+     "read_on": "2026-10-16"
+    }
+   ],
+   "material": false,
+   "status": "pending_approval"
+  },
+  {
+   "id": "a21-residence-groups",
+   "record": "a21",
+   "field": "eligibility_rules[residence]",
+   "change": "refine",
+   "previous": "Living in Greece (overseas Greeks and foreign nationals need a valid residence permit)",
+   "proposed": {
+    "el": "Δικαιούχοι: Έλληνες πολίτες, πολίτες κρατών-μελών της ΕΕ, του ΕΟΧ και της Ελβετίας, αναγνωρισμένοι πρόσφυγες που διαμένουν μόνιμα στην Ελλάδα και άλλες ομάδες της σελίδας του ΟΠΕΚΑ· ομογενείς με Ειδικό Δελτίο Ταυτότητας χρειάζονται έγκυρη άδεια διαμονής",
+    "en": "Eligible: Greek citizens, EU, EEA and Swiss citizens, recognised refugees living permanently in Greece and other groups on OPEKA's page; overseas Greeks with a Special Identity Card need a valid residence permit"
+   },
+   "evidence": [
+    {
+     "url": "https://opeka.gov.gr/oikogeneia/epidoma-paidiou-a21/",
+     "quote": "Αναγνωρισμένοι πρόσφυγες που διαμένουν μόνιμα στην Ελλάδα",
+     "read_on": "2026-10-16"
+    }
+   ],
+   "material": false,
+   "status": "pending_approval"
+  }
+ ],
+ "blocked_follow_ups": [
+  {
+   "record": "studenthousing",
+   "issue": "A Ministry notice titled 'start of electronic applications for the housing allowance' (URL dated 17-09-26) is listed as a source, but the record says applications closed on 31 Jul 2026. If it opened a new round, the record's status is wrong.",
+   "blocker": "Re-reading minedu.gov.gr and portal.stegastiko.minedu.gov.gr on 16 Oct needed a permission that was not answered in time.",
+   "action": "Open both pages; record which academic year and dates the notice covers; update status and amounts (pending approval)."
+  },
+  {
+   "record": "studenthousing",
+   "issue": "Income criteria are in the Ministry circular, not checked.",
+   "blocker": "As above.",
+   "action": "Read the 2025–26 (and any 2026–27) circular; record the income limits with quotes."
+  },
+  {
+   "record": "a21",
+   "issue": "Income-category limits are still not stated on OPEKA's benefit page (re-checked 16 Oct; page modified 23 Feb 2024).",
+   "blocker": "None — not published on that page.",
+   "action": "Find the income limits in the governing ΚΥΑ or OPEKA's FAQ; quote them."
+  },
+  {
+   "record": "art5c",
+   "issue": "Extension by Decision Α.1096/2026 not modelled.",
+   "blocker": "Not attempted in this session (scope: 8 records, priority to unemployment).",
+   "action": "Read Α.1096/2026 on aade.gr; propose a rule (pending approval)."
+  },
+  {
+   "record": "art5b",
+   "issue": "Source is a 2023 AADE guide.",
+   "blocker": "Not attempted in this session.",
+   "action": "Check the current KFE articles 5B on aade.gr for later amendments."
+  },
+  {
+   "record": "art5a",
+   "issue": "Source is a 2023 AADE guide.",
+   "blocker": "Not attempted in this session.",
+   "action": "Check the current KFE article 5A for later amendments."
+  },
+  {
+   "record": "spiti2",
+   "issue": "Income range conflict ('at a glance' vs detailed table).",
+   "blocker": "Programme closed; low priority.",
+   "action": "Ask the Ministry or keep both values shown as a conflict."
+  },
+  {
+   "record": "discovereu",
+   "issue": "Travel length conflict (7 days vs 1–30 days); round closed 15 Oct 2026.",
+   "blocker": "None.",
+   "action": "Re-check when the next round is announced."
+  },
+  {
+   "record": "all",
+   "issue": "Required documents not recorded for 7 of 8 records.",
+   "blocker": "The 14 Oct check recorded steps, not document lists.",
+   "action": "Record the official document list per programme, starting with A21."
+  }
+ ]
+}

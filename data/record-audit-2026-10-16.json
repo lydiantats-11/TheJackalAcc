@@ -1,0 +1,634 @@
+{
+ "audited_on": "2026-10-16",
+ "statuses": [
+  "verified",
+  "missing",
+  "conflicting",
+  "outdated",
+  "not_applicable",
+  "awaiting_confirmation"
+ ],
+ "fields": [
+  "name",
+  "authority",
+  "classification",
+  "sources",
+  "application_url",
+  "geography",
+  "beneficiaries",
+  "eligibility",
+  "income",
+  "age_residency",
+  "kad",
+  "documents",
+  "dates",
+  "amounts",
+  "amendments",
+  "last_verified",
+  "evidence"
+ ],
+ "records": [
+  {
+   "id": "discovereu",
+   "title": "DiscoverEU — free travel pass for 18-year-olds",
+   "fields": {
+    "name": {
+     "status": "verified",
+     "note": ""
+    },
+    "authority": {
+     "status": "verified",
+     "note": ""
+    },
+    "classification": {
+     "status": "verified",
+     "note": "opportunity"
+    },
+    "sources": {
+     "status": "verified",
+     "note": "2 official URLs"
+    },
+    "application_url": {
+     "status": "verified",
+     "note": "https://youth.europa.eu/discoverEU"
+    },
+    "geography": {
+     "status": "verified",
+     "note": "EU"
+    },
+    "beneficiaries": {
+     "status": "verified",
+     "note": ""
+    },
+    "eligibility": {
+     "status": "conflicting",
+     "note": "Travel length: 'up to 7 days within one month' vs '1 to 30 days'"
+    },
+    "income": {
+     "status": "not_applicable",
+     "note": ""
+    },
+    "age_residency": {
+     "status": "verified",
+     "note": "18-year-olds, EU/associated-country residence"
+    },
+    "kad": {
+     "status": "not_applicable",
+     "note": ""
+    },
+    "documents": {
+     "status": "missing",
+     "note": "Not recorded"
+    },
+    "dates": {
+     "status": "verified",
+     "note": "Round closed 15 Oct 2026 12:00 Brussels"
+    },
+    "amounts": {
+     "status": "verified",
+     "note": "Travel pass; ~40,000 passes"
+    },
+    "amendments": {
+     "status": "verified",
+     "note": "Notice of 28 Sep 2026 read"
+    },
+    "last_verified": {
+     "status": "verified",
+     "note": "2026-10-14"
+    },
+    "evidence": {
+     "status": "verified",
+     "note": "quoted"
+    }
+   }
+  },
+  {
+   "id": "art5c",
+   "title": "Article 5C — 50% income-tax exemption for people moving tax residence to Greece",
+   "fields": {
+    "name": {
+     "status": "verified",
+     "note": ""
+    },
+    "authority": {
+     "status": "verified",
+     "note": ""
+    },
+    "classification": {
+     "status": "verified",
+     "note": "tax_regime"
+    },
+    "sources": {
+     "status": "verified",
+     "note": "2 official URLs"
+    },
+    "application_url": {
+     "status": "verified",
+     "note": "https://www1.aade.gr/aadeapps2/article5c"
+    },
+    "geography": {
+     "status": "verified",
+     "note": "GR"
+    },
+    "beneficiaries": {
+     "status": "verified",
+     "note": ""
+    },
+    "eligibility": {
+     "status": "awaiting_confirmation",
+     "note": "Some rules paraphrased; verbatim quotes still to capture"
+    },
+    "income": {
+     "status": "not_applicable",
+     "note": ""
+    },
+    "age_residency": {
+     "status": "verified",
+     "note": "Not tax resident in Greece in 5 of the 6 previous years"
+    },
+    "kad": {
+     "status": "not_applicable",
+     "note": ""
+    },
+    "documents": {
+     "status": "missing",
+     "note": "Not recorded"
+    },
+    "dates": {
+     "status": "awaiting_confirmation",
+     "note": "Application timing not recorded"
+    },
+    "amounts": {
+     "status": "verified",
+     "note": "50% exemption for 7 tax years"
+    },
+    "amendments": {
+     "status": "outdated",
+     "note": "Extension by Decision Α.1096/2026 not modelled"
+    },
+    "last_verified": {
+     "status": "verified",
+     "note": "2026-10-14"
+    },
+    "evidence": {
+     "status": "awaiting_confirmation",
+     "note": "verbatim quotes still to capture"
+    }
+   }
+  },
+  {
+   "id": "art5b",
+   "title": "Article 5B — 7% tax for pensioners with a foreign pension",
+   "fields": {
+    "name": {
+     "status": "verified",
+     "note": ""
+    },
+    "authority": {
+     "status": "verified",
+     "note": ""
+    },
+    "classification": {
+     "status": "verified",
+     "note": "tax_regime"
+    },
+    "sources": {
+     "status": "verified",
+     "note": "1 official URLs"
+    },
+    "application_url": {
+     "status": "missing",
+     "note": ""
+    },
+    "geography": {
+     "status": "verified",
+     "note": "GR"
+    },
+    "beneficiaries": {
+     "status": "verified",
+     "note": ""
+    },
+    "eligibility": {
+     "status": "awaiting_confirmation",
+     "note": "Paraphrased; verbatim quotes still to capture"
+    },
+    "income": {
+     "status": "not_applicable",
+     "note": ""
+    },
+    "age_residency": {
+     "status": "verified",
+     "note": "Foreign pension; not tax resident 5 of 6 previous years"
+    },
+    "kad": {
+     "status": "not_applicable",
+     "note": ""
+    },
+    "documents": {
+     "status": "missing",
+     "note": "Not recorded"
+    },
+    "dates": {
+     "status": "awaiting_confirmation",
+     "note": "Application timing not recorded"
+    },
+    "amounts": {
+     "status": "verified",
+     "note": "7% flat rate for 15 tax years"
+    },
+    "amendments": {
+     "status": "outdated",
+     "note": "Source is a 2023 guide; later amendments not checked"
+    },
+    "last_verified": {
+     "status": "verified",
+     "note": "2026-10-14"
+    },
+    "evidence": {
+     "status": "awaiting_confirmation",
+     "note": "verbatim quotes still to capture"
+    }
+   }
+  },
+  {
+   "id": "art5a",
+   "title": "Article 5A — alternative taxation for investors",
+   "fields": {
+    "name": {
+     "status": "verified",
+     "note": ""
+    },
+    "authority": {
+     "status": "verified",
+     "note": ""
+    },
+    "classification": {
+     "status": "verified",
+     "note": "tax_regime"
+    },
+    "sources": {
+     "status": "verified",
+     "note": "1 official URLs"
+    },
+    "application_url": {
+     "status": "missing",
+     "note": ""
+    },
+    "geography": {
+     "status": "verified",
+     "note": "GR"
+    },
+    "beneficiaries": {
+     "status": "verified",
+     "note": ""
+    },
+    "eligibility": {
+     "status": "awaiting_confirmation",
+     "note": "Some rules paraphrased"
+    },
+    "income": {
+     "status": "verified",
+     "note": "Investment of at least €500,000 in Greece"
+    },
+    "age_residency": {
+     "status": "verified",
+     "note": "Not tax resident 7 of 8 previous years"
+    },
+    "kad": {
+     "status": "not_applicable",
+     "note": ""
+    },
+    "documents": {
+     "status": "missing",
+     "note": "Not recorded"
+    },
+    "dates": {
+     "status": "awaiting_confirmation",
+     "note": "Application timing not recorded"
+    },
+    "amounts": {
+     "status": "verified",
+     "note": "€100,000 flat annual tax for 15 tax years"
+    },
+    "amendments": {
+     "status": "outdated",
+     "note": "Source is a 2023 guide; later amendments not checked"
+    },
+    "last_verified": {
+     "status": "verified",
+     "note": "2026-10-14"
+    },
+    "evidence": {
+     "status": "awaiting_confirmation",
+     "note": "verbatim quotes still to capture"
+    }
+   }
+  },
+  {
+   "id": "spiti2",
+   "title": "\"Spiti mou II\" — first-home loans",
+   "fields": {
+    "name": {
+     "status": "verified",
+     "note": ""
+    },
+    "authority": {
+     "status": "verified",
+     "note": ""
+    },
+    "classification": {
+     "status": "verified",
+     "note": "opportunity"
+    },
+    "sources": {
+     "status": "verified",
+     "note": "3 official URLs"
+    },
+    "application_url": {
+     "status": "missing",
+     "note": ""
+    },
+    "geography": {
+     "status": "verified",
+     "note": "GR"
+    },
+    "beneficiaries": {
+     "status": "missing",
+     "note": ""
+    },
+    "eligibility": {
+     "status": "conflicting",
+     "note": "Income range conflict"
+    },
+    "income": {
+     "status": "conflicting",
+     "note": "'At a glance' €10k–€44k vs the detailed income table"
+    },
+    "age_residency": {
+     "status": "verified",
+     "note": "Age 25–50"
+    },
+    "kad": {
+     "status": "not_applicable",
+     "note": ""
+    },
+    "documents": {
+     "status": "missing",
+     "note": "Not recorded"
+    },
+    "dates": {
+     "status": "verified",
+     "note": "Applications closed 31 May 2026; loan contracts by 31 Aug 2026"
+    },
+    "amounts": {
+     "status": "verified",
+     "note": "Up to €190,000 loan, up to 90% of value"
+    },
+    "amendments": {
+     "status": "verified",
+     "note": "Ministry closing notice read"
+    },
+    "last_verified": {
+     "status": "verified",
+     "note": "2026-10-14"
+    },
+    "evidence": {
+     "status": "verified",
+     "note": "quoted"
+    }
+   }
+  },
+  {
+   "id": "studenthousing",
+   "title": "Student housing allowance",
+   "fields": {
+    "name": {
+     "status": "verified",
+     "note": ""
+    },
+    "authority": {
+     "status": "verified",
+     "note": ""
+    },
+    "classification": {
+     "status": "verified",
+     "note": "opportunity"
+    },
+    "sources": {
+     "status": "verified",
+     "note": "3 official URLs"
+    },
+    "application_url": {
+     "status": "verified",
+     "note": "https://stegastiko.minedu.gov.gr"
+    },
+    "geography": {
+     "status": "verified",
+     "note": "GR"
+    },
+    "beneficiaries": {
+     "status": "verified",
+     "note": ""
+    },
+    "eligibility": {
+     "status": "awaiting_confirmation",
+     "note": "Partly not evaluated"
+    },
+    "income": {
+     "status": "missing",
+     "note": "Income criteria are in the circular, not checked"
+    },
+    "age_residency": {
+     "status": "awaiting_confirmation",
+     "note": "Study away from home stated; details not checked"
+    },
+    "kad": {
+     "status": "not_applicable",
+     "note": ""
+    },
+    "documents": {
+     "status": "missing",
+     "note": "Not recorded"
+    },
+    "dates": {
+     "status": "awaiting_confirmation",
+     "note": "Recorded closed (31 Jul 2026), but a Ministry notice dated 17 Sep 2026 is titled 'start of applications'; re-read blocked on 16 Oct"
+    },
+    "amounts": {
+     "status": "missing",
+     "note": "2025–26 amounts not stated on the official page"
+    },
+    "amendments": {
+     "status": "awaiting_confirmation",
+     "note": "See dates"
+    },
+    "last_verified": {
+     "status": "verified",
+     "note": "2026-10-14"
+    },
+    "evidence": {
+     "status": "awaiting_confirmation",
+     "note": "verbatim quotes still to capture"
+    }
+   }
+  },
+  {
+   "id": "a21",
+   "title": "A21 — Child benefit",
+   "fields": {
+    "name": {
+     "status": "verified",
+     "note": ""
+    },
+    "authority": {
+     "status": "verified",
+     "note": ""
+    },
+    "classification": {
+     "status": "verified",
+     "note": "opportunity"
+    },
+    "sources": {
+     "status": "verified",
+     "note": "3 official URLs"
+    },
+    "application_url": {
+     "status": "verified",
+     "note": "https://opeka.gov.gr/oikogeneia/epidoma-paidiou-a21/"
+    },
+    "geography": {
+     "status": "verified",
+     "note": "GR"
+    },
+    "beneficiaries": {
+     "status": "verified",
+     "note": ""
+    },
+    "eligibility": {
+     "status": "missing",
+     "note": "Income limits missing"
+    },
+    "income": {
+     "status": "missing",
+     "note": "Income-category limits not stated on the OPEKA page (re-checked 16 Oct)"
+    },
+    "age_residency": {
+     "status": "verified",
+     "note": "Residence in Greece; eligible nationality groups listed (re-checked 16 Oct)"
+    },
+    "kad": {
+     "status": "not_applicable",
+     "note": ""
+    },
+    "documents": {
+     "status": "missing",
+     "note": "Not recorded"
+    },
+    "dates": {
+     "status": "verified",
+     "note": "Applications until 13 Nov 2026 18:00 Athens"
+    },
+    "amounts": {
+     "status": "verified",
+     "note": "€70/42/28 and €140/84/56 a month (re-checked 16 Oct)"
+    },
+    "amendments": {
+     "status": "verified",
+     "note": "Notices of 29 Sep and 8 Oct 2026 read"
+    },
+    "last_verified": {
+     "status": "verified",
+     "note": "2026-10-14"
+    },
+    "evidence": {
+     "status": "awaiting_confirmation",
+     "note": "verbatim quotes still to capture"
+    }
+   }
+  },
+  {
+   "id": "unemployment",
+   "title": "Regular unemployment benefit",
+   "fields": {
+    "name": {
+     "status": "verified",
+     "note": ""
+    },
+    "authority": {
+     "status": "verified",
+     "note": ""
+    },
+    "classification": {
+     "status": "verified",
+     "note": "opportunity"
+    },
+    "sources": {
+     "status": "verified",
+     "note": "3 official URLs"
+    },
+    "application_url": {
+     "status": "verified",
+     "note": "https://www.gov.gr/el/services/1001289/aitese-epidomatos-anergias"
+    },
+    "geography": {
+     "status": "verified",
+     "note": "GR"
+    },
+    "beneficiaries": {
+     "status": "verified",
+     "note": ""
+    },
+    "eligibility": {
+     "status": "awaiting_confirmation",
+     "note": "Insured-day thresholds 125/200 found on ΔΥΠΑ (16 Oct) — proposed revision"
+    },
+    "income": {
+     "status": "not_applicable",
+     "note": "No income limit; amount depends on previous pay"
+    },
+    "age_residency": {
+     "status": "not_applicable",
+     "note": ""
+    },
+    "kad": {
+     "status": "not_applicable",
+     "note": ""
+    },
+    "documents": {
+     "status": "awaiting_confirmation",
+     "note": "List found on ΔΥΠΑ and Mitos (16 Oct) — proposed revision"
+    },
+    "dates": {
+     "status": "awaiting_confirmation",
+     "note": "60-day application deadline found on ΔΥΠΑ (16 Oct) — proposed revision"
+    },
+    "amounts": {
+     "status": "conflicting",
+     "note": "Greek ΔΥΠΑ page €565/423.75/282.50 vs English page €479/359.25/239.50 — proposed revision"
+    },
+    "amendments": {
+     "status": "awaiting_confirmation",
+     "note": "Mitos page updated 14/10/2026, same day as the check — re-read 16 Oct"
+    },
+    "last_verified": {
+     "status": "verified",
+     "note": "2026-10-14"
+    },
+    "evidence": {
+     "status": "awaiting_confirmation",
+     "note": "verbatim quotes still to capture"
+    }
+   }
+  }
+ ],
+ "use": {
+  "discovereu": "informational (round closed; next round not announced)",
+  "art5c": "matching, partial",
+  "art5b": "matching, partial (re-check source)",
+  "art5a": "matching, partial (re-check source)",
+  "spiti2": "informational (closed)",
+  "studenthousing": "informational (income criteria and status unconfirmed)",
+  "a21": "matching, partial (income limits missing → 'more information needed')",
+  "unemployment": "matching after the proposed revision is approved"
+ }
+}
