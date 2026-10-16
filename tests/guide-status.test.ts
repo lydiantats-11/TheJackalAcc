@@ -55,7 +55,8 @@ describe("programme status on guides", () => {
   it("the live database record wins when it gives a definite answer", () => {
     const now = at("2026-10-16T08:00:00Z");
     expect(programmeStatus("manual:a21", now, { availability: "closed", rolling: false })).toBe("closed");
-    expect(programmeStatus("manual:spiti2", now, { availability: "open", rolling: false })).toBe("open"); // re-opened, approved in the DB
+    expect(programmeStatus("manual:art5c", now, { availability: "closed", rolling: true })).toBe("closed");
+    expect(programmeStatus("manual:beckham", now, { availability: "open", rolling: false })).toBe("open");
     expect(programmeStatus("manual:unemployment", now, { availability: "open", rolling: true })).toBe("rolling");
   });
 
@@ -65,7 +66,8 @@ describe("programme status on guides", () => {
     expect(programmeStatus("manual:discovereu", now, { availability: "unverified", rolling: false })).toBe("deadline_passed");
   });
 
-  it("a live 'open' never overrides a verified deadline that has passed", () => {
+  it("a live 'open' never overrides a verified deadline that has passed (a re-opening needs a new check)", () => {
+    expect(programmeStatus("manual:spiti2", at("2026-10-16T08:00:00Z"), { availability: "open", rolling: false })).toBe("closed");
     expect(programmeStatus("manual:discovereu", at("2026-10-16T08:00:00Z"), { availability: "open", rolling: false })).toBe("deadline_passed");
   });
 

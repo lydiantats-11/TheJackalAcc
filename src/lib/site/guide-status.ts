@@ -79,6 +79,7 @@ export function programmeStatus(recordKey: string, now: Date, live?: LiveRecord 
   const fromLive = live ? statusFromAvailability(live.availability, live.rolling) : null;
   if (!fromLive) return fromFile;
   // A verified deadline that has passed is never overridden by an "open" answer (an extension needs a new check).
-  if (ACTIONABLE.has(fromLive) && fromFile === "deadline_passed") return fromFile;
+  const closes = verifiedCloses(recordKey);
+  if (ACTIONABLE.has(fromLive) && closes && closes.getTime() < now.getTime()) return fromFile;
   return fromLive;
 }
