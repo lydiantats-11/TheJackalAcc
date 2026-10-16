@@ -5,70 +5,34 @@
 
 [1m[30m[46m RUN [49m[39m[22m [36mv5.0.4 [39m[90m/home/runner/work/TheJackalAcc/TheJackalAcc[39m
 
- [32m✓[39m tests/ingestion.test.ts [2m([22m[2m27 tests[22m[2m)[22m[33m 1579[2mms[22m[39m
- [32m✓[39m tests/engine.test.ts [2m([22m[2m27 tests[22m[2m)[22m[32m 88[2mms[22m[39m
- [32m✓[39m tests/extraction.test.ts [2m([22m[2m13 tests[22m[2m)[22m[33m 1055[2mms[22m[39m
- [32m✓[39m tests/real-calls.test.ts [2m([22m[2m22 tests[22m[2m)[22m[32m 29[2mms[22m[39m
- [32m✓[39m tests/auth-and-access.test.ts [2m([22m[2m11 tests[22m[2m)[22m[33m 1110[2mms[22m[39m
+ [32m✓[39m tests/ingestion.test.ts [2m([22m[2m27 tests[22m[2m)[22m[33m 1559[2mms[22m[39m
+ [32m✓[39m tests/engine.test.ts [2m([22m[2m27 tests[22m[2m)[22m[32m 134[2mms[22m[39m
+ [32m✓[39m tests/extraction.test.ts [2m([22m[2m13 tests[22m[2m)[22m[33m 1229[2mms[22m[39m
+ [32m✓[39m tests/real-calls.test.ts [2m([22m[2m22 tests[22m[2m)[22m[32m 38[2mms[22m[39m
+ [32m✓[39m tests/auth-and-access.test.ts [2m([22m[2m11 tests[22m[2m)[22m[33m 1135[2mms[22m[39m
    [32m✓[39m auth & access control (PostgreSQL) [2m(11)[22m
-     [33m[2m✓[22m[39m rate-limits repeated failed logins[33m 346[2mms[22m[39m
- [32m✓[39m tests/end-to-end-flow.test.ts [2m([22m[2m3 tests[22m[2m)[22m[33m 476[2mms[22m[39m
- [32m✓[39m tests/personas.test.ts [2m([22m[2m13 tests[22m[2m)[22m[32m 64[2mms[22m[39m
- [32m✓[39m tests/residence-and-records.test.ts [2m([22m[2m15 tests[22m[2m)[22m[32m 14[2mms[22m[39m
- [32m✓[39m tests/official-details.test.ts [2m([22m[2m7 tests[22m[2m)[22m[32m 8[2mms[22m[39m
- [31m❯[39m tests/guide-status.test.ts [2m([22m[2m15 tests[22m[2m | [22m[31m1 failed[39m[2m)[22m[32m 24[2mms[22m[39m
-   [31m❯[39m programme status on guides [2m(15)[22m
-     [32m✓[39m DiscoverEU is open before 15 Oct 2026 12:00 Brussels and passed one second after[32m 2[2mms[22m[39m
-     [32m✓[39m DiscoverEU was not yet open before its opening time[32m 0[2mms[22m[39m
-     [32m✓[39m Article 21 school-meal call is open until 13 Nov 2026 18:00 Athens, then passed[32m 11[2mms[22m[39m
-     [32m✓[39m a date-only deadline counts the whole day as open (Athens time)[32m 1[2mms[22m[39m
-     [32m✓[39m programmes the checker recorded as closed stay closed[32m 0[2mms[22m[39m
-     [32m✓[39m rolling programmes without a deadline stay rolling[32m 0[2mms[22m[39m
-     [32m✓[39m a rolling call with a final cut-off passes after that cut-off (EIC Accelerator, 4 Nov 2026)[32m 0[2mms[22m[39m
-     [32m✓[39m unknown records are never shown as open[32m 0[2mms[22m[39m
-     [32m✓[39m the live database record wins when it gives a definite answer[32m 1[2mms[22m[39m
-     [32m✓[39m a stale or unverified live record falls back to the verified dates[32m 0[2mms[22m[39m
-     [32m✓[39m a live 'open' never overrides a verified deadline that has passed[32m 0[2mms[22m[39m
-     [32m✓[39m maps every availability without ever turning a doubtful one into open[32m 0[2mms[22m[39m
-[31m     [31m×[31m no guide shows an actionable status once its verified closing time has passed[39m[32m 5[2mms[22m[39m
-     [32m✓[39m every status has a Greek and an English label[32m 1[2mms[22m[39m
-     [32m✓[39m the guide model no longer carries a stored status[32m 0[2mms[22m[39m
- [32m✓[39m tests/status-and-sources.test.ts [2m([22m[2m12 tests[22m[2m)[22m[32m 45[2mms[22m[39m
- [32m✓[39m tests/scenarios-and-money.test.ts [2m([22m[2m8 tests[22m[2m)[22m[32m 21[2mms[22m[39m
- [32m✓[39m tests/i18n.test.ts [2m([22m[2m21 tests[22m[2m)[22m[32m 11[2mms[22m[39m
- [32m✓[39m tests/industries.test.ts [2m([22m[2m5 tests[22m[2m)[22m[32m 58[2mms[22m[39m
- [32m✓[39m tests/profile-update.test.ts [2m([22m[2m6 tests[22m[2m)[22m[33m 406[2mms[22m[39m
- [32m✓[39m tests/decision-record.test.ts [2m([22m[2m5 tests[22m[2m)[22m[32m 11[2mms[22m[39m
- [32m✓[39m tests/taxonomy.test.ts [2m([22m[2m5 tests[22m[2m)[22m[32m 6[2mms[22m[39m
- [32m✓[39m tests/change-detection.test.ts [2m([22m[2m2 tests[22m[2m)[22m[32m 3[2mms[22m[39m
- [32m✓[39m tests/proxy.test.ts [2m([22m[2m2 tests[22m[2m)[22m[32m 8[2mms[22m[39m
- [32m✓[39m tests/question-impact.test.ts [2m([22m[2m2 tests[22m[2m)[22m[32m 6[2mms[22m[39m
+     [33m[2m✓[22m[39m rate-limits repeated failed logins[33m 376[2mms[22m[39m
+ [32m✓[39m tests/end-to-end-flow.test.ts [2m([22m[2m3 tests[22m[2m)[22m[33m 531[2mms[22m[39m
+ [32m✓[39m tests/personas.test.ts [2m([22m[2m13 tests[22m[2m)[22m[32m 88[2mms[22m[39m
+ [32m✓[39m tests/residence-and-records.test.ts [2m([22m[2m15 tests[22m[2m)[22m[32m 19[2mms[22m[39m
+ [32m✓[39m tests/official-details.test.ts [2m([22m[2m7 tests[22m[2m)[22m[32m 11[2mms[22m[39m
+ [32m✓[39m tests/guide-status.test.ts [2m([22m[2m15 tests[22m[2m)[22m[32m 26[2mms[22m[39m
+ [32m✓[39m tests/status-and-sources.test.ts [2m([22m[2m12 tests[22m[2m)[22m[32m 49[2mms[22m[39m
+ [32m✓[39m tests/scenarios-and-money.test.ts [2m([22m[2m8 tests[22m[2m)[22m[32m 28[2mms[22m[39m
+ [32m✓[39m tests/i18n.test.ts [2m([22m[2m21 tests[22m[2m)[22m[32m 15[2mms[22m[39m
+ [32m✓[39m tests/industries.test.ts [2m([22m[2m5 tests[22m[2m)[22m[32m 82[2mms[22m[39m
+ [32m✓[39m tests/profile-update.test.ts [2m([22m[2m6 tests[22m[2m)[22m[33m 355[2mms[22m[39m
+ [32m✓[39m tests/decision-record.test.ts [2m([22m[2m5 tests[22m[2m)[22m[32m 15[2mms[22m[39m
+ [32m✓[39m tests/taxonomy.test.ts [2m([22m[2m5 tests[22m[2m)[22m[32m 8[2mms[22m[39m
+ [32m✓[39m tests/change-detection.test.ts [2m([22m[2m2 tests[22m[2m)[22m[32m 5[2mms[22m[39m
+ [32m✓[39m tests/proxy.test.ts [2m([22m[2m2 tests[22m[2m)[22m[32m 11[2mms[22m[39m
+ [32m✓[39m tests/question-impact.test.ts [2m([22m[2m2 tests[22m[2m)[22m[32m 8[2mms[22m[39m
 
-[31m⎯⎯⎯⎯⎯⎯⎯[39m[1m[41m Failed Tests 1 [49m[22m[31m⎯⎯⎯⎯⎯⎯⎯[39m
+[2m Test Files [22m [1m[32m20 passed[39m[22m[90m (20)[39m
+[2m      Tests [22m [1m[32m221 passed[39m[22m[90m (221)[39m
+[2m   Start at [22m 16:56:42
+[2m   Duration [22m 9.34s[2m (tests 73%, import 19%, transform 7%, worker 1%)[22m
 
-[41m[1m FAIL [22m[49m tests/guide-status.test.ts[2m > [22mprogramme status on guides[2m > [22mno guide shows an actionable status once its verified closing time has passed
-[31m[1mAssertionError[22m: expected [ 'spiti2', 'open' ] to not deeply equal [ 'spiti2', 'open' ][39m
+[2m    Isolate [22m [33m20 workers spawned[39m[2m · ~94ms startup each (spawn + environment, per file)[22m
+[2m            [22m [2mat least ~1.79s faster with [22m[33misolate: false[39m[2m — reuses workers across files instead of one per file[22m
 
-[2mCompared values have no visual difference.[22m
-
-[36m [2m❯[22m tests/guide-status.test.ts:[2m85:107[22m[39m
-    [90m 83|[39m       expect([g.slug, programmeStatus(g.recordKey, after)]).not.toEqua…
-    [90m 84|[39m       expect([g.slug, programmeStatus(g.recordKey, after)]).not.toEqua…
-    [90m 85|[39m       expect([g.slug, programmeStatus(g.recordKey, after, { availabili…
-    [90m   |[39m                                                                                                           [31m^[39m
-    [90m 86|[39m     }
-    [90m 87|[39m   });
-
-[31m[2m⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯[22m[39m
-
-
-[2m Test Files [22m [1m[31m1 failed[39m[22m[2m | [22m[1m[32m19 passed[39m[22m[90m (20)[39m
-[2m      Tests [22m [1m[31m1 failed[39m[22m[2m | [22m[1m[32m220 passed[39m[22m[90m (221)[39m
-[2m   Start at [22m 16:49:21
-[2m   Duration [22m 8.06s[2m (tests 77%, import 16%, transform 6%, worker 1%)[22m
-
-[2m    Isolate [22m [33m20 workers spawned[39m[2m · ~73ms startup each (spawn + environment, per file)[22m
-[2m            [22m [2mat least ~1.38s faster with [22m[33misolate: false[39m[2m — reuses workers across files instead of one per file[22m
-
-
-::error file=/home/runner/work/TheJackalAcc/TheJackalAcc/tests/guide-status.test.ts,title=tests/guide-status.test.ts > programme status on guides > no guide shows an actionable status once its verified closing time has passed,line=85,column=107::AssertionError: expected [ 'spiti2', 'open' ] to not deeply equal [ 'spiti2', 'open' ]%0A%0ACompared values have no visual difference.%0A%0A ❯ tests/guide-status.test.ts:85:107%0A%0A
