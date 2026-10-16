@@ -5,22 +5,21 @@ material claim traceable to an official source.
 
 Legend: ✅ done & verified locally · 🌐 externally verified (real source) · 🟡 partial · ⬜ pending · ⛔ blocked
 
-## Status at a glance (2026-10-13, end of Phase 2 session)
+## Status at a glance (2026-10-16)
 
-| Phase | Status |
+| Area | Status |
 |---|---|
-| 1 Foundation | ✅ |
-| 2 Source monitoring | 🟡 connector + worker built and tested locally; ⛔ **live source test blocked by workspace network** |
-| 3 Opportunity intelligence (AI extraction) | 🟡 built and tested with a scripted provider; **switched off** until the owner approves the cost (estimate below) |
-| 4 Profiles & matching | 🟡 engine v2, adaptive profile, scenarios done; **five personas + conditional questionnaire done (2026-10-14, tests not yet run — see build log)**; onboarding wizard pending |
-| 5 Notifications | 🟡 notification-ready events + match change tracking; no sending yet |
-| 6 Dashboard & admin | 🟡 dashboard, source health, test-now; review/correction UI pending |
-| 7 Hardening & deployment | ⬜ (see SECURITY_REVIEW.md open gaps) |
+| Foundation, accounts, profiles, eligibility engine | ✅ 248 automated tests on GitHub Actions (16 Oct, commit a724be8) |
+| Official data | 🟡 8 hand-checked records approved 15 Oct; ~1,000 EU calls imported once; field-level audit 16 Oct (`docs/RECORD_QUALITY_AUDIT.md`), 6 revisions pending approval |
+| Source monitoring | 🟡 EU connector live-tested 14 Oct; scheduled updater built and **off** |
+| AI extraction | 🟡 built, **off** (needs cost approval) |
+| Guides | ✅ Phase 1 (computed application status) and Phase 2 (8 categories, search, one template, verification states); unemployment application guide in draft |
+| Bilingual | ✅ two language passes + automated checks (`docs/BILINGUAL_AUDIT.md`) |
+| Privacy & security | 🟡 prepared, not reviewed by a lawyer (`docs/PRIVACY_DATA_INVENTORY.md`, `SECURITY_REVIEW.md`, `docs/GDPR_READINESS_CHECKLIST.md`) |
+| Hosting | ⬜ free private setup prepared (`docs/PRIVATE_LIVE_PREVIEW.md`), nothing created |
+| Reporting | ✅ `node scripts/daily-report.mjs` (`docs/REPORTING.md`); open items in `docs/OPEN_DECISIONS.md` |
 
-**Interpretations:** the nine open questions were researched against real calls and resolved — see INTERPRETATIONS.md.
-
-**Nothing has been externally verified against a real official source yet.** The EU connector's first live run
-must be executed from the owner's machine (instructions below).
+The older Phase 1–7 table (13 Oct) is kept in git history; the build log below records each step.
 
 ## Architecture (as implemented)
 
@@ -256,3 +255,13 @@ Run on `lydiantats-11/TheJackalAcc`, branch `live-test`; reports and screenshots
 - (5) Gold-standard cases from official conditions (data/gold/eligibility-gold-2026-10-15.json) and a reproducible
   quality report (scripts/quality-report.ts): gold accuracy, coverage, freshness, ingestion efficiency. Baseline only —
   not independently validated, not to be published as a claim.
+
+### 2026-10-16 — Master prompt: Guides Phase 2, record audit, unemployment guide, bilingual, privacy, reporting
+- Baseline: `docs/BASELINE_2026-10-16.md` (221 tests at 30859fa; 12 records in the checked file, 8 approved).
+- Guides: eight approved categories, accent-insensitive search, category filter, one article template, six verification
+  states independent of application status; unapproved records' guides are drafts. Stronger blue primary buttons.
+- Unemployment benefit application guide: Greek-first draft from ΔΥΠΑ, Mitos and gov.gr (read 16 Oct); conflicts shown.
+- Record audit: 17 fields × 8 records; 66 % of applicable fields verified; 6 evidence-backed revisions pending approval.
+- Bilingual: platform-translation and English-only notes; guide categories in the language tests; translation workflow design.
+- Privacy/security: data inventory, review update, GDPR checklist; no immediate code defects; 3 new low gaps.
+- Reporting: manual daily report command and archive.
