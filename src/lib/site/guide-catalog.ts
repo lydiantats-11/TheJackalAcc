@@ -100,6 +100,9 @@ interface RawRecord {
   official_application_url: string | null;
   uncertainties: string[];
 }
+/** Review trigger for guide content (owner decision, 16 Oct 2026): not proof that the content is wrong. */
+export const GUIDE_REVIEW_DAYS = 30;
+
 const RAW = records as unknown as { checked_on: string; records: RawRecord[] };
 
 /** Records the owner approved on 15 Oct 2026 (db/seed/approvals-2026-10-15.sql). Others are drafts. */
@@ -139,7 +142,9 @@ function fromRecord(r: RawRecord): Article {
     afterSubmission: [], mistakes: [], faq: [], sections: [],
     sources: r.official_sources.map(({ label, url }) => ({ label, url })),
     checkedOn: r.application_status.verified_on ?? RAW.checked_on,
-    reviewAfterDays: r.application_status.stale_after_days ?? 30,
+    // Guide content is reviewed every 30 days (owner decision). The record's own stale_after_days is about the
+    // application status, which guide-status.ts handles separately.
+    reviewAfterDays: GUIDE_REVIEW_DAYS,
     limitations: conflicts,
     recordKey: `manual:${r.id}`,
     related: [],

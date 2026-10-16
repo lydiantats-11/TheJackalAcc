@@ -98,10 +98,14 @@ export default async function GuidePage({ params }: { params: Promise<{ slug: st
         </div>
       </div>
 
+      {(a.flags.draft || reviewDue(a, now)) && (
+        <div className="stack" style={{ marginBottom: 20 }}>
+            {a.flags.draft && <div className="notice bad"><Icon name="alert" size={18} /><span>{g.draftBanner}</span></div>}
+            {reviewDue(a, now) && <div className="notice"><Icon name="alert" size={18} /><span>{g.reviewDueBanner.replace("{d}", String(a.reviewAfterDays))}</span></div>}
+        </div>
+      )}
       <div className="with-aside-r">
         <div className="prose stack-lg">
-          {a.flags.draft && <div className="notice bad"><Icon name="alert" size={18} /><span>{g.draftBanner}</span></div>}
-          {reviewDue(a, now) && <div className="notice"><Icon name="alert" size={18} /><span>{g.reviewDueBanner.replace("{d}", String(a.reviewAfterDays))}</span></div>}
           <div className="notice info"><Icon name="info" size={18} /><span>{g.stateHelp[state]}</span></div>
           {sections.map((sec) => (
             <section key={sec.id} id={sec.id} className="card">
