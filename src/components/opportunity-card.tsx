@@ -30,8 +30,7 @@ export function OpportunityCard({ item, t, s, locale, extra }: {
     <article className="opp-card">
       <div className="tags">
         <AvailabilityBadge value={item.availability} t={t} />
-        {cat && <span className="tag cat">{cat.name[locale]}</span>}
-        {item.support !== "unconfirmed" && <span className="tag">{s.supportType[item.support]}</span>}
+        {cat && <span className="tag cat" title={cat.name[locale]}>{cat.name[locale]}</span>}
         <span className="tag navy">{s.scope[item.scope]}</span>
         {o.is_synthetic && <SyntheticLabel t={t} />}
       </div>

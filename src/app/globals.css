@@ -248,12 +248,21 @@ details.filters-mobile > summary { display: none; }
 .trust-row span { display: inline-flex; align-items: center; gap: 6px; }
 .trust-row svg { color: var(--accent); }
 @media (max-width: 900px) { .hero .wrap { grid-template-columns: 1fr; } .hero .art-wrap { order: -1; max-width: 520px; } .hero { padding-top: var(--sp-5); } }
-.steps { display: grid; gap: var(--sp-4); grid-template-columns: repeat(3, minmax(0, 1fr)); }
-.step { position: relative; padding: var(--sp-5); background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); }
-.step .num { width: 34px; height: 34px; border-radius: 50%; display: grid; place-items: center; font-weight: 750; background: var(--brand); color: var(--brand-ink); margin-bottom: var(--sp-3); font-size: .95rem; }
-.step h3 { margin-bottom: 6px; }
-.step p { color: var(--muted); margin: 0; font-size: .95rem; }
-@media (max-width: 760px) { .steps { grid-template-columns: 1fr; } }
+/* How it works: three connected steps, each leading to its action. */
+.steps { display: grid; gap: var(--sp-5); grid-template-columns: repeat(3, minmax(0, 1fr)); counter-reset: step; }
+.step { position: relative; display: flex; flex-direction: column; padding: var(--sp-5); background: var(--bg); border-radius: var(--radius-lg); }
+.step-top { display: flex; align-items: center; gap: var(--sp-3); margin-bottom: var(--sp-4); }
+.step .num { position: relative; z-index: 3; flex: none; width: 38px; height: 38px; border-radius: 50%; display: grid; place-items: center; font-weight: 750; font-size: 1rem; background: var(--brand); color: var(--brand-ink); box-shadow: 0 0 0 5px var(--bg); }
+.step h3 { margin-bottom: 6px; font-size: 1.1rem; }
+.step p { color: var(--ink-2); margin: 0 0 var(--sp-4); font-size: .95rem; }
+.step-link { margin-top: auto; display: inline-flex; align-items: center; gap: 6px; font-weight: 650; font-size: .92rem; text-decoration: none; }
+.step-link:hover { text-decoration: underline; }
+/* the dashed line joins each step's number to the next one across the gap */
+.step:not(:last-child)::after { content: ""; position: absolute; top: calc(var(--sp-5) + 22px); left: calc(var(--sp-5) + 38px + 70px); right: calc(-1 * var(--sp-5) - var(--sp-5) + 4px); border-top: 2px dashed var(--accent-line); z-index: 2; }
+@media (max-width: 760px) {
+  .steps { grid-template-columns: 1fr; gap: var(--sp-3); }
+  .step:not(:last-child)::after { display: none; }
+}
 .match-panel { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: var(--sp-6); align-items: center; background: var(--brand); color: var(--brand-ink); border-radius: var(--radius-lg); padding: var(--sp-7); }
 .match-panel h2 { color: var(--brand-ink); margin-top: 0; font-size: var(--fs-2xl); }
 .match-panel p { color: color-mix(in srgb, var(--brand-ink) 82%, transparent); }
@@ -394,3 +403,17 @@ table.crit td { overflow-wrap: break-word; }
 }
 /* A page that ends with a full-width band meets the footer directly (no empty strip). */
 main:has(> section.band:last-child) { padding-bottom: 0; }
+
+/* Cards: one tag row; a long category name shortens instead of pushing the title down. */
+.opp-card .tags { flex-wrap: nowrap; overflow: hidden; }
+.opp-card .tags > * { flex: none; }
+.opp-card .tags .tag.cat { flex: 0 1 auto; min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; display: block; }
+.clamp-3 { display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; }
+
+/* FAQ: same grid as the other sections; questions in one card. */
+.faq-layout { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 2fr); gap: var(--sp-6); align-items: start; }
+.faq-head { flex-direction: column; align-items: flex-start; gap: var(--sp-4); margin: 0; }
+.faq-card { background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius-lg); padding: 0 var(--sp-5); }
+.faq-card details:last-child { border-bottom: 0; }
+.faq-card details p { color: var(--ink-2); margin: var(--sp-3) 0 0; max-width: 62ch; }
+@media (max-width: 860px) { .faq-layout { grid-template-columns: 1fr; gap: var(--sp-4); } .faq-card { padding: 0 var(--sp-4); } }

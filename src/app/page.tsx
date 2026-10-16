@@ -54,9 +54,13 @@ export default async function Home() {
           <ol className="steps" style={{ listStyle: "none", padding: 0, margin: 0 }}>
             {h.steps.map((st, i) => (
               <li key={st.t} className="step">
-                <div className="num" aria-hidden="true">{i + 1}</div>
+                <div className="step-top">
+                  <span className="num" aria-hidden="true">{i + 1}</span>
+                  <span className="icon-tile"><Icon name={st.icon} /></span>
+                </div>
                 <h3>{st.t}</h3>
                 <p>{st.d}</p>
+                <Link href={st.href} className="step-link">{st.cta} <Icon name="arrow" size={16} /></Link>
               </li>
             ))}
           </ol>
@@ -161,9 +165,15 @@ export default async function Home() {
 
       {/* 8 — FAQ */}
       <section className="band alt" id="faq">
-        <div className="container" style={{ maxWidth: 860 }}>
-          <h2 style={{ marginTop: 0, fontSize: "var(--fs-2xl)" }}>{h.faqTitle}</h2>
-          <div className="faq">
+        <div className="container faq-layout">
+          <div className="section-head faq-head">
+            <div>
+              <h2>{h.faqTitle}</h2>
+              <p>{h.faqLead}</p>
+            </div>
+            <Link href="/about#faq" className="btn btn-ghost btn-sm">{h.faqAll} <Icon name="arrow" size={16} /></Link>
+          </div>
+          <div className="faq faq-card">
             {s.faq.slice(0, 5).map((f) => <details key={f.q}><summary>{f.q}</summary><p>{f.a}</p></details>)}
           </div>
         </div>

@@ -42,7 +42,7 @@ export function allCutoffs(o: OpportunityRow): Array<{ at: Date; dateOnly: boole
 /** Card "amount" cell: verified benefit → official call budget → per-applicant amount → "see official source". */
 export function cardAmount(o: OpportunityRow, t: Dictionary, s: SiteCopy, l: Locale): { label: string; value: React.ReactNode } {
   const v = verifiedFor(o.external_key);
-  if (v?.benefit) return { label: s.card.benefit, value: <span className="clamp-2" title={v.benefit[l]}>{v.benefit[l]}</span> };
+  if (v?.benefit) return { label: s.card.benefit, value: <span className="clamp-3" title={v.benefit[l]}>{v.benefit[l]}</span> };
   if (o.funding_amount_state === "known") return { label: s.card.amount, value: amountText(o, t, l) };
   const b = o.official_details?.budget;
   if (b && b.total_eur > 0) return { label: s.card.budget, value: <>{eur(b.total_eur, l, true)}</> };
