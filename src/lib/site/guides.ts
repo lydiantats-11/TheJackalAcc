@@ -20,7 +20,7 @@ interface RawRecord {
 }
 
 export interface ProgrammeGuide {
-  kind: "programme"; slug: string; title: L; authority: L; summary: L; status: string; deadline: L | null; amount: L | null;
+  kind: "programme"; slug: string; title: L; authority: L; summary: L; deadline: L | null; amount: L | null;
   who: L[]; steps: Record<Locale, string[]>; sources: Array<{ label: string; url: string }>; applyUrl: string | null;
   warnings: L[]; checkedOn: string; recordKey: string; categories: string[];
 }
@@ -33,7 +33,7 @@ export const PROGRAMME_GUIDES: ProgrammeGuide[] = (records as { records: RawReco
   .filter((r) => MANUAL_RECORDS[r.id]?.guide)
   .map((r) => ({
     kind: "programme", slug: MANUAL_RECORDS[r.id]!.guide!, title: r.official_title, authority: r.issuing_authority, summary: r.summary,
-    status: r.application_status.value, deadline: r.application_status.deadline_original_wording ?? null, amount: r.funding_or_benefit.value,
+    deadline: r.application_status.deadline_original_wording ?? null, amount: r.funding_or_benefit.value,
     who: r.eligibility_rules.map((x) => x.label), steps: r.application_steps, sources: r.official_sources.map(({ label, url }) => ({ label, url })),
     applyUrl: r.official_application_url, warnings: r.conflicts ?? [], checkedOn: CHECKED_ON, recordKey: `manual:${r.id}`,
     categories: MANUAL_RECORDS[r.id]!.categories,

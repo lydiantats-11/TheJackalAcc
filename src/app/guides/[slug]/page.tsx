@@ -1,11 +1,12 @@
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { getDict } from "@/lib/i18n/server";
-import { isDatabaseConfigured, sql } from "@/lib/db";
 import { SITE } from "@/lib/site/copy";
 import { guideBySlug } from "@/lib/site/guides";
 import { categoryBySlug } from "@/lib/site/taxonomy";
 import { Icon } from "@/components/icons";
+import { ACTIONABLE, programmeStatus } from "@/lib/site/guide-status";
+import { loadLiveGuideRecords } from "@/lib/site/guide-live";
 
 export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }) {
   const { locale } = await getDict();
@@ -40,10 +41,9 @@ export default async function GuidePage({ params }: { params: Promise<{ slug: st
     );
   }
 
-  // Link to the listing only when it is public (approved) in this database.
-  const [rec] = isDatabaseConfigured()
-    ? await sql()<{ id: string }[]>`SELECT id FROM opportunities WHERE external_key = ${g.recordKey} AND review_status = 'approved' AND merged_into_id IS NULL LIMIT 1`.catch(() => [])
-    : [];
+  // Link to the listing only when it is public (approved) in this database; status computed for this request.
+  const rec = (await loadLiveGuideRecords([g.recordKey])).get(g.recordKey);
+  const st = programmeStatus(g.recordKey, new Date(), rec);
   const cat = categoryBySlug(g.categories[0]);
   return (
     <div className="container">
@@ -85,6 +85,7 @@ export default async function GuidePage({ params }: { params: Promise<{ slug: st
         <aside className="sticky">
           <div className="card keyinfo">
             <dl>
+              <div><dt>{s.guides.appStatus}</dt><dd><span className={`badge ${ACTIONABLE.has(st) ? "b-ok" : ""}`}>{s.guides.programmeStatus[st]}</span></dd></div>
               <div><dt>{s.guides.deadline}</dt><dd>{g.deadline ? g.deadline[locale] : <span className="unknown">{s.guides.notStated}</span>}</dd></div>
               <div><dt>{s.guides.amount}</dt><dd>{g.amount ? g.amount[locale] : <span className="unknown">{s.guides.notStated}</span>}</dd></div>
             </dl>

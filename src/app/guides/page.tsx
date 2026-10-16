@@ -5,15 +5,17 @@ import { SITE } from "@/lib/site/copy";
 import { GENERAL_GUIDES, PROGRAMME_GUIDES } from "@/lib/site/guides";
 import { categoryBySlug } from "@/lib/site/taxonomy";
 import { Icon } from "@/components/icons";
+import { ACTIONABLE, programmeStatus } from "@/lib/site/guide-status";
+import { loadLiveGuideRecords } from "@/lib/site/guide-live";
 
 export const generateMetadata = titled(({ s }) => s.nav.guides);
 
 export default async function GuidesPage() {
   const { locale } = await getDict();
   const s = SITE[locale];
-  const statusLabel: Record<string, string> = locale === "el"
-    ? { open: "Ανοιχτή", rolling: "Συνεχής υποβολή", closed: "Κλειστή", future: "Μελλοντική" }
-    : { open: "Open", rolling: "Rolling", closed: "Closed", future: "Future" };
+  // Programme status is computed for this request from the live record or the verified dates — never the 14 Oct snapshot.
+  const now = new Date();
+  const live = await loadLiveGuideRecords(PROGRAMME_GUIDES.map((g) => g.recordKey));
   return (
     <div className="container">
       <div className="page-head">
@@ -37,11 +39,12 @@ export default async function GuidesPage() {
       <div className="grid3">
         {PROGRAMME_GUIDES.map((g) => {
           const cat = categoryBySlug(g.categories[0]);
+          const st = programmeStatus(g.recordKey, now, live.get(g.recordKey));
           return (
             <Link key={g.slug} href={`/guides/${g.slug}`} className="card card-link cat-card">
               <div className="row" style={{ justifyContent: "space-between" }}>
                 <span className="icon-tile navy"><Icon name={cat?.icon ?? "book"} /></span>
-                <span className={`badge ${g.status === "open" || g.status === "rolling" ? "b-ok" : ""}`}>{statusLabel[g.status] ?? g.status}</span>
+                <span className={`badge ${ACTIONABLE.has(st) ? "b-ok" : ""}`} title={s.guides.appStatus}>{s.guides.programmeStatus[st]}</span>
               </div>
               <h3>{g.title[locale]}</h3>
               <p>{g.summary[locale]}</p>

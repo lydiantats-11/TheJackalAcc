@@ -99,6 +99,8 @@ const el = {
     docs: "Τι θα χρειαστείτε", docsNote: "Η πλήρης λίστα δικαιολογητικών ορίζεται στην επίσημη σελίδα του φορέα.",
     deadline: "Προθεσμία", amount: "Ποσό / όφελος", warnings: "Προσοχή", sources: "Επίσημες πηγές", apply: "Επίσημη σελίδα αίτησης",
     notStated: "Δεν αναφέρεται στην πηγή", record: "Δείτε την καταχώριση", back: "Όλοι οι οδηγοί",
+    appStatus: "Κατάσταση αιτήσεων",
+    programmeStatus: { open: "Ανοιχτές αιτήσεις", rolling: "Συνεχής υποβολή", upcoming: "Δεν έχουν ανοίξει ακόμη", deadline_passed: "Η προθεσμία έληξε", closed: "Κλειστές αιτήσεις", unknown: "Ελέγξτε την επίσημη σελίδα" },
   },
   about: {
     title: "Σχετικά με το Jackal Accountant",
@@ -264,6 +266,8 @@ const en: Copy = {
     docs: "What you'll need", docsNote: "The full list of documents is set on the authority's official page.",
     deadline: "Deadline", amount: "Amount / benefit", warnings: "Please note", sources: "Official sources", apply: "Official application page",
     notStated: "Not stated by the source", record: "See the listing", back: "All guides",
+    appStatus: "Applications",
+    programmeStatus: { open: "Open for applications", rolling: "Rolling applications", upcoming: "Not open yet", deadline_passed: "Deadline passed", closed: "Closed", unknown: "Check the official page" },
   },
   about: {
     title: "About Jackal Accountant",
