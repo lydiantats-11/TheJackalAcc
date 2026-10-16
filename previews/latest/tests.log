@@ -5,34 +5,36 @@
 
 [1m[30m[46m RUN [49m[39m[22m [36mv5.0.4 [39m[90m/home/runner/work/TheJackalAcc/TheJackalAcc[39m
 
- [32m✓[39m tests/ingestion.test.ts [2m([22m[2m27 tests[22m[2m)[22m[33m 1559[2mms[22m[39m
- [32m✓[39m tests/engine.test.ts [2m([22m[2m27 tests[22m[2m)[22m[32m 134[2mms[22m[39m
- [32m✓[39m tests/extraction.test.ts [2m([22m[2m13 tests[22m[2m)[22m[33m 1229[2mms[22m[39m
- [32m✓[39m tests/real-calls.test.ts [2m([22m[2m22 tests[22m[2m)[22m[32m 38[2mms[22m[39m
- [32m✓[39m tests/auth-and-access.test.ts [2m([22m[2m11 tests[22m[2m)[22m[33m 1135[2mms[22m[39m
+ [32m✓[39m tests/ingestion.test.ts [2m([22m[2m27 tests[22m[2m)[22m[33m 4028[2mms[22m[39m
+   [32m✓[39m ingestion pipeline + worker (PostgreSQL) [2m(15)[22m
+     [33m[2m✓[22m[39m #1/#2 paginates, creates one record per topic, and a re-run creates no duplicates or extra events[33m 352[2mms[22m[39m
+ [32m✓[39m tests/engine.test.ts [2m([22m[2m27 tests[22m[2m)[22m[32m 88[2mms[22m[39m
+ [32m✓[39m tests/extraction.test.ts [2m([22m[2m13 tests[22m[2m)[22m[33m 1494[2mms[22m[39m
+ [32m✓[39m tests/real-calls.test.ts [2m([22m[2m22 tests[22m[2m)[22m[32m 29[2mms[22m[39m
+ [32m✓[39m tests/auth-and-access.test.ts [2m([22m[2m11 tests[22m[2m)[22m[33m 1025[2mms[22m[39m
    [32m✓[39m auth & access control (PostgreSQL) [2m(11)[22m
-     [33m[2m✓[22m[39m rate-limits repeated failed logins[33m 376[2mms[22m[39m
- [32m✓[39m tests/end-to-end-flow.test.ts [2m([22m[2m3 tests[22m[2m)[22m[33m 531[2mms[22m[39m
- [32m✓[39m tests/personas.test.ts [2m([22m[2m13 tests[22m[2m)[22m[32m 88[2mms[22m[39m
- [32m✓[39m tests/residence-and-records.test.ts [2m([22m[2m15 tests[22m[2m)[22m[32m 19[2mms[22m[39m
- [32m✓[39m tests/official-details.test.ts [2m([22m[2m7 tests[22m[2m)[22m[32m 11[2mms[22m[39m
- [32m✓[39m tests/guide-status.test.ts [2m([22m[2m15 tests[22m[2m)[22m[32m 26[2mms[22m[39m
- [32m✓[39m tests/status-and-sources.test.ts [2m([22m[2m12 tests[22m[2m)[22m[32m 49[2mms[22m[39m
- [32m✓[39m tests/scenarios-and-money.test.ts [2m([22m[2m8 tests[22m[2m)[22m[32m 28[2mms[22m[39m
- [32m✓[39m tests/i18n.test.ts [2m([22m[2m21 tests[22m[2m)[22m[32m 15[2mms[22m[39m
- [32m✓[39m tests/industries.test.ts [2m([22m[2m5 tests[22m[2m)[22m[32m 82[2mms[22m[39m
- [32m✓[39m tests/profile-update.test.ts [2m([22m[2m6 tests[22m[2m)[22m[33m 355[2mms[22m[39m
- [32m✓[39m tests/decision-record.test.ts [2m([22m[2m5 tests[22m[2m)[22m[32m 15[2mms[22m[39m
- [32m✓[39m tests/taxonomy.test.ts [2m([22m[2m5 tests[22m[2m)[22m[32m 8[2mms[22m[39m
- [32m✓[39m tests/change-detection.test.ts [2m([22m[2m2 tests[22m[2m)[22m[32m 5[2mms[22m[39m
- [32m✓[39m tests/proxy.test.ts [2m([22m[2m2 tests[22m[2m)[22m[32m 11[2mms[22m[39m
- [32m✓[39m tests/question-impact.test.ts [2m([22m[2m2 tests[22m[2m)[22m[32m 8[2mms[22m[39m
+     [33m[2m✓[22m[39m rate-limits repeated failed logins[33m 352[2mms[22m[39m
+ [32m✓[39m tests/end-to-end-flow.test.ts [2m([22m[2m3 tests[22m[2m)[22m[33m 437[2mms[22m[39m
+ [32m✓[39m tests/personas.test.ts [2m([22m[2m13 tests[22m[2m)[22m[32m 64[2mms[22m[39m
+ [32m✓[39m tests/residence-and-records.test.ts [2m([22m[2m15 tests[22m[2m)[22m[32m 14[2mms[22m[39m
+ [32m✓[39m tests/official-details.test.ts [2m([22m[2m7 tests[22m[2m)[22m[32m 8[2mms[22m[39m
+ [32m✓[39m tests/guide-status.test.ts [2m([22m[2m15 tests[22m[2m)[22m[32m 20[2mms[22m[39m
+ [32m✓[39m tests/status-and-sources.test.ts [2m([22m[2m12 tests[22m[2m)[22m[32m 42[2mms[22m[39m
+ [32m✓[39m tests/scenarios-and-money.test.ts [2m([22m[2m8 tests[22m[2m)[22m[32m 21[2mms[22m[39m
+ [32m✓[39m tests/i18n.test.ts [2m([22m[2m21 tests[22m[2m)[22m[32m 10[2mms[22m[39m
+ [32m✓[39m tests/industries.test.ts [2m([22m[2m5 tests[22m[2m)[22m[32m 61[2mms[22m[39m
+ [32m✓[39m tests/profile-update.test.ts [2m([22m[2m6 tests[22m[2m)[22m[33m 506[2mms[22m[39m
+ [32m✓[39m tests/decision-record.test.ts [2m([22m[2m5 tests[22m[2m)[22m[32m 11[2mms[22m[39m
+ [32m✓[39m tests/taxonomy.test.ts [2m([22m[2m5 tests[22m[2m)[22m[32m 6[2mms[22m[39m
+ [32m✓[39m tests/change-detection.test.ts [2m([22m[2m2 tests[22m[2m)[22m[32m 3[2mms[22m[39m
+ [32m✓[39m tests/proxy.test.ts [2m([22m[2m2 tests[22m[2m)[22m[32m 8[2mms[22m[39m
+ [32m✓[39m tests/question-impact.test.ts [2m([22m[2m2 tests[22m[2m)[22m[32m 6[2mms[22m[39m
 
 [2m Test Files [22m [1m[32m20 passed[39m[22m[90m (20)[39m
 [2m      Tests [22m [1m[32m221 passed[39m[22m[90m (221)[39m
-[2m   Start at [22m 16:56:42
-[2m   Duration [22m 9.34s[2m (tests 73%, import 19%, transform 7%, worker 1%)[22m
+[2m   Start at [22m 17:03:49
+[2m   Duration [22m 11.03s[2m (tests 83%, import 11%, transform 5%, worker 1%)[22m
 
-[2m    Isolate [22m [33m20 workers spawned[39m[2m · ~94ms startup each (spawn + environment, per file)[22m
-[2m            [22m [2mat least ~1.79s faster with [22m[33misolate: false[39m[2m — reuses workers across files instead of one per file[22m
+[2m    Isolate [22m [33m20 workers spawned[39m[2m · ~73ms startup each (spawn + environment, per file)[22m
+[2m            [22m [2mat least ~1.40s faster with [22m[33misolate: false[39m[2m — reuses workers across files instead of one per file[22m
 
