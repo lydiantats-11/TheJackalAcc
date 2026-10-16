@@ -59,6 +59,7 @@ for (const [vp, size] of [["desktop", { width: 1440, height: 900 }], ["phone", {
       await shoot(page, `${p}-20-guides-empty`, "/guides?cat=news-updates#results");
       await shoot(page, `${p}-21-guide-draft`, "/guides/eic");
       await shoot(page, `${p}-22-guide-explainer`, "/guides/applying-officially");
+      await shoot(page, `${p}-23-guide-unemployment-draft`, "/guides/unemployment-benefit-application");
     }
     if (vp === "phone") await shoot(page, `${p}-14-menu-open`, "/", { full: false, before: async (pg) => { await pg.click("details.mobile-nav > summary"); } });
     // demo user: register, answer a few questions as "User A" (unemployed, looking for benefits), view For Me
