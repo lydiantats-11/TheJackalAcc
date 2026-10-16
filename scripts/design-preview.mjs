@@ -52,6 +52,14 @@ for (const [vp, size] of [["desktop", { width: 1440, height: 900 }], ["phone", {
       await shoot(page, `${p}-12-login`, "/login", { full: false });
       await shoot(page, `${p}-13-not-found`, "/this-page-does-not-exist", { full: false });
     }
+    if (lang === "en") { await shoot(page, `${p}-08-guides`, "/guides"); await shoot(page, `${p}-09-guide`, "/guides/a21"); }
+    if (lang === "el") {
+      await shoot(page, `${p}-18-guides-search`, "/guides?q=" + encodeURIComponent("επιδομα") + "#results");
+      await shoot(page, `${p}-19-guides-category`, "/guides?cat=housing-energy#results");
+      await shoot(page, `${p}-20-guides-empty`, "/guides?cat=news-updates#results");
+      await shoot(page, `${p}-21-guide-draft`, "/guides/eic");
+      await shoot(page, `${p}-22-guide-explainer`, "/guides/applying-officially");
+    }
     if (vp === "phone") await shoot(page, `${p}-14-menu-open`, "/", { full: false, before: async (pg) => { await pg.click("details.mobile-nav > summary"); } });
     // demo user: register, answer a few questions as "User A" (unemployed, looking for benefits), view For Me
     if (vp === "desktop" || lang === "el") {

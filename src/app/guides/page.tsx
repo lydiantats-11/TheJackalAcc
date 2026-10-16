@@ -2,57 +2,106 @@ import Link from "next/link";
 import { titled } from "@/lib/site/page-title";
 import { getDict } from "@/lib/i18n/server";
 import { SITE } from "@/lib/site/copy";
-import { GENERAL_GUIDES, PROGRAMME_GUIDES } from "@/lib/site/guides";
-import { categoryBySlug } from "@/lib/site/taxonomy";
-import { Icon } from "@/components/icons";
-import { ACTIONABLE, programmeStatus } from "@/lib/site/guide-status";
+import { ARTICLES, GUIDE_CATEGORIES, countByCategory, guideCategory, searchGuides, verificationOf } from "@/lib/site/guide-catalog";
+import { programmeStatus } from "@/lib/site/guide-status";
 import { loadLiveGuideRecords } from "@/lib/site/guide-live";
+import { GuideCard } from "@/components/guide-ui";
+import { Icon } from "@/components/icons";
 
 export const generateMetadata = titled(({ s }) => s.nav.guides);
 
-export default async function GuidesPage() {
+export default async function GuidesPage({ searchParams }: { searchParams: Promise<{ q?: string; cat?: string }> }) {
   const { locale } = await getDict();
   const s = SITE[locale];
-  // Programme status is computed for this request from the live record or the verified dates — never the 14 Oct snapshot.
+  const g = s.guides;
+  const sp = await searchParams;
+  const q = (typeof sp.q === "string" ? sp.q : "").trim().slice(0, 100);
+  const cat = typeof sp.cat === "string" && guideCategory(sp.cat) ? sp.cat : "";
+  const results = searchGuides({ q, cat });
+  const counts = countByCategory();
+  // Statuses are computed for this request (never the stored snapshot); verification is about the guide's content.
   const now = new Date();
-  const live = await loadLiveGuideRecords(PROGRAMME_GUIDES.map((g) => g.recordKey));
+  const live = await loadLiveGuideRecords(ARTICLES.flatMap((a) => (a.recordKey ? [a.recordKey] : [])), now);
+  const href = (next: { q?: string; cat?: string }) => {
+    const p = new URLSearchParams();
+    if (next.q) p.set("q", next.q);
+    if (next.cat) p.set("cat", next.cat);
+    const str = p.toString();
+    return str ? `/guides?${str}#results` : "/guides#results";
+  };
+  const selected = guideCategory(cat);
+  const heading = q ? g.resultsFor(q) : selected ? selected.name[locale] : g.allCategories;
+
   return (
-    <div className="container">
-      <div className="page-head">
-        <h1>{s.guides.title}</h1>
-        <p className="lead">{s.guides.lead}</p>
-      </div>
+    <>
+      <section className="guides-hero">
+        <div className="container">
+          <h1>{g.heroTitle}</h1>
+          <p className="lead">{g.heroLead}</p>
+          <form className="guide-search" role="search" action="/guides#results">
+            <label className="visually-hidden" htmlFor="guide-q">{g.searchLabel}</label>
+            <Icon name="search" size={20} />
+            <input id="guide-q" name="q" type="search" defaultValue={q} placeholder={g.searchPlaceholder} maxLength={100} autoComplete="off" />
+            {cat && <input type="hidden" name="cat" value={cat} />}
+            <button className="btn btn-primary" type="submit">{g.searchButton}</button>
+          </form>
+        </div>
+      </section>
 
-      <h2 style={{ marginTop: 8 }}>{s.guides.general}</h2>
-      <div className="grid2">
-        {GENERAL_GUIDES.map((g) => (
-          <Link key={g.slug} href={`/guides/${g.slug}`} className="card card-link cat-card">
-            <span className="icon-tile gold"><Icon name="book" /></span>
-            <h3>{g.title[locale]}</h3>
-            <p>{g.summary[locale]}</p>
-            <div className="foot"><strong>{s.guides.read}</strong><Icon name="arrow" size={16} /></div>
-          </Link>
-        ))}
-      </div>
-
-      <h2>{s.guides.programmes}</h2>
-      <div className="grid3">
-        {PROGRAMME_GUIDES.map((g) => {
-          const cat = categoryBySlug(g.categories[0]);
-          const st = programmeStatus(g.recordKey, now, live.get(g.recordKey));
-          return (
-            <Link key={g.slug} href={`/guides/${g.slug}`} className="card card-link cat-card">
-              <div className="row" style={{ justifyContent: "space-between" }}>
-                <span className="icon-tile navy"><Icon name={cat?.icon ?? "book"} /></span>
-                <span className={`badge ${ACTIONABLE.has(st) ? "b-ok" : ""}`} title={s.guides.appStatus}>{s.guides.programmeStatus[st]}</span>
-              </div>
-              <h3>{g.title[locale]}</h3>
-              <p>{g.summary[locale]}</p>
-              <div className="foot"><span>{s.guides.checked(new Date(`${g.checkedOn}T12:00:00Z`).toLocaleDateString(locale === "el" ? "el-GR" : "en-GB", { day: "numeric", month: "short", year: "numeric" }))}</span><Icon name="arrow" size={16} /></div>
+      <div className="container">
+        <h2 id="categories">{g.categoriesTitle}</h2>
+        <nav className="guide-cats" aria-label={g.categoriesTitle}>
+          {GUIDE_CATEGORIES.map((c) => (
+            <Link key={c.slug} href={href({ q, cat: cat === c.slug ? undefined : c.slug })} className="guide-cat" aria-current={cat === c.slug ? "true" : undefined}>
+              <span className="icon-tile navy" aria-hidden="true"><Icon name={c.icon} /></span>
+              <span className="guide-cat-text">
+                <strong>{c.name[locale]}</strong>
+                <span className="small muted">{c.desc[locale]}</span>
+                <span className="xs muted">{g.count(counts[c.slug])}</span>
+              </span>
             </Link>
-          );
-        })}
+          ))}
+        </nav>
+
+        <div className="section-head" id="results" style={{ marginTop: 40, marginBottom: 16 }}>
+          <div>
+            <h2 style={{ margin: 0 }}>{heading}</h2>
+            <p>{g.count(results.length)}</p>
+          </div>
+          {(q || cat) && <Link className="btn btn-ghost btn-sm" href="/guides#results">{g.clear}</Link>}
+        </div>
+
+        {results.length === 0 ? (
+          <div className="empty">
+            <span className="icon-tile navy"><Icon name="search" /></span>
+            <h3>{g.emptyTitle}</h3>
+            <p className="muted" style={{ maxWidth: 520, margin: "0 auto" }}>{!q && cat ? g.emptyCategory : g.emptyText}</p>
+            <p style={{ marginTop: 16 }}><Link className="btn btn-ghost btn-sm" href="/guides#results">{g.allCategories}</Link></p>
+          </div>
+        ) : (
+          <div className="opp-grid">
+            {results.map((a) => (
+              <GuideCard key={a.slug} a={a} s={s} locale={locale} state={verificationOf(a, now)}
+                status={a.recordKey ? programmeStatus(a.recordKey, now, live.get(a.recordKey)) : null} />
+            ))}
+          </div>
+        )}
       </div>
-    </div>
+
+      <section className="band alt" id="faq" style={{ marginTop: 56 }}>
+        <div className="container faq-layout">
+          <div className="section-head faq-head">
+            <div>
+              <h2>{g.questionsTitle}</h2>
+              <p>{s.home.faqLead}</p>
+            </div>
+            <Link href="/about#faq" className="btn btn-ghost btn-sm">{s.home.faqAll} <Icon name="arrow" size={16} /></Link>
+          </div>
+          <div className="faq faq-card">
+            {s.faq.slice(0, 5).map((f) => <details key={f.q}><summary>{f.q}</summary><p>{f.a}</p></details>)}
+          </div>
+        </div>
+      </section>
+    </>
   );
 }
