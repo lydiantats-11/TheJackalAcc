@@ -31,11 +31,10 @@ export function OpportunityCard({ item, t, s, locale, extra }: {
       <div className="tags">
         <AvailabilityBadge value={item.availability} t={t} />
         {cat && <span className="tag cat" title={cat.name[locale]}>{cat.name[locale]}</span>}
-        <span className="tag navy">{s.scope[item.scope]}</span>
         {o.is_synthetic && <SyntheticLabel t={t} />}
       </div>
       <h3 lang={title.lang}><Link href={`/opportunities/${o.id}`}>{title.text}</Link></h3>
-      <p className="authority">{displayAuthority(o, locale)}</p>
+      <p className="authority">{[displayAuthority(o, locale), s.scope[item.scope]].filter(Boolean).join(" · ")}</p>
       {extra}
       <dl className="meta">
         <div><dt>{s.card.deadline}</dt><dd>{cardDeadline(o, t, s, locale)}</dd></div>
