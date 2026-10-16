@@ -37,14 +37,14 @@
     },
     {
       "name": "desktop-el-06-detail-greek",
-      "path": "/opportunities/b7ca063d-277a-431a-84de-e832109a2e7c",
+      "path": "/opportunities/114d5eb3-0611-4b24-8897-e94c3673b087",
       "file": "desktop-el-06-detail-greek.jpg",
       "status": 200,
       "overflow": false
     },
     {
       "name": "desktop-el-07-detail-eu",
-      "path": "/opportunities/80c644d1-e741-430e-8ea9-92b28840d3d2",
+      "path": "/opportunities/ffe6b1ba-059c-4724-a4d1-e884c61d36f1",
       "file": "desktop-el-07-detail-eu.jpg",
       "status": 200,
       "overflow": false
@@ -107,7 +107,7 @@
     },
     {
       "name": "desktop-el-17-detail-logged-in",
-      "path": "/opportunities/b7ca063d-277a-431a-84de-e832109a2e7c",
+      "path": "/opportunities/114d5eb3-0611-4b24-8897-e94c3673b087",
       "file": "desktop-el-17-detail-logged-in.jpg",
       "status": 200,
       "overflow": false
@@ -128,7 +128,7 @@
     },
     {
       "name": "desktop-en-06-detail-greek",
-      "path": "/opportunities/b7ca063d-277a-431a-84de-e832109a2e7c",
+      "path": "/opportunities/114d5eb3-0611-4b24-8897-e94c3673b087",
       "file": "desktop-en-06-detail-greek.jpg",
       "status": 200,
       "overflow": false
@@ -149,7 +149,7 @@
     },
     {
       "name": "desktop-en-17-detail-logged-in",
-      "path": "/opportunities/b7ca063d-277a-431a-84de-e832109a2e7c",
+      "path": "/opportunities/114d5eb3-0611-4b24-8897-e94c3673b087",
       "file": "desktop-en-17-detail-logged-in.jpg",
       "status": 200,
       "overflow": false
@@ -159,21 +159,21 @@
       "path": "/",
       "file": "phone-el-01-home.jpg",
       "status": 200,
-      "overflow": false
+      "overflow": true
     },
     {
       "name": "phone-el-02-opportunities",
       "path": "/opportunities",
       "file": "phone-el-02-opportunities.jpg",
       "status": 200,
-      "overflow": false
+      "overflow": true
     },
     {
       "name": "phone-el-03-category-family",
       "path": "/opportunities?cat=family",
       "file": "phone-el-03-category-family.jpg",
       "status": 200,
-      "overflow": false
+      "overflow": true
     },
     {
       "name": "phone-el-04-category-empty",
@@ -191,14 +191,14 @@
     },
     {
       "name": "phone-el-06-detail-greek",
-      "path": "/opportunities/b7ca063d-277a-431a-84de-e832109a2e7c",
+      "path": "/opportunities/114d5eb3-0611-4b24-8897-e94c3673b087",
       "file": "phone-el-06-detail-greek.jpg",
       "status": 200,
       "overflow": false
     },
     {
       "name": "phone-el-07-detail-eu",
-      "path": "/opportunities/80c644d1-e741-430e-8ea9-92b28840d3d2",
+      "path": "/opportunities/ffe6b1ba-059c-4724-a4d1-e884c61d36f1",
       "file": "phone-el-07-detail-eu.jpg",
       "status": 200,
       "overflow": false
@@ -250,7 +250,7 @@
       "path": "/",
       "file": "phone-el-14-menu-open.jpg",
       "status": 200,
-      "overflow": false
+      "overflow": true
     },
     {
       "name": "phone-el-15-profile",
@@ -264,15 +264,21 @@
       "path": "/for-me",
       "file": "phone-el-16-for-me.jpg",
       "status": 200,
-      "overflow": false
+      "overflow": true
     },
     {
       "name": "phone-el-17-detail-logged-in",
-      "path": "/opportunities/b7ca063d-277a-431a-84de-e832109a2e7c",
+      "path": "/opportunities/114d5eb3-0611-4b24-8897-e94c3673b087",
       "file": "phone-el-17-detail-logged-in.jpg",
       "status": 200,
       "overflow": false
     }
   ],
-  "errors": []
+  "errors": [
+    "phone-el-01-home: horizontal scroll — span.tag: Οικογένεια & κοινωνική στήριξη (398px) | span.tag: Ελλάδα (473px) | p.authority: ΟΠΕΚΑ (524px) | dt.: Όφελος (524px) | span.clamp-3: 1ο–2ο παιδί: 70 / 42 / 28 € τον μήνα · 3 (524px)",
+    "phone-el-02-opportunities: horizontal scroll — path.[object:  (694px) | path.[object:  (694px) | path.[object:  (971px) | path.[object:  (974px) | path.[object:  (1158px)",
+    "phone-el-03-category-family: horizontal scroll — path.[object:  (694px) | path.[object:  (694px) | path.[object:  (971px) | path.[object:  (974px) | path.[object:  (1158px)",
+    "phone-el-14-menu-open: horizontal scroll — span.tag: Οικογένεια & κοινωνική στήριξη (398px) | span.tag: Ελλάδα (473px) | p.authority: ΟΠΕΚΑ (524px) | dt.: Όφελος (524px) | span.clamp-3: 1ο–2ο παιδί: 70 / 42 / 28 € τον μήνα · 3 (524px)",
+    "phone-el-16-for-me: horizontal scroll — span.tag: Ευρωπαϊκή Ένωση (456px) | p.authority: Ευρωπαϊκή Επιτροπή (524px) | dt.: Προϋπολογισμός πρόσκλησης (524px) | dd.: 2,5 εκ. € (524px) | span.tag: Οικογένεια & κοινωνική στήριξη (398px)"
+  ]
 }
