@@ -13,7 +13,7 @@
   --red-700: #9a3328; --red-50: #f9e8e5; --amber-700: #8a5a00; --amber-50: #fbf1dc; --blue-700: #2a4f97; --blue-50: #e8eef9;
 
   /* semantic tokens */
-  --bg: var(--sand-50); --surface: var(--white); --surface-2: var(--grey-100); --surface-tint: var(--teal-50);
+  --bg: var(--sand-50); --surface: var(--white); --surface-2: var(--grey-100); --band-alt: var(--grey-100); --surface-tint: var(--teal-50);
   --ink: var(--navy-900); --ink-2: var(--grey-700); --ink-soft: var(--grey-700); --muted: var(--grey-600); --line: var(--grey-200); --line-strong: var(--grey-300);
   --brand: var(--navy-800); --brand-ink: var(--white); --accent: var(--teal-700); --accent-hover: var(--teal-600); --accent-ink: var(--white);
   --accent-soft: var(--teal-50); --accent-line: var(--teal-100); --highlight: var(--gold-600); --highlight-soft: var(--gold-50);
@@ -34,7 +34,7 @@
 }
 @media (prefers-color-scheme: dark) {
   :root {
-    --bg: #0d1424; --surface: #141d31; --surface-2: #1b2640; --surface-tint: #11302d;
+    --bg: #0d1424; --surface: #141d31; --surface-2: #1b2640; --band-alt: #0a1120; --surface-tint: #11302d;
     --ink: #edf0f6; --ink-2: #c8cedb; --ink-soft: #c8cedb; --muted: #a2aabb; --line: #26324c; --line-strong: #33415f;
     --brand: #e9eef8; --brand-ink: #0d1424; --accent: #5cc2b4; --accent-hover: #7fd3c7; --accent-ink: #062320;
     --accent-soft: #12302c; --accent-line: #1d4741; --highlight: #e0b765; --highlight-soft: #2d2615; --focus: #e0b765;
@@ -120,7 +120,7 @@ main.flush { padding-top: 0; }
 .crumbs a { color: var(--muted); text-decoration: none; } .crumbs a:hover { color: var(--accent); }
 
 section.band { padding: var(--sp-7) 0; }
-section.band.alt { background: var(--surface); border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+section.band.alt { background: var(--band-alt); border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
 .section-head { display: flex; align-items: end; justify-content: space-between; gap: var(--sp-4); flex-wrap: wrap; margin-bottom: var(--sp-5); }
 .section-head h2 { margin: 0 0 4px; font-size: var(--fs-2xl); }
 .section-head p { margin: 0; color: var(--muted); max-width: 640px; }
@@ -250,9 +250,9 @@ details.filters-mobile > summary { display: none; }
 @media (max-width: 900px) { .hero .wrap { grid-template-columns: 1fr; } .hero .art-wrap { order: -1; max-width: 520px; } .hero { padding-top: var(--sp-5); } }
 /* How it works: three connected steps, each leading to its action. */
 .steps { display: grid; gap: var(--sp-5); grid-template-columns: repeat(3, minmax(0, 1fr)); counter-reset: step; }
-.step { position: relative; display: flex; flex-direction: column; padding: var(--sp-5); background: var(--bg); border-radius: var(--radius-lg); }
+.step { position: relative; display: flex; flex-direction: column; padding: var(--sp-5); background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius-lg); box-shadow: var(--shadow-sm); }
 .step-top { display: flex; align-items: center; gap: var(--sp-3); margin-bottom: var(--sp-4); }
-.step .num { position: relative; z-index: 3; flex: none; width: 38px; height: 38px; border-radius: 50%; display: grid; place-items: center; font-weight: 750; font-size: 1rem; background: var(--brand); color: var(--brand-ink); box-shadow: 0 0 0 5px var(--bg); }
+.step .num { position: relative; z-index: 3; flex: none; width: 38px; height: 38px; border-radius: 50%; display: grid; place-items: center; font-weight: 750; font-size: 1rem; background: var(--brand); color: var(--brand-ink); box-shadow: 0 0 0 5px var(--surface); }
 .step h3 { margin-bottom: 6px; font-size: 1.1rem; }
 .step p { color: var(--ink-2); margin: 0 0 var(--sp-4); font-size: .95rem; }
 .step-link { margin-top: auto; display: inline-flex; align-items: center; gap: 6px; font-weight: 650; font-size: .92rem; text-decoration: none; }
@@ -419,3 +419,5 @@ main:has(> section.band:last-child) { padding-bottom: 0; }
 @media (max-width: 860px) { .faq-layout { grid-template-columns: 1fr; gap: var(--sp-4); } .faq-card { padding: 0 var(--sp-4); } }
 .opp-grid > *, .opp-card { min-width: 0; }
 .opp-card .tags { max-width: 100%; }
+.faq-card { box-shadow: var(--shadow-sm); }
+.faq-card summary:hover { color: var(--accent); }
