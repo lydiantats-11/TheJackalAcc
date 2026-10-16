@@ -15,7 +15,8 @@ const SEEDS = [
   "/", "/opportunities", "/categories", "/for-me", "/guides", "/about", "/login", "/register",
   ...CATS.map((c) => `/opportunities?cat=${c}`),
   "/opportunities?scope=gr", "/opportunities?scope=eu", "/opportunities?status=open", "/opportunities?status=upcoming", "/opportunities?status=all",
-  "/guides/eligibility-labels", "/guides/applying-officially",
+  "/guides/eligibility-labels", "/guides/applying-officially", "/guides/unemployment-benefit-application",
+  ...["step-by-step", "benefits", "business-grants", "employment-education", "housing-energy", "eu-programmes", "faq-glossary", "news-updates"].map((c) => `/guides?cat=${c}`),
 ];
 const ALLOWED_PATH = /^\/$|^\/opportunities(\/[0-9a-f-]{36})?$|^\/categories$|^\/guides(\/[\w-]+)?$|^\/about$|^\/for-me$|^\/login$|^\/register$/;
 const LIST_PARAMS = new Set(["cat", "status", "scope", "type", "audience"]);
@@ -32,6 +33,7 @@ function crawlable(key) {
   if (!ALLOWED_PATH.test(u.pathname)) return false;
   const params = [...u.searchParams.keys()];
   if (params.length === 0) return true;
+  if (u.pathname === "/guides") return params.length === 1 && params[0] === "cat"; // guide categories
   return u.pathname === "/opportunities" && params.length === 1 && LIST_PARAMS.has(params[0]); // single-filter views only
 }
 const fileOf = (locale, key) => {
@@ -58,8 +60,8 @@ async function saveCss(ctx, path) {
 }
 
 const BANNER = {
-  el: `<div class="snap-banner">Ιδιωτική προεπισκόπηση — στατικό αντίγραφο της 15/10/2026 από βάση δοκιμών. Η σύνδεση, η αποθήκευση, η αναζήτηση και οι αλλαγές προφίλ λειτουργούν μόνο στην πλήρη εφαρμογή. Δεν είναι επίσημη κρατική υπηρεσία. <a href="el--index.html">Αρχική</a></div>`,
-  en: `<div class="snap-banner">Private preview — static copy from a test database, 15 Oct 2026. Sign-in, saving, search and profile changes only work in the full app. Not an official government service. <a href="en--index.html">Home</a></div>`,
+  el: `<div class="snap-banner">Ιδιωτική προεπισκόπηση — στατικό αντίγραφο της ${new Date().toLocaleDateString("el-GR", { timeZone: "Europe/Athens" })} από βάση δοκιμών. Η σύνδεση, η αποθήκευση, η αναζήτηση και οι αλλαγές προφίλ λειτουργούν μόνο στην πλήρη εφαρμογή. Δεν είναι επίσημη κρατική υπηρεσία. <a href="el--index.html">Αρχική</a></div>`,
+  en: `<div class="snap-banner">Private preview — static copy from a test database, ${new Date().toLocaleDateString("en-GB", { timeZone: "Europe/Athens", day: "numeric", month: "short", year: "numeric" })}. Sign-in, saving, search and profile changes only work in the full app. Not an official government service. <a href="en--index.html">Home</a></div>`,
 };
 const DEMO_BANNER = {
   el: `<div class="snap-banner demo">Επίδειξη: «Για Εμένα» για ένα δοκιμαστικό προφίλ (άνεργος/η, νοικοκυριό, ενδιαφέροντα: εργασία, οικογένεια). Ενδεικτικό — όχι πραγματικό πρόσωπο.</div>`,
