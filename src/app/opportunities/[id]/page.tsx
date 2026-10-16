@@ -9,7 +9,7 @@ import { getProfile, listSavedIds } from "@/lib/data/user";
 import { assess } from "@/lib/domain/eligibility";
 import { runScenario, type Scenario } from "@/lib/domain/scenarios";
 import { estimateAward } from "@/lib/domain/funding";
-import { formatDate } from "@/lib/format";
+import { formatDay } from "@/lib/format";
 import { SITE } from "@/lib/site/copy";
 import { audiencesOf, categoriesOf, categoryBySlug, guideOf, scopeOf, supportTypeOf } from "@/lib/site/taxonomy";
 import { AvailabilityBadge, EligibilityBadge, StateBadge, SyntheticLabel } from "@/components/badges";
@@ -218,13 +218,13 @@ export default async function OpportunityPage({ params, searchParams }: { params
               <ul className="checklist small">
                 <li><Icon name="shield" size={16} /><span><a href={o.canonical_url} target="_blank" rel="noopener noreferrer">{o.canonical_url}</a></span></li>
                 {verified?.sources.filter((src) => src.url !== o.canonical_url).map((src) => (
-                  <li key={src.url}><Icon name="shield" size={16} /><span><a href={src.url} target="_blank" rel="noopener noreferrer">{src.label}</a> <span className="muted">· {s.card.checked} {src.checkedOn}</span></span></li>
+                  <li key={src.url}><Icon name="shield" size={16} /><span><a href={src.url} target="_blank" rel="noopener noreferrer">{src.label}</a> <span className="muted">· {s.card.checked} {formatDay(new Date(`${src.checkedOn}T12:00:00Z`), locale, "UTC")}</span></span></li>
                 ))}
                 {o.official_details?.documents?.map((doc) => (
                   <li key={doc.url}><Icon name="book" size={16} /><span><a href={doc.url} target="_blank" rel="noopener noreferrer" lang="en">{doc.label}</a></span></li>
                 ))}
                 {o.application_url && o.application_url !== o.canonical_url && <li><Icon name="external" size={16} /><span><a href={o.application_url} target="_blank" rel="noopener noreferrer">{o.application_url}</a></span></li>}
-                <li><Icon name="calendar" size={16} /><span>{t.ui.freshness}: {formatDate(o.last_verified_at, locale) ?? <span className="unknown">{t.opp.never}</span>}{o.source_name ? ` · ${o.source_name}` : ""}</span></li>
+                <li><Icon name="calendar" size={16} /><span>{t.ui.freshness}: {formatDay(o.last_verified_at, locale) ?? <span className="unknown">{t.opp.never}</span>}{o.source_name ? ` · ${o.source_name}` : ""}</span></li>
                 {o.deadline_original_text && <li><Icon name="info" size={16} /><span>{t.ui.originalDeadline}: <code>{o.deadline_original_text}</code>{o.deadline_is_date_only ? ` — ${t.ui.dateOnly}` : ""}</span></li>}
               </ul>
             </section>
@@ -245,7 +245,7 @@ export default async function OpportunityPage({ params, searchParams }: { params
               <div><dt>{s.opps.scope}</dt><dd>{s.scope[scope]}</dd></div>
               <div><dt>{t.opp.authority}</dt><dd>{o.publishing_authority ?? <span className="unknown">{t.opp.deadlineUnknown}</span>}</dd></div>
               {o.funding_intensity_pct && <div><dt>{t.opp.intensity}</dt><dd>{Number(o.funding_intensity_pct)}%</dd></div>}
-              <div><dt>{s.card.checked}</dt><dd>{formatDate(o.last_verified_at, locale) ?? "—"}</dd></div>
+              <div><dt>{s.card.checked}</dt><dd>{formatDay(o.last_verified_at, locale) ?? "—"}</dd></div>
             </dl>
             <div className="stack" style={{ marginTop: 16 }}>
               <a className="btn btn-primary btn-block" href={o.canonical_url} target="_blank" rel="noopener noreferrer">{t.opp.official} <Icon name="external" size={16} /></a>

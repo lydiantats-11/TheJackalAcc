@@ -5,11 +5,24 @@ import type { SiteCopy } from "@/lib/site/copy";
 import { StateBadge } from "./badges";
 import { Icon } from "./icons";
 
-function answerText(v: unknown, s: SiteCopy): string {
+const COUNTRY_FIELDS = new Set(["application_country", "country_of_residence", "tax_residence_country", "citizenship_country"]);
+const GROUP_OF: Record<string, string> = { gr_tax_resident_prev6: "prior_years", gr_tax_resident_prev8: "prior_years" };
+
+/** An answer as the person saw it in the profile form — never a stored code like "under_10k" or "GR". */
+function answerText(field: string, v: unknown, s: SiteCopy, t: Dictionary): string {
   if (v === null || v === undefined || v === "") return s.audit.notAnswered;
-  if (Array.isArray(v)) return v.length ? v.map((x) => String(x)).join(", ") : s.audit.notAnswered;
-  if (typeof v === "boolean") return v ? "✓" : "✗";
-  return String(v);
+  const opt = t.opt as unknown as Record<string, unknown>;
+  const one = (x: unknown): string => {
+    const k = String(x);
+    if (k === "not_sure" || k === "prefer_not" || k === "yes" || k === "no") return String(opt[k]);
+    if (COUNTRY_FIELDS.has(field)) return (t.opt.country as Record<string, string>)[k] ?? k;
+    const group = opt[GROUP_OF[field] ?? field];
+    if (group && typeof group === "object") return (group as Record<string, string>)[k] ?? k;
+    return k;
+  };
+  if (Array.isArray(v)) return v.length ? v.map(one).join(", ") : s.audit.notAnswered;
+  if (typeof v === "boolean") return v ? t.ui.yes : t.ui.no;
+  return one(v);
 }
 
 export function DecisionRecordView({ record, s, t, opportunityId }: { record: DecisionRecord; s: SiteCopy; t: Dictionary; opportunityId: string }) {
@@ -39,7 +52,7 @@ export function DecisionRecordView({ record, s, t, opportunityId }: { record: De
                   <td className="small">{s.detail.req.kinds[l.rule_type] ?? l.rule_type}{l.authoritative ? " ✓" : ""}</td>
                   <td className="small">
                     {l.profile_fields.length === 0 ? <span className="muted">{a.noAnswers}</span> : (
-                      <ul className="plain">{l.profile_fields.map((f) => <li key={f}><span className="muted">{t.question[f] ?? f}:</span> {answerText(l.answers_used[f], s)}</li>)}</ul>
+                      <ul className="plain">{l.profile_fields.map((f) => <li key={f}><span className="muted">{t.question[f] ?? f}:</span> {answerText(f, l.answers_used[f], s, t)}</li>)}</ul>
                     )}
                   </td>
                   <td><StateBadge state={l.outcome} t={t} /></td>

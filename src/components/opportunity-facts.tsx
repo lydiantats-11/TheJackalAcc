@@ -1,14 +1,14 @@
 import { geographyOf, type OpportunityRow } from "@/lib/data/opportunities";
 import { geographyKind } from "@/lib/domain/requirements";
 import type { Dictionary, Locale } from "@/lib/i18n/dictionaries";
-import { formatDate, formatMoney } from "@/lib/format";
+import { formatDate, formatMoney, zoneLabel } from "@/lib/format";
 
 export function deadlineText(o: OpportunityRow, t: Dictionary, locale: Locale) {
   if (o.deadline_kind === "rolling") return <>{t.opp.deadlineRolling}</>;
   if (o.deadline_kind !== "official" || !o.closes_at) return <span className="unknown">{t.opp.deadlineUnknown}</span>;
   if (o.deadline_is_date_only)
-    return <>{new Intl.DateTimeFormat(locale === "el" ? "el-GR" : "en-GB", { dateStyle: "medium", timeZone: o.deadline_timezone }).format(o.closes_at)} <span className="muted small">({o.deadline_timezone})</span></>;
-  return <>{formatDate(o.closes_at, locale, o.deadline_timezone)} <span className="muted small">({o.deadline_timezone})</span></>;
+    return <>{new Intl.DateTimeFormat(locale === "el" ? "el-GR" : "en-GB", { dateStyle: "medium", timeZone: o.deadline_timezone }).format(o.closes_at)} <span className="muted small">· {zoneLabel(o.deadline_timezone, locale)}</span></>;
+  return <>{formatDate(o.closes_at, locale, o.deadline_timezone)} <span className="muted small">· {zoneLabel(o.deadline_timezone, locale)}</span></>;
 }
 
 export function amountText(o: OpportunityRow, t: Dictionary, locale: Locale) {

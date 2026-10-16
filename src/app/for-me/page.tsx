@@ -82,8 +82,8 @@ export default async function ForMePage({ searchParams }: { searchParams: Promis
 
   const why = (a: Assessment, x: ListedOpportunity) => {
     const reasons: string[] = [];
-    if (x.audiences.some((p) => myPersonas.includes(p))) reasons.push(locale === "el" ? "ταιριάζει με την ομάδα σου" : "fits your group");
-    if (x.categories.some((c) => myCats.has(c))) reasons.push(locale === "el" ? "ταιριάζει με τα ενδιαφέροντά σου" : "matches your interests");
+    if (x.audiences.some((p) => myPersonas.includes(p))) reasons.push(locale === "el" ? "ταιριάζει με την ομάδα σας" : "fits your group");
+    if (x.categories.some((c) => myCats.has(c))) reasons.push(locale === "el" ? "ταιριάζει με τα ενδιαφέροντά σας" : "matches your interests");
     const joined = reasons.join(" · ");
     const head = joined ? `${joined.charAt(0).toUpperCase()}${joined.slice(1)}. ` : "";
     return head + requirementsLine(a);

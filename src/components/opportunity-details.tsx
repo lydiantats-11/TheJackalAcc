@@ -15,7 +15,7 @@ import { Icon } from "./icons";
 
 const loc = (l: Locale) => (l === "el" ? "el-GR" : "en-GB");
 const eur = (n: number, l: Locale, compact = false) =>
-  new Intl.NumberFormat(loc(l), { style: "currency", currency: "EUR", maximumFractionDigits: compact ? 1 : 0, ...(compact ? { notation: "compact" as const } : {}) }).format(n);
+  new Intl.NumberFormat(loc(l), { style: "currency", currency: "EUR", minimumFractionDigits: 0, maximumFractionDigits: compact ? 1 : 0, ...(compact ? { notation: "compact" as const } : {}) }).format(n);
 
 /** A verified date string: "2026-10-05" (a day) or a full timestamp. */
 function verifiedDate(v: string | null, l: Locale, tz: string | null): string | null {

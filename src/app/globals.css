@@ -360,3 +360,21 @@ ol.timeline { list-style: none; margin: 0; padding: 0 0 0 var(--sp-4); border-le
 ol.timeline li { position: relative; display: flex; flex-wrap: wrap; gap: 4px 8px; align-items: baseline; }
 ol.timeline li::before { content: ""; position: absolute; left: calc(-1 * var(--sp-4) - 6px); top: .45em; width: 10px; height: 10px; border-radius: 50%; background: var(--accent); }
 ol.timeline time { color: var(--muted); min-width: 9.5rem; }
+
+/* ── small design fixes (16 Oct 2026) ─────────────────────────────────────────────────────────────────────── */
+/* Phones/tablets: the key information (deadline, amount, official link) comes first, and stops being sticky. */
+@media (max-width: 960px) {
+  .with-aside-r > aside { order: -1; }
+  .with-aside-r > aside.sticky { position: static; }
+  .with-aside > aside.sticky { position: static; }
+}
+/* Section links: one scrollable row instead of wrapping to three lines on a phone. */
+.toc { flex-wrap: nowrap; overflow-x: auto; scrollbar-width: none; -webkit-overflow-scrolling: touch; }
+.toc::-webkit-scrollbar { display: none; }
+.toc a { white-space: nowrap; flex: none; }
+/* Category chips: fade at the right edge so it is clear the row scrolls. */
+.chips-row { -webkit-mask-image: linear-gradient(to right, #000 calc(100% - 48px), transparent); mask-image: linear-gradient(to right, #000 calc(100% - 48px), transparent); padding-right: 40px; }
+.chips-row .chip { flex: none; white-space: nowrap; }
+/* Key information: room for longer Greek labels such as «Προϋπολογισμός πρόσκλησης». */
+.keyinfo dl > div { grid-template-columns: 132px 1fr; }
+@media (max-width: 600px) { .keyinfo dl > div { grid-template-columns: 1fr; } }
