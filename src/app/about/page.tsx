@@ -22,7 +22,40 @@ export default async function AboutPage() {
         <p className="lead">{ab.lead}</p>
       </div>
 
-      <div className="grid2">
+      <nav className="toc about-toc" aria-label={ab.title}>
+        <a href="#mission">{ab.nav.mission}</a>
+        <a href="#principles">{ab.nav.principles}</a>
+        <a href="#how">{ab.nav.how}</a>
+        <a href="#labels">{ab.nav.labels}</a>
+        <a href="#sources">{ab.nav.sources}</a>
+        <a href="#faq">{ab.nav.faq}</a>
+      </nav>
+
+      <section id="mission" className="mission-panel">
+        <div>
+          <span className="eyebrow">{ab.missionTitle}</span>
+          <p className="mission-text">{ab.mission}</p>
+        </div>
+        <div>
+          <span className="eyebrow">{ab.visionTitle}</span>
+          <p className="mission-text">{ab.vision}</p>
+        </div>
+      </section>
+
+      <section id="principles" className="about-section">
+        <div className="section-head"><div><h2>{ab.principlesTitle}</h2><p>{ab.principlesLead}</p></div></div>
+        <div className="principles">
+          {ab.principles.map((pr) => (
+            <div key={pr.t} className="card principle">
+              <span className="icon-tile"><Icon name={pr.icon} /></span>
+              <h3>{pr.t}</h3>
+              <p>{pr.d}</p>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      <div className="grid2 about-section">
         <div className="card tint">
           <span className="icon-tile"><Icon name="sparkle" /></span>
           <h2 style={{ marginTop: 14, fontSize: "1.2rem" }}>{ab.whatTitle}</h2>
@@ -35,12 +68,23 @@ export default async function AboutPage() {
         </div>
       </div>
 
-      <h2 id="how" style={{ marginTop: 48 }}>{ab.howTitle}</h2>
-      <ol className="steps" style={{ listStyle: "none", padding: 0, margin: 0 }}>
-        {ab.how.map((h, i) => <li key={h.t} className="step"><div className="num" aria-hidden="true">{i + 1}</div><h3>{h.t}</h3><p>{h.d}</p></li>)}
-      </ol>
+      <section id="how" className="about-section">
+        <div className="section-head"><div><h2>{ab.howTitle}</h2><p>{ab.howLead}</p></div></div>
+        <ol className="steps four">
+          {ab.how.map((h, i) => (
+            <li key={h.t} className="step">
+              <div className="step-top">
+                <span className="num" aria-hidden="true">{i + 1}</span>
+                <span className="icon-tile"><Icon name={h.icon} /></span>
+              </div>
+              <h3>{h.t}</h3>
+              <p>{h.d}</p>
+            </li>
+          ))}
+        </ol>
+      </section>
 
-      <h2 style={{ marginTop: 48 }}>{ab.statusTitle}</h2>
+      <h2 id="labels" style={{ marginTop: 48 }}>{ab.statusTitle}</h2>
       <div className="grid2">
         <div className="card flat">
           <div className="section-label sl-score">{t.opp.sectionMatch}</div>
