@@ -429,7 +429,10 @@ main:has(> section.band:last-child) { padding-bottom: 0; }
 .mission-panel { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: var(--sp-6); padding: var(--sp-6); border-radius: var(--radius-lg); background: var(--brand); color: var(--brand-ink); }
 .mission-panel .eyebrow { color: inherit; opacity: .78; }
 .mission-text { margin: var(--sp-2) 0 0; font-size: 1.2rem; line-height: 1.5; font-weight: 550; text-wrap: pretty; }
-.principles { display: grid; grid-template-columns: repeat(auto-fit, minmax(210px, 1fr)); gap: var(--sp-4); }
+.principles { display: grid; grid-template-columns: repeat(6, minmax(0, 1fr)); gap: var(--sp-4); }
+.principles > * { grid-column: span 2; }
+.principles > :nth-child(4), .principles > :nth-child(5) { grid-column: span 3; }
+@media (max-width: 900px) { .principles { grid-template-columns: 1fr; } .principles > * , .principles > :nth-child(4), .principles > :nth-child(5) { grid-column: auto; } }
 .principle h3 { margin: var(--sp-3) 0 6px; font-size: 1.02rem; }
 .principle p { margin: 0; color: var(--ink-2); font-size: .93rem; }
 .steps.four { list-style: none; padding: 0; margin: 0; grid-template-columns: repeat(4, minmax(0, 1fr)); }
