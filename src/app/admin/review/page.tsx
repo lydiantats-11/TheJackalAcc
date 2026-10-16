@@ -1,4 +1,5 @@
 import { getDict } from "@/lib/i18n/server";
+import { titled } from "@/lib/site/page-title";
 import { sql } from "@/lib/db";
 import { requireAdmin } from "@/lib/auth/session";
 import { listPendingCandidates } from "@/lib/data/review";
@@ -6,7 +7,7 @@ import { listOpportunities } from "@/lib/data/opportunities";
 import { configuredProvider } from "@/lib/ai";
 import { approveCandidateAction, extractDocumentAction, rejectCandidateAction, setCompletenessAction } from "@/app/actions";
 
-export const metadata = { title: "Review" };
+export const generateMetadata = titled(({ t }) => t.nav.review);
 
 export default async function ReviewPage({ searchParams }: { searchParams: Promise<{ ok?: string; error?: string }> }) {
   const user = await requireAdmin();

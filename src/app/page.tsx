@@ -43,7 +43,7 @@ export default async function Home() {
               <span><Icon name="globe" size={18} />{h.trust3}</span>
             </div>
           </div>
-          <div className="art-wrap"><AcropolisArt className="art" /></div>
+          <div className="art-wrap"><AcropolisArt className="art" label={locale === "el" ? "Η Ακρόπολη της Αθήνας" : "The Acropolis of Athens"} /></div>
         </div>
       </section>
 

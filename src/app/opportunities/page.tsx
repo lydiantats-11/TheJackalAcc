@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { titled } from "@/lib/site/page-title";
 import { getDict } from "@/lib/i18n/server";
 import { isDatabaseConfigured, sql } from "@/lib/db";
 import { loadRequirements, toMatchable } from "@/lib/data/opportunities";
@@ -14,7 +15,7 @@ import { EligibilityBadge } from "@/components/badges";
 import { Icon } from "@/components/icons";
 import { OpportunityCard } from "@/components/opportunity-card";
 
-export const metadata = { title: "Ευκαιρίες / Opportunities" };
+export const generateMetadata = titled(({ s }) => s.nav.opportunities);
 const PAGE_SIZE = 24;
 const STATUS = ["open", "upcoming", "passed", "closed", "all"] as const;
 
@@ -73,7 +74,7 @@ export default async function OpportunitiesPage({ searchParams }: { searchParams
       {select(px, "type", s.opps.type, f.type, SUPPORT_TYPES.map((x) => [x, s.supportType[x]]))}
       {select(px, "audience", s.opps.audience, f.audience, PERSONA_IDS.map((x) => [x, t.opt.personas[x] ?? x]))}
       {select(px, "scope", s.opps.scope, f.scope, [["gr", s.scope.gr], ["eu", s.scope.eu]])}
-      {select(px, "status", s.opps.status, f.status === "current" ? undefined : f.status, STATUS.map((x) => [x, s.status[x]]), `${s.status.open} + ${s.status.upcoming}`)}
+      {select(px, "status", s.opps.status, f.status === "current" ? undefined : f.status, STATUS.map((x) => [x, s.status[x]]), s.status.current)}
       {select(px, "industry", s.opps.industry, f.industry, INDUSTRY_IDS.map((x) => [x, t.opt.industries[x] ?? x]))}
       <div className="actions">
         <button className="btn btn-primary btn-sm">{s.opps.apply}</button>

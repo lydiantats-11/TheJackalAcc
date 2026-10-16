@@ -9,7 +9,7 @@ import type { Locale } from "@/lib/i18n/dictionaries";
 
 type L = Record<Locale, string>;
 interface RawRecord {
-  id: string; official_title: L; summary: L;
+  id: string; official_title: L; issuing_authority: L; summary: L;
   application_status: { value: string; verified_on?: string; opens_at?: string | null; closes_at?: string | null; timezone?: string | null; deadline_original_wording?: L | null };
   funding_or_benefit: { value: L | null; state: string };
   eligibility_rules: Array<{ label: L; official_quote?: string | null }>;
@@ -22,6 +22,7 @@ interface RawRecord {
 export interface VerifiedFacts {
   key: string;
   title: L;
+  authority: L;
   summary: L;
   checkedOn: string;
   benefit: L | null;
@@ -39,6 +40,7 @@ const raw = records as { verification: { checked_on: string }; records: RawRecor
 const BY_KEY = new Map<string, VerifiedFacts>(raw.records.map((r) => [`manual:${r.id}`, {
   key: `manual:${r.id}`,
   title: r.official_title,
+  authority: r.issuing_authority,
   summary: r.summary,
   checkedOn: r.application_status.verified_on ?? raw.verification.checked_on,
   benefit: r.funding_or_benefit.value,
@@ -58,6 +60,19 @@ const BY_KEY = new Map<string, VerifiedFacts>(raw.records.map((r) => [`manual:${
 /** Verified facts for a record, by its external key ("manual:<id>"); null for everything else. */
 export function verifiedFor(externalKey: string | null | undefined): VerifiedFacts | null {
   return externalKey ? BY_KEY.get(externalKey) ?? null : null;
+}
+
+/** Authority names the sources publish in one language, and how to name them in each (no new facts). */
+const AUTHORITY_NAMES: Record<string, Record<Locale, string>> = {
+  "European Commission (EU Funding & Tenders Portal)": { el: "Ευρωπαϊκή Επιτροπή", en: "European Commission" },
+};
+
+/** Authority to show: the verified translation, a known official name, or the source's own wording. */
+export function displayAuthority(o: { external_key: string | null; publishing_authority: string | null }, locale: Locale): string | null {
+  const v = verifiedFor(o.external_key);
+  if (v) return v.authority[locale];
+  if (!o.publishing_authority) return null;
+  return AUTHORITY_NAMES[o.publishing_authority]?.[locale] ?? o.publishing_authority;
 }
 
 /** Title to show: the verified translation in the visitor's language when there is one, else the official title. */

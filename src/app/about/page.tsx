@@ -1,10 +1,11 @@
 import { getDict } from "@/lib/i18n/server";
+import { titled } from "@/lib/site/page-title";
 import { isDatabaseConfigured, sql } from "@/lib/db";
 import { SITE } from "@/lib/site/copy";
 import { AvailabilityBadge, EligibilityBadge } from "@/components/badges";
 import { Icon } from "@/components/icons";
 
-export const metadata = { title: "Σχετικά / About" };
+export const generateMetadata = titled(({ s }) => s.footer.about);
 
 export default async function AboutPage() {
   const { t, locale } = await getDict();

@@ -1,10 +1,11 @@
 import Link from "next/link";
+import { titled } from "@/lib/site/page-title";
 import { getDict } from "@/lib/i18n/server";
 import { sql } from "@/lib/db";
 import { requireAdmin } from "@/lib/auth/session";
 import { adminOverview } from "@/lib/data/admin";
 
-export const metadata = { title: "Admin" };
+export const generateMetadata = titled(({ t }) => t.admin.title);
 
 export default async function AdminPage() {
   const user = await requireAdmin();

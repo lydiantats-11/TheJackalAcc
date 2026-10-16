@@ -5,6 +5,7 @@ import { formatDate, formatMoney, zoneLabel } from "@/lib/format";
 
 export function deadlineText(o: OpportunityRow, t: Dictionary, locale: Locale) {
   if (o.deadline_kind === "rolling") return <>{t.opp.deadlineRolling}</>;
+  if (o.deadline_kind === "not_applicable") return <>{t.opp.deadlineNone}</>;
   if (o.deadline_kind !== "official" || !o.closes_at) return <span className="unknown">{t.opp.deadlineUnknown}</span>;
   if (o.deadline_is_date_only)
     return <>{new Intl.DateTimeFormat(locale === "el" ? "el-GR" : "en-GB", { dateStyle: "medium", timeZone: o.deadline_timezone }).format(o.closes_at)} <span className="muted small">· {zoneLabel(o.deadline_timezone, locale)}</span></>;

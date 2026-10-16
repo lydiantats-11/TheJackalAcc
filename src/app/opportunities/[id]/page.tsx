@@ -18,7 +18,7 @@ import { RequirementsTable } from "@/components/requirements-table";
 import { DecisionRecordView } from "@/components/decision-record";
 import { buildDecisionRecord } from "@/lib/domain/decision-record";
 import { KeyFacts, OfficialConditions, OfficialScope, VerifiedSteps, keyAmount } from "@/components/opportunity-details";
-import { displayTitle, verifiedFor } from "@/lib/site/verified";
+import { displayAuthority, displayTitle, verifiedFor } from "@/lib/site/verified";
 import { Icon } from "@/components/icons";
 import { toggleSaveAction } from "@/app/actions";
 
@@ -34,6 +34,13 @@ function buildScenario(kind: string, regions: string[], now: Date): Scenario | n
     case "obtain_dypa_registration": return { kind };
     default: return null;
   }
+}
+
+export async function generateMetadata({ params }: { params: Promise<{ id: string }> }) {
+  const { locale } = await getDict();
+  if (!isDatabaseConfigured()) return {};
+  const o = await getOpportunity(sql(), (await params).id).catch(() => null);
+  return o ? { title: displayTitle(o, locale).text } : {};
 }
 
 export default async function OpportunityPage({ params, searchParams }: { params: Promise<{ id: string }>; searchParams: Promise<{ scenario?: string }> }) {
@@ -75,7 +82,7 @@ export default async function OpportunityPage({ params, searchParams }: { params
 
   return (
     <div className="container">
-      <nav className="crumbs" aria-label="breadcrumb">
+      <nav className="crumbs" aria-label={s.detail.breadcrumb}>
         <Link href="/opportunities">{s.detail.back}</Link>
         {cats[0] && <> / <Link href={`/opportunities?cat=${cats[0].slug}`}>{cats[0].name[locale]}</Link></>}
       </nav>
@@ -89,7 +96,7 @@ export default async function OpportunityPage({ params, searchParams }: { params
         </div>
         <h1 lang={title.lang}>{title.text}</h1>
         {title.text !== o.official_title && <p className="small muted" style={{ margin: "0 0 4px" }} lang={o.title_lang}>{o.official_title}</p>}
-        <p className="muted" style={{ margin: 0 }}>{o.publishing_authority}{o.official_identifier ? ` · ${o.official_identifier}` : ""}</p>
+        <p className="muted" style={{ margin: 0 }}>{displayAuthority(o, locale)}{o.official_identifier ? ` · ${o.official_identifier}` : ""}</p>
       </header>
       {o.is_synthetic && <div className="notice" style={{ marginBottom: 16 }}>{t.synthetic}.</div>}
       {o.has_conflict && <div className="notice bad" role="alert" style={{ marginBottom: 16 }}>{t.ui.conflict}</div>}
@@ -243,7 +250,7 @@ export default async function OpportunityPage({ params, searchParams }: { params
               {cats.length > 0 && <div><dt>{s.detail.category}</dt><dd>{cats.map((c) => c.name[locale]).join(", ")}</dd></div>}
               {audiences.length > 0 && <div><dt>{s.detail.forWhom}</dt><dd>{audiences.map((p) => t.opt.personas[p] ?? p).join(", ")}</dd></div>}
               <div><dt>{s.opps.scope}</dt><dd>{s.scope[scope]}</dd></div>
-              <div><dt>{t.opp.authority}</dt><dd>{o.publishing_authority ?? <span className="unknown">{t.opp.deadlineUnknown}</span>}</dd></div>
+              <div><dt>{t.opp.authority}</dt><dd>{displayAuthority(o, locale) ?? <span className="unknown">{t.opp.deadlineUnknown}</span>}</dd></div>
               {o.funding_intensity_pct && <div><dt>{t.opp.intensity}</dt><dd>{Number(o.funding_intensity_pct)}%</dd></div>}
               <div><dt>{s.card.checked}</dt><dd>{formatDay(o.last_verified_at, locale) ?? "—"}</dd></div>
             </dl>

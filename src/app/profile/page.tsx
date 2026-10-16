@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { titled } from "@/lib/site/page-title";
 import { getDict } from "@/lib/i18n/server";
 import { sql } from "@/lib/db";
 import { requireUser } from "@/lib/auth/session";
@@ -8,7 +9,7 @@ import { ProfileForm } from "@/components/profile-form";
 import { Icon } from "@/components/icons";
 import { deleteAccountAction, saveProfileAction } from "../actions";
 
-export const metadata = { title: "Το προφίλ μου / My profile" };
+export const generateMetadata = titled(({ s }) => s.nav.profile);
 
 export default async function ProfilePage({ searchParams }: { searchParams: Promise<{ delete?: string; ask?: string; welcome?: string }> }) {
   const user = await requireUser();

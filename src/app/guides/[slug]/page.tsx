@@ -7,6 +7,12 @@ import { guideBySlug } from "@/lib/site/guides";
 import { categoryBySlug } from "@/lib/site/taxonomy";
 import { Icon } from "@/components/icons";
 
+export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }) {
+  const { locale } = await getDict();
+  const g = guideBySlug((await params).slug);
+  return g ? { title: g.title[locale] } : {};
+}
+
 export default async function GuidePage({ params }: { params: Promise<{ slug: string }> }) {
   const { locale } = await getDict();
   const s = SITE[locale];

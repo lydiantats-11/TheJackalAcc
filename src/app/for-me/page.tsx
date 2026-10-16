@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { titled } from "@/lib/site/page-title";
 import { getDict } from "@/lib/i18n/server";
 import { isDatabaseConfigured, sql } from "@/lib/db";
 import { currentUser } from "@/lib/auth/session";
@@ -8,6 +9,7 @@ import { assess, rankKey, type Assessment } from "@/lib/domain/eligibility";
 import { rankQuestions } from "@/lib/domain/question-impact";
 import { isAnswered } from "@/lib/domain/personas";
 import { SITE } from "@/lib/site/copy";
+import { displayTitle } from "@/lib/site/verified";
 import { loadListing, type ListedOpportunity } from "@/lib/site/listing";
 import { INTEREST_CATEGORIES } from "@/lib/site/taxonomy";
 import { personasOf } from "@/lib/domain/personas";
@@ -15,7 +17,7 @@ import { EligibilityBadge } from "@/components/badges";
 import { Icon } from "@/components/icons";
 import { OpportunityCard } from "@/components/opportunity-card";
 
-export const metadata = { title: "Για Εμένα / For Me" };
+export const generateMetadata = titled(({ s }) => s.nav.forMe);
 
 const PROFILE_FIELDS = ["personas", "interests", "industries", "persona", "region_codes", "age_range", "employment_status", "education_level", "business_stage", "housing_status"] as const;
 const GROUPS = ["potentially_eligible", "potentially_eligible_verification_required", "insufficient_information", "under_review", "unlikely_eligible", "ineligible_verified"] as const;
@@ -126,7 +128,7 @@ export default async function ForMePage({ searchParams }: { searchParams: Promis
           <div className="card">
             <div className="kpi-label">{f.saved}</div>
             {saved.length === 0 ? <p className="small muted" style={{ margin: "8px 0 0" }}>{f.noSaved}</p> : (
-              <ul className="checklist small" style={{ marginTop: 10 }}>{saved.map((x) => <li key={x.row.id}><Icon name="bookmark" size={16} /><Link href={`/opportunities/${x.row.id}`}>{x.row.official_title}</Link></li>)}</ul>
+              <ul className="checklist small" style={{ marginTop: 10 }}>{saved.map((x) => <li key={x.row.id}><Icon name="bookmark" size={16} /><Link href={`/opportunities/${x.row.id}`} lang={displayTitle(x.row, locale).lang}>{displayTitle(x.row, locale).text}</Link></li>)}</ul>
             )}
           </div>
         </aside>

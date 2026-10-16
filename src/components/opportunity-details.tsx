@@ -75,7 +75,7 @@ export function KeyFacts({ o, s, locale, t }: { o: OpportunityRow; s: SiteCopy; 
       <section id="details" className="card">
         <h2 style={{ marginTop: 0 }}>{f.title}</h2>
         <dl className="facts-grid">
-          <Row k={f.deadline}>{cutoffs.length ? <>{cutoffs.map(fmtCut).join(" · ")}{tzNote}</> : o.deadline_kind === "rolling" ? f.openEnded : <span className="muted">{t.opp.deadlineUnknown}</span>}</Row>
+          <Row k={f.deadline}>{cutoffs.length ? <>{cutoffs.map(fmtCut).join(" · ")}{tzNote}</> : o.deadline_kind === "rolling" ? f.openEnded : o.deadline_kind === "not_applicable" ? t.opp.deadlineNone : <span className="muted">{t.opp.deadlineUnknown}</span>}</Row>
           {o.opens_at && <Row k={f.opens}>{formatDay(o.opens_at, locale, o.deadline_timezone)}</Row>}
         </dl>
         <div className="notice small" style={{ marginTop: 12 }}><Icon name="info" size={18} /><span><strong>{f.noneTitle}.</strong> {f.none}</span></div>
@@ -117,7 +117,7 @@ export function KeyFacts({ o, s, locale, t }: { o: OpportunityRow; s: SiteCopy; 
           </Row>
         )}
         {d?.budget?.expected_grants ? <Row k={f.grants}>{d.budget.expected_grants}</Row> : null}
-        {!v && <Row k={cutoffs.length > 1 ? f.cutoffs : f.deadline}>{cutoffs.length ? <>{cutoffs.map(fmtCut).join(" · ")}{tzNote}</> : o.deadline_kind === "rolling" ? f.openEnded : <span className="muted">{t.opp.deadlineUnknown}</span>}</Row>}
+        {!v && <Row k={cutoffs.length > 1 ? f.cutoffs : f.deadline}>{cutoffs.length ? <>{cutoffs.map(fmtCut).join(" · ")}{tzNote}</> : o.deadline_kind === "rolling" ? f.openEnded : o.deadline_kind === "not_applicable" ? t.opp.deadlineNone : <span className="muted">{t.opp.deadlineUnknown}</span>}</Row>}
         {!v && (o.opens_at || d?.planned_opening) && <Row k={f.opens}>{o.opens_at ? formatDay(o.opens_at, locale, o.deadline_timezone) : verifiedDate(d!.planned_opening!.slice(0, 10), locale, null)}</Row>}
         {d?.submission && <Row k={f.submission}>{f.stages[d.submission] ?? d.submission}</Row>}
         {d?.action_type && <Row k={f.actionType}><span lang="en">{d.action_type}</span></Row>}

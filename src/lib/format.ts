@@ -2,7 +2,7 @@ import type { Locale } from "./i18n/dictionaries";
 
 export function formatDate(d: Date | null, locale: Locale, tz = "Europe/Athens"): string | null {
   if (!d) return null;
-  return new Intl.DateTimeFormat(locale === "el" ? "el-GR" : "en-GB", { dateStyle: "medium", timeStyle: "short", timeZone: tz }).format(d);
+  return new Intl.DateTimeFormat(locale === "el" ? "el-GR" : "en-GB", { dateStyle: "medium", timeStyle: "short", hourCycle: "h23", timeZone: tz }).format(d);
 }
 
 export function formatMoney(v: string | number | null, locale: Locale, currency = "EUR"): string | null {

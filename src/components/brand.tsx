@@ -17,10 +17,10 @@ export function LogoMark({ size = 34 }: { size?: number }) {
  * The Acropolis at Athens as a calm line illustration: the rock, the Parthenon's stylobate, eight Doric columns,
  * entablature and pediment, a low sun and an olive branch. Colours follow the theme tokens (light and dark).
  */
-export function AcropolisArt({ className }: { className?: string }) {
+export function AcropolisArt({ className, label = "Η Ακρόπολη της Αθήνας" }: { className?: string; label?: string }) {
   const cols = Array.from({ length: 8 }, (_, i) => 168 + i * 31);
   return (
-    <svg viewBox="0 0 520 380" className={className} role="img" aria-label="Η Ακρόπολη της Αθήνας / The Acropolis of Athens">
+    <svg viewBox="0 0 520 380" className={className} role="img" aria-label={label}>
       <defs>
         <linearGradient id="ja-sky" x1="0" y1="0" x2="0" y2="1">
           <stop offset="0" stopColor="var(--art-sky-top)" />

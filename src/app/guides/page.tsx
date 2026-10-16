@@ -1,11 +1,12 @@
 import Link from "next/link";
+import { titled } from "@/lib/site/page-title";
 import { getDict } from "@/lib/i18n/server";
 import { SITE } from "@/lib/site/copy";
 import { GENERAL_GUIDES, PROGRAMME_GUIDES } from "@/lib/site/guides";
 import { categoryBySlug } from "@/lib/site/taxonomy";
 import { Icon } from "@/components/icons";
 
-export const metadata = { title: "Οδηγοί / Guides" };
+export const generateMetadata = titled(({ s }) => s.nav.guides);
 
 export default async function GuidesPage() {
   const { locale } = await getDict();

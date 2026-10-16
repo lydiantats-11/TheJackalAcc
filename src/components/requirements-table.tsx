@@ -22,22 +22,22 @@ export function RequirementsTable({ results, t, copy }: { results: RequirementRe
   if (results.length === 0) return <p className="small muted">{t.ui.requirementsUnknown}</p>;
   return (
     <div className="scroll">
-      <table className="crit">
-        <thead><tr><th>{t.opp.sectionRequirements}</th><th>{copy?.state ?? "Status"}</th><th>{t.ui.officialWording}</th></tr></thead>
+      <table className="crit stack">
+        <thead><tr><th>{t.opp.sectionRequirements}</th><th>{copy?.state ?? t.admin.lifecycle}</th><th>{t.ui.officialWording}</th></tr></thead>
         <tbody>
           {results.map((r) => (
             <tr key={r.requirement_id}>
-              <td>
+              <td data-label={t.opp.sectionRequirements}>
                 {t.criterion[r.category] ?? r.category}{r.kind === "mandatory" ? " *" : ""}
                 <div className="small muted">{copy?.kinds[r.kind] ?? r.kind}</div>
               </td>
-              <td>
+              <td data-label={copy?.state ?? t.admin.lifecycle}>
                 <StateBadge state={r.state} t={t} />
                 {copy
                   ? (r.state === "unknown" && r.question ? <div className="small muted">{copy.needs}: {t.question[r.question] ?? r.question}</div> : null)
                   : <div className="small muted">{paramsText(r)}{r.question ? ` → ${t.question[r.question] ?? r.question}` : ""}</div>}
               </td>
-              <td className="small">
+              <td className="small" data-label={t.ui.officialWording}>
                 <details>
                   <summary>{r.original_text.length > 80 ? r.original_text.slice(0, 80) + "…" : r.original_text}</summary>
                   <blockquote lang={r.original_lang} style={{ margin: "6px 0", whiteSpace: "pre-wrap" }}>{r.original_text}</blockquote>

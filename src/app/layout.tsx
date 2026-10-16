@@ -12,10 +12,13 @@ import { logoutAction, setLocaleAction } from "./actions";
 
 const inter = Inter({ subsets: ["latin", "greek"], variable: "--font-inter", display: "swap" });
 
-export const metadata: Metadata = {
-  title: { default: "Jackal Accountant", template: "%s · Jackal Accountant" },
-  description: "Grants, benefits and funding programmes from Greece and the EU — in one place, with clear information and personalised suggestions.",
-};
+export async function generateMetadata(): Promise<Metadata> {
+  const { locale } = await getDict();
+  return {
+    title: { default: "Jackal Accountant", template: "%s · Jackal Accountant" },
+    description: SITE[locale].meta.description,
+  };
+}
 
 export default async function RootLayout({ children }: { children: React.ReactNode }) {
   const { locale, t } = await getDict();

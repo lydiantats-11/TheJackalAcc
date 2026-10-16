@@ -1,11 +1,12 @@
 import { getDict } from "@/lib/i18n/server";
+import { titled } from "@/lib/site/page-title";
 import { sql } from "@/lib/db";
 import { requireAdmin } from "@/lib/auth/session";
 import { listSourceHealth } from "@/lib/data/admin";
 import { formatDate } from "@/lib/format";
 import { testSourceAction, toggleSourceAction } from "@/app/actions";
 
-export const metadata = { title: "Sources" };
+export const generateMetadata = titled(({ t }) => t.admin.sources);
 const TONE: Record<string, string> = { configured: "b-warn", tested: "b-info", active: "b-ok", degraded: "b-bad", inactive: "" };
 const ACCESS_TONE: Record<string, string> = { verified: "b-ok", untested: "", undocumented: "b-warn", blocked_by_robots: "b-bad", inaccessible: "b-bad", unsupported: "b-bad" };
 
@@ -31,7 +32,7 @@ export default async function SourcesPage({ searchParams }: { searchParams: Prom
           <h2>{title} ({rows.length})</h2>
           <div className="card scroll">
             <table className="crit">
-              <thead><tr><th>Source</th><th>{t.admin.lifecycle}</th><th>{t.admin.lastSuccess}</th><th>{t.admin.lastContent}</th><th>{t.admin.recentRuns}</th><th /></tr></thead>
+              <thead><tr><th>{t.admin.source}</th><th>{t.admin.lifecycle}</th><th>{t.admin.lastSuccess}</th><th>{t.admin.lastContent}</th><th>{t.admin.recentRuns}</th><th /></tr></thead>
               <tbody>
                 {rows.map((s) => (
                   <tr key={s.id}>

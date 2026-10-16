@@ -321,7 +321,7 @@ footer.site .fine { border-top: 1px solid #22335a; margin-top: var(--sp-6); padd
 @media (max-width: 960px) { .filters-desktop { display: none; } }
 @media (min-width: 961px) { details.filters-mobile { display: none; } }
 /* phone safety: long official URLs, codes and labels wrap instead of widening the page */
-.checklist span, .checklist a, .keyinfo dd, table.crit td, .notice span, .crumbs, .opp-card h3, .detail-head h1 { overflow-wrap: anywhere; }
+.checklist span, .checklist a, .keyinfo dd, .notice span, .crumbs, .opp-card h3, .detail-head h1 { overflow-wrap: anywhere; }
 @media (max-width: 600px) {
   .tag, .badge { white-space: normal; }
   .match-demo .item { flex-wrap: wrap; }
@@ -381,3 +381,16 @@ ol.timeline time { color: var(--muted); min-width: 9.5rem; }
 /* Grid children may shrink below their content (the one-row section links scroll inside, not the page). */
 .with-aside > *, .with-aside-r > * { min-width: 0; }
 @media (max-width: 960px) { .with-aside, .with-aside-r { grid-template-columns: minmax(0, 1fr); } }
+
+/* Condition tables: words break only when a whole word cannot fit; on phones each row becomes a stacked card. */
+table.crit td { overflow-wrap: break-word; }
+@media (max-width: 640px) {
+  table.crit.stack thead { display: none; }
+  table.crit.stack, table.crit.stack tbody, table.crit.stack tr, table.crit.stack td { display: block; width: 100%; }
+  table.crit.stack tr { border: 1px solid var(--line); border-radius: var(--radius-sm); padding: var(--sp-2) var(--sp-3); margin-bottom: var(--sp-3); background: var(--surface); }
+  table.crit.stack td { border: 0; padding: 6px 0; }
+  table.crit.stack td[data-label]::before { content: attr(data-label); display: block; margin-bottom: 2px; font-size: .68rem; font-weight: 650; text-transform: uppercase; letter-spacing: .06em; color: var(--muted); }
+  table.crit.stack .badge { white-space: normal; }
+}
+/* A page that ends with a full-width band meets the footer directly (no empty strip). */
+main:has(> section.band:last-child) { padding-bottom: 0; }

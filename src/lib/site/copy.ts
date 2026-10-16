@@ -7,6 +7,7 @@ import type { Locale } from "@/lib/i18n/dictionaries";
 
 const el = {
   brand: "Jackal Accountant",
+  meta: { description: "Επιδοτήσεις, επιδόματα και προγράμματα χρηματοδότησης από την Ελλάδα και την ΕΕ, σε ένα μέρος, από επίσημες πηγές και με σαφή εικόνα για το ποιος μπορεί να κάνει αίτηση." },
   nav: { opportunities: "Ευκαιρίες", categories: "Κατηγορίες", forMe: "Για Εμένα", guides: "Οδηγοί", menu: "Μενού", profile: "Το προφίλ μου", admin: "Διαχείριση" },
   footer: {
     about: "Σχετικά με εμάς", how: "Πώς λειτουργεί", faq: "Συχνές ερωτήσεις", sources: "Επίσημες πηγές", guides: "Οδηγοί", categories: "Κατηγορίες",
@@ -62,7 +63,7 @@ const el = {
     view: "Λεπτομέρειες", guide: "Οδηγός", checked: "Έλεγχος πηγής",
   },
   scope: { eu: "Ευρωπαϊκή Ένωση", gr: "Ελλάδα" },
-  status: { open: "Ανοιχτές", upcoming: "Προσεχώς", passed: "Η προθεσμία έληξε", closed: "Κλειστές", all: "Όλες, μαζί με όσες έληξαν" },
+  status: { current: "Ανοιχτές και προσεχείς", open: "Ανοιχτές", upcoming: "Προσεχείς", passed: "Η προθεσμία έληξε", closed: "Κλειστές", all: "Όλες, μαζί με όσες έληξαν" },
   supportType: { grant: "Επιχορήγηση", loan: "Δάνειο / εγγύηση", benefit: "Επίδομα", tax: "Φορολογικό κίνητρο", training: "Κατάρτιση", tender: "Διαγωνισμός", unconfirmed: "Δεν έχει επιβεβαιωθεί" },
   cats: {
     title: "Κατηγορίες", lead: "Οι ευκαιρίες οργανωμένες ανά θέμα. Το είδος στήριξης, το κοινό και ο κλάδος είναι χωριστά φίλτρα.",
@@ -146,7 +147,7 @@ const el = {
     documents: "Επίσημα έγγραφα", stepsTitle: "Βήματα αίτησης (από την επίσημη πηγή)", openEnded: "Χωρίς σταθερή προθεσμία",
   },
   card: { deadline: "Προθεσμία", amount: "Ποσό", source: "Πηγή", checked: "Ελέγχθηκε", amountNone: "Βλ. επίσημη πηγή", brussels: "ώρα Βρυξελλών", budget: "Προϋπολογισμός πρόσκλησης", benefit: "Όφελος" },
-  detail: { back: "Όλες οι ευκαιρίες", overview: "Επισκόπηση", eligibility: "Επιλεξιμότητα", howToApply: "Πώς γίνεται η αίτηση", sources: "Πηγές", keyInfo: "Βασικές πληροφορίες", category: "Κατηγορία", forWhom: "Για ποιον", guideCta: "Διαβάστε τον οδηγό βήμα προς βήμα", applySteps: "Η αίτηση υποβάλλεται στην επίσημη σελίδα του φορέα. Ελέγξτε εκεί τα δικαιολογητικά και την προθεσμία πριν την υποβάλετε.", saveHint: "Συνδεθείτε για να αποθηκεύσετε την ευκαιρία και να δείτε αν σας αφορά.",
+  detail: { breadcrumb: "Διαδρομή πλοήγησης", back: "Όλες οι ευκαιρίες", overview: "Επισκόπηση", eligibility: "Επιλεξιμότητα", howToApply: "Πώς γίνεται η αίτηση", sources: "Πηγές", keyInfo: "Με μια ματιά", category: "Κατηγορία", forWhom: "Για ποιον", guideCta: "Διαβάστε τον οδηγό βήμα προς βήμα", applySteps: "Η αίτηση υποβάλλεται στην επίσημη σελίδα του φορέα. Ελέγξτε εκεί τα δικαιολογητικά και την προθεσμία πριν την υποβάλετε.", saveHint: "Συνδεθείτε για να αποθηκεύσετε την ευκαιρία και να δείτε αν σας αφορά.",
     req: { state: "Αποτέλεσμα", needs: "Χρειάζεται απάντηση", kinds: { mandatory: "Υποχρεωτική", conditional: "Υπό προϋπόθεση", informational: "Ενημερωτική", preferred: "Πλεονέκτημα" } as Record<string, string> } },
   auth: { side: "Ένα προφίλ. Πολλές ευκαιρίες. Ξεκάθαρη πληροφόρηση.", sideNote: "Η περιήγηση στις ευκαιρίες δεν απαιτεί λογαριασμό." },
   loading: "Φόρτωση…",
@@ -157,6 +158,7 @@ type Copy = typeof el;
 
 const en: Copy = {
   brand: "Jackal Accountant",
+  meta: { description: "Grants, benefits and funding programmes from Greece and the EU in one place, from official sources, with a clear picture of who can apply." },
   nav: { opportunities: "Opportunities", categories: "Categories", forMe: "For Me", guides: "Guides", menu: "Menu", profile: "My profile", admin: "Admin" },
   footer: {
     about: "About us", how: "How it works", faq: "FAQ", sources: "Official sources", guides: "Guides", categories: "Categories",
@@ -212,7 +214,7 @@ const en: Copy = {
     view: "Details", guide: "Guide", checked: "Source checked",
   },
   scope: { eu: "European Union", gr: "Greece" },
-  status: { open: "Open", upcoming: "Upcoming", passed: "Deadline passed", closed: "Closed", all: "All, including expired" },
+  status: { current: "Open and upcoming", open: "Open", upcoming: "Upcoming", passed: "Deadline passed", closed: "Closed", all: "All, including expired" },
   supportType: { grant: "Grant", loan: "Loan / guarantee", benefit: "Benefit", tax: "Tax incentive", training: "Training", tender: "Tender", unconfirmed: "Not confirmed" },
   cats: {
     title: "Categories", lead: "Opportunities organised by topic. Type of support, audience and industry are separate filters.",
@@ -296,7 +298,7 @@ const en: Copy = {
     documents: "Official documents", stepsTitle: "How to apply (from the official source)", openEnded: "No fixed deadline",
   },
   card: { deadline: "Deadline", amount: "Amount", source: "Source", checked: "Checked", amountNone: "See official source", brussels: "Brussels time", budget: "Call budget", benefit: "Benefit" },
-  detail: { back: "All opportunities", overview: "Overview", eligibility: "Eligibility", howToApply: "How to apply", sources: "Sources", keyInfo: "Key information", category: "Category", forWhom: "Who it's for", guideCta: "Read the step-by-step guide", applySteps: "Applications are made on the authority's official page. Check the documents and deadline there before you submit.", saveHint: "Log in to save this opportunity and see whether it applies to you.",
+  detail: { breadcrumb: "Breadcrumb", back: "All opportunities", overview: "Overview", eligibility: "Eligibility", howToApply: "How to apply", sources: "Sources", keyInfo: "At a glance", category: "Category", forWhom: "Who it's for", guideCta: "Read the step-by-step guide", applySteps: "Applications are made on the authority's official page. Check the documents and deadline there before you submit.", saveHint: "Log in to save this opportunity and see whether it applies to you.",
     req: { state: "Result", needs: "Needs an answer", kinds: { mandatory: "Required", conditional: "Conditional", informational: "For information", preferred: "Advantage" } as Record<string, string> } },
   auth: { side: "One profile. Many opportunities. Clear information.", sideNote: "You can browse opportunities without an account." },
   loading: "Loading…",

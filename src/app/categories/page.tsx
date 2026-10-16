@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { titled } from "@/lib/site/page-title";
 import { getDict } from "@/lib/i18n/server";
 import { isDatabaseConfigured, sql } from "@/lib/db";
 import { PERSONA_IDS } from "@/lib/domain/personas";
@@ -8,7 +9,7 @@ import { CATEGORIES, SUPPORT_TYPES } from "@/lib/site/taxonomy";
 import { countByCategory, loadListing } from "@/lib/site/listing";
 import { Icon } from "@/components/icons";
 
-export const metadata = { title: "Κατηγορίες / Categories" };
+export const generateMetadata = titled(({ s }) => s.nav.categories);
 
 export default async function CategoriesPage() {
   const { t, locale } = await getDict();

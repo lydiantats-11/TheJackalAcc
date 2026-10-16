@@ -39,23 +39,23 @@ export function DecisionRecordView({ record, s, t, opportunityId }: { record: De
       </dl>
       {record.lines.length > 0 && (
         <div className="scroll">
-          <table className="crit">
+          <table className="crit stack">
             <thead><tr><th>{a.cols.requirement}</th><th>{a.cols.source}</th><th>{a.cols.type}</th><th>{a.cols.answers}</th><th>{a.cols.outcome}</th></tr></thead>
             <tbody>
               {record.lines.map((l) => (
                 <tr key={l.requirement_id}>
-                  <td className="small"><span lang={l.official_lang}>{l.official_text}</span>{l.interpretation && <div className="xs muted" style={{ marginTop: 4 }}>{l.interpretation}</div>}</td>
-                  <td className="small">
+                  <td className="small" data-label={a.cols.requirement}><span lang={l.official_lang}>{l.official_text}</span>{l.interpretation && <div className="xs muted" style={{ marginTop: 4 }}>{l.interpretation}</div>}</td>
+                  <td className="small" data-label={a.cols.source}>
                     <a href={l.source_url} target="_blank" rel="noopener noreferrer">{(() => { try { return new URL(l.source_url).hostname; } catch { return l.source_url; } })()} ↗</a>
                     <div className="xs muted">{l.verified_at ? `${a.verified} ${l.verified_at.slice(0, 10)} · ` : ""}{a.rank} {l.evidence_rank}/4</div>
                   </td>
-                  <td className="small">{s.detail.req.kinds[l.rule_type] ?? l.rule_type}{l.authoritative ? " ✓" : ""}</td>
-                  <td className="small">
+                  <td className="small" data-label={a.cols.type}>{s.detail.req.kinds[l.rule_type] ?? l.rule_type}{l.authoritative ? " ✓" : ""}</td>
+                  <td className="small" data-label={a.cols.answers}>
                     {l.profile_fields.length === 0 ? <span className="muted">{a.noAnswers}</span> : (
                       <ul className="plain">{l.profile_fields.map((f) => <li key={f}><span className="muted">{t.question[f] ?? f}:</span> {answerText(f, l.answers_used[f], s, t)}</li>)}</ul>
                     )}
                   </td>
-                  <td><StateBadge state={l.outcome} t={t} /></td>
+                  <td data-label={a.cols.outcome}><StateBadge state={l.outcome} t={t} /></td>
                 </tr>
               ))}
             </tbody>
