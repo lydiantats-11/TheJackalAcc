@@ -84,9 +84,10 @@ export default async function OpportunityPage({ params, searchParams }: { params
   const verified = verifiedFor(o.external_key);
   const amount = keyAmount(o, t, s, locale);
   const status = recordStatus(matchable, now);
+  const applicant = applicantAudienceOf(o, matchable.requirements);
   const unknowns = unknownsOf({
     record: status, hasConflict: !!o.has_conflict, completeness: o.requirement_set_completeness, deadlineKind: o.deadline_kind,
-    hasDeadline: !!o.closes_at, amountState: o.funding_amount_state, applicant: applicantAudienceOf(o, matchable.requirements),
+    hasDeadline: !!o.closes_at, amountState: o.funding_amount_state, applicant,
     documentsApproved: false,
   });
 
@@ -267,6 +268,7 @@ export default async function OpportunityPage({ params, searchParams }: { params
               <div><dt>{amount.label}</dt><dd>{amount.value}</dd></div>
               <div><dt>{s.opps.type}</dt><dd>{s.supportType[supportTypeOf(o.opportunity_type)]}</dd></div>
               {cats.length > 0 && <div><dt>{s.detail.category}</dt><dd>{cats.map((c) => c.name[locale]).join(", ")}</dd></div>}
+              <div><dt>{s.detail.applicant}</dt><dd>{s.card.applicant[applicant]}</dd></div>
               {audiences.length > 0 && <div><dt>{s.detail.forWhom}</dt><dd>{audiences.map((p) => t.opt.personas[p] ?? p).join(", ")}</dd></div>}
               <div><dt>{s.opps.scope}</dt><dd>{s.scope[scope]}</dd></div>
               <div><dt>{t.opp.authority}</dt><dd>{displayAuthority(o, locale) ?? <span className="unknown">{t.opp.deadlineUnknown}</span>}</dd></div>
