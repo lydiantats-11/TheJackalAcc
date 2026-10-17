@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-17T11:15:08.355Z",
+  "generated_at": "2026-10-17T11:15:23.673Z",
   "engine_version": "2026-10-13.2",
   "gold_set": "2026-10-15.1",
   "accuracy": {
@@ -46,12 +46,12 @@
   "efficiency": [
     {
       "source": "eu-funding-tenders",
-      "seconds": 19.6,
+      "seconds": 19.9,
       "items_seen": 1000,
       "items_new": 1000,
       "items_changed": 0,
       "status": "succeeded",
-      "items_per_second": 51.1,
+      "items_per_second": 50.3,
       "ms_per_item": 20
     }
   ],
