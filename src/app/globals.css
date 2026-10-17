@@ -534,8 +534,8 @@ main:has(> section.band:last-child) { padding-bottom: 0; }
 .link-list a svg { color: var(--accent); flex: none; }
 .search-label { display: block; font-weight: 650; color: #ffffff; margin-bottom: var(--sp-2); }
 @media (max-width: 700px) { .hero-navy .art-wrap { display: none; } .hero-navy { padding: var(--sp-6) 0; } }
-.active-filters { display: flex; flex-wrap: wrap; align-items: center; gap: 6px 8px; margin: 0 0 14px; }
-.chip-remove { border-color: var(--accent-line); background: var(--accent-soft); color: var(--ink); }
+.active-filters { min-width: 0; display: flex; flex-wrap: wrap; align-items: center; gap: 6px 8px; margin: 0 0 14px; }
+.chip-remove { white-space: normal; max-width: 100%; display: inline; line-height: 1.6; border-color: var(--accent-line); background: var(--accent-soft); color: var(--ink); }
 .chip-remove:hover { border-color: var(--accent); color: var(--ink); }
 .trust-box h2 { display: flex; align-items: center; gap: 8px; }
 .trust-box h2 svg { color: var(--accent); flex: none; }
