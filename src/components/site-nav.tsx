@@ -8,7 +8,11 @@ export function NavLinks({ items }: { items: Array<{ href: string; label: string
   return (
     <>
       {items.map((i) => {
-        const current = path === i.href || path.startsWith(`${i.href}/`) || (i.href === "/for-me" && (path === "/dashboard" || path === "/profile"));
+        const current = i.href === "/"
+          ? path === "/"
+          : path === i.href || path.startsWith(`${i.href}/`)
+            || (i.href === "/for-me" && (path === "/dashboard" || path === "/profile"))
+            || (i.href === "/opportunities" && path.startsWith("/categories"));
         return <Link key={i.href} href={i.href} aria-current={current ? "page" : undefined}>{i.label}</Link>;
       })}
     </>

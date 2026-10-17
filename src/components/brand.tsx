@@ -5,10 +5,10 @@ export function LogoMark({ size = 34 }: { size?: number }) {
   return (
     <svg width={size} height={size} viewBox="0 0 40 40" aria-hidden="true">
       <rect width="40" height="40" rx="10" fill="var(--navy-800)" />
-      <path d="M9 31 12.5 8.5l5 7.2L22 7.5l2.6 9.8 8.4 6.1-1.6 3.4-7.4.4L18 32z" fill="var(--teal-400)" />
+      <path d="M9 31 12.5 8.5l5 7.2L22 7.5l2.6 9.8 8.4 6.1-1.6 3.4-7.4.4L18 32z" fill="var(--logo-mark)" />
       <path d="M12.5 8.5 15 20l2.5-4.3zM22 7.5l-.6 9.8 3.2 0z" fill="var(--navy-800)" opacity=".35" />
       <circle cx="24.2" cy="20.6" r="1.35" fill="var(--navy-800)" />
-      <path d="M31.4 26.8 28.6 30" stroke="var(--gold-400)" strokeWidth="1.6" strokeLinecap="round" />
+      <path d="M31.4 26.8 28.6 30" stroke="var(--logo-mark)" strokeWidth="1.6" strokeLinecap="round" />
     </svg>
   );
 }
@@ -28,7 +28,7 @@ export function AcropolisArt({ className, label = "Η Ακρόπολη της Α
         </linearGradient>
       </defs>
       <rect width="520" height="380" rx="28" fill="url(#ja-sky)" />
-      <circle cx="402" cy="102" r="46" fill="var(--gold-200)" opacity=".85" />
+      <circle cx="402" cy="102" r="46" fill="var(--art-sun)" opacity=".85" />
       {/* distant hills */}
       <path d="M0 268c60-18 110-30 170-26s120 22 180 18 110-22 170-20v160H0z" fill="var(--art-hill-far)" />
       {/* the rock */}
@@ -46,8 +46,8 @@ export function AcropolisArt({ className, label = "Η Ακρόπολη της Α
         <path d="M160 143h214" />
       </g>
       {/* olive branch */}
-      <g fill="var(--teal-500)" stroke="none">
-        <path d="M18 372c40-40 84-62 140-70" stroke="var(--teal-700)" strokeWidth="2.5" fill="none" />
+      <g fill="var(--art-leaf)" stroke="none">
+        <path d="M18 372c40-40 84-62 140-70" stroke="var(--art-stem)" strokeWidth="2.5" fill="none" />
         {[[40, 352, -40], [62, 336, -30], [86, 323, -24], [110, 313, -16], [134, 306, -10], [56, 356, 20], [80, 342, 26], [104, 330, 30], [128, 320, 34]].map(([x, y, r]) => (
           <ellipse key={`${x}-${y}`} cx={x} cy={y} rx="12" ry="4.6" transform={`rotate(${r} ${x} ${y})`} opacity=".9" />
         ))}

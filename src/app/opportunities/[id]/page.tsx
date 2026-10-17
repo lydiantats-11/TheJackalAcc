@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { checkedLine } from "@/components/opportunity-card";
 import { notFound } from "next/navigation";
 import { getDict } from "@/lib/i18n/server";
 import { isDatabaseConfigured, sql } from "@/lib/db";
@@ -253,7 +254,7 @@ export default async function OpportunityPage({ params, searchParams }: { params
               <div><dt>{s.opps.scope}</dt><dd>{s.scope[scope]}</dd></div>
               <div><dt>{t.opp.authority}</dt><dd>{displayAuthority(o, locale) ?? <span className="unknown">{t.opp.deadlineUnknown}</span>}</dd></div>
               {o.funding_intensity_pct && <div><dt>{t.opp.intensity}</dt><dd>{Number(o.funding_intensity_pct)}%</dd></div>}
-              <div><dt>{s.card.checked}</dt><dd>{formatDay(o.last_verified_at, locale) ?? "—"}</dd></div>
+              <div><dt>{s.card.source}</dt><dd>{checkedLine(o, s, locale)}</dd></div>
             </dl>
             <div className="stack" style={{ marginTop: 16 }}>
               <a className="btn btn-primary btn-block" href={o.canonical_url} target="_blank" rel="noopener noreferrer">{t.opp.official} <Icon name="external" size={16} /></a>

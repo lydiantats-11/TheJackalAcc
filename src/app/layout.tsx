@@ -25,11 +25,13 @@ export default async function RootLayout({ children }: { children: React.ReactNo
   const s = SITE[locale];
   const user = await currentUser().catch(() => null);
   const tagline = locale === "el" ? "Ελλάδα · ΕΕ" : "Greece · EU";
+  // Five main tabs (owner decision, 17 Oct 2026). Categories stay reachable from Opportunities and the footer.
   const nav = [
+    { href: "/", label: s.nav.home },
     { href: "/opportunities", label: s.nav.opportunities },
-    { href: "/categories", label: s.nav.categories },
     { href: "/for-me", label: s.nav.forMe },
     { href: "/guides", label: s.nav.guides },
+    { href: "/about", label: s.nav.how },
   ];
   const lang = (
     <form action={setLocaleAction} className="lang" aria-label="Language / Γλώσσα">
@@ -106,8 +108,7 @@ export default async function RootLayout({ children }: { children: React.ReactNo
               <div>
                 <h3>{s.footer.platform}</h3>
                 <ul>
-                  <li><Link href="/about">{s.footer.about}</Link></li>
-                  <li><Link href="/about#how">{s.footer.how}</Link></li>
+                  <li><Link href="/about">{s.footer.how}</Link></li>
                   <li><Link href="/about#faq">{s.footer.faq}</Link></li>
                   <li><Link href="/about#sources">{s.footer.sources}</Link></li>
                 </ul>

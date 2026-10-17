@@ -76,6 +76,14 @@ export function featured(list: ListedOpportunity[], n = 6): ListedOpportunity[] 
   return out;
 }
 
+/**
+ * Homepage «selected checked opportunities»: ONLY hand-checked records (manual:*) that are open now, one per category.
+ * Records imported automatically are never presented as checked.
+ */
+export function featuredChecked(list: ListedOpportunity[], n = 3): ListedOpportunity[] {
+  return featured(list.filter((x) => x.row.external_key?.startsWith("manual:")), n);
+}
+
 /** Per category: listings open or upcoming now, and all listings (incl. expired / unconfirmed). */
 export function countByCategory(list: ListedOpportunity[]): Record<string, { open: number; total: number; recheck: number }> {
   const out: Record<string, { open: number; total: number; recheck: number }> = {};

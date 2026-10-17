@@ -18,6 +18,16 @@ function cardDeadline(o: ListedOpportunity["row"], t: Dictionary, s: SiteCopy, l
   return <>{when}{o.deadline_timezone === "Europe/Brussels" ? <span className="muted"> · {s.card.brussels}</span> : null}</>;
 }
 
+/**
+ * Honest provenance line: hand-checked records say «Ελέγχθηκε», records imported automatically from an official portal
+ * say «Ανακτήθηκε», test records say they were not checked. A retrieval date is never presented as a human check.
+ */
+export function checkedLine(o: Pick<ListedOpportunity["row"], "external_key" | "is_synthetic" | "last_verified_at">, s: SiteCopy, locale: Locale): string {
+  if (o.is_synthetic) return s.card.syntheticDate;
+  const day = formatDay(o.last_verified_at, locale) ?? "—";
+  return `${o.external_key?.startsWith("manual:") ? s.card.checked : s.card.retrieved}: ${day}`;
+}
+
 export function OpportunityCard({ item, t, s, locale, extra }: {
   item: ListedOpportunity; t: Dictionary; s: SiteCopy; locale: Locale; extra?: React.ReactNode;
 }) {
@@ -45,7 +55,7 @@ export function OpportunityCard({ item, t, s, locale, extra }: {
         <div><dt>{amount.label}</dt><dd>{amount.value}</dd></div>
       </dl>
       <div className="foot">
-        <span>{s.card.checked}: {formatDay(o.last_verified_at, locale) ?? "—"}</span>
+        <span>{checkedLine(o, s, locale)}</span>
         {guide && <Link href={`/guides/${guide}`}>{s.opps.guide} →</Link>}
       </div>
     </article>
