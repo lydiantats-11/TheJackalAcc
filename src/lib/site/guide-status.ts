@@ -1,33 +1,31 @@
 /**
- * Application status of the programme a guide is about — computed on every request, never frozen
- * (owner approval, 16 Oct 2026).
+ * Application status shown on guides — the SAME canonical status as every other page (record-status.ts).
  *
- * Bug fixed: guide cards showed the status recorded at the 14 Oct manual check ("open") forever, so DiscoverEU
- * still read "Open" after its deadline of 15 Oct 2026, 12:00 Brussels time.
+ * History: 16 Oct 2026 the frozen 14 Oct snapshot was replaced by a computed status. 17 Oct 2026 (Milestone 1) the
+ * guides were moved onto the canonical model so that a guide and its listing can never disagree: when the database
+ * record is past its re-check interval, the guide shows «Χρειάζεται νέος έλεγχος» with the last verified status and
+ * date, exactly like the listing (before, the guide fell back to the checked file and said "open").
  *
  * Order of evidence:
- *  1. The live public record in the database, through the same availabilityOf() the opportunity pages use,
- *     when it gives a definite answer (open, upcoming, deadline passed, closed).
- *  2. Otherwise the verified period in the checked file, read against the current time.
- *  In both cases a closing date in the past always wins over a recorded "open": a guide never shows a programme
- *  as open after its official deadline.
- *
- * This is the PROGRAMME's application status. It is independent from the guide's own verification status.
+ *  1. The live public record in the database (canonical status of that record).
+ *  2. Without a database: the hand-checked file, turned into the same input (status, dates, last verification date,
+ *     re-check interval) and passed through the same canonical function.
+ *  A verified closing time that has passed always wins over an open/awaiting answer (an extension needs a new check).
+ * This is the PROGRAMME's application status. It is independent from the guide's own content-verification state.
  */
 import { normaliseDeadline } from "@/lib/domain/deadline";
-import type { Availability } from "@/lib/domain/eligibility";
+import { recordStatus, type ApplicationStatus, type DisplayStatus, type RecordStatus } from "@/lib/domain/record-status";
 import records from "../../../data/official-records-2026-10-14.v2.json";
 import { verifiedFor } from "./verified";
 
-export type ProgrammeStatus = "open" | "rolling" | "upcoming" | "deadline_passed" | "closed" | "unknown";
+export type ProgrammeStatus = DisplayStatus | "unknown";
+export interface GuideRecordStatus { display: ProgrammeStatus; application: ApplicationStatus | "unknown"; lastVerifiedAt: Date | null }
 
-/** Statuses a visitor can still act on (shown with the positive badge). */
-export const ACTIONABLE: ReadonlySet<ProgrammeStatus> = new Set(["open", "rolling"]);
+const UNKNOWN: GuideRecordStatus = { display: "unknown", application: "unknown", lastVerifiedAt: null };
 
-/** The value the checker recorded on 14 Oct (open / rolling / closed / future). Used only as a hint, never alone. */
-const RECORDED = new Map(
-  (records as { records: Array<{ id: string; application_status: { value: string } }> }).records
-    .map((r) => [`manual:${r.id}`, r.application_status.value]),
+interface RawStatus { value: string; verified_on?: string; stale_after_days?: number }
+const RAW = new Map(
+  (records as { records: Array<{ id: string; application_status: RawStatus }> }).records.map((r) => [`manual:${r.id}`, r.application_status]),
 );
 
 /** A verified date as an instant. A date-only closing date ("2026-05-31") counts as open until the end of that day. */
@@ -44,44 +42,36 @@ export function verifiedCloses(recordKey: string): Date | null {
   return v ? instant(v.period.closes, v.period.timezone ?? "Europe/Athens", true) : null;
 }
 
-/** Status from the checked file alone, read against `now`. */
-export function statusFromVerified(recordKey: string, now: Date): ProgrammeStatus {
+/** Canonical status of a hand-checked record from the checked file alone (same rules as the database import). */
+export function statusFromVerified(recordKey: string, now: Date): GuideRecordStatus {
   const v = verifiedFor(recordKey);
-  if (!v) return "unknown";
+  const raw = RAW.get(recordKey);
+  if (!v || !raw) return UNKNOWN;
   const tz = v.period.timezone ?? "Europe/Athens";
   const closes = instant(v.period.closes, tz, true);
   const opens = instant(v.period.opens, tz, false);
-  const recorded = RECORDED.get(recordKey);
-  if (recorded === "closed") return "closed";
-  if (closes && closes.getTime() < now.getTime()) return "deadline_passed";
-  if (opens && opens.getTime() > now.getTime()) return "upcoming";
-  if (recorded === "future") return "upcoming";
-  if (recorded === "rolling" || !closes) return "rolling";
-  return "open";
+  const status = raw.value === "closed" ? "closed" : raw.value === "future" || (opens && opens > now) ? "upcoming" : "open";
+  const r = recordStatus({
+    status,
+    closes_at: closes,
+    deadline_kind: closes ? "official" : raw.value === "rolling" ? "rolling" : "not_announced",
+    // the database import stores the check date as midnight Athens time (db/seed/official-records-2026-10-14.sql)
+    last_verified_at: new Date(`${raw.verified_on ?? v.checkedOn}T00:00:00+03:00`),
+    stale_after_hours: (raw.stale_after_days ?? 30) * 24,
+    has_conflict: false,
+    budget_exhausted: "no",
+  } as Parameters<typeof recordStatus>[0], now);
+  return { display: r.display, application: r.application, lastVerifiedAt: r.lastVerifiedAt };
 }
 
-/** The live record's availability in the guide's vocabulary; null when it gives no definite answer (stale, unverified…). */
-export function statusFromAvailability(a: Availability, rolling: boolean): ProgrammeStatus | null {
-  switch (a) {
-    case "open": return rolling ? "rolling" : "open";
-    case "upcoming": return "upcoming";
-    case "deadline_passed_unconfirmed": return "deadline_passed";
-    case "closed": case "closed_budget_exhausted": return "closed";
-    default: return null;
-  }
-}
-
-export interface LiveRecord { availability: Availability; rolling: boolean }
+export type LiveRecord = RecordStatus;
 
 /** The status to show on a guide. */
-export function programmeStatus(recordKey: string, now: Date, live?: LiveRecord | null): ProgrammeStatus {
-  const fromFile = statusFromVerified(recordKey, now);
-  const fromLive = live ? statusFromAvailability(live.availability, live.rolling) : null;
-  if (!fromLive) return fromFile;
-  // A verified deadline that has passed is never overridden by an "open" answer (an extension needs a new check).
+export function programmeStatus(recordKey: string, now: Date, live?: LiveRecord | null): GuideRecordStatus {
+  if (!live) return statusFromVerified(recordKey, now);
   const closes = verifiedCloses(recordKey);
-  if (ACTIONABLE.has(fromLive) && closes && closes.getTime() < now.getTime()) return fromFile;
-  // Live record open with no fixed deadline in the database, verified file says rolling: show rolling.
-  if (fromLive === "open" && fromFile === "rolling") return "rolling";
-  return fromLive;
+  if (closes && closes.getTime() < now.getTime() && live.application !== "closed") {
+    return { display: "deadline_passed", application: "deadline_passed", lastVerifiedAt: live.lastVerifiedAt };
+  }
+  return { display: live.display, application: live.application, lastVerifiedAt: live.lastVerifiedAt };
 }

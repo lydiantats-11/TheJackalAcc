@@ -31,3 +31,27 @@ export function StateBadge({ state, t }: { state: string; t: Dictionary }) {
 export function SyntheticLabel({ t }: { t: Dictionary }) {
   return <span className="synthetic">{t.synthetic}</span>;
 }
+
+/** Canonical record status (record-status.ts): one badge for cards, detail pages, matches and guides.
+ *  Awaiting re-check shows the last verified status and date underneath, never "open" on its own. */
+const RECORD_TONE: Record<string, string> = {
+  open: "b-ok", rolling: "b-ok", upcoming: "b-info", recheck: "b-warn", unverified: "b-warn", conflicting: "b-bad",
+  deadline_passed: "", closed: "", suspended: "b-warn", unknown: "",
+};
+export function RecordStatusBadge({ record, s, locale, detail = true }: {
+  record: { display: string; application: string; lastVerifiedAt: Date | null };
+  s: { record: { labels: Record<string, string>; lastKnown: (status: string, date: string) => string; recheckHelp: string } };
+  locale: "el" | "en";
+  /** Show the "last checked: …" line for records awaiting re-check. */
+  detail?: boolean;
+}) {
+  const label = s.record.labels[record.display] ?? record.display;
+  const showLast = detail && record.display === "recheck" && record.lastVerifiedAt;
+  const date = record.lastVerifiedAt ? record.lastVerifiedAt.toLocaleDateString(locale === "el" ? "el-GR" : "en-GB", { day: "numeric", month: "short", year: "numeric", timeZone: "Europe/Athens" }) : "";
+  return (
+    <span className="record-status">
+      <span className={`badge ${RECORD_TONE[record.display] ?? ""}`} title={record.display === "recheck" ? s.record.recheckHelp : undefined}>{label}</span>
+      {showLast && <span className="xs muted record-last">{s.record.lastKnown(s.record.labels[record.application] ?? record.application, date)}</span>}
+    </span>
+  );
+}

@@ -7,14 +7,17 @@ import "server-only";
 import type postgres from "postgres";
 import { listOpportunities, toMatchable, type OpportunityRow } from "@/lib/data/opportunities";
 import { availabilityOf, type Availability } from "@/lib/domain/eligibility";
+import { isCurrent, recordStatus, type RecordStatus } from "@/lib/domain/record-status";
 import type { PersonaId } from "@/lib/domain/personas";
 import { audiencesOf, categoriesOf, scopeOf, supportTypeOf, type SupportType } from "./taxonomy";
 
-export type StatusGroup = "open" | "upcoming" | "passed" | "closed" | "other";
+export type StatusGroup = "open" | "upcoming" | "recheck" | "passed" | "closed" | "other";
 
 export interface ListedOpportunity {
   row: OpportunityRow;
   availability: Availability;
+  /** Canonical display status (record-status.ts) — what every page shows. */
+  record: RecordStatus;
   status: StatusGroup;
   categories: string[];
   audiences: PersonaId[];
@@ -22,11 +25,13 @@ export interface ListedOpportunity {
   support: SupportType;
 }
 
-export function statusGroup(a: Availability): StatusGroup {
-  if (a === "open") return "open";
-  if (a === "upcoming") return "upcoming";
-  if (a === "deadline_passed_unconfirmed") return "passed";
-  if (a === "closed" || a === "closed_budget_exhausted") return "closed";
+/** Browsing group from the canonical status. Records past their re-check interval stay visible as "recheck". */
+export function statusGroup(r: RecordStatus): StatusGroup {
+  if (r.display === "open" || r.display === "rolling") return "open";
+  if (r.display === "upcoming") return "upcoming";
+  if (r.display === "recheck") return "recheck";
+  if (r.application === "deadline_passed") return "passed";
+  if (r.application === "closed") return "closed";
   return "other";
 }
 
@@ -34,14 +39,16 @@ export interface ListingFilters {
   q?: string; cat?: string; type?: string; audience?: string; scope?: string; status?: string; industry?: string;
 }
 
-const RANK: Record<StatusGroup, number> = { open: 0, upcoming: 1, other: 2, passed: 3, closed: 4 };
+const RANK: Record<StatusGroup, number> = { open: 0, upcoming: 1, recheck: 2, other: 3, passed: 4, closed: 5 };
 
 export async function loadListing(sql: postgres.Sql, f: ListingFilters = {}, now = new Date()): Promise<ListedOpportunity[]> {
   const rows = await listOpportunities(sql, { q: f.q, industry: f.industry, limit: 5000 });
   const all = rows.map((row): ListedOpportunity => {
-    const availability = availabilityOf(toMatchable(row, []), now);
+    const m = toMatchable(row, []);
+    const availability = availabilityOf(m, now);
+    const record = recordStatus(m, now);
     return {
-      row, availability, status: statusGroup(availability), categories: categoriesOf(row), audiences: audiencesOf(row),
+      row, availability, record, status: statusGroup(record), categories: categoriesOf(row), audiences: audiencesOf(row),
       scope: scopeOf(row), support: supportTypeOf(row.opportunity_type),
     };
   });
@@ -50,7 +57,7 @@ export async function loadListing(sql: postgres.Sql, f: ListingFilters = {}, now
     .filter((x) => !f.type || x.support === f.type)
     .filter((x) => !f.audience || x.audiences.includes(f.audience as PersonaId))
     .filter((x) => !f.scope || x.scope === f.scope)
-    .filter((x) => !f.status || f.status === "all" || (f.status === "current" ? x.status === "open" || x.status === "upcoming" : x.status === f.status))
+    .filter((x) => !f.status || f.status === "all" || (f.status === "current" ? isCurrent(x.record) : x.status === f.status))
     .sort((a, b) => RANK[a.status] - RANK[b.status]
       || (a.row.closes_at?.getTime() ?? Number.MAX_SAFE_INTEGER) - (b.row.closes_at?.getTime() ?? Number.MAX_SAFE_INTEGER)
       || a.row.official_title.localeCompare(b.row.official_title));
@@ -73,12 +80,13 @@ export function featured(list: ListedOpportunity[], n = 6): ListedOpportunity[] 
 }
 
 /** Per category: listings open or upcoming now, and all listings (incl. expired / unconfirmed). */
-export function countByCategory(list: ListedOpportunity[]): Record<string, { open: number; total: number }> {
-  const out: Record<string, { open: number; total: number }> = {};
+export function countByCategory(list: ListedOpportunity[]): Record<string, { open: number; total: number; recheck: number }> {
+  const out: Record<string, { open: number; total: number; recheck: number }> = {};
   for (const x of list) for (const c of x.categories) {
-    const e = (out[c] ??= { open: 0, total: 0 });
+    const e = (out[c] ??= { open: 0, total: 0, recheck: 0 });
     e.total++;
     if (x.status === "open" || x.status === "upcoming") e.open++;
+    else if (isCurrent(x.record)) e.recheck++; // awaiting re-check (or unverified/conflicting) — never counted as open
   }
   return out;
 }

@@ -5,7 +5,7 @@ import type { SiteCopy } from "@/lib/site/copy";
 import type { ListedOpportunity } from "@/lib/site/listing";
 import { categoryBySlug, guideOf } from "@/lib/site/taxonomy";
 import { formatDate, formatDay } from "@/lib/format";
-import { AvailabilityBadge, SyntheticLabel } from "./badges";
+import { RecordStatusBadge, SyntheticLabel } from "./badges";
 import { cardAmount } from "./opportunity-details";
 import { displayAuthority, displayTitle } from "@/lib/site/verified";
 
@@ -29,7 +29,7 @@ export function OpportunityCard({ item, t, s, locale, extra }: {
   return (
     <article className="opp-card">
       <div className="tags">
-        <AvailabilityBadge value={item.availability} t={t} />
+        <RecordStatusBadge record={item.record} s={s} locale={locale} />
         {cat && <span className="tag cat" title={cat.name[locale]}>{cat.name[locale]}</span>}
         {o.is_synthetic && <SyntheticLabel t={t} />}
       </div>

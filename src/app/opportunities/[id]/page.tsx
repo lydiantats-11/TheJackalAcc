@@ -12,7 +12,8 @@ import { estimateAward } from "@/lib/domain/funding";
 import { formatDay } from "@/lib/format";
 import { SITE } from "@/lib/site/copy";
 import { audiencesOf, categoriesOf, categoryBySlug, guideOf, scopeOf, supportTypeOf } from "@/lib/site/taxonomy";
-import { AvailabilityBadge, EligibilityBadge, StateBadge, SyntheticLabel } from "@/components/badges";
+import { EligibilityBadge, RecordStatusBadge, StateBadge, SyntheticLabel } from "@/components/badges";
+import { recordStatus } from "@/lib/domain/record-status";
 import { deadlineText } from "@/components/opportunity-facts";
 import { RequirementsTable } from "@/components/requirements-table";
 import { DecisionRecordView } from "@/components/decision-record";
@@ -88,7 +89,7 @@ export default async function OpportunityPage({ params, searchParams }: { params
       </nav>
       <header className="detail-head">
         <div className="tags" style={{ marginBottom: 12 }}>
-          <AvailabilityBadge value={a.availability} t={t} />
+          <RecordStatusBadge record={recordStatus(matchable, now)} s={s} locale={locale} />
           {cats.map((c) => <span key={c.slug} className="tag cat">{c.name[locale]}</span>)}
           <span className="tag">{s.supportType[supportTypeOf(o.opportunity_type)]}</span>
           <span className="tag navy">{s.scope[scope]}</span>

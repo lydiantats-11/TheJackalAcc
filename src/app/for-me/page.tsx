@@ -16,6 +16,8 @@ import { personasOf } from "@/lib/domain/personas";
 import { EligibilityBadge } from "@/components/badges";
 import { Icon } from "@/components/icons";
 import { OpportunityCard } from "@/components/opportunity-card";
+import { applicantAudienceOf, personKind, splitByApplicant } from "@/lib/site/applicants";
+import { isCurrent } from "@/lib/domain/record-status";
 
 export const generateMetadata = titled(({ s }) => s.nav.forMe);
 
@@ -69,9 +71,13 @@ export default async function ForMePage({ searchParams }: { searchParams: Promis
   const myCats = new Set((profile.interests ?? []).flatMap((i) => INTEREST_CATEGORIES[i] ?? []));
   const fit = (x: ListedOpportunity) => (x.audiences.some((a) => myPersonas.includes(a)) ? 2 : 0) + (x.categories.some((c) => myCats.has(c)) ? 2 : 0);
   const selective = myPersonas.length > 0 || myCats.size > 0;
-  // Only opportunities that can be applied to now or soon are matched.
-  const current = list.filter((x) => (x.status === "open" || x.status === "upcoming") && (!selective || fit(x) > 0));
-  const reqs = await loadRequirements(sql(), current.map((x) => x.row.id));
+  // Current opportunities (open, upcoming, or awaiting a re-check — never hidden for being due a re-check).
+  const candidates = list.filter((x) => isCurrent(x.record) && (!selective || fit(x) > 0));
+  const reqs = await loadRequirements(sql(), candidates.map((x) => x.row.id));
+  // Who may apply (legal applicant type) is separate from eligibility and relevance: an individual's personal results
+  // only include programmes recorded as open to individuals; unknown applicant types are listed apart, never as matches.
+  const kind = personKind(profile);
+  const { personal: current, unconfirmed, otherApplicants } = splitByApplicant(candidates, (x) => applicantAudienceOf(x.row, reqs.get(x.row.id) ?? []), kind);
   const now = new Date();
   const assessed: Array<{ x: ListedOpportunity; a: Assessment }> = current
     .map((x) => ({ x, a: assess(toMatchable(x.row, reqs.get(x.row.id) ?? []), profile, { now }) }))
@@ -159,6 +165,16 @@ export default async function ForMePage({ searchParams }: { searchParams: Promis
                   {items.length > PER_GROUP && <p className="small muted" style={{ marginTop: 10 }}>{f.more(items.length - PER_GROUP)} · <Link href="/opportunities?status=open">{f.showAll}</Link></p>}
                 </div>
               ))}
+              {(unconfirmed.length > 0 || otherApplicants.length > 0) && (
+                <details className="card flat applicant-note">
+                  <summary><strong>{f.applicantTitle}</strong> <span className="muted">· {unconfirmed.length + otherApplicants.length}</span></summary>
+                  <p className="small muted">{f.applicantNote(unconfirmed.length, otherApplicants.length)}</p>
+                  {unconfirmed.length > 0 && (
+                    <ul className="checklist small">{unconfirmed.slice(0, 8).map((x) => <li key={x.row.id}><Icon name="info" size={16} /><Link href={`/opportunities/${x.row.id}`} lang={displayTitle(x.row, locale).lang}>{displayTitle(x.row, locale).text}</Link></li>)}</ul>
+                  )}
+                  <p className="small" style={{ margin: "8px 0 0" }}><Link href="/opportunities">{s.home.allOpps} →</Link></p>
+                </details>
+              )}
             </div>
           )}
         </section>

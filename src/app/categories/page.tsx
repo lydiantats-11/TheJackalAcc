@@ -24,12 +24,12 @@ export default async function CategoriesPage() {
 
       <div className="grid3">
         {CATEGORIES.map((c) => {
-          const n = counts[c.slug] ?? { open: 0, total: 0 };
+          const n = counts[c.slug] ?? { open: 0, total: 0, recheck: 0 };
           return (
             <Link key={c.slug} href={`/opportunities?cat=${c.slug}`} className="card card-link cat-card">
               <div className="row" style={{ justifyContent: "space-between", alignItems: "flex-start" }}>
                 <span className="icon-tile"><Icon name={c.icon} /></span>
-                <span className={`tag ${n.open > 0 ? "cat" : ""}`}>{s.cats.count(n.open, n.total)}</span>
+                <span className={`tag ${n.open > 0 ? "cat" : ""}`}>{s.cats.count(n.open, n.total, n.recheck)}</span>
               </div>
               <h3>{c.name[locale]}</h3>
               <p>{c.description[locale]}</p>

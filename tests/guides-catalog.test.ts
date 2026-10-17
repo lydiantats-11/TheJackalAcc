@@ -81,7 +81,7 @@ describe("verification state (about the content, never the application status)",
 
   it("stays independent of the programme's application status", () => {
     const d = articleBySlug("discovereu")!;
-    expect(programmeStatus(d.recordKey!, NOW)).toBe("deadline_passed");
+    expect(programmeStatus(d.recordKey!, NOW).display).toBe("deadline_passed");
     expect(verificationOf(d, NOW)).toBe("conflicting");
   });
 

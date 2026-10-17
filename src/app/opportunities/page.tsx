@@ -17,7 +17,7 @@ import { OpportunityCard } from "@/components/opportunity-card";
 
 export const generateMetadata = titled(({ s }) => s.nav.opportunities);
 const PAGE_SIZE = 24;
-const STATUS = ["open", "upcoming", "passed", "closed", "all"] as const;
+const STATUS = ["open", "upcoming", "recheck", "passed", "closed", "all"] as const;
 
 export default async function OpportunitiesPage({ searchParams }: { searchParams: Promise<Record<string, string | undefined>> }) {
   const { t, locale } = await getDict();

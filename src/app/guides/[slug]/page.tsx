@@ -92,7 +92,7 @@ export default async function GuidePage({ params }: { params: Promise<{ slug: st
         <p className="lead">{a.intro[locale]}</p>
         <div className="article-meta" style={{ marginTop: 12 }}>
           <VerificationBadge state={state} s={s} />
-          {status && <ApplicationBadge status={status} s={s} />}
+          {status && <ApplicationBadge status={status} s={s} locale={locale} />}
           {a.checkedOn && <span>{g.checked(formatDay(a.checkedOn, locale, "long"))}</span>}
           <span>{g.readingTime(readingMinutes(a, locale))}</span>
         </div>
@@ -121,7 +121,7 @@ export default async function GuidePage({ params }: { params: Promise<{ slug: st
           {(isProcedural && (a.timing || a.provides || a.applyUrl || status)) && (
             <div className="card keyinfo">
               <dl>
-                {status && <div><dt>{g.appStatus}</dt><dd><ApplicationBadge status={status} s={s} /></dd></div>}
+                {status && <div><dt>{g.appStatus}</dt><dd><ApplicationBadge status={status} s={s} locale={locale} /></dd></div>}
                 {a.kind === "programme" && <div><dt>{g.deadline}</dt><dd>{a.timing ? a.timing[locale] : <span className="unknown">{g.notStated}</span>}</dd></div>}
                 {a.kind === "programme" && <div><dt>{g.amount}</dt><dd>{a.provides ? a.provides[locale] : <span className="unknown">{g.notStated}</span>}</dd></div>}
               </dl>

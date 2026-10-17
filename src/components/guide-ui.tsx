@@ -3,7 +3,8 @@ import Link from "next/link";
 import type { Locale } from "@/lib/i18n/dictionaries";
 import type { SiteCopy } from "@/lib/site/copy";
 import { guideCategory, type Article, type VerificationState } from "@/lib/site/guide-catalog";
-import { ACTIONABLE, type ProgrammeStatus } from "@/lib/site/guide-status";
+import type { GuideRecordStatus } from "@/lib/site/guide-status";
+import { RecordStatusBadge } from "./badges";
 import { Icon } from "./icons";
 
 const TONE: Record<VerificationState, string> = {
@@ -14,8 +15,9 @@ export function VerificationBadge({ state, s }: { state: VerificationState; s: S
   return <span className={`badge ${TONE[state]}`} title={s.guides.stateHelp[state]}>{s.guides.states[state]}</span>;
 }
 
-export function ApplicationBadge({ status, s }: { status: ProgrammeStatus; s: SiteCopy }) {
-  return <span className={`badge ${ACTIONABLE.has(status) ? "b-ok" : ""}`} title={s.guides.appStatus}>{s.guides.programmeStatus[status]}</span>;
+/** The programme's application status on guides: the shared canonical badge (same as listings and detail pages). */
+export function ApplicationBadge({ status, s, locale, detail = true }: { status: GuideRecordStatus; s: SiteCopy; locale: Locale; detail?: boolean }) {
+  return <RecordStatusBadge record={status} s={s} locale={locale} detail={detail} />;
 }
 
 export function formatDay(d: string, locale: Locale, month: "short" | "long" = "short") {
@@ -23,14 +25,14 @@ export function formatDay(d: string, locale: Locale, month: "short" | "long" = "
 }
 
 export function GuideCard({ a, state, status, s, locale }: {
-  a: Article; state: VerificationState; status: ProgrammeStatus | null; s: SiteCopy; locale: Locale;
+  a: Article; state: VerificationState; status: GuideRecordStatus | null; s: SiteCopy; locale: Locale;
 }) {
   const cat = guideCategory(a.categories[0] ?? "");
   return (
     <article className="opp-card guide-card">
       <div className="row" style={{ justifyContent: "space-between", gap: 8, flexWrap: "wrap" }}>
         <span className="icon-tile navy" aria-hidden="true"><Icon name={cat?.icon ?? "book"} /></span>
-        {status && <ApplicationBadge status={status} s={s} />}
+        {status && <ApplicationBadge status={status} s={s} locale={locale} />}
       </div>
       <h3><Link href={`/guides/${a.slug}`}>{a.title[locale]}</Link></h3>
       <p className="small muted clamp-3" style={{ margin: 0 }}>{a.intro[locale]}</p>

@@ -1,102 +1,95 @@
 /**
- * Regression tests: a guide's programme status is computed from the verified dates and the live record,
- * never frozen at the 14 Oct check (bug: DiscoverEU still showed "Open" after 15 Oct 2026, 12:00 Brussels).
+ * Guides use the canonical record status (record-status.ts): computed from the dates and the re-check interval, never
+ * frozen, and identical to what the listing shows for the same record.
  */
 import { describe, expect, it } from "vitest";
 import { PROGRAMME_GUIDES } from "@/lib/site/guides";
-import { programmeStatus, statusFromAvailability, statusFromVerified, verifiedCloses } from "@/lib/site/guide-status";
+import { programmeStatus, statusFromVerified, verifiedCloses } from "@/lib/site/guide-status";
+import type { RecordStatus } from "@/lib/domain/record-status";
 import { SITE } from "@/lib/site/copy";
 
 const at = (iso: string) => new Date(iso);
+const d = (key: string, iso: string) => statusFromVerified(key, at(iso)).display;
+const live = (display: RecordStatus["display"], application: RecordStatus["application"]): RecordStatus =>
+  ({ display, application, freshness: display === "recheck" ? "recheck" : "current", lastVerifiedAt: at("2026-10-13T21:00:00Z") });
 
-describe("programme status on guides", () => {
-  it("DiscoverEU is open before 15 Oct 2026 12:00 Brussels and passed one second after", () => {
-    expect(statusFromVerified("manual:discovereu", at("2026-10-15T09:59:59Z"))).toBe("open");
-    expect(statusFromVerified("manual:discovereu", at("2026-10-15T10:00:01Z"))).toBe("deadline_passed");
-    expect(statusFromVerified("manual:discovereu", at("2026-10-16T08:00:00Z"))).toBe("deadline_passed");
+describe("programme status on guides (from the checked file, same rules as the database)", () => {
+  it("DiscoverEU: re-check due after 1 day, deadline 15 Oct 2026 12:00 Brussels", () => {
+    expect(d("manual:discovereu", "2026-09-30T12:00:00Z")).toBe("upcoming");
+    expect(d("manual:discovereu", "2026-10-14T12:00:00Z")).toBe("open");
+    expect(d("manual:discovereu", "2026-10-15T09:59:59Z")).toBe("recheck"); // checked 14 Oct, interval 1 day
+    expect(d("manual:discovereu", "2026-10-15T10:00:01Z")).toBe("deadline_passed");
   });
 
-  it("DiscoverEU was not yet open before its opening time", () => {
-    expect(statusFromVerified("manual:discovereu", at("2026-09-30T12:00:00Z"))).toBe("upcoming");
+  it("A21: open while fresh, «needs re-check» after 3 days with the last verified status kept, passed after 13 Nov", () => {
+    expect(d("manual:a21", "2026-10-16T08:00:00Z")).toBe("open");
+    const s = statusFromVerified("manual:a21", at("2026-10-17T12:00:00Z"));
+    expect(s.display).toBe("recheck");
+    expect(s.application).toBe("open");
+    expect(s.lastVerifiedAt?.toISOString()).toBe("2026-10-13T21:00:00.000Z"); // 14 Oct, midnight Athens
+    expect(d("manual:a21", "2026-11-13T16:00:01Z")).toBe("deadline_passed");
   });
 
-  it("Article 21 school-meal call is open until 13 Nov 2026 18:00 Athens, then passed", () => {
-    expect(statusFromVerified("manual:a21", at("2026-10-16T08:00:00Z"))).toBe("open");
-    expect(statusFromVerified("manual:a21", at("2026-11-13T16:00:01Z"))).toBe("deadline_passed");
+  it("a date-only deadline counts the whole day (Athens time)", () => {
+    expect(verifiedCloses("manual:spiti2")!.toISOString()).toBe("2026-05-31T20:59:59.999Z");
   });
 
-  it("a date-only deadline counts the whole day as open (Athens time)", () => {
-    // Student housing: recorded closed by the checker, so it stays closed whatever the date.
-    expect(statusFromVerified("manual:studenthousing", at("2026-07-15T12:00:00Z"))).toBe("closed");
-    const end = verifiedCloses("manual:spiti2")!;
-    expect(end.toISOString()).toBe("2026-05-31T20:59:59.999Z"); // 23:59:59.999 Athens (UTC+3)
+  it("closed records stay closed; stale data is never turned into closed", () => {
+    expect(d("manual:spiti2", "2026-10-16T08:00:00Z")).toBe("closed");
+    expect(d("manual:studenthousing", "2026-07-15T12:00:00Z")).toBe("closed");
+    expect(d("manual:unemployment", "2027-06-01T08:00:00Z")).toBe("recheck"); // not "closed"
   });
 
-  it("programmes the checker recorded as closed stay closed", () => {
-    expect(statusFromVerified("manual:spiti2", at("2026-10-16T08:00:00Z"))).toBe("closed");
-  });
-
-  it("rolling programmes without a deadline stay rolling", () => {
+  it("rolling programmes are rolling while fresh and «needs re-check» after 30 days", () => {
     for (const k of ["manual:art5c", "manual:art5b", "manual:art5a", "manual:unemployment"]) {
-      expect(statusFromVerified(k, at("2026-10-16T08:00:00Z"))).toBe("rolling");
-      expect(statusFromVerified(k, at("2027-06-01T08:00:00Z"))).toBe("rolling");
+      expect(d(k, "2026-10-16T08:00:00Z")).toBe("rolling");
+      expect(d(k, "2027-06-01T08:00:00Z")).toBe("recheck");
     }
   });
 
-  it("a rolling call with a final cut-off passes after that cut-off (EIC Accelerator, 4 Nov 2026)", () => {
-    expect(statusFromVerified("manual:eic", at("2026-10-16T08:00:00Z"))).toBe("rolling");
-    expect(statusFromVerified("manual:eic", at("2026-11-04T16:00:01Z"))).toBe("deadline_passed");
+  it("EIC: next cut-off 4 Nov 2026, then passed", () => {
+    expect(d("manual:eic", "2026-10-16T08:00:00Z")).toBe("open");
+    expect(d("manual:eic", "2026-11-04T16:00:01Z")).toBe("deadline_passed");
   });
 
   it("unknown records are never shown as open", () => {
-    expect(statusFromVerified("manual:does-not-exist", at("2026-10-16T08:00:00Z"))).toBe("unknown");
+    expect(d("manual:does-not-exist", "2026-10-16T08:00:00Z")).toBe("unknown");
   });
+});
 
-  it("the live database record wins when it gives a definite answer", () => {
-    const now = at("2026-10-16T08:00:00Z");
-    expect(programmeStatus("manual:a21", now, { availability: "closed", rolling: false })).toBe("closed");
-    expect(programmeStatus("manual:art5c", now, { availability: "closed", rolling: true })).toBe("closed");
-    expect(programmeStatus("manual:beckham", now, { availability: "open", rolling: false })).toBe("open");
-    expect(programmeStatus("manual:unemployment", now, { availability: "open", rolling: true })).toBe("rolling");
-    expect(programmeStatus("manual:art5b", now, { availability: "open", rolling: false })).toBe("rolling");
+describe("guides follow the live record exactly", () => {
+  const now = at("2026-10-17T12:00:00Z");
+  it("the live record's status is shown as is, including «needs re-check»", () => {
+    expect(programmeStatus("manual:a21", now, live("recheck", "open")).display).toBe("recheck");
+    expect(programmeStatus("manual:a21", now, live("closed", "closed")).display).toBe("closed");
+    expect(programmeStatus("manual:unemployment", now, live("rolling", "rolling")).display).toBe("rolling");
   });
-
-  it("a stale or unverified live record falls back to the verified dates", () => {
-    const now = at("2026-10-16T08:00:00Z");
-    expect(programmeStatus("manual:a21", now, { availability: "stale", rolling: false })).toBe("open");
-    expect(programmeStatus("manual:discovereu", now, { availability: "unverified", rolling: false })).toBe("deadline_passed");
+  it("a verified closing time that has passed wins over a live open or re-check answer", () => {
+    expect(programmeStatus("manual:discovereu", now, live("open", "open")).display).toBe("deadline_passed");
+    expect(programmeStatus("manual:discovereu", now, live("recheck", "open")).display).toBe("deadline_passed");
   });
-
-  it("a live 'open' never overrides a verified deadline that has passed (a re-opening needs a new check)", () => {
-    expect(programmeStatus("manual:spiti2", at("2026-10-16T08:00:00Z"), { availability: "open", rolling: false })).toBe("closed");
-    expect(programmeStatus("manual:discovereu", at("2026-10-16T08:00:00Z"), { availability: "open", rolling: false })).toBe("deadline_passed");
-  });
-
-  it("maps every availability without ever turning a doubtful one into open", () => {
-    expect(statusFromAvailability("deadline_passed_unconfirmed", false)).toBe("deadline_passed");
-    expect(statusFromAvailability("closed_budget_exhausted", false)).toBe("closed");
-    for (const a of ["stale", "unverified", "suspended", "conflicting_information"] as const) expect(statusFromAvailability(a, false)).toBeNull();
-  });
-
   it("no guide shows an actionable status once its verified closing time has passed", () => {
     for (const g of PROGRAMME_GUIDES) {
       const closes = verifiedCloses(g.recordKey);
       if (!closes) continue;
       const after = new Date(closes.getTime() + 1000);
-      expect([g.slug, programmeStatus(g.recordKey, after)]).not.toEqual([g.slug, "open"]);
-      expect([g.slug, programmeStatus(g.recordKey, after)]).not.toEqual([g.slug, "rolling"]);
-      expect([g.slug, programmeStatus(g.recordKey, after, { availability: "open", rolling: false })]).not.toEqual([g.slug, "open"]);
+      for (const s of [programmeStatus(g.recordKey, after), programmeStatus(g.recordKey, after, live("open", "open"))]) {
+        expect([g.slug, s.display]).not.toEqual([g.slug, "open"]);
+        expect([g.slug, s.display]).not.toEqual([g.slug, "rolling"]);
+      }
     }
   });
+});
 
-  it("every status has a Greek and an English label", () => {
-    for (const k of ["open", "rolling", "upcoming", "deadline_passed", "closed", "unknown"] as const) {
-      expect(SITE.el.guides.programmeStatus[k]).toBeTruthy();
-      expect(SITE.en.guides.programmeStatus[k]).toBeTruthy();
+describe("labels", () => {
+  it("every canonical status has a Greek and an English label", () => {
+    for (const k of ["open", "rolling", "upcoming", "recheck", "deadline_passed", "closed", "suspended", "unverified", "conflicting", "unknown"]) {
+      expect(SITE.el.record.labels[k as keyof typeof SITE.el.record.labels]).toBeTruthy();
+      expect(SITE.en.record.labels[k as keyof typeof SITE.en.record.labels]).toBeTruthy();
     }
+    expect(SITE.el.record.labels.recheck).toBe("Χρειάζεται νέος έλεγχος");
   });
-
-  it("the guide model no longer carries a stored status", () => {
+  it("the guide model carries no stored status", () => {
     for (const g of PROGRAMME_GUIDES) expect("status" in g).toBe(false);
   });
 });

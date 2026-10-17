@@ -76,13 +76,13 @@ export default async function Home() {
           </div>
           <div className="grid4">
             {CATEGORIES.slice(0, 8).map((c) => {
-              const n = counts[c.slug] ?? { open: 0, total: 0 };
+              const n = counts[c.slug] ?? { open: 0, total: 0, recheck: 0 };
               return (
                 <Link key={c.slug} href={`/opportunities?cat=${c.slug}`} className="card card-link cat-card">
                   <span className="icon-tile"><Icon name={c.icon} /></span>
                   <h3>{c.name[locale]}</h3>
                   <p>{c.description[locale]}</p>
-                  <div className="foot"><span>{s.cats.count(n.open, n.total)}</span><Icon name="arrow" size={16} /></div>
+                  <div className="foot"><span>{s.cats.count(n.open, n.total, n.recheck)}</span><Icon name="arrow" size={16} /></div>
                 </Link>
               );
             })}
