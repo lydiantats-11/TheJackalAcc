@@ -567,3 +567,17 @@ main:has(> section.band:last-child) { padding-bottom: 0; }
 .answers-list li { display: flex; justify-content: space-between; gap: 8px; align-items: baseline; font-size: var(--fs-sm); min-width: 0; }
 .answers-list li span { min-width: 0; }
 .why-lines { display: grid; gap: 4px; font-size: var(--fs-sm); }
+
+/* ── complex-grant components (ΕΣΠΑ research, 17 Oct 2026) ───────────────────────────────────────────────── */
+.cg h2 { margin-top: 0; font-size: 1.2rem; }
+.cg-sub { font-size: .95rem; margin: var(--sp-4) 0 var(--sp-2); }
+.cg-timeline { list-style: none; margin: 0 0 var(--sp-3); padding: 0 0 0 18px; border-left: 2px solid var(--accent-line); display: grid; gap: var(--sp-3); }
+.cg-timeline li { position: relative; display: grid; gap: 4px; justify-items: start; }
+.cg-timeline li::before { content: ""; position: absolute; left: -25px; top: 5px; width: 12px; height: 12px; border-radius: 50%; background: var(--surface); border: 2px solid var(--accent); }
+.cg-timeline li.k-amendment::before { background: var(--warn-bg); border-color: var(--warn); }
+.cg-timeline li.k-closes::before, .cg-timeline li.k-results::before { background: var(--brand); border-color: var(--brand); }
+.cg-timeline p { margin: 0; font-size: var(--fs-sm); }
+.cg-date { font-weight: 700; font-size: var(--fs-sm); }
+.num-steps { list-style: none; margin: 0; padding: 0; display: grid; gap: var(--sp-3); counter-reset: none; }
+.num-steps li { display: flex; gap: var(--sp-3); align-items: flex-start; }
+.num-steps .n { flex: none; width: 28px; height: 28px; border-radius: 50%; display: grid; place-items: center; background: var(--brand); color: var(--brand-ink); font-weight: 700; font-size: .85rem; }

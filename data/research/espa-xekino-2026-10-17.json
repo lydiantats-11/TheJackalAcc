@@ -1,0 +1,82 @@
+{
+  "status": "research_only — NOT an approved opportunity; never imported or listed",
+  "purpose": "Design validation of the complex-grant components (owner approval 17 Oct 2026, 15:49)",
+  "read_on": "2026-10-17",
+  "programme": {
+    "title": { "el": "Ξεκινώ Επιχειρηματικά", "en": "Start a Business (Xekino Epicheirimatika)" },
+    "programme": { "el": "Ανταγωνιστικότητα 2021–2027 (ΕΣΠΑ), ΕΚΤ+", "en": "Competitiveness 2021–2027 (ESPA), ESF+" },
+    "body": { "el": "ΕΦΕΠΑΕ (Ενδιάμεσος Φορέας)", "en": "EFEPAE (intermediate body)" },
+    "status": { "el": "Η υποβολή έκλεισε 30/06/2026 15:00 · αποτελέσματα δημοσιεύθηκαν", "en": "Submissions closed 30/06/2026 15:00 · results published" },
+    "page": "https://efepae.gr/drasi/%CE%BE%CE%B5%CE%BA%CE%B9%CE%BD%CF%89-%CE%B5%CF%80%CE%B9%CF%87%CE%B5%CE%B9%CF%81%CE%B7%CE%BC%CE%B1%CF%84%CE%B9%CE%BA%CE%B1/"
+  },
+  "timeline": [
+    { "date": "2026-04-30", "kind": "call", "el": "Δημοσίευση πρόσκλησης (Α.Π. 67978 ΕΞ 2026, ΑΔΑ 9ΡΙΒΗ-ΔΟΟ)", "en": "Call published (ref. 67978 ΕΞ 2026, ΑΔΑ 9ΡΙΒΗ-ΔΟΟ)", "source": "https://efepae.gr/wp-content/uploads/2026/04/9%CE%A1%CE%99%CE%92%CE%97-%CE%94%CE%9F%CE%9F_%CE%A5%CE%91_-%CE%9E%CE%95%CE%9A%CE%99%CE%9D%CE%A9-%CE%95%CE%A0%CE%99%CE%A7%CE%95%CE%99%CE%A1%CE%97%CE%9C%CE%91%CE%A4%CE%99%CE%9A%CE%91.pdf" },
+    { "date": "2026-05-06", "kind": "opens", "el": "Άνοιγμα υποβολής στο ΟΠΣΚΕ, 15:00", "en": "Submissions open in OPSKE, 15:00", "source": "https://efepae.gr/wp-content/uploads/2026/04/2026-05-KSEKINO-epixeir-SYNOPSI.pdf" },
+    { "date": "2026-06-02", "kind": "amendment", "el": "1η τροποποίηση (Α.Π. 86875 ΕΞ 2026, ΑΔΑ ΡΩ9ΤΗ-ΔΝΟ): πλήρες Παράρτημα ΙΙ ΚΑΔ κατά την ταξινόμηση ΚΑΔ 2025, προσθήκη ΚΑΔ 66.xx, διόρθωση Παραρτήματος Χ (όλες οι περιφερειακές ενότητες), αφαίρεση του «δίκτυο πρακτόρευσης»", "en": "1st amendment (ref. 86875 ΕΞ 2026, ΑΔΑ ΡΩ9ΤΗ-ΔΝΟ): full Annex II of activity codes (2025 ΚΑΔ), 66.xx codes added, Annex X corrected (all regional units), «agency network» example removed", "source": "https://efepae.gr/wp-content/uploads/2026/04/%CE%A1%CE%A99%CE%A4%CE%97-%CE%94%CE%9D%CE%9F_%CE%A5%CE%91-1%CE%B7%CF%82-%CE%A4%CE%A1%CE%9F%CE%A0_%CE%9E%CE%95%CE%9A%CE%99%CE%9D%CE%A9-%CE%95%CE%A0%CE%99%CE%A7%CE%95%CE%99%CE%A1.pdf" },
+    { "date": "2026-06-04", "kind": "faq", "el": "Συχνές ερωτήσεις (έγκριση με βάση εισήγηση 04/06/2026)", "en": "FAQ (approved on a proposal of 04/06/2026)", "source": "https://efepae.gr/wp-content/uploads/2026/04/%CE%A12%CE%9A5%CE%97-45%CE%99_%CE%A5%CE%91-FAQS_%CE%9E%CE%95%CE%9A%CE%99%CE%9D%CE%A9-%CE%95%CE%A0%CE%99%CE%A7%CE%95%CE%99%CE%A1.pdf" },
+    { "date": "2026-06-30", "kind": "closes", "el": "Λήξη υποβολής, 15:00", "en": "Submissions close, 15:00", "source": "https://efepae.gr/wp-content/uploads/2026/04/2026-05-KSEKINO-epixeir-SYNOPSI.pdf" },
+    { "date": "2026-07-15", "kind": "amendment", "el": "2η τροποποίηση (Α.Π. 116146 ΕΞ 2026): η Διαχειριστική Αρχή μπορεί να εντάξει έως 30% επιπλέον του προϋπολογισμού· ο προϋπολογισμός 70 εκ. € δεν αλλάζει", "en": "2nd amendment (ref. 116146 ΕΞ 2026): the managing authority may fund up to 30% above the budget; the €70m budget is unchanged", "source": "https://efepae.gr/wp-content/uploads/2026/04/20260715_2h_trop_prosklhshs_xekinw_epixeirhmatika.pdf" },
+    { "date": "2026-09-03", "kind": "results", "el": "Αποτελέσματα αξιολόγησης — περιφέρειες μετάβασης", "en": "Evaluation results — transition regions", "source": "https://efepae.gr/wp-content/uploads/2026/04/%CE%A1%CE%92%CE%9D%CE%A5%CE%97-%CE%9A%CE%9D%CE%9E_%CE%A5%CE%91-%CE%95%CE%93%CE%9A%CE%A1-%CE%91%CE%A0%CE%9F%CE%A4%CE%95%CE%9B-%CE%91%CE%9E%CE%99%CE%9F%CE%9B_%CE%9E%CE%95%CE%9A%CE%99%CE%9D%CE%A9-%CE%9C%CE%95%CE%A4.pdf" },
+    { "date": "2026-10-07", "kind": "results", "el": "Αποτελέσματα αξιολόγησης — λιγότερο αναπτυγμένες περιφέρειες", "en": "Evaluation results — less developed regions", "source": "https://efepae.gr/wp-content/uploads/2026/10/%CE%A8%CE%A6%CE%A1%CE%A7%CE%97-%CE%95%CE%A44_%CE%A5%CE%91-%CE%95%CE%93%CE%9A%CE%A1-%CE%91%CE%A0%CE%9F%CE%A4%CE%95%CE%9B-%CE%91%CE%9E%CE%99%CE%9F%CE%9B_%CE%9E%CE%95%CE%9A%CE%99%CE%9D%CE%A9_%CE%9B%CE%91%CE%A0.pdf" }
+  ],
+  "timeline_note": { "el": "Η σελίδα του ΕΦΕΠΑΕ αναφέρει άλλες ημερομηνίες για τις τροποποιήσεις (12/06 και 16/07 ή 03/09). Χρησιμοποιούμε τις ημερομηνίες υπογραφής που αναγράφονται στα ίδια τα έγγραφα.", "en": "EFEPAE's page lists other dates for the amendments (12/06, and 16/07 or 03/09). We use the signing dates printed on the documents themselves." },
+  "kad": {
+    "rule": { "el": "Η επιχείρηση πρέπει να δραστηριοποιείται αποκλειστικά σε επιλέξιμους ΚΑΔ του Παραρτήματος ΙΙ, κύριο ή δευτερεύοντα, από την έναρξη στην ΑΑΔΕ μέχρι την πληρωμή.", "en": "The business must operate only under eligible codes in Annex II (main or secondary), from its start with AADE until payment." },
+    "examples_confirmed": [
+      { "code": "66.19.91.00", "el": "Χρηματοοικονομικές συμβουλευτικές υπηρεσίες (προστέθηκε με την 1η τροποποίηση)", "en": "Financial advisory services (added by the 1st amendment)" },
+      { "code": "66.22.00.01", "el": "Ασφαλιστικές υπηρεσίες (προστέθηκε με την 1η τροποποίηση)", "en": "Insurance services (added by the 1st amendment)" }
+    ],
+    "sectors_named": { "el": "Ενδεικτικοί τομείς στη σελίδα του φορέα: ΤΠΕ, STEM, τουρισμός", "en": "Sectors named on the body's page: ICT, STEM, tourism" },
+    "full_list_status": { "el": "Ο πλήρης κατάλογος (Παράρτημα ΙΙ) δεν έχει εξαχθεί ακόμη· δείτε την 1η τροποποίηση.", "en": "The full list (Annex II) has not been extracted yet; see the 1st amendment." },
+    "warning": { "el": "Αν ενεργοποιηθεί ΚΑΔ πρωτογενούς τομέα κατά την υλοποίηση, η επιχείρηση γίνεται μη επιλέξιμη (FAQ Ε18).", "en": "Activating a primary-sector code during the project makes the business ineligible (FAQ Q18)." }
+  },
+  "expenses": {
+    "basis": { "el": "Απλοποιημένο κόστος: δεν υποβάλλονται εξοφλημένα παραστατικά (FAQ Ε37, ορισμοί πρόσκλησης).", "en": "Simplified costs: no paid invoices are submitted (FAQ Q37, call definitions)." },
+    "items": [
+      { "el": "Λειτουργικά έξοδα (ενοίκιο, ρεύμα, τηλεφωνία, νερό, θέρμανση, κοινόχρηστα, φιλοξενία σε θερμοκοιτίδα)", "en": "Operating costs (rent, electricity, telephone, water, heating, shared costs, incubator hosting)" },
+      { "el": "Αμοιβές τρίτων (νομικές, λογιστικές, συμβουλευτικές, επιχειρηματικό σχέδιο)", "en": "Third-party fees (legal, accounting, advisory, business plan)" },
+      { "el": "Προβολή, δικτύωση, συμμετοχή σε εκθέσεις", "en": "Promotion, networking, trade fairs" },
+      { "el": "Αναλώσιμα", "en": "Consumables" },
+      { "el": "Εξοπλισμός: αγορά, χρηματοδοτική μίσθωση ή αποσβέσεις", "en": "Equipment: purchase, leasing or depreciation" },
+      { "el": "Ασφαλιστικές εισφορές του δικαιούχου", "en": "The beneficiary's own social security contributions" },
+      { "el": "Μισθολογικό κόστος νέας θέσης εργασίας (μοναδιαίο κόστος)", "en": "Payroll of a new job (unit cost)" }
+    ],
+    "source": "https://efepae.gr/wp-content/uploads/2026/04/2026-05-KSEKINO-epixeir-SYNOPSI.pdf"
+  },
+  "financial": {
+    "rows": [
+      { "who": { "el": "Ατομική ή μονοπρόσωπη επιχείρηση", "en": "Sole trader or single-member company" }, "amount": "13.000 €", "how": { "el": "Κατ' αποκοπή, σε τρία εξάμηνα ορόσημα (4.400 / 4.300 / 4.300 €)", "en": "Lump sum in three six-month milestones (€4,400 / €4,300 / €4,300)" } },
+      { "who": { "el": "Εταιρεία ή πολυμετοχικό σχήμα", "en": "Company or multi-shareholder scheme" }, "amount": "21.000 €", "how": { "el": "Κατ' αποκοπή, σε τρία εξάμηνα (7.000 € το καθένα)", "en": "Lump sum in three six-month milestones (€7,000 each)" } },
+      { "who": { "el": "Νέα θέση εργασίας (1 ΕΜΕ)", "en": "New job (1 annual work unit)" }, "amount": "έως 15.000 €", "how": { "el": "Μοναδιαίο κόστος· από 0,97 ΕΜΕ και πάνω δίνεται ολόκληρο (FAQ Ε34)", "en": "Unit cost; paid in full from 0.97 work units (FAQ Q34)" } }
+    ],
+    "conditions": [
+      { "el": "Ελάχιστη λειτουργία: δύο επαληθευμένα εξάμηνα, αλλιώς ανάκληση και επιστροφή (FAQ Ε35)", "en": "Minimum operation: two verified six-month periods, otherwise withdrawal and repayment (FAQ Q35)" },
+      { "el": "Διάρκεια 12 ή 18 μήνες συνεχούς λειτουργίας από την έναρξη στην ΑΑΔΕ", "en": "12 or 18 months of continuous operation from the AADE start date" },
+      { "el": "Χρηματοδότηση 100% δημόσια δαπάνη· καθεστώς de minimis, όριο 300.000 € ανά ενιαία επιχείρηση σε 3 έτη (Καν. 2023/2831)", "en": "100% public funding; de minimis, ceiling €300,000 per single undertaking over 3 years (Reg. 2023/2831)" },
+      { "el": "Ατομικό εισόδημα τελευταίου φορολογικού έτους έως 30.000 € (Πίνακας Γ εκκαθαριστικού)", "en": "Individual income in the last tax year up to €30,000 (Table Γ of the tax assessment)" },
+      { "el": "Προϋπολογισμός 70 εκ. € (55 εκ. λιγότερο αναπτυγμένες, 15 εκ. Αττική & Νότιο Αιγαίο), με δυνατότητα +30% (2η τροποποίηση)", "en": "Budget €70m (€55m less developed regions, €15m Attica & South Aegean), with up to +30% (2nd amendment)" }
+    ],
+    "faq_check": { "el": "Η FAQ Ε35 αναφέρει 8.700 € για δύο εξάμηνα (ατομική), ενώ τα ορόσημα 4.400 + 4.300 δίνουν 8.700 € — συμφωνούν.", "en": "FAQ Q35 says €8,700 for two semesters (sole trader); milestones €4,400 + €4,300 = €8,700 — consistent." }
+  },
+  "documents": {
+    "status": { "el": "Η πλήρης λίστα (πρόσκληση §9.1) δεν έχει διαβαστεί ακόμη. Παρακάτω μόνο όσα αναφέρουν οι Συχνές Ερωτήσεις.", "en": "The full list (call §9.1) has not been read yet. Below only what the FAQ states." },
+    "items": [
+      { "class": "mandatory", "el": "Σύνοψη Πράξης Διοικητικού Προσδιορισμού Φόρου (Πίνακας Γ) για το όριο εισοδήματος", "en": "Tax assessment summary (Table Γ) for the income limit", "ref": "FAQ Q11, Q29" },
+      { "class": "mandatory", "el": "Τίτλος σπουδών ή επίσημη βεβαίωση ολοκλήρωσης του ιδρύματος", "en": "Degree, or the institution's official certificate of completion", "ref": "FAQ Q9" },
+      { "class": "conditional", "el": "Πτυχίο εξωτερικού: Πράξη Αναγνώρισης ΔΟΑΤΑΠ (όχι μόνο επαγγελματική αναγνώριση)", "en": "Foreign degree: ΔΟΑΤΑΠ recognition act (professional recognition alone is not enough)", "ref": "FAQ Q3, Q13, Q27" },
+      { "class": "conditional", "el": "Θερμοκοιτίδα ή συνεργατικός χώρος: σύμβαση συνεργασίας και απόδειξη αυτοτελούς χώρου", "en": "Incubator or co-working: cooperation contract and proof of a self-contained space", "ref": "FAQ Q33" },
+      { "class": "conditional", "el": "Συμμετοχή σε πρόγραμμα ΔΥΠΑ: απόφαση ανάκλησης της ένταξης, με την αίτηση", "en": "In a ΔΥΠΑ programme: decision revoking that enrolment, with the application", "ref": "FAQ Q20" },
+      { "class": "on_request", "el": "Μισθωτήριο ή παραχώρηση επαγγελματικού χώρου σε ισχύ για όλη τη διάρκεια", "en": "Lease or grant of the business premises, valid for the whole period", "ref": "FAQ Q4, Q24, Q31" },
+      { "class": "on_request", "el": "Απασχόληση στο εξωτερικό: βεβαίωση εργοδότη (μετάφραση αν δεν είναι στα αγγλικά)", "en": "Work abroad: employer certificate (translated unless in English)", "ref": "FAQ Q30" }
+    ],
+    "source": "https://efepae.gr/wp-content/uploads/2026/04/%CE%A12%CE%9A5%CE%97-45%CE%99_%CE%A5%CE%91-FAQS_%CE%9E%CE%95%CE%9A%CE%99%CE%9D%CE%A9-%CE%95%CE%A0%CE%99%CE%A7%CE%95%CE%99%CE%A1.pdf"
+  },
+  "procedure": [
+    { "el": "Ελέγξτε ότι ο ΚΑΔ σας είναι στο Παράρτημα ΙΙ και ότι πληροίτε τους όρους (πτυχίο μετά την 1/1/2016, εισόδημα, χώρος).", "en": "Check that your activity code is in Annex II and that you meet the conditions (degree after 1/1/2016, income, premises)." },
+    { "el": "Συντάξτε το επιχειρηματικό σχέδιο, που αποτελεί το περιεχόμενο της αίτησης.", "en": "Prepare the business plan, which is the content of the application." },
+    { "el": "Υποβάλετε ηλεκτρονικά στο ΟΠΣΚΕ (app.opske.gr) από 06/05/2026 15:00 έως 30/06/2026 15:00· αιτήσεις εκτός ΟΠΣΚΕ δεν γίνονται δεκτές.", "en": "Submit online in OPSKE (app.opske.gr) between 06/05/2026 15:00 and 30/06/2026 15:00; applications outside OPSKE are not accepted." },
+    { "el": "Συγκριτική αξιολόγηση όλων των αιτήσεων και δημοσίευση αποτελεσμάτων.", "en": "Comparative evaluation of all applications and publication of results." },
+    { "el": "Έναρξη (κατηγορία Α) έως 365 ημέρες από την έγκριση· λειτουργία και επαλήθευση ανά εξάμηνο.", "en": "Start-up (category A) within 365 days of approval; operation verified every six months." },
+    { "el": "Πληρωμή ανά επαληθευμένο ορόσημο (Παράρτημα VII), χωρίς έλεγχο παραστατικών.", "en": "Payment per verified milestone (Annex VII), without checking invoices." }
+  ]
+}

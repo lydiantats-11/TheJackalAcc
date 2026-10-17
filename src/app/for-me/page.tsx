@@ -97,7 +97,7 @@ export default async function ForMePage({ searchParams }: { searchParams: Promis
     return reasons.join(" · ");
   };
   const o = s.onboarding;
-  const answerRows: Array<[string, string, string]> = [
+  const answerRows: Array<[string | undefined, string, string]> = [
     [t.question.personas, myPersonas.map((p) => t.opt.personas[p] ?? p).join(", "), "who"],
     [t.question.interests, [...(profile.interests ?? []).map((i) => (t.opt.interests as Record<string, string>)[i] ?? i), ...(profile.industries ?? []).map((i) => (t.opt.industries as Record<string, string>)[i] ?? i)].join(", "), "interests"],
     [t.question.employment_status, isAnswered(profile.employment_status) ? ((t.opt.employment_status as Record<string, string>)[String(profile.employment_status)] ?? (t.opt as unknown as Record<string, string>)[String(profile.employment_status)] ?? String(profile.employment_status)) : "", "work"],
@@ -132,7 +132,7 @@ export default async function ForMePage({ searchParams }: { searchParams: Promis
             <div className="kpi-label">{o.yourAnswers}</div>
             <ul className="answers-list">
               {answerRows.map(([label, value, st]) => (
-                <li key={label}><span><span className="muted">{label}:</span> {value || <span className="muted">{o.none}</span>}</span><Link href={`/profile?step=${st}`} className="xs">{o.change}</Link></li>
+                <li key={st}><span><span className="muted">{label}:</span> {value || <span className="muted">{o.none}</span>}</span><Link href={`/profile?step=${st}`} className="xs">{o.change}</Link></li>
               ))}
             </ul>
           </div>
