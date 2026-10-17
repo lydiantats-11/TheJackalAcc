@@ -131,7 +131,7 @@ const el = {
     emptyCategory: "Δεν υπάρχουν ακόμη οδηγοί σε αυτή την κατηγορία. Θα προστεθούν μόνο όταν ελεγχθούν με επίσημες πηγές.",
     clear: "Καθαρισμός", questionsTitle: "Συχνές ερωτήσεις",
     verification: "Έλεγχος περιεχομένου",
-    states: { verified: "Ελεγμένο με επίσημη πηγή", needs_reverification: "Χρειάζεται νέος έλεγχος", incomplete: "Ελλιπή επίσημα στοιχεία", conflicting: "Αντικρουόμενα επίσημα στοιχεία", draft: "Πρόχειρο — δεν έχει ελεγχθεί", educational: "Γενική εξήγηση" },
+    states: { verified: "Ελεγμένο με επίσημη πηγή", needs_reverification: "Ο οδηγός χρειάζεται αναθεώρηση", incomplete: "Ελλιπή επίσημα στοιχεία", conflicting: "Αντικρουόμενα επίσημα στοιχεία", draft: "Πρόχειρο — δεν έχει ελεγχθεί", educational: "Γενική εξήγηση" },
     stateHelp: {
       verified: "Το περιεχόμενο ελέγχθηκε με τις επίσημες πηγές στην ημερομηνία που αναφέρεται.",
       needs_reverification: "Πέρασε το διάστημα επανελέγχου ή η πηγή μπορεί να έχει αλλάξει. Αυτό δεν σημαίνει ότι οι πληροφορίες είναι λάθος· ελέγξτε την επίσημη σελίδα.",
@@ -373,7 +373,7 @@ const en: Copy = {
     emptyCategory: "There are no guides in this category yet. They will be added only once checked against official sources.",
     clear: "Clear", questionsTitle: "Frequently asked questions",
     verification: "Content check",
-    states: { verified: "Checked against official source", needs_reverification: "Needs re-checking", incomplete: "Incomplete official information", conflicting: "Conflicting official information", draft: "Draft — not yet checked", educational: "General explanation" },
+    states: { verified: "Checked against official source", needs_reverification: "Guide due for review", incomplete: "Incomplete official information", conflicting: "Conflicting official information", draft: "Draft — not yet checked", educational: "General explanation" },
     stateHelp: {
       verified: "The content was checked against the official sources on the date shown.",
       needs_reverification: "The review interval has passed or the source may have changed. This does not mean the information is wrong; check the official page.",
