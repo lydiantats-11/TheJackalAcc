@@ -62,7 +62,7 @@ export default async function GuidePage({ params }: { params: Promise<{ slug: st
           <div>
             <div>{st.text[locale]}</div>
             {st.details?.length ? <ul>{st.details.map((d) => <li key={d.el}>{d[locale]}</li>)}</ul> : null}
-            {!st.confirmed && <span className="awaiting">{g.awaiting}</span>}
+            {st.confirmed ? (a.kind === "procedure" ? <span className="confirmed">{g.stepConfirmed}</span> : null) : <span className="awaiting">{g.awaiting}</span>}
           </div>
         </li>
       ))}
@@ -104,6 +104,16 @@ export default async function GuidePage({ params }: { params: Promise<{ slug: st
             {reviewDue(a, now) && <div className="notice"><Icon name="alert" size={18} /><span>{g.reviewDueBanner.replace("{d}", String(a.reviewAfterDays))}</span></div>}
         </div>
       )}
+      {/* Phones: the official link and the contents come first (the side column drops below the article). */}
+      <div className="article-quick">
+        {a.applyUrl && isProcedural && <a className="btn btn-primary btn-block" href={a.applyUrl} target="_blank" rel="noopener noreferrer">{g.apply} <Icon name="external" size={16} /></a>}
+        {sections.length > 2 && (
+          <details className="card flat">
+            <summary><strong>{g.contents}</strong></summary>
+            <ol>{sections.map((sec) => <li key={sec.id}><a href={`#${sec.id}`}>{sec.title}</a></li>)}</ol>
+          </details>
+        )}
+      </div>
       <div className="with-aside-r">
         <div className="prose stack-lg">
           <div className="notice info"><Icon name="info" size={18} /><span>{g.stateHelp[state]}</span></div>
