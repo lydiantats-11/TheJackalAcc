@@ -15,10 +15,10 @@ const SEEDS = [
   "/", "/opportunities", "/categories", "/for-me", "/guides", "/about", "/login", "/register",
   ...CATS.map((c) => `/opportunities?cat=${c}`),
   "/opportunities?scope=gr", "/opportunities?scope=eu", "/opportunities?status=open", "/opportunities?status=upcoming", "/opportunities?status=all",
-  "/guides/eligibility-labels", "/guides/applying-officially", "/guides/unemployment-benefit-application",
+  "/guides/eligibility-labels", "/guides/applying-officially", "/guides/unemployment-benefit-application", "/lab/espa-example",
   ...["step-by-step", "benefits", "business-grants", "employment-education", "housing-energy", "eu-programmes", "faq-glossary", "news-updates"].map((c) => `/guides?cat=${c}`),
 ];
-const ALLOWED_PATH = /^\/$|^\/opportunities(\/[0-9a-f-]{36})?$|^\/categories$|^\/guides(\/[\w-]+)?$|^\/about$|^\/for-me$|^\/login$|^\/register$/;
+const ALLOWED_PATH = /^\/lab\/espa-example$|^\/$|^\/opportunities(\/[0-9a-f-]{36})?$|^\/categories$|^\/guides(\/[\w-]+)?$|^\/about$|^\/for-me$|^\/login$|^\/register$/;
 const LIST_PARAMS = new Set(["cat", "status", "scope", "type", "audience"]);
 const DEFAULTS = { status: "current", page: "1" };
 
@@ -71,10 +71,15 @@ const DEMO_BANNER = {
 const pages = { el: new Map(), en: new Map() }; // key -> { html, file }
 const browser = await chromium.launch();
 
+const ONB_NAV = (l) => `<div class="snap-banner demo">${l === "el" ? "Διαδρομή «Για Εμένα»:" : "«For Me» journey:"} <a href="${l}--for-me-onboarding-1.html">${l === "el" ? "1. Περιγραφές" : "1. Descriptions"}</a> · <a href="${l}--for-me-onboarding-2.html">${l === "el" ? "2. Ερωτήσεις" : "2. Questions"}</a> · <a href="${l}--for-me-demo.html">${l === "el" ? "3. Αποτελέσματα" : "3. Results"}</a></div>`;
+
 async function capture(page, ctx, locale) {
   // Plain HTML: drop Next's scripts and preloads; keep server-rendered markup and stylesheets.
   const raw = await page.evaluate(() => {
     document.querySelectorAll("script, link[rel=preload], link[rel=modulepreload], next-route-announcer, nextjs-portal").forEach((n) => n.remove());
+    // Keep what the visitor chose: live checkbox and select state becomes markup.
+    document.querySelectorAll("input[type=checkbox], input[type=radio]").forEach((i) => (i.checked ? i.setAttribute("checked", "") : i.removeAttribute("checked")));
+    document.querySelectorAll("select option").forEach((o) => (o.selected ? o.setAttribute("selected", "") : o.removeAttribute("selected")));
     return { html: "<!doctype html>\n" + document.documentElement.outerHTML, css: [...document.querySelectorAll("link[rel=stylesheet]")].map((l) => new URL(l.href).pathname), links: [...document.querySelectorAll("a[href]")].map((a) => a.getAttribute("href")) };
   });
   for (const c of raw.css) raw.html = raw.html.split(`"${c}"`).join(`"${await saveCss(ctx, c)}"`).split(`"${c}?`).join(`"${await saveCss(ctx, c)}?`);
@@ -106,15 +111,22 @@ for (const locale of ["el", "en"]) {
   await page.fill("#email", `snapshot-${locale}-${Date.now()}@preview.example`);
   await page.fill("#password", "preview demo password");
   await Promise.all([page.waitForURL(/\/profile/), page.click("form button.btn-primary")]);
+  // Step-by-step onboarding (17 Oct 2026): who → interests → work. Two of its screens are kept as demo pages.
   for (const v of ["employee_jobseeker", "household"]) await page.check(`input[name="personas"][value="${v}"]`);
+  const who = await capture(page, ctx, locale);
+  pages[locale].set("#onb-who", { html: who.html.replace(/<body([^>]*)>/, `<body$1>${DEMO_BANNER[locale]}${ONB_NAV(locale)}`), file: `${locale}--for-me-onboarding-1.html` });
+  await page.click('[data-step="interests"]');
   for (const v of ["employment", "family"]) await page.check(`input[name="interests"][value="${v}"]`);
+  await page.click('[data-step="work"]');
   await page.selectOption('select[name="employment_status"]', "unemployed").catch(() => {});
+  const work = await capture(page, ctx, locale);
+  pages[locale].set("#onb-work", { html: work.html.replace(/<body([^>]*)>/, `<body$1>${DEMO_BANNER[locale]}${ONB_NAV(locale)}`), file: `${locale}--for-me-onboarding-2.html` });
   await Promise.all([page.waitForResponse((r) => r.request().method() === "POST"), page.locator("form button.btn-primary").last().click()]);
   await page.waitForLoadState("networkidle");
   await page.goto(BASE + "/for-me", { waitUntil: "networkidle" });
   if (await page.locator(".empty").count()) throw new Error(`${locale}: demo profile did not save — For Me is empty`);
   const demo = await capture(page, ctx, locale);
-  pages[locale].set("#demo", { html: demo.html.replace(/<body([^>]*)>/, `<body$1>${DEMO_BANNER[locale]}`), file: `${locale}--for-me-demo.html` });
+  pages[locale].set("#demo", { html: demo.html.replace(/<body([^>]*)>/, `<body$1>${DEMO_BANNER[locale]}${ONB_NAV(locale)}`), file: `${locale}--for-me-demo.html` });
   await ctx.close();
 }
 await browser.close();

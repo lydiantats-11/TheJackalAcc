@@ -34,6 +34,7 @@ jobs:
       AI_EXTRACTION_ENABLED: "false"
       MONITOR_CONTACT_EMAIL: jackal-accountant-test@users.noreply.github.com
       NEXT_TELEMETRY_DISABLED: "1"
+      RESEARCH_LAB_ENABLED: "true"
       OUT: static-snapshot
     steps:
       - uses: actions/checkout@v4
