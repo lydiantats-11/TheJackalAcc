@@ -1,7 +1,7 @@
 /** Milestone 1: one canonical status for every page; stale records stay visible; applicant type is separate. */
 import { describe, expect, it } from "vitest";
 import { isConfirmedOpen, isCurrent, recordStatus } from "@/lib/domain/record-status";
-import { statusGroup } from "@/lib/site/listing";
+import { statusGroup } from "@/lib/site/status-group";
 import { applicantAudienceOf, personKind, splitByApplicant } from "@/lib/site/applicants";
 
 const NOW = new Date("2026-10-17T12:00:00Z");

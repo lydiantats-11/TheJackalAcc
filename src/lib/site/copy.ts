@@ -69,7 +69,7 @@ const el = {
   /** Canonical record status labels (record-status.ts), shared by every page. */
   record: {
     labels: { open: "Ανοιχτές αιτήσεις", rolling: "Συνεχής υποβολή", upcoming: "Δεν έχουν ανοίξει ακόμη", recheck: "Χρειάζεται νέος έλεγχος", deadline_passed: "Η προθεσμία έληξε", closed: "Κλειστές αιτήσεις", suspended: "Σε αναστολή", unverified: "Μη επιβεβαιωμένη κατάσταση", conflicting: "Αντικρουόμενα επίσημα στοιχεία", unknown: "Ελέγξτε την επίσημη σελίδα" },
-    lastKnown: (status: string, date: string) => `Τελευταίος έλεγχος ${date}: ${status.toLowerCase()}`,
+    lastKnown: (status: string, date: string) => `Τελευταίος έλεγχος ${date}: ${String(status).toLowerCase()}`,
     recheckHelp: "Η επίσημη πηγή δεν έχει ελεγχθεί μέσα στο διάστημα επανελέγχου. Επιβεβαιώστε την κατάσταση στην επίσημη σελίδα πριν κάνετε αίτηση.",
   },
   supportType: { grant: "Επιχορήγηση", loan: "Δάνειο / εγγύηση", benefit: "Επίδομα", tax: "Φορολογικό κίνητρο", training: "Κατάρτιση", tender: "Διαγωνισμός", unconfirmed: "Δεν έχει επιβεβαιωθεί" },
@@ -275,7 +275,7 @@ const en: Copy = {
   status: { current: "Current (open, upcoming, awaiting re-check)", open: "Open", upcoming: "Upcoming", recheck: "Awaiting re-check", passed: "Deadline passed", closed: "Closed", all: "All, including expired" },
   record: {
     labels: { open: "Open for applications", rolling: "Rolling applications", upcoming: "Not open yet", recheck: "Needs re-checking", deadline_passed: "Deadline passed", closed: "Closed", suspended: "Suspended", unverified: "Status not confirmed", conflicting: "Conflicting official information", unknown: "Check the official page" },
-    lastKnown: (status: string, date: string) => `Last checked ${date}: ${status.toLowerCase()}`,
+    lastKnown: (status: string, date: string) => `Last checked ${date}: ${String(status).toLowerCase()}`,
     recheckHelp: "The official source has not been checked within its re-check interval. Confirm the status on the official page before applying.",
   },
   supportType: { grant: "Grant", loan: "Loan / guarantee", benefit: "Benefit", tax: "Tax incentive", training: "Training", tender: "Tender", unconfirmed: "Not confirmed" },

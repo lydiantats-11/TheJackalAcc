@@ -11,7 +11,8 @@ import { isCurrent, recordStatus, type RecordStatus } from "@/lib/domain/record-
 import type { PersonaId } from "@/lib/domain/personas";
 import { audiencesOf, categoriesOf, scopeOf, supportTypeOf, type SupportType } from "./taxonomy";
 
-export type StatusGroup = "open" | "upcoming" | "recheck" | "passed" | "closed" | "other";
+import { statusGroup, type StatusGroup } from "./status-group";
+export { statusGroup, type StatusGroup };
 
 export interface ListedOpportunity {
   row: OpportunityRow;
@@ -25,15 +26,6 @@ export interface ListedOpportunity {
   support: SupportType;
 }
 
-/** Browsing group from the canonical status. Records past their re-check interval stay visible as "recheck". */
-export function statusGroup(r: RecordStatus): StatusGroup {
-  if (r.display === "open" || r.display === "rolling") return "open";
-  if (r.display === "upcoming") return "upcoming";
-  if (r.display === "recheck") return "recheck";
-  if (r.application === "deadline_passed") return "passed";
-  if (r.application === "closed") return "closed";
-  return "other";
-}
 
 export interface ListingFilters {
   q?: string; cat?: string; type?: string; audience?: string; scope?: string; status?: string; industry?: string;
