@@ -69,6 +69,7 @@ jobs:
           PORT=3000 npm start > next.log 2>&1 &
           for i in $(seq 1 60); do curl -fs -o /dev/null http://127.0.0.1:3000/ && break; sleep 1; done
           node scripts/design-preview.mjs "$OUT"
+          node scripts/site-audit.mjs "$OUT" || echo "audit script failed"
       - name: Save to the live-test-results branch
         if: always()
         run: |
