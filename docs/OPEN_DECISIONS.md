@@ -1,10 +1,15 @@
 # Open decisions, blockers and next actions
 
 Single source of truth for project status. The daily report (`scripts/daily-report.mjs`) reads the three lists below;
-keep each item to one line and remove it when it is settled. Last updated 16 Oct 2026, 23:00.
+keep each item to one line and remove it when it is settled. Last updated 17 Oct 2026.
 
 Settled on 16 Oct (owner): Guides Phase 2 approved; unemployment guide stays a draft; daily report task stays active;
 private hosting postponed; fictional test profiles only.
+
+Settled on 17 Oct (owner): navigation has five tabs — Αρχική · Ευκαιρίες · Για Εμένα · Οδηγοί · Πώς λειτουργεί, plus
+EL/EN and the profile menu («Για Εμένα» keeps its name); palette navy #102B49, blue #2563EB for actions, ice blue #E9F1FC,
+off-white #F6F8FB, border #D6E2EE, no gold, status colours only for verified states; order: Milestone 2, then design in the
+order Homepage → opportunity cards and detail → personal dashboard → Guides → How it works.
 
 ## Decisions needed
 
@@ -12,6 +17,9 @@ private hosting postponed; fictional test profiles only.
 - Approve the official document lists (data/document-lists-2026-10-16.json) for A21, unemployment, DiscoverEU, 5Γ and 5Α.
 - Tax-regime guides: choose A (keep), B (ninth category «Φορολογία & Φορολογικά Κίνητρα») or C (rename category 3 to «Επιχειρηματικότητα, Επιδοτήσεις & Φορολογικά Κίνητρα»).
 - ΕΣΠΑ guide: choose one current official ΕΣΠΑ business call as the worked example.
+
+- Approve the source-connector order in docs/SOURCE_COVERAGE.md (gov.gr sitemap first, then Διαύγεια).
+- Approve Milestone 2 before Milestone 3 / design work starts.
 
 ## Blockers
 

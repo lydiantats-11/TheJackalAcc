@@ -14,6 +14,7 @@ import type { Locale } from "@/lib/i18n/dictionaries";
 import { PROCEDURE_ARTICLES } from "@/content/guides";
 import { GENERAL_GUIDES } from "./guides";
 import { MANUAL_RECORDS } from "./taxonomy";
+import { fold, matches } from "@/lib/text/search";
 
 export type L = Record<Locale, string>;
 
@@ -196,10 +197,7 @@ export function verificationOf(a: Article, now: Date): VerificationState {
 }
 
 // ── search ──────────────────────────────────────────────────────────────────────────────────────────────────────────
-/** Lower case, no accents, final sigma folded: «Επίδομα» and "επιδομα" match. */
-export function fold(s: string): string {
-  return s.normalize("NFD").replace(/\p{M}/gu, "").toLowerCase().replace(/ς/g, "σ");
-}
+export { fold };
 
 function haystack(a: Article): string {
   const cats = a.categories.flatMap((c) => { const x = guideCategory(c); return x ? [x.name.el, x.name.en] : []; });
@@ -208,11 +206,10 @@ function haystack(a: Article): string {
 
 /** Public guides (no drafts) matching every word of the query and the category, in display order. */
 export function searchGuides(opts: { q?: string; cat?: string }, list: Article[] = ARTICLES): Article[] {
-  const words = fold(opts.q ?? "").split(/[^\p{L}\p{N}]+/u).filter((w) => w.length > 1);
   return list
     .filter((a) => !a.flags.draft)
     .filter((a) => !opts.cat || a.categories.includes(opts.cat as GuideCategory))
-    .filter((a) => { if (!words.length) return true; const h = haystack(a); return words.every((w) => h.includes(w)); });
+    .filter((a) => !opts.q || matches(haystack(a), opts.q));
 }
 
 export function countByCategory(list: Article[] = ARTICLES): Record<GuideCategory, number> {

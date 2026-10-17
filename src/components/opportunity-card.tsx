@@ -28,12 +28,16 @@ export function OpportunityCard({ item, t, s, locale, extra }: {
   const amount = cardAmount(o, t, s, locale);
   return (
     <article className="opp-card">
+      <div className="card-status"><RecordStatusBadge record={item.record} s={s} locale={locale} /></div>
+      <h3 lang={title.lang}><Link href={`/opportunities/${o.id}`}>{title.text}</Link></h3>
+      {title.codeOnly && <p className="xs muted" style={{ margin: "-6px 0 0" }}>{s.card.codeOnly}</p>}
       <div className="tags">
-        <RecordStatusBadge record={item.record} s={s} locale={locale} />
-        {cat && <span className="tag cat" title={cat.name[locale]}>{cat.name[locale]}</span>}
+        {cat && <span className="tag cat">{cat.name[locale]}</span>}
+        {item.support !== "unconfirmed" && <span className="tag">{s.supportType[item.support]}</span>}
+        <span className="tag navy">{s.card.applicant[item.applicant]}</span>
+        {locale === "el" && title.lang === "en" && <span className="tag en" lang="el">{s.card.inEnglish}</span>}
         {o.is_synthetic && <SyntheticLabel t={t} />}
       </div>
-      <h3 lang={title.lang}><Link href={`/opportunities/${o.id}`}>{title.text}</Link></h3>
       <p className="authority">{[displayAuthority(o, locale), s.scope[item.scope]].filter(Boolean).join(" · ")}</p>
       {extra}
       <dl className="meta">

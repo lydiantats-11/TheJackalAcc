@@ -75,8 +75,19 @@ export function displayAuthority(o: { external_key: string | null; publishing_au
   return AUTHORITY_NAMES[o.publishing_authority]?.[locale] ?? o.publishing_authority;
 }
 
-/** Title to show: the verified translation in the visitor's language when there is one, else the official title. */
-export function displayTitle(o: { external_key: string | null; official_title: string; title_lang: string }, locale: Locale): { text: string; lang: string } {
+/** Title to show: the verified translation in the visitor's language when there is one, else the official title.
+ *  When the official title is only a programme code (e.g. "SOCPL-2026-INFO-REPR") and the source publishes the call's
+ *  descriptive name, that official name is shown instead (the code stays visible as the official identifier). */
+export function displayTitle(
+  o: { external_key: string | null; official_title: string; title_lang: string; official_details?: { call?: { title: string | null } | null } | null },
+  locale: Locale,
+): { text: string; lang: string; codeOnly?: boolean } {
   const v = verifiedFor(o.external_key);
-  return v ? { text: v.title[locale], lang: locale } : { text: o.official_title, lang: o.title_lang };
+  if (v) return { text: v.title[locale], lang: locale };
+  const t = o.official_title.trim();
+  if (/^[A-Z0-9][A-Z0-9_./-]{3,}$/.test(t)) {
+    const call = o.official_details?.call?.title?.trim();
+    return call ? { text: call, lang: o.title_lang } : { text: t, lang: o.title_lang, codeOnly: true };
+  }
+  return { text: o.official_title, lang: o.title_lang };
 }

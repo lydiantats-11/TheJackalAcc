@@ -10,6 +10,9 @@ import { availabilityOf, type Availability } from "@/lib/domain/eligibility";
 import { isCurrent, recordStatus, type RecordStatus } from "@/lib/domain/record-status";
 import type { PersonaId } from "@/lib/domain/personas";
 import { audiencesOf, categoriesOf, scopeOf, supportTypeOf, type SupportType } from "./taxonomy";
+import { matches } from "@/lib/text/search";
+import { compareListed, listingApplicants, listingHaystack } from "./discovery";
+import type { ApplicantAudience } from "./applicants";
 
 import { statusGroup, type StatusGroup } from "./status-group";
 export { statusGroup, type StatusGroup };
@@ -24,35 +27,37 @@ export interface ListedOpportunity {
   audiences: PersonaId[];
   scope: "eu" | "gr";
   support: SupportType;
+  /** Who may apply, where recorded (hand-checked records); otherwise "unknown". */
+  applicant: ApplicantAudience;
 }
 
 
 export interface ListingFilters {
-  q?: string; cat?: string; type?: string; audience?: string; scope?: string; status?: string; industry?: string;
+  q?: string; cat?: string; type?: string; audience?: string; scope?: string; status?: string; industry?: string; applicant?: string;
 }
 
-const RANK: Record<StatusGroup, number> = { open: 0, upcoming: 1, recheck: 2, other: 3, passed: 4, closed: 5 };
 
 export async function loadListing(sql: postgres.Sql, f: ListingFilters = {}, now = new Date()): Promise<ListedOpportunity[]> {
-  const rows = await listOpportunities(sql, { q: f.q, industry: f.industry, limit: 5000 });
+  // Search runs here, not in SQL, so Greek accents, case and final sigma are folded the same way as in Guides.
+  const rows = await listOpportunities(sql, { industry: f.industry, limit: 5000 });
   const all = rows.map((row): ListedOpportunity => {
     const m = toMatchable(row, []);
     const availability = availabilityOf(m, now);
     const record = recordStatus(m, now);
     return {
       row, availability, record, status: statusGroup(record), categories: categoriesOf(row), audiences: audiencesOf(row),
-      scope: scopeOf(row), support: supportTypeOf(row.opportunity_type),
+      scope: scopeOf(row), support: supportTypeOf(row.opportunity_type), applicant: listingApplicants(row),
     };
   });
   return all
+    .filter((x) => !f.q || matches(listingHaystack(x.row, x.categories), f.q))
     .filter((x) => !f.cat || x.categories.includes(f.cat))
+    .filter((x) => !f.applicant || (f.applicant === "individuals" ? x.applicant === "individuals" || x.applicant === "both" : x.applicant === f.applicant))
     .filter((x) => !f.type || x.support === f.type)
     .filter((x) => !f.audience || x.audiences.includes(f.audience as PersonaId))
     .filter((x) => !f.scope || x.scope === f.scope)
     .filter((x) => !f.status || f.status === "all" || (f.status === "current" ? isCurrent(x.record) : x.status === f.status))
-    .sort((a, b) => RANK[a.status] - RANK[b.status]
-      || (a.row.closes_at?.getTime() ?? Number.MAX_SAFE_INTEGER) - (b.row.closes_at?.getTime() ?? Number.MAX_SAFE_INTEGER)
-      || a.row.official_title.localeCompare(b.row.official_title));
+    .sort(compareListed);
 }
 
 /** Open records with the nearest deadlines, hand-checked Greek records first (they carry plain-language summaries). */

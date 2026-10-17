@@ -33,6 +33,7 @@ export default async function OpportunitiesPage({ searchParams }: { searchParams
     scope: pick(sp.scope, ["eu", "gr"] as const),
     status: pick(sp.status, STATUS) ?? "current",
     industry: pick(sp.industry, INDUSTRY_IDS),
+    applicant: pick(sp.applicant, ["individuals", "organisations", "unknown"] as const),
   };
   const list = await loadListing(sql(), f);
   // Empty category: tell "nothing connected yet" apart from "nothing open right now".
@@ -72,6 +73,7 @@ export default async function OpportunitiesPage({ searchParams }: { searchParams
         <input id={`${px}-q`} name="q" type="search" defaultValue={f.q} placeholder={s.opps.searchPlaceholder} />
       </div>
       {select(px, "type", s.opps.type, f.type, SUPPORT_TYPES.map((x) => [x, s.supportType[x]]))}
+      {select(px, "applicant", s.opps.applicant, f.applicant, (["individuals", "organisations", "unknown"] as const).map((x) => [x, s.opps.applicantOpts[x]]))}
       {select(px, "audience", s.opps.audience, f.audience, PERSONA_IDS.map((x) => [x, t.opt.personas[x] ?? x]))}
       {select(px, "scope", s.opps.scope, f.scope, [["gr", s.scope.gr], ["eu", s.scope.eu]])}
       {select(px, "status", s.opps.status, f.status === "current" ? undefined : f.status, STATUS.map((x) => [x, s.status[x]]), s.status.current)}
@@ -110,18 +112,32 @@ export default async function OpportunitiesPage({ searchParams }: { searchParams
         </aside>
 
         <section aria-live="polite">
+          <nav className="quick-views" aria-label={s.opps.quick}>
+            {([
+              [s.opps.quickAll, { applicant: undefined, scope: undefined }],
+              [s.opps.quickPeopleGr, { applicant: "individuals", scope: "gr" }],
+              [s.opps.quickGr, { applicant: undefined, scope: "gr" }],
+              [s.opps.quickEu, { applicant: undefined, scope: "eu" }],
+            ] as const).map(([label, patch]) => {
+              const on = (f.applicant ?? undefined) === patch.applicant && (f.scope ?? undefined) === patch.scope;
+              return <Link key={label} className="chip chip-sm" href={qs(patch)} aria-current={on ? "true" : undefined}>{label}</Link>;
+            })}
+          </nav>
           <div className="row" style={{ justifyContent: "space-between", marginBottom: 14 }}>
             <span><strong>{s.opps.results(list.length)}</strong>{f.status === "current" && <span className="small muted"> · {s.opps.currentOnly} <Link href={qs({ status: "all" })}>{s.opps.showExpired}</Link></span>}</span>
             {(f.cat || f.audience) && <span className="xs muted" style={{ maxWidth: 520 }}>{s.opps.indicative}</span>}
           </div>
+          {list.length > 0 && <p className="xs muted" style={{ margin: "-6px 0 14px", maxWidth: 760 }}>{s.opps.rankNote}</p>}
           {list.length === 0 ? (
             <div className="empty">
               <span className="icon-tile"><Icon name="search" /></span>
-              <h3>{s.opps.emptyTitle}</h3>
+              <h3>{f.q ? s.opps.noResultsFor(f.q) : s.opps.emptyTitle}</h3>
               <p>{expiredOnly > 0 ? s.opps.noneOpen : f.cat && !f.q && !f.type && !f.audience && !f.scope && !f.industry ? s.opps.categoryEmpty : s.opps.emptyBody}</p>
-              {expiredOnly > 0
-                ? <Link href={qs({ status: "all" })} className="btn btn-ghost btn-sm">{s.opps.showExpired}</Link>
-                : <Link href="/opportunities" className="btn btn-ghost btn-sm">{s.opps.clear}</Link>}
+              <div className="row" style={{ justifyContent: "center", gap: 8 }}>
+                {expiredOnly > 0 && <Link href={qs({ status: "all" })} className="btn btn-ghost btn-sm">{f.q ? s.opps.tryAll : s.opps.showExpired}</Link>}
+                {f.q && <Link href={`/guides?q=${encodeURIComponent(f.q)}#results`} className="btn btn-ghost btn-sm">{s.opps.tryGuides}</Link>}
+                {anyFilter && <Link href="/opportunities" className="btn btn-ghost btn-sm">{s.opps.tryClear}</Link>}
+              </div>
             </div>
           ) : (
             <div className="opp-grid">
