@@ -56,6 +56,16 @@ export default async function OpportunitiesPage({ searchParams }: { searchParams
     return `/opportunities${str ? `?${str}` : ""}`;
   };
   const anyFilter = Object.entries(f).some(([k, v]) => v && !(k === "status" && v === "current"));
+  // Active filters as removable chips (sprint 17 Oct: "clear active filters, easy reset").
+  const active: Array<[keyof ListingFilters, string, string]> = [];
+  if (f.q) active.push(["q", s.opps.search, `«${f.q}»`]);
+  if (cat) active.push(["cat", s.opps.category, cat.name[locale]]);
+  if (f.type) active.push(["type", s.opps.type, s.supportType[f.type as keyof typeof s.supportType]]);
+  if (f.applicant) active.push(["applicant", s.opps.applicant, s.opps.applicantOpts[f.applicant as keyof typeof s.opps.applicantOpts]]);
+  if (f.audience) active.push(["audience", s.opps.audience, t.opt.personas[f.audience] ?? f.audience]);
+  if (f.scope) active.push(["scope", s.opps.scope, s.scope[f.scope as "gr" | "eu"]]);
+  if (f.status && f.status !== "current") active.push(["status", s.opps.status, s.status[f.status as keyof typeof s.status]]);
+  if (f.industry) active.push(["industry", s.opps.industry, t.opt.industries[f.industry] ?? f.industry]);
   const select = (px: string, name: string, label: string, value: string | undefined, options: Array<[string, string]>, allLabel = s.opps.all) => (
     <div>
       <label htmlFor={`${px}-${name}`}>{label}</label>
@@ -106,7 +116,7 @@ export default async function OpportunitiesPage({ searchParams }: { searchParams
         <aside className="sticky">
           <div className="filters-desktop">{filterForm("d")}</div>
           <details className="filters-mobile">
-            <summary className="btn btn-ghost btn-sm"><Icon name="layers" size={16} />{s.opps.filters}</summary>
+            <summary className="btn btn-ghost btn-sm"><Icon name="layers" size={16} />{s.opps.filters}{active.length > 0 ? ` (${active.length})` : ""}</summary>
             {filterForm("m")}
           </details>
         </aside>
@@ -123,6 +133,17 @@ export default async function OpportunitiesPage({ searchParams }: { searchParams
               return <Link key={label} className="chip chip-sm" href={qs(patch)} aria-current={on ? "true" : undefined}>{label}</Link>;
             })}
           </nav>
+          {active.length > 0 && (
+            <div className="active-filters" aria-label={s.opps.activeFilters}>
+              <span className="xs muted">{s.opps.activeFilters}:</span>
+              {active.map(([k, label, value]) => (
+                <Link key={k} href={qs({ [k]: k === "status" ? "current" : undefined })} className="chip chip-sm chip-remove" aria-label={s.opps.removeFilter(`${label}: ${value}`)}>
+                  <span className="muted">{label}:</span> {value} <span aria-hidden="true">×</span>
+                </Link>
+              ))}
+              <Link href="/opportunities" className="xs">{s.opps.clear}</Link>
+            </div>
+          )}
           <div className="row" style={{ justifyContent: "space-between", marginBottom: 14 }}>
             <span><strong>{s.opps.results(list.length)}</strong>{f.status === "current" && <span className="small muted"> · {s.opps.currentOnly} <Link href={qs({ status: "all" })}>{s.opps.showExpired}</Link></span>}</span>
             {(f.cat || f.audience) && <span className="xs muted" style={{ maxWidth: 520 }}>{s.opps.indicative}</span>}
