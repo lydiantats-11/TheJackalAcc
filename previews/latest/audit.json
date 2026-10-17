@@ -1,0 +1,2488 @@
+{
+  "pages": {
+    "el-desktop /": {
+      "status": 200,
+      "title": "Jackal Accountant",
+      "lang": "el",
+      "errors": []
+    },
+    "el-desktop /opportunities": {
+      "status": 200,
+      "title": "Ευκαιρίες · Jackal Accountant",
+      "lang": "el",
+      "errors": []
+    },
+    "el-desktop /categories": {
+      "status": 200,
+      "title": "Κατηγορίες · Jackal Accountant",
+      "lang": "el",
+      "errors": []
+    },
+    "el-desktop /for-me": {
+      "status": 200,
+      "title": "Για Εμένα · Jackal Accountant",
+      "lang": "el",
+      "errors": []
+    },
+    "el-desktop /guides": {
+      "status": 200,
+      "title": "Οδηγοί · Jackal Accountant",
+      "lang": "el",
+      "errors": []
+    },
+    "el-desktop /about": {
+      "status": 200,
+      "title": "Σχετικά με εμάς · Jackal Accountant",
+      "lang": "el",
+      "errors": []
+    },
+    "el-desktop /login": {
+      "status": 200,
+      "title": "Σύνδεση · Jackal Accountant",
+      "lang": "el",
+      "errors": []
+    },
+    "el-desktop /register": {
+      "status": 200,
+      "title": "Εγγραφή · Jackal Accountant",
+      "lang": "el",
+      "errors": []
+    },
+    "el-desktop /profile": {
+      "status": 200,
+      "title": "Σύνδεση · Jackal Accountant",
+      "lang": "el",
+      "errors": []
+    },
+    "el-desktop /dashboard": {
+      "status": 200,
+      "title": "Για Εμένα · Jackal Accountant",
+      "lang": "el",
+      "errors": []
+    },
+    "el-desktop /opportunities?cat=employment": {
+      "status": 200,
+      "title": "Ευκαιρίες · Jackal Accountant",
+      "lang": "el",
+      "errors": []
+    },
+    "el-desktop /opportunities?cat=entrepreneurship": {
+      "status": 200,
+      "title": "Ευκαιρίες · Jackal Accountant",
+      "lang": "el",
+      "errors": []
+    },
+    "el-desktop /opportunities?cat=business": {
+      "status": 200,
+      "title": "Ευκαιρίες · Jackal Accountant",
+      "lang": "el",
+      "errors": []
+    },
+    "el-desktop /opportunities?cat=agriculture": {
+      "status": 200,
+      "title": "Ευκαιρίες · Jackal Accountant",
+      "lang": "el",
+      "errors": []
+    },
+    "el-desktop /opportunities?cat=education": {
+      "status": 200,
+      "title": "Ευκαιρίες · Jackal Accountant",
+      "lang": "el",
+      "errors": []
+    },
+    "el-desktop /opportunities?cat=housing-energy": {
+      "status": 200,
+      "title": "Ευκαιρίες · Jackal Accountant",
+      "lang": "el",
+      "errors": []
+    },
+    "el-desktop /opportunities?cat=family": {
+      "status": 200,
+      "title": "Ευκαιρίες · Jackal Accountant",
+      "lang": "el",
+      "errors": []
+    },
+    "el-desktop /opportunities?cat=innovation": {
+      "status": 200,
+      "title": "Ευκαιρίες · Jackal Accountant",
+      "lang": "el",
+      "errors": []
+    },
+    "el-desktop /opportunities?status=open": {
+      "status": 200,
+      "title": "Ευκαιρίες · Jackal Accountant",
+      "lang": "el",
+      "errors": []
+    },
+    "el-desktop /opportunities/3c2eff53-f1f9-4c29-8ccb-d4d31406ea22": {
+      "status": 200,
+      "title": "Άρθρο 5Α ΚΦΕ — εναλλακτική φορολόγηση επενδυτών · Jackal Accountant",
+      "lang": "el",
+      "errors": []
+    },
+    "el-desktop /guides/art5a": {
+      "status": 200,
+      "title": "Άρθρο 5Α ΚΦΕ — εναλλακτική φορολόγηση επενδυτών · Jackal Accountant",
+      "lang": "el",
+      "errors": []
+    },
+    "el-desktop /opportunities/f60455d7-74c0-402e-ae1f-547a854b8794": {
+      "status": 200,
+      "title": "Τακτική επιδότηση ανεργίας · Jackal Accountant",
+      "lang": "el",
+      "errors": []
+    },
+    "el-desktop /guides/unemployment": {
+      "status": 200,
+      "title": "Τακτική επιδότηση ανεργίας · Jackal Accountant",
+      "lang": "el",
+      "errors": []
+    },
+    "el-desktop /opportunities/0d29db63-fbf5-439e-a5ac-52d826027ae2": {
+      "status": 200,
+      "title": "Advanced Materials for Miniaturised Energy Harvesting Systems · Jackal Accountant",
+      "lang": "el",
+      "errors": []
+    },
+    "el-desktop /guides/eligibility-labels": {
+      "status": 200,
+      "title": "Τι σημαίνουν οι ενδείξεις επιλεξιμότητας · Jackal Accountant",
+      "lang": "el",
+      "errors": []
+    },
+    "el-desktop /guides/a21": {
+      "status": 200,
+      "title": "Α21 — Επίδομα παιδιού · Jackal Accountant",
+      "lang": "el",
+      "errors": []
+    },
+    "el-desktop /opportunities?cat=environment": {
+      "status": 200,
+      "title": "Ευκαιρίες · Jackal Accountant",
+      "lang": "el",
+      "errors": []
+    },
+    "el-desktop /opportunities?cat=tenders": {
+      "status": 200,
+      "title": "Ευκαιρίες · Jackal Accountant",
+      "lang": "el",
+      "errors": []
+    },
+    "el-desktop /opportunities?cat=tax": {
+      "status": 200,
+      "title": "Ευκαιρίες · Jackal Accountant",
+      "lang": "el",
+      "errors": []
+    },
+    "el-desktop /opportunities?status=all": {
+      "status": 200,
+      "title": "Ευκαιρίες · Jackal Accountant",
+      "lang": "el",
+      "errors": []
+    },
+    "el-desktop /opportunities/5f1de3aa-acfa-43b5-af64-861d5b5c8fab": {
+      "status": 200,
+      "title": "Biotechnology for Healthy Ageing · Jackal Accountant",
+      "lang": "el",
+      "errors": []
+    },
+    "el-desktop /opportunities/415d4af0-9b7d-4a30-8e0e-46e7fff3e681": {
+      "status": 200,
+      "title": "DeepRAP: Deep Reasoning, Abstraction & Planning towards trustworthy Cognitive AI Systems · Jackal Accountant",
+      "lang": "el",
+      "errors": []
+    },
+    "el-desktop /opportunities/4ce63bec-a356-4abd-a5dc-d07fae6271c3": {
+      "status": 200,
+      "title": "EIC defence call · Jackal Accountant",
+      "lang": "el",
+      "errors": []
+    },
+    "el-desktop /opportunities/111e0fb6-d48a-428f-b0e8-d1e1f3828a12": {
+      "status": 200,
+      "title": "Structured dialogue with people with lived experience of poverty · Jackal Accountant",
+      "lang": "el",
+      "errors": []
+    },
+    "el-desktop /opportunities/79acf067-de3e-4217-a99e-130e0c231f12": {
+      "status": 200,
+      "title": "EIC Accelerator 2026 - Short proposal · Jackal Accountant",
+      "lang": "el",
+      "errors": []
+    },
+    "el-desktop /opportunities/f61e0b76-bc70-435d-8e99-06dc3240fc0c": {
+      "status": 200,
+      "title": "Accessible and available travel facilitation · Jackal Accountant",
+      "lang": "el",
+      "errors": []
+    },
+    "el-desktop /opportunities/84fcf030-7775-433b-8315-3a8006b02737": {
+      "status": 200,
+      "title": "Advanced border surveillance and situational awareness · Jackal Accountant",
+      "lang": "el",
+      "errors": []
+    },
+    "el-desktop /opportunities/5dfe26e6-bfe0-4a25-81e5-d36941ada6b8": {
+      "status": 200,
+      "title": "Climate security and civil preparedness – new ways to develop pre- and post-crisis climate-change related scenarios for a more resilient Europe · Jackal Accountant",
+      "lang": "el",
+      "errors": []
+    },
+    "el-desktop /opportunities/4b4920a0-1c44-4e8d-a0fa-cef11952776c": {
+      "status": 200,
+      "title": "Crime prevention approaches, online and off-line, tackling the nexus between addictions and crime · Jackal Accountant",
+      "lang": "el",
+      "errors": []
+    },
+    "el-desktop /opportunities/416c6ce5-8106-4414-bac8-64beb33551b5": {
+      "status": 200,
+      "title": "Demand-led innovation in security · Jackal Accountant",
+      "lang": "el",
+      "errors": []
+    },
+    "el-desktop /opportunities/16fd09e8-5836-47b6-9b79-b9dd09204e40": {
+      "status": 200,
+      "title": "Designing new ways of risk awareness and enhanced disaster preparedness · Jackal Accountant",
+      "lang": "el",
+      "errors": []
+    },
+    "el-desktop /opportunities/d89b9f01-d0a0-413a-9e1a-25a11f13f324": {
+      "status": 200,
+      "title": "Development of ecosystem and next-generation capabilities for a secured European Critical Communication System in civil security · Jackal Accountant",
+      "lang": "el",
+      "errors": []
+    },
+    "el-desktop /opportunities/1a73145f-cfa7-4427-a1df-de49cfd9105e": {
+      "status": 200,
+      "title": "Development of innovative tools, processes, equipment and technologies through responses to disasters and emergencies for search and rescue in hazardous conditions · Jackal Accountant",
+      "lang": "el",
+      "errors": []
+    },
+    "el-desktop /opportunities/dd7be3be-a0a3-447b-bcb2-bcc55bf09153": {
+      "status": 200,
+      "title": "Enhancing the security of citizens against terrorism and lone-actor violence in confined spaces such as schools · Jackal Accountant",
+      "lang": "el",
+      "errors": []
+    },
+    "el-desktop /opportunities/7ab68e93-7b8b-4b1f-a5df-ba7e422f2c49": {
+      "status": 200,
+      "title": "Improving capabilities of law enforcement to counter climate-related challenges · Jackal Accountant",
+      "lang": "el",
+      "errors": []
+    },
+    "el-desktop /opportunities/2705891c-d942-4828-b53a-f860f90d8568": {
+      "status": 200,
+      "title": "Missing persons: prevention and investigation · Jackal Accountant",
+      "lang": "el",
+      "errors": []
+    },
+    "el-desktop /opportunities/817bd515-2178-4a6d-829c-717ed2e9c734": {
+      "status": 200,
+      "title": "Multi-hazard approach and cumulative / cascading impacts · Jackal Accountant",
+      "lang": "el",
+      "errors": []
+    },
+    "el-desktop /opportunities/77eff24d-0322-4978-88a1-895b2697f9a4": {
+      "status": 200,
+      "title": "Open topic on driving innovation uptake of disaster risk solutions · Jackal Accountant",
+      "lang": "el",
+      "errors": []
+    },
+    "el-desktop /opportunities/61eb1952-d5c5-4dda-b8d9-e2f8e6d8bb2a": {
+      "status": 200,
+      "title": "Open topic on preventing and countering the misuse of emerging technologies for criminal purposes, including issues related to lawful access to data · Jackal Accountant",
+      "lang": "el",
+      "errors": []
+    },
+    "el-desktop /opportunities/881cfd53-86b4-4106-b09d-8b65ced82e97": {
+      "status": 200,
+      "title": "Open topic on supporting disruptive technological innovations for civil security · Jackal Accountant",
+      "lang": "el",
+      "errors": []
+    },
+    "el-desktop /opportunities/28739590-9c03-45cc-b933-e7e648f8c95d": {
+      "status": 200,
+      "title": "Preventing gender-based violence · Jackal Accountant",
+      "lang": "el",
+      "errors": []
+    },
+    "el-desktop /opportunities/40c6d5be-ad64-4015-b56a-b58fb5f5f82b": {
+      "status": 200,
+      "title": "Prevention and mitigation of misuse of synthetic biology for bioterrorism purposes · Jackal Accountant",
+      "lang": "el",
+      "errors": []
+    },
+    "el-desktop /opportunities/5e9295fc-3e2d-4bdd-959e-d1f26d404f8e": {
+      "status": 200,
+      "title": "Protecting and supporting victims and survivors of gender-based violence. · Jackal Accountant",
+      "lang": "el",
+      "errors": []
+    },
+    "el-desktop /opportunities?type=grant": {
+      "status": 200,
+      "title": "Ευκαιρίες · Jackal Accountant",
+      "lang": "el",
+      "errors": []
+    },
+    "el-desktop /opportunities?type=loan": {
+      "status": 200,
+      "title": "Ευκαιρίες · Jackal Accountant",
+      "lang": "el",
+      "errors": []
+    },
+    "el-desktop /opportunities?type=benefit": {
+      "status": 200,
+      "title": "Ευκαιρίες · Jackal Accountant",
+      "lang": "el",
+      "errors": []
+    },
+    "el-desktop /opportunities?type=tax": {
+      "status": 200,
+      "title": "Ευκαιρίες · Jackal Accountant",
+      "lang": "el",
+      "errors": []
+    },
+    "el-desktop /opportunities?type=training": {
+      "status": 200,
+      "title": "Ευκαιρίες · Jackal Accountant",
+      "lang": "el",
+      "errors": []
+    },
+    "el-desktop /opportunities?type=tender": {
+      "status": 200,
+      "title": "Ευκαιρίες · Jackal Accountant",
+      "lang": "el",
+      "errors": []
+    },
+    "el-desktop /opportunities?audience=young_adult": {
+      "status": 200,
+      "title": "Ευκαιρίες · Jackal Accountant",
+      "lang": "el",
+      "errors": []
+    },
+    "el-desktop /opportunities?audience=aspiring_entrepreneur": {
+      "status": 200,
+      "title": "Ευκαιρίες · Jackal Accountant",
+      "lang": "el",
+      "errors": []
+    },
+    "el-desktop /opportunities?audience=employee_jobseeker": {
+      "status": 200,
+      "title": "Ευκαιρίες · Jackal Accountant",
+      "lang": "el",
+      "errors": []
+    },
+    "el-desktop /opportunities?audience=household": {
+      "status": 200,
+      "title": "Ευκαιρίες · Jackal Accountant",
+      "lang": "el",
+      "errors": []
+    },
+    "el-desktop /opportunities?audience=business_org": {
+      "status": 200,
+      "title": "Ευκαιρίες · Jackal Accountant",
+      "lang": "el",
+      "errors": []
+    },
+    "el-desktop /guides?cat=step-by-step": {
+      "status": 200,
+      "title": "Οδηγοί · Jackal Accountant",
+      "lang": "el",
+      "errors": []
+    },
+    "el-desktop /guides?cat=benefits": {
+      "status": 200,
+      "title": "Οδηγοί · Jackal Accountant",
+      "lang": "el",
+      "errors": []
+    },
+    "el-desktop /guides?cat=business-grants": {
+      "status": 200,
+      "title": "Οδηγοί · Jackal Accountant",
+      "lang": "el",
+      "errors": []
+    },
+    "el-desktop /guides?cat=employment-education": {
+      "status": 200,
+      "title": "Οδηγοί · Jackal Accountant",
+      "lang": "el",
+      "errors": []
+    },
+    "el-desktop /guides?cat=housing-energy": {
+      "status": 200,
+      "title": "Οδηγοί · Jackal Accountant",
+      "lang": "el",
+      "errors": []
+    },
+    "el-desktop /guides?cat=eu-programmes": {
+      "status": 200,
+      "title": "Οδηγοί · Jackal Accountant",
+      "lang": "el",
+      "errors": []
+    },
+    "en-desktop /": {
+      "status": 200,
+      "title": "Jackal Accountant",
+      "lang": "en",
+      "errors": []
+    },
+    "en-desktop /opportunities": {
+      "status": 200,
+      "title": "Opportunities · Jackal Accountant",
+      "lang": "en",
+      "errors": []
+    },
+    "en-desktop /categories": {
+      "status": 200,
+      "title": "Categories · Jackal Accountant",
+      "lang": "en",
+      "errors": []
+    },
+    "en-desktop /for-me": {
+      "status": 200,
+      "title": "For Me · Jackal Accountant",
+      "lang": "en",
+      "errors": []
+    },
+    "en-desktop /guides": {
+      "status": 200,
+      "title": "Guides · Jackal Accountant",
+      "lang": "en",
+      "errors": []
+    },
+    "en-desktop /about": {
+      "status": 200,
+      "title": "About us · Jackal Accountant",
+      "lang": "en",
+      "errors": []
+    },
+    "en-desktop /login": {
+      "status": 200,
+      "title": "Log in · Jackal Accountant",
+      "lang": "en",
+      "errors": []
+    },
+    "en-desktop /register": {
+      "status": 200,
+      "title": "Sign up · Jackal Accountant",
+      "lang": "en",
+      "errors": []
+    },
+    "en-desktop /profile": {
+      "status": 200,
+      "title": "Log in · Jackal Accountant",
+      "lang": "en",
+      "errors": []
+    },
+    "en-desktop /dashboard": {
+      "status": 200,
+      "title": "For Me · Jackal Accountant",
+      "lang": "en",
+      "errors": []
+    },
+    "en-desktop /opportunities?cat=employment": {
+      "status": 200,
+      "title": "Opportunities · Jackal Accountant",
+      "lang": "en",
+      "errors": []
+    },
+    "en-desktop /opportunities?cat=entrepreneurship": {
+      "status": 200,
+      "title": "Opportunities · Jackal Accountant",
+      "lang": "en",
+      "errors": []
+    },
+    "en-desktop /opportunities?cat=business": {
+      "status": 200,
+      "title": "Opportunities · Jackal Accountant",
+      "lang": "en",
+      "errors": []
+    },
+    "en-desktop /opportunities?cat=agriculture": {
+      "status": 200,
+      "title": "Opportunities · Jackal Accountant",
+      "lang": "en",
+      "errors": []
+    },
+    "en-desktop /opportunities?cat=education": {
+      "status": 200,
+      "title": "Opportunities · Jackal Accountant",
+      "lang": "en",
+      "errors": []
+    },
+    "en-desktop /opportunities?cat=housing-energy": {
+      "status": 200,
+      "title": "Opportunities · Jackal Accountant",
+      "lang": "en",
+      "errors": []
+    },
+    "en-desktop /opportunities?cat=family": {
+      "status": 200,
+      "title": "Opportunities · Jackal Accountant",
+      "lang": "en",
+      "errors": []
+    },
+    "en-desktop /opportunities?cat=innovation": {
+      "status": 200,
+      "title": "Opportunities · Jackal Accountant",
+      "lang": "en",
+      "errors": []
+    },
+    "en-desktop /opportunities?status=open": {
+      "status": 200,
+      "title": "Opportunities · Jackal Accountant",
+      "lang": "en",
+      "errors": []
+    },
+    "en-desktop /opportunities/3c2eff53-f1f9-4c29-8ccb-d4d31406ea22": {
+      "status": 200,
+      "title": "Article 5A — alternative taxation for investors · Jackal Accountant",
+      "lang": "en",
+      "errors": []
+    },
+    "en-desktop /guides/art5a": {
+      "status": 200,
+      "title": "Article 5A — alternative taxation for investors · Jackal Accountant",
+      "lang": "en",
+      "errors": []
+    },
+    "en-desktop /opportunities/f60455d7-74c0-402e-ae1f-547a854b8794": {
+      "status": 200,
+      "title": "Regular unemployment benefit · Jackal Accountant",
+      "lang": "en",
+      "errors": []
+    },
+    "en-desktop /guides/unemployment": {
+      "status": 200,
+      "title": "Regular unemployment benefit · Jackal Accountant",
+      "lang": "en",
+      "errors": []
+    },
+    "en-desktop /opportunities/0d29db63-fbf5-439e-a5ac-52d826027ae2": {
+      "status": 200,
+      "title": "Advanced Materials for Miniaturised Energy Harvesting Systems · Jackal Accountant",
+      "lang": "en",
+      "errors": []
+    },
+    "en-desktop /guides/eligibility-labels": {
+      "status": 200,
+      "title": "What the eligibility labels mean · Jackal Accountant",
+      "lang": "en",
+      "errors": []
+    },
+    "en-desktop /guides/a21": {
+      "status": 200,
+      "title": "A21 — Child benefit · Jackal Accountant",
+      "lang": "en",
+      "errors": []
+    },
+    "en-desktop /opportunities?cat=environment": {
+      "status": 200,
+      "title": "Opportunities · Jackal Accountant",
+      "lang": "en",
+      "errors": []
+    },
+    "en-desktop /opportunities?cat=tenders": {
+      "status": 200,
+      "title": "Opportunities · Jackal Accountant",
+      "lang": "en",
+      "errors": []
+    },
+    "en-desktop /opportunities?cat=tax": {
+      "status": 200,
+      "title": "Opportunities · Jackal Accountant",
+      "lang": "en",
+      "errors": []
+    },
+    "en-desktop /opportunities?status=all": {
+      "status": 200,
+      "title": "Opportunities · Jackal Accountant",
+      "lang": "en",
+      "errors": []
+    },
+    "en-desktop /opportunities/5f1de3aa-acfa-43b5-af64-861d5b5c8fab": {
+      "status": 200,
+      "title": "Biotechnology for Healthy Ageing · Jackal Accountant",
+      "lang": "en",
+      "errors": []
+    },
+    "en-desktop /opportunities/415d4af0-9b7d-4a30-8e0e-46e7fff3e681": {
+      "status": 200,
+      "title": "DeepRAP: Deep Reasoning, Abstraction & Planning towards trustworthy Cognitive AI Systems · Jackal Accountant",
+      "lang": "en",
+      "errors": []
+    },
+    "en-desktop /opportunities/4ce63bec-a356-4abd-a5dc-d07fae6271c3": {
+      "status": 200,
+      "title": "EIC defence call · Jackal Accountant",
+      "lang": "en",
+      "errors": []
+    },
+    "en-desktop /opportunities/111e0fb6-d48a-428f-b0e8-d1e1f3828a12": {
+      "status": 200,
+      "title": "Structured dialogue with people with lived experience of poverty · Jackal Accountant",
+      "lang": "en",
+      "errors": []
+    },
+    "en-desktop /opportunities/79acf067-de3e-4217-a99e-130e0c231f12": {
+      "status": 200,
+      "title": "EIC Accelerator 2026 - Short proposal · Jackal Accountant",
+      "lang": "en",
+      "errors": []
+    },
+    "en-desktop /opportunities/f61e0b76-bc70-435d-8e99-06dc3240fc0c": {
+      "status": 200,
+      "title": "Accessible and available travel facilitation · Jackal Accountant",
+      "lang": "en",
+      "errors": []
+    },
+    "en-desktop /opportunities/84fcf030-7775-433b-8315-3a8006b02737": {
+      "status": 200,
+      "title": "Advanced border surveillance and situational awareness · Jackal Accountant",
+      "lang": "en",
+      "errors": []
+    },
+    "en-desktop /opportunities/5dfe26e6-bfe0-4a25-81e5-d36941ada6b8": {
+      "status": 200,
+      "title": "Climate security and civil preparedness – new ways to develop pre- and post-crisis climate-change related scenarios for a more resilient Europe · Jackal Accountant",
+      "lang": "en",
+      "errors": []
+    },
+    "en-desktop /opportunities/4b4920a0-1c44-4e8d-a0fa-cef11952776c": {
+      "status": 200,
+      "title": "Crime prevention approaches, online and off-line, tackling the nexus between addictions and crime · Jackal Accountant",
+      "lang": "en",
+      "errors": []
+    },
+    "en-desktop /opportunities/416c6ce5-8106-4414-bac8-64beb33551b5": {
+      "status": 200,
+      "title": "Demand-led innovation in security · Jackal Accountant",
+      "lang": "en",
+      "errors": []
+    },
+    "en-desktop /opportunities/16fd09e8-5836-47b6-9b79-b9dd09204e40": {
+      "status": 200,
+      "title": "Designing new ways of risk awareness and enhanced disaster preparedness · Jackal Accountant",
+      "lang": "en",
+      "errors": []
+    },
+    "en-desktop /opportunities/d89b9f01-d0a0-413a-9e1a-25a11f13f324": {
+      "status": 200,
+      "title": "Development of ecosystem and next-generation capabilities for a secured European Critical Communication System in civil security · Jackal Accountant",
+      "lang": "en",
+      "errors": []
+    },
+    "en-desktop /opportunities/1a73145f-cfa7-4427-a1df-de49cfd9105e": {
+      "status": 200,
+      "title": "Development of innovative tools, processes, equipment and technologies through responses to disasters and emergencies for search and rescue in hazardous conditions · Jackal Accountant",
+      "lang": "en",
+      "errors": []
+    },
+    "en-desktop /opportunities/dd7be3be-a0a3-447b-bcb2-bcc55bf09153": {
+      "status": 200,
+      "title": "Enhancing the security of citizens against terrorism and lone-actor violence in confined spaces such as schools · Jackal Accountant",
+      "lang": "en",
+      "errors": []
+    },
+    "en-desktop /opportunities/7ab68e93-7b8b-4b1f-a5df-ba7e422f2c49": {
+      "status": 200,
+      "title": "Improving capabilities of law enforcement to counter climate-related challenges · Jackal Accountant",
+      "lang": "en",
+      "errors": []
+    },
+    "en-desktop /opportunities/2705891c-d942-4828-b53a-f860f90d8568": {
+      "status": 200,
+      "title": "Missing persons: prevention and investigation · Jackal Accountant",
+      "lang": "en",
+      "errors": []
+    },
+    "en-desktop /opportunities/817bd515-2178-4a6d-829c-717ed2e9c734": {
+      "status": 200,
+      "title": "Multi-hazard approach and cumulative / cascading impacts · Jackal Accountant",
+      "lang": "en",
+      "errors": []
+    },
+    "en-desktop /opportunities/77eff24d-0322-4978-88a1-895b2697f9a4": {
+      "status": 200,
+      "title": "Open topic on driving innovation uptake of disaster risk solutions · Jackal Accountant",
+      "lang": "en",
+      "errors": []
+    },
+    "en-desktop /opportunities/61eb1952-d5c5-4dda-b8d9-e2f8e6d8bb2a": {
+      "status": 200,
+      "title": "Open topic on preventing and countering the misuse of emerging technologies for criminal purposes, including issues related to lawful access to data · Jackal Accountant",
+      "lang": "en",
+      "errors": []
+    },
+    "en-desktop /opportunities/881cfd53-86b4-4106-b09d-8b65ced82e97": {
+      "status": 200,
+      "title": "Open topic on supporting disruptive technological innovations for civil security · Jackal Accountant",
+      "lang": "en",
+      "errors": []
+    },
+    "en-desktop /opportunities/28739590-9c03-45cc-b933-e7e648f8c95d": {
+      "status": 200,
+      "title": "Preventing gender-based violence · Jackal Accountant",
+      "lang": "en",
+      "errors": []
+    },
+    "en-desktop /opportunities/40c6d5be-ad64-4015-b56a-b58fb5f5f82b": {
+      "status": 200,
+      "title": "Prevention and mitigation of misuse of synthetic biology for bioterrorism purposes · Jackal Accountant",
+      "lang": "en",
+      "errors": []
+    },
+    "en-desktop /opportunities/5e9295fc-3e2d-4bdd-959e-d1f26d404f8e": {
+      "status": 200,
+      "title": "Protecting and supporting victims and survivors of gender-based violence. · Jackal Accountant",
+      "lang": "en",
+      "errors": []
+    },
+    "en-desktop /opportunities?type=grant": {
+      "status": 200,
+      "title": "Opportunities · Jackal Accountant",
+      "lang": "en",
+      "errors": []
+    },
+    "en-desktop /opportunities?type=loan": {
+      "status": 200,
+      "title": "Opportunities · Jackal Accountant",
+      "lang": "en",
+      "errors": []
+    },
+    "en-desktop /opportunities?type=benefit": {
+      "status": 200,
+      "title": "Opportunities · Jackal Accountant",
+      "lang": "en",
+      "errors": []
+    },
+    "en-desktop /opportunities?type=tax": {
+      "status": 200,
+      "title": "Opportunities · Jackal Accountant",
+      "lang": "en",
+      "errors": []
+    },
+    "en-desktop /opportunities?type=training": {
+      "status": 200,
+      "title": "Opportunities · Jackal Accountant",
+      "lang": "en",
+      "errors": []
+    },
+    "en-desktop /opportunities?type=tender": {
+      "status": 200,
+      "title": "Opportunities · Jackal Accountant",
+      "lang": "en",
+      "errors": []
+    },
+    "en-desktop /opportunities?audience=young_adult": {
+      "status": 200,
+      "title": "Opportunities · Jackal Accountant",
+      "lang": "en",
+      "errors": []
+    },
+    "en-desktop /opportunities?audience=aspiring_entrepreneur": {
+      "status": 200,
+      "title": "Opportunities · Jackal Accountant",
+      "lang": "en",
+      "errors": []
+    },
+    "en-desktop /opportunities?audience=employee_jobseeker": {
+      "status": 200,
+      "title": "Opportunities · Jackal Accountant",
+      "lang": "en",
+      "errors": []
+    },
+    "en-desktop /opportunities?audience=household": {
+      "status": 200,
+      "title": "Opportunities · Jackal Accountant",
+      "lang": "en",
+      "errors": []
+    },
+    "en-desktop /opportunities?audience=business_org": {
+      "status": 200,
+      "title": "Opportunities · Jackal Accountant",
+      "lang": "en",
+      "errors": []
+    },
+    "en-desktop /guides?cat=step-by-step": {
+      "status": 200,
+      "title": "Guides · Jackal Accountant",
+      "lang": "en",
+      "errors": []
+    },
+    "en-desktop /guides?cat=benefits": {
+      "status": 200,
+      "title": "Guides · Jackal Accountant",
+      "lang": "en",
+      "errors": []
+    },
+    "en-desktop /guides?cat=business-grants": {
+      "status": 200,
+      "title": "Guides · Jackal Accountant",
+      "lang": "en",
+      "errors": []
+    },
+    "en-desktop /guides?cat=employment-education": {
+      "status": 200,
+      "title": "Guides · Jackal Accountant",
+      "lang": "en",
+      "errors": []
+    },
+    "en-desktop /guides?cat=housing-energy": {
+      "status": 200,
+      "title": "Guides · Jackal Accountant",
+      "lang": "en",
+      "errors": []
+    },
+    "en-desktop /guides?cat=eu-programmes": {
+      "status": 200,
+      "title": "Guides · Jackal Accountant",
+      "lang": "en",
+      "errors": []
+    },
+    "el-phone /": {
+      "status": 200,
+      "title": "Jackal Accountant",
+      "lang": "el",
+      "errors": []
+    },
+    "el-phone /opportunities": {
+      "status": 200,
+      "title": "Ευκαιρίες · Jackal Accountant",
+      "lang": "el",
+      "errors": []
+    },
+    "el-phone /categories": {
+      "status": 200,
+      "title": "Κατηγορίες · Jackal Accountant",
+      "lang": "el",
+      "errors": []
+    },
+    "el-phone /for-me": {
+      "status": 200,
+      "title": "Για Εμένα · Jackal Accountant",
+      "lang": "el",
+      "errors": []
+    },
+    "el-phone /guides": {
+      "status": 200,
+      "title": "Οδηγοί · Jackal Accountant",
+      "lang": "el",
+      "errors": []
+    },
+    "el-phone /about": {
+      "status": 200,
+      "title": "Σχετικά με εμάς · Jackal Accountant",
+      "lang": "el",
+      "errors": []
+    },
+    "el-phone /login": {
+      "status": 200,
+      "title": "Σύνδεση · Jackal Accountant",
+      "lang": "el",
+      "errors": []
+    },
+    "el-phone /register": {
+      "status": 200,
+      "title": "Εγγραφή · Jackal Accountant",
+      "lang": "el",
+      "errors": []
+    },
+    "el-phone /profile": {
+      "status": 200,
+      "title": "Σύνδεση · Jackal Accountant",
+      "lang": "el",
+      "errors": []
+    },
+    "el-phone /dashboard": {
+      "status": 200,
+      "title": "Για Εμένα · Jackal Accountant",
+      "lang": "el",
+      "errors": []
+    },
+    "el-phone /opportunities?cat=employment": {
+      "status": 200,
+      "title": "Ευκαιρίες · Jackal Accountant",
+      "lang": "el",
+      "errors": []
+    },
+    "el-phone /opportunities?cat=entrepreneurship": {
+      "status": 200,
+      "title": "Ευκαιρίες · Jackal Accountant",
+      "lang": "el",
+      "errors": []
+    },
+    "el-phone /opportunities?cat=business": {
+      "status": 200,
+      "title": "Ευκαιρίες · Jackal Accountant",
+      "lang": "el",
+      "errors": []
+    },
+    "el-phone /opportunities?cat=agriculture": {
+      "status": 200,
+      "title": "Ευκαιρίες · Jackal Accountant",
+      "lang": "el",
+      "errors": []
+    },
+    "el-phone /opportunities?cat=education": {
+      "status": 200,
+      "title": "Ευκαιρίες · Jackal Accountant",
+      "lang": "el",
+      "errors": []
+    },
+    "el-phone /opportunities?cat=housing-energy": {
+      "status": 200,
+      "title": "Ευκαιρίες · Jackal Accountant",
+      "lang": "el",
+      "errors": []
+    },
+    "el-phone /opportunities?cat=family": {
+      "status": 200,
+      "title": "Ευκαιρίες · Jackal Accountant",
+      "lang": "el",
+      "errors": []
+    },
+    "el-phone /opportunities?cat=innovation": {
+      "status": 200,
+      "title": "Ευκαιρίες · Jackal Accountant",
+      "lang": "el",
+      "errors": []
+    },
+    "el-phone /opportunities?status=open": {
+      "status": 200,
+      "title": "Ευκαιρίες · Jackal Accountant",
+      "lang": "el",
+      "errors": []
+    },
+    "el-phone /opportunities/3c2eff53-f1f9-4c29-8ccb-d4d31406ea22": {
+      "status": 200,
+      "title": "Άρθρο 5Α ΚΦΕ — εναλλακτική φορολόγηση επενδυτών · Jackal Accountant",
+      "lang": "el",
+      "errors": []
+    },
+    "el-phone /guides/art5a": {
+      "status": 200,
+      "title": "Άρθρο 5Α ΚΦΕ — εναλλακτική φορολόγηση επενδυτών · Jackal Accountant",
+      "lang": "el",
+      "errors": []
+    },
+    "el-phone /opportunities/f60455d7-74c0-402e-ae1f-547a854b8794": {
+      "status": 200,
+      "title": "Τακτική επιδότηση ανεργίας · Jackal Accountant",
+      "lang": "el",
+      "errors": []
+    },
+    "el-phone /guides/unemployment": {
+      "status": 200,
+      "title": "Τακτική επιδότηση ανεργίας · Jackal Accountant",
+      "lang": "el",
+      "errors": []
+    },
+    "el-phone /opportunities/0d29db63-fbf5-439e-a5ac-52d826027ae2": {
+      "status": 200,
+      "title": "Advanced Materials for Miniaturised Energy Harvesting Systems · Jackal Accountant",
+      "lang": "el",
+      "errors": []
+    },
+    "el-phone /guides/eligibility-labels": {
+      "status": 200,
+      "title": "Τι σημαίνουν οι ενδείξεις επιλεξιμότητας · Jackal Accountant",
+      "lang": "el",
+      "errors": []
+    },
+    "el-phone /guides/a21": {
+      "status": 200,
+      "title": "Α21 — Επίδομα παιδιού · Jackal Accountant",
+      "lang": "el",
+      "errors": []
+    },
+    "el-phone /opportunities?cat=environment": {
+      "status": 200,
+      "title": "Ευκαιρίες · Jackal Accountant",
+      "lang": "el",
+      "errors": []
+    },
+    "el-phone /opportunities?cat=tenders": {
+      "status": 200,
+      "title": "Ευκαιρίες · Jackal Accountant",
+      "lang": "el",
+      "errors": []
+    },
+    "el-phone /opportunities?cat=tax": {
+      "status": 200,
+      "title": "Ευκαιρίες · Jackal Accountant",
+      "lang": "el",
+      "errors": []
+    },
+    "el-phone /opportunities?status=all": {
+      "status": 200,
+      "title": "Ευκαιρίες · Jackal Accountant",
+      "lang": "el",
+      "errors": []
+    },
+    "el-phone /opportunities/5f1de3aa-acfa-43b5-af64-861d5b5c8fab": {
+      "status": 200,
+      "title": "Biotechnology for Healthy Ageing · Jackal Accountant",
+      "lang": "el",
+      "errors": []
+    },
+    "el-phone /opportunities/415d4af0-9b7d-4a30-8e0e-46e7fff3e681": {
+      "status": 200,
+      "title": "DeepRAP: Deep Reasoning, Abstraction & Planning towards trustworthy Cognitive AI Systems · Jackal Accountant",
+      "lang": "el",
+      "errors": []
+    },
+    "el-phone /opportunities/4ce63bec-a356-4abd-a5dc-d07fae6271c3": {
+      "status": 200,
+      "title": "EIC defence call · Jackal Accountant",
+      "lang": "el",
+      "errors": []
+    },
+    "el-phone /opportunities/111e0fb6-d48a-428f-b0e8-d1e1f3828a12": {
+      "status": 200,
+      "title": "Structured dialogue with people with lived experience of poverty · Jackal Accountant",
+      "lang": "el",
+      "errors": []
+    },
+    "el-phone /opportunities/79acf067-de3e-4217-a99e-130e0c231f12": {
+      "status": 200,
+      "title": "EIC Accelerator 2026 - Short proposal · Jackal Accountant",
+      "lang": "el",
+      "errors": []
+    },
+    "el-phone /opportunities/f61e0b76-bc70-435d-8e99-06dc3240fc0c": {
+      "status": 200,
+      "title": "Accessible and available travel facilitation · Jackal Accountant",
+      "lang": "el",
+      "errors": []
+    },
+    "el-phone /opportunities/84fcf030-7775-433b-8315-3a8006b02737": {
+      "status": 200,
+      "title": "Advanced border surveillance and situational awareness · Jackal Accountant",
+      "lang": "el",
+      "errors": []
+    },
+    "el-phone /opportunities/5dfe26e6-bfe0-4a25-81e5-d36941ada6b8": {
+      "status": 200,
+      "title": "Climate security and civil preparedness – new ways to develop pre- and post-crisis climate-change related scenarios for a more resilient Europe · Jackal Accountant",
+      "lang": "el",
+      "errors": []
+    },
+    "el-phone /opportunities/4b4920a0-1c44-4e8d-a0fa-cef11952776c": {
+      "status": 200,
+      "title": "Crime prevention approaches, online and off-line, tackling the nexus between addictions and crime · Jackal Accountant",
+      "lang": "el",
+      "errors": []
+    },
+    "el-phone /opportunities/416c6ce5-8106-4414-bac8-64beb33551b5": {
+      "status": 200,
+      "title": "Demand-led innovation in security · Jackal Accountant",
+      "lang": "el",
+      "errors": []
+    },
+    "el-phone /opportunities/16fd09e8-5836-47b6-9b79-b9dd09204e40": {
+      "status": 200,
+      "title": "Designing new ways of risk awareness and enhanced disaster preparedness · Jackal Accountant",
+      "lang": "el",
+      "errors": []
+    },
+    "el-phone /opportunities/d89b9f01-d0a0-413a-9e1a-25a11f13f324": {
+      "status": 200,
+      "title": "Development of ecosystem and next-generation capabilities for a secured European Critical Communication System in civil security · Jackal Accountant",
+      "lang": "el",
+      "errors": []
+    },
+    "el-phone /opportunities/1a73145f-cfa7-4427-a1df-de49cfd9105e": {
+      "status": 200,
+      "title": "Development of innovative tools, processes, equipment and technologies through responses to disasters and emergencies for search and rescue in hazardous conditions · Jackal Accountant",
+      "lang": "el",
+      "errors": []
+    },
+    "el-phone /opportunities/dd7be3be-a0a3-447b-bcb2-bcc55bf09153": {
+      "status": 200,
+      "title": "Enhancing the security of citizens against terrorism and lone-actor violence in confined spaces such as schools · Jackal Accountant",
+      "lang": "el",
+      "errors": []
+    },
+    "el-phone /opportunities/7ab68e93-7b8b-4b1f-a5df-ba7e422f2c49": {
+      "status": 200,
+      "title": "Improving capabilities of law enforcement to counter climate-related challenges · Jackal Accountant",
+      "lang": "el",
+      "errors": []
+    },
+    "el-phone /opportunities/2705891c-d942-4828-b53a-f860f90d8568": {
+      "status": 200,
+      "title": "Missing persons: prevention and investigation · Jackal Accountant",
+      "lang": "el",
+      "errors": []
+    },
+    "el-phone /opportunities/817bd515-2178-4a6d-829c-717ed2e9c734": {
+      "status": 200,
+      "title": "Multi-hazard approach and cumulative / cascading impacts · Jackal Accountant",
+      "lang": "el",
+      "errors": []
+    },
+    "el-phone /opportunities/77eff24d-0322-4978-88a1-895b2697f9a4": {
+      "status": 200,
+      "title": "Open topic on driving innovation uptake of disaster risk solutions · Jackal Accountant",
+      "lang": "el",
+      "errors": []
+    },
+    "el-phone /opportunities/61eb1952-d5c5-4dda-b8d9-e2f8e6d8bb2a": {
+      "status": 200,
+      "title": "Open topic on preventing and countering the misuse of emerging technologies for criminal purposes, including issues related to lawful access to data · Jackal Accountant",
+      "lang": "el",
+      "errors": []
+    },
+    "el-phone /opportunities/881cfd53-86b4-4106-b09d-8b65ced82e97": {
+      "status": 200,
+      "title": "Open topic on supporting disruptive technological innovations for civil security · Jackal Accountant",
+      "lang": "el",
+      "errors": []
+    },
+    "el-phone /opportunities/28739590-9c03-45cc-b933-e7e648f8c95d": {
+      "status": 200,
+      "title": "Preventing gender-based violence · Jackal Accountant",
+      "lang": "el",
+      "errors": []
+    },
+    "el-phone /opportunities/40c6d5be-ad64-4015-b56a-b58fb5f5f82b": {
+      "status": 200,
+      "title": "Prevention and mitigation of misuse of synthetic biology for bioterrorism purposes · Jackal Accountant",
+      "lang": "el",
+      "errors": []
+    },
+    "el-phone /opportunities/5e9295fc-3e2d-4bdd-959e-d1f26d404f8e": {
+      "status": 200,
+      "title": "Protecting and supporting victims and survivors of gender-based violence. · Jackal Accountant",
+      "lang": "el",
+      "errors": []
+    },
+    "el-phone /opportunities?type=grant": {
+      "status": 200,
+      "title": "Ευκαιρίες · Jackal Accountant",
+      "lang": "el",
+      "errors": []
+    },
+    "el-phone /opportunities?type=loan": {
+      "status": 200,
+      "title": "Ευκαιρίες · Jackal Accountant",
+      "lang": "el",
+      "errors": []
+    },
+    "el-phone /opportunities?type=benefit": {
+      "status": 200,
+      "title": "Ευκαιρίες · Jackal Accountant",
+      "lang": "el",
+      "errors": []
+    },
+    "el-phone /opportunities?type=tax": {
+      "status": 200,
+      "title": "Ευκαιρίες · Jackal Accountant",
+      "lang": "el",
+      "errors": []
+    },
+    "el-phone /opportunities?type=training": {
+      "status": 200,
+      "title": "Ευκαιρίες · Jackal Accountant",
+      "lang": "el",
+      "errors": []
+    },
+    "el-phone /opportunities?type=tender": {
+      "status": 200,
+      "title": "Ευκαιρίες · Jackal Accountant",
+      "lang": "el",
+      "errors": []
+    },
+    "el-phone /opportunities?audience=young_adult": {
+      "status": 200,
+      "title": "Ευκαιρίες · Jackal Accountant",
+      "lang": "el",
+      "errors": []
+    },
+    "el-phone /opportunities?audience=aspiring_entrepreneur": {
+      "status": 200,
+      "title": "Ευκαιρίες · Jackal Accountant",
+      "lang": "el",
+      "errors": []
+    },
+    "el-phone /opportunities?audience=employee_jobseeker": {
+      "status": 200,
+      "title": "Ευκαιρίες · Jackal Accountant",
+      "lang": "el",
+      "errors": []
+    },
+    "el-phone /opportunities?audience=household": {
+      "status": 200,
+      "title": "Ευκαιρίες · Jackal Accountant",
+      "lang": "el",
+      "errors": []
+    },
+    "el-phone /opportunities?audience=business_org": {
+      "status": 200,
+      "title": "Ευκαιρίες · Jackal Accountant",
+      "lang": "el",
+      "errors": []
+    },
+    "el-phone /guides?cat=step-by-step": {
+      "status": 200,
+      "title": "Οδηγοί · Jackal Accountant",
+      "lang": "el",
+      "errors": []
+    },
+    "el-phone /guides?cat=benefits": {
+      "status": 200,
+      "title": "Οδηγοί · Jackal Accountant",
+      "lang": "el",
+      "errors": []
+    },
+    "el-phone /guides?cat=business-grants": {
+      "status": 200,
+      "title": "Οδηγοί · Jackal Accountant",
+      "lang": "el",
+      "errors": []
+    },
+    "el-phone /guides?cat=employment-education": {
+      "status": 200,
+      "title": "Οδηγοί · Jackal Accountant",
+      "lang": "el",
+      "errors": []
+    },
+    "el-phone /guides?cat=housing-energy": {
+      "status": 200,
+      "title": "Οδηγοί · Jackal Accountant",
+      "lang": "el",
+      "errors": []
+    },
+    "el-phone /guides?cat=eu-programmes": {
+      "status": 200,
+      "title": "Οδηγοί · Jackal Accountant",
+      "lang": "el",
+      "errors": []
+    },
+    "el-signed-in /profile": {
+      "status": 200,
+      "title": "Το προφίλ μου · Jackal Accountant",
+      "lang": "el",
+      "errors": []
+    },
+    "el-signed-in /for-me": {
+      "status": 200,
+      "title": "Για Εμένα · Jackal Accountant",
+      "lang": "el",
+      "errors": []
+    },
+    "el-signed-in /dashboard": {
+      "status": 200,
+      "title": "Για Εμένα · Jackal Accountant",
+      "lang": "el",
+      "errors": []
+    },
+    "el-signed-in /opportunities": {
+      "status": 200,
+      "title": "Ευκαιρίες · Jackal Accountant",
+      "lang": "el",
+      "errors": []
+    },
+    "el-signed-in /": {
+      "status": 200,
+      "title": "Jackal Accountant",
+      "lang": "el",
+      "errors": []
+    },
+    "el-signed-in /categories": {
+      "status": 200,
+      "title": "Κατηγορίες · Jackal Accountant",
+      "lang": "el",
+      "errors": []
+    },
+    "el-signed-in /guides": {
+      "status": 200,
+      "title": "Οδηγοί · Jackal Accountant",
+      "lang": "el",
+      "errors": []
+    },
+    "el-signed-in /about": {
+      "status": 200,
+      "title": "Σχετικά με εμάς · Jackal Accountant",
+      "lang": "el",
+      "errors": []
+    },
+    "el-signed-in /opportunities/f60455d7-74c0-402e-ae1f-547a854b8794": {
+      "status": 200,
+      "title": "Τακτική επιδότηση ανεργίας · Jackal Accountant",
+      "lang": "el",
+      "errors": []
+    },
+    "el-signed-in /guides/unemployment": {
+      "status": 200,
+      "title": "Τακτική επιδότηση ανεργίας · Jackal Accountant",
+      "lang": "el",
+      "errors": []
+    },
+    "el-signed-in /opportunities/7e75d665-fa93-4b82-b4be-291d0bdb9866": {
+      "status": 200,
+      "title": "SOCPL-2026-INFO-REPR · Jackal Accountant",
+      "lang": "el",
+      "errors": []
+    },
+    "el-signed-in /opportunities/111e0fb6-d48a-428f-b0e8-d1e1f3828a12": {
+      "status": 200,
+      "title": "Structured dialogue with people with lived experience of poverty · Jackal Accountant",
+      "lang": "el",
+      "errors": []
+    },
+    "el-signed-in /opportunities/bcc8f71e-64a1-42ef-a5ae-fe219a8ac709": {
+      "status": 200,
+      "title": "Erasmus Charter for Higher Education · Jackal Accountant",
+      "lang": "el",
+      "errors": []
+    },
+    "el-signed-in /opportunities/1f3585bd-bc33-4275-9a2d-135c8f7bf55e": {
+      "status": 200,
+      "title": "Άρθρο 5Γ ΚΦΕ — 50% απαλλαγή φόρου για όσους μεταφέρουν τη φορολογική κατοικία τους στην Ελλάδα · Jackal Accountant",
+      "lang": "el",
+      "errors": []
+    },
+    "el-signed-in /guides/art5c": {
+      "status": 200,
+      "title": "Άρθρο 5Γ ΚΦΕ — 50% απαλλαγή φόρου για όσους μεταφέρουν τη φορολογική κατοικία τους στην Ελλάδα · Jackal Accountant",
+      "lang": "el",
+      "errors": []
+    },
+    "el-signed-in /opportunities?cat=employment": {
+      "status": 200,
+      "title": "Ευκαιρίες · Jackal Accountant",
+      "lang": "el",
+      "errors": []
+    },
+    "el-signed-in /opportunities?cat=entrepreneurship": {
+      "status": 200,
+      "title": "Ευκαιρίες · Jackal Accountant",
+      "lang": "el",
+      "errors": []
+    },
+    "el-signed-in /opportunities?cat=business": {
+      "status": 200,
+      "title": "Ευκαιρίες · Jackal Accountant",
+      "lang": "el",
+      "errors": []
+    },
+    "el-signed-in /opportunities?cat=agriculture": {
+      "status": 200,
+      "title": "Ευκαιρίες · Jackal Accountant",
+      "lang": "el",
+      "errors": []
+    },
+    "el-signed-in /opportunities?cat=education": {
+      "status": 200,
+      "title": "Ευκαιρίες · Jackal Accountant",
+      "lang": "el",
+      "errors": []
+    },
+    "el-signed-in /opportunities?cat=housing-energy": {
+      "status": 200,
+      "title": "Ευκαιρίες · Jackal Accountant",
+      "lang": "el",
+      "errors": []
+    },
+    "el-signed-in /opportunities?cat=family": {
+      "status": 200,
+      "title": "Ευκαιρίες · Jackal Accountant",
+      "lang": "el",
+      "errors": []
+    },
+    "el-signed-in /opportunities?cat=innovation": {
+      "status": 200,
+      "title": "Ευκαιρίες · Jackal Accountant",
+      "lang": "el",
+      "errors": []
+    },
+    "el-signed-in /opportunities?cat=environment": {
+      "status": 200,
+      "title": "Ευκαιρίες · Jackal Accountant",
+      "lang": "el",
+      "errors": []
+    },
+    "el-signed-in /opportunities?cat=tenders": {
+      "status": 200,
+      "title": "Ευκαιρίες · Jackal Accountant",
+      "lang": "el",
+      "errors": []
+    },
+    "el-signed-in /opportunities?cat=tax": {
+      "status": 200,
+      "title": "Ευκαιρίες · Jackal Accountant",
+      "lang": "el",
+      "errors": []
+    },
+    "el-signed-in /opportunities?status=all": {
+      "status": 200,
+      "title": "Ευκαιρίες · Jackal Accountant",
+      "lang": "el",
+      "errors": []
+    },
+    "el-signed-in /opportunities/0d29db63-fbf5-439e-a5ac-52d826027ae2": {
+      "status": 200,
+      "title": "Advanced Materials for Miniaturised Energy Harvesting Systems · Jackal Accountant",
+      "lang": "el",
+      "errors": []
+    },
+    "el-signed-in /opportunities/5f1de3aa-acfa-43b5-af64-861d5b5c8fab": {
+      "status": 200,
+      "title": "Biotechnology for Healthy Ageing · Jackal Accountant",
+      "lang": "el",
+      "errors": []
+    },
+    "el-signed-in /opportunities/415d4af0-9b7d-4a30-8e0e-46e7fff3e681": {
+      "status": 200,
+      "title": "DeepRAP: Deep Reasoning, Abstraction & Planning towards trustworthy Cognitive AI Systems · Jackal Accountant",
+      "lang": "el",
+      "errors": []
+    },
+    "el-signed-in /opportunities/4ce63bec-a356-4abd-a5dc-d07fae6271c3": {
+      "status": 200,
+      "title": "EIC defence call · Jackal Accountant",
+      "lang": "el",
+      "errors": []
+    },
+    "el-signed-in /opportunities/79acf067-de3e-4217-a99e-130e0c231f12": {
+      "status": 200,
+      "title": "EIC Accelerator 2026 - Short proposal · Jackal Accountant",
+      "lang": "el",
+      "errors": []
+    },
+    "el-signed-in /opportunities/f61e0b76-bc70-435d-8e99-06dc3240fc0c": {
+      "status": 200,
+      "title": "Accessible and available travel facilitation · Jackal Accountant",
+      "lang": "el",
+      "errors": []
+    },
+    "el-signed-in /opportunities/84fcf030-7775-433b-8315-3a8006b02737": {
+      "status": 200,
+      "title": "Advanced border surveillance and situational awareness · Jackal Accountant",
+      "lang": "el",
+      "errors": []
+    },
+    "el-signed-in /opportunities/5dfe26e6-bfe0-4a25-81e5-d36941ada6b8": {
+      "status": 200,
+      "title": "Climate security and civil preparedness – new ways to develop pre- and post-crisis climate-change related scenarios for a more resilient Europe · Jackal Accountant",
+      "lang": "el",
+      "errors": []
+    },
+    "el-signed-in /opportunities/4b4920a0-1c44-4e8d-a0fa-cef11952776c": {
+      "status": 200,
+      "title": "Crime prevention approaches, online and off-line, tackling the nexus between addictions and crime · Jackal Accountant",
+      "lang": "el",
+      "errors": []
+    },
+    "el-signed-in /opportunities/416c6ce5-8106-4414-bac8-64beb33551b5": {
+      "status": 200,
+      "title": "Demand-led innovation in security · Jackal Accountant",
+      "lang": "el",
+      "errors": []
+    },
+    "el-signed-in /opportunities/16fd09e8-5836-47b6-9b79-b9dd09204e40": {
+      "status": 200,
+      "title": "Designing new ways of risk awareness and enhanced disaster preparedness · Jackal Accountant",
+      "lang": "el",
+      "errors": []
+    },
+    "el-signed-in /opportunities/d89b9f01-d0a0-413a-9e1a-25a11f13f324": {
+      "status": 200,
+      "title": "Development of ecosystem and next-generation capabilities for a secured European Critical Communication System in civil security · Jackal Accountant",
+      "lang": "el",
+      "errors": []
+    },
+    "el-signed-in /opportunities/1a73145f-cfa7-4427-a1df-de49cfd9105e": {
+      "status": 200,
+      "title": "Development of innovative tools, processes, equipment and technologies through responses to disasters and emergencies for search and rescue in hazardous conditions · Jackal Accountant",
+      "lang": "el",
+      "errors": []
+    },
+    "el-signed-in /opportunities/dd7be3be-a0a3-447b-bcb2-bcc55bf09153": {
+      "status": 200,
+      "title": "Enhancing the security of citizens against terrorism and lone-actor violence in confined spaces such as schools · Jackal Accountant",
+      "lang": "el",
+      "errors": []
+    },
+    "el-signed-in /opportunities/7ab68e93-7b8b-4b1f-a5df-ba7e422f2c49": {
+      "status": 200,
+      "title": "Improving capabilities of law enforcement to counter climate-related challenges · Jackal Accountant",
+      "lang": "el",
+      "errors": []
+    },
+    "el-signed-in /opportunities/2705891c-d942-4828-b53a-f860f90d8568": {
+      "status": 200,
+      "title": "Missing persons: prevention and investigation · Jackal Accountant",
+      "lang": "el",
+      "errors": []
+    },
+    "el-signed-in /opportunities/817bd515-2178-4a6d-829c-717ed2e9c734": {
+      "status": 200,
+      "title": "Multi-hazard approach and cumulative / cascading impacts · Jackal Accountant",
+      "lang": "el",
+      "errors": []
+    },
+    "el-signed-in /opportunities/77eff24d-0322-4978-88a1-895b2697f9a4": {
+      "status": 200,
+      "title": "Open topic on driving innovation uptake of disaster risk solutions · Jackal Accountant",
+      "lang": "el",
+      "errors": []
+    },
+    "el-signed-in /opportunities/61eb1952-d5c5-4dda-b8d9-e2f8e6d8bb2a": {
+      "status": 200,
+      "title": "Open topic on preventing and countering the misuse of emerging technologies for criminal purposes, including issues related to lawful access to data · Jackal Accountant",
+      "lang": "el",
+      "errors": []
+    },
+    "el-signed-in /opportunities/881cfd53-86b4-4106-b09d-8b65ced82e97": {
+      "status": 200,
+      "title": "Open topic on supporting disruptive technological innovations for civil security · Jackal Accountant",
+      "lang": "el",
+      "errors": []
+    },
+    "el-signed-in /opportunities/28739590-9c03-45cc-b933-e7e648f8c95d": {
+      "status": 200,
+      "title": "Preventing gender-based violence · Jackal Accountant",
+      "lang": "el",
+      "errors": []
+    },
+    "el-signed-in /opportunities/40c6d5be-ad64-4015-b56a-b58fb5f5f82b": {
+      "status": 200,
+      "title": "Prevention and mitigation of misuse of synthetic biology for bioterrorism purposes · Jackal Accountant",
+      "lang": "el",
+      "errors": []
+    },
+    "el-signed-in /opportunities/5e9295fc-3e2d-4bdd-959e-d1f26d404f8e": {
+      "status": 200,
+      "title": "Protecting and supporting victims and survivors of gender-based violence. · Jackal Accountant",
+      "lang": "el",
+      "errors": []
+    },
+    "el-signed-in /opportunities?status=open": {
+      "status": 200,
+      "title": "Ευκαιρίες · Jackal Accountant",
+      "lang": "el",
+      "errors": []
+    },
+    "el-signed-in /opportunities/3c2eff53-f1f9-4c29-8ccb-d4d31406ea22": {
+      "status": 200,
+      "title": "Άρθρο 5Α ΚΦΕ — εναλλακτική φορολόγηση επενδυτών · Jackal Accountant",
+      "lang": "el",
+      "errors": []
+    },
+    "el-signed-in /guides/art5a": {
+      "status": 200,
+      "title": "Άρθρο 5Α ΚΦΕ — εναλλακτική φορολόγηση επενδυτών · Jackal Accountant",
+      "lang": "el",
+      "errors": []
+    },
+    "el-signed-in /guides/eligibility-labels": {
+      "status": 200,
+      "title": "Τι σημαίνουν οι ενδείξεις επιλεξιμότητας · Jackal Accountant",
+      "lang": "el",
+      "errors": []
+    },
+    "el-signed-in /guides/a21": {
+      "status": 200,
+      "title": "Α21 — Επίδομα παιδιού · Jackal Accountant",
+      "lang": "el",
+      "errors": []
+    },
+    "el-signed-in /opportunities?type=grant": {
+      "status": 200,
+      "title": "Ευκαιρίες · Jackal Accountant",
+      "lang": "el",
+      "errors": []
+    },
+    "el-signed-in /opportunities?type=loan": {
+      "status": 200,
+      "title": "Ευκαιρίες · Jackal Accountant",
+      "lang": "el",
+      "errors": []
+    },
+    "el-signed-in /opportunities?type=benefit": {
+      "status": 200,
+      "title": "Ευκαιρίες · Jackal Accountant",
+      "lang": "el",
+      "errors": []
+    },
+    "el-signed-in /opportunities?type=tax": {
+      "status": 200,
+      "title": "Ευκαιρίες · Jackal Accountant",
+      "lang": "el",
+      "errors": []
+    },
+    "el-signed-in /opportunities?type=training": {
+      "status": 200,
+      "title": "Ευκαιρίες · Jackal Accountant",
+      "lang": "el",
+      "errors": []
+    },
+    "el-signed-in /opportunities?type=tender": {
+      "status": 200,
+      "title": "Ευκαιρίες · Jackal Accountant",
+      "lang": "el",
+      "errors": []
+    },
+    "el-signed-in /opportunities?audience=young_adult": {
+      "status": 200,
+      "title": "Ευκαιρίες · Jackal Accountant",
+      "lang": "el",
+      "errors": []
+    },
+    "el-signed-in /opportunities?audience=aspiring_entrepreneur": {
+      "status": 200,
+      "title": "Ευκαιρίες · Jackal Accountant",
+      "lang": "el",
+      "errors": []
+    },
+    "el-signed-in /opportunities?audience=employee_jobseeker": {
+      "status": 200,
+      "title": "Ευκαιρίες · Jackal Accountant",
+      "lang": "el",
+      "errors": []
+    },
+    "el-signed-in /opportunities?audience=household": {
+      "status": 200,
+      "title": "Ευκαιρίες · Jackal Accountant",
+      "lang": "el",
+      "errors": []
+    },
+    "el-signed-in /opportunities?audience=business_org": {
+      "status": 200,
+      "title": "Ευκαιρίες · Jackal Accountant",
+      "lang": "el",
+      "errors": []
+    },
+    "el-signed-in /guides?cat=step-by-step": {
+      "status": 200,
+      "title": "Οδηγοί · Jackal Accountant",
+      "lang": "el",
+      "errors": []
+    },
+    "el-signed-in /guides?cat=benefits": {
+      "status": 200,
+      "title": "Οδηγοί · Jackal Accountant",
+      "lang": "el",
+      "errors": []
+    },
+    "el-signed-in /guides?cat=business-grants": {
+      "status": 200,
+      "title": "Οδηγοί · Jackal Accountant",
+      "lang": "el",
+      "errors": []
+    },
+    "el-signed-in /guides?cat=employment-education": {
+      "status": 200,
+      "title": "Οδηγοί · Jackal Accountant",
+      "lang": "el",
+      "errors": []
+    }
+  },
+  "broken_links": [],
+  "issues": [
+    {
+      "severity": "critical",
+      "where": "journey",
+      "what": "5 profile answers are saved: employment_status after reload = (empty)"
+    },
+    {
+      "severity": "high",
+      "where": "el-desktop /opportunities/0d29db63-fbf5-439e-a5ac-52d826027ae2",
+      "what": "placeholder or broken text on screen: nan, nan"
+    },
+    {
+      "severity": "high",
+      "where": "el-desktop /opportunities/5f1de3aa-acfa-43b5-af64-861d5b5c8fab",
+      "what": "placeholder or broken text on screen: nan, nan"
+    },
+    {
+      "severity": "high",
+      "where": "el-desktop /opportunities/415d4af0-9b7d-4a30-8e0e-46e7fff3e681",
+      "what": "placeholder or broken text on screen: nan, nan"
+    },
+    {
+      "severity": "high",
+      "where": "el-desktop /opportunities/4ce63bec-a356-4abd-a5dc-d07fae6271c3",
+      "what": "placeholder or broken text on screen: nan, nan, nan, nan, nan"
+    },
+    {
+      "severity": "high",
+      "where": "el-desktop /opportunities/111e0fb6-d48a-428f-b0e8-d1e1f3828a12",
+      "what": "placeholder or broken text on screen: nan, nan, nan, nan"
+    },
+    {
+      "severity": "high",
+      "where": "el-desktop /opportunities/79acf067-de3e-4217-a99e-130e0c231f12",
+      "what": "placeholder or broken text on screen: nan, nan, nan"
+    },
+    {
+      "severity": "high",
+      "where": "el-desktop /opportunities/f61e0b76-bc70-435d-8e99-06dc3240fc0c",
+      "what": "placeholder or broken text on screen: nan, nan"
+    },
+    {
+      "severity": "high",
+      "where": "el-desktop /opportunities/84fcf030-7775-433b-8315-3a8006b02737",
+      "what": "placeholder or broken text on screen: nan, nan"
+    },
+    {
+      "severity": "high",
+      "where": "el-desktop /opportunities/5dfe26e6-bfe0-4a25-81e5-d36941ada6b8",
+      "what": "placeholder or broken text on screen: nan, nan"
+    },
+    {
+      "severity": "high",
+      "where": "el-desktop /opportunities/4b4920a0-1c44-4e8d-a0fa-cef11952776c",
+      "what": "placeholder or broken text on screen: nan, nan"
+    },
+    {
+      "severity": "high",
+      "where": "el-desktop /opportunities/416c6ce5-8106-4414-bac8-64beb33551b5",
+      "what": "placeholder or broken text on screen: nan, nan"
+    },
+    {
+      "severity": "high",
+      "where": "el-desktop /opportunities/16fd09e8-5836-47b6-9b79-b9dd09204e40",
+      "what": "placeholder or broken text on screen: nan, nan, nan"
+    },
+    {
+      "severity": "high",
+      "where": "el-desktop /opportunities/d89b9f01-d0a0-413a-9e1a-25a11f13f324",
+      "what": "placeholder or broken text on screen: nan, nan"
+    },
+    {
+      "severity": "high",
+      "where": "el-desktop /opportunities/1a73145f-cfa7-4427-a1df-de49cfd9105e",
+      "what": "placeholder or broken text on screen: nan, nan"
+    },
+    {
+      "severity": "high",
+      "where": "el-desktop /opportunities/dd7be3be-a0a3-447b-bcb2-bcc55bf09153",
+      "what": "placeholder or broken text on screen: nan, nan"
+    },
+    {
+      "severity": "high",
+      "where": "el-desktop /opportunities/7ab68e93-7b8b-4b1f-a5df-ba7e422f2c49",
+      "what": "placeholder or broken text on screen: nan, nan"
+    },
+    {
+      "severity": "high",
+      "where": "el-desktop /opportunities/2705891c-d942-4828-b53a-f860f90d8568",
+      "what": "placeholder or broken text on screen: nan, nan"
+    },
+    {
+      "severity": "high",
+      "where": "el-desktop /opportunities/817bd515-2178-4a6d-829c-717ed2e9c734",
+      "what": "placeholder or broken text on screen: nan, nan"
+    },
+    {
+      "severity": "high",
+      "where": "el-desktop /opportunities/77eff24d-0322-4978-88a1-895b2697f9a4",
+      "what": "placeholder or broken text on screen: nan, nan"
+    },
+    {
+      "severity": "high",
+      "where": "el-desktop /opportunities/61eb1952-d5c5-4dda-b8d9-e2f8e6d8bb2a",
+      "what": "placeholder or broken text on screen: nan, nan"
+    },
+    {
+      "severity": "high",
+      "where": "el-desktop /opportunities/881cfd53-86b4-4106-b09d-8b65ced82e97",
+      "what": "placeholder or broken text on screen: nan, nan"
+    },
+    {
+      "severity": "high",
+      "where": "el-desktop /opportunities/28739590-9c03-45cc-b933-e7e648f8c95d",
+      "what": "placeholder or broken text on screen: nan, nan"
+    },
+    {
+      "severity": "high",
+      "where": "el-desktop /opportunities/40c6d5be-ad64-4015-b56a-b58fb5f5f82b",
+      "what": "placeholder or broken text on screen: nan, nan"
+    },
+    {
+      "severity": "high",
+      "where": "el-desktop /opportunities/5e9295fc-3e2d-4bdd-959e-d1f26d404f8e",
+      "what": "placeholder or broken text on screen: nan, nan"
+    },
+    {
+      "severity": "high",
+      "where": "en-desktop /",
+      "what": "placeholder or broken text on screen: nan"
+    },
+    {
+      "severity": "high",
+      "where": "en-desktop /opportunities",
+      "what": "placeholder or broken text on screen: nan"
+    },
+    {
+      "severity": "high",
+      "where": "en-desktop /categories",
+      "what": "placeholder or broken text on screen: nan, nan"
+    },
+    {
+      "severity": "high",
+      "where": "en-desktop /guides",
+      "what": "placeholder or broken text on screen: nan, nan"
+    },
+    {
+      "severity": "high",
+      "where": "en-desktop /opportunities?cat=employment",
+      "what": "placeholder or broken text on screen: nan"
+    },
+    {
+      "severity": "high",
+      "where": "en-desktop /opportunities?cat=entrepreneurship",
+      "what": "placeholder or broken text on screen: nan"
+    },
+    {
+      "severity": "high",
+      "where": "en-desktop /opportunities?cat=business",
+      "what": "placeholder or broken text on screen: nan, nan"
+    },
+    {
+      "severity": "high",
+      "where": "en-desktop /opportunities?cat=agriculture",
+      "what": "placeholder or broken text on screen: nan"
+    },
+    {
+      "severity": "high",
+      "where": "en-desktop /opportunities?cat=education",
+      "what": "placeholder or broken text on screen: nan"
+    },
+    {
+      "severity": "high",
+      "where": "en-desktop /opportunities?cat=housing-energy",
+      "what": "placeholder or broken text on screen: nan"
+    },
+    {
+      "severity": "high",
+      "where": "en-desktop /opportunities?cat=family",
+      "what": "placeholder or broken text on screen: nan"
+    },
+    {
+      "severity": "high",
+      "where": "en-desktop /opportunities?cat=innovation",
+      "what": "placeholder or broken text on screen: nan"
+    },
+    {
+      "severity": "high",
+      "where": "en-desktop /opportunities?status=open",
+      "what": "placeholder or broken text on screen: nan"
+    },
+    {
+      "severity": "high",
+      "where": "en-desktop /opportunities/0d29db63-fbf5-439e-a5ac-52d826027ae2",
+      "what": "placeholder or broken text on screen: nan, nan, nan"
+    },
+    {
+      "severity": "high",
+      "where": "en-desktop /opportunities?cat=environment",
+      "what": "placeholder or broken text on screen: nan"
+    },
+    {
+      "severity": "high",
+      "where": "en-desktop /opportunities?cat=tenders",
+      "what": "placeholder or broken text on screen: nan"
+    },
+    {
+      "severity": "high",
+      "where": "en-desktop /opportunities?cat=tax",
+      "what": "placeholder or broken text on screen: nan"
+    },
+    {
+      "severity": "high",
+      "where": "en-desktop /opportunities?status=all",
+      "what": "placeholder or broken text on screen: nan"
+    },
+    {
+      "severity": "high",
+      "where": "en-desktop /opportunities/5f1de3aa-acfa-43b5-af64-861d5b5c8fab",
+      "what": "placeholder or broken text on screen: nan, nan, nan"
+    },
+    {
+      "severity": "high",
+      "where": "en-desktop /opportunities/415d4af0-9b7d-4a30-8e0e-46e7fff3e681",
+      "what": "placeholder or broken text on screen: nan, nan, nan"
+    },
+    {
+      "severity": "high",
+      "where": "en-desktop /opportunities/4ce63bec-a356-4abd-a5dc-d07fae6271c3",
+      "what": "placeholder or broken text on screen: nan, nan, nan, nan, nan"
+    },
+    {
+      "severity": "high",
+      "where": "en-desktop /opportunities/111e0fb6-d48a-428f-b0e8-d1e1f3828a12",
+      "what": "placeholder or broken text on screen: nan, nan, nan, nan, nan"
+    },
+    {
+      "severity": "high",
+      "where": "en-desktop /opportunities/79acf067-de3e-4217-a99e-130e0c231f12",
+      "what": "placeholder or broken text on screen: nan, nan, nan, nan"
+    },
+    {
+      "severity": "high",
+      "where": "en-desktop /opportunities/f61e0b76-bc70-435d-8e99-06dc3240fc0c",
+      "what": "placeholder or broken text on screen: nan, nan, nan"
+    },
+    {
+      "severity": "high",
+      "where": "en-desktop /opportunities/84fcf030-7775-433b-8315-3a8006b02737",
+      "what": "placeholder or broken text on screen: nan, nan, nan"
+    },
+    {
+      "severity": "high",
+      "where": "en-desktop /opportunities/5dfe26e6-bfe0-4a25-81e5-d36941ada6b8",
+      "what": "placeholder or broken text on screen: nan, nan, nan"
+    },
+    {
+      "severity": "high",
+      "where": "en-desktop /opportunities/4b4920a0-1c44-4e8d-a0fa-cef11952776c",
+      "what": "placeholder or broken text on screen: nan, nan, nan"
+    },
+    {
+      "severity": "high",
+      "where": "en-desktop /opportunities/416c6ce5-8106-4414-bac8-64beb33551b5",
+      "what": "placeholder or broken text on screen: nan, nan, nan"
+    },
+    {
+      "severity": "high",
+      "where": "en-desktop /opportunities/16fd09e8-5836-47b6-9b79-b9dd09204e40",
+      "what": "placeholder or broken text on screen: nan, nan, nan, nan"
+    },
+    {
+      "severity": "high",
+      "where": "en-desktop /opportunities/d89b9f01-d0a0-413a-9e1a-25a11f13f324",
+      "what": "placeholder or broken text on screen: nan, nan, nan"
+    },
+    {
+      "severity": "high",
+      "where": "en-desktop /opportunities/1a73145f-cfa7-4427-a1df-de49cfd9105e",
+      "what": "placeholder or broken text on screen: nan, nan, nan"
+    },
+    {
+      "severity": "high",
+      "where": "en-desktop /opportunities/dd7be3be-a0a3-447b-bcb2-bcc55bf09153",
+      "what": "placeholder or broken text on screen: nan, nan, nan"
+    },
+    {
+      "severity": "high",
+      "where": "en-desktop /opportunities/7ab68e93-7b8b-4b1f-a5df-ba7e422f2c49",
+      "what": "placeholder or broken text on screen: nan, nan, nan"
+    },
+    {
+      "severity": "high",
+      "where": "en-desktop /opportunities/2705891c-d942-4828-b53a-f860f90d8568",
+      "what": "placeholder or broken text on screen: nan, nan, nan"
+    },
+    {
+      "severity": "high",
+      "where": "en-desktop /opportunities/817bd515-2178-4a6d-829c-717ed2e9c734",
+      "what": "placeholder or broken text on screen: nan, nan, nan"
+    },
+    {
+      "severity": "high",
+      "where": "en-desktop /opportunities/77eff24d-0322-4978-88a1-895b2697f9a4",
+      "what": "placeholder or broken text on screen: nan, nan, nan"
+    },
+    {
+      "severity": "high",
+      "where": "en-desktop /opportunities/61eb1952-d5c5-4dda-b8d9-e2f8e6d8bb2a",
+      "what": "placeholder or broken text on screen: nan, nan, nan"
+    },
+    {
+      "severity": "high",
+      "where": "en-desktop /opportunities/881cfd53-86b4-4106-b09d-8b65ced82e97",
+      "what": "placeholder or broken text on screen: nan, nan, nan"
+    },
+    {
+      "severity": "high",
+      "where": "en-desktop /opportunities/28739590-9c03-45cc-b933-e7e648f8c95d",
+      "what": "placeholder or broken text on screen: nan, nan, nan"
+    },
+    {
+      "severity": "high",
+      "where": "en-desktop /opportunities/40c6d5be-ad64-4015-b56a-b58fb5f5f82b",
+      "what": "placeholder or broken text on screen: nan, nan, nan"
+    },
+    {
+      "severity": "high",
+      "where": "en-desktop /opportunities/5e9295fc-3e2d-4bdd-959e-d1f26d404f8e",
+      "what": "placeholder or broken text on screen: nan, nan, nan"
+    },
+    {
+      "severity": "high",
+      "where": "en-desktop /opportunities?type=grant",
+      "what": "placeholder or broken text on screen: nan"
+    },
+    {
+      "severity": "high",
+      "where": "en-desktop /opportunities?type=loan",
+      "what": "placeholder or broken text on screen: nan"
+    },
+    {
+      "severity": "high",
+      "where": "en-desktop /opportunities?type=benefit",
+      "what": "placeholder or broken text on screen: nan"
+    },
+    {
+      "severity": "high",
+      "where": "en-desktop /opportunities?type=tax",
+      "what": "placeholder or broken text on screen: nan"
+    },
+    {
+      "severity": "high",
+      "where": "en-desktop /opportunities?type=training",
+      "what": "placeholder or broken text on screen: nan"
+    },
+    {
+      "severity": "high",
+      "where": "en-desktop /opportunities?type=tender",
+      "what": "placeholder or broken text on screen: nan"
+    },
+    {
+      "severity": "high",
+      "where": "en-desktop /opportunities?audience=young_adult",
+      "what": "placeholder or broken text on screen: nan"
+    },
+    {
+      "severity": "high",
+      "where": "en-desktop /opportunities?audience=aspiring_entrepreneur",
+      "what": "placeholder or broken text on screen: nan"
+    },
+    {
+      "severity": "high",
+      "where": "en-desktop /opportunities?audience=employee_jobseeker",
+      "what": "placeholder or broken text on screen: nan"
+    },
+    {
+      "severity": "high",
+      "where": "en-desktop /opportunities?audience=household",
+      "what": "placeholder or broken text on screen: nan"
+    },
+    {
+      "severity": "high",
+      "where": "en-desktop /opportunities?audience=business_org",
+      "what": "placeholder or broken text on screen: nan"
+    },
+    {
+      "severity": "high",
+      "where": "en-desktop /guides?cat=step-by-step",
+      "what": "placeholder or broken text on screen: nan, nan"
+    },
+    {
+      "severity": "high",
+      "where": "en-desktop /guides?cat=benefits",
+      "what": "placeholder or broken text on screen: nan, nan"
+    },
+    {
+      "severity": "high",
+      "where": "en-desktop /guides?cat=business-grants",
+      "what": "placeholder or broken text on screen: nan, nan"
+    },
+    {
+      "severity": "high",
+      "where": "en-desktop /guides?cat=employment-education",
+      "what": "placeholder or broken text on screen: nan, nan"
+    },
+    {
+      "severity": "high",
+      "where": "en-desktop /guides?cat=housing-energy",
+      "what": "placeholder or broken text on screen: nan, nan"
+    },
+    {
+      "severity": "high",
+      "where": "en-desktop /guides?cat=eu-programmes",
+      "what": "placeholder or broken text on screen: nan, nan"
+    },
+    {
+      "severity": "high",
+      "where": "el-phone /opportunities/0d29db63-fbf5-439e-a5ac-52d826027ae2",
+      "what": "placeholder or broken text on screen: nan, nan"
+    },
+    {
+      "severity": "high",
+      "where": "el-phone /opportunities/5f1de3aa-acfa-43b5-af64-861d5b5c8fab",
+      "what": "placeholder or broken text on screen: nan, nan"
+    },
+    {
+      "severity": "high",
+      "where": "el-phone /opportunities/415d4af0-9b7d-4a30-8e0e-46e7fff3e681",
+      "what": "placeholder or broken text on screen: nan, nan"
+    },
+    {
+      "severity": "high",
+      "where": "el-phone /opportunities/4ce63bec-a356-4abd-a5dc-d07fae6271c3",
+      "what": "placeholder or broken text on screen: nan, nan, nan, nan, nan"
+    },
+    {
+      "severity": "high",
+      "where": "el-phone /opportunities/111e0fb6-d48a-428f-b0e8-d1e1f3828a12",
+      "what": "placeholder or broken text on screen: nan, nan, nan, nan"
+    },
+    {
+      "severity": "high",
+      "where": "el-phone /opportunities/79acf067-de3e-4217-a99e-130e0c231f12",
+      "what": "placeholder or broken text on screen: nan, nan, nan"
+    },
+    {
+      "severity": "high",
+      "where": "el-phone /opportunities/f61e0b76-bc70-435d-8e99-06dc3240fc0c",
+      "what": "placeholder or broken text on screen: nan, nan"
+    },
+    {
+      "severity": "high",
+      "where": "el-phone /opportunities/84fcf030-7775-433b-8315-3a8006b02737",
+      "what": "placeholder or broken text on screen: nan, nan"
+    },
+    {
+      "severity": "high",
+      "where": "el-phone /opportunities/5dfe26e6-bfe0-4a25-81e5-d36941ada6b8",
+      "what": "placeholder or broken text on screen: nan, nan"
+    },
+    {
+      "severity": "high",
+      "where": "el-phone /opportunities/4b4920a0-1c44-4e8d-a0fa-cef11952776c",
+      "what": "placeholder or broken text on screen: nan, nan"
+    },
+    {
+      "severity": "high",
+      "where": "el-phone /opportunities/416c6ce5-8106-4414-bac8-64beb33551b5",
+      "what": "placeholder or broken text on screen: nan, nan"
+    },
+    {
+      "severity": "high",
+      "where": "el-phone /opportunities/16fd09e8-5836-47b6-9b79-b9dd09204e40",
+      "what": "placeholder or broken text on screen: nan, nan, nan"
+    },
+    {
+      "severity": "high",
+      "where": "el-phone /opportunities/d89b9f01-d0a0-413a-9e1a-25a11f13f324",
+      "what": "placeholder or broken text on screen: nan, nan"
+    },
+    {
+      "severity": "high",
+      "where": "el-phone /opportunities/1a73145f-cfa7-4427-a1df-de49cfd9105e",
+      "what": "placeholder or broken text on screen: nan, nan"
+    },
+    {
+      "severity": "high",
+      "where": "el-phone /opportunities/dd7be3be-a0a3-447b-bcb2-bcc55bf09153",
+      "what": "placeholder or broken text on screen: nan, nan"
+    },
+    {
+      "severity": "high",
+      "where": "el-phone /opportunities/7ab68e93-7b8b-4b1f-a5df-ba7e422f2c49",
+      "what": "placeholder or broken text on screen: nan, nan"
+    },
+    {
+      "severity": "high",
+      "where": "el-phone /opportunities/2705891c-d942-4828-b53a-f860f90d8568",
+      "what": "placeholder or broken text on screen: nan, nan"
+    },
+    {
+      "severity": "high",
+      "where": "el-phone /opportunities/817bd515-2178-4a6d-829c-717ed2e9c734",
+      "what": "placeholder or broken text on screen: nan, nan"
+    },
+    {
+      "severity": "high",
+      "where": "el-phone /opportunities/77eff24d-0322-4978-88a1-895b2697f9a4",
+      "what": "placeholder or broken text on screen: nan, nan"
+    },
+    {
+      "severity": "high",
+      "where": "el-phone /opportunities/61eb1952-d5c5-4dda-b8d9-e2f8e6d8bb2a",
+      "what": "placeholder or broken text on screen: nan, nan"
+    },
+    {
+      "severity": "high",
+      "where": "el-phone /opportunities/881cfd53-86b4-4106-b09d-8b65ced82e97",
+      "what": "placeholder or broken text on screen: nan, nan"
+    },
+    {
+      "severity": "high",
+      "where": "el-phone /opportunities/28739590-9c03-45cc-b933-e7e648f8c95d",
+      "what": "placeholder or broken text on screen: nan, nan"
+    },
+    {
+      "severity": "high",
+      "where": "el-phone /opportunities/40c6d5be-ad64-4015-b56a-b58fb5f5f82b",
+      "what": "placeholder or broken text on screen: nan, nan"
+    },
+    {
+      "severity": "high",
+      "where": "el-phone /opportunities/5e9295fc-3e2d-4bdd-959e-d1f26d404f8e",
+      "what": "placeholder or broken text on screen: nan, nan"
+    },
+    {
+      "severity": "high",
+      "where": "language switch",
+      "what": "clicking EN did not switch the page to English"
+    },
+    {
+      "severity": "high",
+      "where": "el-signed-in /opportunities/7e75d665-fa93-4b82-b4be-291d0bdb9866",
+      "what": "placeholder or broken text on screen: nan, nan, nan, nan"
+    },
+    {
+      "severity": "high",
+      "where": "el-signed-in /opportunities/111e0fb6-d48a-428f-b0e8-d1e1f3828a12",
+      "what": "placeholder or broken text on screen: nan, nan, nan, nan"
+    },
+    {
+      "severity": "high",
+      "where": "el-signed-in /opportunities/0d29db63-fbf5-439e-a5ac-52d826027ae2",
+      "what": "placeholder or broken text on screen: nan, nan"
+    },
+    {
+      "severity": "high",
+      "where": "el-signed-in /opportunities/5f1de3aa-acfa-43b5-af64-861d5b5c8fab",
+      "what": "placeholder or broken text on screen: nan, nan"
+    },
+    {
+      "severity": "high",
+      "where": "el-signed-in /opportunities/415d4af0-9b7d-4a30-8e0e-46e7fff3e681",
+      "what": "placeholder or broken text on screen: nan, nan"
+    },
+    {
+      "severity": "high",
+      "where": "el-signed-in /opportunities/4ce63bec-a356-4abd-a5dc-d07fae6271c3",
+      "what": "placeholder or broken text on screen: nan, nan, nan, nan, nan"
+    },
+    {
+      "severity": "high",
+      "where": "el-signed-in /opportunities/79acf067-de3e-4217-a99e-130e0c231f12",
+      "what": "placeholder or broken text on screen: nan, nan, nan"
+    },
+    {
+      "severity": "high",
+      "where": "el-signed-in /opportunities/f61e0b76-bc70-435d-8e99-06dc3240fc0c",
+      "what": "placeholder or broken text on screen: nan, nan"
+    },
+    {
+      "severity": "high",
+      "where": "el-signed-in /opportunities/84fcf030-7775-433b-8315-3a8006b02737",
+      "what": "placeholder or broken text on screen: nan, nan"
+    },
+    {
+      "severity": "high",
+      "where": "el-signed-in /opportunities/5dfe26e6-bfe0-4a25-81e5-d36941ada6b8",
+      "what": "placeholder or broken text on screen: nan, nan"
+    },
+    {
+      "severity": "high",
+      "where": "el-signed-in /opportunities/4b4920a0-1c44-4e8d-a0fa-cef11952776c",
+      "what": "placeholder or broken text on screen: nan, nan"
+    },
+    {
+      "severity": "high",
+      "where": "el-signed-in /opportunities/416c6ce5-8106-4414-bac8-64beb33551b5",
+      "what": "placeholder or broken text on screen: nan, nan"
+    },
+    {
+      "severity": "high",
+      "where": "el-signed-in /opportunities/16fd09e8-5836-47b6-9b79-b9dd09204e40",
+      "what": "placeholder or broken text on screen: nan, nan, nan"
+    },
+    {
+      "severity": "high",
+      "where": "el-signed-in /opportunities/d89b9f01-d0a0-413a-9e1a-25a11f13f324",
+      "what": "placeholder or broken text on screen: nan, nan"
+    },
+    {
+      "severity": "high",
+      "where": "el-signed-in /opportunities/1a73145f-cfa7-4427-a1df-de49cfd9105e",
+      "what": "placeholder or broken text on screen: nan, nan"
+    },
+    {
+      "severity": "high",
+      "where": "el-signed-in /opportunities/dd7be3be-a0a3-447b-bcb2-bcc55bf09153",
+      "what": "placeholder or broken text on screen: nan, nan"
+    },
+    {
+      "severity": "high",
+      "where": "el-signed-in /opportunities/7ab68e93-7b8b-4b1f-a5df-ba7e422f2c49",
+      "what": "placeholder or broken text on screen: nan, nan"
+    },
+    {
+      "severity": "high",
+      "where": "el-signed-in /opportunities/2705891c-d942-4828-b53a-f860f90d8568",
+      "what": "placeholder or broken text on screen: nan, nan"
+    },
+    {
+      "severity": "high",
+      "where": "el-signed-in /opportunities/817bd515-2178-4a6d-829c-717ed2e9c734",
+      "what": "placeholder or broken text on screen: nan, nan"
+    },
+    {
+      "severity": "high",
+      "where": "el-signed-in /opportunities/77eff24d-0322-4978-88a1-895b2697f9a4",
+      "what": "placeholder or broken text on screen: nan, nan"
+    },
+    {
+      "severity": "high",
+      "where": "el-signed-in /opportunities/61eb1952-d5c5-4dda-b8d9-e2f8e6d8bb2a",
+      "what": "placeholder or broken text on screen: nan, nan"
+    },
+    {
+      "severity": "high",
+      "where": "el-signed-in /opportunities/881cfd53-86b4-4106-b09d-8b65ced82e97",
+      "what": "placeholder or broken text on screen: nan, nan"
+    },
+    {
+      "severity": "high",
+      "where": "el-signed-in /opportunities/28739590-9c03-45cc-b933-e7e648f8c95d",
+      "what": "placeholder or broken text on screen: nan, nan"
+    },
+    {
+      "severity": "high",
+      "where": "el-signed-in /opportunities/40c6d5be-ad64-4015-b56a-b58fb5f5f82b",
+      "what": "placeholder or broken text on screen: nan, nan"
+    },
+    {
+      "severity": "high",
+      "where": "el-signed-in /opportunities/5e9295fc-3e2d-4bdd-959e-d1f26d404f8e",
+      "what": "placeholder or broken text on screen: nan, nan"
+    },
+    {
+      "severity": "medium",
+      "where": "opportunities search",
+      "what": "search without accents («επιδομα») finds nothing, unlike the guides search"
+    }
+  ],
+  "journey": [
+    {
+      "step": "1 homepage loads with a call to action",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "step": "2 opportunities list shows cards",
+      "ok": true,
+      "detail": "24 cards"
+    },
+    {
+      "step": "3 opportunity detail opens with official links",
+      "ok": true,
+      "detail": "/opportunities/3c2eff53-f1f9-4c29-8ccb-d4d31406ea22, 6 official links"
+    },
+    {
+      "step": "4 register leads to the profile",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "step": "5 profile answers are saved",
+      "ok": false,
+      "detail": "employment_status after reload = (empty)"
+    },
+    {
+      "step": "6 For Me shows personalised results",
+      "ok": true,
+      "detail": "5 cards; labels: Δεκτές αιτήσεις / Πιθανώς επιλέξιμος/η — χρειάζεται επιβεβαίωση / Χρειάζονται περισσότερα στοιχεία"
+    },
+    {
+      "step": "7 opened match explains eligibility",
+      "ok": true,
+      "detail": "/opportunities/f60455d7-74c0-402e-ae1f-547a854b8794; decision record: true"
+    },
+    {
+      "step": "8 official source link present",
+      "ok": true,
+      "detail": "https://mitos.gov.gr/index.php/%CE%94%CE%94:%CE%A4%CE%B1%CE%BA%CF%84%CE%B9%CE%BA%CE%AE_%CE%95%CF%80%CE%B9%CE%B4%CF%8C%CF%84%CE%B7%CF%83%CE%B7_%CE%91%CE%BD%CE%B5%CF%81%CE%B3%CE%AF%CE%B1%CF%82"
+    }
+  ],
+  "interactions": [
+    {
+      "check": "crawl el-desktop",
+      "pages": 70
+    },
+    {
+      "check": "crawl en-desktop",
+      "pages": 70
+    },
+    {
+      "check": "crawl el-phone",
+      "pages": 70
+    },
+    {
+      "check": "homepage buttons",
+      "targets": [
+        "/opportunities",
+        "#how",
+        "/categories",
+        "/opportunities?status=open",
+        "/for-me",
+        "/guides",
+        "/about#sources",
+        "/about#faq"
+      ]
+    },
+    {
+      "check": "language switch to EN",
+      "ok": false
+    },
+    {
+      "check": "search «επίδομα»",
+      "cards": 1
+    },
+    {
+      "check": "search «επιδομα» (no accents)",
+      "cards": 0
+    },
+    {
+      "check": "filter cat=family",
+      "cards": 0
+    },
+    {
+      "check": "filter cat=employment",
+      "cards": 3
+    },
+    {
+      "check": "filter scope=gr",
+      "cards": 4
+    },
+    {
+      "check": "filter status=open",
+      "cards": 24
+    },
+    {
+      "check": "filter type=benefit",
+      "cards": 1
+    },
+    {
+      "check": "filter audience=employee_jobseeker",
+      "cards": 5
+    },
+    {
+      "check": "profile form fields visible",
+      "fields": 121
+    },
+    {
+      "check": "For Me mentions missing information / questions",
+      "hits": 11
+    },
+    {
+      "check": "guides search «ανεργια»",
+      "cards": 1
+    },
+    {
+      "check": "guides category benefits",
+      "cards": 4
+    },
+    {
+      "check": "crawl el-signed-in",
+      "pages": 70
+    }
+  ],
+  "summary": {
+    "critical": 1,
+    "high": 132,
+    "medium": 1,
+    "low": 0
+  }
+}
