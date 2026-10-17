@@ -99,7 +99,7 @@ details.mobile-nav .panel hr { border: 0; border-top: 1px solid var(--line); mar
 
 /* ── layout ───────────────────────────────────────────────────────────────────────────────────────────────── */
 main { padding: var(--sp-6) 0 var(--sp-8); min-height: 60vh; }
-main.flush { padding-top: 0; }
+main.flush, main:has(> section.hero-navy:first-child) { padding-top: 0; }
 .stack > * + * { margin-top: var(--sp-3); }
 .stack-lg > * + * { margin-top: var(--sp-5); }
 .row { display: flex; gap: var(--sp-2); align-items: center; flex-wrap: wrap; }
@@ -532,3 +532,5 @@ main:has(> section.band:last-child) { padding-bottom: 0; }
 .link-list a { display: flex; align-items: center; justify-content: space-between; gap: var(--sp-3); padding: 14px 16px; border: 1px solid var(--line); border-radius: var(--radius); background: var(--bg); text-decoration: none; color: var(--ink); font-weight: 600; }
 .link-list a:hover { border-color: var(--accent); color: var(--ink); }
 .link-list a svg { color: var(--accent); flex: none; }
+.search-label { display: block; font-weight: 650; color: #ffffff; margin-bottom: var(--sp-2); }
+@media (max-width: 700px) { .hero-navy .art-wrap { display: none; } .hero-navy { padding: var(--sp-6) 0; } }

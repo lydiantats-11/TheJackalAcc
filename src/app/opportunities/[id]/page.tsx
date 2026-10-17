@@ -1,5 +1,7 @@
 import Link from "next/link";
 import { checkedLine } from "@/components/opportunity-card";
+import { unknownsOf } from "@/lib/site/unknowns";
+import { applicantAudienceOf } from "@/lib/site/applicants";
 import { notFound } from "next/navigation";
 import { getDict } from "@/lib/i18n/server";
 import { isDatabaseConfigured, sql } from "@/lib/db";
@@ -81,6 +83,12 @@ export default async function OpportunityPage({ params, searchParams }: { params
   const title = displayTitle(o, locale);
   const verified = verifiedFor(o.external_key);
   const amount = keyAmount(o, t, s, locale);
+  const status = recordStatus(matchable, now);
+  const unknowns = unknownsOf({
+    record: status, hasConflict: !!o.has_conflict, completeness: o.requirement_set_completeness, deadlineKind: o.deadline_kind,
+    hasDeadline: !!o.closes_at, amountState: o.funding_amount_state, applicant: applicantAudienceOf(o, matchable.requirements),
+    documentsApproved: false,
+  });
 
   return (
     <div className="container">
@@ -90,7 +98,7 @@ export default async function OpportunityPage({ params, searchParams }: { params
       </nav>
       <header className="detail-head">
         <div className="tags" style={{ marginBottom: 12 }}>
-          <RecordStatusBadge record={recordStatus(matchable, now)} s={s} locale={locale} />
+          <RecordStatusBadge record={status} s={s} locale={locale} detail />
           {cats.map((c) => <span key={c.slug} className="tag cat">{c.name[locale]}</span>)}
           <span className="tag">{s.supportType[supportTypeOf(o.opportunity_type)]}</span>
           <span className="tag navy">{s.scope[scope]}</span>
@@ -111,6 +119,7 @@ export default async function OpportunityPage({ params, searchParams }: { params
             <a href="#eligibility">{s.detail.eligibility}</a>
             <a href="#apply">{s.detail.howToApply}</a>
             <a href="#sources">{s.detail.sources}</a>
+            <a href="#unknowns">{s.detail.unknownTitle}</a>
             <a href="#history">{s.history.title}</a>
           </nav>
 
@@ -238,6 +247,14 @@ export default async function OpportunityPage({ params, searchParams }: { params
               </ul>
             </section>
 
+            <section id="unknowns" className="card unknowns">
+              <h2 style={{ marginTop: 0 }}>{s.detail.unknownTitle}</h2>
+              <p className="small muted" style={{ marginTop: 0 }}>{s.detail.unknownLead}</p>
+              {unknowns.length === 0 ? <p className="small" style={{ margin: 0 }}>{s.detail.unknownNone}</p> : (
+                <ul className="checklist small">{unknowns.map((u) => <li key={u}><Icon name="alert" size={16} /><span>{s.detail.unknown[u]}</span></li>)}</ul>
+              )}
+            </section>
+
             <ChangeHistory entries={history} s={s} locale={locale} />
           </div>
         </div>
@@ -265,6 +282,12 @@ export default async function OpportunityPage({ params, searchParams }: { params
                 </form>
               ) : <Link className="btn btn-ghost btn-block" href="/login"><Icon name="bookmark" size={16} />{t.opp.save}</Link>}
             </div>
+          </div>
+          <div className="card flat trust-box">
+            <h2 style={{ marginTop: 0, fontSize: "1rem" }}><Icon name="shield" size={18} /> {s.detail.trustTitle}</h2>
+            <p className="small" style={{ margin: "0 0 8px" }}>{s.detail.trustBody}</p>
+            <p className="xs muted" style={{ margin: "0 0 8px" }}>{checkedLine(o, s, locale)}</p>
+            <Link href="/about#sources" className="small">{s.detail.trustLink} →</Link>
           </div>
           {(cats.length > 0 || audiences.length > 0) && <p className="xs muted" style={{ padding: "0 4px" }}>{s.opps.indicative}</p>}
         </aside>

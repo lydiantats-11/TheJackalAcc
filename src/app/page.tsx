@@ -33,9 +33,9 @@ export default async function Home() {
             <span className="eyebrow">{h.eyebrow}</span>
             <h1>{h.title}</h1>
             <p className="lead">{h.lead}</p>
+            <label htmlFor="hero-q" className="search-label">{h.searchLabel}</label>
             <form action="/opportunities" role="search" className="searchbar searchbar-lg">
               <Icon name="search" size={20} />
-              <label htmlFor="hero-q" className="visually-hidden">{h.searchLabel}</label>
               <input id="hero-q" name="q" type="search" placeholder={h.searchPlaceholder} />
               <button className="btn btn-primary">{s.opps.search}</button>
             </form>
