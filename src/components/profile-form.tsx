@@ -168,7 +168,7 @@ export function ProfileForm({ action, profile, t, ask, locale, initialStep }: {
           {stepIds.map((id, i) => (
             <li key={id}>
               <button type="button" data-step={id} aria-current={id === cur ? "step" : undefined} className={i < idx ? "done" : undefined} onClick={() => setStep(id)}>
-                <span className="n" aria-hidden="true">{i < idx ? "✓" : i + 1}</span><span className="l">{stepTitle(id)}</span>
+                <span className="n" aria-hidden="true">{i + 1}</span><span className="l">{stepTitle(id)}</span>
               </button>
             </li>
           ))}

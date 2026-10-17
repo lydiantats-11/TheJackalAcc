@@ -132,7 +132,7 @@ export default async function ForMePage({ searchParams }: { searchParams: Promis
             <div className="kpi-label">{o.yourAnswers}</div>
             <ul className="answers-list">
               {answerRows.map(([label, value, st]) => (
-                <li key={st}><span><span className="muted">{label}:</span> {value || <span className="muted">{o.none}</span>}</span><Link href={`/profile?step=${st}`} className="xs">{o.change}</Link></li>
+                <li key={st}><span><span className="muted">{(label ?? "").replace(/[;?;]\s*$/u, "")}:</span> {value || <span className="muted">{o.none}</span>}</span><Link href={`/profile?step=${st}`} className="xs">{o.change}</Link></li>
               ))}
             </ul>
           </div>
