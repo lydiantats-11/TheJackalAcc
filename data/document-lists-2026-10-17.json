@@ -1,58 +1,197 @@
 {
  "created_on": "2026-10-17",
- "rule": "Documents are what the applicant provides or uploads. Conditions (who qualifies) are kept in eligibility_rules, never here. 'not_published' means the official pages read do not list documents; nothing is filled in by guesswork. All lists are pending the owner's approval. 17 Oct: each item is classed as 'required' (always attached or entered), 'conditional' (only in the stated case) or 'on_request' (only if the authority cannot verify it electronically). Still pending the owner's approval.",
+ "status": "prepared_for_approval — nothing here is shown on the site",
+ "supersedes": "data/document-lists-2026-10-16.json (kept unchanged)",
+ "classes": {
+  "mandatory": "always provided or entered by every applicant",
+  "conditional": "only in the stated situation",
+  "on_request": "only if the authority cannot verify it electronically or asks for it"
+ },
+ "rule": "Documents only (what the applicant provides or enters). Conditions stay in eligibility_rules. Every item carries its official source and location. Records without an official list are marked not_published; nothing is guessed.",
  "records": {
   "a21": {
    "status": "found",
-   "read_on": "2026-10-17",
-   "prefilled": {
-    "el": "Τα προσωπικά στοιχεία, η σύνθεση της οικογένειας και τα εισοδήματα προσυμπληρώνονται από ΑΜΚΑ και ΑΑΔΕ.",
-    "en": "Personal details, family composition and incomes are pre-filled from ΑΜΚΑ and ΑΑΔΕ."
-   },
-   "note": "ΟΠΕΚΑ programme page last modified 23/2/2024; the 8/10/2026 notice adds the 2026 school-attendance entries. Where they differ, the 2026 notice wins.",
-   "sources": [
-    "https://opeka.gov.gr/oikogeneia/epidoma-paidiou-a21/",
-    "https://opeka.gov.gr/katavoli-tis-sympliromatikis-pliromis-epidomatos-paidioy-a21-ypovoli-neon-aitiseon/"
-   ],
-   "required": [
+   "items": [
     {
      "el": "Έγκυρος ΑΜΚΑ για κάθε μέλος της οικογένειας που δηλώνεται",
-     "en": "A valid ΑΜΚΑ (social security number) for every family member listed"
+     "en": "A valid ΑΜΚΑ for every family member listed",
+     "class": "mandatory",
+     "evidence": {
+      "url": "https://opeka.gov.gr/oikogeneia/epidoma-paidiou-a21/",
+      "location": "Programme page, section on application (page modified 23/2/2024)",
+      "read_on": "2026-10-17"
+     }
     },
     {
-     "el": "IBAN λογαριασμού για την πληρωμή",
-     "en": "IBAN of the account for payment"
+     "el": "IBAN λογαριασμού για την πληρωμή, συμπληρώνεται από τον αιτούντα",
+     "en": "IBAN of the payment account, entered by the applicant",
+     "class": "mandatory",
+     "evidence": {
+      "url": "https://opeka.gov.gr/oikogeneia/epidoma-paidiou-a21/",
+      "location": "Programme page, application section",
+      "read_on": "2026-10-17"
+     }
+    },
+    {
+     "el": "Για κάθε παιδί στην υποχρεωτική εκπαίδευση: σχολική μονάδα, τάξη και Αριθμός Μητρώου μαθητή στην αίτηση",
+     "en": "For each child in compulsory education: school, class and pupil registry number on the form",
+     "class": "conditional",
+     "evidence": {
+      "url": "https://opeka.gov.gr/katavoli-tis-sympliromatikis-pliromis-epidomatos-paidioy-a21-ypovoli-neon-aitiseon/",
+      "location": "Notice 8/10/2026, conditions paragraph",
+      "read_on": "2026-10-17"
+     }
+    },
+    {
+     "el": "Φοιτητές: ακαδημαϊκή ταυτότητα σε ισχύ· μετά από μετεγγραφή, ο προηγούμενος αριθμός ή βεβαίωση πρώτης εγγραφής",
+     "en": "Students: a valid academic ID; after a transfer, the previous number or a first-enrolment certificate",
+     "class": "conditional",
+     "evidence": {
+      "url": "https://opeka.gov.gr/oikogeneia/epidoma-paidiou-a21/",
+      "location": "Programme page, documents paragraph",
+      "read_on": "2026-10-17"
+     }
+    },
+    {
+     "el": "Γονείς σε διάσταση που διεκδικούν και οι δύο το επίδομα: δικαστική απόφαση, συμβολαιογραφική πράξη, πρακτικό διαμεσολάβησης ή συναίνεση του άλλου γονέα",
+     "en": "Separated parents who both claim: court decision, notarial deed, mediation record or the other parent's consent",
+     "class": "conditional",
+     "evidence": {
+      "url": "https://opeka.gov.gr/oikogeneia/epidoma-paidiou-a21/",
+      "location": "Programme page, documents paragraph",
+      "read_on": "2026-10-17"
+     }
+    },
+    {
+     "el": "Ομογενείς και αλλοδαποί: άδεια διαμονής σε ισχύ, ανέβασμα μόνο αν δεν επαληθεύεται ηλεκτρονικά",
+     "en": "Overseas Greeks and foreign nationals: valid residence permit, uploaded only if it cannot be checked electronically",
+     "class": "on_request",
+     "evidence": {
+      "url": "https://opeka.gov.gr/oikogeneia/epidoma-paidiou-a21/",
+      "location": "Programme page, documents paragraph",
+      "read_on": "2026-10-17"
+     }
+    },
+    {
+     "el": "Παιδιά 19+ στη δευτεροβάθμια: Αριθμός Μητρώου· βεβαίωση σπουδών αν δεν επαληθεύεται",
+     "en": "Children 19+ in secondary school: registry number; certificate of studies if it cannot be checked",
+     "class": "on_request",
+     "evidence": {
+      "url": "https://opeka.gov.gr/oikogeneia/epidoma-paidiou-a21/",
+      "location": "Programme page, documents paragraph (mentions a 2024 certificate — year to re-check)",
+      "read_on": "2026-10-17"
+     }
+    },
+    {
+     "el": "Άνω των 18 χωρίς ακαδημαϊκή ταυτότητα (π.χ. ΙΕΚ): βεβαίωση σπουδών τρέχοντος έτους, νομίμως μεταφρασμένη αν είναι ξενόγλωσση",
+     "en": "Over 18 without academic ID (e.g. IEK): current-year certificate of studies, legally translated if foreign",
+     "class": "on_request",
+     "evidence": {
+      "url": "https://opeka.gov.gr/oikogeneia/epidoma-paidiou-a21/",
+      "location": "Programme page, documents paragraph",
+      "read_on": "2026-10-17"
+     }
+    },
+    {
+     "el": "Παιδιά στην υποχρεωτική εκπαίδευση: δικαιολογητικό φοίτησης, μόνο αν τα στοιχεία του μαθητή δεν διασταυρώνονται",
+     "en": "Children in compulsory education: attendance document, only if the pupil's details cannot be cross-checked",
+     "class": "on_request",
+     "evidence": {
+      "url": "https://opeka.gov.gr/katavoli-tis-sympliromatikis-pliromis-epidomatos-paidioy-a21-ypovoli-neon-aitiseon/",
+      "location": "Notice 8/10/2026, conditions paragraph",
+      "read_on": "2026-10-17"
+     }
     }
    ],
-   "conditional": [
+   "prefilled": {
+    "el": "Προσωπικά στοιχεία, σύνθεση οικογένειας και εισοδήματα προσυμπληρώνονται.",
+    "en": "Personal details, family composition and incomes are pre-filled.",
+    "evidence": {
+     "url": "https://opeka.gov.gr/oikogeneia/epidoma-paidiou-a21/",
+     "location": "Programme page, application section",
+     "read_on": "2026-10-17"
+    }
+   },
+   "open_questions": [
+    "Programme page last modified 23/2/2024 and mentions a 2024 study certificate; the 2026 notice is newer and wins where they differ.",
+    "Verbatim quotes per item still to capture (the reading tool limits quote length)."
+   ]
+  },
+  "art5c": {
+   "status": "found",
+   "items": [
     {
-     "el": "Φοιτητές: ακαδημαϊκή ταυτότητα (πάσο) σε ισχύ· μετά από μετεγγραφή, ο προηγούμενος αριθμός ή βεβαίωση πρώτης εγγραφής",
-     "en": "Students: a valid academic ID; after a transfer, the previous number or a first-enrolment certificate"
+     "el": "Υπεύθυνη δήλωση παραμονής στην Ελλάδα τουλάχιστον δύο έτη",
+     "en": "Sworn declaration of staying in Greece for at least two years",
+     "class": "mandatory",
+     "evidence": {
+      "url": "https://aade.gr/sites/default/files/2021-04/a_1087_2021fek.pdf",
+      "location": "Decision Α.1087/2021, art. 3 para. 6",
+      "read_on": "2026-10-17"
+     }
     },
     {
-     "el": "Γονείς σε διάσταση ή διαζευγμένοι: δικαστική απόφαση, ιδιωτικό συμφωνητικό, συμβολαιογραφική πράξη ή πρακτικό διαμεσολάβησης για την επιμέλεια, ή συναίνεση του άλλου γονέα",
-     "en": "Separated or divorced parents: court decision, private agreement, notarial deed or mediation record on custody, or the other parent's consent"
+     "el": "Μισθωτοί: απόδειξη απασχόλησης (π.χ. σύμβαση εργασίας, αναγγελία πρόσληψης· για μέλη ΔΣ δημοσίευση ΓΕΜΗ)",
+     "en": "Employees: proof of employment (e.g. contract, hiring notice; board members: GEMI publication)",
+     "class": "conditional",
+     "evidence": {
+      "url": "https://aade.gr/sites/default/files/2021-04/a_1087_2021fek.pdf",
+      "location": "art. 3 para. 5",
+      "read_on": "2026-10-17"
+     }
+    },
+    {
+     "el": "Μισθωτοί: υπεύθυνη δήλωση του εργοδότη ότι πρόκειται για νέα θέση εργασίας",
+     "en": "Employees: employer's sworn declaration that the post is new",
+     "class": "conditional",
+     "evidence": {
+      "url": "https://aade.gr/sites/default/files/2021-04/a_1087_2021fek.pdf",
+      "location": "art. 3 para. 7",
+      "read_on": "2026-10-17"
+     }
+    },
+    {
+     "el": "Ελεύθεροι επαγγελματίες: δήλωση έναρξης εργασιών στη ΔΟΥ",
+     "en": "Self-employed: business commencement declaration at the tax office",
+     "class": "conditional",
+     "evidence": {
+      "url": "https://aade.gr/sites/default/files/2021-04/a_1087_2021fek.pdf",
+      "location": "art. 3 para. 8",
+      "read_on": "2026-10-17"
+     }
+    },
+    {
+     "el": "Βεβαίωση φορολογικής κατοικίας της αλλοδαπής για κάθε έτος που δεν προκύπτει από τα στοιχεία της ΑΑΔΕ (ή εκκαθαριστικό / άλλη απόδειξη μόνιμης εγκατάστασης)",
+     "en": "Foreign tax-residence certificate for each year not shown in AADE records (or assessment / other proof of permanent residence)",
+     "class": "on_request",
+     "evidence": {
+      "url": "https://aade.gr/sites/default/files/2021-04/a_1087_2021fek.pdf",
+      "location": "art. 3 para. 2",
+      "read_on": "2026-10-17"
+     }
+    },
+    {
+     "el": "Αλλοδαπά έγγραφα με επισημείωση ή προξενική θεώρηση και μετάφραση, με εξαιρέσεις",
+     "en": "Foreign documents with apostille or consular certification and translation, with exceptions",
+     "class": "on_request",
+     "evidence": {
+      "url": "https://aade.gr/sites/default/files/2021-04/a_1087_2021fek.pdf",
+      "location": "art. 3 para. 3",
+      "read_on": "2026-10-17"
+     }
     }
    ],
-   "on_request": [
-    {
-     "el": "Αλλοδαποί και ομογενείς: άδεια διαμονής σε ισχύ, μόνο αν δεν επαληθεύεται ηλεκτρονικά",
-     "en": "Foreign nationals and overseas Greeks: a valid residence permit, only if it cannot be checked electronically"
-    },
-    {
-     "el": "Παιδιά 19+ στη δευτεροβάθμια ή άνω των 18 χωρίς ακαδημαϊκή ταυτότητα: βεβαίωση σπουδών, αν δεν επαληθεύεται (ξενόγλωσσες νομίμως μεταφρασμένες)",
-     "en": "Children 19+ in secondary school, or over 18 without an academic ID: a certificate of studies if it cannot be checked (foreign ones legally translated)"
-    },
-    {
-     "el": "Παιδιά στην υποχρεωτική εκπαίδευση: το σχετικό δικαιολογητικό φοίτησης, αν τα στοιχεία του μαθητή δεν διασταυρώνονται (2026)",
-     "en": "Children in compulsory education: the relevant attendance document, if the pupil's details cannot be cross-checked (2026)"
+   "timing": {
+    "el": "Η αίτηση γίνεται δεκτή και χωρίς δικαιολογητικά· αν λείπουν, δίνονται 60 ημέρες.",
+    "en": "The application is accepted without documents; if any are missing, 60 days are given.",
+    "evidence": {
+     "url": "https://aade.gr/sites/default/files/2021-04/a_1087_2021fek.pdf",
+     "location": "art. 4 para. 4",
+     "read_on": "2026-10-17"
     }
-   ],
-   "entered_in_form": [
-    {
-     "el": "Σχολική μονάδα, τάξη και Αριθμός Μητρώου για κάθε παιδί στην υποχρεωτική εκπαίδευση (2026)",
-     "en": "School, class and pupil registry number for each child in compulsory education (2026)"
-    }
+   },
+   "open_questions": [
+    "Original 2021 decision; later amendments (incl. Α.1096/2026) not yet checked for changes to this list."
    ]
   },
   "unemployment": {
@@ -84,7 +223,8 @@
      "en": "Pilot new benefit: proof of single-parent status, if it applies"
     }
    ],
-   "note": "Single-parent document from ΔΥΠΑ's pilot launch notice (28/3/2025)."
+   "note": "Single-parent document from ΔΥΠΑ's pilot launch notice (28/3/2025).",
+   "note_17oct": "Carried over from 16 Oct unchanged; not yet re-classed item by item."
   },
   "discovereu": {
    "status": "found",
@@ -97,50 +237,8 @@
     }
    ],
    "only_if": [],
-   "note": "No further documents are listed for selected applicants. A quiz is part of the application (a step, not a document)."
-  },
-  "art5c": {
-   "status": "found",
-   "read_on": "2026-10-17",
-   "also": "https://www.aade.gr/en/psifiakes-ypiresies/eisodima/ypoboli-aitisis-ypagogis-se-eidiko-tropo-forologisis-arthro-5g-toy-kfe",
-   "note": "Original decision (ΦΕΚ Β' 1691/26.4.2021). Later amendments (incl. Α.1096/2026) not yet checked for changes to the document list — check before publishing.",
-   "sources": [
-    "https://aade.gr/sites/default/files/2021-04/a_1087_2021fek.pdf"
-   ],
-   "required": [
-    {
-     "el": "Υπεύθυνη δήλωση ότι θα παραμείνετε στην Ελλάδα τουλάχιστον δύο έτη (Α.1087/2021 άρθ. 3 παρ. 6)",
-     "en": "Sworn declaration that you will stay in Greece for at least two years (Α.1087/2021 art. 3(6))"
-    }
-   ],
-   "conditional": [
-    {
-     "el": "Μισθωτοί: απόδειξη απασχόλησης, π.χ. σύμβαση εργασίας ή αναγγελία πρόσληψης· για μέλη ΔΣ δημοσίευση στο ΓΕΜΗ (παρ. 5)",
-     "en": "Employees: proof of employment, e.g. employment contract or hiring notice; board members: GEMI publication (para. 5)"
-    },
-    {
-     "el": "Μισθωτοί: υπεύθυνη δήλωση του εργοδότη ότι πρόκειται για νέα θέση εργασίας (παρ. 7)",
-     "en": "Employees: employer's sworn declaration that the post is new (para. 7)"
-    },
-    {
-     "el": "Ελεύθεροι επαγγελματίες: δήλωση έναρξης εργασιών στη ΔΟΥ (παρ. 8)",
-     "en": "Self-employed: business commencement declaration at the tax office (para. 8)"
-    }
-   ],
-   "on_request": [
-    {
-     "el": "Βεβαίωση φορολογικής κατοικίας της αλλοδαπής για κάθε έτος που δεν προκύπτει από τα στοιχεία της ΑΑΔΕ· εναλλακτικά εκκαθαριστικό ή άλλη απόδειξη μόνιμης εγκατάστασης (παρ. 2)",
-     "en": "Foreign tax-residence certificate for each year not shown in AADE's records; otherwise a tax assessment or other proof of permanent residence abroad (para. 2)"
-    },
-    {
-     "el": "Αλλοδαπά έγγραφα με επισημείωση (apostille) ή προξενική θεώρηση και μετάφραση, με εξαιρέσεις (παρ. 3)",
-     "en": "Foreign documents with apostille or consular certification and translation, with exceptions (para. 3)"
-    }
-   ],
-   "timing": {
-    "el": "Η αίτηση γίνεται δεκτή και χωρίς δικαιολογητικά· αν λείπουν, δίνεται προθεσμία 60 ημερών (άρθ. 4 παρ. 4)",
-    "en": "The application is accepted without documents; if any are missing, 60 days are given (art. 4(4))"
-   }
+   "note": "No further documents are listed for selected applicants. A quiz is part of the application (a step, not a document).",
+   "note_17oct": "Carried over from 16 Oct unchanged; not yet re-classed item by item."
   },
   "art5a": {
    "status": "partly_published",
@@ -153,7 +251,8 @@
     }
    ],
    "only_if": [],
-   "note": "Source is a 2023 guide; check for later amendments."
+   "note": "Source is a 2023 guide; check for later amendments.",
+   "note_17oct": "Carried over from 16 Oct unchanged; not yet re-classed item by item."
   },
   "art5b": {
    "status": "not_published",
@@ -161,7 +260,8 @@
    "source": "https://www.aade.gr/sites/default/files/2023-09/forolologika_kinitra_pros_newn_forol_kat_kfe_new_EL.pdf",
    "always": [],
    "only_if": [],
-   "note": "The 2023 guide lists no documents for Article 5B."
+   "note": "The 2023 guide lists no documents for Article 5B.",
+   "note_17oct": "Carried over from 16 Oct unchanged; not yet re-classed item by item."
   },
   "spiti2": {
    "status": "not_published",
@@ -169,7 +269,8 @@
    "source": "https://stegasi.gov.gr/programs/spiti-mou-ii/",
    "always": [],
    "only_if": [],
-   "note": "Documents are handled by the lending bank (hdb.gr/spiti-ii FAQ); programme closed 31 May 2026 — low priority."
+   "note": "Documents are handled by the lending bank (hdb.gr/spiti-ii FAQ); programme closed 31 May 2026 — low priority.",
+   "note_17oct": "Carried over from 16 Oct unchanged; not yet re-classed item by item."
   },
   "studenthousing": {
    "status": "not_published",
@@ -182,8 +283,8 @@
     "el": "Πριν από την αίτηση πρέπει να έχει υποβληθεί φορολογική δήλωση· σύνδεση με κωδικούς TAXISnet.",
     "en": "A tax return must have been filed before applying; log in with TAXISnet credentials."
    },
-   "note": "Neither the Ministry notices nor the conditions page list documents; the circular is the next source to read."
+   "note": "Neither the Ministry notices nor the conditions page list documents; the circular is the next source to read.",
+   "note_17oct": "Carried over from 16 Oct unchanged; not yet re-classed item by item."
   }
- },
- "supersedes": "data/document-lists-2026-10-16.json (kept unchanged)"
+ }
 }

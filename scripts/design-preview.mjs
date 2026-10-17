@@ -11,12 +11,12 @@ const shots = [];
 const errors = [];
 
 async function shoot(page, name, path, opts = {}) {
-  const res = await page.goto(BASE + path, { waitUntil: "networkidle" });
+  const res = path === null ? null : await page.goto(BASE + path, { waitUntil: "networkidle" });
   if (opts.before) await opts.before(page);
   const file = `${name}.jpg`;
   await page.screenshot({ path: `${out}/${file}`, fullPage: opts.full !== false, type: "jpeg", quality: 82 });
   const overflow = await page.evaluate(() => document.documentElement.scrollWidth > window.innerWidth + 1);
-  shots.push({ name, path, file, status: res?.status() ?? 0, overflow });
+  shots.push({ name, path: path ?? page.url().replace(BASE, ""), file, status: res ? res.status() : 200, overflow });
   if (overflow) {
     const culprits = await page.evaluate(() => [...document.querySelectorAll("body *")]
       .filter((el) => el.getBoundingClientRect().right > window.innerWidth + 1 && el.children.length === 0)
@@ -71,9 +71,13 @@ for (const [vp, size] of [["desktop", { width: 1440, height: 900 }], ["phone", {
       await Promise.all([page.waitForURL(/\/profile/), page.click("form button.btn-primary")]);
       await page.check('input[name="personas"][value="employee_jobseeker"]');
       await page.check('input[name="personas"][value="household"]');
+      if (vp === "desktop" && lang === "el") await shoot(page, `${p}-24-onboarding-who`, null).catch(() => {});
+      await page.click('[data-step="interests"]');
       await page.check('input[name="interests"][value="employment"]');
       await page.check('input[name="interests"][value="family"]');
       await page.check('input[name="industries"][value="tourism_hospitality"]');
+      await page.click('[data-step="work"]').catch(() => errors.push("work step missing"));
+      if (lang === "el") await shoot(page, `${p}-25-onboarding-work`, null).catch(() => {});
       await page.selectOption('select[name="employment_status"]', "unemployed").catch(() => errors.push("employment_status select missing"));
       await Promise.all([page.waitForLoadState("networkidle"), page.locator("form button.btn-primary").last().click()]);
       await shoot(page, `${p}-15-profile`, "/profile");

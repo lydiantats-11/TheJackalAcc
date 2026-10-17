@@ -170,8 +170,11 @@ try {
   step("4 register leads to the profile", page.url().includes("/profile"));
   const fields = await page.locator("form input, form select").count();
   report.interactions.push({ check: "profile form fields visible", fields });
+  // step-by-step onboarding: who → interests → work
   await page.check('input[name="personas"][value="employee_jobseeker"]');
+  await page.click('[data-step="interests"]');
   await page.check('input[name="interests"][value="employment"]');
+  await page.click('[data-step="work"]').catch(() => issue("high", "profile", "work step missing after choosing the job-seeker group"));
   await page.selectOption('select[name="employment_status"]', "unemployed").catch(() => issue("high", "profile", "employment status question not found after choosing the job-seeker group"));
   await Promise.all([page.waitForResponse((r) => r.request().method() === "POST"), page.locator("form button.btn-primary").last().click()]);
   await page.waitForTimeout(1500);

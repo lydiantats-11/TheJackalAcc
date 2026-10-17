@@ -1,5 +1,10 @@
 "use client";
 /**
+ * «Για Εμένα» onboarding (17 Oct 2026): the same adaptive profile form, shown one step at a time —
+ * who you are → interests & industries → only the question groups that apply → done. Every step can be skipped;
+ * "Save & continue" saves the whole form, so nothing typed is lost, and any step can be reopened from the step list.
+ * Eligibility is unchanged: these answers feed the same deterministic engine.
+ *
  * Adaptive profile form. The user picks one or more of the five personas and any interests; those open the
  * relevant sections (rules in src/lib/domain/personas.ts). Sections also open when an opportunity asked for one of
  * their answers (?ask=field,...) or when a field is already answered. Hidden sections stay in the form (HTML
@@ -9,7 +14,11 @@
 import { useActionState, useState } from "react";
 import type { FormState } from "@/app/actions";
 import type { MatchProfile } from "@/lib/domain/profile";
-import { INTEREST_IDS, PERSONA_IDS, personasOf, visibleFields, visibleSections, type InterestId, type PersonaId, type Section } from "@/lib/domain/personas";
+import { INTEREST_IDS, PERSONA_IDS, SECTION_FIELDS, personasOf, visibleFields, visibleSections, type InterestId, type PersonaId, type Section } from "@/lib/domain/personas";
+import Link from "next/link";
+import { Icon } from "./icons";
+import { SITE } from "@/lib/site/copy";
+import type { Locale } from "@/lib/i18n/dictionaries";
 import { INDUSTRY_CHOICES, INDUSTRY_SPECIAL, type IndustryChoice } from "@/lib/domain/industries";
 import type { Dictionary } from "@/lib/i18n/dictionaries";
 
@@ -67,7 +76,7 @@ function Chips<K extends string>({ name, ids, labels, selected, onToggle }: {
   name: string; ids: readonly K[]; labels: Record<string, string>; selected: K[]; onToggle: (id: K, on: boolean) => void;
 }) {
   return (
-    <div className="checks">
+    <div className="checks chip-checks">
       {ids.map((id) => (
         <label key={id}>
           <input type="checkbox" name={name} value={id} checked={selected.includes(id)} onChange={(e) => onToggle(id, e.target.checked)} /> {labels[id]}
@@ -79,7 +88,15 @@ function Chips<K extends string>({ name, ids, labels, selected, onToggle }: {
 
 const ring = { outline: "2px solid var(--focus)", outlineOffset: 4, borderRadius: 6 } as const;
 
-export function ProfileForm({ action, profile, t, ask }: { action: (s: FormState, f: FormData) => Promise<FormState>; profile: MatchProfile; t: T; ask: string[] }) {
+/** Question steps in the order they are asked (only the ones that apply to the person are shown). */
+const QUESTION_STEPS = ["person", "work", "entrepreneurship", "business", "household", "international", "location", "project"] as const satisfies readonly Section[];
+type StepId = "who" | "interests" | (typeof QUESTION_STEPS)[number] | "done";
+
+export function ProfileForm({ action, profile, t, ask, locale, initialStep }: {
+  action: (s: FormState, f: FormData) => Promise<FormState>; profile: MatchProfile; t: T; ask: string[];
+  locale: Locale; initialStep?: string;
+}) {
+  const o = SITE[locale].onboarding;
   const [state, formAction, pending] = useActionState(action, undefined);
   const [personas, setPersonas] = useState<PersonaId[]>(personasOf(profile));
   const [interests, setInterests] = useState<InterestId[]>(profile.interests ?? []);
@@ -125,34 +142,66 @@ export function ProfileForm({ action, profile, t, ask }: { action: (s: FormState
   const countriesWith = (saved: string | null | undefined): Record<string, string> =>
     saved && /^[A-Z]{2}$/.test(saved) && !(saved in t.opt.country) ? { ...t.opt.country, [saved]: saved } : t.opt.country;
 
+  // ── steps ──
+  const stepIds: StepId[] = ["who", "interests", ...QUESTION_STEPS.filter((x) => x === "location" || show(x)), "done"];
+  const askedStep = QUESTION_STEPS.find((x) => (SECTION_FIELDS[x] as string[]).some((f) => ask.includes(f)));
+  const [step, setStep] = useState<StepId>(() => {
+    const wanted = (initialStep ?? askedStep ?? "who") as StepId;
+    return wanted;
+  });
+  const idx = Math.max(0, stepIds.indexOf(step));
+  const cur = stepIds[idx]!;
+  const go = (d: number) => { setStep(stepIds[Math.min(stepIds.length - 1, Math.max(0, idx + d))]!); if (typeof window !== "undefined") window.scrollTo({ top: 0, behavior: "smooth" }); };
+  const stepTitle = (id: StepId) => (id === "who" ? o.who.t : id === "interests" ? o.interests.t : id === "done" ? o.done.t : legend(id));
+  const at = (id: StepId) => cur === id;
+  const intro = (id: StepId) => <p className="step-why">{id === "who" ? o.who.d : id === "interests" ? o.interests.d : id === "done" ? o.done.d : o.why[id as keyof typeof o.why]}</p>;
+
   return (
-    <form action={formAction} className="stack">
+    <form action={formAction} className="stack onboarding">
+      <div className="onb-head">
+        <div className="row" style={{ justifyContent: "space-between" }}>
+          <span className="xs muted">{o.progress(idx + 1, stepIds.length)}</span>
+          <span className="xs muted">{o.savedNote}</span>
+        </div>
+        <div className="meter" aria-hidden="true"><span style={{ width: `${Math.round(((idx + 1) / stepIds.length) * 100)}%` }} /></div>
+        <ol className="stepper" aria-label={o.stepsLabel}>
+          {stepIds.map((id, i) => (
+            <li key={id}>
+              <button type="button" data-step={id} aria-current={id === cur ? "step" : undefined} className={i < idx ? "done" : undefined} onClick={() => setStep(id)}>
+                <span className="n" aria-hidden="true">{i < idx ? "✓" : i + 1}</span><span className="l">{stepTitle(id)}</span>
+              </button>
+            </li>
+          ))}
+        </ol>
+      </div>
+      <h2 className="onb-title">{stepTitle(cur)}</h2>
+      {intro(cur)}
+
       {/* Checkbox groups send nothing when empty; declare them so an empty choice is saved and nothing else is erased. */}
       {["personas", "interests", "industries", "region_codes", "sectors"].map((k) => <input key={k} type="hidden" name="__present" value={k} />)}
       {state?.ok && <div className="notice info" role="status">{t.profile.saved}</div>}
       {state?.error && <div className="notice bad" role="alert">{t.auth.errors.invalid_input}</div>}
 
-      <fieldset><legend>{t.question.personas}</legend>
-        <p className="small muted" style={{ marginTop: 0 }}>{t.why.personas}</p>
+      <fieldset hidden={!at("who")}><legend>{t.question.personas}</legend>
         <Chips name="personas" ids={PERSONA_IDS} labels={t.opt.personas} selected={personas} onToggle={toggle(setPersonas)} />
       </fieldset>
 
-      <fieldset><legend>{t.question.interests}</legend>
+      <fieldset hidden={!at("interests")}><legend>{t.question.interests}</legend>
         <Chips name="interests" ids={INTEREST_IDS} labels={t.opt.interests} selected={interests} onToggle={toggle(setInterests)} />
       </fieldset>
 
-      <fieldset><legend>{t.question.industries}</legend>
+      <fieldset hidden={!at("interests")}><legend>{t.question.industries}</legend>
         <p className="small muted" style={{ marginTop: 0 }}>{t.why.industries}</p>
         <Chips name="industries" ids={INDUSTRY_CHOICES} labels={t.opt.industries} selected={industries} onToggle={toggleIndustry} />
       </fieldset>
 
-      <fieldset><legend>{legend("applying_as")}</legend>
+      <fieldset hidden={!at("who")}><legend>{legend("applying_as")}</legend>
         <div className="formgrid">
           <Select name="persona" label={t.question.persona} value={profile.persona} options={t.opt.persona} t={t} extra={[]} hint={t.why.applyingAs} />
         </div>
       </fieldset>
 
-      <fieldset hidden={!show("person")}><legend>{legend("person")}</legend>
+      <fieldset hidden={!show("person") || !at("person")}><legend className="visually-hidden">{legend("person")}</legend>
         <div className="formgrid">
           <Select name="age_range" label={t.question.age_range} value={profile.age_range} options={t.opt.age_range} t={t} extra={["prefer_not"]} highlight={asked("age_range")} />
           {has("birth_year") && (
@@ -165,7 +214,7 @@ export function ProfileForm({ action, profile, t, ask }: { action: (s: FormState
         </div>
       </fieldset>
 
-      <fieldset hidden={!show("work")}><legend>{legend("work")}</legend>
+      <fieldset hidden={!show("work") || !at("work")}><legend className="visually-hidden">{legend("work")}</legend>
         <div className="formgrid">
           <Select name="education_level" label={t.question.education_level} value={profile.education_level} options={t.opt.education_level} t={t} highlight={asked("education_level")} />
           <Select name="employment_status" label={t.question.employment_status} value={profile.employment_status} options={t.opt.employment_status} t={t} highlight={asked("employment_status")} onChange={setEmployment} />
@@ -181,7 +230,7 @@ export function ProfileForm({ action, profile, t, ask }: { action: (s: FormState
         </div>
       </fieldset>
 
-      <fieldset hidden={!show("entrepreneurship")}><legend>{legend("entrepreneurship")}</legend>
+      <fieldset hidden={!show("entrepreneurship") || !at("entrepreneurship")}><legend className="visually-hidden">{legend("entrepreneurship")}</legend>
         <div className="formgrid">
           <Select name="business_stage" label={t.question.business_stage} value={profile.business_stage} options={t.opt.business_stage} t={t} extra={["not_sure"]} onChange={setStage} highlight={asked("business_stage")} />
           <Select name="own_contribution_range" label={t.question.own_contribution_range} value={profile.own_contribution_range} options={t.opt.own_contribution_range} t={t} hint={t.why.financial} highlight={asked("own_contribution_range")} />
@@ -193,7 +242,7 @@ export function ProfileForm({ action, profile, t, ask }: { action: (s: FormState
         </div>
       </fieldset>
 
-      <fieldset hidden={!show("business")}><legend>{legend("business")}</legend>
+      <fieldset hidden={!show("business") || !at("business")}><legend className="visually-hidden">{legend("business")}</legend>
         <p className="small muted" style={{ marginTop: 0 }}>{t.why.business}</p>
         <div className="formgrid">
           <Select name="legal_form" label={t.question.legal_form} value={profile.legal_form} options={t.opt.legal_form} t={t} extra={["not_sure"]} highlight={asked("legal_form")} />
@@ -213,7 +262,7 @@ export function ProfileForm({ action, profile, t, ask }: { action: (s: FormState
         </div>
       </fieldset>
 
-      <fieldset hidden={!show("household")}><legend>{legend("household")}</legend>
+      <fieldset hidden={!show("household") || !at("household")}><legend className="visually-hidden">{legend("household")}</legend>
         <p className="small muted" style={{ marginTop: 0 }}>{t.why.household}</p>
         <div className="formgrid">
           <Select name="housing_status" label={t.question.housing_status} value={profile.housing_status} options={t.opt.housing_status} t={t} onChange={setHousing} highlight={asked("housing_status")} />
@@ -227,7 +276,7 @@ export function ProfileForm({ action, profile, t, ask }: { action: (s: FormState
         </div>
       </fieldset>
 
-      <fieldset hidden={!show("international")}><legend>{legend("international")}</legend>
+      <fieldset hidden={!show("international") || !at("international")}><legend className="visually-hidden">{legend("international")}</legend>
         <p className="small muted" style={{ marginTop: 0 }}>{t.why.abroad}</p>
         <div className="formgrid">
           <Select name="country_of_residence" label={t.question.country_of_residence} value={profile.country_of_residence} options={countriesWith(profile.country_of_residence)} t={t} onChange={setResidenceCountry} highlight={asked("country_of_residence")} />
@@ -255,7 +304,7 @@ export function ProfileForm({ action, profile, t, ask }: { action: (s: FormState
         </div>
       </fieldset>
 
-      <fieldset><legend>{legend("location")}</legend>
+      <fieldset hidden={!at("location")}><legend className="visually-hidden">{legend("location")}</legend>
         <div className="checks">
           <label><input type="checkbox" name="region_codes" value="GR" defaultChecked={regions.includes("GR")} /> {t.profile.anyRegion}</label>
           {NUTS2_GR.map(([c, n]) => <label key={c}><input type="checkbox" name="region_codes" value={c} defaultChecked={regions.includes(c)} /> {n}</label>)}
@@ -272,7 +321,7 @@ export function ProfileForm({ action, profile, t, ask }: { action: (s: FormState
         </div>
       </fieldset>
 
-      <fieldset hidden={!show("project")}><legend>{legend("project")}</legend>
+      <fieldset hidden={!show("project") || !at("project")}><legend className="visually-hidden">{legend("project")}</legend>
         <div className="formgrid">
           <Amount name="project_budget_eur" label={t.question.project_budget_eur} value={profile.project_budget_eur} t={t} hint={t.why.financial} highlight={asked("project_budget_eur")} />
           <div style={asked("planned_project_start") ? ring : undefined}>
@@ -282,7 +331,20 @@ export function ProfileForm({ action, profile, t, ask }: { action: (s: FormState
           <Amount name="de_minimis_received_3y_eur" label={t.question.de_minimis_received_3y_eur} value={profile.de_minimis_received_3y_eur} t={t} hint={t.why.financial} highlight={asked("de_minimis_received_3y_eur")} />
         </div>
       </fieldset>
-      <div><button className="btn btn-primary" disabled={pending}>{t.profile.save}</button></div>
+      <div hidden={!at("done")} className="card flat onb-done">
+        <ul className="checklist small">
+          <li><Icon name="check" size={16} /><span>{o.done.groups(personas.length)}</span></li>
+          <li><Icon name="check" size={16} /><span>{o.done.interests(interests.length + industries.length)}</span></li>
+          <li><Icon name="info" size={16} /><span>{o.done.edit}</span></li>
+        </ul>
+        <Link href="/for-me" className="btn btn-dark">{o.done.cta} →</Link>
+      </div>
+      <div className="onb-foot">
+        {idx > 0 && <button type="button" className="btn btn-ghost" onClick={() => go(-1)}>{o.back}</button>}
+        <span style={{ flex: 1 }} />
+        {cur !== "done" && <button type="button" className="btn btn-ghost" data-skip onClick={() => go(1)}>{o.skip}</button>}
+        <button className="btn btn-primary" disabled={pending} onClick={() => { if (cur !== "done") setTimeout(() => go(1), 0); }}>{cur === "done" ? o.save : o.next}</button>
+      </div>
     </form>
   );
 }

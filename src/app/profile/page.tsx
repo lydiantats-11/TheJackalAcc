@@ -11,7 +11,7 @@ import { deleteAccountAction, saveProfileAction } from "../actions";
 
 export const generateMetadata = titled(({ s }) => s.nav.profile);
 
-export default async function ProfilePage({ searchParams }: { searchParams: Promise<{ delete?: string; ask?: string; welcome?: string }> }) {
+export default async function ProfilePage({ searchParams }: { searchParams: Promise<{ delete?: string; ask?: string; welcome?: string; step?: string }> }) {
   const user = await requireUser();
   const { t, locale } = await getDict();
   const s = SITE[locale];
@@ -26,7 +26,7 @@ export default async function ProfilePage({ searchParams }: { searchParams: Prom
       </div>
       <div className="with-aside-r">
         <div>
-          <ProfileForm action={saveProfileAction} profile={profile} t={t} ask={(sp.ask ?? "").split(",").filter(Boolean).slice(0, 20)} />
+          <ProfileForm action={saveProfileAction} profile={profile} t={t} locale={locale} initialStep={sp.step} ask={(sp.ask ?? "").split(",").filter(Boolean).slice(0, 20)} />
         </div>
         <aside className="stack sticky">
           <div className="card tint">

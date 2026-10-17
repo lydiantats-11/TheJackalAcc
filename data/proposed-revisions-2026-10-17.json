@@ -1,0 +1,117 @@
+{
+ "created_on": "2026-10-17",
+ "status_rule": "Nothing here changes the approved dataset. Each item stays pending_approval. Verification dates are recorded per field; fields not re-checked keep their previous date. History is preserved by writing a new version of the checked file.",
+ "revisions": [
+  {
+   "id": "a21-field-verification-17oct",
+   "record": "a21",
+   "change": "field_verification",
+   "status": "pending_approval",
+   "fields": [
+    {
+     "field": "application_status (window, closes 13/11/2026 18:00)",
+     "result": "unchanged",
+     "verified_on": "2026-10-17",
+     "evidence": {
+      "url": "https://opeka.gov.gr/katavoli-tis-sympliromatikis-pliromis-epidomatos-paidioy-a21-ypovoli-neon-aitiseon/",
+      "read_on": "2026-10-17"
+     }
+    },
+    {
+     "field": "application_status.opens_at (platform reopened 5/10/2026)",
+     "result": "unchanged",
+     "verified_on": "2026-10-17",
+     "evidence": {
+      "url": "https://opeka.gov.gr/feed/",
+      "read_on": "2026-10-17"
+     }
+    },
+    {
+     "field": "funding_or_benefit (70/42/28 €, 140/84/56 €)",
+     "result": "unchanged",
+     "verified_on": "2026-10-17",
+     "evidence": {
+      "url": "https://opeka.gov.gr/oikogeneia/epidoma-paidiou-a21/",
+      "read_on": "2026-10-17"
+     }
+    },
+    {
+     "field": "application_steps (idika.gr / opeka.gov.gr, TAXISnet)",
+     "result": "unchanged",
+     "verified_on": "2026-10-17",
+     "evidence": {
+      "url": "https://opeka.gov.gr/katavoli-tis-sympliromatikis-pliromis-epidomatos-paidioy-a21-ypovoli-neon-aitiseon/",
+      "read_on": "2026-10-17"
+     }
+    }
+   ],
+   "not_rechecked": [
+    "eligibility_rules[children]",
+    "eligibility_rules[residence] (checked 16 Oct, see revision a21-residence-groups)",
+    "eligibility_rules[income category]: limits found only on a secondary site"
+   ],
+   "reason": "Owner approved recording 17 Oct evidence per field (17 Oct, 15:49). Record-level last_verified stays 14 Oct until approved; the site keeps showing «Χρειάζεται νέος έλεγχος» meanwhile."
+  },
+  {
+   "id": "a21-school-attendance",
+   "record": "a21",
+   "field": "eligibility_rules (new informational rule)",
+   "change": "add",
+   "status": "pending_approval",
+   "proposed": {
+    "el": "Για παιδιά στην υποχρεωτική εκπαίδευση (προσχολική έως γυμνάσιο) απαιτείται η προβλεπόμενη φοίτηση· στην αίτηση δηλώνονται σχολική μονάδα, τάξη και Αριθμός Μητρώου.",
+    "en": "For children in compulsory education (pre-school to lower secondary), the required attendance applies; the school, class and pupil registry number are entered on the form."
+   },
+   "evidence": [
+    {
+     "url": "https://opeka.gov.gr/katavoli-tis-sympliromatikis-pliromis-epidomatos-paidioy-a21-ypovoli-neon-aitiseon/",
+     "location": "Notice 8/10/2026",
+     "read_on": "2026-10-17",
+     "evidence_state": "paraphrased: verbatim quote still to capture"
+    }
+   ],
+   "db_kind": "informational",
+   "reason": "New 2026 condition in ΟΠΕΚΑ's notice; recorded for review, not evaluated by the engine."
+  },
+  {
+   "id": "a21-november-payment",
+   "record": "a21",
+   "field": "application_status.milestones",
+   "change": "add",
+   "status": "pending_approval",
+   "proposed": {
+    "el": "Αιτήσεις υπό έλεγχο (4.312) εντάσσονται στην πληρωμή Νοεμβρίου 2026, αν εγκριθούν.",
+    "en": "Applications under review (4,312) go into the November 2026 payment if approved."
+   },
+   "evidence": [
+    {
+     "url": "https://opeka.gov.gr/katavoli-tis-sympliromatikis-pliromis-epidomatos-paidioy-a21-ypovoli-neon-aitiseon/",
+     "read_on": "2026-10-17"
+    }
+   ],
+   "reason": "Stated in the 8/10/2026 notice; no date given."
+  },
+  {
+   "id": "unemployment-amounts-presentation",
+   "record": "unemployment",
+   "relates_to": "unemployment-amounts (16 Oct)",
+   "change": "presentation",
+   "status": "pending_approval",
+   "proposed": {
+    "el": "Εμφάνιση μόνο του ποσού της ελληνικής σελίδας (565 €) με σημείωση ότι η αγγλική σελίδα δείχνει παλαιότερα ποσά (479 €, ημερομίσθιο 2023) και ότι το ποσό επιβεβαιώνεται από τη ΔΥΠΑ.",
+    "en": "Show only the Greek page's amount (€565) with a note that the English page shows older amounts (€479, 2023 daily wage) and that ΔΥΠΑ confirms the amount."
+   },
+   "evidence": [
+    {
+     "url": "https://prosvasis.dypa.gov.gr/anerghia-parokhes-asfalisis-misthotwn",
+     "read_on": "2026-10-17"
+    },
+    {
+     "url": "https://prosvasis.dypa.gov.gr/en/anerghia-parokhes-asfalisis-misthotwn",
+     "read_on": "2026-10-17"
+    }
+   ],
+   "reason": "Investigation docs/research/UNEMPLOYMENT_AMOUNT_DISCREPANCY_2026-10-17.md: same scheme and bands; every English figure = Greek figure / 1.1794 = ratio of the 2026 to 2023 daily wage. Not two valid amounts."
+  }
+ ]
+}

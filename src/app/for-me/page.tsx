@@ -88,14 +88,21 @@ export default async function ForMePage({ searchParams }: { searchParams: Promis
   const missing = ranked.map((r) => r.question);
   const saved = list.filter((x) => savedIds.includes(x.row.id));
 
-  const why = (a: Assessment, x: ListedOpportunity) => {
+  // Relevance (why it is listed for you) and eligibility (what the recorded requirements say) are shown apart.
+  const relevance = (x: ListedOpportunity) => {
     const reasons: string[] = [];
-    if (x.audiences.some((p) => myPersonas.includes(p))) reasons.push(locale === "el" ? "ταιριάζει με την ομάδα σας" : "fits your group");
+    if (x.audiences.some((p) => myPersonas.includes(p))) reasons.push(locale === "el" ? "ταιριάζει με όσα σας περιγράφουν" : "fits the descriptions you chose");
     if (x.categories.some((c) => myCats.has(c))) reasons.push(locale === "el" ? "ταιριάζει με τα ενδιαφέροντά σας" : "matches your interests");
-    const joined = reasons.join(" · ");
-    const head = joined ? `${joined.charAt(0).toUpperCase()}${joined.slice(1)}. ` : "";
-    return head + requirementsLine(a);
+    if (reasons.length === 0) reasons.push(locale === "el" ? "τρέχουσα ευκαιρία για ιδιώτες" : "a current opportunity open to individuals");
+    return reasons.join(" · ");
   };
+  const o = s.onboarding;
+  const answerRows: Array<[string, string, string]> = [
+    [t.question.personas, myPersonas.map((p) => t.opt.personas[p] ?? p).join(", "), "who"],
+    [t.question.interests, [...(profile.interests ?? []).map((i) => (t.opt.interests as Record<string, string>)[i] ?? i), ...(profile.industries ?? []).map((i) => (t.opt.industries as Record<string, string>)[i] ?? i)].join(", "), "interests"],
+    [t.question.employment_status, isAnswered(profile.employment_status) ? ((t.opt.employment_status as Record<string, string>)[String(profile.employment_status)] ?? (t.opt as unknown as Record<string, string>)[String(profile.employment_status)] ?? String(profile.employment_status)) : "", "work"],
+    [t.question.housing_status, isAnswered(profile.housing_status) ? ((t.opt.housing_status as Record<string, string>)[String(profile.housing_status)] ?? (t.opt as unknown as Record<string, string>)[String(profile.housing_status)] ?? String(profile.housing_status)) : "", "household"],
+  ];
   const requirementsLine = (a: Assessment) => {
     const met = a.results.filter((r) => r.state === "satisfied").length;
     const unknown = a.results.filter((r) => r.state === "unknown").length;
@@ -120,6 +127,14 @@ export default async function ForMePage({ searchParams }: { searchParams: Promis
             <div className="kpi">{pct}%</div>
             <div className="meter" aria-hidden="true" style={{ margin: "10px 0 14px" }}><span style={{ width: `${pct}%` }} /></div>
             <Link href="/profile" className="btn btn-ghost btn-sm btn-block">{pct < 100 ? f.completeProfile : f.editProfile}</Link>
+          </div>
+          <div className="card">
+            <div className="kpi-label">{o.yourAnswers}</div>
+            <ul className="answers-list">
+              {answerRows.map(([label, value, st]) => (
+                <li key={label}><span><span className="muted">{label}:</span> {value || <span className="muted">{o.none}</span>}</span><Link href={`/profile?step=${st}`} className="xs">{o.change}</Link></li>
+              ))}
+            </ul>
           </div>
           <div className="card">
             <div className="kpi-label">{f.missing}</div>
@@ -159,7 +174,7 @@ export default async function ForMePage({ searchParams }: { searchParams: Promis
                   <div className="opp-grid">
                     {items.slice(0, PER_GROUP).map(({ x, a }) => (
                       <OpportunityCard key={x.row.id} item={x} t={t} s={s} locale={locale}
-                        extra={<div className="why-box"><EligibilityBadge status={a.eligibility} t={t} /><span><strong>{f.why}:</strong> {why(a, x)}</span></div>} />
+                        extra={<div className="why-box"><EligibilityBadge status={a.eligibility} t={t} /><div className="why-lines"><span><strong>{o.whyRelevance}:</strong> {relevance(x)}</span><span><strong>{o.whyEligibility}:</strong> {requirementsLine(a)}</span></div></div>} />
                     ))}
                   </div>
                   {items.length > PER_GROUP && <p className="small muted" style={{ marginTop: 10 }}>{f.more(items.length - PER_GROUP)} · <Link href="/opportunities?status=open">{f.showAll}</Link></p>}

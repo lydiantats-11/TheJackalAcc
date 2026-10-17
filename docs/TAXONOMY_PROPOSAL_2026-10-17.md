@@ -1,4 +1,8 @@
-# Taxonomy proposal — needs owner approval (17 Oct 2026)
+# Taxonomy proposal — needs owner approval (17 Oct 2026, revised 15:49)
+
+**Revision after owner feedback (17 Oct, 15:49):** Option C is withdrawn. Tax regimes get their own category
+«Φορολογία & Κίνητρα / Tax & Incentives», shared by opportunities and guides. The final eight-category proposal with
+examples is in §7. Still nothing applied: no database classification or approved mapping changes until confirmed.
 
 Nothing here is applied. Current categories, URLs and approved records are unchanged. Every change below is a display
 mapping that can be switched on and off; no database migration is needed.
@@ -74,7 +78,7 @@ Guides explain processes; opportunities are programmes. They should share the sa
 
 This would change the approved eight guide categories, so **it is only a proposal**. Until you decide, the eight stay.
 
-## 5. Option C (approved in principle) — exact wording for confirmation
+## 5. Option C — WITHDRAWN on 17 Oct (kept for the record)
 
 - Guide category slug stays `business-grants`, so no URL changes.
 - Name: **«Επιχειρηματικότητα, Επιδοτήσεις & Φορολογικά Κίνητρα» / "Business, Grants & Tax Incentives"**.
@@ -96,3 +100,26 @@ This would change the approved eight guide categories, so **it is only a proposa
 - Personas and «Για Εμένα» interests map to categories through `INTEREST_CATEGORIES`. Only that table changes.
   Eligibility is untouched.
 - Rollback means switching the display mapping back. No stored data changes.
+
+## 7. Final eight-category proposal (for confirmation)
+
+One record may appear in several categories; the first listed is its main category. Geography (Ελλάδα / ΕΕ), type
+(e.g. public tender) and industry (e.g. agriculture) are filters, not categories.
+
+| # | Ελληνικά | English | What it covers | Where today's records would appear |
+| --- | --- | --- | --- | --- |
+| 1 | Εργασία & Κατάρτιση | Work & Training | Unemployment benefits, employment and training programmes | Τακτική επιδότηση ανεργίας; ESC (also 5) |
+| 2 | Επιχειρηματικότητα & Χρηματοδότηση | Business & Funding | Grants, loans and guarantees for people starting or running a business | EIC Accelerator (also 8); ΕΣΠΑ «Ξεκινώ Επιχειρηματικά» if ever approved |
+| 3 | Στέγαση | Housing | First home, housing allowances, rent | «Σπίτι μου ΙΙ»; Φοιτητικό στεγαστικό επίδομα (also 5) |
+| 4 | Οικογένεια & Κοινωνικές Παροχές | Family & Social Benefits | Child and family benefits, support for households | Α21 Επίδομα παιδιού |
+| 5 | Σπουδές & Κινητικότητα | Studies & Mobility | Student benefits, scholarships, travel and volunteering in Europe | DiscoverEU; ESC; Φοιτητικό στεγαστικό επίδομα |
+| 6 | Φορολογία & Κίνητρα | Tax & Incentives | Tax regimes and incentives, including for people returning to or moving to Greece | Άρθρο 5Γ (tags: εργασία, επιστροφή); 5Β (σύνταξη, μετεγκατάσταση); 5Α (επένδυση) |
+| 7 | Ενέργεια & Περιβάλλον | Energy & Environment | Household energy costs, energy saving, green transition | EU LIFE / clean-energy calls (imported); no hand-checked Greek record yet |
+| 8 | Έρευνα & Καινοτομία | Research & Innovation | Research, innovation and digital calls | Most of the 1,000 imported EU calls, e.g. «Advanced Materials for Miniaturised Energy Harvesting Systems»; EIC Accelerator |
+
+Guides would use the same eight topics (e.g. the 5Γ/5Β/5Α guides under «Φορολογία & Κίνητρα», the A21 guide under
+«Οικογένεια & Κοινωνικές Παροχές»), with «Βήμα-βήμα», «Ερωτήσεις & Όροι» and «Νέα & Αλλαγές» as a format filter.
+This replaces the approved eight guide categories, so it also needs your confirmation.
+
+Filters that replace former categories: «Ελλάδα / ΕΕ» (geography), «Δημόσια σύμβαση» (type, replaces «Δημόσιοι
+διαγωνισμοί»), «Γεωργία & αλιεία» (industry). Old links redirect to the matching filter.
