@@ -2,3 +2,7 @@
 > funding-radar@0.1.0 typecheck
 > tsc --noEmit
 
+src/app/opportunities/page.tsx(65,61): error TS7053: Element implicitly has an 'any' type because expression of type 'string' can't be used to index type '{ young_adult: string; aspiring_entrepreneur: string; employee_jobseeker: string; household: string; business_org: string; }'.
+  No index signature with a parameter of type 'string' was found on type '{ young_adult: string; aspiring_entrepreneur: string; employee_jobseeker: string; household: string; business_org: string; }'.
+src/app/opportunities/page.tsx(68,61): error TS7053: Element implicitly has an 'any' type because expression of type 'string' can't be used to index type '{ all: string; undecided: string; agriculture: string; food_beverage: string; tourism_hospitality: string; retail_ecommerce: string; technology_it: string; manufacturing: string; construction_real_estate: string; ... 22 more ...; automotive: string; }'.
+  No index signature with a parameter of type 'string' was found on type '{ all: string; undecided: string; agriculture: string; food_beverage: string; tourism_hospitality: string; retail_ecommerce: string; technology_it: string; manufacturing: string; construction_real_estate: string; ... 22 more ...; automotive: string; }'.

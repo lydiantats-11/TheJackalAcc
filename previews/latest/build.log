@@ -3,44 +3,15 @@
 > next build
 
 ▲ Next.js 16.4.0 (Turbopack)
-✓ Running next.config.ts took 25ms
+✓ Running next.config.ts took 28ms
 ⚠ No build cache found. Please configure build caching for faster rebuilds. Read more: https://nextjs.org/docs/messages/no-cache
 
   Creating an optimized production build ...
-✓ Compiled successfully in 5.5s
+✓ Compiled successfully in 5.3s
   Running TypeScript ...
-  Finished TypeScript in 7.4s ...
-  Collecting page data using 3 workers ...
-  Generating static pages using 3 workers (0/15) ...
-  Generating static pages using 3 workers (3/15) 
-  Generating static pages using 3 workers (7/15) 
-  Generating static pages using 3 workers (11/15) 
-✓ Generating static pages using 3 workers (15/15) in 246ms
-  Finalizing page optimization ...
-
-Route (app)
-┌ ƒ /
-├ ƒ /_not-found
-├ ƒ /about
-├ ƒ /admin
-├ ƒ /admin/review
-├ ƒ /admin/sources
-├ ƒ /api/health
-├ ƒ /api/me/export
-├ ƒ /categories
-├ ƒ /dashboard
-├ ƒ /for-me
-├ ƒ /guides
-├ ƒ /guides/[slug]
-├ ƒ /login
-├ ƒ /opportunities
-├ ƒ /opportunities/[id]
-├ ƒ /opportunities/[id]/decision
-├ ƒ /profile
-└ ƒ /register
-
-
-ƒ Proxy (Middleware)
-
-ƒ  (Dynamic)  server-rendered on demand
+src/app/opportunities/page.tsx(65,61): error TS7053: Element implicitly has an 'any' type because expression of type 'string' can't be used to index type '{ young_adult: string; aspiring_entrepreneur: string; employee_jobseeker: string; household: string; business_org: string; }'.
+  No index signature with a parameter of type 'string' was found on type '{ young_adult: string; aspiring_entrepreneur: string; employee_jobseeker: string; household: string; business_org: string; }'.
+src/app/opportunities/page.tsx(68,61): error TS7053: Element implicitly has an 'any' type because expression of type 'string' can't be used to index type '{ all: string; undecided: string; agriculture: string; food_beverage: string; tourism_hospitality: string; retail_ecommerce: string; technology_it: string; manufacturing: string; construction_real_estate: string; ... 22 more ...; automotive: string; }'.
+  No index signature with a parameter of type 'string' was found on type '{ all: string; undecided: string; agriculture: string; food_beverage: string; tourism_hospitality: string; retail_ecommerce: string; technology_it: string; manufacturing: string; construction_real_estate: string; ... 22 more ...; automotive: string; }'.
+Failed to type check.
 
