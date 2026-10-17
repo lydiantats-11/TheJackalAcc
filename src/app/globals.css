@@ -477,3 +477,4 @@ main:has(> section.band:last-child) { padding-bottom: 0; }
 .applicant-note summary { cursor: pointer; list-style: none; }
 .applicant-note summary::-webkit-details-marker { display: none; }
 .applicant-note[open] summary { margin-bottom: 8px; }
+.tags .record-status:has(.record-last) { flex-basis: 100%; }
