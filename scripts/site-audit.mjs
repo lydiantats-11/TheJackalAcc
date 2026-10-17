@@ -29,7 +29,7 @@ async function inspect(page) {
     const overflow = document.documentElement.scrollWidth > window.innerWidth + 1;
     const links = [...document.querySelectorAll("a[href]")].map((a) => a.getAttribute("href"));
     const external = [...document.querySelectorAll('a[href^="http"]')].map((a) => ({ href: a.getAttribute("href"), newTab: a.target === "_blank", rel: a.rel }));
-    const placeholders = (document.body.innerText.match(/lorem ipsum|TODO|placeholder|coming soon|undefined|NaN|\[object Object\]/gi) ?? []).slice(0, 5);
+    const placeholders = (document.body.innerText.match(/lorem ipsum|\bTODO\b|coming soon|\bundefined\b|\bNaN\b|\[object Object\]|Invalid Date/g) ?? []).slice(0, 5);
     return { title: document.title, lang: document.documentElement.lang, h1, deadLinks, missingAnchors, unnamedButtons, unlabeled, imgsNoAlt, fakeClickable, overflow, links, external, placeholders };
   });
 }
@@ -110,13 +110,27 @@ try {
   report.interactions.push({ check: "homepage buttons", targets: ctas });
 
   // language switch
-  await page.click('form.lang button[value="en"] >> nth=0').catch(() => {});
-  await page.waitForLoadState("networkidle");
-  const langAfter = await page.evaluate(() => document.documentElement.lang);
-  report.interactions.push({ check: "language switch to EN", ok: langAfter === "en" });
-  if (langAfter !== "en") issue("high", "language switch", "clicking EN did not switch the page to English");
-  await page.click('form.lang button[value="el"] >> nth=0').catch(() => {});
-  await page.waitForLoadState("networkidle");
+  await Promise.all([page.waitForResponse((r) => r.request().method() === "POST").catch(() => null), page.locator('form.lang button[value="en"]').first().click()]);
+  await page.waitForTimeout(1500);
+  const navText = (await page.locator("nav.main").first().textContent()) ?? "";
+  const langAttr = await page.evaluate(() => document.documentElement.lang);
+  await page.reload({ waitUntil: "networkidle" });
+  const langReload = await page.evaluate(() => document.documentElement.lang);
+  report.interactions.push({ check: "language switch to EN", nav: navText.trim().slice(0, 60), htmlLangBeforeReload: langAttr, htmlLangAfterReload: langReload });
+  if (!/Opportunities/.test(navText)) issue("high", "language switch", "clicking EN did not change the visible text to English");
+  else if (langAttr !== "en") issue("medium", "language switch", "text switches to English but <html lang> stays 'el' until the page is reloaded (screen readers read English with Greek pronunciation)");
+  await ctx.addCookies([{ name: "lang", value: "el", url: BASE }]);
+
+  // home category counts vs the category list
+  await page.goto(BASE + "/", { waitUntil: "networkidle" });
+  const homeCats = await page.locator('a[href^="/opportunities?cat="]').evaluateAll((as) => as.map((a) => ({ href: a.getAttribute("href"), text: a.textContent.replace(/\s+/g, " ").trim().slice(-40) })));
+  for (const c of homeCats.slice(0, 12)) {
+    await page.goto(BASE + c.href, { waitUntil: "networkidle" });
+    const n = await count();
+    const m = c.text.match(/(\d+)/);
+    report.interactions.push({ check: `home card ${c.href}`, home: c.text, list: n });
+    if (m && Number(m[1]) > 0 && n === 0) issue("critical", c.href, `homepage says "${c.text}" but the category list shows 0 opportunities`);
+  }
 
   // opportunities: search and filters
   await page.goto(BASE + "/opportunities", { waitUntil: "networkidle" });
@@ -153,8 +167,11 @@ try {
   await page.check('input[name="personas"][value="employee_jobseeker"]');
   await page.check('input[name="interests"][value="employment"]');
   await page.selectOption('select[name="employment_status"]', "unemployed").catch(() => issue("high", "profile", "employment status question not found after choosing the job-seeker group"));
-  await Promise.all([page.waitForLoadState("networkidle"), page.locator("form button.btn-primary").last().click()]);
-  await page.reload({ waitUntil: "networkidle" });
+  await Promise.all([page.waitForResponse((r) => r.request().method() === "POST"), page.locator("form button.btn-primary").last().click()]);
+  await page.waitForTimeout(1500);
+  const feedback = (await page.locator('[role=status], .notice').allTextContents()).join(" | ").slice(0, 120);
+  report.interactions.push({ check: "profile save feedback", text: feedback });
+  await page.goto(BASE + "/profile", { waitUntil: "networkidle" });
   const saved = await page.locator('select[name="employment_status"]').inputValue().catch(() => "");
   step("5 profile answers are saved", saved === "unemployed", `employment_status after reload = ${saved || "(empty)"}`);
 
