@@ -1,0 +1,60 @@
+{
+  "generated_at": "2026-10-17T09:16:37.877Z",
+  "engine_version": "2026-10-13.2",
+  "gold_set": "2026-10-15.1",
+  "accuracy": {
+    "cases": 19,
+    "scored": 19,
+    "passed": 19,
+    "accuracy_pct": 100,
+    "by_expected_class": {
+      "potentially_eligible": {
+        "cases": 6,
+        "correct": 6
+      },
+      "ineligible": {
+        "cases": 11,
+        "correct": 11
+      },
+      "information_needed": {
+        "cases": 2,
+        "correct": 2
+      }
+    },
+    "missing_records": []
+  },
+  "coverage": {
+    "records": 1008,
+    "official_deadline_or_rolling_pct": 99.9,
+    "amount_information_pct": 40.9,
+    "per_project_amount_pct": 35.8,
+    "structured_requirements_pct": 80.9,
+    "complete_requirement_set_pct": 0,
+    "official_conditions_pct": 41.5,
+    "bilingual_pct": 0.8
+  },
+  "freshness": {
+    "stale_pct": 0.2,
+    "unverified_pct": 58.5,
+    "conflicting_pct": 0,
+    "events": {
+      "details_changes": 0,
+      "conflicts": 0,
+      "status_unverified": 0
+    }
+  },
+  "efficiency": [
+    {
+      "source": "eu-funding-tenders",
+      "seconds": 15.9,
+      "items_seen": 1000,
+      "items_new": 1000,
+      "items_changed": 0,
+      "status": "succeeded",
+      "items_per_second": 62.8,
+      "ms_per_item": 16
+    }
+  ],
+  "failures": [],
+  "caveat": "Baseline from a small gold set written by the platform team; not independently validated. Do not publish as an accuracy claim."
+}
