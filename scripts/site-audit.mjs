@@ -132,6 +132,12 @@ try {
     if (m && Number(m[1]) > 0 && n === 0) issue("critical", c.href, `homepage says "${c.text}" but the category list shows 0 opportunities`);
   }
 
+  // Milestone 1 regression: A21 (open, re-check due) stays visible in its category with the re-check label
+  await page.goto(BASE + "/opportunities?cat=family", { waitUntil: "networkidle" });
+  const familyCards = await count();
+  const recheckLabels = await page.getByText("Χρειάζεται νέος έλεγχος").count();
+  step("2b open records due for re-check stay listed (A21 in «Οικογένεια»)", familyCards > 0, `${familyCards} cards, ${recheckLabels} «Χρειάζεται νέος έλεγχος» labels`);
+
   // opportunities: search and filters
   await page.goto(BASE + "/opportunities", { waitUntil: "networkidle" });
   const all = await count();
@@ -179,6 +185,10 @@ try {
   const matches = await count();
   const badges = await page.locator(".opp-card .badge").allTextContents();
   step("6 For Me shows personalised results", matches > 0, `${matches} cards; labels: ${[...new Set(badges)].slice(0, 6).join(" / ")}`);
+  const euInPersonal = await page.locator(".opp-grid .opp-card .authority").evaluateAll((els) => els.filter((e) => /Ευρωπαϊκή Ένωση/.test(e.textContent)).length);
+  step("6b no EU call of unconfirmed applicant type among an individual's personal matches", euInPersonal === 0, `${euInPersonal} EU cards in the personal results`);
+  const separated = await page.locator("details.applicant-note").count();
+  report.interactions.push({ check: "programmes not confirmed for individuals listed apart", present: separated > 0 });
   const missingInfo = await page.getByText(/χρειάζ|λείπ|ερωτ/i).count();
   report.interactions.push({ check: "For Me mentions missing information / questions", hits: missingInfo });
 
