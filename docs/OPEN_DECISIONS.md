@@ -11,15 +11,17 @@ EL/EN and the profile menu («Για Εμένα» keeps its name); palette navy 
 off-white #F6F8FB, border #D6E2EE, no gold, status colours only for verified states; order: Milestone 2, then design in the
 order Homepage → opportunity cards and detail → personal dashboard → Guides → How it works.
 
+Settled on 17 Oct (owner, 13:35): Milestone 2 approved; source-connector order approved (docs/SOURCE_COVERAGE.md, nothing
+switched on); Option C approved in principle (exact wording pending); ΕΣΠΑ example approved for research only; A21 approved
+for re-verification; design work continues without changing the engine, approved records or navigation.
+
 ## Decisions needed
 
-- Review the before-and-after table of the 7 proposed record revisions (data/proposed-revisions-2026-10-16.json) and approve item by item.
-- Approve the official document lists (data/document-lists-2026-10-16.json) for A21, unemployment, DiscoverEU, 5Γ and 5Α.
-- Tax-regime guides: choose A (keep), B (ninth category «Φορολογία & Φορολογικά Κίνητρα») or C (rename category 3 to «Επιχειρηματικότητα, Επιδοτήσεις & Φορολογικά Κίνητρα»).
-- ΕΣΠΑ guide: choose one current official ΕΣΠΑ business call as the worked example.
-
-- Approve the source-connector order in docs/SOURCE_COVERAGE.md (gov.gr sitemap first, then Διαύγεια).
-- Approve Milestone 2 before Milestone 3 / design work starts.
+- Approve the 7 record revisions item by item (table in today's report; data/proposed-revisions-2026-10-16.json).
+- Approve the A21 re-verification proposals (docs/research/A21_REVERIFICATION_2026-10-17.md): refresh verified date, add school-attendance condition, November payment note.
+- Approve the document lists (data/document-lists-2026-10-17.json): A21 updated with 2026 notice, 5Γ now itemised from Α.1087/2021.
+- Confirm the exact Option C wording (docs/TAXONOMY_PROPOSAL_2026-10-17.md §5) before it is applied.
+- Choose on the proposed 8-category taxonomy and EU-as-geography (docs/TAXONOMY_PROPOSAL_2026-10-17.md).
 
 ## Blockers
 
@@ -29,6 +31,7 @@ order Homepage → opportunity cards and detail → personal dashboard → Guide
 
 ## Next
 
-- Read Decision Α.1087/2021 art. 3 (5Γ documents) and the student housing circular (income criteria, documents).
+- Read the student housing circular (income criteria, documents) and the later amendments to Α.1087/2021.
 - Read Reg. (EU) 2023/2831 Art. 3 and 6 and the Greek de minimis register page; draft the de minimis explainer.
-- Find A21 income-category limits in the governing decision or OPEKA FAQ.
+- Confirm A21 income limits (€6,000 / €10,000 / €15,000 equivalent income, found on a secondary legal site) against the official ΦΕΚ text.
+- ΕΣΠΑ «Ξεκινώ Επιχειρηματικά»: read call §§5, 9, 9.1, 10, 11, 17 and both amendments; resolve amendment-date conflict.

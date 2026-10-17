@@ -62,10 +62,10 @@ export default async function OpportunitiesPage({ searchParams }: { searchParams
   if (cat) active.push(["cat", s.opps.category, cat.name[locale]]);
   if (f.type) active.push(["type", s.opps.type, s.supportType[f.type as keyof typeof s.supportType]]);
   if (f.applicant) active.push(["applicant", s.opps.applicant, s.opps.applicantOpts[f.applicant as keyof typeof s.opps.applicantOpts]]);
-  if (f.audience) active.push(["audience", s.opps.audience, t.opt.personas[f.audience] ?? f.audience]);
+  if (f.audience) active.push(["audience", s.opps.audience, (t.opt.personas as Record<string, string>)[f.audience] ?? f.audience]);
   if (f.scope) active.push(["scope", s.opps.scope, s.scope[f.scope as "gr" | "eu"]]);
   if (f.status && f.status !== "current") active.push(["status", s.opps.status, s.status[f.status as keyof typeof s.status]]);
-  if (f.industry) active.push(["industry", s.opps.industry, t.opt.industries[f.industry] ?? f.industry]);
+  if (f.industry) active.push(["industry", s.opps.industry, (t.opt.industries as Record<string, string>)[f.industry] ?? f.industry]);
   const select = (px: string, name: string, label: string, value: string | undefined, options: Array<[string, string]>, allLabel = s.opps.all) => (
     <div>
       <label htmlFor={`${px}-${name}`}>{label}</label>
