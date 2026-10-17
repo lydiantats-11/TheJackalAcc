@@ -78,12 +78,6 @@
       "lang": "el",
       "errors": []
     },
-    "el-desktop /opportunities?cat=agriculture": {
-      "status": 200,
-      "title": "Ευκαιρίες · Jackal Accountant",
-      "lang": "el",
-      "errors": []
-    },
     "el-desktop /opportunities?cat=education": {
       "status": 200,
       "title": "Ευκαιρίες · Jackal Accountant",
@@ -102,19 +96,19 @@
       "lang": "el",
       "errors": []
     },
+    "el-desktop /opportunities?cat=tax": {
+      "status": 200,
+      "title": "Ευκαιρίες · Jackal Accountant",
+      "lang": "el",
+      "errors": []
+    },
     "el-desktop /opportunities?cat=innovation": {
       "status": 200,
       "title": "Ευκαιρίες · Jackal Accountant",
       "lang": "el",
       "errors": []
     },
-    "el-desktop /opportunities?status=open": {
-      "status": 200,
-      "title": "Ευκαιρίες · Jackal Accountant",
-      "lang": "el",
-      "errors": []
-    },
-    "el-desktop /opportunities/4708362e-ec6c-422a-8ec6-4b8ff4d6386d": {
+    "el-desktop /opportunities/4c2e1aa3-b2d5-469b-a848-3273cb31e89c": {
       "status": 200,
       "title": "Άρθρο 5Α ΚΦΕ — εναλλακτική φορολόγηση επενδυτών · Jackal Accountant",
       "lang": "el",
@@ -126,7 +120,7 @@
       "lang": "el",
       "errors": []
     },
-    "el-desktop /opportunities/55429461-e037-4263-b1ff-f935f471758c": {
+    "el-desktop /opportunities/da8539a0-4b0d-4f53-be36-062447a8da52": {
       "status": 200,
       "title": "Τακτική επιδότηση ανεργίας · Jackal Accountant",
       "lang": "el",
@@ -138,9 +132,15 @@
       "lang": "el",
       "errors": []
     },
-    "el-desktop /opportunities/4d40cd18-5565-4eba-b875-7e4eb5effe52": {
+    "el-desktop /guides/art5c": {
       "status": 200,
-      "title": "Advanced Materials for Miniaturised Energy Harvesting Systems · Jackal Accountant",
+      "title": "Άρθρο 5Γ ΚΦΕ — 50% απαλλαγή φόρου για όσους μεταφέρουν τη φορολογική κατοικία τους στην Ελλάδα · Jackal Accountant",
+      "lang": "el",
+      "errors": []
+    },
+    "el-desktop /guides/art5b": {
+      "status": 200,
+      "title": "Άρθρο 5Β ΚΦΕ — 7% φόρος για συνταξιούχους με σύνταξη εξωτερικού · Jackal Accountant",
       "lang": "el",
       "errors": []
     },
@@ -156,6 +156,12 @@
       "lang": "el",
       "errors": []
     },
+    "el-desktop /opportunities?cat=agriculture": {
+      "status": 200,
+      "title": "Ευκαιρίες · Jackal Accountant",
+      "lang": "el",
+      "errors": []
+    },
     "el-desktop /opportunities?cat=environment": {
       "status": 200,
       "title": "Ευκαιρίες · Jackal Accountant",
@@ -163,12 +169,6 @@
       "errors": []
     },
     "el-desktop /opportunities?cat=tenders": {
-      "status": 200,
-      "title": "Ευκαιρίες · Jackal Accountant",
-      "lang": "el",
-      "errors": []
-    },
-    "el-desktop /opportunities?cat=tax": {
       "status": 200,
       "title": "Ευκαιρίες · Jackal Accountant",
       "lang": "el",
@@ -192,139 +192,133 @@
       "lang": "el",
       "errors": []
     },
-    "el-desktop /opportunities/48456b6b-3f8c-4df3-9045-0c31e50e5202": {
+    "el-desktop /opportunities/9d1325ba-5ebf-45c4-a43d-9bde1c82a1fa": {
       "status": 200,
       "title": "Άρθρο 5Β ΚΦΕ — 7% φόρος για συνταξιούχους με σύνταξη εξωτερικού · Jackal Accountant",
       "lang": "el",
       "errors": []
     },
-    "el-desktop /guides/art5b": {
-      "status": 200,
-      "title": "Άρθρο 5Β ΚΦΕ — 7% φόρος για συνταξιούχους με σύνταξη εξωτερικού · Jackal Accountant",
-      "lang": "el",
-      "errors": []
-    },
-    "el-desktop /opportunities/f58df22e-a699-49b8-a6d4-556f51530939": {
+    "el-desktop /opportunities/9c47e567-e9d5-4b0e-8ee1-fbec117d1b39": {
       "status": 200,
       "title": "Άρθρο 5Γ ΚΦΕ — 50% απαλλαγή φόρου για όσους μεταφέρουν τη φορολογική κατοικία τους στην Ελλάδα · Jackal Accountant",
       "lang": "el",
       "errors": []
     },
-    "el-desktop /guides/art5c": {
+    "el-desktop /opportunities/7f10e977-b412-489c-af50-149c4b559937": {
       "status": 200,
-      "title": "Άρθρο 5Γ ΚΦΕ — 50% απαλλαγή φόρου για όσους μεταφέρουν τη φορολογική κατοικία τους στην Ελλάδα · Jackal Accountant",
+      "title": "Advanced Materials for Miniaturised Energy Harvesting Systems · Jackal Accountant",
       "lang": "el",
       "errors": []
     },
-    "el-desktop /opportunities/4a0b1757-f36b-4e8b-9743-87d249f7dcdd": {
+    "el-desktop /opportunities/8b93a908-49b5-4cb6-a0ff-8ffae0457d8b": {
       "status": 200,
       "title": "Biotechnology for Healthy Ageing · Jackal Accountant",
       "lang": "el",
       "errors": []
     },
-    "el-desktop /opportunities/9e612ab8-0ffd-4ae5-a416-c4ee2f7b4063": {
+    "el-desktop /opportunities/07d4ca76-47ab-4172-a02c-efed9ab947b2": {
       "status": 200,
       "title": "DeepRAP: Deep Reasoning, Abstraction & Planning towards trustworthy Cognitive AI Systems · Jackal Accountant",
       "lang": "el",
       "errors": []
     },
-    "el-desktop /opportunities/b1d14200-8af8-4728-adda-bb65be9a9118": {
+    "el-desktop /opportunities/c558b8cb-2731-44e6-8a04-9f977d12d9e6": {
       "status": 200,
       "title": "EIC defence call · Jackal Accountant",
       "lang": "el",
       "errors": []
     },
-    "el-desktop /opportunities/da07dd1d-7f5e-44f7-bd36-643d098ec9b2": {
+    "el-desktop /opportunities/4f1066be-ed16-4653-a879-9735074c2c5b": {
       "status": 200,
       "title": "Structured dialogue with people with lived experience of poverty · Jackal Accountant",
       "lang": "el",
       "errors": []
     },
-    "el-desktop /opportunities/ea8ec21b-009b-4a6d-b9f0-618b563f7f84": {
+    "el-desktop /opportunities/0f3a6fbd-7094-435c-943d-b4f7bb9361da": {
       "status": 200,
       "title": "EIC Accelerator 2026 - Short proposal · Jackal Accountant",
       "lang": "el",
       "errors": []
     },
-    "el-desktop /opportunities/7cc1bbae-d99e-4228-b6c3-72e15ebfa33d": {
+    "el-desktop /opportunities/9bc6394d-6e01-4803-a069-9695450d68a2": {
       "status": 200,
       "title": "Accessible and available travel facilitation · Jackal Accountant",
       "lang": "el",
       "errors": []
     },
-    "el-desktop /opportunities/4da7a1e1-aa50-4ef4-8ebd-09e5a50d58b6": {
+    "el-desktop /opportunities/a38770c5-140b-4001-b0d8-4802c49ee418": {
       "status": 200,
       "title": "Advanced border surveillance and situational awareness · Jackal Accountant",
       "lang": "el",
       "errors": []
     },
-    "el-desktop /opportunities/d3f8b881-6aec-41d8-a79e-d38bb70a60f8": {
+    "el-desktop /opportunities/c3f7fa91-565a-4138-9351-4580f12685db": {
       "status": 200,
       "title": "Climate security and civil preparedness – new ways to develop pre- and post-crisis climate-change related scenarios for a more resilient Europe · Jackal Accountant",
       "lang": "el",
       "errors": []
     },
-    "el-desktop /opportunities/1dbb3d40-ab12-494f-9ca5-d9a966f798ac": {
+    "el-desktop /opportunities/c2e11b47-51b0-414d-8a5f-2e7612049dd8": {
       "status": 200,
       "title": "Crime prevention approaches, online and off-line, tackling the nexus between addictions and crime · Jackal Accountant",
       "lang": "el",
       "errors": []
     },
-    "el-desktop /opportunities/b14c628d-9572-4426-b4db-2014fd322d26": {
+    "el-desktop /opportunities/dcf14df7-1728-48c0-a94a-9ded2495c718": {
       "status": 200,
       "title": "Demand-led innovation in security · Jackal Accountant",
       "lang": "el",
       "errors": []
     },
-    "el-desktop /opportunities/c2e68e55-8008-4c5d-a72b-ac95964b5d19": {
+    "el-desktop /opportunities/9f454a3f-4197-4345-8535-dbb65aa46b82": {
       "status": 200,
       "title": "Designing new ways of risk awareness and enhanced disaster preparedness · Jackal Accountant",
       "lang": "el",
       "errors": []
     },
-    "el-desktop /opportunities/ddf015bb-1fc0-4754-8328-36f7dc8f13b7": {
+    "el-desktop /opportunities/65d32f8e-f59b-479c-9645-662750a5f8f8": {
       "status": 200,
       "title": "Development of ecosystem and next-generation capabilities for a secured European Critical Communication System in civil security · Jackal Accountant",
       "lang": "el",
       "errors": []
     },
-    "el-desktop /opportunities/f3e14b8a-bf22-40e5-a59b-8a48b9fc3f4c": {
+    "el-desktop /opportunities/67413c9e-6c4f-41da-9c90-97a49908ccf3": {
       "status": 200,
       "title": "Development of innovative tools, processes, equipment and technologies through responses to disasters and emergencies for search and rescue in hazardous conditions · Jackal Accountant",
       "lang": "el",
       "errors": []
     },
-    "el-desktop /opportunities/86dfc2da-72f0-4bbe-a952-58eca53b3ab9": {
+    "el-desktop /opportunities/79f3b9f5-5215-4e24-a595-9e53a8ffecde": {
       "status": 200,
       "title": "Enhancing the security of citizens against terrorism and lone-actor violence in confined spaces such as schools · Jackal Accountant",
       "lang": "el",
       "errors": []
     },
-    "el-desktop /opportunities/4cb28dce-cf39-43f0-9b07-cb71c9163f35": {
+    "el-desktop /opportunities/09ca2d1a-21ff-45a7-b708-371c2a74ca57": {
       "status": 200,
       "title": "Improving capabilities of law enforcement to counter climate-related challenges · Jackal Accountant",
       "lang": "el",
       "errors": []
     },
-    "el-desktop /opportunities/6f0378b0-119a-4476-b69b-c15fab5f4e17": {
+    "el-desktop /opportunities/eeea0a80-e99d-422a-acad-8850f7d6d49d": {
       "status": 200,
       "title": "Missing persons: prevention and investigation · Jackal Accountant",
       "lang": "el",
       "errors": []
     },
-    "el-desktop /opportunities/3e1f98c8-cc8a-4c93-96b5-354fb10d99aa": {
+    "el-desktop /opportunities/c5522554-4353-4264-a89f-73f167f272f4": {
       "status": 200,
       "title": "Multi-hazard approach and cumulative / cascading impacts · Jackal Accountant",
       "lang": "el",
       "errors": []
     },
-    "el-desktop /opportunities/f9acef39-b60c-4a49-815a-9e992c855c2f": {
+    "el-desktop /opportunities/30bc45e8-6695-4154-aa6e-bc8abf0134af": {
       "status": 200,
       "title": "Open topic on driving innovation uptake of disaster risk solutions · Jackal Accountant",
       "lang": "el",
       "errors": []
     },
-    "el-desktop /opportunities/f0259231-d103-49f1-a505-8c011d73d530": {
+    "el-desktop /opportunities/e4feaadd-9826-4a92-aad7-57efbfb695d1": {
       "status": 200,
       "title": "Open topic on preventing and countering the misuse of emerging technologies for criminal purposes, including issues related to lawful access to data · Jackal Accountant",
       "lang": "el",
@@ -420,6 +414,12 @@
       "lang": "el",
       "errors": []
     },
+    "el-desktop /guides?cat=housing-energy": {
+      "status": 200,
+      "title": "Οδηγοί · Jackal Accountant",
+      "lang": "el",
+      "errors": []
+    },
     "en-desktop /": {
       "status": 200,
       "title": "Jackal Accountant",
@@ -498,12 +498,6 @@
       "lang": "en",
       "errors": []
     },
-    "en-desktop /opportunities?cat=agriculture": {
-      "status": 200,
-      "title": "Opportunities · Jackal Accountant",
-      "lang": "en",
-      "errors": []
-    },
     "en-desktop /opportunities?cat=education": {
       "status": 200,
       "title": "Opportunities · Jackal Accountant",
@@ -522,19 +516,19 @@
       "lang": "en",
       "errors": []
     },
+    "en-desktop /opportunities?cat=tax": {
+      "status": 200,
+      "title": "Opportunities · Jackal Accountant",
+      "lang": "en",
+      "errors": []
+    },
     "en-desktop /opportunities?cat=innovation": {
       "status": 200,
       "title": "Opportunities · Jackal Accountant",
       "lang": "en",
       "errors": []
     },
-    "en-desktop /opportunities?status=open": {
-      "status": 200,
-      "title": "Opportunities · Jackal Accountant",
-      "lang": "en",
-      "errors": []
-    },
-    "en-desktop /opportunities/4708362e-ec6c-422a-8ec6-4b8ff4d6386d": {
+    "en-desktop /opportunities/4c2e1aa3-b2d5-469b-a848-3273cb31e89c": {
       "status": 200,
       "title": "Article 5A — alternative taxation for investors · Jackal Accountant",
       "lang": "en",
@@ -546,7 +540,7 @@
       "lang": "en",
       "errors": []
     },
-    "en-desktop /opportunities/55429461-e037-4263-b1ff-f935f471758c": {
+    "en-desktop /opportunities/da8539a0-4b0d-4f53-be36-062447a8da52": {
       "status": 200,
       "title": "Regular unemployment benefit · Jackal Accountant",
       "lang": "en",
@@ -558,9 +552,15 @@
       "lang": "en",
       "errors": []
     },
-    "en-desktop /opportunities/4d40cd18-5565-4eba-b875-7e4eb5effe52": {
+    "en-desktop /guides/art5c": {
       "status": 200,
-      "title": "Advanced Materials for Miniaturised Energy Harvesting Systems · Jackal Accountant",
+      "title": "Article 5C — 50% income-tax exemption for people moving tax residence to Greece · Jackal Accountant",
+      "lang": "en",
+      "errors": []
+    },
+    "en-desktop /guides/art5b": {
+      "status": 200,
+      "title": "Article 5B — 7% tax for pensioners with a foreign pension · Jackal Accountant",
       "lang": "en",
       "errors": []
     },
@@ -576,6 +576,12 @@
       "lang": "en",
       "errors": []
     },
+    "en-desktop /opportunities?cat=agriculture": {
+      "status": 200,
+      "title": "Opportunities · Jackal Accountant",
+      "lang": "en",
+      "errors": []
+    },
     "en-desktop /opportunities?cat=environment": {
       "status": 200,
       "title": "Opportunities · Jackal Accountant",
@@ -583,12 +589,6 @@
       "errors": []
     },
     "en-desktop /opportunities?cat=tenders": {
-      "status": 200,
-      "title": "Opportunities · Jackal Accountant",
-      "lang": "en",
-      "errors": []
-    },
-    "en-desktop /opportunities?cat=tax": {
       "status": 200,
       "title": "Opportunities · Jackal Accountant",
       "lang": "en",
@@ -612,139 +612,133 @@
       "lang": "en",
       "errors": []
     },
-    "en-desktop /opportunities/48456b6b-3f8c-4df3-9045-0c31e50e5202": {
+    "en-desktop /opportunities/9d1325ba-5ebf-45c4-a43d-9bde1c82a1fa": {
       "status": 200,
       "title": "Article 5B — 7% tax for pensioners with a foreign pension · Jackal Accountant",
       "lang": "en",
       "errors": []
     },
-    "en-desktop /guides/art5b": {
-      "status": 200,
-      "title": "Article 5B — 7% tax for pensioners with a foreign pension · Jackal Accountant",
-      "lang": "en",
-      "errors": []
-    },
-    "en-desktop /opportunities/f58df22e-a699-49b8-a6d4-556f51530939": {
+    "en-desktop /opportunities/9c47e567-e9d5-4b0e-8ee1-fbec117d1b39": {
       "status": 200,
       "title": "Article 5C — 50% income-tax exemption for people moving tax residence to Greece · Jackal Accountant",
       "lang": "en",
       "errors": []
     },
-    "en-desktop /guides/art5c": {
+    "en-desktop /opportunities/7f10e977-b412-489c-af50-149c4b559937": {
       "status": 200,
-      "title": "Article 5C — 50% income-tax exemption for people moving tax residence to Greece · Jackal Accountant",
+      "title": "Advanced Materials for Miniaturised Energy Harvesting Systems · Jackal Accountant",
       "lang": "en",
       "errors": []
     },
-    "en-desktop /opportunities/4a0b1757-f36b-4e8b-9743-87d249f7dcdd": {
+    "en-desktop /opportunities/8b93a908-49b5-4cb6-a0ff-8ffae0457d8b": {
       "status": 200,
       "title": "Biotechnology for Healthy Ageing · Jackal Accountant",
       "lang": "en",
       "errors": []
     },
-    "en-desktop /opportunities/9e612ab8-0ffd-4ae5-a416-c4ee2f7b4063": {
+    "en-desktop /opportunities/07d4ca76-47ab-4172-a02c-efed9ab947b2": {
       "status": 200,
       "title": "DeepRAP: Deep Reasoning, Abstraction & Planning towards trustworthy Cognitive AI Systems · Jackal Accountant",
       "lang": "en",
       "errors": []
     },
-    "en-desktop /opportunities/b1d14200-8af8-4728-adda-bb65be9a9118": {
+    "en-desktop /opportunities/c558b8cb-2731-44e6-8a04-9f977d12d9e6": {
       "status": 200,
       "title": "EIC defence call · Jackal Accountant",
       "lang": "en",
       "errors": []
     },
-    "en-desktop /opportunities/da07dd1d-7f5e-44f7-bd36-643d098ec9b2": {
+    "en-desktop /opportunities/4f1066be-ed16-4653-a879-9735074c2c5b": {
       "status": 200,
       "title": "Structured dialogue with people with lived experience of poverty · Jackal Accountant",
       "lang": "en",
       "errors": []
     },
-    "en-desktop /opportunities/ea8ec21b-009b-4a6d-b9f0-618b563f7f84": {
+    "en-desktop /opportunities/0f3a6fbd-7094-435c-943d-b4f7bb9361da": {
       "status": 200,
       "title": "EIC Accelerator 2026 - Short proposal · Jackal Accountant",
       "lang": "en",
       "errors": []
     },
-    "en-desktop /opportunities/7cc1bbae-d99e-4228-b6c3-72e15ebfa33d": {
+    "en-desktop /opportunities/9bc6394d-6e01-4803-a069-9695450d68a2": {
       "status": 200,
       "title": "Accessible and available travel facilitation · Jackal Accountant",
       "lang": "en",
       "errors": []
     },
-    "en-desktop /opportunities/4da7a1e1-aa50-4ef4-8ebd-09e5a50d58b6": {
+    "en-desktop /opportunities/a38770c5-140b-4001-b0d8-4802c49ee418": {
       "status": 200,
       "title": "Advanced border surveillance and situational awareness · Jackal Accountant",
       "lang": "en",
       "errors": []
     },
-    "en-desktop /opportunities/d3f8b881-6aec-41d8-a79e-d38bb70a60f8": {
+    "en-desktop /opportunities/c3f7fa91-565a-4138-9351-4580f12685db": {
       "status": 200,
       "title": "Climate security and civil preparedness – new ways to develop pre- and post-crisis climate-change related scenarios for a more resilient Europe · Jackal Accountant",
       "lang": "en",
       "errors": []
     },
-    "en-desktop /opportunities/1dbb3d40-ab12-494f-9ca5-d9a966f798ac": {
+    "en-desktop /opportunities/c2e11b47-51b0-414d-8a5f-2e7612049dd8": {
       "status": 200,
       "title": "Crime prevention approaches, online and off-line, tackling the nexus between addictions and crime · Jackal Accountant",
       "lang": "en",
       "errors": []
     },
-    "en-desktop /opportunities/b14c628d-9572-4426-b4db-2014fd322d26": {
+    "en-desktop /opportunities/dcf14df7-1728-48c0-a94a-9ded2495c718": {
       "status": 200,
       "title": "Demand-led innovation in security · Jackal Accountant",
       "lang": "en",
       "errors": []
     },
-    "en-desktop /opportunities/c2e68e55-8008-4c5d-a72b-ac95964b5d19": {
+    "en-desktop /opportunities/9f454a3f-4197-4345-8535-dbb65aa46b82": {
       "status": 200,
       "title": "Designing new ways of risk awareness and enhanced disaster preparedness · Jackal Accountant",
       "lang": "en",
       "errors": []
     },
-    "en-desktop /opportunities/ddf015bb-1fc0-4754-8328-36f7dc8f13b7": {
+    "en-desktop /opportunities/65d32f8e-f59b-479c-9645-662750a5f8f8": {
       "status": 200,
       "title": "Development of ecosystem and next-generation capabilities for a secured European Critical Communication System in civil security · Jackal Accountant",
       "lang": "en",
       "errors": []
     },
-    "en-desktop /opportunities/f3e14b8a-bf22-40e5-a59b-8a48b9fc3f4c": {
+    "en-desktop /opportunities/67413c9e-6c4f-41da-9c90-97a49908ccf3": {
       "status": 200,
       "title": "Development of innovative tools, processes, equipment and technologies through responses to disasters and emergencies for search and rescue in hazardous conditions · Jackal Accountant",
       "lang": "en",
       "errors": []
     },
-    "en-desktop /opportunities/86dfc2da-72f0-4bbe-a952-58eca53b3ab9": {
+    "en-desktop /opportunities/79f3b9f5-5215-4e24-a595-9e53a8ffecde": {
       "status": 200,
       "title": "Enhancing the security of citizens against terrorism and lone-actor violence in confined spaces such as schools · Jackal Accountant",
       "lang": "en",
       "errors": []
     },
-    "en-desktop /opportunities/4cb28dce-cf39-43f0-9b07-cb71c9163f35": {
+    "en-desktop /opportunities/09ca2d1a-21ff-45a7-b708-371c2a74ca57": {
       "status": 200,
       "title": "Improving capabilities of law enforcement to counter climate-related challenges · Jackal Accountant",
       "lang": "en",
       "errors": []
     },
-    "en-desktop /opportunities/6f0378b0-119a-4476-b69b-c15fab5f4e17": {
+    "en-desktop /opportunities/eeea0a80-e99d-422a-acad-8850f7d6d49d": {
       "status": 200,
       "title": "Missing persons: prevention and investigation · Jackal Accountant",
       "lang": "en",
       "errors": []
     },
-    "en-desktop /opportunities/3e1f98c8-cc8a-4c93-96b5-354fb10d99aa": {
+    "en-desktop /opportunities/c5522554-4353-4264-a89f-73f167f272f4": {
       "status": 200,
       "title": "Multi-hazard approach and cumulative / cascading impacts · Jackal Accountant",
       "lang": "en",
       "errors": []
     },
-    "en-desktop /opportunities/f9acef39-b60c-4a49-815a-9e992c855c2f": {
+    "en-desktop /opportunities/30bc45e8-6695-4154-aa6e-bc8abf0134af": {
       "status": 200,
       "title": "Open topic on driving innovation uptake of disaster risk solutions · Jackal Accountant",
       "lang": "en",
       "errors": []
     },
-    "en-desktop /opportunities/f0259231-d103-49f1-a505-8c011d73d530": {
+    "en-desktop /opportunities/e4feaadd-9826-4a92-aad7-57efbfb695d1": {
       "status": 200,
       "title": "Open topic on preventing and countering the misuse of emerging technologies for criminal purposes, including issues related to lawful access to data · Jackal Accountant",
       "lang": "en",
@@ -840,6 +834,12 @@
       "lang": "en",
       "errors": []
     },
+    "en-desktop /guides?cat=housing-energy": {
+      "status": 200,
+      "title": "Guides · Jackal Accountant",
+      "lang": "en",
+      "errors": []
+    },
     "el-phone /": {
       "status": 200,
       "title": "Jackal Accountant",
@@ -918,12 +918,6 @@
       "lang": "el",
       "errors": []
     },
-    "el-phone /opportunities?cat=agriculture": {
-      "status": 200,
-      "title": "Ευκαιρίες · Jackal Accountant",
-      "lang": "el",
-      "errors": []
-    },
     "el-phone /opportunities?cat=education": {
       "status": 200,
       "title": "Ευκαιρίες · Jackal Accountant",
@@ -942,19 +936,19 @@
       "lang": "el",
       "errors": []
     },
+    "el-phone /opportunities?cat=tax": {
+      "status": 200,
+      "title": "Ευκαιρίες · Jackal Accountant",
+      "lang": "el",
+      "errors": []
+    },
     "el-phone /opportunities?cat=innovation": {
       "status": 200,
       "title": "Ευκαιρίες · Jackal Accountant",
       "lang": "el",
       "errors": []
     },
-    "el-phone /opportunities?status=open": {
-      "status": 200,
-      "title": "Ευκαιρίες · Jackal Accountant",
-      "lang": "el",
-      "errors": []
-    },
-    "el-phone /opportunities/4708362e-ec6c-422a-8ec6-4b8ff4d6386d": {
+    "el-phone /opportunities/4c2e1aa3-b2d5-469b-a848-3273cb31e89c": {
       "status": 200,
       "title": "Άρθρο 5Α ΚΦΕ — εναλλακτική φορολόγηση επενδυτών · Jackal Accountant",
       "lang": "el",
@@ -966,7 +960,7 @@
       "lang": "el",
       "errors": []
     },
-    "el-phone /opportunities/55429461-e037-4263-b1ff-f935f471758c": {
+    "el-phone /opportunities/da8539a0-4b0d-4f53-be36-062447a8da52": {
       "status": 200,
       "title": "Τακτική επιδότηση ανεργίας · Jackal Accountant",
       "lang": "el",
@@ -978,9 +972,15 @@
       "lang": "el",
       "errors": []
     },
-    "el-phone /opportunities/4d40cd18-5565-4eba-b875-7e4eb5effe52": {
+    "el-phone /guides/art5c": {
       "status": 200,
-      "title": "Advanced Materials for Miniaturised Energy Harvesting Systems · Jackal Accountant",
+      "title": "Άρθρο 5Γ ΚΦΕ — 50% απαλλαγή φόρου για όσους μεταφέρουν τη φορολογική κατοικία τους στην Ελλάδα · Jackal Accountant",
+      "lang": "el",
+      "errors": []
+    },
+    "el-phone /guides/art5b": {
+      "status": 200,
+      "title": "Άρθρο 5Β ΚΦΕ — 7% φόρος για συνταξιούχους με σύνταξη εξωτερικού · Jackal Accountant",
       "lang": "el",
       "errors": []
     },
@@ -996,6 +996,12 @@
       "lang": "el",
       "errors": []
     },
+    "el-phone /opportunities?cat=agriculture": {
+      "status": 200,
+      "title": "Ευκαιρίες · Jackal Accountant",
+      "lang": "el",
+      "errors": []
+    },
     "el-phone /opportunities?cat=environment": {
       "status": 200,
       "title": "Ευκαιρίες · Jackal Accountant",
@@ -1003,12 +1009,6 @@
       "errors": []
     },
     "el-phone /opportunities?cat=tenders": {
-      "status": 200,
-      "title": "Ευκαιρίες · Jackal Accountant",
-      "lang": "el",
-      "errors": []
-    },
-    "el-phone /opportunities?cat=tax": {
       "status": 200,
       "title": "Ευκαιρίες · Jackal Accountant",
       "lang": "el",
@@ -1032,139 +1032,133 @@
       "lang": "el",
       "errors": []
     },
-    "el-phone /opportunities/48456b6b-3f8c-4df3-9045-0c31e50e5202": {
+    "el-phone /opportunities/9d1325ba-5ebf-45c4-a43d-9bde1c82a1fa": {
       "status": 200,
       "title": "Άρθρο 5Β ΚΦΕ — 7% φόρος για συνταξιούχους με σύνταξη εξωτερικού · Jackal Accountant",
       "lang": "el",
       "errors": []
     },
-    "el-phone /guides/art5b": {
-      "status": 200,
-      "title": "Άρθρο 5Β ΚΦΕ — 7% φόρος για συνταξιούχους με σύνταξη εξωτερικού · Jackal Accountant",
-      "lang": "el",
-      "errors": []
-    },
-    "el-phone /opportunities/f58df22e-a699-49b8-a6d4-556f51530939": {
+    "el-phone /opportunities/9c47e567-e9d5-4b0e-8ee1-fbec117d1b39": {
       "status": 200,
       "title": "Άρθρο 5Γ ΚΦΕ — 50% απαλλαγή φόρου για όσους μεταφέρουν τη φορολογική κατοικία τους στην Ελλάδα · Jackal Accountant",
       "lang": "el",
       "errors": []
     },
-    "el-phone /guides/art5c": {
+    "el-phone /opportunities/7f10e977-b412-489c-af50-149c4b559937": {
       "status": 200,
-      "title": "Άρθρο 5Γ ΚΦΕ — 50% απαλλαγή φόρου για όσους μεταφέρουν τη φορολογική κατοικία τους στην Ελλάδα · Jackal Accountant",
+      "title": "Advanced Materials for Miniaturised Energy Harvesting Systems · Jackal Accountant",
       "lang": "el",
       "errors": []
     },
-    "el-phone /opportunities/4a0b1757-f36b-4e8b-9743-87d249f7dcdd": {
+    "el-phone /opportunities/8b93a908-49b5-4cb6-a0ff-8ffae0457d8b": {
       "status": 200,
       "title": "Biotechnology for Healthy Ageing · Jackal Accountant",
       "lang": "el",
       "errors": []
     },
-    "el-phone /opportunities/9e612ab8-0ffd-4ae5-a416-c4ee2f7b4063": {
+    "el-phone /opportunities/07d4ca76-47ab-4172-a02c-efed9ab947b2": {
       "status": 200,
       "title": "DeepRAP: Deep Reasoning, Abstraction & Planning towards trustworthy Cognitive AI Systems · Jackal Accountant",
       "lang": "el",
       "errors": []
     },
-    "el-phone /opportunities/b1d14200-8af8-4728-adda-bb65be9a9118": {
+    "el-phone /opportunities/c558b8cb-2731-44e6-8a04-9f977d12d9e6": {
       "status": 200,
       "title": "EIC defence call · Jackal Accountant",
       "lang": "el",
       "errors": []
     },
-    "el-phone /opportunities/da07dd1d-7f5e-44f7-bd36-643d098ec9b2": {
+    "el-phone /opportunities/4f1066be-ed16-4653-a879-9735074c2c5b": {
       "status": 200,
       "title": "Structured dialogue with people with lived experience of poverty · Jackal Accountant",
       "lang": "el",
       "errors": []
     },
-    "el-phone /opportunities/ea8ec21b-009b-4a6d-b9f0-618b563f7f84": {
+    "el-phone /opportunities/0f3a6fbd-7094-435c-943d-b4f7bb9361da": {
       "status": 200,
       "title": "EIC Accelerator 2026 - Short proposal · Jackal Accountant",
       "lang": "el",
       "errors": []
     },
-    "el-phone /opportunities/7cc1bbae-d99e-4228-b6c3-72e15ebfa33d": {
+    "el-phone /opportunities/9bc6394d-6e01-4803-a069-9695450d68a2": {
       "status": 200,
       "title": "Accessible and available travel facilitation · Jackal Accountant",
       "lang": "el",
       "errors": []
     },
-    "el-phone /opportunities/4da7a1e1-aa50-4ef4-8ebd-09e5a50d58b6": {
+    "el-phone /opportunities/a38770c5-140b-4001-b0d8-4802c49ee418": {
       "status": 200,
       "title": "Advanced border surveillance and situational awareness · Jackal Accountant",
       "lang": "el",
       "errors": []
     },
-    "el-phone /opportunities/d3f8b881-6aec-41d8-a79e-d38bb70a60f8": {
+    "el-phone /opportunities/c3f7fa91-565a-4138-9351-4580f12685db": {
       "status": 200,
       "title": "Climate security and civil preparedness – new ways to develop pre- and post-crisis climate-change related scenarios for a more resilient Europe · Jackal Accountant",
       "lang": "el",
       "errors": []
     },
-    "el-phone /opportunities/1dbb3d40-ab12-494f-9ca5-d9a966f798ac": {
+    "el-phone /opportunities/c2e11b47-51b0-414d-8a5f-2e7612049dd8": {
       "status": 200,
       "title": "Crime prevention approaches, online and off-line, tackling the nexus between addictions and crime · Jackal Accountant",
       "lang": "el",
       "errors": []
     },
-    "el-phone /opportunities/b14c628d-9572-4426-b4db-2014fd322d26": {
+    "el-phone /opportunities/dcf14df7-1728-48c0-a94a-9ded2495c718": {
       "status": 200,
       "title": "Demand-led innovation in security · Jackal Accountant",
       "lang": "el",
       "errors": []
     },
-    "el-phone /opportunities/c2e68e55-8008-4c5d-a72b-ac95964b5d19": {
+    "el-phone /opportunities/9f454a3f-4197-4345-8535-dbb65aa46b82": {
       "status": 200,
       "title": "Designing new ways of risk awareness and enhanced disaster preparedness · Jackal Accountant",
       "lang": "el",
       "errors": []
     },
-    "el-phone /opportunities/ddf015bb-1fc0-4754-8328-36f7dc8f13b7": {
+    "el-phone /opportunities/65d32f8e-f59b-479c-9645-662750a5f8f8": {
       "status": 200,
       "title": "Development of ecosystem and next-generation capabilities for a secured European Critical Communication System in civil security · Jackal Accountant",
       "lang": "el",
       "errors": []
     },
-    "el-phone /opportunities/f3e14b8a-bf22-40e5-a59b-8a48b9fc3f4c": {
+    "el-phone /opportunities/67413c9e-6c4f-41da-9c90-97a49908ccf3": {
       "status": 200,
       "title": "Development of innovative tools, processes, equipment and technologies through responses to disasters and emergencies for search and rescue in hazardous conditions · Jackal Accountant",
       "lang": "el",
       "errors": []
     },
-    "el-phone /opportunities/86dfc2da-72f0-4bbe-a952-58eca53b3ab9": {
+    "el-phone /opportunities/79f3b9f5-5215-4e24-a595-9e53a8ffecde": {
       "status": 200,
       "title": "Enhancing the security of citizens against terrorism and lone-actor violence in confined spaces such as schools · Jackal Accountant",
       "lang": "el",
       "errors": []
     },
-    "el-phone /opportunities/4cb28dce-cf39-43f0-9b07-cb71c9163f35": {
+    "el-phone /opportunities/09ca2d1a-21ff-45a7-b708-371c2a74ca57": {
       "status": 200,
       "title": "Improving capabilities of law enforcement to counter climate-related challenges · Jackal Accountant",
       "lang": "el",
       "errors": []
     },
-    "el-phone /opportunities/6f0378b0-119a-4476-b69b-c15fab5f4e17": {
+    "el-phone /opportunities/eeea0a80-e99d-422a-acad-8850f7d6d49d": {
       "status": 200,
       "title": "Missing persons: prevention and investigation · Jackal Accountant",
       "lang": "el",
       "errors": []
     },
-    "el-phone /opportunities/3e1f98c8-cc8a-4c93-96b5-354fb10d99aa": {
+    "el-phone /opportunities/c5522554-4353-4264-a89f-73f167f272f4": {
       "status": 200,
       "title": "Multi-hazard approach and cumulative / cascading impacts · Jackal Accountant",
       "lang": "el",
       "errors": []
     },
-    "el-phone /opportunities/f9acef39-b60c-4a49-815a-9e992c855c2f": {
+    "el-phone /opportunities/30bc45e8-6695-4154-aa6e-bc8abf0134af": {
       "status": 200,
       "title": "Open topic on driving innovation uptake of disaster risk solutions · Jackal Accountant",
       "lang": "el",
       "errors": []
     },
-    "el-phone /opportunities/f0259231-d103-49f1-a505-8c011d73d530": {
+    "el-phone /opportunities/e4feaadd-9826-4a92-aad7-57efbfb695d1": {
       "status": 200,
       "title": "Open topic on preventing and countering the misuse of emerging technologies for criminal purposes, including issues related to lawful access to data · Jackal Accountant",
       "lang": "el",
@@ -1260,6 +1254,12 @@
       "lang": "el",
       "errors": []
     },
+    "el-phone /guides?cat=housing-energy": {
+      "status": 200,
+      "title": "Οδηγοί · Jackal Accountant",
+      "lang": "el",
+      "errors": []
+    },
     "el-signed-in /profile": {
       "status": 200,
       "title": "Το προφίλ μου · Jackal Accountant",
@@ -1290,12 +1290,6 @@
       "lang": "el",
       "errors": []
     },
-    "el-signed-in /categories": {
-      "status": 200,
-      "title": "Κατηγορίες · Jackal Accountant",
-      "lang": "el",
-      "errors": []
-    },
     "el-signed-in /guides": {
       "status": 200,
       "title": "Οδηγοί · Jackal Accountant",
@@ -1308,7 +1302,13 @@
       "lang": "el",
       "errors": []
     },
-    "el-signed-in /opportunities/55429461-e037-4263-b1ff-f935f471758c": {
+    "el-signed-in /categories": {
+      "status": 200,
+      "title": "Κατηγορίες · Jackal Accountant",
+      "lang": "el",
+      "errors": []
+    },
+    "el-signed-in /opportunities/da8539a0-4b0d-4f53-be36-062447a8da52": {
       "status": 200,
       "title": "Τακτική επιδότηση ανεργίας · Jackal Accountant",
       "lang": "el",
@@ -1320,7 +1320,7 @@
       "lang": "el",
       "errors": []
     },
-    "el-signed-in /opportunities/f58df22e-a699-49b8-a6d4-556f51530939": {
+    "el-signed-in /opportunities/9c47e567-e9d5-4b0e-8ee1-fbec117d1b39": {
       "status": 200,
       "title": "Άρθρο 5Γ ΚΦΕ — 50% απαλλαγή φόρου για όσους μεταφέρουν τη φορολογική κατοικία τους στην Ελλάδα · Jackal Accountant",
       "lang": "el",
@@ -1332,19 +1332,19 @@
       "lang": "el",
       "errors": []
     },
-    "el-signed-in /opportunities/da07dd1d-7f5e-44f7-bd36-643d098ec9b2": {
+    "el-signed-in /opportunities/4f1066be-ed16-4653-a879-9735074c2c5b": {
       "status": 200,
       "title": "Structured dialogue with people with lived experience of poverty · Jackal Accountant",
       "lang": "el",
       "errors": []
     },
-    "el-signed-in /opportunities/af807879-7e3c-4126-807a-2cdfdeeec495": {
+    "el-signed-in /opportunities/ca175c9f-b6e6-438f-8356-e6897301893d": {
       "status": 200,
       "title": "Information, consultation & participation of representatives of undertakings · Jackal Accountant",
       "lang": "el",
       "errors": []
     },
-    "el-signed-in /opportunities/4e921580-842e-40fc-9b19-887622a85ce7": {
+    "el-signed-in /opportunities/441f44de-2082-4827-8afc-a52c8a48f9d6": {
       "status": 200,
       "title": "Erasmus Charter for Higher Education · Jackal Accountant",
       "lang": "el",
@@ -1434,7 +1434,7 @@
       "lang": "el",
       "errors": []
     },
-    "el-signed-in /opportunities/4708362e-ec6c-422a-8ec6-4b8ff4d6386d": {
+    "el-signed-in /opportunities/4c2e1aa3-b2d5-469b-a848-3273cb31e89c": {
       "status": 200,
       "title": "Άρθρο 5Α ΚΦΕ — εναλλακτική φορολόγηση επενδυτών · Jackal Accountant",
       "lang": "el",
@@ -1446,7 +1446,7 @@
       "lang": "el",
       "errors": []
     },
-    "el-signed-in /opportunities/48456b6b-3f8c-4df3-9045-0c31e50e5202": {
+    "el-signed-in /opportunities/9d1325ba-5ebf-45c4-a43d-9bde1c82a1fa": {
       "status": 200,
       "title": "Άρθρο 5Β ΚΦΕ — 7% φόρος για συνταξιούχους με σύνταξη εξωτερικού · Jackal Accountant",
       "lang": "el",
@@ -1458,123 +1458,117 @@
       "lang": "el",
       "errors": []
     },
-    "el-signed-in /opportunities/4d40cd18-5565-4eba-b875-7e4eb5effe52": {
+    "el-signed-in /opportunities/7f10e977-b412-489c-af50-149c4b559937": {
       "status": 200,
       "title": "Advanced Materials for Miniaturised Energy Harvesting Systems · Jackal Accountant",
       "lang": "el",
       "errors": []
     },
-    "el-signed-in /opportunities/4a0b1757-f36b-4e8b-9743-87d249f7dcdd": {
+    "el-signed-in /opportunities/8b93a908-49b5-4cb6-a0ff-8ffae0457d8b": {
       "status": 200,
       "title": "Biotechnology for Healthy Ageing · Jackal Accountant",
       "lang": "el",
       "errors": []
     },
-    "el-signed-in /opportunities/9e612ab8-0ffd-4ae5-a416-c4ee2f7b4063": {
+    "el-signed-in /opportunities/07d4ca76-47ab-4172-a02c-efed9ab947b2": {
       "status": 200,
       "title": "DeepRAP: Deep Reasoning, Abstraction & Planning towards trustworthy Cognitive AI Systems · Jackal Accountant",
       "lang": "el",
       "errors": []
     },
-    "el-signed-in /opportunities/b1d14200-8af8-4728-adda-bb65be9a9118": {
+    "el-signed-in /opportunities/c558b8cb-2731-44e6-8a04-9f977d12d9e6": {
       "status": 200,
       "title": "EIC defence call · Jackal Accountant",
       "lang": "el",
       "errors": []
     },
-    "el-signed-in /opportunities/ea8ec21b-009b-4a6d-b9f0-618b563f7f84": {
+    "el-signed-in /opportunities/0f3a6fbd-7094-435c-943d-b4f7bb9361da": {
       "status": 200,
       "title": "EIC Accelerator 2026 - Short proposal · Jackal Accountant",
       "lang": "el",
       "errors": []
     },
-    "el-signed-in /opportunities/7cc1bbae-d99e-4228-b6c3-72e15ebfa33d": {
+    "el-signed-in /opportunities/9bc6394d-6e01-4803-a069-9695450d68a2": {
       "status": 200,
       "title": "Accessible and available travel facilitation · Jackal Accountant",
       "lang": "el",
       "errors": []
     },
-    "el-signed-in /opportunities/4da7a1e1-aa50-4ef4-8ebd-09e5a50d58b6": {
+    "el-signed-in /opportunities/a38770c5-140b-4001-b0d8-4802c49ee418": {
       "status": 200,
       "title": "Advanced border surveillance and situational awareness · Jackal Accountant",
       "lang": "el",
       "errors": []
     },
-    "el-signed-in /opportunities/d3f8b881-6aec-41d8-a79e-d38bb70a60f8": {
+    "el-signed-in /opportunities/c3f7fa91-565a-4138-9351-4580f12685db": {
       "status": 200,
       "title": "Climate security and civil preparedness – new ways to develop pre- and post-crisis climate-change related scenarios for a more resilient Europe · Jackal Accountant",
       "lang": "el",
       "errors": []
     },
-    "el-signed-in /opportunities/1dbb3d40-ab12-494f-9ca5-d9a966f798ac": {
+    "el-signed-in /opportunities/c2e11b47-51b0-414d-8a5f-2e7612049dd8": {
       "status": 200,
       "title": "Crime prevention approaches, online and off-line, tackling the nexus between addictions and crime · Jackal Accountant",
       "lang": "el",
       "errors": []
     },
-    "el-signed-in /opportunities/b14c628d-9572-4426-b4db-2014fd322d26": {
+    "el-signed-in /opportunities/dcf14df7-1728-48c0-a94a-9ded2495c718": {
       "status": 200,
       "title": "Demand-led innovation in security · Jackal Accountant",
       "lang": "el",
       "errors": []
     },
-    "el-signed-in /opportunities/c2e68e55-8008-4c5d-a72b-ac95964b5d19": {
+    "el-signed-in /opportunities/9f454a3f-4197-4345-8535-dbb65aa46b82": {
       "status": 200,
       "title": "Designing new ways of risk awareness and enhanced disaster preparedness · Jackal Accountant",
       "lang": "el",
       "errors": []
     },
-    "el-signed-in /opportunities/ddf015bb-1fc0-4754-8328-36f7dc8f13b7": {
+    "el-signed-in /opportunities/65d32f8e-f59b-479c-9645-662750a5f8f8": {
       "status": 200,
       "title": "Development of ecosystem and next-generation capabilities for a secured European Critical Communication System in civil security · Jackal Accountant",
       "lang": "el",
       "errors": []
     },
-    "el-signed-in /opportunities/f3e14b8a-bf22-40e5-a59b-8a48b9fc3f4c": {
+    "el-signed-in /opportunities/67413c9e-6c4f-41da-9c90-97a49908ccf3": {
       "status": 200,
       "title": "Development of innovative tools, processes, equipment and technologies through responses to disasters and emergencies for search and rescue in hazardous conditions · Jackal Accountant",
       "lang": "el",
       "errors": []
     },
-    "el-signed-in /opportunities/86dfc2da-72f0-4bbe-a952-58eca53b3ab9": {
+    "el-signed-in /opportunities/79f3b9f5-5215-4e24-a595-9e53a8ffecde": {
       "status": 200,
       "title": "Enhancing the security of citizens against terrorism and lone-actor violence in confined spaces such as schools · Jackal Accountant",
       "lang": "el",
       "errors": []
     },
-    "el-signed-in /opportunities/4cb28dce-cf39-43f0-9b07-cb71c9163f35": {
+    "el-signed-in /opportunities/09ca2d1a-21ff-45a7-b708-371c2a74ca57": {
       "status": 200,
       "title": "Improving capabilities of law enforcement to counter climate-related challenges · Jackal Accountant",
       "lang": "el",
       "errors": []
     },
-    "el-signed-in /opportunities/6f0378b0-119a-4476-b69b-c15fab5f4e17": {
+    "el-signed-in /opportunities/eeea0a80-e99d-422a-acad-8850f7d6d49d": {
       "status": 200,
       "title": "Missing persons: prevention and investigation · Jackal Accountant",
       "lang": "el",
       "errors": []
     },
-    "el-signed-in /opportunities/3e1f98c8-cc8a-4c93-96b5-354fb10d99aa": {
+    "el-signed-in /opportunities/c5522554-4353-4264-a89f-73f167f272f4": {
       "status": 200,
       "title": "Multi-hazard approach and cumulative / cascading impacts · Jackal Accountant",
       "lang": "el",
       "errors": []
     },
-    "el-signed-in /opportunities/f9acef39-b60c-4a49-815a-9e992c855c2f": {
+    "el-signed-in /opportunities/30bc45e8-6695-4154-aa6e-bc8abf0134af": {
       "status": 200,
       "title": "Open topic on driving innovation uptake of disaster risk solutions · Jackal Accountant",
       "lang": "el",
       "errors": []
     },
-    "el-signed-in /opportunities/f0259231-d103-49f1-a505-8c011d73d530": {
+    "el-signed-in /opportunities/e4feaadd-9826-4a92-aad7-57efbfb695d1": {
       "status": 200,
       "title": "Open topic on preventing and countering the misuse of emerging technologies for criminal purposes, including issues related to lawful access to data · Jackal Accountant",
-      "lang": "el",
-      "errors": []
-    },
-    "el-signed-in /opportunities?status=open": {
-      "status": 200,
-      "title": "Ευκαιρίες · Jackal Accountant",
       "lang": "el",
       "errors": []
     },
@@ -1587,72 +1581,6 @@
     "el-signed-in /guides/a21": {
       "status": 200,
       "title": "Α21 — Επίδομα παιδιού · Jackal Accountant",
-      "lang": "el",
-      "errors": []
-    },
-    "el-signed-in /opportunities?type=grant": {
-      "status": 200,
-      "title": "Ευκαιρίες · Jackal Accountant",
-      "lang": "el",
-      "errors": []
-    },
-    "el-signed-in /opportunities?type=loan": {
-      "status": 200,
-      "title": "Ευκαιρίες · Jackal Accountant",
-      "lang": "el",
-      "errors": []
-    },
-    "el-signed-in /opportunities?type=benefit": {
-      "status": 200,
-      "title": "Ευκαιρίες · Jackal Accountant",
-      "lang": "el",
-      "errors": []
-    },
-    "el-signed-in /opportunities?type=tax": {
-      "status": 200,
-      "title": "Ευκαιρίες · Jackal Accountant",
-      "lang": "el",
-      "errors": []
-    },
-    "el-signed-in /opportunities?type=training": {
-      "status": 200,
-      "title": "Ευκαιρίες · Jackal Accountant",
-      "lang": "el",
-      "errors": []
-    },
-    "el-signed-in /opportunities?type=tender": {
-      "status": 200,
-      "title": "Ευκαιρίες · Jackal Accountant",
-      "lang": "el",
-      "errors": []
-    },
-    "el-signed-in /opportunities?audience=young_adult": {
-      "status": 200,
-      "title": "Ευκαιρίες · Jackal Accountant",
-      "lang": "el",
-      "errors": []
-    },
-    "el-signed-in /opportunities?audience=aspiring_entrepreneur": {
-      "status": 200,
-      "title": "Ευκαιρίες · Jackal Accountant",
-      "lang": "el",
-      "errors": []
-    },
-    "el-signed-in /opportunities?audience=employee_jobseeker": {
-      "status": 200,
-      "title": "Ευκαιρίες · Jackal Accountant",
-      "lang": "el",
-      "errors": []
-    },
-    "el-signed-in /opportunities?audience=household": {
-      "status": 200,
-      "title": "Ευκαιρίες · Jackal Accountant",
-      "lang": "el",
-      "errors": []
-    },
-    "el-signed-in /opportunities?audience=business_org": {
-      "status": 200,
-      "title": "Ευκαιρίες · Jackal Accountant",
       "lang": "el",
       "errors": []
     },
@@ -1679,6 +1607,78 @@
       "title": "Οδηγοί · Jackal Accountant",
       "lang": "el",
       "errors": []
+    },
+    "el-signed-in /guides?cat=housing-energy": {
+      "status": 200,
+      "title": "Οδηγοί · Jackal Accountant",
+      "lang": "el",
+      "errors": []
+    },
+    "el-signed-in /guides?cat=eu-programmes": {
+      "status": 200,
+      "title": "Οδηγοί · Jackal Accountant",
+      "lang": "el",
+      "errors": []
+    },
+    "el-signed-in /guides?cat=faq-glossary": {
+      "status": 200,
+      "title": "Οδηγοί · Jackal Accountant",
+      "lang": "el",
+      "errors": []
+    },
+    "el-signed-in /guides?cat=news-updates": {
+      "status": 200,
+      "title": "Οδηγοί · Jackal Accountant",
+      "lang": "el",
+      "errors": []
+    },
+    "el-signed-in /guides/discovereu": {
+      "status": 200,
+      "title": "DiscoverEU — δωρεάν ταξιδιωτικό πάσο για 18χρονους · Jackal Accountant",
+      "lang": "el",
+      "errors": []
+    },
+    "el-signed-in /guides/spiti2": {
+      "status": 200,
+      "title": "«Σπίτι μου ΙΙ» — δάνεια πρώτης κατοικίας · Jackal Accountant",
+      "lang": "el",
+      "errors": []
+    },
+    "el-signed-in /guides/studenthousing": {
+      "status": 200,
+      "title": "Φοιτητικό στεγαστικό επίδομα · Jackal Accountant",
+      "lang": "el",
+      "errors": []
+    },
+    "el-signed-in /guides/applying-officially": {
+      "status": 200,
+      "title": "Πώς γίνεται μια αίτηση σε επίσημη πλατφόρμα · Jackal Accountant",
+      "lang": "el",
+      "errors": []
+    },
+    "el-signed-in /opportunities?type=grant": {
+      "status": 200,
+      "title": "Ευκαιρίες · Jackal Accountant",
+      "lang": "el",
+      "errors": []
+    },
+    "el-signed-in /opportunities?type=loan": {
+      "status": 200,
+      "title": "Ευκαιρίες · Jackal Accountant",
+      "lang": "el",
+      "errors": []
+    },
+    "el-signed-in /opportunities?type=benefit": {
+      "status": 200,
+      "title": "Ευκαιρίες · Jackal Accountant",
+      "lang": "el",
+      "errors": []
+    },
+    "el-signed-in /opportunities?type=tax": {
+      "status": 200,
+      "title": "Ευκαιρίες · Jackal Accountant",
+      "lang": "el",
+      "errors": []
     }
   },
   "broken_links": [],
@@ -1702,7 +1702,7 @@
     {
       "step": "3 opportunity detail opens with official links",
       "ok": true,
-      "detail": "/opportunities/4708362e-ec6c-422a-8ec6-4b8ff4d6386d, 6 official links"
+      "detail": "/opportunities/4c2e1aa3-b2d5-469b-a848-3273cb31e89c, 6 official links"
     },
     {
       "step": "4 register leads to the profile",
@@ -1727,7 +1727,7 @@
     {
       "step": "7 opened match explains eligibility",
       "ok": true,
-      "detail": "/opportunities/55429461-e037-4263-b1ff-f935f471758c; decision record: true"
+      "detail": "/opportunities/da8539a0-4b0d-4f53-be36-062447a8da52; decision record: true"
     },
     {
       "step": "8 official source link present",
@@ -1752,10 +1752,12 @@
       "check": "homepage buttons",
       "targets": [
         "/opportunities",
-        "#how",
-        "/categories",
-        "/opportunities?status=open",
         "/for-me",
+        "/categories",
+        "/opportunities",
+        "/about",
+        "/for-me",
+        "/opportunities?cat=tax",
         "/guides",
         "/about#sources",
         "/about#faq"
@@ -1763,49 +1765,54 @@
     },
     {
       "check": "language switch to EN",
-      "nav": "OpportunitiesCategoriesFor MeGuides",
+      "nav": "HomeOpportunitiesFor MeGuidesHow it works",
       "htmlLangBeforeReload": "en",
       "htmlLangAfterReload": "en"
     },
     {
       "check": "home card /opportunities?cat=employment",
-      "home": " όσους αναζητούν εργασία.3 ανοιχτές τώρα",
+      "home": "Εργασία & ανεργία3 ανοιχτές τώρα",
       "list": 3
     },
     {
       "check": "home card /opportunities?cat=entrepreneurship",
-      "home": "ν μια νεοφυή ιδέα.Καμία καταχώριση ακόμη",
+      "home": "φυείς επιχειρήσειςΚαμία καταχώριση ακόμη",
       "list": 0
     },
     {
       "check": "home card /opportunities?cat=business",
-      "home": " υπάρχουσες επιχειρήσεις.4 ανοιχτές τώρα",
+      "home": "ές & μεσαίες επιχειρήσεις4 ανοιχτές τώρα",
       "list": 4
     },
     {
-      "check": "home card /opportunities?cat=agriculture",
-      "home": " και υδατοκαλλιέργεια.Καμία ανοιχτή τώρα",
-      "list": 0
-    },
-    {
       "check": "home card /opportunities?cat=education",
-      "home": "ς μετακίνησης στην Ευρώπη.1 ανοιχτή τώρα",
+      "home": ", κατάρτιση & κινητικότητα1 ανοιχτή τώρα",
       "list": 1
     },
     {
       "check": "home card /opportunities?cat=housing-energy",
-      "home": "όστος του νοικοκυριού.Καμία ανοιχτή τώρα",
+      "home": "Στέγαση & ενέργειαΚαμία ανοιχτή τώρα",
       "list": 0
     },
     {
       "check": "home card /opportunities?cat=family",
-      "home": "άλωτα νοικοκυριά.1 χρειάζεται νέο έλεγχο",
+      "home": "κοινωνική στήριξη1 χρειάζεται νέο έλεγχο",
       "list": 1
     },
     {
+      "check": "home card /opportunities?cat=tax",
+      "home": "α & επιστροφή στην Ελλάδα3 ανοιχτές τώρα",
+      "list": 3
+    },
+    {
       "check": "home card /opportunities?cat=innovation",
-      "home": "ι ψηφιακές τεχνολογίες.365 ανοιχτές τώρα",
+      "home": "ηφιακός μετασχηματισμός365 ανοιχτές τώρα",
       "list": 24
+    },
+    {
+      "check": "home card /opportunities?cat=tax",
+      "home": "Φορολογικά κίνητρα & επιστροφή",
+      "list": 3
     },
     {
       "check": "search «επίδομα»",
