@@ -52,3 +52,17 @@ Until a live connector has been tested, the site must not claim automatic update
 - Code-only EU titles (e.g. "SOCPL-2026-INFO-REPR") show the official call title when the portal provides one; otherwise
   the card says the title is the programme code.
 - English-only records carry a «Στα αγγλικά» tag on Greek pages.
+
+## Update 18 Oct 2026 — gov.gr watcher built, live test refused
+
+- Built: `src/lib/sources/watchers/govgr-sitemap.ts` + `scripts/govgr-watch.ts` + manual-only workflow
+  `.github/workflows/govgr-watch-test.yml` (no schedule). It reads robots.txt and the sitemap, lists NEW and REMOVED
+  service pages (`/el/services/<id>/<slug>`; the sitemap has no `<lastmod>`, so content changes inside a page are not
+  visible this way) and writes a review list. It creates no opportunity. 5 tests on a fixture sitemap pass.
+- Robots.txt (read with our research tool, 18 Oct): allows everything except /api/, /_next/, user-area and oauth2login;
+  lists https://www.gov.gr/sitemap.xml. The sitemap is one urlset; service ids rise over time (newest seen: 1002440).
+- **Live test, 18 Oct: gov.gr answered HTTP 403 to the automated test machine (GitHub Actions), already for
+  robots.txt.** We did not try to get around this (no browser disguise, no other routes). Until gov.gr allows it, the
+  watcher cannot run unattended.
+- Options for the owner: (1) ask gov.gr / ΓΓΠΣ for permission or an official feed for new services; (2) check whether
+  data.gov.gr publishes the services catalogue as open data; (3) run the watcher by hand from an allowed network.
