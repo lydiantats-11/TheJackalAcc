@@ -8,6 +8,9 @@ import { PROGRAMME_GUIDES, GENERAL_GUIDES } from "@/lib/site/guides";
 import { AcropolisArt } from "@/components/brand";
 import { Icon } from "@/components/icons";
 import { OpportunityCard } from "@/components/opportunity-card";
+import { FeedPanel } from "@/components/brief";
+import { buildFeed } from "@/lib/site/feed";
+import { loadRecentChanges } from "@/lib/data/opportunities";
 
 /** Eight needs-first categories for the homepage grid (display choice only; every category stays on /categories). */
 const HOME_CATEGORIES = ["employment", "entrepreneurship", "business", "education", "housing-energy", "family", "tax", "innovation"];
@@ -19,6 +22,8 @@ export default async function Home() {
   const h = s.home;
   const list: ListedOpportunity[] = isDatabaseConfigured() ? await loadListing(sql()).catch(() => []) : [];
   const counts = countByCategory(list);
+  const changes = isDatabaseConfigured() ? await loadRecentChanges(sql()).catch(() => []) : [];
+  const feed = buildFeed(list.filter((x) => !x.row.is_synthetic), changes, new Date());
   const top = featuredChecked(list, 3);
   const cats = HOME_CATEGORIES.map((slug) => categoryBySlug(slug)).filter((c) => !!c);
   const guides = [GENERAL_GUIDES[0]!, ...["a21", "unemployment"].map((slug) => PROGRAMME_GUIDES.find((g) => g.slug === slug)).filter((g) => !!g)];
@@ -56,6 +61,13 @@ export default async function Home() {
           <div className="art-wrap" aria-hidden="false"><AcropolisArt className="art" label={locale === "el" ? "Η Ακρόπολη της Αθήνας" : "The Acropolis of Athens"} /></div>
         </div>
       </section>
+
+      {/* 1b — News & deadlines: what opened, what closes soon, what changed (official dates only) */}
+      {feed.total > 0 && (
+        <section className="band" style={{ paddingBottom: 0 }}>
+          <div className="container"><FeedPanel feed={feed} s={s} locale={locale} title={s.feed.titlePublic} per={3} /></div>
+        </section>
+      )}
 
       {/* 2 — Needs-first categories */}
       <section className="band">

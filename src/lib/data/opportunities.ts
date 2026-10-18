@@ -178,3 +178,15 @@ export async function loadHistory(sql: postgres.Sql, id: string, limit = 20): Pr
     ...events.map((e) => ({ at: e.at, kind: e.kind, summary: null, fields: e.payload?.fields, budget_before: e.payload?.budget_before ?? null, budget_after: e.payload?.budget_after ?? null })),
   ].sort((a, b) => b.at.getTime() - a.at.getTime()).slice(0, limit);
 }
+
+/** Recorded changes across all records in the last `days` days (for «Νέα για εσάς»; first imports are excluded). */
+export async function loadRecentChanges(sql: postgres.Sql, days = 14): Promise<Array<{ opportunity_id: string; at: Date; kind: string }>> {
+  const versions = await sql<{ opportunity_id: string; at: Date; kind: string }[]>`
+    SELECT opportunity_id, created_at AS at, change_kind AS kind FROM opportunity_versions
+    WHERE created_at > now() - make_interval(days => ${days}) AND change_kind <> 'created'
+      AND change_summary IS DISTINCT FROM 'state before update'`;
+  const events = await sql<{ opportunity_id: string; at: Date; kind: string }[]>`
+    SELECT opportunity_id, created_at AS at, event_type AS kind FROM opportunity_events
+    WHERE created_at > now() - make_interval(days => ${days}) AND event_type = 'official_details_changed'`;
+  return [...versions, ...events];
+}

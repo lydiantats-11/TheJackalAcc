@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { checkedLine } from "@/components/opportunity-card";
 import { unknownsOf } from "@/lib/site/unknowns";
+import { OpportunityBrief } from "@/components/brief";
 import { applicantAudienceOf } from "@/lib/site/applicants";
 import { notFound } from "next/navigation";
 import { getDict } from "@/lib/i18n/server";
@@ -111,6 +112,11 @@ export default async function OpportunityPage({ params, searchParams }: { params
       </header>
       {o.is_synthetic && <div className="notice" style={{ marginBottom: 16 }}>{t.synthetic}.</div>}
       {o.has_conflict && <div className="notice bad" role="alert" style={{ marginBottom: 16 }}>{t.ui.conflict}</div>}
+      <OpportunityBrief
+        input={{ record: status, closesAt: o.closes_at, opensAt: o.opens_at, deadlineKind: o.deadline_kind, hasGuide: !!guide }}
+        what={amount.value} who={s.card.applicant[applicant]} s={s} locale={locale} now={now}
+        applyUrl={o.application_url ?? o.canonical_url} guideHref={guide ? `/guides/${guide}` : undefined}
+        similarHref={cats[0] ? `/opportunities?cat=${cats[0].slug}` : "/opportunities"} />
 
       <div className="with-aside-r">
         <div>

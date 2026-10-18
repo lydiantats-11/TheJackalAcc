@@ -224,6 +224,26 @@ const el = {
   card: { deadline: "Προθεσμία", amount: "Ποσό", source: "Πηγή", checked: "Ελέγχθηκε", retrieved: "Ανακτήθηκε από την επίσημη πύλη", syntheticDate: "Δοκιμαστική καταχώριση — δεν ελέγχθηκε", amountNone: "Βλ. επίσημη πηγή", brussels: "ώρα Βρυξελλών", budget: "Προϋπολογισμός πρόσκλησης", benefit: "Όφελος",
     applicant: { individuals: "Για ιδιώτες", both: "Για ιδιώτες και επιχειρήσεις", organisations: "Για επιχειρήσεις & φορείς", unknown: "Είδος αιτούντα: δεν έχει καταγραφεί" },
     inEnglish: "Στα αγγλικά", codeOnly: "Η πηγή δίνει μόνο κωδικό, χωρίς τίτλο" },
+  brief: {
+    title: "Με μια ματιά", what: "Τι παίρνετε", who: "Ποιος κάνει αίτηση", when: "Χρόνος", next: "Τι να κάνετε τώρα",
+    daysLeft: (n: number) => `${n} ${n === 1 ? "ημέρα" : "ημέρες"} ακόμη`, lastDay: "Τελευταία ημέρα", opensIn: (n: number) => `Ανοίγει σε ${n} ${n === 1 ? "ημέρα" : "ημέρες"}`,
+    until: (d: string) => `έως ${d}`, on: (d: string) => `στις ${d}`,
+    rolling: "Συνεχής υποβολή — χωρίς καταληκτική ημερομηνία", noDeadline: "Η προθεσμία δεν αναφέρεται στην πηγή", checkStatus: "Η κατάσταση χρειάζεται επιβεβαίωση", passed: "Η προθεσμία έληξε", closed: "Δεν δέχεται αιτήσεις",
+    actions: {
+      apply_now: "Κάντε αίτηση στην επίσημη σελίδα", read_guide_then_apply: "Διαβάστε τον οδηγό και κάντε αίτηση στην επίσημη σελίδα",
+      prepare: "Ετοιμαστείτε: η υποβολή δεν έχει ανοίξει ακόμη", confirm_status: "Επιβεβαιώστε στην επίσημη σελίδα ότι δέχεται αιτήσεις", see_similar: "Δείτε παρόμοιες ανοιχτές ευκαιρίες",
+    },
+    applyCta: "Επίσημη σελίδα αίτησης", guideCta: "Οδηγός", similarCta: "Παρόμοιες ευκαιρίες",
+  },
+  feed: {
+    title: "Νέα για εσάς", titlePublic: "Νέα & προθεσμίες", lead: "Ό,τι άνοιξε πρόσφατα, όσα κλείνουν σύντομα και όσα άλλαξαν — για να κάνετε αίτηση έγκαιρα.",
+    opened: "Άνοιξαν πρόσφατα", closing: "Κλείνουν σύντομα", changed: "Άλλαξαν",
+    openedOn: (d: string) => `Άνοιξε ${d}`, closesOn: (d: string) => `Κλείνει ${d}`, changedOn: (d: string) => `Αλλαγή ${d}`,
+    none: "Τίποτα νέο σε αυτή την ενότητα τις τελευταίες ημέρες.",
+    rules: "«Άνοιξαν πρόσφατα» βασίζεται στην επίσημη ημερομηνία ανοίγματος (τελευταίες 21 ημέρες), όχι στην ημερομηνία που καταχωρίστηκε εδώ. «Κλείνουν σύντομα»: επόμενες 14 ημέρες. «Άλλαξαν»: παρατάσεις, τροποποιήσεις και αλλαγές κατάστασης των τελευταίων 14 ημερών.",
+    noAuto: "Η αυτόματη ενημέρωση δεν είναι ακόμη ενεργή· τα νέα εμφανίζονται όταν ελέγχεται ή εισάγεται μια πηγή.",
+    more: (n: number) => `και ${n} ακόμη`, seeAll: "Όλες",
+  },
   onboarding: {
     stepsLabel: "Βήματα", progress: (n: number, total: number) => `Βήμα ${n} από ${total}`,
     savedNote: "Αποθηκεύεται σε κάθε βήμα · όλες οι ερωτήσεις είναι προαιρετικές",
@@ -492,6 +512,26 @@ const en: Copy = {
   card: { deadline: "Deadline", amount: "Amount", source: "Source", checked: "Checked", retrieved: "Retrieved from the official portal", syntheticDate: "Test listing — not checked", amountNone: "See official source", brussels: "Brussels time", budget: "Call budget", benefit: "Benefit",
     applicant: { individuals: "For individuals", both: "For individuals and businesses", organisations: "For businesses & organisations", unknown: "Applicant type: not recorded" },
     inEnglish: "In English", codeOnly: "The source gives only a code, no title" },
+  brief: {
+    title: "At a glance", what: "What you get", who: "Who applies", when: "Time", next: "What to do now",
+    daysLeft: (n: number) => `${n} ${n === 1 ? "day" : "days"} left`, lastDay: "Last day", opensIn: (n: number) => `Opens in ${n} ${n === 1 ? "day" : "days"}`,
+    until: (d: string) => `until ${d}`, on: (d: string) => `on ${d}`,
+    rolling: "Rolling — no closing date", noDeadline: "The deadline is not stated in the source", checkStatus: "Status needs confirming", passed: "Deadline passed", closed: "Not accepting applications",
+    actions: {
+      apply_now: "Apply on the official page", read_guide_then_apply: "Read the guide, then apply on the official page",
+      prepare: "Get ready: submissions have not opened yet", confirm_status: "Confirm on the official page that it still accepts applications", see_similar: "See similar open opportunities",
+    },
+    applyCta: "Official application page", guideCta: "Guide", similarCta: "Similar opportunities",
+  },
+  feed: {
+    title: "New for you", titlePublic: "News & deadlines", lead: "What opened recently, what closes soon and what changed — so you can apply in time.",
+    opened: "Opened recently", closing: "Closing soon", changed: "Changed",
+    openedOn: (d: string) => `Opened ${d}`, closesOn: (d: string) => `Closes ${d}`, changedOn: (d: string) => `Changed ${d}`,
+    none: "Nothing new in this section in recent days.",
+    rules: "«Opened recently» uses the official opening date (last 21 days), not the date it was added here. «Closing soon»: next 14 days. «Changed»: extensions, amendments and status changes in the last 14 days.",
+    noAuto: "Automatic updates are not switched on yet; news appears when a source is checked or imported.",
+    more: (n: number) => `and ${n} more`, seeAll: "All",
+  },
   onboarding: {
     stepsLabel: "Steps", progress: (n: number, total: number) => `Step ${n} of ${total}`,
     savedNote: "Saved at every step · every question is optional",

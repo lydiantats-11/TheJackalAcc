@@ -8,6 +8,7 @@ import { formatDate, formatDay } from "@/lib/format";
 import { RecordStatusBadge, SyntheticLabel } from "./badges";
 import { cardAmount } from "./opportunity-details";
 import { displayAuthority, displayTitle } from "@/lib/site/verified";
+import { TimeLeftPill } from "./brief";
 
 /** Short deadline for cards: date (and time when stated), naming Brussels time only when it applies. */
 function cardDeadline(o: ListedOpportunity["row"], t: Dictionary, s: SiteCopy, locale: Locale) {
@@ -38,7 +39,7 @@ export function OpportunityCard({ item, t, s, locale, extra }: {
   const amount = cardAmount(o, t, s, locale);
   return (
     <article className="opp-card">
-      <div className="card-status"><RecordStatusBadge record={item.record} s={s} locale={locale} /></div>
+      <div className="card-status"><RecordStatusBadge record={item.record} s={s} locale={locale} /><TimeLeftPill input={{ record: item.record, closesAt: o.closes_at, opensAt: o.opens_at, deadlineKind: o.deadline_kind, hasGuide: !!guide }} s={s} locale={locale} now={new Date()} /></div>
       <h3 lang={title.lang}><Link href={`/opportunities/${o.id}`}>{title.text}</Link></h3>
       {title.codeOnly && <p className="xs muted" style={{ margin: "-6px 0 0" }}>{s.card.codeOnly}</p>}
       <div className="tags">

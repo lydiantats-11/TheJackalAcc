@@ -16,6 +16,9 @@ import { personasOf } from "@/lib/domain/personas";
 import { EligibilityBadge } from "@/components/badges";
 import { Icon } from "@/components/icons";
 import { OpportunityCard } from "@/components/opportunity-card";
+import { FeedPanel } from "@/components/brief";
+import { buildFeed } from "@/lib/site/feed";
+import { loadRecentChanges } from "@/lib/data/opportunities";
 import { applicantAudienceOf, personKind, splitByApplicant } from "@/lib/site/applicants";
 import { isCurrent } from "@/lib/domain/record-status";
 
@@ -82,6 +85,8 @@ export default async function ForMePage({ searchParams }: { searchParams: Promis
   const assessed: Array<{ x: ListedOpportunity; a: Assessment }> = current
     .map((x) => ({ x, a: assess(toMatchable(x.row, reqs.get(x.row.id) ?? []), profile, { now }) }))
     .sort((p, q) => fit(q.x) - fit(p.x) || rankKey(p.a) - rankKey(q.a));
+  // «Νέα για εσάς»: only the person's current, relevant programmes open to them (same split as the results below).
+  const personalFeed = buildFeed(current, await loadRecentChanges(sql()).catch(() => []), now);
   const groups = GROUPS.map((g) => ({ g, items: assessed.filter(({ a }) => a.eligibility === g) })).filter((x) => x.items.length > 0);
   // Ranked by how many current opportunities each answer would help decide (ask only what matters).
   const ranked = rankQuestions(assessed.map(({ a }) => a));
@@ -164,6 +169,7 @@ export default async function ForMePage({ searchParams }: { searchParams: Promis
             </div>
           ) : (
             <div className="stack-lg">
+              {personalFeed.total > 0 && <FeedPanel feed={personalFeed} s={s} locale={locale} title={s.feed.title} />}
               <p className="small muted" style={{ margin: 0 }}>{t.dash.note}</p>
               {groups.map(({ g, items }) => (
                 <div key={g}>
