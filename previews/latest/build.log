@@ -1,0 +1,23 @@
+
+> funding-radar@0.1.0 build
+> next build
+
+▲ Next.js 16.4.0 (Turbopack)
+✓ Running next.config.ts took 28ms
+⚠ No build cache found. Please configure build caching for faster rebuilds. Read more: https://nextjs.org/docs/messages/no-cache
+
+  Creating an optimized production build ...
+✓ Compiled successfully in 5.6s
+  Running TypeScript ...
+tests/brief-feed.test.ts(56,25): error TS2345: Argument of type '{ record: RecordStatus; status: "upcoming" | "open" | "recheck" | "passed"; row: { id: string; opens_at: Date | null; closes_at: Date | null; deadline_kind: string; }; }[]' is not assignable to parameter of type 'Feedable[]'.
+  Type '{ record: RecordStatus; status: "upcoming" | "open" | "recheck" | "passed"; row: { id: string; opens_at: Date | null; closes_at: Date | null; deadline_kind: string; }; }' is not assignable to type 'Feedable'.
+    Type '{ record: RecordStatus; status: "upcoming" | "open" | "recheck" | "passed"; row: { id: string; opens_at: Date | null; closes_at: Date | null; deadline_kind: string; }; }' is not assignable to type '{ row: Pick<OpportunityRow, "id" | "closes_at" | "deadline_kind" | "opens_at">; }'.
+      The types of 'row.deadline_kind' are incompatible between these types.
+        Type 'string' is not assignable to type '"not_applicable" | "rolling" | "official" | "estimated" | "not_announced"'.
+tests/brief-feed.test.ts(62,25): error TS2345: Argument of type '{ record: RecordStatus; status: "upcoming" | "open" | "recheck" | "passed"; row: { id: string; opens_at: Date | null; closes_at: Date | null; deadline_kind: string; }; }[]' is not assignable to parameter of type 'Feedable[]'.
+  Type '{ record: RecordStatus; status: "upcoming" | "open" | "recheck" | "passed"; row: { id: string; opens_at: Date | null; closes_at: Date | null; deadline_kind: string; }; }' is not assignable to type 'Feedable'.
+    Type '{ record: RecordStatus; status: "upcoming" | "open" | "recheck" | "passed"; row: { id: string; opens_at: Date | null; closes_at: Date | null; deadline_kind: string; }; }' is not assignable to type '{ row: Pick<OpportunityRow, "id" | "closes_at" | "deadline_kind" | "opens_at">; }'.
+      The types of 'row.deadline_kind' are incompatible between these types.
+        Type 'string' is not assignable to type '"not_applicable" | "rolling" | "official" | "estimated" | "not_announced"'.
+Failed to type check.
+

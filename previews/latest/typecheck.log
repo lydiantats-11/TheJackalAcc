@@ -2,11 +2,13 @@
 > funding-radar@0.1.0 typecheck
 > tsc --noEmit
 
-src/app/for-me/page.tsx(101,6): error TS2322: Type 'string | undefined' is not assignable to type 'string'.
-  Type 'undefined' is not assignable to type 'string'.
-src/app/for-me/page.tsx(102,6): error TS2322: Type 'string | undefined' is not assignable to type 'string'.
-  Type 'undefined' is not assignable to type 'string'.
-src/app/for-me/page.tsx(103,6): error TS2322: Type 'string | undefined' is not assignable to type 'string'.
-  Type 'undefined' is not assignable to type 'string'.
-src/app/for-me/page.tsx(104,6): error TS2322: Type 'string | undefined' is not assignable to type 'string'.
-  Type 'undefined' is not assignable to type 'string'.
+tests/brief-feed.test.ts(56,25): error TS2345: Argument of type '{ record: RecordStatus; status: "upcoming" | "open" | "recheck" | "passed"; row: { id: string; opens_at: Date | null; closes_at: Date | null; deadline_kind: string; }; }[]' is not assignable to parameter of type 'Feedable[]'.
+  Type '{ record: RecordStatus; status: "upcoming" | "open" | "recheck" | "passed"; row: { id: string; opens_at: Date | null; closes_at: Date | null; deadline_kind: string; }; }' is not assignable to type 'Feedable'.
+    Type '{ record: RecordStatus; status: "upcoming" | "open" | "recheck" | "passed"; row: { id: string; opens_at: Date | null; closes_at: Date | null; deadline_kind: string; }; }' is not assignable to type '{ row: Pick<OpportunityRow, "id" | "closes_at" | "deadline_kind" | "opens_at">; }'.
+      The types of 'row.deadline_kind' are incompatible between these types.
+        Type 'string' is not assignable to type '"not_applicable" | "rolling" | "official" | "estimated" | "not_announced"'.
+tests/brief-feed.test.ts(62,25): error TS2345: Argument of type '{ record: RecordStatus; status: "upcoming" | "open" | "recheck" | "passed"; row: { id: string; opens_at: Date | null; closes_at: Date | null; deadline_kind: string; }; }[]' is not assignable to parameter of type 'Feedable[]'.
+  Type '{ record: RecordStatus; status: "upcoming" | "open" | "recheck" | "passed"; row: { id: string; opens_at: Date | null; closes_at: Date | null; deadline_kind: string; }; }' is not assignable to type 'Feedable'.
+    Type '{ record: RecordStatus; status: "upcoming" | "open" | "recheck" | "passed"; row: { id: string; opens_at: Date | null; closes_at: Date | null; deadline_kind: string; }; }' is not assignable to type '{ row: Pick<OpportunityRow, "id" | "closes_at" | "deadline_kind" | "opens_at">; }'.
+      The types of 'row.deadline_kind' are incompatible between these types.
+        Type 'string' is not assignable to type '"not_applicable" | "rolling" | "official" | "estimated" | "not_announced"'.
