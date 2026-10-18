@@ -1,11 +1,11 @@
 /**
  * «Νέα για εσάς» (18 Oct 2026): what a visitor should see first so they can apply early.
- *  - opened:   the OFFICIAL opening date is within the last 21 days and the record is current;
+ *  - opened:   the OFFICIAL opening date is within the last 21 days and the record is open or upcoming and fresh
+ *              (records due a re-check stay in the listings, but are not announced as news);
  *  - closing:  open with an official deadline within the next 14 days;
  *  - changed:  a recorded change (extension, amendment, status change, official details changed) in the last 14 days.
  * Import dates are never used as "new": a batch import is not news. Server-free so it can be tested.
  */
-import { isCurrent } from "@/lib/domain/record-status";
 import type { ListedOpportunity } from "./listing";
 
 const DAY = 86_400_000;
@@ -26,7 +26,7 @@ export function buildFeed<T extends Feedable>(items: T[], changes: RecentChange[
   const byId = new Map(items.map((x) => [x.row.id, x]));
   for (const x of items) {
     const o = x.row;
-    if (o.opens_at && isCurrent(x.record) && o.opens_at.getTime() <= now.getTime() && now.getTime() - o.opens_at.getTime() <= OPENED_WINDOW_DAYS * DAY) {
+    if (o.opens_at && (x.status === "open" || x.status === "upcoming") && o.opens_at.getTime() <= now.getTime() && now.getTime() - o.opens_at.getTime() <= OPENED_WINDOW_DAYS * DAY) {
       opened.push({ kind: "opened", at: o.opens_at, item: x });
     }
     if (x.status === "open" && o.deadline_kind === "official" && o.closes_at && o.closes_at.getTime() > now.getTime() && o.closes_at.getTime() - now.getTime() <= CLOSING_WINDOW_DAYS * DAY) {

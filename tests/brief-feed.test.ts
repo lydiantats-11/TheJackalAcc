@@ -44,7 +44,7 @@ describe("time left", () => {
 describe("«Νέα για εσάς» feed", () => {
   const item = (id: string, x: { opens?: string; closes?: string; status?: "open" | "upcoming" | "recheck" | "passed"; display?: RecordStatus["display"] }) => ({
     record: rec(x.display ?? "open"), status: x.status ?? "open",
-    row: { id, opens_at: x.opens ? d(x.opens) : null, closes_at: x.closes ? d(x.closes) : null, deadline_kind: "official" },
+    row: { id, opens_at: x.opens ? d(x.opens) : null, closes_at: x.closes ? d(x.closes) : null, deadline_kind: "official" as const },
   });
   it("opened = official opening date in the last 21 days; closing = next 14 days; ordered", () => {
     const items = [
