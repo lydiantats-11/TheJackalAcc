@@ -1,0 +1,41 @@
+# gov.gr new-service watcher — MANUAL TEST ONLY (owner approval 18 Oct 2026: "build and test, keep off").
+# Runs only on demand (Actions → Run workflow) or a push to the `govgr-test` branch. No schedule. No database.
+# Reads robots.txt and the public sitemap once, writes a review list to `live-test-results/govgr-watch/latest`.
+# Creates or changes no opportunity; nothing is published.
+name: gov.gr watcher test (manual)
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [govgr-test]
+
+permissions:
+  contents: write   # only to save the review list to the `live-test-results` branch
+
+jobs:
+  watch:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    env:
+      MONITOR_CONTACT_EMAIL: jackal-accountant-test@users.noreply.github.com
+      OUT: govgr-watch-output
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with: { node-version: 22 }
+      - run: npm install --no-audit --no-fund
+      - name: Previous snapshot (if any)
+        run: |
+          git fetch origin live-test-results --depth=1 || true
+          git show origin/live-test-results:govgr-watch/latest/snapshot.json > prev-snapshot.json 2>/dev/null || rm -f prev-snapshot.json
+      - name: One run of the watcher
+        run: npx tsx scripts/govgr-watch.ts "$OUT" prev-snapshot.json
+      - name: Save review list
+        run: |
+          git config user.name "jackal-watch-test"; git config user.email "jackal-accountant-test@users.noreply.github.com"
+          cp -r "$OUT" /tmp/out
+          git fetch origin live-test-results || true
+          git checkout live-test-results 2>/dev/null || git checkout --orphan live-test-results
+          mkdir -p govgr-watch && rm -rf govgr-watch/latest && cp -r /tmp/out govgr-watch/latest
+          git add govgr-watch/latest && git commit -qm "gov.gr watcher test run $(date -u +%FT%TZ)" && git push -q origin live-test-results
+      - run: cat "$OUT/report.md" >> "$GITHUB_STEP_SUMMARY"
