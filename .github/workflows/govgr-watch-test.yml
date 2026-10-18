@@ -32,10 +32,9 @@ jobs:
         run: npx tsx scripts/govgr-watch.ts "$OUT" prev-snapshot.json
       - name: Save review list
         run: |
-          git config user.name "jackal-watch-test"; git config user.email "jackal-accountant-test@users.noreply.github.com"
-          cp -r "$OUT" /tmp/out
-          git fetch origin live-test-results || true
-          git checkout live-test-results 2>/dev/null || git checkout --orphan live-test-results
-          mkdir -p govgr-watch && rm -rf govgr-watch/latest && cp -r /tmp/out govgr-watch/latest
-          git add govgr-watch/latest && git commit -qm "gov.gr watcher test run $(date -u +%FT%TZ)" && git push -q origin live-test-results
+          git config --global user.name "jackal-watch-test"; git config --global user.email "jackal-accountant-test@users.noreply.github.com"
+          git fetch origin live-test-results
+          git worktree add /tmp/ltr origin/live-test-results
+          mkdir -p /tmp/ltr/govgr-watch && rm -rf /tmp/ltr/govgr-watch/latest && cp -r "$OUT" /tmp/ltr/govgr-watch/latest
+          cd /tmp/ltr && git add govgr-watch/latest && git commit -qm "gov.gr watcher test run $(date -u +%FT%TZ)" && git push -q origin HEAD:live-test-results
       - run: cat "$OUT/report.md" >> "$GITHUB_STEP_SUMMARY"
