@@ -29,7 +29,11 @@ async function inspect(page) {
     const overflow = document.documentElement.scrollWidth > window.innerWidth + 1;
     const links = [...document.querySelectorAll("a[href]")].map((a) => a.getAttribute("href"));
     const external = [...document.querySelectorAll('a[href^="http"]')].map((a) => ({ href: a.getAttribute("href"), newTab: a.target === "_blank", rel: a.rel }));
-    const placeholders = (document.body.innerText.match(/lorem ipsum|\bTODO\b|coming soon|\bundefined\b|\bNaN\b|\[object Object\]|Invalid Date/g) ?? []).slice(0, 5);
+    // Official text quoted as published (scope excerpts, call conditions) is the source's own wording, not ours.
+    const ours = document.body.cloneNode(true);
+    ours.querySelectorAll(".official-text, .official-block").forEach((n) => n.remove());
+    const text = ours.innerText ?? ours.textContent ?? "";
+    const placeholders = (text.match(/lorem ipsum|\bTODO\b|coming soon|\bundefined\b|\bNaN\b|\[object Object\]|Invalid Date/g) ?? []).slice(0, 5);
     return { title: document.title, lang: document.documentElement.lang, h1, deadLinks, missingAnchors, unnamedButtons, unlabeled, imgsNoAlt, fakeClickable, overflow, links, external, placeholders };
   });
 }
