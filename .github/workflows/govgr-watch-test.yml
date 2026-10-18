@@ -29,12 +29,21 @@ jobs:
           git fetch origin live-test-results --depth=1 || true
           git show origin/live-test-results:govgr-watch/latest/snapshot.json > prev-snapshot.json 2>/dev/null || rm -f prev-snapshot.json
       - name: One run of the watcher
-        run: npx tsx scripts/govgr-watch.ts "$OUT" prev-snapshot.json
+        run: |
+          mkdir -p "$OUT"
+          set +e
+          npx tsx scripts/govgr-watch.ts "$OUT" prev-snapshot.json > "$OUT/run.log" 2>&1
+          code=$?
+          cat "$OUT/run.log"
+          echo "exit code: $code" >> "$OUT/run.log"
+          exit $code
       - name: Save review list
+        if: always()
         run: |
           git config --global user.name "jackal-watch-test"; git config --global user.email "jackal-accountant-test@users.noreply.github.com"
           git fetch origin live-test-results
           git worktree add /tmp/ltr origin/live-test-results
           mkdir -p /tmp/ltr/govgr-watch && rm -rf /tmp/ltr/govgr-watch/latest && cp -r "$OUT" /tmp/ltr/govgr-watch/latest
           cd /tmp/ltr && git add govgr-watch/latest && git commit -qm "gov.gr watcher test run $(date -u +%FT%TZ)" && git push -q origin HEAD:live-test-results
-      - run: cat "$OUT/report.md" >> "$GITHUB_STEP_SUMMARY"
+      - if: always()
+        run: cat "$OUT/report.md" "$OUT/run.log" >> "$GITHUB_STEP_SUMMARY" 2>/dev/null || true
