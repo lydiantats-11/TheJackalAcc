@@ -7,7 +7,7 @@
 ⚠ No build cache found. Please configure build caching for faster rebuilds. Read more: https://nextjs.org/docs/messages/no-cache
 
   Creating an optimized production build ...
-✓ Compiled successfully in 5.6s
+✓ Compiled successfully in 5.4s
   Running TypeScript ...
 tests/brief-feed.test.ts(56,25): error TS2345: Argument of type '{ record: RecordStatus; status: "upcoming" | "open" | "recheck" | "passed"; row: { id: string; opens_at: Date | null; closes_at: Date | null; deadline_kind: string; }; }[]' is not assignable to parameter of type 'Feedable[]'.
   Type '{ record: RecordStatus; status: "upcoming" | "open" | "recheck" | "passed"; row: { id: string; opens_at: Date | null; closes_at: Date | null; deadline_kind: string; }; }' is not assignable to type 'Feedable'.
