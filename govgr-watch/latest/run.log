@@ -1,0 +1,8 @@
+PermanentFetchError: HTTP 403
+    at safeFetch (/home/runner/work/TheJackalAcc/TheJackalAcc/src/lib/sources/fetcher.ts:107:34)
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+    at async withRetry (/home/runner/work/TheJackalAcc/TheJackalAcc/src/lib/sources/fetcher.ts:131:23)
+    at async main (/home/runner/work/TheJackalAcc/TheJackalAcc/scripts/govgr-watch.ts:18:19) {
+  status: 403
+}
+exit code: 1
