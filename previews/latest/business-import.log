@@ -1,0 +1,16 @@
+      external_key      |  official_identifier  | review_status | status |       closes_at        | source | reqs 
+------------------------+-----------------------+---------------+--------+------------------------+--------+------
+ opske:code:ΠΗΠΕ-06/3.0 | ΠΗΠΕ-06/3.0           | approved      | open   | 2026-10-21 12:00:00+00 | opske  |    1
+ opske:24506            | 75_Δ.1.7              | approved      | open   | 2026-10-30 13:00:00+00 | opske  |    1
+ opske:21766            | 79                    | approved      | open   | 2026-10-30 13:00:00+00 | opske  |    1
+ opske:23466            | 1.4.1.2               | approved      | open   | 2026-11-16 12:00:00+00 | opske  |    1
+ opske:23487            | 1.2.6.2               | approved      | open   | 2026-11-16 12:00:00+00 | efepae |    1
+ opske:23467            | 1.2.5.2               | approved      | open   | 2026-11-16 12:00:00+00 | opske  |    1
+ opske:23486            | 1.4.2.2               | approved      | open   | 2026-11-16 12:00:00+00 | opske  |    1
+ opske:20505            | ΠΒΑΡ05/ΒΑ_ΕΤΠΑ_1.3_56 | approved      | open   | 2026-11-17 13:00:00+00 | efepae |    1
+ opske:24787            | CRETE_1.1.2.1         | approved      | open   | 2026-11-30 13:00:00+00 | opske  |    1
+ opske:24767            | 76_Δ.1.2              | approved      | open   | 2026-12-11 13:00:00+00 | opske  |    1
+ opske:code:αττ130      | αττ130                | approved      | open   | 2027-01-28 13:00:00+00 | opske  |    1
+(11 rows)
+
+synthetic records: 0
