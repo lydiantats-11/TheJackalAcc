@@ -84,6 +84,10 @@ export function briefWhat(o: OpportunityRow, t: Dictionary, s: SiteCopy, l: Loca
   return s.card.amountNone;
 }
 
+function Row({ k, children }: { k: string; children: React.ReactNode }) {
+  return <div><dt>{k}</dt><dd>{children}</dd></div>;
+}
+
 /**
  * Deadline verification line (owner decision, 21 Oct 2026): when the deadline was last verified and on which document;
  * after the deadline, whether that check was before or after it. An extension is never assumed.
