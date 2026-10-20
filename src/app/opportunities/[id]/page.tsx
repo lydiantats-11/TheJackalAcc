@@ -136,7 +136,7 @@ export default async function OpportunityPage({ params, searchParams }: { params
 
           <div className="stack-lg">
             <section id="overview" className="card">
-              <div className="section-label sl-official">{t.opp.sectionFacts}</div>
+              <div className="section-label sl-official">{verified || o.summary_plain ? t.opp.sectionSummary : t.opp.sectionFacts}</div>
               {verified ? (
                 <>
                   <p style={{ fontSize: "1.05rem" }}>{verified.summary[locale]}</p>
@@ -245,7 +245,7 @@ export default async function OpportunityPage({ params, searchParams }: { params
             <section id="sources" className="card">
               <h2 style={{ marginTop: 0 }}>{s.detail.sources}</h2>
               <ul className="checklist small">
-                <li><Icon name="shield" size={16} /><span><a href={o.canonical_url} target="_blank" rel="noopener noreferrer">{o.canonical_url}</a></span></li>
+                <li><Icon name="shield" size={16} /><span><a href={o.canonical_url} target="_blank" rel="noopener noreferrer">{t.opp.officialPage}{o.source_name ? ` · ${o.source_name}` : ` · ${new URL(o.canonical_url).hostname}`}</a></span></li>
                 {verified?.sources.filter((src) => src.url !== o.canonical_url).map((src) => (
                   <li key={src.url}><Icon name="shield" size={16} /><span><a href={src.url} target="_blank" rel="noopener noreferrer">{src.label}</a> <span className="muted">· {s.card.checked} {formatDay(new Date(`${src.checkedOn}T12:00:00Z`), locale, "UTC")}</span></span></li>
                 ))}
