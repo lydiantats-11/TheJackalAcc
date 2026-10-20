@@ -1,8 +1,0 @@
-.snap-banner { background: var(--gold-50, #faf3e4); color: var(--gold-700, #7d5a1e); border-bottom: 1px solid var(--gold-200, #f1d9a6); font-size: .82rem; line-height: 1.45; padding: 8px max(16px, env(safe-area-inset-left, 0px)); text-align: center; }
-.snap-banner a { color: inherit; font-weight: 650; }
-.snap-banner.demo { background: var(--teal-50, #ecf6f4); color: var(--teal-700, #0b6b63); border-color: var(--teal-100, #d5ede9); }
-.snap-note { font-size: .85rem; color: var(--warn, #8a5a00); margin: 8px 0 0; }
-@media (prefers-color-scheme: dark) {
-  .snap-banner { background: #2d2615; color: #e0b765; border-color: #4a3d1f; }
-  .snap-banner.demo { background: #12302c; color: #7ed6c9; border-color: #1d4741; }
-}
