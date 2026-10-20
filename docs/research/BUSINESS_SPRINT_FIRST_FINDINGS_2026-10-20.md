@@ -58,6 +58,33 @@ Also checked:
   - The amount is not set yet; a second decision will set it.
   - The area is very narrow. Re-check after 23/10.
 
+## 2a2. ΕΦΕΠΑΕ and ΟΠΣΚΕ (added 20 Oct, evening)
+
+**12 calls are open-verified.** Each one has an explicit application window on the official managing-authority page:
+
+| Call | Window | Who / where | Aid |
+|---|---|---|---|
+| ΔΑΜ21: new and under-establishment SMEs, ΕΣΔΙΜ | 15/07 – **16/11/2026** | Western Macedonia, Megalopoli | 60–70% |
+| ΔΑΜ22: existing SMEs, ΕΣΔΙΜ | 15/07 – **16/11/2026** | same | 60–70%; €300k–€12m |
+| ΔΑΜ23: existing large enterprises, ΕΣΔΙΜ | 15/07 – **16/11/2026** | same | €5m–€40m |
+| ΔΑΜ24: new large enterprises, ΕΣΔΙΜ | 15/07 – **16/11/2026** | same | 50%; €5m–€40m |
+| South Aegean entrepreneurship (RIS3) | 28/08 – **30/10/2026** | existing SMEs, 2+ closed fiscal years | 60%; €30k–€400k; de minimis |
+| South Aegean business + research cooperation | 09/10 – **11/12/2026** | existing SMEs | 35–80%; GBER |
+| North Aegean tourism / agricultural processing | 25/06 – **17/11/2026** | Chios, Mytilene, small islands | 50–70%; €10k–€300k |
+| «Καινοτομώ στην Κρήτη» | 29/09 – **30/11/2026** | new micro/small, started 2021 or later | €30k–€150k |
+| Attica research & innovation partnerships | 06/10/2026 – **28/01/2027** | businesses and research bodies | 25–80%; up to €400k |
+| «Νέα Ευκαιρία» Epirus (individuals starting a business) | 10/06 – **21/10/2026 15:00** | unemployed and part-time workers up to 60 | €10k–€50k grant |
+| «Επιχειρώ Στερεά» | 18/05 – **30/10/2026** | existing SMEs | 70% de minimis; €30k–€400k |
+| Rethymno landslide support (see 2b) | 14/10 – **23/10/2026** | named communities | not set |
+
+- **Announced, not open yet:** STEP and Defence in-company training. Opens 02/11/2026 and closes 31/12/2026; firms with 100+ staff; 50%.
+- **Unconfirmed:** CRGR-Animate cash rebate. There is no application window on the page.
+- **ΕΣΔΙΜ ΔΥΠΑ hiring programme:** now three inconsistent official signals. The ΟΠΣΚΕ page gives an end of 26/03/2025 «μέχρι εξαντλήσεως» and was last modified 25/07/2025. It stays conflicting.
+
+**Totals: 25 programmes read. 12 open-verified, 1 announced, 3 closed, 9 unconfirmed.**
+
+Regulatory items are in `REGULATORY_UPDATES_2026-10-20.md`.
+
 ## 2c. Debt and financial relief for businesses (guide material, not opportunities)
 
 Lydia passed on an outside summary about keyd.gov.gr. I checked each claim against official pages:

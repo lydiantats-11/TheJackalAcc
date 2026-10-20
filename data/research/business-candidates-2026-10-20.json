@@ -21,7 +21,8 @@
     "prosvasis.dypa.gov.gr/storage/* (all invitation, ΦΕΚ and ΚΥΑ PDFs): blocked by robots.txt, so invitation texts, ΑΔΑ and end conditions were not read.",
     "gov.gr application services: fetch error from the research tool; HTTP 403 from GitHub Actions earlier. Not bypassed.",
     "The 30+ work experience programme page URL is too long for the research tool; page not read.",
-    "Workspace shell has no route to these sites."
+    "Workspace shell has no route to these sites.",
+    "antagonistikotita.gr: blocked to the research tool by robots.txt; ΕΦΕΠΑΕ and ΟΠΣΚΕ used instead."
   ],
   "programmes": [
     {
@@ -182,7 +183,7 @@
       "page_label": "Ανοιχτό πρόγραμμα",
       "status": "unconfirmed",
       "credibility": "incomplete or conflicting",
-      "status_reason": "Page says open, but a notice of 21/04/2026 says applications from businesses in Western Macedonia have ended; nothing says whether Megalopoli or the small islands remain open. An earlier read of the ΔΥΠΑ news list (session of 20/10) showed a Western Macedonia closure dated 03/09/2026 — the two dates conflict.",
+      "status_reason": "Page says open, but a notice of 21/04/2026 says applications from businesses in Western Macedonia have ended; nothing says whether Megalopoli or the small islands remain open. An earlier read of the ΔΥΠΑ news list (session of 20/10) showed a Western Macedonia closure dated 03/09/2026 — the two dates conflict. The ΟΠΣΚΕ page for the same call shows no start date, end '26/03/2025 13:00 … μέχρι εξαντλήσεως του προϋπολογισμού', last modified 25/07/2025 — a third, inconsistent signal.",
       "applicant": "Private businesses and employers in the eligible areas",
       "region": "Δυτική Μακεδονία; Μεγαλόπολη, Τρίπολη, Οιχαλία, Γορτυνία; small islands (<3,100 inhabitants) of N./S. Aegean and Crete",
       "aid": "100% up to €1,185/month (€14,220/12m) for ex-workers of transition sectors; 70% up to €829.50/month for other unemployed",
@@ -247,6 +248,184 @@
       "legal_basis": "ΚΥΑ 74047/05.10.2026, ΦΕΚ Β' 6168",
       "regime": "UNKNOWN",
       "kad": "UNKNOWN"
+    },
+    {
+      "id": "efepae-dam21",
+      "title_el": "Ενίσχυση επενδυτικών σχεδίων νέων και υπό σύσταση ΜΜΕ στις ηπειρωτικές περιοχές ΕΣΔΙΜ (ΔΑΜ21)",
+      "url": "https://opske.gr/el/call/enishysi-ependytikon-shedion-neon-kai-ypo-systasi-mme-poy-ylopoioyntai-stis-ipeirotikes-0",
+      "status": "open-verified",
+      "status_reason": "ΕΦΕΠΑΕ page: «Ενεργή προς υποβολή αιτήσεων», 15/07/2026 13:00 – 16/11/2026 14:00",
+      "source": "ΕΦΕΠΑΕ action page + ΟΠΣΚΕ",
+      "programme": "Δίκαιη Αναπτυξιακή Μετάβαση 2021-2027",
+      "applicant": "New (start after 1/1/2025) and under-establishment micro, small, medium enterprises",
+      "region": "Mainland ΕΣΔΙΜ: Δυτική Μακεδονία, Μεγαλόπολη area",
+      "aid": "70% small/micro, 60% medium",
+      "project_budget": "UNKNOWN",
+      "total_budget": "€40,000,000",
+      "kad": "Annex XVIII list (not read)",
+      "regime": "UNKNOWN",
+      "invitation": "06/07/2026; 1st amendment 23/09/2026"
+    },
+    {
+      "id": "efepae-dam22",
+      "title_el": "Ενίσχυση επενδυτικών σχεδίων Υφιστάμενων ΜΜΕ στις ηπειρωτικές περιοχές ΕΣΔΙΜ (ΔΑΜ22)",
+      "url": "https://opske.gr/el/call/enishysi-ependytikon-shedion-yfistamenon-mme-poy-ylopoioyntai-stis-ipeirotikes-periohes-0",
+      "status": "open-verified",
+      "status_reason": "ΕΦΕΠΑΕ page: active, 15/07/2026 13:00 – 16/11/2026 14:00",
+      "programme": "Δίκαιη Αναπτυξιακή Μετάβαση 2021-2027",
+      "applicant": "Existing SMEs with ≥1 closed fiscal year, start before 1/1/2025",
+      "region": "Mainland ΕΣΔΙΜ",
+      "aid": "70% small/micro, 60% medium",
+      "project_budget": "€300,000 – €12,000,000",
+      "total_budget": "€40,000,000",
+      "invitation": "06/07/2026; 1st amendment 23/09/2026"
+    },
+    {
+      "id": "efepae-dam23",
+      "title_el": "Ενίσχυση επενδυτικών σχεδίων παραγωγικών επενδύσεων υφιστάμενων μεγάλων επιχειρήσεων στις ηπειρωτικές περιοχές ΕΣΔΙΜ (ΔΑΜ23)",
+      "url": "https://opske.gr/el/call/enishysi-ependytikon-shedion-paragogikon-ependyseon-yfistamenon-megalon-epiheiriseon-poy-1",
+      "status": "open-verified",
+      "status_reason": "ΕΦΕΠΑΕ page: active, 15/07/2026 13:00 – 16/11/2026 14:00",
+      "applicant": "Existing large enterprises",
+      "region": "Mainland ΕΣΔΙΜ",
+      "aid": "UNKNOWN",
+      "project_budget": "€5,000,000 – €40,000,000",
+      "total_budget": "€30,000,000",
+      "invitation": "06/07/2026; 1st amendment 23/09/2026"
+    },
+    {
+      "id": "efepae-dam24",
+      "title_el": "Ενίσχυση επενδυτικών σχεδίων παραγωγικών επενδύσεων νέων και υπό σύσταση μεγάλων επιχειρήσεων στις ηπειρωτικές περιοχές ΕΣΔΙΜ (ΔΑΜ24)",
+      "url": "https://opske.gr/el/call/enishysi-ependytikon-shedion-paragogikon-ependyseon-neon-kai-ypo-systasi-megalon-1",
+      "status": "open-verified",
+      "status_reason": "ΕΦΕΠΑΕ page: active, 15/07/2026 13:00 – 16/11/2026 14:00",
+      "applicant": "New (after 1/1/2025) and under-establishment large enterprises",
+      "region": "Mainland ΕΣΔΙΜ",
+      "aid": "50%",
+      "project_budget": "€5,000,000 – €40,000,000",
+      "total_budget": "€30,000,000",
+      "invitation": "06/07/2026; 1st amendment 23/09/2026"
+    },
+    {
+      "id": "efepae-south-aegean-entrepreneurship",
+      "title_el": "Ενίσχυση επιχειρηματικότητας στους τομείς προτεραιότητας της Περιφέρειας Νοτίου Αιγαίου",
+      "url": "https://opske.gr/el/call/enishysi-epiheirimatikotitas-stoys-tomeis-proteraiotitas-tis-perifereias-notioy-aigaioy",
+      "status": "open-verified",
+      "status_reason": "ΕΦΕΠΑΕ page: active, 28/08/2026 13:00 – 30/10/2026 15:00",
+      "applicant": "Existing micro/small/medium enterprises with ≥2 closed fiscal years, main KAD in Annex XI (RIS3)",
+      "region": "Νότιο Αιγαίο",
+      "aid": "60%",
+      "project_budget": "€30,000 – €400,000",
+      "total_budget": "€5,000,000 (up to 200% over-commitment)",
+      "regime": "De minimis 2023/2831",
+      "invitation": "24/07/2026; amendment 21/09/2026; FAQ 15/09/2026"
+    },
+    {
+      "id": "efepae-south-aegean-research-cooperation",
+      "title_el": "Ενίσχυση συνεργασίας μεταξύ επιχειρήσεων και ερευνητικών φορέων στους τομείς προτεραιότητας της Περιφέρειας (Νότιο Αιγαίο)",
+      "url": "https://opske.gr/el/call/enishysi-synergasias-metaxy-epiheiriseon-kai-ereynitikon-foreon-stoys-tomeis-proteraiotitas",
+      "status": "open-verified",
+      "status_reason": "ΕΦΕΠΑΕ page: active, 09/10/2026 13:00 – 11/12/2026 15:00",
+      "applicant": "Existing SMEs in South Aegean; research bodies as partners",
+      "region": "Νότιο Αιγαίο",
+      "aid": "35%–80% by research category and size",
+      "project_budget": "€50,000–€250,000 (one firm); €80,000–€400,000 (two or more)",
+      "total_budget": "€2,000,000",
+      "regime": "GBER 651/2014",
+      "invitation": "12/08/2026; 1st amendment 19/10/2026"
+    },
+    {
+      "id": "efepae-north-aegean-tourism-processing",
+      "title_el": "Ενίσχυση επιχειρηματικότητας με έμφαση στον τουρισμό και τη δεύτερη μεταποίηση αγροτικών προϊόντων (Χίος, Μυτιλήνη, μικρά νησιά — Βόρειο Αιγαίο)",
+      "url": "https://efepae.gr/drasi/%ce%b5%ce%bd%ce%af%cf%83%cf%87%cf%85%cf%83%ce%b7-%ce%b5%cf%80%ce%b9%cf%87%ce%b5%ce%b9%cf%81%ce%b7%ce%bc%ce%b1%cf%84%ce%b9%ce%ba%cf%8c%cf%84%ce%b7%cf%84%ce%b1%cf%82-%ce%bc%ce%b5-%ce%ad%ce%bc%cf%86/",
+      "status": "open-verified",
+      "status_reason": "ΕΦΕΠΑΕ page: active, 25/06/2026 13:00 – 17/11/2026 15:00",
+      "applicant": "Existing micro/small/medium enterprises",
+      "region": "Βόρειο Αιγαίο: Χίος, Μυτιλήνη, μικρά νησιά (islands not listed)",
+      "aid": "50% tourism (Chios, Mytilene), 70% small islands and processing",
+      "project_budget": "€10,000 – €300,000 (minimum varies by area)",
+      "total_budget": "€8,000,000",
+      "regime": "UNKNOWN",
+      "invitation": "24/06/2026; amendments 20/07/2026, 21/09/2026"
+    },
+    {
+      "id": "efepae-crete-kainotomo",
+      "title_el": "«Καινοτομώ στην Κρήτη» — Υποστήριξη νέων καινοτόμων επιχειρήσεων στην Περιφέρεια Κρήτης",
+      "url": "https://opske.gr/el/call/ypostirixi-neon-kainotomon-epiheiriseon-stin-perifereia-kritis-kainotomo-stin-kriti",
+      "status": "open-verified",
+      "status_reason": "ΕΦΕΠΑΕ page: active, 29/09/2026 13:00 – 30/11/2026 15:00",
+      "applicant": "Micro/small businesses under establishment, or started on/after 01/01/2021",
+      "region": "Κρήτη",
+      "aid": "UNCERTAIN — read as 40% (under establishment) / 60% (existing); check against the call text",
+      "project_budget": "€30,000 – €150,000",
+      "total_budget": "€2,500,000",
+      "regime": "UNKNOWN",
+      "invitation": "24/07/2026 (pre-publication 12/05/2026)"
+    },
+    {
+      "id": "opske-attica-research-partnerships",
+      "title_el": "Συμπράξεις Έρευνας και Καινοτομίας στην Αττική",
+      "url": "https://opske.gr/el/call/sympraxeis-ereynas-kai-kainotomias-stin-attiki",
+      "status": "open-verified",
+      "status_reason": "ΟΠΣΚΕ page: 06/10/2026 13:00 – 28/01/2027 15:00",
+      "applicant": "Businesses of all sizes and research organisations",
+      "region": "Αττική",
+      "aid": "25%–80% by research category and size",
+      "project_budget": "up to €400,000",
+      "total_budget": "€17,000,000",
+      "regime": "GBER 651/2014 as amended by 2023/1315",
+      "call_document": "https://opske.gr/sites/default/files/calls/2026-10/prosklisi_att130_2089_29092026_ps0il7l7-txt.pdf"
+    },
+    {
+      "id": "opske-epiro-nea-eykairia",
+      "title_el": "Νέα Ευκαιρία: Στήριξη ανέργων και μισθωτών μερικής απασχόλησης για έναρξη επαγγελματικής δραστηριότητας στην Ήπειρο",
+      "url": "https://opske.gr/el/call/nea-eykairia-stirixi-anergon-kai-misthoton-merikis-apasholisis-gia-enarxi-epaggelmatikis",
+      "status": "open-verified",
+      "status_reason": "ΟΠΣΚΕ page: 10/06/2026 13:00 – 21/10/2026 15:00. Closes the day after this check.",
+      "re_verify_after": "2026-10-21",
+      "applicant": "Unemployed people and part-time/rotating/seasonal employees up to 60, Epirus (individuals starting a business)",
+      "region": "Ήπειρος",
+      "aid": "€10,000 – €50,000 grant (up to €60,000 with several founders)",
+      "total_budget": "€3,500,000",
+      "regime": "De minimis 2023/2831"
+    },
+    {
+      "id": "opske-epixeiro-sterea",
+      "title_el": "«Επιχειρώ Στερεά»",
+      "url": "https://opske.gr/el/call/epiheiro-sterea",
+      "status": "open-verified",
+      "status_reason": "ΟΠΣΚΕ page: 18/05/2026 15:00 – 30/10/2026 15:00 (layout slightly ambiguous; last modified 15/09/2026)",
+      "applicant": "Existing SMEs started before 30/06/2023 with closed fiscal years 2023 and 2024",
+      "region": "Στερεά Ελλάδα",
+      "aid": "De minimis 70% (75% green); GBER 40–60% by cost category and size",
+      "project_budget": "De minimis €30,000–€400,000; GBER €200,000–€800,000",
+      "total_budget": "€12,000,000 (up to €16,000,000)",
+      "regime": "De minimis 2023/2831 or GBER 651/2014"
+    },
+    {
+      "id": "opske-step-defence-training",
+      "title_el": "Ενδοεπιχειρησιακή Κατάρτιση Εργαζομένων σε Στρατηγικές Τεχνολογίες STEP και Τομείς Άμυνας & Ασφάλειας",
+      "url": "https://opske.gr/el/call/endoepiheirisiaki-katartisi-ergazomenon-se-stratigikes-tehnologies-step-kai-tomeis-amynas",
+      "status": "announced",
+      "status_reason": "ΟΠΣΚΕ page: opens 02/11/2026 15:00, closes 31/12/2026 15:00",
+      "applicant": "Existing enterprises with 100+ employees, eligible KAD in Annex II",
+      "region": "All of Greece",
+      "aid": "50%",
+      "project_budget": "€75,000 – €600,000 public funding",
+      "total_budget": "€20,000,000",
+      "regime": "GBER art. 31",
+      "call_document": "https://opske.gr/sites/default/files/calls/2026-10/9ef3i-99ps_ya_endoepiheirisiaki.pdf"
+    },
+    {
+      "id": "opske-crgr-animate",
+      "title_el": "Cash rebate Greece Animate (CRGR-Animate)",
+      "url": "https://opske.gr/el/call/prokiryxi-kathestotos-cash-rebate-greece-animate-crgr-animate-gia-tin-enishysi-tis-paragogis",
+      "status": "unconfirmed",
+      "status_reason": "No application window on the ΟΠΣΚΕ page; scheme ΦΕΚ Β' 84/24.01.2026; last modified 06/04/2026",
+      "applicant": "SMEs producing animation/interactive/AR-VR works in Greece",
+      "aid": "40% cash rebate, max €8,000,000 per work",
+      "total_budget": "€30,000,000",
+      "regime": "GBER art. 54"
     }
   ],
   "excluded_from_business_scope": [
@@ -316,5 +495,12 @@
         "why": "Official site of the Special Secretariat for Private Debt Management (ΚΕΥΔ offices). Home page carries no 2026 announcements and no restructuring content; use minfin pages as the primary source."
       }
     ]
-  }
+  },
+  "announced_not_read": [
+    {
+      "title": "Νέα δράση ΑΜΘ93 — έρευνα και καινοτομία, Ανατολική Μακεδονία & Θράκη",
+      "source": "ΕΦΕΠΑΕ news 20/10/2026",
+      "status": "announced (details not read)"
+    }
+  ]
 }
