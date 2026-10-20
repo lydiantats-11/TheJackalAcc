@@ -14,12 +14,12 @@ const CATS = ["employment", "entrepreneurship", "business", "agriculture", "educ
 const SEEDS = [
   "/", "/opportunities", "/categories", "/for-me", "/guides", "/about", "/login", "/register",
   ...CATS.map((c) => `/opportunities?cat=${c}`),
-  "/opportunities?scope=gr", "/opportunities?scope=eu", "/opportunities?status=open", "/opportunities?status=upcoming", "/opportunities?status=all",
+  "/opportunities?scope=gr", "/opportunities?scope=eu", "/opportunities?applicant=organisations", "/opportunities?applicant=individuals", "/opportunities?status=open", "/opportunities?status=upcoming", "/opportunities?status=all",
   "/guides/eligibility-labels", "/guides/applying-officially", "/guides/unemployment-benefit-application", "/lab/espa-example",
   ...["step-by-step", "benefits", "business-grants", "employment-education", "housing-energy", "eu-programmes", "faq-glossary", "news-updates"].map((c) => `/guides?cat=${c}`),
 ];
 const ALLOWED_PATH = /^\/lab\/espa-example$|^\/$|^\/opportunities(\/[0-9a-f-]{36})?$|^\/categories$|^\/guides(\/[\w-]+)?$|^\/about$|^\/for-me$|^\/login$|^\/register$/;
-const LIST_PARAMS = new Set(["cat", "status", "scope", "type", "audience"]);
+const LIST_PARAMS = new Set(["cat", "status", "scope", "type", "audience", "applicant"]);
 const DEFAULTS = { status: "current", page: "1" };
 
 /** Same normalisation as assets/snap.js: drop empty and default params, sort the rest. */
