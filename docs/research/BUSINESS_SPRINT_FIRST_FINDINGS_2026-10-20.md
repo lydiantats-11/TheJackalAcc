@@ -47,7 +47,36 @@ Also checked:
   - ΑμεΑ in ΟΤΑ (municipalities only)
   - ΛΑΡΚΟ (former workers of one company)
 
-**Count so far:** 11 programmes read; 3 confirmed closed; **0 open-verified**. A table of 20–30 verified items is not supported yet.
+**Count so far:** 12 programmes read; 3 confirmed closed; **1 open-verified**. The one open-verified item is the Rethymno landslide support scheme (section 2b). None of the ΔΥΠΑ programmes is open-verified. A table of 20–30 verified items is not supported yet.
+
+## 2b. Other official sources (minfin, added 20 Oct)
+
+- **Rethymno landslide support, round 1: open-verified until 23/10/2026.**
+  - Source: minfin press release of 16/10/2026; ΚΥΑ 74047/05.10.2026, ΦΕΚ Β' 6168.
+  - Applications are an expression of interest on myBusinessSupport.
+  - Who can apply: businesses subject to VAT, with a seat or branch on 14/03/2024 in named communities of Agios Vasileios and Rodakino.
+  - The amount is not set yet; a second decision will set it.
+  - The area is very narrow. Re-check after 23/10.
+
+## 2c. Debt and financial relief for businesses (guide material, not opportunities)
+
+Lydia passed on an outside summary about keyd.gov.gr. I checked each claim against official pages:
+
+| Claim | Result |
+|---|---|
+| keyd.gov.gr is official | **Confirmed.** It is the site of the Special Secretariat for Private Debt Management. Its home page has no restructuring content and no 2026 notices, so it is not the primary source. |
+| Legal basis is ν.4738/2020 | **Confirmed** on minfin «Ρύθμιση – Απαλλαγή οφειλών»: households and businesses; discharge needs a court bankruptcy application and liquidation of assets. |
+| Circular of 05/10/2026 on discharge and garnishments | **Confirmed (title only).** Εγκύκλιος 159051/05-10-2026: lifting a garnishment in a third party's hands after discharge (art. 192 onwards, ν.4738/2020). Body not read. |
+| Announcement of 21/09/2026 on primary-residence protection | **Not confirmed** on minfin. It appears only on news and aggregator sites, so it is marked incomplete or conflicting. |
+| Out-of-court mechanism details | The minfin page was last modified 13/02/2024, so its figures need re-verification. The figures are: debts > €10,000; up to 240 instalments (State and funds) or 420 (banks); up to 28% reduction. |
+
+- **Placement.** This fits as a *guide*, «Πώς ρυθμίζω τις οφειλές της επιχείρησής μου», not as an opportunity. It does not fit any of the eight proposed categories. I have not added a category; that is your decision.
+- **Still to read:**
+  - εξυγίανση επιχειρήσεων
+  - early-warning mechanism
+  - 24-instalment standing arrangement
+  - 72-instalment arrangement (art. 19, ν.5313/2026)
+  - the body of circular 159051
 
 ## 3. Credibility observations
 
