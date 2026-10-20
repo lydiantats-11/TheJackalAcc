@@ -1,5 +1,9 @@
 # Business & Organisations sprint: first findings (20 Oct 2026)
 
+> **Superseded in part (20 Oct, evening).** The current status per call, official IDs and corrections are in `BUSINESS_RECORD_AUDIT_2026-10-20.md`. Corrections:
+> - The Crete aid rate is 75%; 40%/60% are budget shares.
+> - The ΕΣΔΙΜ ΔΥΠΑ programme is closed for Western Macedonia since 21/04/2026; other areas are unconfirmed. The "03/09/2026" closure date cited earlier does not exist.
+
 Status: research only. Nothing has been imported, published or reclassified. Evidence is in `data/research/business-candidates-2026-10-20.json`, with `imported: false`.
 
 ## 1. Baseline: what Jackal has for businesses today
