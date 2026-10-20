@@ -76,12 +76,19 @@ const SELECT = (sql: postgres.Sql) => sql`
   LEFT JOIN sources s ON s.id = o.source_id
   LEFT JOIN opportunity_category_links l ON l.opportunity_id = o.id`;
 
-/** Public listing: only approved records (pending AI extractions never appear). */
+/**
+ * Test records (is_synthetic) never reach user-facing pages (owner, 20 Oct 2026). They stay usable in an isolated
+ * test environment that sets JACKAL_SHOW_TEST_RECORDS=true.
+ */
+const showTestRecords = () => process.env.JACKAL_SHOW_TEST_RECORDS === "true";
+
+/** Public listing: only approved records (pending AI extractions never appear), never test records. */
 export async function listOpportunities(sql: postgres.Sql, f: OpportunityFilters = {}): Promise<OpportunityRow[]> {
   const q = f.q?.trim().slice(0, 100);
   return sql<OpportunityRow[]>`
     ${SELECT(sql)}
     WHERE o.merged_into_id IS NULL AND o.review_status = 'approved'
+      ${showTestRecords() ? sql`` : sql`AND NOT o.is_synthetic`}
       ${q ? sql`AND (o.official_title ILIKE ${"%" + q + "%"} OR o.summary_plain ILIKE ${"%" + q + "%"} OR o.official_identifier ILIKE ${"%" + q + "%"})` : sql``}
       ${f.status ? sql`AND o.status = ${f.status}` : sql``}
       ${f.type ? sql`AND o.opportunity_type = ${f.type}` : sql``}
@@ -96,7 +103,7 @@ export async function listOpportunities(sql: postgres.Sql, f: OpportunityFilters
 
 export async function getOpportunity(sql: postgres.Sql, id: string): Promise<OpportunityRow | null> {
   if (!/^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/i.test(id)) return null;
-  const [row] = await sql<OpportunityRow[]>`${SELECT(sql)} WHERE o.id = ${id} AND o.review_status = 'approved' GROUP BY o.id, s.name, s.stale_after_hours`;
+  const [row] = await sql<OpportunityRow[]>`${SELECT(sql)} WHERE o.id = ${id} AND o.review_status = 'approved' ${showTestRecords() ? sql`` : sql`AND NOT o.is_synthetic`} GROUP BY o.id, s.name, s.stale_after_hours`;
   return row ?? null;
 }
 

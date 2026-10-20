@@ -47,6 +47,8 @@ jobs:
           npm run db:seed
           psql "$DATABASE_URL" -v ON_ERROR_STOP=1 -q -f db/seed/official-records-2026-10-14.sql
           psql "$DATABASE_URL" -v ON_ERROR_STOP=1 -q -f db/seed/approvals-2026-10-15.sql   # the owner's approval of 15 Oct 2026
+          psql "$DATABASE_URL" -v ON_ERROR_STOP=1 -q -f db/seed/business-records-2026-10-20.sql   # 11 business calls, manual review 20 Oct 2026
+          psql "$DATABASE_URL" -v ON_ERROR_STOP=1 -q -f db/seed/approvals-2026-10-20.sql   # the owner's approval of 20 Oct 2026 (preview only)
           psql "$DATABASE_URL" -c "UPDATE opportunities SET review_status = 'rejected' WHERE is_synthetic" || true
           npm run worker -- --test eu-funding-tenders | tail -15
       - name: Build

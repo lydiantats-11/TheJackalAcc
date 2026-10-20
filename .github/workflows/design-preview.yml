@@ -55,6 +55,10 @@ jobs:
           npm run db:seed
           psql "$DATABASE_URL" -v ON_ERROR_STOP=1 -q -f db/seed/official-records-2026-10-14.sql
           psql "$DATABASE_URL" -v ON_ERROR_STOP=1 -q -f db/seed/approvals-2026-10-15.sql   # the owner's approval of 15 Oct 2026
+          psql "$DATABASE_URL" -v ON_ERROR_STOP=1 -q -f db/seed/business-records-2026-10-20.sql   # 11 business calls, manual review 20 Oct 2026
+          psql "$DATABASE_URL" -v ON_ERROR_STOP=1 -q -f db/seed/approvals-2026-10-20.sql   # the owner's approval of 20 Oct 2026 (preview only)
+          psql "$DATABASE_URL" -c "SELECT o.external_key, o.official_identifier, o.review_status, o.status, o.closes_at, s.slug AS source, (SELECT count(*) FROM opportunity_requirements r WHERE r.opportunity_id = o.id) AS reqs FROM opportunities o LEFT JOIN sources s ON s.id = o.source_id WHERE o.publication_basis = 'manual_review' AND o.external_key LIKE 'opske:%' ORDER BY o.closes_at" | tee business-import.log
+          psql "$DATABASE_URL" -At -c "SELECT 'synthetic records: ' || count(*) FROM opportunities WHERE is_synthetic" | tee -a business-import.log
           psql "$DATABASE_URL" -c "UPDATE opportunities SET review_status = 'rejected' WHERE is_synthetic" || true
           npm run worker -- --test eu-funding-tenders | tail -15
       - name: Quality report (gold set, coverage, freshness, efficiency)
@@ -65,7 +69,7 @@ jobs:
       - name: Screenshots
         run: |
           npm install --no-save --no-audit --no-fund playwright && npx playwright install --with-deps chromium
-          export PREVIEW_IDS=$(psql "$DATABASE_URL" -At -c "SELECT json_build_object('a21',(SELECT id FROM opportunities WHERE external_key='manual:a21'),'eu',(SELECT o.id FROM opportunities o WHERE external_key LIKE 'eu-topic:HORIZON%' AND status='open' ORDER BY closes_at LIMIT 1))")
+          export PREVIEW_IDS=$(psql "$DATABASE_URL" -At -c "SELECT json_build_object('a21',(SELECT id FROM opportunities WHERE external_key='manual:a21'),'eu',(SELECT o.id FROM opportunities o WHERE external_key LIKE 'eu-topic:HORIZON%' AND status='open' ORDER BY closes_at LIMIT 1),'dam22',(SELECT id FROM opportunities WHERE external_key='opske:23487'),'epiro',(SELECT id FROM opportunities WHERE external_key='opske:code:ΠΗΠΕ-06/3.0'))")
           echo "$PREVIEW_IDS"
           PORT=3000 npm start > next.log 2>&1 &
           for i in $(seq 1 60); do curl -fs -o /dev/null http://127.0.0.1:3000/ && break; sleep 1; done
@@ -74,7 +78,7 @@ jobs:
       - name: Save to the live-test-results branch
         if: always()
         run: |
-          mkdir -p "$OUT"; cp -f typecheck.log tests.log build.log next.log quality-report.json "$OUT"/ 2>/dev/null || true
+          mkdir -p "$OUT"; cp -f typecheck.log tests.log build.log next.log quality-report.json business-import.log "$OUT"/ 2>/dev/null || true
           cp -r "$OUT" /tmp/out
           git config user.name "jackal-live-test"; git config user.email "actions@users.noreply.github.com"
           git fetch --depth 1 origin live-test-results && git checkout -B live-test-results FETCH_HEAD

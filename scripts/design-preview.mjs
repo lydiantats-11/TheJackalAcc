@@ -6,7 +6,7 @@ import { mkdirSync, writeFileSync } from "node:fs";
 const out = process.argv[2] ?? "design-preview";
 mkdirSync(out, { recursive: true });
 const BASE = "http://127.0.0.1:3000";
-const ids = JSON.parse(process.env.PREVIEW_IDS ?? "{}"); // { a21: uuid, eu: uuid }
+const ids = JSON.parse(process.env.PREVIEW_IDS ?? "{}"); // { a21, eu, dam22, epiro: uuid }
 const shots = [];
 const errors = [];
 
@@ -59,6 +59,9 @@ for (const [vp, size] of [["desktop", { width: 1440, height: 900 }], ["phone", {
       await shoot(page, `${p}-20-guides-empty`, "/guides?cat=news-updates#results");
       await shoot(page, `${p}-21-guide-draft`, "/guides/eic");
       await shoot(page, `${p}-26-research-espa`, "/lab/espa-example");
+      await shoot(page, `${p}-27-business-opportunities`, "/opportunities?applicant=organisations&status=current");
+      if (ids.dam22) await shoot(page, `${p}-28-detail-business-dam22`, `/opportunities/${ids.dam22}`);
+      if (ids.epiro) await shoot(page, `${p}-29-detail-nea-eykairia`, `/opportunities/${ids.epiro}`);
       await shoot(page, `${p}-22-guide-explainer`, "/guides/applying-officially");
       await shoot(page, `${p}-23-guide-unemployment-draft`, "/guides/unemployment-benefit-application");
     }

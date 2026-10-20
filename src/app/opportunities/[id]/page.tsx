@@ -86,6 +86,8 @@ export default async function OpportunityPage({ params, searchParams }: { params
   const amount = keyAmount(o, t, s, locale);
   const status = recordStatus(matchable, now);
   const applicant = applicantAudienceOf(o, matchable.requirements);
+  // Reviewer notes recorded with records imported from a manual review (Greek, from the official documents).
+  const recordNotes = o.publication_basis === "manual_review" && !o.external_key?.startsWith("manual:") ? o.uncertainties ?? [] : [];
   const unknowns = unknownsOf({
     record: status, hasConflict: !!o.has_conflict, completeness: o.requirement_set_completeness, deadlineKind: o.deadline_kind,
     hasDeadline: !!o.closes_at, amountState: o.funding_amount_state, applicant,
@@ -246,7 +248,7 @@ export default async function OpportunityPage({ params, searchParams }: { params
                   <li key={src.url}><Icon name="shield" size={16} /><span><a href={src.url} target="_blank" rel="noopener noreferrer">{src.label}</a> <span className="muted">· {s.card.checked} {formatDay(new Date(`${src.checkedOn}T12:00:00Z`), locale, "UTC")}</span></span></li>
                 ))}
                 {o.official_details?.documents?.map((doc) => (
-                  <li key={doc.url}><Icon name="book" size={16} /><span><a href={doc.url} target="_blank" rel="noopener noreferrer" lang="en">{doc.label}</a></span></li>
+                  <li key={doc.url}><Icon name="book" size={16} /><span><a href={doc.url} target="_blank" rel="noopener noreferrer" lang={o.official_details?.source === "manual-review" ? "el" : "en"}>{doc.label}</a></span></li>
                 ))}
                 {o.application_url && o.application_url !== o.canonical_url && <li><Icon name="external" size={16} /><span><a href={o.application_url} target="_blank" rel="noopener noreferrer">{o.application_url}</a></span></li>}
                 <li><Icon name="calendar" size={16} /><span>{t.ui.freshness}: {formatDay(o.last_verified_at, locale) ?? <span className="unknown">{t.opp.never}</span>}{o.source_name ? ` · ${o.source_name}` : ""}</span></li>
@@ -257,8 +259,11 @@ export default async function OpportunityPage({ params, searchParams }: { params
             <section id="unknowns" className="card unknowns">
               <h2 style={{ marginTop: 0 }}>{s.detail.unknownTitle}</h2>
               <p className="small muted" style={{ marginTop: 0 }}>{s.detail.unknownLead}</p>
-              {unknowns.length === 0 ? <p className="small" style={{ margin: 0 }}>{s.detail.unknownNone}</p> : (
-                <ul className="checklist small">{unknowns.map((u) => <li key={u}><Icon name="alert" size={16} /><span>{s.detail.unknown[u]}</span></li>)}</ul>
+              {unknowns.length === 0 && recordNotes.length === 0 ? <p className="small" style={{ margin: 0 }}>{s.detail.unknownNone}</p> : (
+                <ul className="checklist small">
+                  {unknowns.map((u) => <li key={u}><Icon name="alert" size={16} /><span>{s.detail.unknown[u]}</span></li>)}
+                  {recordNotes.map((n) => <li key={n}><Icon name="alert" size={16} /><span lang="el">{n}</span></li>)}
+                </ul>
               )}
             </section>
 

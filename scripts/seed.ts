@@ -4,7 +4,7 @@ import { SOURCE_SEEDS, CATEGORY_SEEDS } from "../db/seed/sources";
 import { SYNTHETIC_OPPORTUNITIES } from "../db/seed/synthetic-opportunities";
 import { legacyEnvelopesToRecords } from "../src/lib/domain/engine/legacy";
 
-/** Idempotent seed: sources & categories (never downgrades a source's lifecycle) + clearly labelled synthetic opportunities. */
+/** Idempotent seed: sources & categories (never downgrades a source's lifecycle); clearly labelled synthetic opportunities only with SEED_SYNTHETIC=true. */
 async function main() {
   const url = process.env.DATABASE_URL;
   if (!url) throw new Error("DATABASE_URL is not set");
@@ -28,7 +28,9 @@ async function main() {
                    access_status = CASE WHEN sources.access_status IN ('verified','inaccessible') THEN sources.access_status ELSE EXCLUDED.access_status END`;
       }
       const now = Date.now();
-      for (const o of SYNTHETIC_OPPORTUNITIES) {
+      // Test records are created only on request (owner, 20 Oct 2026: "keep them only in an isolated test environment").
+      const synthetic = process.env.SEED_SYNTHETIC === "true" ? SYNTHETIC_OPPORTUNITIES : [];
+      for (const o of synthetic) {
         const canonical = `https://test-data.example/opportunity/${o.key}`;
         const closes = o.days_until_close === null ? null : new Date(now + o.days_until_close * 86_400_000);
         const r = o.requirements;

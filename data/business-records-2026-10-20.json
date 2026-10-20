@@ -1,0 +1,409 @@
+{
+  "schema_version": "jackal-business-records/1",
+  "checked_on": "2026-10-20",
+  "checked_at": "2026-10-20T18:30:00+03:00",
+  "checked_by": "manual review of official call documents and amendments (Claude), not an automated connector",
+  "approved": "Owner (Lydia), Claude session of 20 Oct 2026: import as one reviewed batch into the development database / preview only; not public.",
+  "rules": [
+    "The latest formal amendment governs the deadline; portal pages that disagree are noted as a discrepancy.",
+    "status 'open' only with an explicit window read in an official document or call page.",
+    "Unknown facts stay unknown and are listed as uncertainties."
+  ],
+  "records": [
+    {
+      "id": "epiro-nea-eykairia",
+      "source": "opske",
+      "external_key": "opske:code:ΠΗΠΕ-06/3.0",
+      "official_identifier": "ΠΗΠΕ-06/3.0",
+      "title": "Νέα Ευκαιρία: Στήριξη ανέργων και μισθωτών μερικής απασχόλησης για έναρξη επαγγελματικής δραστηριότητας στην Ήπειρο",
+      "authority": "Περιφέρεια Ηπείρου — ΕΥΔ Προγράμματος «Ήπειρος 2021-2027» (ενδιάμεσος φορέας ΕΦΕΠΑΕ)",
+      "canonical_url": "https://opske.gr/el/call/nea-eykairia-stirixi-anergon-kai-misthoton-merikis-apasholisis-gia-enarxi-epaggelmatikis",
+      "application_url": "https://app.opske.gr/",
+      "opens_at": "2026-06-10T10:00:00Z",
+      "closes_at": "2026-10-21T12:00:00Z",
+      "deadline_text": "21/10/2026 – 15.00 (2η τροποποίηση, Α.Π. 1814/12-08-2026)",
+      "type": "grant",
+      "applicants": [
+        "natural_person",
+        "unregistered_entrepreneur"
+      ],
+      "applicant_text": "Άνεργοι εγγεγραμμένοι στη ΔΥΠΑ κατά την υποβολή· μισθωτοί μερικής, εκ περιτροπής ή εποχικής απασχόλησης κατά τη δημοσίευση· έως 60 ετών.",
+      "funding": null,
+      "intensity": null,
+      "total_budget": 3500000,
+      "summary": "Επιχορήγηση για άνεργους και εργαζόμενους με μερική, εκ περιτροπής ή εποχική απασχόληση, έως 60 ετών, που θέλουν να ξεκινήσουν δική τους επαγγελματική δραστηριότητα στην Ήπειρο. Επιχορηγούμενος προϋπολογισμός €10.000–€50.000 (έως €60.000 με περισσότερους δικαιούχους). De minimis (Καν. 2023/2831). Υποβολή στο ΟΠΣΚΕ έως 21/10/2026, 15:00.",
+      "documents": [
+        [
+          "2η τροποποίηση πρόσκλησης (Α.Π. 1814/12-08-2026) — λήξη 21/10/2026 15:00",
+          "https://opske.gr/sites/default/files/calls/2026-08/1814.pdf"
+        ],
+        [
+          "1η τροποποίηση πρόσκλησης (Α.Π. 1209/28-05-2026) — έναρξη 10/06/2026 13:00",
+          "https://opske.gr/sites/default/files/calls/2026-05/9oat7l9-124.pdf"
+        ]
+      ],
+      "governing_document": "2η τροποποίηση, Α.Π. 1814/12-08-2026; αρχική πρόσκληση Α.Π. 840/12-05-2026, ΑΔΑ 9ΨΩ67Λ9-ΣΨΨ",
+      "uncertainties": [
+        "Το κείμενο της αρχικής πρόσκλησης δεν ελέγχθηκε (η Διαύγεια δεν ήταν προσβάσιμη στο εργαλείο έρευνας)· το όριο ηλικίας και η απαίτηση για Ήπειρο προέρχονται από την περίληψη του ΟΠΣΚΕ.",
+        "Ο σύνδεσμος υποβολής είναι η γενική πύλη του ΟΠΣΚΕ, όχι σελίδα της συγκεκριμένης πρόσκλησης."
+      ]
+    },
+    {
+      "id": "epixeiro-sterea",
+      "source": "opske",
+      "external_key": "opske:21766",
+      "official_identifier": "79",
+      "title": "«Επιχειρώ Στερεά»",
+      "authority": "Περιφέρεια Στερεάς Ελλάδας — Πρόγραμμα «Στερεά Ελλάδα 2021-2027»",
+      "canonical_url": "https://opske.gr/el/call/epiheiro-sterea",
+      "application_url": "https://app.opske.gr/",
+      "opens_at": "2026-05-18T12:00:00Z",
+      "closes_at": "2026-10-30T13:00:00Z",
+      "deadline_text": "30/10/2026 (3η τροποποίηση, α.π. 1971/14-09-2026)· ώρα 15:00 κατά τη σελίδα του ΟΠΣΚΕ",
+      "type": "grant",
+      "applicants": [
+        "sole_proprietor",
+        "company"
+      ],
+      "applicant_text": "Υφιστάμενες πολύ μικρές, μικρές και μεσαίες επιχειρήσεις με έναρξη πριν τις 30/06/2023 και κλεισμένες χρήσεις 2023 και 2024, για επένδυση στη Στερεά Ελλάδα.",
+      "funding": null,
+      "intensity": null,
+      "total_budget": 25000000,
+      "summary": "Επενδυτικά σχέδια υφιστάμενων ΜμΕ στη Στερεά Ελλάδα. De minimis: 70% δημόσια χρηματοδότηση (75% για πράσινα έργα), επιχορηγούμενος προϋπολογισμός €30.000–€400.000. ΓΑΚ: 40–60% ανά κατηγορία δαπάνης και μέγεθος, €200.000–€800.000. Συνολική δημόσια δαπάνη €25 εκ. (3η τροποποίηση).",
+      "documents": [
+        [
+          "3η τροποποίηση πρόσκλησης (α.π. 1971/14-09-2026)",
+          "https://opske.gr/sites/default/files/calls/2026-09/prosklisi_79ke_3i_tr._ada.pdf"
+        ]
+      ],
+      "governing_document": "3η τροποποίηση, α.π. 1971/14-09-2026· αρχική πρόσκληση α.π. 914/29-04-2026 (ΟΠΣ 21766)",
+      "uncertainties": [
+        "Η σελίδα του ΟΠΣΚΕ αναγράφει ακόμη συνολικό προϋπολογισμό €12 εκ. (έως €16 εκ.)· ισχύει η 3η τροποποίηση (€25 εκ.).",
+        "Η ώρα λήξης (15:00) προέρχεται από τη σελίδα του ΟΠΣΚΕ· η τροποποίηση αναφέρει μόνο ημερομηνία."
+      ]
+    },
+    {
+      "id": "south-aegean-entrepreneurship",
+      "source": "efepae",
+      "external_key": "opske:24506",
+      "official_identifier": "75_Δ.1.7",
+      "title": "Ενίσχυση επιχειρηματικότητας στους τομείς προτεραιότητας της Περιφέρειας Νοτίου Αιγαίου",
+      "authority": "Περιφέρεια Νοτίου Αιγαίου — Πρόγραμμα «Νότιο Αιγαίο 2021-2027» (ΕΦΕΠΑΕ)",
+      "canonical_url": "https://opske.gr/el/call/enishysi-epiheirimatikotitas-stoys-tomeis-proteraiotitas-tis-perifereias-notioy-aigaioy",
+      "application_url": "https://app.opske.gr/",
+      "opens_at": "2026-08-28T10:00:00Z",
+      "closes_at": "2026-10-30T13:00:00Z",
+      "deadline_text": "30/10/2026 15:00 (σελίδα ΟΠΣΚΕ· η 1η τροποποίηση δεν αλλάζει την προθεσμία)",
+      "type": "grant",
+      "applicants": [
+        "sole_proprietor",
+        "company"
+      ],
+      "applicant_text": "Υφιστάμενες πολύ μικρές, μικρές και μεσαίες επιχειρήσεις στο Νότιο Αιγαίο με τουλάχιστον δύο κλεισμένες χρήσεις και ΚΑΔ σε τομέα RIS3 (Παράρτημα XI).",
+      "funding": null,
+      "intensity": 60,
+      "total_budget": 5000000,
+      "summary": "Επενδυτικά σχέδια υφιστάμενων ΜμΕ στο Νότιο Αιγαίο, σε εμπειρικό τουρισμό, αγροδιατροφή, αλιεία-υδατοκαλλιέργειες ή ΑΠΕ. 60% δημόσια χρηματοδότηση, επιχορηγούμενος προϋπολογισμός €30.000–€400.000, de minimis.",
+      "documents": [
+        [
+          "1η τροποποίηση πρόσκλησης (κωδ. 75_Δ.1.7, ΟΠΣ 24506)",
+          "https://opske.gr/sites/default/files/calls/2026-09/1.1i_tropopoiisi_pro.pdf"
+        ]
+      ],
+      "governing_document": "Πρόσκληση Α.Π. 1839/24-07-2026 και 1η τροποποίηση (γνώμη ΕΥΚΕ-ΧΕ 148960/18-09-2026)",
+      "uncertainties": [
+        "Το πλήρες κείμενο της αρχικής πρόσκλησης δεν ελέγχθηκε· το 60% και η προθεσμία προέρχονται από τις επίσημες σελίδες ΟΠΣΚΕ και ΕΦΕΠΑΕ."
+      ]
+    },
+    {
+      "id": "dam21",
+      "source": "efepae",
+      "external_key": "opske:23467",
+      "official_identifier": "1.2.5.2",
+      "title": "Ενίσχυση επενδυτικών σχεδίων νέων και υπό σύσταση ΜΜΕ που υλοποιούνται στις ηπειρωτικές περιοχές ΕΣΔΙΜ (ΔΑΜ21)",
+      "authority": "Πρόγραμμα «Δίκαιη Αναπτυξιακή Μετάβαση 2021-2027» (ΕΥΔΑΜ / ΕΦΕΠΑΕ)",
+      "canonical_url": "https://opske.gr/el/call/enishysi-ependytikon-shedion-neon-kai-ypo-systasi-mme-poy-ylopoioyntai-stis-ipeirotikes-0",
+      "application_url": "https://app.opske.gr/",
+      "opens_at": "2026-07-15T10:00:00Z",
+      "closes_at": "2026-11-16T12:00:00Z",
+      "deadline_text": "16-11-2026 και ώρα 14:00 (1η τροποποίηση· αρχικά 30-09-2026)",
+      "type": "grant",
+      "applicants": [
+        "unregistered_entrepreneur",
+        "sole_proprietor",
+        "company"
+      ],
+      "applicant_text": "Νέες (έναρξη μετά την 1/1/2025) και υπό σύσταση πολύ μικρές, μικρές και μεσαίες επιχειρήσεις, για επένδυση στις ηπειρωτικές περιοχές ΕΣΔΙΜ (Δυτική Μακεδονία, Μεγαλόπολη).",
+      "funding": null,
+      "intensity": null,
+      "total_budget": 40000000,
+      "summary": "Επενδυτικά σχέδια νέων και υπό σύσταση ΜΜΕ στις περιοχές δίκαιης μετάβασης (Δυτική Μακεδονία, Μεγαλόπολη). Ένταση 70% για πολύ μικρές και μικρές, 60% για μεσαίες επιχειρήσεις.",
+      "documents": [
+        [
+          "1η τροποποίηση πρόσκλησης (κωδ. 1.2.5.2, ΟΠΣ 23467)",
+          "https://opske.gr/sites/default/files/calls/2026-09/nees___ypo_systasi_m.pdf"
+        ],
+        [
+          "Σελίδα δράσης ΕΦΕΠΑΕ",
+          "https://efepae.gr/drasi/%ce%b5%ce%bd%ce%af%cf%83%cf%87%cf%85%cf%83%ce%b7-%ce%b5%cf%80%ce%b5%ce%bd%ce%b4%cf%85%cf%84%ce%b9%ce%ba%cf%8e%ce%bd-%cf%83%cf%87%ce%b5%ce%b4%ce%af%cf%89%ce%bd-%ce%bd%ce%ad%cf%89%ce%bd-%ce%ba%ce%b1-3/"
+        ]
+      ],
+      "governing_document": "1η τροποποίηση· αρχική πρόσκληση Α.Π. 107272 ΕΞ 2026/02-07-2026, ΑΔΑ ΨΖΤΑΗ-ΩΩ1",
+      "uncertainties": [
+        "Οι επιλέξιμοι ΚΑΔ (Παράρτημα XVIII) δεν έχουν ελεγχθεί από εμάς.",
+        "Το καθεστώς κρατικής ενίσχυσης και τα όρια προϋπολογισμού ανά σχέδιο δεν αναφέρονται στη σελίδα της δράσης.",
+        "Ο σύνδεσμος υποβολής είναι η γενική πύλη του ΟΠΣΚΕ· η σελίδα της δράσης δεν ορίζει ρητά σύστημα υποβολής."
+      ]
+    },
+    {
+      "id": "dam22",
+      "source": "efepae",
+      "external_key": "opske:23487",
+      "official_identifier": "1.2.6.2",
+      "title": "Ενίσχυση επενδυτικών σχεδίων Υφιστάμενων ΜΜΕ που υλοποιούνται στις ηπειρωτικές περιοχές ΕΣΔΙΜ (ΔΑΜ22)",
+      "authority": "Πρόγραμμα «Δίκαιη Αναπτυξιακή Μετάβαση 2021-2027» (ΕΥΔΑΜ / ΕΦΕΠΑΕ)",
+      "canonical_url": "https://efepae.gr/drasi/%ce%b5%ce%bd%ce%af%cf%83%cf%87%cf%85%cf%83%ce%b7-%ce%b5%cf%80%ce%b5%ce%bd%ce%b4%cf%85%cf%84%ce%b9%ce%ba%cf%8e%ce%bd-%cf%83%cf%87%ce%b5%ce%b4%ce%af%cf%89%ce%bd-%cf%85%cf%86%ce%b9%cf%83%cf%84%ce%ac-3/",
+      "application_url": "https://app.opske.gr/",
+      "opens_at": "2026-07-15T10:00:00Z",
+      "closes_at": "2026-11-16T12:00:00Z",
+      "deadline_text": "16-11-2026 και ώρα 14:00 (1η τροποποίηση· αρχικά 30-09-2026)",
+      "type": "grant",
+      "applicants": [
+        "sole_proprietor",
+        "company"
+      ],
+      "applicant_text": "Υφιστάμενες πολύ μικρές, μικρές και μεσαίες επιχειρήσεις με τουλάχιστον μία κλεισμένη χρήση και έναρξη πριν την 1/1/2025, για επένδυση στις ηπειρωτικές περιοχές ΕΣΔΙΜ.",
+      "funding": null,
+      "intensity": null,
+      "total_budget": 40000000,
+      "summary": "Επενδυτικά σχέδια υφιστάμενων ΜΜΕ στις περιοχές δίκαιης μετάβασης (Δυτική Μακεδονία, Μεγαλόπολη). Ένταση 70% για πολύ μικρές και μικρές, 60% για μεσαίες. Επιλέξιμος προϋπολογισμός €300.000–€12.000.000.",
+      "documents": [
+        [
+          "1η τροποποίηση πρόσκλησης (κωδ. 1.2.6.2, ΟΠΣ 23487)",
+          "https://efepae.gr/wp-content/uploads/2026/07/Υφιστάμενες-ΜΜΕ-Γ-Φ-ΔΑΜ22.pdf"
+        ],
+        [
+          "Σελίδα της πρόσκλησης στο ΟΠΣΚΕ (δείχνει ακόμη λήξη 30/09)",
+          "https://opske.gr/el/call/enishysi-ependytikon-shedion-yfistamenon-mme-poy-ylopoioyntai-stis-ipeirotikes-periohes-0"
+        ]
+      ],
+      "governing_document": "1η τροποποίηση· αρχική πρόσκληση Α.Π. 107275 ΕΞ 2026/02-07-2026, ΑΔΑ 94ΨΑΗ-6ΩΒ",
+      "uncertainties": [
+        "Η σελίδα της πρόσκλησης στο ΟΠΣΚΕ αναγράφει ακόμη λήξη 30/09/2026 14:00· ισχύει η 1η τροποποίηση (16/11/2026 14:00).",
+        "Οι επιλέξιμοι ΚΑΔ (Παράρτημα XVIII) δεν έχουν ελεγχθεί από εμάς.",
+        "Το καθεστώς κρατικής ενίσχυσης δεν αναφέρεται στη σελίδα της δράσης."
+      ]
+    },
+    {
+      "id": "dam23",
+      "source": "efepae",
+      "external_key": "opske:23466",
+      "official_identifier": "1.4.1.2",
+      "title": "Ενίσχυση επενδυτικών σχεδίων παραγωγικών επενδύσεων υφιστάμενων μεγάλων επιχειρήσεων που υλοποιούνται στις ηπειρωτικές περιοχές ΕΣΔΙΜ (ΔΑΜ23)",
+      "authority": "Πρόγραμμα «Δίκαιη Αναπτυξιακή Μετάβαση 2021-2027» (ΕΥΔΑΜ / ΕΦΕΠΑΕ)",
+      "canonical_url": "https://opske.gr/el/call/enishysi-ependytikon-shedion-paragogikon-ependyseon-yfistamenon-megalon-epiheiriseon-poy-1",
+      "application_url": "https://app.opske.gr/",
+      "opens_at": "2026-07-15T10:00:00Z",
+      "closes_at": "2026-11-16T12:00:00Z",
+      "deadline_text": "16-11-2026 και ώρα 14:00 (1η τροποποίηση· αρχικά 30-09-2026)",
+      "type": "grant",
+      "applicants": [
+        "company"
+      ],
+      "applicant_text": "Υφιστάμενες μεγάλες επιχειρήσεις με τουλάχιστον μία πλήρη κλεισμένη χρήση και έναρξη πριν την 1/1/2025.",
+      "funding": null,
+      "intensity": null,
+      "total_budget": 30000000,
+      "summary": "Παραγωγικές επενδύσεις υφιστάμενων μεγάλων επιχειρήσεων στις περιοχές δίκαιης μετάβασης. Επιλέξιμος προϋπολογισμός €5.000.000–€40.000.000. Ένταση 50% για ενσώματα και άυλα στοιχεία· άλλα ποσοστά για κτίρια (30%), μισθούς εργαζομένων με αναπηρία (75%) και ΑΠΕ (45%).",
+      "documents": [
+        [
+          "1η τροποποίηση πρόσκλησης (κωδ. 1.4.1.2, ΟΠΣ 23466)",
+          "https://opske.gr/sites/default/files/calls/2026-09/yfistamenes_megale.pdf"
+        ]
+      ],
+      "governing_document": "1η τροποποίηση· αρχική πρόσκληση Α.Π. 107274 ΕΞ 2026/02-07-2026",
+      "uncertainties": [
+        "Οι επιλέξιμοι ΚΑΔ δεν έχουν ελεγχθεί από εμάς.",
+        "Το καθεστώς κρατικής ενίσχυσης δεν αναφέρεται στη σελίδα της δράσης."
+      ]
+    },
+    {
+      "id": "dam24",
+      "source": "efepae",
+      "external_key": "opske:23486",
+      "official_identifier": "1.4.2.2",
+      "title": "Ενίσχυση επενδυτικών σχεδίων παραγωγικών επενδύσεων νέων και υπό σύσταση μεγάλων επιχειρήσεων που υλοποιούνται στις ηπειρωτικές περιοχές ΕΣΔΙΜ (ΔΑΜ24)",
+      "authority": "Πρόγραμμα «Δίκαιη Αναπτυξιακή Μετάβαση 2021-2027» (ΕΥΔΑΜ / ΕΦΕΠΑΕ)",
+      "canonical_url": "https://opske.gr/el/call/enishysi-ependytikon-shedion-paragogikon-ependyseon-neon-kai-ypo-systasi-megalon-1",
+      "application_url": "https://app.opske.gr/",
+      "opens_at": "2026-07-15T10:00:00Z",
+      "closes_at": "2026-11-16T12:00:00Z",
+      "deadline_text": "16-11-2026 και ώρα 14:00 (1η τροποποίηση· αρχικά 30-09-2026)",
+      "type": "grant",
+      "applicants": [
+        "unregistered_entrepreneur",
+        "company"
+      ],
+      "applicant_text": "Νέες (έναρξη μετά την 1/1/2025) και υπό σύσταση μεγάλες επιχειρήσεις.",
+      "funding": null,
+      "intensity": 50,
+      "total_budget": 30000000,
+      "summary": "Παραγωγικές επενδύσεις νέων και υπό σύσταση μεγάλων επιχειρήσεων στις περιοχές δίκαιης μετάβασης. Ένταση 50%, επιλέξιμος προϋπολογισμός €5.000.000–€40.000.000.",
+      "documents": [
+        [
+          "1η τροποποίηση πρόσκλησης (κωδ. 1.4.2.2, ΟΠΣ 23486)",
+          "https://opske.gr/sites/default/files/calls/2026-09/nees___ypo_systasi_meg.pdf"
+        ]
+      ],
+      "governing_document": "1η τροποποίηση· αρχική πρόσκληση Α.Π. 107273 ΕΞ 2026/02-07-2026, ΑΔΑ Ψ45ΦΗ-Θ5Χ",
+      "uncertainties": [
+        "Οι επιλέξιμοι ΚΑΔ δεν έχουν ελεγχθεί από εμάς.",
+        "Το καθεστώς κρατικής ενίσχυσης δεν αναφέρεται στη σελίδα της δράσης."
+      ]
+    },
+    {
+      "id": "north-aegean-tourism-processing",
+      "source": "efepae",
+      "external_key": "opske:20505",
+      "official_identifier": "ΠΒΑΡ05/ΒΑ_ΕΤΠΑ_1.3_56",
+      "title": "Ενίσχυση επιχειρηματικότητας με έμφαση στον τουρισμό και τη δεύτερη μεταποίηση αγροτικών προϊόντων (Χίος, Μυτιλήνη, μικρά νησιά — Βόρειο Αιγαίο)",
+      "authority": "Περιφέρεια Βορείου Αιγαίου — Πρόγραμμα «Βόρειο Αιγαίο 2021-2027» (ΕΦΕΠΑΕ)",
+      "canonical_url": "https://efepae.gr/drasi/%ce%b5%ce%bd%ce%af%cf%83%cf%87%cf%85%cf%83%ce%b7-%ce%b5%cf%80%ce%b9%cf%87%ce%b5%ce%b9%cf%81%ce%b7%ce%bc%ce%b1%cf%84%ce%b9%ce%ba%cf%8c%cf%84%ce%b7%cf%84%ce%b1%cf%82-%ce%bc%ce%b5-%ce%ad%ce%bc%cf%86/",
+      "application_url": "https://app.opske.gr/",
+      "opens_at": "2026-06-25T10:00:00Z",
+      "closes_at": "2026-11-17T13:00:00Z",
+      "deadline_text": "17/11/2026 ώρα 15:00 (2η τροποποίηση, Α.Π. 1963/21-09-2026· αρχικά 30/09/2026)",
+      "type": "grant",
+      "applicants": [
+        "sole_proprietor",
+        "company"
+      ],
+      "applicant_text": "Υφιστάμενες πολύ μικρές, μικρές και μεσαίες επιχειρήσεις, για επενδύσεις στη Χίο, τη Μυτιλήνη και τα μικρά νησιά του Βορείου Αιγαίου.",
+      "funding": null,
+      "intensity": null,
+      "total_budget": 8000000,
+      "summary": "Επενδύσεις υφιστάμενων ΜμΕ σε τουρισμό-πολιτισμό και δεύτερη μεταποίηση αγροτικών προϊόντων στη Χίο, τη Μυτιλήνη και τα μικρά νησιά. Ένταση 50% (τουρισμός σε Χίο και Μυτιλήνη) έως 70% (μικρά νησιά και μεταποίηση). Επιχορηγούμενος προϋπολογισμός €10.000–€300.000 (το ελάχιστο διαφέρει ανά περιοχή).",
+      "documents": [
+        [
+          "Προκήρυξη (24/06/2026)",
+          "https://efepae.gr/wp-content/uploads/2026/07/Ενίσχυση-επιχειρηματικότητας-με-έμφαση-στον-τουρισμό-και-την-δεύτερη-μεταποίηση-αγροτικών-προϊόντων.pdf"
+        ],
+        [
+          "1η τροποποίηση (20/07/2026)",
+          "https://efepae.gr/wp-content/uploads/2026/07/685Η7ΛΩ-18Ε-2.pdf"
+        ],
+        [
+          "2η τροποποίηση (Α.Π. 1963/21-09-2026) — λήξη 17/11/2026 15:00",
+          "https://efepae.gr/wp-content/uploads/2026/07/ΡΟΑΜ7ΛΩ-27Θ.pdf"
+        ]
+      ],
+      "governing_document": "2η τροποποίηση, Α.Π. 1963/21-09-2026 (ΟΠΣ 20505)",
+      "uncertainties": [
+        "Τα μικρά νησιά που καλύπτονται δεν απαριθμούνται στη σελίδα της δράσης.",
+        "Το καθεστώς κρατικής ενίσχυσης δεν αναφέρεται στη σελίδα της δράσης."
+      ]
+    },
+    {
+      "id": "crete-kainotomo",
+      "source": "opske",
+      "external_key": "opske:24787",
+      "official_identifier": "CRETE_1.1.2.1",
+      "title": "Υποστήριξη νέων καινοτόμων επιχειρήσεων στην Περιφέρεια Κρήτης («Καινοτομώ στην Κρήτη»)",
+      "authority": "Περιφέρεια Κρήτης — Πρόγραμμα «Κρήτη 2021-2027» (ΕΦΕΠΑΕ)",
+      "canonical_url": "https://opske.gr/el/call/ypostirixi-neon-kainotomon-epiheiriseon-stin-perifereia-kritis-kainotomo-stin-kriti",
+      "application_url": "https://app.opske.gr/",
+      "opens_at": "2026-09-29T10:00:00Z",
+      "closes_at": "2026-11-30T13:00:00Z",
+      "deadline_text": "30-11-2026, 15:00 (κείμενο πρόσκλησης)",
+      "type": "grant",
+      "applicants": [
+        "unregistered_entrepreneur",
+        "sole_proprietor",
+        "company"
+      ],
+      "applicant_text": "Πολύ μικρές και μικρές επιχειρήσεις υπό σύσταση ή με έναρξη από 1/1/2021, με επενδυτικό σχέδιο σε προτεραιότητα της Περιφερειακής Στρατηγικής Έξυπνης Εξειδίκευσης της Κρήτης.",
+      "funding": null,
+      "intensity": 75,
+      "total_budget": 2500000,
+      "summary": "Νέες καινοτόμες πολύ μικρές και μικρές επιχειρήσεις στην Κρήτη, υπό σύσταση ή με έναρξη από το 2021. Δημόσια χρηματοδότηση 75% του επιχορηγούμενου προϋπολογισμού (€30.000–€150.000). De minimis.",
+      "documents": [
+        [
+          "Πρόσκληση υποβολής αιτήσεων χρηματοδότησης (CRETE_1.1.2.1)",
+          "https://opske.gr/sites/default/files/calls/2026-08/1.1.2.1_prosklisi_-_kai.pdf"
+        ]
+      ],
+      "governing_document": "Πρόσκληση CRETE_1.1.2.1 (ΟΠΣ 24787), Ιούλιος 2026",
+      "uncertainties": [
+        "Τα ποσοστά 40% και 60% της πρόσκλησης αφορούν την κατανομή του προϋπολογισμού στις δύο κατηγορίες (€1 εκ. / €1,5 εκ.), όχι την ένταση ενίσχυσης."
+      ]
+    },
+    {
+      "id": "south-aegean-research-cooperation",
+      "source": "efepae",
+      "external_key": "opske:24767",
+      "official_identifier": "76_Δ.1.2",
+      "title": "Ενίσχυση συνεργασίας μεταξύ επιχειρήσεων και ερευνητικών φορέων στους τομείς προτεραιότητας της Περιφέρειας Νοτίου Αιγαίου",
+      "authority": "Περιφέρεια Νοτίου Αιγαίου — Πρόγραμμα «Νότιο Αιγαίο 2021-2027» (ΕΦΕΠΑΕ)",
+      "canonical_url": "https://opske.gr/el/call/enishysi-synergasias-metaxy-epiheiriseon-kai-ereynitikon-foreon-stoys-tomeis-proteraiotitas",
+      "application_url": "https://app.opske.gr/",
+      "opens_at": "2026-10-09T10:00:00Z",
+      "closes_at": "2026-12-11T13:00:00Z",
+      "deadline_text": "11/12/2026 15:00 (σελίδες ΟΠΣΚΕ και ΕΦΕΠΑΕ)",
+      "type": "grant",
+      "applicants": [
+        "sole_proprietor",
+        "company"
+      ],
+      "applicant_text": "Υφιστάμενες ΜμΕ στο Νότιο Αιγαίο με δύο κλεισμένες χρήσεις, τουλάχιστον 2 ΕΜΕ το έτος ν-2 και επιλέξιμο ΚΑΔ· ερευνητικοί φορείς συμμετέχουν ως συνεργάτες.",
+      "funding": null,
+      "intensity": null,
+      "total_budget": 2000000,
+      "summary": "Έργα έρευνας και ανάπτυξης ΜμΕ στο Νότιο Αιγαίο, μόνες ή σε συνεργασία με ερευνητικούς φορείς. Ένταση 35%–80% ανάλογα με την κατηγορία έρευνας και τη συνεργασία. €50.000–€250.000 για μία επιχείρηση, €80.000–€400.000 για δύο ή περισσότερες. ΓΑΚ (άρθρα 25, 28).",
+      "documents": [
+        [
+          "Πρόσκληση υποβολής προτάσεων (Α.Π. 1939/31-07-2026)",
+          "https://opske.gr/sites/default/files/calls/2026-08/a_1939_31.07.2026_prosklisi_synergasias.pdf"
+        ]
+      ],
+      "governing_document": "Πρόσκληση Α.Π. 1939/31-07-2026 (κωδ. 76_Δ.1.2, ΟΠΣ 24767)· 1η τροποποίηση 19/10/2026 στη σελίδα ΕΦΕΠΑΕ",
+      "uncertainties": [
+        "Η 1η τροποποίηση της 19/10/2026 εμφανίζεται στη σελίδα της ΕΦΕΠΑΕ· το περιεχόμενό της δεν ελέγχθηκε (η προθεσμία στις επίσημες σελίδες παραμένει 11/12/2026)."
+      ]
+    },
+    {
+      "id": "attica-research-partnerships",
+      "source": "opske",
+      "external_key": "opske:code:αττ130",
+      "official_identifier": "αττ130",
+      "title": "Συμπράξεις Έρευνας και Καινοτομίας στην Αττική",
+      "authority": "Περιφέρεια Αττικής — Πρόγραμμα «Αττική 2021-2027»",
+      "canonical_url": "https://opske.gr/el/call/sympraxeis-ereynas-kai-kainotomias-stin-attiki",
+      "application_url": "https://app.opske.gr/",
+      "opens_at": "2026-10-06T10:00:00Z",
+      "closes_at": "2027-01-28T13:00:00Z",
+      "deadline_text": "28/01/2027 15:00 (Α.Π. 2089/29-09-2026)",
+      "type": "grant",
+      "applicants": [
+        "sole_proprietor",
+        "company",
+        "research_body",
+        "university"
+      ],
+      "applicant_text": "Συμπράξεις με τουλάχιστον μία υφιστάμενη επιχείρηση (μία πλήρη κλεισμένη χρήση) και έναν ερευνητικό οργανισμό· οι επιχειρήσεις καλύπτουν τουλάχιστον το 40% του προϋπολογισμού.",
+      "funding": null,
+      "intensity": null,
+      "total_budget": 17000000,
+      "summary": "Έργα έρευνας και καινοτομίας στην Αττική από συμπράξεις επιχειρήσεων και ερευνητικών οργανισμών. Έως €400.000 ανά έργο. Ένταση ανά κατηγορία έρευνας και μέγεθος (έως 80% για βιομηχανική έρευνα πολύ μικρών/μικρών με συνεργασία). ΓΑΚ 651/2014.",
+      "documents": [
+        [
+          "Πρόσκληση υποβολής αιτήσεων χρηματοδότησης (Α.Π. 2089/29-09-2026)",
+          "https://opske.gr/sites/default/files/calls/2026-10/prosklisi_att130_2089_29092026_ps0il7l7-txt.pdf"
+        ]
+      ],
+      "governing_document": "Πρόσκληση Α.Π. 2089/29-09-2026 (αττ130)",
+      "uncertainties": [
+        "Οι αναλυτικές εντάσεις ενίσχυσης βρίσκονται στην Αναλυτική Πρόσκληση (ενότητα 7.2), που δεν ελέγχθηκε· τα ποσοστά προέρχονται από τη σελίδα του ΟΠΣΚΕ."
+      ]
+    }
+  ]
+}

@@ -1,5 +1,6 @@
 /** The one opportunity card used everywhere (home, listing, categories, For Me). */
 import Link from "next/link";
+import { isHandChecked } from "@/lib/site/provenance";
 import type { Dictionary, Locale } from "@/lib/i18n/dictionaries";
 import type { SiteCopy } from "@/lib/site/copy";
 import type { ListedOpportunity } from "@/lib/site/listing";
@@ -23,10 +24,10 @@ function cardDeadline(o: ListedOpportunity["row"], t: Dictionary, s: SiteCopy, l
  * Honest provenance line: hand-checked records say «Ελέγχθηκε», records imported automatically from an official portal
  * say «Ανακτήθηκε», test records say they were not checked. A retrieval date is never presented as a human check.
  */
-export function checkedLine(o: Pick<ListedOpportunity["row"], "external_key" | "is_synthetic" | "last_verified_at">, s: SiteCopy, locale: Locale): string {
+export function checkedLine(o: Pick<ListedOpportunity["row"], "external_key" | "is_synthetic" | "last_verified_at"> & { publication_basis?: string | null }, s: SiteCopy, locale: Locale): string {
   if (o.is_synthetic) return s.card.syntheticDate;
   const day = formatDay(o.last_verified_at, locale) ?? "—";
-  return `${o.external_key?.startsWith("manual:") ? s.card.checked : s.card.retrieved}: ${day}`;
+  return `${isHandChecked(o) ? s.card.checked : s.card.retrieved}: ${day}`;
 }
 
 export function OpportunityCard({ item, t, s, locale, extra }: {

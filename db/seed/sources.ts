@@ -66,6 +66,32 @@ export const SOURCE_SEEDS: SourceSeed[] = [
     check_interval_minutes: 720, access_status: "blocked_by_robots", auth_required: "none", robots_status: "unknown",
     compliance_notes: ROBOTS_BLOCKED + " Alternative: the same calls are published as decisions on Diavgeia (official open data).",
   },
+  // Added 20 Oct 2026 (owner approval): official sources of the business calls imported after manual review.
+  // adapter "manual" = no automated collection; nothing is monitored or scheduled.
+  {
+    slug: "opske", name: "ΟΠΣΚΕ — Ολοκληρωμένο Πληροφοριακό Σύστημα Κρατικών Ενισχύσεων", authority: "Υπουργείο Εθνικής Οικονομίας και Οικονομικών (ΕΥΚΕ-ΧΕ)",
+    scope: "national", country: "GR", base_url: "https://opske.gr/el/search-calls", allowed_hosts: ["opske.gr"], access_method: "html", adapter: "manual",
+    check_interval_minutes: 720, access_status: "untested", auth_required: "none", robots_status: "unknown",
+    compliance_notes: "2026-10-20: call pages and call PDFs under opske.gr/sites/default/files/calls/ were readable by the research tool. Applications are filed on app.opske.gr (login required). Manual review only.",
+  },
+  {
+    slug: "efepae", name: "ΕΦΕΠΑΕ — Ενδιάμεσος Φορέας", authority: "ΕΦΕΠΑΕ", scope: "national", country: "GR",
+    base_url: "https://efepae.gr/", allowed_hosts: ["efepae.gr"], access_method: "html", adapter: "manual", check_interval_minutes: 720,
+    access_status: "untested", auth_required: "none", robots_status: "unknown",
+    compliance_notes: "2026-10-20: action pages (efepae.gr/drasi/…) and amendment PDFs were readable by the research tool. Intermediate body for ΕΣΠΑ business calls. Manual review only.",
+  },
+  {
+    slug: "minfin", name: "Υπουργείο Εθνικής Οικονομίας και Οικονομικών", authority: "Υπουργείο Εθνικής Οικονομίας και Οικονομικών", scope: "national", country: "GR",
+    base_url: "https://minfin.gov.gr/", allowed_hosts: ["minfin.gov.gr"], access_method: "html", adapter: "manual", check_interval_minutes: 1440,
+    access_status: "untested", auth_required: "none", robots_status: "unknown",
+    compliance_notes: "2026-10-20: press releases, private-debt pages and circular PDFs were readable by the research tool. Manual review only.",
+  },
+  {
+    slug: "aade", name: "ΑΑΔΕ — Ανεξάρτητη Αρχή Δημοσίων Εσόδων", authority: "ΑΑΔΕ", scope: "national", country: "GR",
+    base_url: "https://www.aade.gr/egkyklioi-kai-apofaseis", allowed_hosts: ["aade.gr"], access_method: "html", adapter: "manual", check_interval_minutes: 1440,
+    access_status: "untested", auth_required: "none", robots_status: "unknown",
+    compliance_notes: "2026-10-20: decision pages and decision PDFs under aade.gr/sites/default/files/ were readable by the research tool. Regulatory updates; manual review only.",
+  },
   {
     slug: "dypa", name: "ΔΥΠΑ", authority: "Δημόσια Υπηρεσία Απασχόλησης", scope: "national", country: "GR",
     base_url: "https://www.dypa.gov.gr/", allowed_hosts: ["dypa.gov.gr"], access_method: "html", adapter: "manual", check_interval_minutes: 720,

@@ -5,14 +5,15 @@
  */
 import "server-only";
 import type postgres from "postgres";
-import { listOpportunities, toMatchable, type OpportunityRow } from "@/lib/data/opportunities";
+import { listOpportunities, loadRequirements, toMatchable, type OpportunityRow } from "@/lib/data/opportunities";
 import { availabilityOf, type Availability } from "@/lib/domain/eligibility";
 import { isCurrent, recordStatus, type RecordStatus } from "@/lib/domain/record-status";
 import type { PersonaId } from "@/lib/domain/personas";
 import { audiencesOf, categoriesOf, scopeOf, supportTypeOf, type SupportType } from "./taxonomy";
 import { matches } from "@/lib/text/search";
 import { compareListed, listingApplicants, listingHaystack } from "./discovery";
-import type { ApplicantAudience } from "./applicants";
+import { applicantAudienceOf, type ApplicantAudience } from "./applicants";
+import { isHandChecked } from "./provenance";
 
 import { statusGroup, type StatusGroup } from "./status-group";
 export { statusGroup, type StatusGroup };
@@ -40,13 +41,17 @@ export interface ListingFilters {
 export async function loadListing(sql: postgres.Sql, f: ListingFilters = {}, now = new Date()): Promise<ListedOpportunity[]> {
   // Search runs here, not in SQL, so Greek accents, case and final sigma are folded the same way as in Guides.
   const rows = await listOpportunities(sql, { industry: f.industry, limit: 5000 });
+  // Records imported from a manual review carry their applicant type as a reviewed requirement (not a hard-coded map).
+  const reviewedIds = rows.filter((r) => r.publication_basis === "manual_review" && !r.external_key?.startsWith("manual:")).map((r) => r.id);
+  const reviewedReqs = reviewedIds.length ? await loadRequirements(sql, reviewedIds) : new Map();
   const all = rows.map((row): ListedOpportunity => {
     const m = toMatchable(row, []);
     const availability = availabilityOf(m, now);
     const record = recordStatus(m, now);
     return {
       row, availability, record, status: statusGroup(record), categories: categoriesOf(row), audiences: audiencesOf(row),
-      scope: scopeOf(row), support: supportTypeOf(row.opportunity_type), applicant: listingApplicants(row),
+      scope: scopeOf(row), support: supportTypeOf(row.opportunity_type),
+      applicant: reviewedReqs.has(row.id) ? applicantAudienceOf(row, reviewedReqs.get(row.id)!) : listingApplicants(row),
     };
   });
   return all
@@ -63,8 +68,8 @@ export async function loadListing(sql: postgres.Sql, f: ListingFilters = {}, now
 /** Open records with the nearest deadlines, hand-checked Greek records first (they carry plain-language summaries). */
 export function featured(list: ListedOpportunity[], n = 6): ListedOpportunity[] {
   const open = list.filter((x) => x.status === "open" && !x.row.is_synthetic);
-  const manual = open.filter((x) => x.row.external_key?.startsWith("manual:"));
-  const rest = open.filter((x) => !x.row.external_key?.startsWith("manual:") && x.row.closes_at);
+  const manual = open.filter((x) => isHandChecked(x.row));
+  const rest = open.filter((x) => !isHandChecked(x.row) && x.row.closes_at);
   // One card per category, so the homepage shows the range of what exists.
   const seen = new Set<string>(); const out: ListedOpportunity[] = [];
   for (const x of [...manual, ...rest]) {
@@ -77,11 +82,11 @@ export function featured(list: ListedOpportunity[], n = 6): ListedOpportunity[] 
 }
 
 /**
- * Homepage «selected checked opportunities»: ONLY hand-checked records (manual:*) that are open now, one per category.
+ * Homepage «selected checked opportunities»: ONLY hand-checked records (manual:* or manual_review) that are open now, one per category.
  * Records imported automatically are never presented as checked.
  */
 export function featuredChecked(list: ListedOpportunity[], n = 3): ListedOpportunity[] {
-  return featured(list.filter((x) => x.row.external_key?.startsWith("manual:")), n);
+  return featured(list.filter((x) => isHandChecked(x.row)), n);
 }
 
 /** Per category: listings open or upcoming now, and all listings (incl. expired / unconfirmed). */
