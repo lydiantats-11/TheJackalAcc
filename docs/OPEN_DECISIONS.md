@@ -35,3 +35,14 @@ for re-verification; design work continues without changing the engine, approved
 - Read Reg. (EU) 2023/2831 Art. 3 and 6 and the Greek de minimis register page; draft the de minimis explainer.
 - Confirm A21 income limits (€6,000 / €10,000 / €15,000 equivalent income, found on a secondary legal site) against the official ΦΕΚ text.
 - ΕΣΠΑ «Ξεκινώ Επιχειρηματικά»: read call §§5, 9, 9.1, 10, 11, 17 and both amendments; resolve amendment-date conflict.
+
+## Decided 20 Oct 2026 — one platform, audience-specific journeys (direction approved, not yet built)
+- One site, one database, one eligibility engine, the existing five tabs. No separate business portal, no duplicate records, no second account system.
+- Audience switch «Ιδιώτες | Επιχειρήσεις & Οργανισμοί» plus "all".
+- Three separate dimensions: who you are (individual, business, non-profit, public body, adviser); business stage and size (planning / new / existing; micro / small / medium / large); what you look for (funding, subsidised hiring, loans, tax incentives, procurement, guidance).
+- Funding opportunities, regulatory updates and guides stay separate content types.
+- Proposed `/for-business` landing page on the existing design system and shared records.
+- Browsing without registration; progressive business profiling (location, KAD, size, interests first; de minimis, staff cuts etc. only when an opportunity needs them).
+- No fixed record count before launch: launch criteria are verified statuses and source links, region/KAD filtering, several useful guides, and a clear statement of what Jackal can and cannot determine.
+- Taxonomy unchanged until approved.
+- Order of work: finish official-source research and record audit → user journey, page structure and screen sketches for approval → then code.
