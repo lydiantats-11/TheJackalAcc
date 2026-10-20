@@ -3,45 +3,41 @@
 > next build
 
 ▲ Next.js 16.4.0 (Turbopack)
-✓ Running next.config.ts took 19ms
+✓ Running next.config.ts took 26ms
 ⚠ No build cache found. Please configure build caching for faster rebuilds. Read more: https://nextjs.org/docs/messages/no-cache
 
   Creating an optimized production build ...
-✓ Compiled successfully in 3.6s
+✓ Compiled successfully in 5.6s
   Running TypeScript ...
-  Finished TypeScript in 5.0s ...
-  Collecting page data using 3 workers ...
-  Generating static pages using 3 workers (0/16) ...
-  Generating static pages using 3 workers (4/16) 
-  Generating static pages using 3 workers (8/16) 
-  Generating static pages using 3 workers (12/16) 
-✓ Generating static pages using 3 workers (16/16) in 149ms
-  Finalizing page optimization ...
-
-Route (app)
-┌ ƒ /
-├ ƒ /_not-found
-├ ƒ /about
-├ ƒ /admin
-├ ƒ /admin/review
-├ ƒ /admin/sources
-├ ƒ /api/health
-├ ƒ /api/me/export
-├ ƒ /categories
-├ ƒ /dashboard
-├ ƒ /for-me
-├ ƒ /guides
-├ ƒ /guides/[slug]
-├ ƒ /lab/espa-example
-├ ƒ /login
-├ ƒ /opportunities
-├ ƒ /opportunities/[id]
-├ ƒ /opportunities/[id]/decision
-├ ƒ /profile
-└ ƒ /register
-
-
-ƒ Proxy (Middleware)
-
-ƒ  (Dynamic)  server-rendered on demand
+src/components/opportunity-details.tsx(123,12): error TS2304: Cannot find name 'Row'.
+src/components/opportunity-details.tsx(123,275): error TS2304: Cannot find name 'Row'.
+src/components/opportunity-details.tsx(124,27): error TS2304: Cannot find name 'Row'.
+src/components/opportunity-details.tsx(124,97): error TS2304: Cannot find name 'Row'.
+src/components/opportunity-details.tsx(137,14): error TS2304: Cannot find name 'Row'.
+src/components/opportunity-details.tsx(138,120): error TS2304: Cannot find name 'Row'.
+src/components/opportunity-details.tsx(139,14): error TS2304: Cannot find name 'Row'.
+src/components/opportunity-details.tsx(145,15): error TS2304: Cannot find name 'Row'.
+src/components/opportunity-details.tsx(148,27): error TS2304: Cannot find name 'Row'.
+src/components/opportunity-details.tsx(148,159): error TS2304: Cannot find name 'Row'.
+src/components/opportunity-details.tsx(149,36): error TS2304: Cannot find name 'Row'.
+src/components/opportunity-details.tsx(149,225): error TS2304: Cannot find name 'Row'.
+src/components/opportunity-details.tsx(150,28): error TS2304: Cannot find name 'Row'.
+src/components/opportunity-details.tsx(150,151): error TS2304: Cannot find name 'Row'.
+src/components/opportunity-details.tsx(152,12): error TS2304: Cannot find name 'Row'.
+src/components/opportunity-details.tsx(157,13): error TS2304: Cannot find name 'Row'.
+src/components/opportunity-details.tsx(160,12): error TS2304: Cannot find name 'Row'.
+src/components/opportunity-details.tsx(165,13): error TS2304: Cannot find name 'Row'.
+src/components/opportunity-details.tsx(167,40): error TS2304: Cannot find name 'Row'.
+src/components/opportunity-details.tsx(167,85): error TS2304: Cannot find name 'Row'.
+src/components/opportunity-details.tsx(168,17): error TS2304: Cannot find name 'Row'.
+src/components/opportunity-details.tsx(168,313): error TS2304: Cannot find name 'Row'.
+src/components/opportunity-details.tsx(169,55): error TS2304: Cannot find name 'Row'.
+src/components/opportunity-details.tsx(169,201): error TS2304: Cannot find name 'Row'.
+src/components/opportunity-details.tsx(170,28): error TS2304: Cannot find name 'Row'.
+src/components/opportunity-details.tsx(170,91): error TS2304: Cannot find name 'Row'.
+src/components/opportunity-details.tsx(171,29): error TS2304: Cannot find name 'Row'.
+src/components/opportunity-details.tsx(171,90): error TS2304: Cannot find name 'Row'.
+src/components/opportunity-details.tsx(172,22): error TS2304: Cannot find name 'Row'.
+src/components/opportunity-details.tsx(172,123): error TS2304: Cannot find name 'Row'.
+Failed to type check.
 

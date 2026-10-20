@@ -2,3 +2,33 @@
 > funding-radar@0.1.0 typecheck
 > tsc --noEmit
 
+src/components/opportunity-details.tsx(123,12): error TS2304: Cannot find name 'Row'.
+src/components/opportunity-details.tsx(123,275): error TS2304: Cannot find name 'Row'.
+src/components/opportunity-details.tsx(124,27): error TS2304: Cannot find name 'Row'.
+src/components/opportunity-details.tsx(124,97): error TS2304: Cannot find name 'Row'.
+src/components/opportunity-details.tsx(137,14): error TS2304: Cannot find name 'Row'.
+src/components/opportunity-details.tsx(138,120): error TS2304: Cannot find name 'Row'.
+src/components/opportunity-details.tsx(139,14): error TS2304: Cannot find name 'Row'.
+src/components/opportunity-details.tsx(145,15): error TS2304: Cannot find name 'Row'.
+src/components/opportunity-details.tsx(148,27): error TS2304: Cannot find name 'Row'.
+src/components/opportunity-details.tsx(148,159): error TS2304: Cannot find name 'Row'.
+src/components/opportunity-details.tsx(149,36): error TS2304: Cannot find name 'Row'.
+src/components/opportunity-details.tsx(149,225): error TS2304: Cannot find name 'Row'.
+src/components/opportunity-details.tsx(150,28): error TS2304: Cannot find name 'Row'.
+src/components/opportunity-details.tsx(150,151): error TS2304: Cannot find name 'Row'.
+src/components/opportunity-details.tsx(152,12): error TS2304: Cannot find name 'Row'.
+src/components/opportunity-details.tsx(157,13): error TS2304: Cannot find name 'Row'.
+src/components/opportunity-details.tsx(160,12): error TS2304: Cannot find name 'Row'.
+src/components/opportunity-details.tsx(165,13): error TS2304: Cannot find name 'Row'.
+src/components/opportunity-details.tsx(167,40): error TS2304: Cannot find name 'Row'.
+src/components/opportunity-details.tsx(167,85): error TS2304: Cannot find name 'Row'.
+src/components/opportunity-details.tsx(168,17): error TS2304: Cannot find name 'Row'.
+src/components/opportunity-details.tsx(168,313): error TS2304: Cannot find name 'Row'.
+src/components/opportunity-details.tsx(169,55): error TS2304: Cannot find name 'Row'.
+src/components/opportunity-details.tsx(169,201): error TS2304: Cannot find name 'Row'.
+src/components/opportunity-details.tsx(170,28): error TS2304: Cannot find name 'Row'.
+src/components/opportunity-details.tsx(170,91): error TS2304: Cannot find name 'Row'.
+src/components/opportunity-details.tsx(171,29): error TS2304: Cannot find name 'Row'.
+src/components/opportunity-details.tsx(171,90): error TS2304: Cannot find name 'Row'.
+src/components/opportunity-details.tsx(172,22): error TS2304: Cannot find name 'Row'.
+src/components/opportunity-details.tsx(172,123): error TS2304: Cannot find name 'Row'.
