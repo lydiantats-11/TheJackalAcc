@@ -22,7 +22,7 @@ import { deadlineText } from "@/components/opportunity-facts";
 import { RequirementsTable } from "@/components/requirements-table";
 import { DecisionRecordView } from "@/components/decision-record";
 import { buildDecisionRecord } from "@/lib/domain/decision-record";
-import { KeyFacts, OfficialConditions, OfficialScope, VerifiedSteps, keyAmount } from "@/components/opportunity-details";
+import { KeyFacts, OfficialConditions, OfficialScope, VerifiedSteps, briefWhat, keyAmount } from "@/components/opportunity-details";
 import { displayAuthority, displayTitle, verifiedFor } from "@/lib/site/verified";
 import { Icon } from "@/components/icons";
 import { toggleSaveAction } from "@/app/actions";
@@ -116,7 +116,7 @@ export default async function OpportunityPage({ params, searchParams }: { params
       {o.has_conflict && <div className="notice bad" role="alert" style={{ marginBottom: 16 }}>{t.ui.conflict}</div>}
       <OpportunityBrief
         input={{ record: status, closesAt: o.closes_at, opensAt: o.opens_at, deadlineKind: o.deadline_kind, hasGuide: !!guide }}
-        what={amount.value} who={s.card.applicant[applicant]} s={s} locale={locale} now={now}
+        what={briefWhat(o, t, s, locale)} who={s.card.applicant[applicant]} s={s} locale={locale} now={now}
         applyUrl={o.application_url ?? o.canonical_url} guideHref={guide ? `/guides/${guide}` : undefined}
         similarHref={cats[0] ? `/opportunities?cat=${cats[0].slug}` : "/opportunities"} />
 

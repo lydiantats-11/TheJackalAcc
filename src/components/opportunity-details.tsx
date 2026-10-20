@@ -56,6 +56,18 @@ export function keyAmount(o: OpportunityRow, t: Dictionary, s: SiteCopy, l: Loca
   return v?.benefit ? { label: c.label, value: v.benefit[l] } : c;
 }
 
+/**
+ * «Τι παίρνετε» in the detail brief: what ONE applicant can get. A call's total budget is never shown here (it is the
+ * amount for all projects together); the aid rate is shown instead when published, else "see official source".
+ */
+export function briefWhat(o: OpportunityRow, t: Dictionary, s: SiteCopy, l: Locale): React.ReactNode {
+  const v = verifiedFor(o.external_key);
+  if (v?.benefit) return v.benefit[l];
+  if (o.funding_amount_state === "known") return amountText(o, t, l);
+  if (o.funding_intensity_pct != null) return s.card.intensity(Number(o.funding_intensity_pct));
+  return s.card.amountNone;
+}
+
 function Row({ k, children }: { k: string; children: React.ReactNode }) {
   return <div><dt>{k}</dt><dd>{children}</dd></div>;
 }

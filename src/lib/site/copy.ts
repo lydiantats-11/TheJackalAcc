@@ -221,7 +221,7 @@ const el = {
     conditionsTitle: "Επίσημοι όροι της πρόσκλησης", conditionsNote: "Οι όροι επιλεξιμότητας (χώρες, είδος φορέα, οικονομική επάρκεια) βρίσκονται στο έγγραφο της πρόσκλησης. Δεν τους αξιολογούμε αυτόματα ακόμη.",
     documents: "Επίσημα έγγραφα", stepsTitle: "Βήματα αίτησης (από την επίσημη πηγή)", openEnded: "Χωρίς σταθερή προθεσμία",
   },
-  card: { deadline: "Προθεσμία", amount: "Ποσό", source: "Πηγή", checked: "Ελέγχθηκε", retrieved: "Ανακτήθηκε από την επίσημη πύλη", syntheticDate: "Δοκιμαστική καταχώριση — δεν ελέγχθηκε", amountNone: "Βλ. επίσημη πηγή", brussels: "ώρα Βρυξελλών", budget: "Προϋπολογισμός πρόσκλησης", benefit: "Όφελος",
+  card: { deadline: "Προθεσμία", amount: "Ποσό", source: "Πηγή", checked: "Ελέγχθηκε", retrieved: "Ανακτήθηκε από την επίσημη πύλη", syntheticDate: "Δοκιμαστική καταχώριση — δεν ελέγχθηκε", amountNone: "Βλ. επίσημη πηγή", brussels: "ώρα Βρυξελλών", budget: "Προϋπολογισμός πρόσκλησης", benefit: "Όφελος", intensity: (n: number) => `Έως ${n}% του επιλέξιμου προϋπολογισμού`,
     applicant: { individuals: "Για ιδιώτες", both: "Για ιδιώτες και επιχειρήσεις", organisations: "Για επιχειρήσεις & φορείς", unknown: "Είδος αιτούντα: δεν έχει καταγραφεί" },
     inEnglish: "Στα αγγλικά", codeOnly: "Η πηγή δίνει μόνο κωδικό, χωρίς τίτλο" },
   brief: {
@@ -509,7 +509,7 @@ const en: Copy = {
     conditionsTitle: "Official conditions of the call", conditionsNote: "The eligibility conditions (countries, type of organisation, financial capacity) are in the call document. We do not assess them automatically yet.",
     documents: "Official documents", stepsTitle: "How to apply (from the official source)", openEnded: "No fixed deadline",
   },
-  card: { deadline: "Deadline", amount: "Amount", source: "Source", checked: "Checked", retrieved: "Retrieved from the official portal", syntheticDate: "Test listing — not checked", amountNone: "See official source", brussels: "Brussels time", budget: "Call budget", benefit: "Benefit",
+  card: { deadline: "Deadline", amount: "Amount", source: "Source", checked: "Checked", retrieved: "Retrieved from the official portal", syntheticDate: "Test listing — not checked", amountNone: "See official source", brussels: "Brussels time", budget: "Call budget", benefit: "Benefit", intensity: (n: number) => `Up to ${n}% of the eligible budget`,
     applicant: { individuals: "For individuals", both: "For individuals and businesses", organisations: "For businesses & organisations", unknown: "Applicant type: not recorded" },
     inEnglish: "In English", codeOnly: "The source gives only a code, no title" },
   brief: {

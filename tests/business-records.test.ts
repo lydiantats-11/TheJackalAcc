@@ -106,4 +106,12 @@ describe("credibility and test records", () => {
     const q = readFileSync(join(root, "src/lib/data/opportunities.ts"), "utf8");
     expect((q.match(/AND NOT o\.is_synthetic/g) ?? []).length).toBe(2);
   });
+
+  it("«Τι παίρνετε» never shows a call's total budget as the amount one applicant gets", () => {
+    const page = readFileSync(join(root, "src/app/opportunities/[id]/page.tsx"), "utf8");
+    expect(page).toContain("what={briefWhat(o, t, s, locale)}");
+    const comp = readFileSync(join(root, "src/components/opportunity-details.tsx"), "utf8");
+    const fn = comp.slice(comp.indexOf("export function briefWhat"));
+    expect(fn.slice(0, fn.indexOf("\n}\n") > 0 ? fn.indexOf("\n}\n") : fn.length)).not.toContain("total_eur");
+  });
 });
