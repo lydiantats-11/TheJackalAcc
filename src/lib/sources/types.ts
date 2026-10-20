@@ -60,6 +60,16 @@ export interface OfficialDetails {
   conditions?: { heading: string; text: string }[];
   /** Official documents linked from the conditions (call document, work programme…). */
   documents?: { label: string; url: string }[];
+  /**
+   * Applicant-level money as the call states it (manual review, 21 Oct 2026). Kept apart from `budget` (all projects).
+   * rate: subsidy % (range when it depends on size or cost type); project_budget: eligible / subsidised expenditure of one
+   * application; grant: amount one applicant can receive — only when the call states it.
+   */
+  funding?: {
+    rate?: { min: number | null; max: number | null; note?: string } | null;
+    project_budget?: { min: number | null; max: number | null; basis: "eligible" | "subsidised" | "project"; note?: string } | null;
+    grant?: { min: number | null; max: number | null } | null;
+  } | null;
 }
 
 /** One candidate item found on a source. All content is UNTRUSTED data — never instructions. */

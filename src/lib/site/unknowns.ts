@@ -15,6 +15,8 @@ export interface UnknownInput {
   deadlineKind: string | null;
   hasDeadline: boolean;
   amountState: string | null;
+  /** The record states something about what an applicant gets: verified benefit, subsidy rate, project budget or grant. */
+  amountRecorded?: boolean;
   applicant: ApplicantAudience;
   /** Owner-approved document list exists for this record (none yet: lists are pending approval). */
   documentsApproved: boolean;
@@ -26,7 +28,8 @@ export function unknownsOf(x: UnknownInput): Unknown[] {
   if (x.hasConflict || x.record.freshness === "conflicting") out.push("conflict");
   if (x.completeness !== "complete") out.push("requirementsIncomplete");
   if (!(x.deadlineKind === "rolling" || x.deadlineKind === "not_applicable" || (x.deadlineKind === "official" && x.hasDeadline))) out.push("deadlineUnknown");
-  if (x.amountState !== "known" && x.amountState !== "not_applicable") out.push("amountUnknown");
+  // A verified value is never presented as missing (owner decision, 21 Oct 2026).
+  if (x.amountState !== "known" && x.amountState !== "not_applicable" && !x.amountRecorded) out.push("amountUnknown");
   if (x.applicant === "unknown") out.push("applicantUnknown");
   if (!x.documentsApproved) out.push("documentsUnreviewed");
   return out;

@@ -50,6 +50,8 @@ export interface OpportunityRow {
   stale_after_days: number | null;
   record_kind: "call" | "application_round" | "standing_procedure" | "programme" | "tax_regime";
   uncertainties: string[];
+  /** Official evidence for the status (manual review: governing document, sources, check time). Selected by o.*. */
+  status_evidence?: { governing_document?: string; checked_at?: string } | null;
   /** 0008: industries a record is restricted to; null = not restricted (discovery only, never eligibility). */
   industries: string[] | null;
   /** 0009: what the source publishes in structured form (budget, action type, conditions…); display only. */

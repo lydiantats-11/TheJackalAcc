@@ -75,7 +75,7 @@ const el = {
     conflicting: "Αντιφατικές πηγές", needs_review: "Απαιτείται ανθρώπινος έλεγχος",
   } as Record<string, string>,
   ui: {
-    officialWording: "Επίσημη διατύπωση", evidence: "Πηγή", interpretation: "Ερμηνεία πλατφόρμας",
+    officialWording: "Επίσημη διατύπωση", summaryLabel: "Σύνοψη προϋποθέσεων", summaryNote: "Σύνοψη της πλατφόρμας — όχι επίσημο κείμενο.", conditionText: "Κείμενο προϋπόθεσης", evidence: "Πηγή", interpretation: "Ερμηνεία πλατφόρμας",
     dateOnly: "Η πηγή δίνει μόνο ημερομηνία, χωρίς ώρα. Υπολογίζουμε συντηρητικά από την αρχή της ημέρας.",
     originalDeadline: "Αρχική διατύπωση προθεσμίας", conflict: "Οι επίσημες πηγές διαφωνούν για στοιχεία αυτής της πρόσκλησης. Ελέγξτε την επίσημη ανακοίνωση.",
     freshness: "Επαλήθευση πηγής", requirementsIncomplete: "Οι προϋποθέσεις αυτής της πρόσκλησης δεν έχουν καταγραφεί πλήρως ακόμη.",
@@ -312,7 +312,7 @@ const en: Dictionary = {
     conflicting: "Sources conflict", needs_review: "Needs human review",
   },
   ui: {
-    officialWording: "Official wording", evidence: "Source", interpretation: "Platform interpretation",
+    officialWording: "Official wording", summaryLabel: "Summary of conditions", summaryNote: "Platform summary — not official text.", conditionText: "Condition text", evidence: "Source", interpretation: "Platform interpretation",
     dateOnly: "The source gives a date without a time. We count conservatively from the start of that day.",
     originalDeadline: "Original deadline wording", conflict: "Official sources disagree about details of this call. Check the official announcement.",
     freshness: "Source verification", requirementsIncomplete: "This call's requirements have not been fully recorded yet.",

@@ -55,6 +55,7 @@ def main():
         details = {"source": "manual-review",
                    "call": {"identifier": r["official_identifier"], "title": None},
                    "documents": [{"label": d[0], "url": d[1]} for d in r["documents"]]}
+        details["funding"] = r["funding"]
         if r.get("total_budget"):
             details["budget"] = {"total_eur": r["total_budget"], "by_year": {}, "expected_grants": None, "min_grant_eur": None, "max_grant_eur": None}
         cols = {
@@ -63,18 +64,19 @@ def main():
             "opportunity_type": r["type"], "publishing_authority": r["authority"], "canonical_url": r["canonical_url"],
             "application_url": r["application_url"], "opens_at": r["opens_at"], "closes_at": r["closes_at"],
             "deadline_state": "known", "deadline_kind": "official", "deadline_is_date_only": False, "deadline_timezone": "Europe/Athens",
-            "deadline_original_text": r["deadline_text"], "last_retrieved_at": at, "last_verified_at": at,
+            "deadline_original_text": r["deadline_verbatim"], "last_retrieved_at": at, "last_verified_at": at,
             "status": "open", "status_confidence": "high", "status_evidence": evidence, "status_reason": "manual_review_2026_10_20",
             "review_status": "pending", "publication_basis": "manual_review", "external_key": r["external_key"], "record_kind": "call",
             "stale_after_days": 7, "uncertainties": r["uncertainties"], "requirement_set_completeness": "partial", "has_conflict": False,
-            "funding_intensity_pct": r.get("intensity"), "official_details": details,
+            "funding_intensity_pct": None, "official_details": details,
         }
         vals = []
         for k, v in cols.items():
             vals.append(f"(SELECT id FROM sources WHERE slug = {q(v[7:])})" if isinstance(v, str) and v.startswith("__SRC__") else q(v))
         out.append(f"\n-- {r['id']}: {r['official_identifier']} · closes {r['closes_at']}")
         out.append(f"WITH o AS (INSERT INTO opportunities ({', '.join(cols)}) VALUES ({', '.join(vals)}) RETURNING id)")
-        ev = {"source_url": r["documents"][0][1], "excerpt": r["applicant_text"]}
+        # The applicant text is a platform summary: no excerpt, so it is never shown as an official quotation.
+        ev = {"source_url": r["documents"][0][1], "location": "σύνοψη της πλατφόρμας από το έγγραφο"}
         out.append("INSERT INTO opportunity_requirements (opportunity_id, requirement_key, category, kind, value, original_text, original_lang, "
                    "interpretation, evidence, evidence_rank, confidence, flags, origin, verified_at)\nVALUES ((SELECT id FROM o), 'applicant_type-1', "
                    f"'applicant_type', 'mandatory', {q({'types': r['applicants']})}, {q(r['applicant_text'])}, 'el', NULL, {q(ev)}, 2, 'medium', "

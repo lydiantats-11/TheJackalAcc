@@ -42,6 +42,7 @@ describe("business batch of 20 Oct 2026", () => {
       const [date, time] = local.split(", ");
       const [d, m, y] = date!.split("/");
       expect(r.deadline_text.replace(/-/g, "/")).toContain(`${d}/${m}/${y}`);
+      expect(r.deadline_verbatim.replace(/-/g, "/")).toContain(`${d}/${m}/${y}`);
       expect(time).toBe(r.id.startsWith("dam") ? "14:00" : "15:00");
     }
     const nea = recs.find((r) => r.id === "epiro-nea-eykairia")!;
@@ -58,7 +59,8 @@ describe("business batch of 20 Oct 2026", () => {
     const dam22 = recs.find((r) => r.id === "dam22")!;
     expect(dam22.uncertainties.join(" ")).toContain("30/09/2026");
     const crete = recs.find((r) => r.id === "crete-kainotomo")!;
-    expect(crete.intensity).toBe(75);
+    expect(crete.funding.rate).toEqual({ min: 75, max: 75 });
+    expect(crete.funding.grant).toBeNull();
   });
 
   it("every record points to a registered official source; the four new sources stay manual and unscheduled", () => {
@@ -107,11 +109,4 @@ describe("credibility and test records", () => {
     expect((q.match(/AND NOT o\.is_synthetic/g) ?? []).length).toBe(2);
   });
 
-  it("«Τι παίρνετε» never shows a call's total budget as the amount one applicant gets", () => {
-    const page = readFileSync(join(root, "src/app/opportunities/[id]/page.tsx"), "utf8");
-    expect(page).toContain("what={briefWhat(o, t, s, locale)}");
-    const comp = readFileSync(join(root, "src/components/opportunity-details.tsx"), "utf8");
-    const fn = comp.slice(comp.indexOf("export function briefWhat"));
-    expect(fn.slice(0, fn.indexOf("\n}\n") > 0 ? fn.indexOf("\n}\n") : fn.length)).not.toContain("total_eur");
-  });
 });

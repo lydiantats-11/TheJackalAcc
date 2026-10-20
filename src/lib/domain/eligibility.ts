@@ -106,12 +106,14 @@ const UNVERIFIED: OpportunityStatus[] = ["discovered", "under_review", "unverifi
 
 export function availabilityOf(o: OpportunityForMatching, now: Date): Availability {
   if (CLOSED.includes(o.status)) return o.budget_exhausted === "confirmed" ? "closed_budget_exhausted" : "closed";
+  // A passed official deadline is a fact: it comes before freshness, conflicts and verification state, exactly as in
+  // record-status.ts (owner decision, 21 Oct 2026). It changes availability only, never eligibility.
+  if (o.deadline_kind === "official" && o.closes_at && o.closes_at < now) return "deadline_passed_unconfirmed";
   if (o.has_conflict) return "conflicting_information";
   if (UNVERIFIED.includes(o.status)) return "unverified";
   const staleMs = (o.stale_after_hours ?? 72) * 3_600_000;
   if (!o.last_verified_at || now.getTime() - o.last_verified_at.getTime() > staleMs) return "stale";
   if (o.status === "suspended") return "suspended";
-  if (o.deadline_kind === "official" && o.closes_at && o.closes_at < now) return "deadline_passed_unconfirmed";
   return o.status === "upcoming" ? "upcoming" : "open";
 }
 

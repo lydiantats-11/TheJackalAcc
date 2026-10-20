@@ -22,6 +22,7 @@ import { deadlineText } from "@/components/opportunity-facts";
 import { RequirementsTable } from "@/components/requirements-table";
 import { DecisionRecordView } from "@/components/decision-record";
 import { buildDecisionRecord } from "@/lib/domain/decision-record";
+import { hasApplicantMoney, moneyOf } from "@/lib/site/money";
 import { KeyFacts, OfficialConditions, OfficialScope, VerifiedSteps, briefWhat, keyAmount } from "@/components/opportunity-details";
 import { displayAuthority, displayTitle, verifiedFor } from "@/lib/site/verified";
 import { Icon } from "@/components/icons";
@@ -91,6 +92,7 @@ export default async function OpportunityPage({ params, searchParams }: { params
   const unknowns = unknownsOf({
     record: status, hasConflict: !!o.has_conflict, completeness: o.requirement_set_completeness, deadlineKind: o.deadline_kind,
     hasDeadline: !!o.closes_at, amountState: o.funding_amount_state, applicant,
+    amountRecorded: !!verifiedFor(o.external_key)?.benefit || hasApplicantMoney(moneyOf(o)),
     documentsApproved: false,
   });
 

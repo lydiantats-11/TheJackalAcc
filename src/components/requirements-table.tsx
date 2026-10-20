@@ -1,6 +1,7 @@
 import type { RequirementResult } from "@/lib/domain/engine/evaluate";
 import type { Dictionary } from "@/lib/i18n/dictionaries";
 import { StateBadge } from "./badges";
+import { isOfficialQuote } from "@/lib/site/money";
 
 function paramsText(r: RequirementResult): string {
   const p = r.params;
@@ -23,7 +24,7 @@ export function RequirementsTable({ results, t, copy }: { results: RequirementRe
   return (
     <div className="scroll">
       <table className="crit stack">
-        <thead><tr><th>{t.opp.sectionRequirements}</th><th>{copy?.state ?? t.admin.lifecycle}</th><th>{t.ui.officialWording}</th></tr></thead>
+        <thead><tr><th>{t.opp.sectionRequirements}</th><th>{copy?.state ?? t.admin.lifecycle}</th><th>{t.ui.conditionText}</th></tr></thead>
         <tbody>
           {results.map((r) => (
             <tr key={r.requirement_id}>
@@ -37,13 +38,24 @@ export function RequirementsTable({ results, t, copy }: { results: RequirementRe
                   ? (r.state === "unknown" && r.question ? <div className="small muted">{copy.needs}: {t.question[r.question] ?? r.question}</div> : null)
                   : <div className="small muted">{paramsText(r)}{r.question ? ` → ${t.question[r.question] ?? r.question}` : ""}</div>}
               </td>
-              <td className="small" data-label={t.ui.officialWording}>
-                <details>
-                  <summary>{r.original_text.length > 80 ? r.original_text.slice(0, 80) + "…" : r.original_text}</summary>
-                  <blockquote lang={r.original_lang} style={{ margin: "6px 0", whiteSpace: "pre-wrap" }}>{r.original_text}</blockquote>
-                  {r.evidence.excerpt && <div className="muted">“{r.evidence.excerpt}”</div>}
-                  <a href={r.evidence.source_url} target="_blank" rel="noopener noreferrer">{t.ui.evidence}{r.evidence.location ? ` (${r.evidence.location})` : ""} ↗</a>
-                </details>
+              <td className="small" data-label={t.ui.conditionText}>
+                {isOfficialQuote(r) ? (
+                  // Exact quotation: the recorded source excerpt contains this wording word for word.
+                  <details>
+                    <summary><span className="muted">{t.ui.officialWording}:</span> {r.original_text.length > 80 ? r.original_text.slice(0, 80) + "…" : r.original_text}</summary>
+                    <blockquote lang={r.original_lang} style={{ margin: "6px 0", whiteSpace: "pre-wrap" }}>«{r.original_text}»</blockquote>
+                    <a href={r.evidence.source_url} target="_blank" rel="noopener noreferrer">{t.ui.evidence}{r.evidence.location ? ` (${r.evidence.location})` : ""} ↗</a>
+                  </details>
+                ) : (
+                  // Paraphrase: never in quotation marks, never called official wording.
+                  <details data-text-kind="summary">
+                    <summary><span className="muted">{t.ui.summaryLabel}:</span> {r.original_text.length > 80 ? r.original_text.slice(0, 80) + "…" : r.original_text}</summary>
+                    <p lang={r.original_lang} style={{ margin: "6px 0", whiteSpace: "pre-wrap" }}>{r.original_text}</p>
+                    <div className="xs muted">{t.ui.summaryNote}</div>
+                    {r.evidence.excerpt && <div className="muted">{t.ui.officialWording}: «{r.evidence.excerpt}»</div>}
+                    <a href={r.evidence.source_url} target="_blank" rel="noopener noreferrer">{t.ui.evidence}{r.evidence.location ? ` (${r.evidence.location})` : ""} ↗</a>
+                  </details>
+                )}
               </td>
             </tr>
           ))}
