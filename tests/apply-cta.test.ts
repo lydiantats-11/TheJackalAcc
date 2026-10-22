@@ -27,10 +27,10 @@ describe("application call-to-action", () => {
   });
   it("the programme page and the guide page both apply the rule", () => {
     const detail = read("src/app/[aud]/eukairies/[id]/page.tsx");
-    expect(detail).toContain("const canApply = applicationCtaAllowed(status.application);");
+    expect(detail).toContain("const canApply = applicationCtaAllowed(status.application, status.display);");
     expect(detail).toContain("{canApply");
     const guide = read("src/app/[aud]/odigoi/[slug]/page.tsx");
-    expect(guide).toContain("applicationCtaAllowed(status.application)");
+    expect(guide).toContain("applicationCtaAllowed(status.application, status.display)");
     expect((guide.match(/a\.applyUrl && (isProcedural && )?canApply &&/g) ?? []).length).toBe(2);
     // The brief already swaps «apply» for «similar opportunities» after the deadline.
     expect(read("src/lib/site/brief.ts")).toMatch(/case "closed": case "passed": return "see_similar";/);
