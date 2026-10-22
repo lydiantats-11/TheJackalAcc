@@ -1,0 +1,50 @@
+[
+  {
+    "key": "manual:a21",
+    "applyButton": true,
+    "mentions31March": false,
+    "pending": []
+  },
+  {
+    "key": "manual:art5a",
+    "applyButton": true,
+    "mentions31March": true,
+    "pending": []
+  },
+  {
+    "key": "manual:art5b",
+    "applyButton": true,
+    "mentions31March": true,
+    "pending": []
+  },
+  {
+    "key": "manual:art5c",
+    "applyButton": true,
+    "mentions31March": false,
+    "pending": []
+  },
+  {
+    "key": "manual:discovereu",
+    "applyButton": false,
+    "mentions31March": false,
+    "pending": []
+  },
+  {
+    "key": "opske:23467",
+    "applyButton": true,
+    "mentions31March": false,
+    "pending": []
+  },
+  {
+    "key": "opske:23486",
+    "applyButton": true,
+    "mentions31March": false,
+    "pending": []
+  },
+  {
+    "key": "opske:24506",
+    "applyButton": true,
+    "mentions31March": false,
+    "pending": []
+  }
+]

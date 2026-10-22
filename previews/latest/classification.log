@@ -2,14 +2,14 @@
 ----------+-------
  business |    10
  citizen  |     9
- HOLD     |  1010
+ HOLD     |  1011
 (3 rows)
 
    path   | current_programmes 
 ----------+--------------------
  business |                 10
  citizen  |                  5
- HOLD     |                420
+ HOLD     |                421
 (3 rows)
 
    path   |                        external_key                         |                official_identifier                 |                                           title                                            
@@ -168,6 +168,7 @@
  HOLD     | eu-topic:EUBA-2024-PLANTS-04                                | EUBA-2024-PLANTS-04                                | Support for the revision of the guidance document on terrestrial ecotoxicology (SANCO/1032
  HOLD     | eu-topic:EUBA-EFSA-2026-BIOHAW-01                           | EUBA-EFSA-2026-BIOHAW-01                           | Support to EFSA in the risk assessment of alternative methods for the use and disposal of 
  HOLD     | eu-topic:EUBA-EFSA-2026-PLANTS-02                           | EUBA-EFSA-2026-PLANTS-02                           | Database on alternatives to pesticides (emergency authorisations)
+ HOLD     | eu-topic:EUBA-EFSA-2027-FIP-01                              | EUBA-EFSA-2027-FIP-01                              | Support to the re-evaluation of approved food additives under Regulation (EU) No 257/2010
  HOLD     | eu-topic:HORIZON-BRIDGING-2027-01-09                        | HORIZON-BRIDGING-2027-01-09                        | EU AI Media Platform – modular multilingual public-interest infrastructure for European ne
  HOLD     | eu-topic:HORIZON-BRIDGING-2027-01-10                        | HORIZON-BRIDGING-2027-01-10                        | Autonomous Drive Ambition Cities (IA) - Apply AI
  HOLD     | eu-topic:HORIZON-BRIDGING-2027-01-12                        | HORIZON-BRIDGING-2027-01-12                        | Large-Scale piloting of next-generation AI-driven digital platforms for a more affordable,
@@ -1043,5 +1044,5 @@
  HOLD     | eu-topic:SOCPL-2023-INFO-WK                                 | SOCPL-2023-INFO-WK                                 | Information and training measures for workers' organisations
  HOLD     | eu-topic:SOCPL-2023-SOC-DIALOG                              | SOCPL-2023-SOC-DIALOG                              | Support for social dialogue
  HOLD     | eu-topic:SOCPL-2026-INFO-REPR                               | SOCPL-2026-INFO-REPR                               | SOCPL-2026-INFO-REPR
-(1029 rows)
+(1030 rows)
 

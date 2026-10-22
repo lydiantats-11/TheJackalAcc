@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-22T08:32:46.040Z",
+  "generated_at": "2026-10-22T12:57:31.297Z",
   "engine_version": "2026-10-13.2",
   "gold_set": "2026-10-15.1",
   "accuracy": {
@@ -24,13 +24,13 @@
     "missing_records": []
   },
   "coverage": {
-    "records": 1029,
+    "records": 1030,
     "official_deadline_or_rolling_pct": 99.9,
     "amount_information_pct": 42.1,
-    "per_project_amount_pct": 35.1,
-    "structured_requirements_pct": 80.3,
+    "per_project_amount_pct": 35,
+    "structured_requirements_pct": 80.2,
     "complete_requirement_set_pct": 0,
-    "official_conditions_pct": 41.6,
+    "official_conditions_pct": 41.7,
     "bilingual_pct": 0.8
   },
   "freshness": {
@@ -46,13 +46,13 @@
   "efficiency": [
     {
       "source": "eu-funding-tenders",
-      "seconds": 22.6,
-      "items_seen": 1010,
-      "items_new": 1010,
+      "seconds": 15.6,
+      "items_seen": 1011,
+      "items_new": 1011,
       "items_changed": 0,
       "status": "succeeded",
-      "items_per_second": 44.7,
-      "ms_per_item": 22
+      "items_per_second": 64.8,
+      "ms_per_item": 15
     }
   ],
   "failures": [],
