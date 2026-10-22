@@ -12,126 +12,126 @@
       "path": "/politis/eukairies",
       "file": "desktop-el-c1-opportunities.jpg",
       "status": 200,
-      "overflow": true
+      "overflow": false
     },
     {
       "name": "desktop-el-c2-detail",
-      "path": "/politis/eukairies/2bb1b5cb-69dc-4c7f-a53b-b37fbb589b4f",
+      "path": "/politis/eukairies/23100cc0-ddb7-408b-85d8-41fb8b2c2adb",
       "file": "desktop-el-c2-detail.jpg",
       "status": 200,
-      "overflow": true
+      "overflow": false
     },
     {
       "name": "desktop-el-c3-news",
       "path": "/politis/nea",
       "file": "desktop-el-c3-news.jpg",
       "status": 200,
-      "overflow": true
+      "overflow": false
     },
     {
       "name": "desktop-el-c4-guides",
       "path": "/politis/odigoi",
       "file": "desktop-el-c4-guides.jpg",
       "status": 200,
-      "overflow": true
+      "overflow": false
     },
     {
       "name": "desktop-el-c5-about",
       "path": "/politis/jackal",
       "file": "desktop-el-c5-about.jpg",
       "status": 200,
-      "overflow": true
+      "overflow": false
     },
     {
       "name": "desktop-el-c6-account-guest",
       "path": "/politis/logariasmos",
       "file": "desktop-el-c6-account-guest.jpg",
       "status": 200,
-      "overflow": true
+      "overflow": false
     },
     {
       "name": "desktop-el-c7-search",
       "path": "/politis/eukairies?q=%CE%B5%CF%80%CE%AF%CE%B4%CE%BF%CE%BC%CE%B1",
       "file": "desktop-el-c7-search.jpg",
       "status": 200,
-      "overflow": true
+      "overflow": false
     },
     {
       "name": "desktop-el-b1-opportunities",
       "path": "/epixeiriseis/eukairies",
       "file": "desktop-el-b1-opportunities.jpg",
       "status": 200,
-      "overflow": true
+      "overflow": false
     },
     {
       "name": "desktop-el-b2-detail",
-      "path": "/epixeiriseis/eukairies/32cf911b-54db-4b31-877a-9139da3657fe",
+      "path": "/epixeiriseis/eukairies/56f6fac3-09c8-4a06-be66-3bacdc1eb834",
       "file": "desktop-el-b2-detail.jpg",
       "status": 200,
-      "overflow": true
+      "overflow": false
     },
     {
       "name": "desktop-el-b3-news",
       "path": "/epixeiriseis/nea",
       "file": "desktop-el-b3-news.jpg",
       "status": 200,
-      "overflow": true
+      "overflow": false
     },
     {
       "name": "desktop-el-b4-guides",
       "path": "/epixeiriseis/odigoi",
       "file": "desktop-el-b4-guides.jpg",
       "status": 200,
-      "overflow": true
+      "overflow": false
     },
     {
       "name": "desktop-el-b5-about",
       "path": "/epixeiriseis/jackal",
       "file": "desktop-el-b5-about.jpg",
       "status": 200,
-      "overflow": true
+      "overflow": false
     },
     {
       "name": "desktop-el-b6-account-guest",
       "path": "/epixeiriseis/logariasmos",
       "file": "desktop-el-b6-account-guest.jpg",
       "status": 200,
-      "overflow": true
+      "overflow": false
     },
     {
       "name": "desktop-el-b7-search",
       "path": "/epixeiriseis/eukairies?q=%CE%B5%CF%80%CE%B5%CE%BD%CE%B4%CF%85%CF%84%CE%B9%CE%BA",
       "file": "desktop-el-b7-search.jpg",
       "status": 200,
-      "overflow": true
+      "overflow": false
     },
     {
       "name": "desktop-el-c8-guide",
       "path": "/politis/odigoi/a21",
       "file": "desktop-el-c8-guide.jpg",
       "status": 200,
-      "overflow": true
+      "overflow": false
     },
     {
       "name": "desktop-el-c9-detail-nea-eykairia",
-      "path": "/politis/eukairies/966e4f9a-27ef-4b3f-b6f8-2cb7602df238",
+      "path": "/politis/eukairies/e99d7f61-c732-4649-9bb8-f4270386aa6e",
       "file": "desktop-el-c9-detail-nea-eykairia.jpg",
       "status": 200,
-      "overflow": true
+      "overflow": false
     },
     {
       "name": "desktop-el-b8-detail-dam22",
-      "path": "/epixeiriseis/eukairies/d714760e-7479-4703-b00a-f2cc8855404a",
+      "path": "/epixeiriseis/eukairies/a890e925-c377-48fc-aedc-5dae9f93fe40",
       "file": "desktop-el-b8-detail-dam22.jpg",
       "status": 200,
-      "overflow": true
+      "overflow": false
     },
     {
       "name": "desktop-el-x1-wrong-path-redirect",
-      "path": "/epixeiriseis/eukairies/2bb1b5cb-69dc-4c7f-a53b-b37fbb589b4f",
+      "path": "/epixeiriseis/eukairies/23100cc0-ddb7-408b-85d8-41fb8b2c2adb",
       "file": "desktop-el-x1-wrong-path-redirect.jpg",
       "status": 200,
-      "overflow": true
+      "overflow": false
     },
     {
       "name": "desktop-el-x2-about-shared",
@@ -180,21 +180,21 @@
       "path": "/politis/logariasmos",
       "file": "desktop-el-16-account-citizen.jpg",
       "status": 200,
-      "overflow": true
+      "overflow": false
     },
     {
       "name": "desktop-el-16b-account-business",
       "path": "/epixeiriseis/logariasmos",
       "file": "desktop-el-16b-account-business.jpg",
       "status": 200,
-      "overflow": true
+      "overflow": false
     },
     {
       "name": "desktop-el-17-detail-logged-in",
-      "path": "/politis/eukairies/2bb1b5cb-69dc-4c7f-a53b-b37fbb589b4f",
+      "path": "/politis/eukairies/23100cc0-ddb7-408b-85d8-41fb8b2c2adb",
       "file": "desktop-el-17-detail-logged-in.jpg",
       "status": 200,
-      "overflow": true
+      "overflow": false
     },
     {
       "name": "desktop-en-01-home",
@@ -212,7 +212,7 @@
     },
     {
       "name": "desktop-en-c2-detail",
-      "path": "/politis/eukairies/2bb1b5cb-69dc-4c7f-a53b-b37fbb589b4f",
+      "path": "/politis/eukairies/23100cc0-ddb7-408b-85d8-41fb8b2c2adb",
       "file": "desktop-en-c2-detail.jpg",
       "status": 200,
       "overflow": false
@@ -240,7 +240,7 @@
     },
     {
       "name": "desktop-en-b2-detail",
-      "path": "/epixeiriseis/eukairies/32cf911b-54db-4b31-877a-9139da3657fe",
+      "path": "/epixeiriseis/eukairies/56f6fac3-09c8-4a06-be66-3bacdc1eb834",
       "file": "desktop-en-b2-detail.jpg",
       "status": 200,
       "overflow": false
@@ -282,7 +282,7 @@
     },
     {
       "name": "desktop-en-17-detail-logged-in",
-      "path": "/politis/eukairies/2bb1b5cb-69dc-4c7f-a53b-b37fbb589b4f",
+      "path": "/politis/eukairies/23100cc0-ddb7-408b-85d8-41fb8b2c2adb",
       "file": "desktop-en-17-detail-logged-in.jpg",
       "status": 200,
       "overflow": false
@@ -299,77 +299,77 @@
       "path": "/politis/eukairies",
       "file": "phone-el-c1-opportunities.jpg",
       "status": 200,
-      "overflow": true
+      "overflow": false
     },
     {
       "name": "phone-el-c2-detail",
-      "path": "/politis/eukairies/2bb1b5cb-69dc-4c7f-a53b-b37fbb589b4f",
+      "path": "/politis/eukairies/23100cc0-ddb7-408b-85d8-41fb8b2c2adb",
       "file": "phone-el-c2-detail.jpg",
       "status": 200,
-      "overflow": true
+      "overflow": false
     },
     {
       "name": "phone-el-c3-news",
       "path": "/politis/nea",
       "file": "phone-el-c3-news.jpg",
       "status": 200,
-      "overflow": true
+      "overflow": false
     },
     {
       "name": "phone-el-c4-guides",
       "path": "/politis/odigoi",
       "file": "phone-el-c4-guides.jpg",
       "status": 200,
-      "overflow": true
+      "overflow": false
     },
     {
       "name": "phone-el-b1-opportunities",
       "path": "/epixeiriseis/eukairies",
       "file": "phone-el-b1-opportunities.jpg",
       "status": 200,
-      "overflow": true
+      "overflow": false
     },
     {
       "name": "phone-el-b2-detail",
-      "path": "/epixeiriseis/eukairies/32cf911b-54db-4b31-877a-9139da3657fe",
+      "path": "/epixeiriseis/eukairies/56f6fac3-09c8-4a06-be66-3bacdc1eb834",
       "file": "phone-el-b2-detail.jpg",
       "status": 200,
-      "overflow": true
+      "overflow": false
     },
     {
       "name": "phone-el-b3-news",
       "path": "/epixeiriseis/nea",
       "file": "phone-el-b3-news.jpg",
       "status": 200,
-      "overflow": true
+      "overflow": false
     },
     {
       "name": "phone-el-b4-guides",
       "path": "/epixeiriseis/odigoi",
       "file": "phone-el-b4-guides.jpg",
       "status": 200,
-      "overflow": true
+      "overflow": false
     },
     {
       "name": "phone-el-c8-guide",
       "path": "/politis/odigoi/a21",
       "file": "phone-el-c8-guide.jpg",
       "status": 200,
-      "overflow": true
+      "overflow": false
     },
     {
       "name": "phone-el-c9-detail-nea-eykairia",
-      "path": "/politis/eukairies/966e4f9a-27ef-4b3f-b6f8-2cb7602df238",
+      "path": "/politis/eukairies/e99d7f61-c732-4649-9bb8-f4270386aa6e",
       "file": "phone-el-c9-detail-nea-eykairia.jpg",
       "status": 200,
-      "overflow": true
+      "overflow": false
     },
     {
       "name": "phone-el-b8-detail-dam22",
-      "path": "/epixeiriseis/eukairies/d714760e-7479-4703-b00a-f2cc8855404a",
+      "path": "/epixeiriseis/eukairies/a890e925-c377-48fc-aedc-5dae9f93fe40",
       "file": "phone-el-b8-detail-dam22.jpg",
       "status": 200,
-      "overflow": true
+      "overflow": false
     },
     {
       "name": "phone-el-25-onboarding-work",
@@ -390,50 +390,15 @@
       "path": "/politis/logariasmos",
       "file": "phone-el-16-account-citizen.jpg",
       "status": 200,
-      "overflow": true
+      "overflow": false
     },
     {
       "name": "phone-el-17-detail-logged-in",
-      "path": "/politis/eukairies/2bb1b5cb-69dc-4c7f-a53b-b37fbb589b4f",
+      "path": "/politis/eukairies/23100cc0-ddb7-408b-85d8-41fb8b2c2adb",
       "file": "phone-el-17-detail-logged-in.jpg",
       "status": 200,
-      "overflow": true
+      "overflow": false
     }
   ],
-  "errors": [
-    "desktop-el-c1-opportunities: horizontal scroll — a.btn: Εγγραφή (1487px)",
-    "desktop-el-c2-detail: horizontal scroll — a.btn: Εγγραφή (1487px)",
-    "desktop-el-c3-news: horizontal scroll — a.btn: Εγγραφή (1487px)",
-    "desktop-el-c4-guides: horizontal scroll — a.btn: Εγγραφή (1487px)",
-    "desktop-el-c5-about: horizontal scroll — a.btn: Εγγραφή (1487px)",
-    "desktop-el-c6-account-guest: horizontal scroll — a.btn: Εγγραφή (1487px)",
-    "desktop-el-c7-search: horizontal scroll — a.btn: Εγγραφή (1487px)",
-    "desktop-el-b1-opportunities: horizontal scroll — a.btn: Εγγραφή (1509px)",
-    "desktop-el-b2-detail: horizontal scroll — a.btn: Εγγραφή (1509px)",
-    "desktop-el-b3-news: horizontal scroll — a.btn: Εγγραφή (1509px)",
-    "desktop-el-b4-guides: horizontal scroll — a.btn: Εγγραφή (1509px)",
-    "desktop-el-b5-about: horizontal scroll — a.btn: Εγγραφή (1509px)",
-    "desktop-el-b6-account-guest: horizontal scroll — a.btn: Εγγραφή (1509px)",
-    "desktop-el-b7-search: horizontal scroll — a.btn: Εγγραφή (1509px)",
-    "desktop-el-c8-guide: horizontal scroll — a.btn: Εγγραφή (1487px)",
-    "desktop-el-c9-detail-nea-eykairia: horizontal scroll — a.btn: Εγγραφή (1487px)",
-    "desktop-el-b8-detail-dam22: horizontal scroll — a.btn: Εγγραφή (1509px)",
-    "desktop-el-x1-wrong-path-redirect: horizontal scroll — a.btn: Εγγραφή (1487px)",
-    "desktop-el-16-account-citizen: horizontal scroll — button.btn: Αποσύνδεση (1504px)",
-    "desktop-el-16b-account-business: horizontal scroll — button.btn: Αποσύνδεση (1526px)",
-    "desktop-el-17-detail-logged-in: horizontal scroll — button.btn: Αποσύνδεση (1504px)",
-    "phone-el-c1-opportunities: horizontal scroll — path.[object:  (422px) | a.: Ευκαιρίες (483px) | a.: Νέα (483px) | a.: Οδηγοί (483px) | a.: Τι είναι το Jackal (483px)",
-    "phone-el-c2-detail: horizontal scroll — path.[object:  (422px) | a.: Ευκαιρίες (483px) | a.: Νέα (483px) | a.: Οδηγοί (483px) | a.: Τι είναι το Jackal (483px)",
-    "phone-el-c3-news: horizontal scroll — path.[object:  (422px) | a.: Ευκαιρίες (483px) | a.: Νέα (483px) | a.: Οδηγοί (483px) | a.: Τι είναι το Jackal (483px)",
-    "phone-el-c4-guides: horizontal scroll — path.[object:  (422px) | a.: Ευκαιρίες (483px) | a.: Νέα (483px) | a.: Οδηγοί (483px) | a.: Τι είναι το Jackal (483px)",
-    "phone-el-b1-opportunities: horizontal scroll — a.: Αλλαγή (400px) | path.[object:  (441px) | a.: Ευκαιρίες (502px) | a.: Νέα (502px) | a.: Οδηγοί (502px)",
-    "phone-el-b2-detail: horizontal scroll — a.: Αλλαγή (400px) | path.[object:  (441px) | a.: Ευκαιρίες (502px) | a.: Νέα (502px) | a.: Οδηγοί (502px)",
-    "phone-el-b3-news: horizontal scroll — a.: Αλλαγή (400px) | path.[object:  (441px) | a.: Ευκαιρίες (502px) | a.: Νέα (502px) | a.: Οδηγοί (502px)",
-    "phone-el-b4-guides: horizontal scroll — a.: Αλλαγή (400px) | path.[object:  (441px) | a.: Ευκαιρίες (502px) | a.: Νέα (502px) | a.: Οδηγοί (502px)",
-    "phone-el-c8-guide: horizontal scroll — path.[object:  (422px) | a.: Ευκαιρίες (483px) | a.: Νέα (483px) | a.: Οδηγοί (483px) | a.: Τι είναι το Jackal (483px)",
-    "phone-el-c9-detail-nea-eykairia: horizontal scroll — path.[object:  (422px) | a.: Ευκαιρίες (483px) | a.: Νέα (483px) | a.: Οδηγοί (483px) | a.: Τι είναι το Jackal (483px)",
-    "phone-el-b8-detail-dam22: horizontal scroll — a.: Αλλαγή (400px) | path.[object:  (441px) | a.: Ευκαιρίες (502px) | a.: Νέα (502px) | a.: Οδηγοί (502px)",
-    "phone-el-16-account-citizen: horizontal scroll — path.[object:  (422px) | a.: Ευκαιρίες (483px) | a.: Νέα (483px) | a.: Οδηγοί (483px) | a.: Τι είναι το Jackal (483px)",
-    "phone-el-17-detail-logged-in: horizontal scroll — path.[object:  (422px) | a.: Ευκαιρίες (483px) | a.: Νέα (483px) | a.: Οδηγοί (483px) | a.: Τι είναι το Jackal (483px)"
-  ]
+  "errors": []
 }
