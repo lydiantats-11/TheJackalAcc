@@ -2,42 +2,51 @@
   {
     "key": "manual:a21",
     "applyButton": true,
+    "briefApplyButton": true,
     "mentions31March": false,
     "pending": []
   },
   {
     "key": "manual:art5a",
     "applyButton": true,
+    "briefApplyButton": true,
     "mentions31March": false,
     "pending": []
   },
   {
     "key": "manual:art5b",
     "applyButton": true,
+    "briefApplyButton": true,
     "mentions31March": false,
     "pending": []
   },
   {
     "key": "manual:art5c",
     "applyButton": true,
+    "briefApplyButton": true,
     "mentions31March": false,
     "pending": []
   },
   {
     "key": "manual:discovereu",
     "applyButton": false,
+    "briefApplyButton": false,
     "mentions31March": false,
-    "pending": []
+    "pending": [
+      "Υπό επιβεβαίωση"
+    ]
   },
   {
     "key": "opske:23467",
     "applyButton": true,
+    "briefApplyButton": true,
     "mentions31March": false,
     "pending": []
   },
   {
     "key": "opske:23486",
     "applyButton": true,
+    "briefApplyButton": true,
     "mentions31March": false,
     "pending": [
       "Υπό επιβεβαίωση",
@@ -47,6 +56,7 @@
   {
     "key": "opske:24506",
     "applyButton": true,
+    "briefApplyButton": true,
     "mentions31March": false,
     "pending": []
   }
