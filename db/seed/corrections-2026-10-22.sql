@@ -99,6 +99,8 @@ WHERE external_key = 'opske:24506' AND merged_into_id IS NULL
 -- 7. ΔΑΜ24 — the call is open (dates confirmed); the per-project budget is not stated on the call page → «Υπό επιβεβαίωση».
 UPDATE opportunities SET
   official_details = jsonb_set(jsonb_set(official_details, '{funding,project_budget}', 'null'::jsonb), '{funding,pending}', '["project_budget"]'::jsonb),
+  -- the summary named the unconfirmed range («επιλέξιμος προϋπολογισμός €5.000.000–€40.000.000»): removed, nothing else changed
+  summary_plain = 'Παραγωγικές επενδύσεις νέων και υπό σύσταση μεγάλων επιχειρήσεων στις περιοχές δίκαιης μετάβασης. Ένταση 50%. Ο προϋπολογισμός ανά επενδυτικό σχέδιο είναι υπό επιβεβαίωση.',
   uncertainties = '["Οι επιλέξιμοι ΚΑΔ δεν έχουν ελεγχθεί από εμάς.", "Το καθεστώς κρατικής ενίσχυσης δεν αναφέρεται στη σελίδα της δράσης.", "Ο προϋπολογισμός ανά επενδυτικό σχέδιο δεν αναφέρεται στη σελίδα της δράσης (έλεγχος 22/10/2026)· υπό επιβεβαίωση από το κείμενο της πρόσκλησης."]'::jsonb,
   status_evidence = status_evidence || '{"rechecked_at": "2026-10-22T16:00:00+03:00", "recheck": "ΟΠΣΚΕ call page: dates 15/07/2026 13:00 – 16/11/2026 14:00, public expenditure €30.000.000; no per-project budget range"}'::jsonb,
   last_retrieved_at = '2026-10-22T16:00:00+03:00', last_verified_at = '2026-10-22T16:00:00+03:00',

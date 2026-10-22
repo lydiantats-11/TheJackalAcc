@@ -114,6 +114,11 @@ describe("the preview database seed", () => {
     expect(sql).toMatch(/'\{funding,project_budget\}', '\{"min": 300000, "max": 12000000, "basis": "subsidised"\}'/);
     expect(sql).toMatch(/'\{funding,project_budget,basis\}', '"subsidised"'/);
   });
+  it("ΔΑΜ24: the unconfirmed budget is removed from the summary too", () => {
+    const block = sql.slice(sql.indexOf("'{funding,pending}'"), sql.indexOf("WHERE external_key = 'opske:23486'"));
+    expect(block).toContain("summary_plain = ");
+    expect(block).not.toMatch(/5\.000\.000|40\.000\.000/);
+  });
   it("5Β and 5Α in the database carry the same deadlines as the checked file", () => {
     expect(sql).toMatch(/closes_at = '2026-10-31T21:59:59Z'[\s\S]*?WHERE external_key = 'manual:art5b'/);
     expect(sql).toMatch(/closes_at = '2027-09-30T20:59:59Z'[\s\S]*?WHERE external_key = 'manual:art5a'/);
