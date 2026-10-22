@@ -5,45 +5,182 @@
 
 [1m[30m[46m RUN [49m[39m[22m [36mv5.0.4 [39m[90m/home/runner/work/TheJackalAcc/TheJackalAcc[39m
 
- [32m✓[39m tests/ingestion.test.ts [2m([22m[2m27 tests[22m[2m)[22m[33m 1617[2mms[22m[39m
- [32m✓[39m tests/engine.test.ts [2m([22m[2m27 tests[22m[2m)[22m[32m 134[2mms[22m[39m
- [32m✓[39m tests/extraction.test.ts [2m([22m[2m13 tests[22m[2m)[22m[33m 1230[2mms[22m[39m
- [32m✓[39m tests/real-calls.test.ts [2m([22m[2m22 tests[22m[2m)[22m[32m 39[2mms[22m[39m
- [32m✓[39m tests/credibility-money.test.ts [2m([22m[2m18 tests[22m[2m)[22m[32m 13[2mms[22m[39m
- [32m✓[39m tests/guides-catalog.test.ts [2m([22m[2m20 tests[22m[2m)[22m[32m 20[2mms[22m[39m
- [32m✓[39m tests/auth-and-access.test.ts [2m([22m[2m11 tests[22m[2m)[22m[33m 1150[2mms[22m[39m
-   [32m✓[39m auth & access control (PostgreSQL) [2m(11)[22m
-     [33m[2m✓[22m[39m rate-limits repeated failed logins[33m 383[2mms[22m[39m
- [32m✓[39m tests/end-to-end-flow.test.ts [2m([22m[2m3 tests[22m[2m)[22m[33m 524[2mms[22m[39m
- [32m✓[39m tests/personas.test.ts [2m([22m[2m13 tests[22m[2m)[22m[32m 92[2mms[22m[39m
- [32m✓[39m tests/residence-and-records.test.ts [2m([22m[2m15 tests[22m[2m)[22m[32m 18[2mms[22m[39m
- [32m✓[39m tests/official-details.test.ts [2m([22m[2m7 tests[22m[2m)[22m[32m 11[2mms[22m[39m
- [32m✓[39m tests/business-records.test.ts [2m([22m[2m9 tests[22m[2m)[22m[32m 27[2mms[22m[39m
- [32m✓[39m tests/discovery.test.ts [2m([22m[2m11 tests[22m[2m)[22m[32m 14[2mms[22m[39m
- [32m✓[39m tests/record-status.test.ts [2m([22m[2m10 tests[22m[2m)[22m[32m 8[2mms[22m[39m
- [32m✓[39m tests/status-and-sources.test.ts [2m([22m[2m12 tests[22m[2m)[22m[32m 43[2mms[22m[39m
- [32m✓[39m tests/guide-status.test.ts [2m([22m[2m12 tests[22m[2m)[22m[32m 26[2mms[22m[39m
- [32m✓[39m tests/brief-feed.test.ts [2m([22m[2m7 tests[22m[2m)[22m[32m 8[2mms[22m[39m
- [32m✓[39m tests/scenarios-and-money.test.ts [2m([22m[2m8 tests[22m[2m)[22m[32m 29[2mms[22m[39m
- [32m✓[39m tests/i18n.test.ts [2m([22m[2m26 tests[22m[2m)[22m[32m 16[2mms[22m[39m
- [32m✓[39m tests/industries.test.ts [2m([22m[2m5 tests[22m[2m)[22m[32m 82[2mms[22m[39m
- [32m✓[39m tests/daily-report.test.ts [2m([22m[2m6 tests[22m[2m)[22m[32m 7[2mms[22m[39m
- [32m✓[39m tests/profile-update.test.ts [2m([22m[2m6 tests[22m[2m)[22m[33m 380[2mms[22m[39m
- [32m✓[39m tests/credibility.test.ts [2m([22m[2m7 tests[22m[2m)[22m[32m 7[2mms[22m[39m
- [32m✓[39m tests/decision-record.test.ts [2m([22m[2m5 tests[22m[2m)[22m[32m 15[2mms[22m[39m
- [32m✓[39m tests/govgr-watch.test.ts [2m([22m[2m5 tests[22m[2m)[22m[32m 8[2mms[22m[39m
- [32m✓[39m tests/taxonomy.test.ts [2m([22m[2m5 tests[22m[2m)[22m[32m 8[2mms[22m[39m
- [32m✓[39m tests/record-audit.test.ts [2m([22m[2m3 tests[22m[2m)[22m[32m 11[2mms[22m[39m
- [32m✓[39m tests/document-lists.test.ts [2m([22m[2m5 tests[22m[2m)[22m[32m 7[2mms[22m[39m
- [32m✓[39m tests/change-detection.test.ts [2m([22m[2m2 tests[22m[2m)[22m[32m 4[2mms[22m[39m
- [32m✓[39m tests/proxy.test.ts [2m([22m[2m2 tests[22m[2m)[22m[32m 13[2mms[22m[39m
- [32m✓[39m tests/question-impact.test.ts [2m([22m[2m2 tests[22m[2m)[22m[32m 8[2mms[22m[39m
+ [32m✓[39m tests/ingestion.test.ts [2m([22m[2m27 tests[22m[2m)[22m[33m 1514[2mms[22m[39m
+ [32m✓[39m tests/engine.test.ts [2m([22m[2m27 tests[22m[2m)[22m[32m 61[2mms[22m[39m
+ [32m✓[39m tests/extraction.test.ts [2m([22m[2m13 tests[22m[2m)[22m[33m 978[2mms[22m[39m
+ [32m✓[39m tests/real-calls.test.ts [2m([22m[2m22 tests[22m[2m)[22m[32m 23[2mms[22m[39m
+ [31m❯[39m tests/audience.test.ts [2m([22m[2m21 tests[22m[2m | [22m[31m4 failed[39m[2m)[22m[32m 21[2mms[22m[39m
+   [32m✓[39m paths and addresses [2m(4)[22m
+     [32m✓[39m has exactly two paths with Greek slugs[32m 2[2mms[22m[39m
+     [32m✓[39m the same five sections exist in both paths[32m 0[2mms[22m[39m
+     [32m✓[39m «Αλλαγή» keeps the section and drops filters, search and the record[32m 0[2mms[22m[39m
+     [32m✓[39m a record's address is in its own path; an unclassified record has none[32m 0[2mms[22m[39m
+   [31m❯[39m classification of the approved records (seed of 22 Oct 2026) [2m(5)[22m
+     [32m✓[39m 9 citizen and 10 business records, none in both[32m 1[2mms[22m[39m
+[31m     [31m×[31m every approved hand-checked record is citizen[39m[32m 4[2mms[22m[39m
+[31m     [31m×[31m each of the 11 business-batch calls is classified once, by who applies under the official call[39m[32m 2[2mms[22m[39m
+[31m     [31m×[31m EU Funding & Tenders calls stay unclassified (HOLD): first everything is reset, nothing is deleted[39m[32m 1[2mms[22m[39m
+     [32m✓[39m the database allows only one of the two values, or none[32m 0[2mms[22m[39m
+   [32m✓[39m filtering happens where the data is read [2m(5)[22m
+     [32m✓[39m the public listing requires a path and applies it in the query[32m 0[2mms[22m[39m
+     [32m✓[39m a record with no path is never served, not even by direct address[32m 0[2mms[22m[39m
+     [32m✓[39m every page under a path checks the path and a record of the other path redirects[32m 1[2mms[22m[39m
+     [32m✓[39m no public page or component links to the old mixed addresses[32m 0[2mms[22m[39m
+     [32m✓[39m the home page shows no opportunities, news or guides[32m 0[2mms[22m[39m
+   [32m✓[39m news: one path per article, one shared official source record [2m(4)[22m
+     [32m✓[39m every article has one path and points to an existing source record[32m 0[2mms[22m[39m
+     [32m✓[39m the same law explained to both audiences uses ONE source record and two articles[32m 0[2mms[22m[39m
+     [32m✓[39m only manually verified items with an official link are published; each source is used[32m 1[2mms[22m[39m
+     [32m✓[39m a path's news never contains the other path's articles[32m 5[2mms[22m[39m
+   [31m❯[39m guides: one path each [2m(3)[22m
+     [32m✓[39m every programme and procedure guide has exactly one path; platform explainers have none[32m 0[2mms[22m[39m
+     [32m✓[39m no guide is listed in both paths[32m 0[2mms[22m[39m
+[31m     [31m×[31m a programme guide is in the same path as its programme[39m[32m 1[2mms[22m[39m
+ [32m✓[39m tests/credibility-money.test.ts [2m([22m[2m18 tests[22m[2m)[22m[32m 8[2mms[22m[39m
+ [32m✓[39m tests/guides-catalog.test.ts [2m([22m[2m20 tests[22m[2m)[22m[32m 12[2mms[22m[39m
+ [32m✓[39m tests/auth-and-access.test.ts [2m([22m[2m11 tests[22m[2m)[22m[33m 794[2mms[22m[39m
+ [32m✓[39m tests/end-to-end-flow.test.ts [2m([22m[2m3 tests[22m[2m)[22m[33m 389[2mms[22m[39m
+ [32m✓[39m tests/personas.test.ts [2m([22m[2m13 tests[22m[2m)[22m[32m 47[2mms[22m[39m
+ [32m✓[39m tests/residence-and-records.test.ts [2m([22m[2m15 tests[22m[2m)[22m[32m 11[2mms[22m[39m
+ [32m✓[39m tests/official-details.test.ts [2m([22m[2m7 tests[22m[2m)[22m[32m 6[2mms[22m[39m
+ [32m✓[39m tests/business-records.test.ts [2m([22m[2m9 tests[22m[2m)[22m[32m 16[2mms[22m[39m
+ [32m✓[39m tests/discovery.test.ts [2m([22m[2m11 tests[22m[2m)[22m[32m 7[2mms[22m[39m
+ [32m✓[39m tests/record-status.test.ts [2m([22m[2m10 tests[22m[2m)[22m[32m 5[2mms[22m[39m
+ [32m✓[39m tests/status-and-sources.test.ts [2m([22m[2m12 tests[22m[2m)[22m[32m 42[2mms[22m[39m
+ [32m✓[39m tests/guide-status.test.ts [2m([22m[2m12 tests[22m[2m)[22m[32m 16[2mms[22m[39m
+ [32m✓[39m tests/brief-feed.test.ts [2m([22m[2m7 tests[22m[2m)[22m[32m 4[2mms[22m[39m
+ [32m✓[39m tests/scenarios-and-money.test.ts [2m([22m[2m8 tests[22m[2m)[22m[32m 19[2mms[22m[39m
+ [32m✓[39m tests/i18n.test.ts [2m([22m[2m26 tests[22m[2m)[22m[32m 10[2mms[22m[39m
+ [32m✓[39m tests/industries.test.ts [2m([22m[2m5 tests[22m[2m)[22m[32m 42[2mms[22m[39m
+ [32m✓[39m tests/daily-report.test.ts [2m([22m[2m6 tests[22m[2m)[22m[32m 4[2mms[22m[39m
+ [32m✓[39m tests/profile-update.test.ts [2m([22m[2m6 tests[22m[2m)[22m[32m 254[2mms[22m[39m
+ [32m✓[39m tests/credibility.test.ts [2m([22m[2m7 tests[22m[2m)[22m[32m 4[2mms[22m[39m
+ [32m✓[39m tests/decision-record.test.ts [2m([22m[2m5 tests[22m[2m)[22m[32m 9[2mms[22m[39m
+ [32m✓[39m tests/govgr-watch.test.ts [2m([22m[2m5 tests[22m[2m)[22m[32m 5[2mms[22m[39m
+ [32m✓[39m tests/taxonomy.test.ts [2m([22m[2m5 tests[22m[2m)[22m[32m 4[2mms[22m[39m
+ [32m✓[39m tests/record-audit.test.ts [2m([22m[2m3 tests[22m[2m)[22m[32m 7[2mms[22m[39m
+ [32m✓[39m tests/document-lists.test.ts [2m([22m[2m5 tests[22m[2m)[22m[32m 4[2mms[22m[39m
+ [32m✓[39m tests/change-detection.test.ts [2m([22m[2m2 tests[22m[2m)[22m[32m 3[2mms[22m[39m
+ [32m✓[39m tests/proxy.test.ts [2m([22m[2m2 tests[22m[2m)[22m[32m 6[2mms[22m[39m
+ [32m✓[39m tests/question-impact.test.ts [2m([22m[2m2 tests[22m[2m)[22m[32m 4[2mms[22m[39m
 
-[2m Test Files [22m [1m[32m31 passed[39m[22m[90m (31)[39m
-[2m      Tests [22m [1m[32m324 passed[39m[22m[90m (324)[39m
-[2m   Start at [22m 23:42:32
-[2m   Duration [22m 11.16s[2m (tests 70%, import 21%, transform 8%, worker 2%)[22m
+[31m⎯⎯⎯⎯⎯⎯⎯[39m[1m[41m Failed Tests 4 [49m[22m[31m⎯⎯⎯⎯⎯⎯⎯[39m
 
-[2m    Isolate [22m [33m31 workers spawned[39m[2m · ~95ms startup each (spawn + environment, per file)[22m
-[2m            [22m [2mat least ~2.84s faster with [22m[33misolate: false[39m[2m — reuses workers across files instead of one per file[22m
+[41m[1m FAIL [22m[49m tests/audience.test.ts[2m > [22mclassification of the approved records (seed of 22 Oct 2026)[2m > [22mevery approved hand-checked record is citizen
+[31m[1mAssertionError[22m: expected [ 'manual:unemployment', …(8) ] to include 'manual:discovereu'[39m
+[36m [2m❯[22m tests/audience.test.ts:[2m66:56[22m[39m
+    [90m 64|[39m   });
+    [90m 65|[39m   it("every approved hand-checked record is citizen", () => {
+    [90m 66|[39m     for (const id of APPROVED_RECORDS) expect(citizen).toContain(`manu…
+    [90m   |[39m                                                        [31m^[39m
+    [90m 67|[39m   });
+    [90m 68|[39m   it("each of the 11 business-batch calls is classified once, by who a…
 
+[31m[2m⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/4]⎯[22m[39m
+
+[41m[1m FAIL [22m[49m tests/audience.test.ts[2m > [22mclassification of the approved records (seed of 22 Oct 2026)[2m > [22meach of the 11 business-batch calls is classified once, by who applies under the official call
+[31m[1mAssertionError[22m: expected [] to have a length of 1 but got +0[39m
+
+[32m- Expected[39m
+[31m+ Received[39m
+
+[32m- 1[39m
+[31m+ 0[39m
+
+[36m [2m❯[22m tests/audience.test.ts:[2m69:96[22m[39m
+    [90m 67|[39m   });
+    [90m 68|[39m   it("each of the 11 business-batch calls is classified once, by who a…
+    [90m 69|[39m     for (const r of business) expect([...citizen, ...biz].filter((k) =…
+    [90m   |[39m                                                                                                [31m^[39m
+    [90m 70|[39m     const keyOf = (id: string) => business.find((r) => r.id === id)!.e…
+    [90m 71|[39m     expect(citizen).toContain(keyOf("epiro-nea-eykairia")); // natural…
+
+[31m[2m⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[2/4]⎯[22m[39m
+
+[41m[1m FAIL [22m[49m tests/audience.test.ts[2m > [22mclassification of the approved records (seed of 22 Oct 2026)[2m > [22mEU Funding & Tenders calls stay unclassified (HOLD): first everything is reset, nothing is deleted
+[31m[1mAssertionError[22m: expected '-- Audience of each approved record (…' not to match /DELETE/i[39m
+
+[32m- Expected:[39m
+/DELETE/i
+
+[31m+ Received:[39m
+"-- Audience of each approved record (owner approval, 22 Oct 2026; development database and shared preview only).
+-- 9 «Πολίτες», 10 «Επιχειρήσεις & Επαγγελματίες». Everything else (incl. the 37 EU Funding & Tenders calls) stays NULL
+-- = outside both paths until the official applicants are checked and the owner approves. Nothing is deleted.
+-- Basis: who applies and in what capacity under the official call (data/business-records-2026-10-20.json, applicants;
+-- data/official-records-2026-10-14.v2.json, eligibility rules).
+BEGIN;
+UPDATE opportunities SET audience = NULL;
+
+-- Πολίτες (9): natural persons in a personal capacity
+UPDATE opportunities SET audience = 'citizen' WHERE external_key IN (
+  'manual:unemployment',     -- insured persons who lost salaried work
+  'manual:a21',              -- households with children
+  'manual:spiti2',           -- young people and families, first home
+  'manual:studenthousing',   -- students' families
+  'manual:discovereu',       -- 18-year-olds apply themselves
+  'manual:art5a',            -- natural persons investing (personal tax regime)
+  'manual:art5b',            -- pensioners with a foreign pension
+  'manual:art5c',            -- natural persons moving their tax residence
+  'opske:code:ΠΗΠΕ-06/3.0'   -- «Νέα Ευκαιρία» Ηπείρου: unemployed / part-time employees, as natural persons
+);
+
+-- Επιχειρήσεις & Επαγγελματίες (10): the applicant is the enterprise or organisation
+UPDATE opportunities SET audience = 'business' WHERE external_key IN (
+  'opske:21766',             -- «Επιχειρώ Στερεά»
+  'opske:24506',             -- Νότιο Αιγαίο, επιχειρηματικότητα
+  'opske:23467',             -- ΔΑΜ21, new and under-establishment SMEs (owner: business)
+  'opske:23487',             -- ΔΑΜ22, existing SMEs
+  'opske:23466',             -- ΔΑΜ23, existing large enterprises
+  'opske:23486',             -- ΔΑΜ24, new and under-establishment large enterprises (owner: business)
+  'opske:20505',             -- Βόρειο Αιγαίο, tourism and processing
+  'opske:24787',             -- «Καινοτομώ στην Κρήτη» (owner: business)
+  'opske:24767',             -- Νότιο Αιγαίο, cooperation with research bodies
+  'opske:code:αττ130'        -- Συμπράξεις Έρευνας και Καινοτομίας Αττικής
+);
+COMMIT;
+"
+
+[36m [2m❯[22m tests/audience.test.ts:[2m83:22[22m[39m
+    [90m 81|[39m     expect(seed).toContain("UPDATE opportunities SET audience = NULL;"…
+    [90m 82|[39m     expect(seed).not.toMatch(/eu-topic:/);
+    [90m 83|[39m     expect(seed).not.toMatch(/DELETE/i);
+    [90m   |[39m                      [31m^[39m
+    [90m 84|[39m   });
+    [90m 85|[39m   it("the database allows only one of the two values, or none", () => {
+
+[31m[2m⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[3/4]⎯[22m[39m
+
+[41m[1m FAIL [22m[49m tests/audience.test.ts[2m > [22mguides: one path each[2m > [22ma programme guide is in the same path as its programme
+[31m[1mAssertionError[22m: expected 'citizen' to be 'business' // Object.is equality[39m
+
+Expected: [32m"business"[39m
+Received: [31m"citizen"[39m
+
+[36m [2m❯[22m tests/audience.test.ts:[2m171:34[22m[39m
+    [90m169|[39m       const id = a.recordKey?.replace(/^manual:/, "");
+    [90m170|[39m       if (!id || !APPROVED_RECORDS.has(id)) continue;
+    [90m171|[39m       expect(articleAudience(a)).toBe(citizen.includes(`manual:${id}`)…
+    [90m   |[39m                                  [31m^[39m
+    [90m172|[39m     }
+    [90m173|[39m   });
+
+[31m[2m⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[4/4]⎯[22m[39m
+
+
+[2m Test Files [22m [1m[31m1 failed[39m[22m[2m | [22m[1m[32m31 passed[39m[22m[90m (32)[39m
+[2m      Tests [22m [1m[31m4 failed[39m[22m[2m | [22m[1m[32m341 passed[39m[22m[90m (345)[39m
+[2m   Start at [22m 07:08:24
+[2m   Duration [22m 7.93s[2m (tests 74%, import 16%, transform 8%, worker 1%)[22m
+
+[2m    Isolate [22m [33m32 workers spawned[39m[2m · ~60ms startup each (spawn + environment, per file)[22m
+[2m            [22m [2mat least ~1.87s faster with [22m[33misolate: false[39m[2m — reuses workers across files instead of one per file[22m
+
+
+::error file=/home/runner/work/TheJackalAcc/TheJackalAcc/tests/audience.test.ts,title=tests/audience.test.ts > classification of the approved records (seed of 22 Oct 2026) > every approved hand-checked record is citizen,line=66,column=56::AssertionError: expected [ 'manual:unemployment', …(8) ] to include 'manual:discovereu'%0A ❯ tests/audience.test.ts:66:56%0A%0A
+
+::error file=/home/runner/work/TheJackalAcc/TheJackalAcc/tests/audience.test.ts,title=tests/audience.test.ts > classification of the approved records (seed of 22 Oct 2026) > each of the 11 business-batch calls is classified once%2C by who applies under the official call,line=69,column=96::AssertionError: expected [] to have a length of 1 but got +0%0A%0A- Expected%0A+ Received%0A%0A- 1%0A+ 0%0A%0A ❯ tests/audience.test.ts:69:96%0A%0A
+
+::error file=/home/runner/work/TheJackalAcc/TheJackalAcc/tests/audience.test.ts,title=tests/audience.test.ts > classification of the approved records (seed of 22 Oct 2026) > EU Funding & Tenders calls stay unclassified (HOLD)%3A first everything is reset%2C nothing is deleted,line=83,column=22::AssertionError: expected '-- Audience of each approved record (…' not to match /DELETE/i%0A%0A- Expected:%0A/DELETE/i%0A%0A+ Received:%0A"-- Audience of each approved record (owner approval, 22 Oct 2026; development database and shared preview only).%0A-- 9 «Πολίτες», 10 «Επιχειρήσεις & Επαγγελματίες». Everything else (incl. the 37 EU Funding & Tenders calls) stays NULL%0A-- = outside both paths until the official applicants are checked and the owner approves. Nothing is deleted.%0A-- Basis: who applies and in what capacity under the official call (data/business-records-2026-10-20.json, applicants;%0A-- data/official-records-2026-10-14.v2.json, eligibility rules).%0ABEGIN;%0AUPDATE opportunities SET audience = NULL;%0A%0A-- Πολίτες (9): natural persons in a personal capacity%0AUPDATE opportunities SET audience = 'citizen' WHERE external_key IN (%0A  'manual:unemployment',     -- insured persons who lost salaried work%0A  'manual:a21',              -- households with children%0A  'manual:spiti2',           -- young people and families, first home%0A  'manual:studenthousing',   -- students' families%0A  'manual:discovereu',       -- 18-year-olds apply themselves%0A  'manual:art5a',            -- natural persons investing (personal tax regime)%0A  'manual:art5b',            -- pensioners with a foreign pension%0A  'manual:art5c',            -- natural persons moving their tax residence%0A  'opske:code:ΠΗΠΕ-06/3.0'   -- «Νέα Ευκαιρία» Ηπείρου: unemployed / part-time employees, as natural persons%0A);%0A%0A-- Επιχειρήσεις & Επαγγελματίες (10): the applicant is the enterprise or organisation%0AUPDATE opportunities SET audience = 'business' WHERE external_key IN (%0A  'opske:21766',             -- «Επιχειρώ Στερεά»%0A  'opske:24506',             -- Νότιο Αιγαίο, επιχειρηματικότητα%0A  'opske:23467',             -- ΔΑΜ21, new and under-establishment SMEs (owner: business)%0A  'opske:23487',             -- ΔΑΜ22, existing SMEs%0A  'opske:23466',             -- ΔΑΜ23, existing large enterprises%0A  'opske:23486',             -- ΔΑΜ24, new and under-establishment large enterprises (owner: business)%0A  'opske:20505',             -- Βόρειο Αιγαίο, tourism and processing%0A  'opske:24787',             -- «Καινοτομώ στην Κρήτη» (owner: business)%0A  'opske:24767',             -- Νότιο Αιγαίο, cooperation with research bodies%0A  'opske:code:αττ130'        -- Συμπράξεις Έρευνας και Καινοτομίας Αττικής%0A);%0ACOMMIT;%0A"%0A%0A ❯ tests/audience.test.ts:83:22%0A%0A
+
+::error file=/home/runner/work/TheJackalAcc/TheJackalAcc/tests/audience.test.ts,title=tests/audience.test.ts > guides%3A one path each > a programme guide is in the same path as its programme,line=171,column=34::AssertionError: expected 'citizen' to be 'business' // Object.is equality%0A%0AExpected: "business"%0AReceived: "citizen"%0A%0A ❯ tests/audience.test.ts:171:34%0A%0A

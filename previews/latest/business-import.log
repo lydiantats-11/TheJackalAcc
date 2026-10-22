@@ -1,8 +1,8 @@
       external_key      |  official_identifier  | review_status | status |       closes_at        | source | reqs 
 ------------------------+-----------------------+---------------+--------+------------------------+--------+------
  opske:code:ΠΗΠΕ-06/3.0 | ΠΗΠΕ-06/3.0           | approved      | open   | 2026-10-21 12:00:00+00 | opske  |    1
- opske:24506            | 75_Δ.1.7              | approved      | open   | 2026-10-30 13:00:00+00 | opske  |    1
  opske:21766            | 79                    | approved      | open   | 2026-10-30 13:00:00+00 | opske  |    1
+ opske:24506            | 75_Δ.1.7              | approved      | open   | 2026-10-30 13:00:00+00 | opske  |    1
  opske:23466            | 1.4.1.2               | approved      | open   | 2026-11-16 12:00:00+00 | opske  |    1
  opske:23487            | 1.2.6.2               | approved      | open   | 2026-11-16 12:00:00+00 | efepae |    1
  opske:23467            | 1.2.5.2               | approved      | open   | 2026-11-16 12:00:00+00 | opske  |    1
