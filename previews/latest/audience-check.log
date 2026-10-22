@@ -1,0 +1,13 @@
+{
+  "counts": {
+    "hold": 1010,
+    "citizen": 9,
+    "business": 10
+  },
+  "checks": 55,
+  "failed": 2,
+  "failures": [
+    "citizen journey: opportunities page lists programmes",
+    "business journey: opportunities page lists programmes"
+  ]
+}

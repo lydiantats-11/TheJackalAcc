@@ -1,1 +1,9 @@
-/home/runner/work/_temp/3f41d557-8111-4f0b-bc80-393bf1928a20.sh: line 5: /opt/hostedtoolcache/node/22.23.3/x64/bin/npm: Argument list too long
+
+> funding-radar@0.1.0 start
+> next start
+
+▲ Next.js 16.4.0
+- Local:         http://localhost:3000
+- Network:       http://10.1.0.204:3000
+✓ Ready in 82ms
+✓ Running next.config.ts took 32ms
