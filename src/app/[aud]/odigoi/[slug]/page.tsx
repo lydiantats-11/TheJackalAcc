@@ -10,6 +10,7 @@ import { SITE } from "@/lib/site/copy";
 import { ARTICLES, articleAudience, articleBySlug, guideCategory, isPlatformGuide, reviewDue, verificationOf, type Article } from "@/lib/site/guide-catalog";
 import { programmeStatus } from "@/lib/site/guide-status";
 import { loadLiveGuideRecords } from "@/lib/site/guide-live";
+import { applicationCtaAllowed } from "@/lib/site/brief";
 import { ApplicationBadge, VerificationBadge, formatDay } from "@/components/guide-ui";
 import { Icon } from "@/components/icons";
 import type { Locale } from "@/lib/i18n/dictionaries";
@@ -50,6 +51,8 @@ export default async function GuidePage({ params }: { params: Promise<{ aud: str
   const state = verificationOf(a, now);
   const live = a.recordKey ? (await loadLiveGuideRecords([a.recordKey], now)).get(a.recordKey) : undefined;
   const status = a.recordKey ? programmeStatus(a.recordKey, now, live) : null;
+  // The guide never offers «apply» for a programme whose deadline has passed or that is closed.
+  const canApply = !status || applicationCtaAllowed(status.application);
   const cat = guideCategory(a.categories[0] ?? "");
   const related = ARTICLES.filter((o) => o.slug !== a.slug && !o.flags.draft && (articleAudience(o) === aud || isPlatformGuide(o)) && (a.related.includes(o.slug) || (a.recordKey !== null && o.recordKey === a.recordKey)));
   const limitations = [
@@ -120,7 +123,7 @@ export default async function GuidePage({ params }: { params: Promise<{ aud: str
       )}
       {/* Phones: the official link and the contents come first (the side column drops below the article). */}
       <div className="article-quick">
-        {a.applyUrl && isProcedural && <a className="btn btn-primary btn-block" href={a.applyUrl} target="_blank" rel="noopener noreferrer">{g.apply} <Icon name="external" size={16} /></a>}
+        {a.applyUrl && isProcedural && canApply && <a className="btn btn-primary btn-block" href={a.applyUrl} target="_blank" rel="noopener noreferrer">{g.apply} <Icon name="external" size={16} /></a>}
         {sections.length > 2 && (
           <details className="card flat">
             <summary><strong>{g.contents}</strong></summary>
@@ -150,7 +153,7 @@ export default async function GuidePage({ params }: { params: Promise<{ aud: str
                 {a.kind === "programme" && <div><dt>{g.amount}</dt><dd>{a.provides ? a.provides[locale] : <span className="unknown">{g.notStated}</span>}</dd></div>}
               </dl>
               <div className="stack" style={{ marginTop: 14 }}>
-                {a.applyUrl && <a className="btn btn-primary btn-block" href={a.applyUrl} target="_blank" rel="noopener noreferrer">{g.apply} <Icon name="external" size={16} /></a>}
+                {a.applyUrl && canApply && <a className="btn btn-primary btn-block" href={a.applyUrl} target="_blank" rel="noopener noreferrer">{g.apply} <Icon name="external" size={16} /></a>}
                 {live?.audience === aud && <Link className="btn btn-ghost btn-block" href={paths.opportunity(aud, live.id)}>{g.record}</Link>}
               </div>
             </div>

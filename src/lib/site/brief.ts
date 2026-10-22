@@ -59,3 +59,12 @@ export function nextActionOf(x: BriefInput, now: Date): NextAction {
     default: return x.hasGuide ? "read_guide_then_apply" : "apply_now";
   }
 }
+
+/**
+ * An application call-to-action («Επίσημη αίτηση») is offered only while applications may be accepted: never after the
+ * official deadline, never for a closed or suspended programme (owner, 22 Oct 2026). The official page stays linked as
+ * information. Unverified or unknown status keeps the link, but the status badge says it is unconfirmed.
+ */
+export function applicationCtaAllowed(application: string | null | undefined): boolean {
+  return application !== "closed" && application !== "deadline_passed" && application !== "suspended";
+}

@@ -2,6 +2,7 @@ import Link from "next/link";
 import { checkedLine } from "@/components/opportunity-card";
 import { unknownsOf } from "@/lib/site/unknowns";
 import { OpportunityBrief } from "@/components/brief";
+import { applicationCtaAllowed } from "@/lib/site/brief";
 import { applicantAudienceOf } from "@/lib/site/applicants";
 import { notFound, redirect } from "next/navigation";
 import { paths } from "@/lib/site/audience";
@@ -95,6 +96,8 @@ export default async function OpportunityPage({ params, searchParams }: { params
   const verified = verifiedFor(o.external_key);
   const amount = keyAmount(o, t, s, locale);
   const status = recordStatus(matchable, now);
+  // No application call-to-action once the deadline has passed or the programme is closed (official page stays linked).
+  const canApply = applicationCtaAllowed(status.application);
   const applicant = applicantAudienceOf(o, matchable.requirements);
   // Reviewer notes recorded with records imported from a manual review (Greek, from the official documents).
   const recordNotes = o.publication_basis === "manual_review" && !o.external_key?.startsWith("manual:") ? o.uncertainties ?? [] : [];
@@ -245,9 +248,11 @@ export default async function OpportunityPage({ params, searchParams }: { params
             <section id="apply" className="card">
               <h2 style={{ marginTop: 0 }}>{s.detail.howToApply}</h2>
               <VerifiedSteps o={o} s={s} locale={locale} />
-              <p>{s.detail.applySteps}</p>
+              <p>{canApply ? s.detail.applySteps : s.detail.applyClosed}</p>
               <div className="row">
-                <a className="btn btn-primary" href={o.application_url ?? o.canonical_url} target="_blank" rel="noopener noreferrer">{o.application_url ? t.opp.apply : t.opp.official} <Icon name="external" size={16} /></a>
+                {canApply
+                  ? <a className="btn btn-primary" href={o.application_url ?? o.canonical_url} target="_blank" rel="noopener noreferrer">{o.application_url ? t.opp.apply : t.opp.official} <Icon name="external" size={16} /></a>
+                  : <a className="btn btn-ghost" href={o.canonical_url} target="_blank" rel="noopener noreferrer">{s.detail.officialPage} <Icon name="external" size={16} /></a>}
                 {guide && <Link className="btn btn-ghost" href={paths.guide(aud, guide)}><Icon name="book" size={16} />{s.detail.guideCta}</Link>}
               </div>
             </section>
