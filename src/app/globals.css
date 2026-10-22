@@ -641,3 +641,7 @@ main:has(> section.band:last-child) { padding-bottom: 0; }
 .news-item p { margin: 0 0 6px; }
 @media (max-width: 640px) { .news-item { grid-template-columns: 1fr; gap: 4px; } }
 @media (min-width: 961px) { .flow.flow-3 { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
+.path-bar { border-top: 1px solid var(--line); background: var(--surface-2); }
+.path-bar .container { display: flex; justify-content: flex-end; padding-block: 6px; }
+.path-bar .path-switch { border: 0; background: transparent; padding: 0; }
+@media (max-width: 960px) { .path-bar .container { justify-content: flex-start; } .path-bar .path-switch .muted-on-dark { display: inline; } }

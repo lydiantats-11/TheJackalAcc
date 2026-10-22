@@ -129,11 +129,14 @@ for (const [a, slug] of Object.entries(PATHS)) {
   steps.push({ step: "home", url: page.url() });
   await Promise.all([page.waitForURL(new RegExp(`/${slug}/eukairies`)), page.click(`a.path-choice[data-path="${a}"]`)]);
   steps.push({ step: "choice", url: page.url() });
+  await page.waitForLoadState("networkidle");
   const first = page.locator(".opp-card h3 a").first();
+  await first.waitFor({ timeout: 15000 }).catch(() => {});
   const hasCard = (await first.count()) > 0;
   ok(`${a} journey: opportunities page lists programmes`, hasCard);
   if (hasCard) {
     await Promise.all([page.waitForURL(new RegExp(`/${slug}/eukairies/[0-9a-f-]{36}`)), first.click()]);
+    await page.waitForLoadState("networkidle");
     steps.push({ step: "details", url: page.url(), title: (await page.locator("h1").first().textContent())?.trim() });
     const apply = page.locator("#apply a.btn-primary").first();
     const href = (await apply.count()) ? await apply.getAttribute("href") : null;
@@ -142,7 +145,7 @@ for (const [a, slug] of Object.entries(PATHS)) {
     const sw = page.locator(".path-switch a");
     ok(`${a} journey: «Ψάχνω ως» switch is shown`, (await sw.count()) > 0);
     if (await sw.count()) {
-      await Promise.all([page.waitForLoadState("networkidle"), sw.first().click()]);
+      await Promise.all([page.waitForURL(new RegExp(`/${PATHS[a === "citizen" ? "business" : "citizen"]}/eukairies`)), sw.first().click()]);
       ok(`${a} journey: «Αλλαγή» opens the other path's opportunities, no filters`, new URL(page.url()).pathname === `/${PATHS[a === "citizen" ? "business" : "citizen"]}/eukairies` && !page.url().includes("?"), page.url());
     }
   }

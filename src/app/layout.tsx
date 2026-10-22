@@ -7,7 +7,7 @@ import { currentUser } from "@/lib/auth/session";
 import { SITE } from "@/lib/site/copy";
 import { LogoMark } from "@/components/brand";
 import { Icon } from "@/components/icons";
-import { NavLinks, PathSwitch, type NavLabels } from "@/components/site-nav";
+import { NavLinks, PathBar, type NavLabels } from "@/components/site-nav";
 import { paths } from "@/lib/site/audience";
 import { logoutAction, setLocaleAction } from "./actions";
 
@@ -50,7 +50,6 @@ export default async function RootLayout({ children }: { children: React.ReactNo
             </Link>
             <nav className="main" aria-label={locale === "el" ? "Κύρια πλοήγηση" : "Main navigation"}><NavLinks labels={labels} /></nav>
             <div className="header-actions">
-              <PathSwitch labels={labels} />
               <span className="desktop-only">{lang}</span>
               {user?.role === "admin" && <Link href="/admin" className="linkbtn desktop-only">{s.nav.admin}</Link>}
               {user ? (
@@ -87,6 +86,7 @@ export default async function RootLayout({ children }: { children: React.ReactNo
               </details>
             </div>
           </div>
+          <PathBar labels={labels} />
         </header>
         <main id="content">{children}</main>
         <footer className="site">

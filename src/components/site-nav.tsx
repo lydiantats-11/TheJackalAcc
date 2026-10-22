@@ -55,3 +55,14 @@ export function PathSwitch({ labels }: { labels: NavLabels }) {
     </span>
   );
 }
+
+/** A slim bar under the header, inside a path only: which path you are in and how to change it (desktop and phone). */
+export function PathBar({ labels }: { labels: NavLabels }) {
+  const a = useAudience();
+  if (!a) return null;
+  return (
+    <div className="path-bar">
+      <div className="container"><PathSwitch labels={labels} /></div>
+    </div>
+  );
+}
