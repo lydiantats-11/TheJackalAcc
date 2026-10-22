@@ -5,7 +5,7 @@ import { isDatabaseConfigured, sql } from "@/lib/db";
 import { recordStatus } from "@/lib/domain/record-status";
 import type { LiveRecord } from "./guide-status";
 
-export type LiveGuideRecord = LiveRecord & { id: string };
+export type LiveGuideRecord = LiveRecord & { id: string; audience: import("./audience").Audience | null };
 
 export async function loadLiveGuideRecords(keys: string[], now = new Date()): Promise<Map<string, LiveGuideRecord>> {
   const out = new Map<string, LiveGuideRecord>();
@@ -18,7 +18,7 @@ export async function loadLiveGuideRecords(keys: string[], now = new Date()): Pr
     for (const { id, external_key } of ids) {
       const row = await getOpportunity(db, id);
       if (!row) continue;
-      out.set(external_key, { id, ...recordStatus(toMatchable(row, []), now) });
+      out.set(external_key, { id, audience: row.audience, ...recordStatus(toMatchable(row, []), now) });
     }
   } catch {
     // Database unreachable: the guides fall back to the checked file, which is still read against today's date.

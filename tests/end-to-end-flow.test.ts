@@ -65,8 +65,16 @@ describe.skipIf(!TEST_DB_URL)("end-to-end: source to explained match (PostgreSQL
     // Ben declined to give employee numbers: SME rule stays unknown, never assumed
     expect(benMatch).toMatchObject({ eligibility_status: "potentially_eligible_verification_required" });
 
+    // Unclassified (HOLD) records are never served publicly, not even by direct id, and never listed for a path (0011)
+    expect(await getOpportunity(sql, opp!.id)).toBeNull();
+    expect(await listOpportunities(sql, { audience: "business" })).toHaveLength(0);
+    await sql`UPDATE opportunities SET audience = 'business' WHERE id = ${opp!.id}`;
+    expect(await listOpportunities(sql, { audience: "citizen" })).toHaveLength(0);
+    expect(await listOpportunities(sql, { audience: "business" })).toHaveLength(1);
+
     // The explanation shown to the user carries the official wording and source location
     const row = (await getOpportunity(sql, opp!.id))!;
+    expect(row.audience).toBe("business");
     const reqs = (await loadRequirements(sql, [opp!.id])).get(opp!.id)!;
     const a = assess(toMatchable(row, reqs), await getProfile(sql, ben), { now });
     const size = a.results.find((r) => r.key === "size")!;

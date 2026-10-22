@@ -13,8 +13,8 @@ export default async function NotFound() {
         <h1 style={{ fontSize: "1.5rem" }}>{s.notFound.title}</h1>
         <p>{s.notFound.body}</p>
         <div className="row" style={{ justifyContent: "center" }}>
-          <Link href="/opportunities" className="btn btn-primary">{s.notFound.cta}</Link>
-          <Link href="/categories" className="btn btn-ghost">{s.nav.categories}</Link>
+          <Link href="/" className="btn btn-primary">{s.notFound.cta}</Link>
+          <Link href="/about" className="btn btn-ghost">{s.paths.nav.about}</Link>
         </div>
       </div>
     </div>

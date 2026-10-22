@@ -57,10 +57,14 @@ jobs:
           psql "$DATABASE_URL" -v ON_ERROR_STOP=1 -q -f db/seed/approvals-2026-10-15.sql   # the owner's approval of 15 Oct 2026
           psql "$DATABASE_URL" -v ON_ERROR_STOP=1 -q -f db/seed/business-records-2026-10-20.sql   # 11 business calls, manual review 20 Oct 2026
           psql "$DATABASE_URL" -v ON_ERROR_STOP=1 -q -f db/seed/approvals-2026-10-20.sql   # the owner's approval of 20 Oct 2026 (preview only)
+          psql "$DATABASE_URL" -v ON_ERROR_STOP=1 -q -f db/seed/audience-2026-10-22.sql   # one path per programme, owner approval 22 Oct 2026 (preview only)
           psql "$DATABASE_URL" -c "SELECT o.external_key, o.official_identifier, o.review_status, o.status, o.closes_at, s.slug AS source, (SELECT count(*) FROM opportunity_requirements r WHERE r.opportunity_id = o.id) AS reqs FROM opportunities o LEFT JOIN sources s ON s.id = o.source_id WHERE o.publication_basis = 'manual_review' AND o.external_key LIKE 'opske:%' ORDER BY o.closes_at" | tee business-import.log
           psql "$DATABASE_URL" -At -c "SELECT 'synthetic records: ' || count(*) FROM opportunities WHERE is_synthetic" | tee -a business-import.log
           psql "$DATABASE_URL" -c "UPDATE opportunities SET review_status = 'rejected' WHERE is_synthetic" || true
           npm run worker -- --test eu-funding-tenders | tail -15
+          psql "$DATABASE_URL" -v ON_ERROR_STOP=1 -q -f db/seed/audience-2026-10-22.sql
+          psql "$DATABASE_URL" -c "SELECT coalesce(audience, 'HOLD') AS path, count(*) FROM opportunities WHERE review_status = 'approved' AND NOT is_synthetic AND merged_into_id IS NULL GROUP BY 1 ORDER BY 1" | tee classification.log
+          psql "$DATABASE_URL" -c "SELECT coalesce(o.audience, 'HOLD') AS path, o.external_key, o.official_identifier, left(o.official_title, 90) AS title FROM opportunities o WHERE o.review_status = 'approved' AND NOT o.is_synthetic AND o.merged_into_id IS NULL ORDER BY 1, 2" | tee -a classification.log
       - name: Quality report (gold set, coverage, freshness, efficiency)
         continue-on-error: true
         run: npx tsx scripts/quality-report.ts > quality-report.json && cat quality-report.json | head -60
@@ -69,16 +73,18 @@ jobs:
       - name: Screenshots
         run: |
           npm install --no-save --no-audit --no-fund playwright && npx playwright install --with-deps chromium
-          export PREVIEW_IDS=$(psql "$DATABASE_URL" -At -c "SELECT json_build_object('a21',(SELECT id FROM opportunities WHERE external_key='manual:a21'),'eu',(SELECT o.id FROM opportunities o WHERE external_key LIKE 'eu-topic:HORIZON%' AND status='open' ORDER BY closes_at LIMIT 1),'dam22',(SELECT id FROM opportunities WHERE external_key='opske:23487'),'epiro',(SELECT id FROM opportunities WHERE external_key='opske:code:ΠΗΠΕ-06/3.0'))")
+          export PREVIEW_IDS=$(psql "$DATABASE_URL" -At -c "SELECT json_build_object('a21',(SELECT id FROM opportunities WHERE external_key='manual:a21'),'eu',(SELECT o.id FROM opportunities o WHERE external_key LIKE 'eu-topic:HORIZON%' AND status='open' ORDER BY closes_at LIMIT 1),'dam22',(SELECT id FROM opportunities WHERE external_key='opske:23487'),'epiro',(SELECT id FROM opportunities WHERE external_key='opske:code:ΠΗΠΕ-06/3.0'),'crete',(SELECT id FROM opportunities WHERE external_key='opske:24787'))")
+          export CLASSIFICATION=$(psql "$DATABASE_URL" -At -c "SELECT coalesce(json_agg(json_build_object('id',id,'external_key',external_key,'audience',audience,'review_status',review_status,'title',official_title) ORDER BY external_key),'[]') FROM opportunities WHERE NOT is_synthetic AND merged_into_id IS NULL AND review_status = 'approved'")
           echo "$PREVIEW_IDS"
           PORT=3000 npm start > next.log 2>&1 &
           for i in $(seq 1 60); do curl -fs -o /dev/null http://127.0.0.1:3000/ && break; sleep 1; done
           node scripts/design-preview.mjs "$OUT"
           node scripts/site-audit.mjs "$OUT" || echo "audit script failed"
+          node scripts/audience-check.mjs "$OUT" 2>&1 | tee audience-check.log || echo "audience check reported failures"
       - name: Save to the live-test-results branch
         if: always()
         run: |
-          mkdir -p "$OUT"; cp -f typecheck.log tests.log build.log next.log quality-report.json business-import.log "$OUT"/ 2>/dev/null || true
+          mkdir -p "$OUT"; cp -f typecheck.log tests.log build.log next.log quality-report.json business-import.log classification.log audience-check.log "$OUT"/ 2>/dev/null || true
           cp -r "$OUT" /tmp/out
           git config user.name "jackal-live-test"; git config user.email "actions@users.noreply.github.com"
           git fetch --depth 1 origin live-test-results && git checkout -B live-test-results FETCH_HEAD

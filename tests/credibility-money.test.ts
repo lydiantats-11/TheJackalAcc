@@ -89,7 +89,7 @@ describe("3 · verified values are never marked unknown", () => {
     for (const r of business) expect(hasApplicantMoney(moneyOf(row(r.funding, r.total_budget)))).toBe(true);
   });
   it("the detail page passes the recorded money to «Τι δεν γνωρίζουμε ακόμη»", () => {
-    expect(read("src/app/opportunities/[id]/page.tsx")).toContain("amountRecorded:");
+    expect(read("src/app/[aud]/eukairies/[id]/page.tsx")).toContain("amountRecorded:");
   });
 });
 
@@ -107,7 +107,7 @@ describe("4 · expired deadlines in personalised results", () => {
   });
   it("an expired record is not current, so «Για Εμένα» leaves it out", () => {
     expect(isCurrent(recordStatus(opp, NOW))).toBe(false);
-    expect(read("src/app/for-me/page.tsx")).toContain("isCurrent(x.record)");
+    expect(read("src/app/[aud]/logariasmos/page.tsx")).toContain("isCurrent(x.record)");
   });
   it("«Νέα Ευκαιρία» stops being current at 15:00 Greek time on 21 Oct", () => {
     const r = business.find((x) => x.id === "epiro-nea-eykairia")!;

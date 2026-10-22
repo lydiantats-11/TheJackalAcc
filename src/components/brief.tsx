@@ -1,5 +1,6 @@
 /** Concrete brief (18 Oct 2026): time left, what to do now, and the «Νέα για εσάς» feed. Display only. */
 import Link from "next/link";
+import { paths, type Audience } from "@/lib/site/audience";
 import type { Locale } from "@/lib/i18n/dictionaries";
 import type { SiteCopy } from "@/lib/site/copy";
 import { nextActionOf, timeLeftOf, type BriefInput, type TimeLeft } from "@/lib/site/brief";
@@ -63,8 +64,9 @@ export function OpportunityBrief({ input, what, who, s, locale, now, applyUrl, g
 
 type Feed = { opened: FeedItem<ListedOpportunity>[]; closing: FeedItem<ListedOpportunity>[]; changed: FeedItem<ListedOpportunity>[] };
 
-export function FeedPanel({ feed, s, locale, title, per = 4 }: { feed: Feed; s: SiteCopy; locale: Locale; title: string; per?: number }) {
+export function FeedPanel({ feed, s, locale, title, per = 4, audience }: { feed: Feed; s: SiteCopy; locale: Locale; title: string; per?: number; audience: Audience }) {
   const f = s.feed;
+  const all = paths.opportunities(audience);
   const col = (label: string, items: FeedItem<ListedOpportunity>[], when: (d: string) => string, icon: string, href: string) => (
     <div className="feed-col">
       <h3><Icon name={icon} size={18} />{label} <span className="muted">· {items.length}</span></h3>
@@ -74,7 +76,7 @@ export function FeedPanel({ feed, s, locale, title, per = 4 }: { feed: Feed; s: 
             const tt = displayTitle(item.row, locale);
             return (
               <li key={item.row.id}>
-                <Link href={`/opportunities/${item.row.id}`} lang={tt.lang}>{tt.text}</Link>
+                <Link href={paths.opportunity(audience, item.row.id)} lang={tt.lang}>{tt.text}</Link>
                 <span className="xs muted">{when(formatDay(at, locale) ?? "")} · {s.scope[item.scope]}</span>
               </li>
             );
@@ -88,9 +90,9 @@ export function FeedPanel({ feed, s, locale, title, per = 4 }: { feed: Feed; s: 
     <section className="feed" aria-label={title}>
       <div className="feed-head"><h2>{title}</h2><p className="small muted">{f.lead}</p></div>
       <div className="feed-grid">
-        {col(f.closing, feed.closing, f.closesOn, "calendar", "/opportunities?status=open")}
-        {col(f.opened, feed.opened, f.openedOn, "sparkle", "/opportunities")}
-        {col(f.changed, feed.changed, f.changedOn, "alert", "/opportunities")}
+        {col(f.closing, feed.closing, f.closesOn, "calendar", `${all}?status=open`)}
+        {col(f.opened, feed.opened, f.openedOn, "sparkle", all)}
+        {col(f.changed, feed.changed, f.changedOn, "alert", all)}
       </div>
       <p className="xs muted" style={{ margin: 0 }}>{f.rules} {f.noAuto}</p>
     </section>

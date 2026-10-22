@@ -3,6 +3,7 @@ import { geographyValue, parseRequirement } from "@/lib/domain/requirements";
 import type { OpportunityForMatching, OpportunityStatus } from "@/lib/domain/eligibility";
 import { requirementRecordSchema, type RequirementRecord } from "@/lib/domain/engine/requirement";
 import type { OfficialDetails } from "@/lib/sources/types";
+import type { Audience } from "@/lib/site/audience";
 
 export interface OpportunityRow {
   id: string;
@@ -58,6 +59,8 @@ export interface OpportunityRow {
   official_details: OfficialDetails | null;
   /** 0002: other official cut-off dates, as published. */
   additional_deadlines: unknown;
+  /** 0011: the one path this record belongs to; null = not classified (HOLD), shown in neither path. */
+  audience: Audience | null;
 }
 
 export interface OpportunityFilters {
@@ -69,6 +72,11 @@ export interface OpportunityFilters {
   industry?: string;
   /** Maximum rows (default 500, at most 5000). The public listing pages and filters by category in memory. */
   limit?: number;
+  /**
+   * Public pages ALWAYS pass a path: only records classified for it are returned (never unclassified/HOLD records,
+   * never the other path's). Omitted only by internal tools (admin review, matching jobs, quality report).
+   */
+  audience?: Audience;
 }
 
 const SELECT = (sql: postgres.Sql) => sql`
@@ -95,6 +103,7 @@ export async function listOpportunities(sql: postgres.Sql, f: OpportunityFilters
       ${f.status ? sql`AND o.status = ${f.status}` : sql``}
       ${f.type ? sql`AND o.opportunity_type = ${f.type}` : sql``}
       ${f.industry ? sql`AND (o.industries IS NULL OR ${f.industry} = ANY(o.industries))` : sql``}
+      ${f.audience ? sql`AND o.audience = ${f.audience}` : sql``}
       ${f.category ? sql`AND EXISTS (SELECT 1 FROM opportunity_category_links c WHERE c.opportunity_id = o.id AND c.category_code = ${f.category})` : sql``}
     GROUP BY o.id, s.name, s.stale_after_hours
     -- Still-available first: closed records last, and records whose deadline has passed after those still open
@@ -103,9 +112,13 @@ export async function listOpportunities(sql: postgres.Sql, f: OpportunityFilters
     LIMIT ${Math.min(Math.max(f.limit ?? 500, 1), 5000)}`;
 }
 
+/**
+ * One public record by id. Records not classified for a path (audience NULL = HOLD) are never returned, so they cannot
+ * be opened by a direct address either; the caller compares `audience` with the path it is rendering.
+ */
 export async function getOpportunity(sql: postgres.Sql, id: string): Promise<OpportunityRow | null> {
   if (!/^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/i.test(id)) return null;
-  const [row] = await sql<OpportunityRow[]>`${SELECT(sql)} WHERE o.id = ${id} AND o.review_status = 'approved' ${showTestRecords() ? sql`` : sql`AND NOT o.is_synthetic`} GROUP BY o.id, s.name, s.stale_after_hours`;
+  const [row] = await sql<OpportunityRow[]>`${SELECT(sql)} WHERE o.id = ${id} AND o.review_status = 'approved' AND o.audience IS NOT NULL ${showTestRecords() ? sql`` : sql`AND NOT o.is_synthetic`} GROUP BY o.id, s.name, s.stale_after_hours`;
   return row ?? null;
 }
 

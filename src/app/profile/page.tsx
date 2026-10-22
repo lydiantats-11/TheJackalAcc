@@ -7,26 +7,30 @@ import { getProfile } from "@/lib/data/user";
 import { SITE } from "@/lib/site/copy";
 import { ProfileForm } from "@/components/profile-form";
 import { Icon } from "@/components/icons";
+import { audienceFromSlug, paths } from "@/lib/site/audience";
 import { deleteAccountAction, saveProfileAction } from "../actions";
 
 export const generateMetadata = titled(({ s }) => s.nav.profile);
 
-export default async function ProfilePage({ searchParams }: { searchParams: Promise<{ delete?: string; ask?: string; welcome?: string; step?: string }> }) {
+export default async function ProfilePage({ searchParams }: { searchParams: Promise<{ delete?: string; ask?: string; welcome?: string; step?: string; path?: string }> }) {
   const user = await requireUser();
   const { t, locale } = await getDict();
   const s = SITE[locale];
   const sp = await searchParams;
   const profile = await getProfile(sql(), user);
+  // One account for both paths; the profile returns to the account page of the path the person came from.
+  const aud = audienceFromSlug(sp.path);
+  const back = aud ? paths.account(aud) : "/";
   return (
     <div className="container">
       <div className="page-head">
-        <div className="crumbs"><Link href="/for-me">{s.nav.forMe}</Link> / {s.profile.title}</div>
+        <div className="crumbs"><Link href={back}>{aud ? s.paths.account.title : s.nav.home}</Link> / {s.profile.title}</div>
         <h1>{s.profile.title}</h1>
         <p className="lead">{s.profile.lead}</p>
       </div>
       <div className="with-aside-r">
         <div>
-          <ProfileForm action={saveProfileAction} profile={profile} t={t} locale={locale} initialStep={sp.step} ask={(sp.ask ?? "").split(",").filter(Boolean).slice(0, 20)} />
+          <ProfileForm action={saveProfileAction} profile={profile} t={t} locale={locale} initialStep={sp.step} doneHref={back} ask={(sp.ask ?? "").split(",").filter(Boolean).slice(0, 20)} />
         </div>
         <aside className="stack sticky">
           <div className="card tint">

@@ -92,9 +92,11 @@ const ring = { outline: "2px solid var(--focus)", outlineOffset: 4, borderRadius
 const QUESTION_STEPS = ["person", "work", "entrepreneurship", "business", "household", "international", "location", "project"] as const satisfies readonly Section[];
 type StepId = "who" | "interests" | (typeof QUESTION_STEPS)[number] | "done";
 
-export function ProfileForm({ action, profile, t, ask, locale, initialStep }: {
+export function ProfileForm({ action, profile, t, ask, locale, initialStep, doneHref = "/" }: {
   action: (s: FormState, f: FormData) => Promise<FormState>; profile: MatchProfile; t: T; ask: string[];
   locale: Locale; initialStep?: string;
+  /** Where «done» leads: the account page of the path the person came from, or the home page to choose one. */
+  doneHref?: string;
 }) {
   const o = SITE[locale].onboarding;
   const [state, formAction, pending] = useActionState(action, undefined);
@@ -337,7 +339,7 @@ export function ProfileForm({ action, profile, t, ask, locale, initialStep }: {
           <li><Icon name="check" size={16} /><span>{o.done.interests(interests.length + industries.length)}</span></li>
           <li><Icon name="info" size={16} /><span>{o.done.edit}</span></li>
         </ul>
-        <Link href="/for-me" className="btn btn-dark">{o.done.cta} →</Link>
+        <Link href={doneHref} className="btn btn-dark">{o.done.cta} →</Link>
       </div>
       <div className="onb-foot">
         {idx > 0 && <button type="button" className="btn btn-ghost" onClick={() => go(-1)}>{o.back}</button>}

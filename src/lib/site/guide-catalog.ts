@@ -15,6 +15,7 @@ import { PROCEDURE_ARTICLES } from "@/content/guides";
 import { GENERAL_GUIDES } from "./guides";
 import { MANUAL_RECORDS } from "./taxonomy";
 import { fold, matches } from "@/lib/text/search";
+import type { Audience } from "./audience";
 
 export type L = Record<Locale, string>;
 
@@ -176,6 +177,24 @@ const EXPLAINERS: Article[] = GENERAL_GUIDES.map((g) => ({
 
 export const ARTICLES: Article[] = [...PROCEDURE_ARTICLES, ...PROGRAMME_ARTICLES, ...EXPLAINERS];
 export const articleBySlug = (slug: string) => ARTICLES.find((a) => a.slug === slug);
+
+// ── path of each guide (owner decision, 22 Oct 2026) ────────────────────────────────────────────────────────────────
+/**
+ * Every programme or procedure guide belongs to exactly one path: the path of the programme it explains (same rule:
+ * who applies and in what capacity). Platform explainers (how to read the labels, how to apply officially) are not about
+ * a programme; they appear under «Τι είναι το Jackal» in both paths and are not listed among a path's guides.
+ */
+export const ARTICLE_AUDIENCE: Record<string, Audience> = {
+  "unemployment-benefit-application": "citizen",
+  unemployment: "citizen", a21: "citizen", spiti2: "citizen", studenthousing: "citizen", discovereu: "citizen",
+  art5a: "citizen", art5b: "citizen", art5c: "citizen",
+  eic: "business", // start-ups and SMEs (draft; its record is not approved)
+};
+export const isPlatformGuide = (a: Article) => a.kind === "explainer";
+export const articleAudience = (a: Article): Audience | null => (isPlatformGuide(a) ? null : ARTICLE_AUDIENCE[a.slug] ?? null);
+/** The guides of one path (programme and procedure guides only; never the other path's). */
+export const guidesOf = (aud: Audience, list: Article[] = ARTICLES) => list.filter((a) => articleAudience(a) === aud);
+export const PLATFORM_GUIDES: Article[] = ARTICLES.filter(isPlatformGuide);
 
 // ── verification state ──────────────────────────────────────────────────────────────────────────────────────────────
 const DAY = 86_400_000;

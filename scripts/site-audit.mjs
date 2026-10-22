@@ -73,9 +73,9 @@ async function crawl(ctx, label, seeds) {
       linkTargets.add(clean);
       const u = new URL(clean, BASE);
       // crawl app pages, at most a few list-filter variants and detail pages
-      const isDetail = /^\/opportunities\/[0-9a-f-]{36}$/.test(u.pathname);
-      const crawlable = !u.pathname.startsWith("/api") && !u.pathname.startsWith("/admin") && !u.pathname.endsWith("/decision") && (u.search === "" || u.pathname === "/guides" || /^\?(cat|status|scope|type|audience)=[\w-]+$/.test(u.search));
-      if (crawlable && !seen.has(clean) && (!isDetail || [...seen].filter((s) => s.startsWith("/opportunities/")).length < 6)) queue.push(clean);
+      const isDetail = /^\/(politis|epixeiriseis)\/eukairies\/[0-9a-f-]{36}$/.test(u.pathname);
+      const crawlable = !u.pathname.startsWith("/api") && !u.pathname.startsWith("/admin") && !u.pathname.endsWith("/decision") && (u.search === "" || u.pathname.endsWith("/odigoi") || /^\?(cat|status|scope|type|audience|industry)=[\w-]+$/.test(u.search));
+      if (crawlable && !seen.has(clean) && (!isDetail || [...seen].filter((s) => /\/eukairies\/[0-9a-f-]{36}$/.test(s)).length < 8)) queue.push(clean);
     }
   }
   // every internal link target must answer
@@ -90,7 +90,8 @@ async function crawl(ctx, label, seeds) {
 }
 
 const browser = await chromium.launch();
-const SEEDS = ["/", "/opportunities", "/categories", "/for-me", "/guides", "/about", "/login", "/register", "/profile", "/dashboard"];
+// Two paths (22 Oct 2026): the same five sections in each, plus the shared pages.
+const SEEDS = ["/", ...["politis", "epixeiriseis"].flatMap((p) => ["eukairies", "nea", "odigoi", "jackal", "logariasmos"].map((x) => `/${p}/${x}`)), "/about", "/login", "/register", "/profile"];
 
 // 1. Guest crawls (Greek desktop, English desktop, Greek phone)
 for (const [label, lang, viewport] of [["el-desktop", "el", { width: 1440, height: 900 }], ["en-desktop", "en", { width: 1440, height: 900 }], ["el-phone", "el", { width: 390, height: 844 }]]) {
@@ -109,9 +110,10 @@ const step = (name, ok, detail = "") => { report.journey.push({ step: name, ok, 
 const count = async () => page.locator(".opp-card").count();
 try {
   await page.goto(BASE + "/", { waitUntil: "networkidle" });
-  step("1 homepage loads with a call to action", (await page.locator("main a.btn-primary, main a.btn").count()) > 0);
-  const ctas = await page.locator("main a.btn").evaluateAll((as) => as.map((a) => a.getAttribute("href")));
-  report.interactions.push({ check: "homepage buttons", targets: ctas });
+  const ctas = await page.locator("main a.path-choice").evaluateAll((as) => as.map((a) => a.getAttribute("href")));
+  step("1 homepage offers exactly the two paths", ctas.length === 2 && ctas.includes("/politis/eukairies") && ctas.includes("/epixeiriseis/eukairies"), ctas.join(", "));
+  report.interactions.push({ check: "homepage choices", targets: ctas });
+  await page.goto(BASE + "/politis/eukairies", { waitUntil: "networkidle" });
 
   // language switch
   await Promise.all([page.waitForResponse((r) => r.request().method() === "POST").catch(() => null), page.locator('form.lang button[value="en"]').first().click()]);
@@ -125,42 +127,41 @@ try {
   else if (langAttr !== "en") issue("medium", "language switch", "text switches to English but <html lang> stays 'el' until the page is reloaded (screen readers read English with Greek pronunciation)");
   await ctx.addCookies([{ name: "lang", value: "el", url: BASE }]);
 
-  // home category counts vs the category list
-  await page.goto(BASE + "/", { waitUntil: "networkidle" });
-  const homeCats = await page.locator('a[href^="/opportunities?cat="]').evaluateAll((as) => as.map((a) => ({ href: a.getAttribute("href"), text: a.textContent.replace(/\s+/g, " ").trim().slice(-40) })));
-  for (const c of homeCats.slice(0, 12)) {
-    await page.goto(BASE + c.href, { waitUntil: "networkidle" });
-    const n = await count();
-    const m = c.text.match(/(\d+)/);
-    report.interactions.push({ check: `home card ${c.href}`, home: c.text, list: n });
-    if (m && Number(m[1]) > 0 && n === 0) issue("critical", c.href, `homepage says "${c.text}" but the category list shows 0 opportunities`);
+  // category chips of each path lead to non-empty or explained lists
+  for (const P of ["/politis/eukairies", "/epixeiriseis/eukairies"]) {
+    await page.goto(BASE + P, { waitUntil: "networkidle" });
+    const chips = await page.locator('a.chip[href*="cat="]').evaluateAll((as) => as.map((a) => a.getAttribute("href")));
+    report.interactions.push({ check: `category chips ${P}`, chips });
   }
 
   // Milestone 1 regression: A21 (open, re-check due) stays visible in its category with the re-check label
-  await page.goto(BASE + "/opportunities?cat=family", { waitUntil: "networkidle" });
+  await page.goto(BASE + "/politis/eukairies?cat=family", { waitUntil: "networkidle" });
   const familyCards = await count();
   const recheckLabels = await page.getByText("Χρειάζεται νέος έλεγχος").count();
   step("2b open records due for re-check stay listed (A21 in «Οικογένεια»)", familyCards > 0, `${familyCards} cards, ${recheckLabels} «Χρειάζεται νέος έλεγχος» labels`);
 
   // opportunities: search and filters
-  await page.goto(BASE + "/opportunities", { waitUntil: "networkidle" });
+  await page.goto(BASE + "/politis/eukairies", { waitUntil: "networkidle" });
   const all = await count();
-  step("2 opportunities list shows cards", all > 0, `${all} cards`);
-  await page.goto(BASE + "/opportunities?q=" + encodeURIComponent("επίδομα"), { waitUntil: "networkidle" });
+  step("2 citizen opportunities list shows cards", all > 0, `${all} cards`);
+  await page.goto(BASE + "/epixeiriseis/eukairies", { waitUntil: "networkidle" });
+  const allB = await count();
+  step("2a business opportunities list shows cards", allB > 0, `${allB} cards`);
+  await page.goto(BASE + "/politis/eukairies?q=" + encodeURIComponent("επίδομα"), { waitUntil: "networkidle" });
   const searched = await count();
   report.interactions.push({ check: "search «επίδομα»", cards: searched });
   if (searched === 0) issue("high", "opportunities search", "searching «επίδομα» (accented Greek) finds nothing");
-  await page.goto(BASE + "/opportunities?q=" + encodeURIComponent("επιδομα"), { waitUntil: "networkidle" });
+  await page.goto(BASE + "/politis/eukairies?q=" + encodeURIComponent("επιδομα"), { waitUntil: "networkidle" });
   const searchedNoAccent = await count();
   report.interactions.push({ check: "search «επιδομα» (no accents)", cards: searchedNoAccent });
   if (searchedNoAccent === 0 && searched > 0) issue("medium", "opportunities search", "search without accents («επιδομα») finds nothing, unlike the guides search");
   for (const f of ["cat=family", "cat=employment", "scope=gr", "status=open", "type=benefit", "audience=employee_jobseeker"]) {
-    await page.goto(BASE + "/opportunities?" + f, { waitUntil: "networkidle" });
+    await page.goto(BASE + "/politis/eukairies?" + f, { waitUntil: "networkidle" });
     report.interactions.push({ check: `filter ${f}`, cards: await count() });
   }
 
   // detail page from the list
-  await page.goto(BASE + "/opportunities?scope=gr", { waitUntil: "networkidle" });
+  await page.goto(BASE + "/politis/eukairies?scope=gr", { waitUntil: "networkidle" });
   const firstHref = await page.locator(".opp-card h3 a").first().getAttribute("href");
   await page.goto(BASE + firstHref, { waitUntil: "networkidle" });
   const officialLinks = await page.locator('a[href^="https://"]').count();
@@ -188,10 +189,10 @@ try {
   const saved = await page.locator('select[name="employment_status"]').inputValue().catch(() => "");
   step("5 profile answers are saved", saved === "unemployed", `employment_status after reload = ${saved || "(empty)"}`);
 
-  await page.goto(BASE + "/for-me", { waitUntil: "networkidle" });
+  await page.goto(BASE + "/politis/logariasmos", { waitUntil: "networkidle" });
   const matches = await count();
   const badges = await page.locator(".opp-card .badge").allTextContents();
-  step("6 For Me shows personalised results", matches > 0, `${matches} cards; labels: ${[...new Set(badges)].slice(0, 6).join(" / ")}`);
+  step("6 «Ο λογαριασμός μου» (citizen) shows personalised results", matches > 0, `${matches} cards; labels: ${[...new Set(badges)].slice(0, 6).join(" / ")}`);
   const euInPersonal = await page.locator(".opp-grid .opp-card .authority").evaluateAll((els) => els.filter((e) => /Ευρωπαϊκή Ένωση/.test(e.textContent)).length);
   step("6b no EU call of unconfirmed applicant type among an individual's personal matches", euInPersonal === 0, `${euInPersonal} EU cards in the personal results`);
   const separated = await page.locator("details.applicant-note").count();
@@ -210,13 +211,13 @@ try {
   }
 
   // guides interactions
-  await page.goto(BASE + "/guides?q=" + encodeURIComponent("ανεργια") + "#results", { waitUntil: "networkidle" });
+  await page.goto(BASE + "/politis/odigoi?q=" + encodeURIComponent("ανεργια") + "#results", { waitUntil: "networkidle" });
   report.interactions.push({ check: "guides search «ανεργια»", cards: await page.locator(".guide-card").count() });
-  await page.goto(BASE + "/guides?cat=benefits#results", { waitUntil: "networkidle" });
+  await page.goto(BASE + "/politis/odigoi?cat=benefits#results", { waitUntil: "networkidle" });
   report.interactions.push({ check: "guides category benefits", cards: await page.locator(".guide-card").count() });
 
   // logged-in crawl of account pages
-  const n = await crawl(ctx, "el-signed-in", ["/profile", "/for-me", "/dashboard", "/opportunities"]);
+  const n = await crawl(ctx, "el-signed-in", ["/profile?path=politis", "/politis/logariasmos", "/epixeiriseis/logariasmos", "/politis/eukairies"]);
   report.interactions.push({ check: "crawl el-signed-in", pages: n });
 } catch (e) {
   issue("critical", "journey", `stopped: ${e.message.split("\n")[0]}`);

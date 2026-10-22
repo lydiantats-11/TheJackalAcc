@@ -7,7 +7,8 @@ import { currentUser } from "@/lib/auth/session";
 import { SITE } from "@/lib/site/copy";
 import { LogoMark } from "@/components/brand";
 import { Icon } from "@/components/icons";
-import { NavLinks } from "@/components/site-nav";
+import { NavLinks, PathSwitch, type NavLabels } from "@/components/site-nav";
+import { paths } from "@/lib/site/audience";
 import { logoutAction, setLocaleAction } from "./actions";
 
 const inter = Inter({ subsets: ["latin", "greek"], variable: "--font-inter", display: "swap" });
@@ -25,14 +26,12 @@ export default async function RootLayout({ children }: { children: React.ReactNo
   const s = SITE[locale];
   const user = await currentUser().catch(() => null);
   const tagline = locale === "el" ? "Ελλάδα · ΕΕ" : "Greece · EU";
-  // Five main tabs (owner decision, 17 Oct 2026). Categories stay reachable from Opportunities and the footer.
-  const nav = [
-    { href: "/", label: s.nav.home },
-    { href: "/opportunities", label: s.nav.opportunities },
-    { href: "/for-me", label: s.nav.forMe },
-    { href: "/guides", label: s.nav.guides },
-    { href: "/about", label: s.nav.how },
-  ];
+  // Two paths, one navigation (owner decision, 22 Oct 2026): the five sections are built from the address by NavLinks.
+  const p = s.paths;
+  const labels: NavLabels = {
+    nav: p.nav, lookingAs: p.lookingAs, change: p.change, short: p.short,
+    changeAria: { citizen: p.changeAria(p.name.citizen), business: p.changeAria(p.name.business) },
+  };
   const lang = (
     <form action={setLocaleAction} className="lang" aria-label="Language / Γλώσσα">
       <button name="lang" value="el" aria-pressed={locale === "el"}>EL</button>
@@ -49,8 +48,9 @@ export default async function RootLayout({ children }: { children: React.ReactNo
               <LogoMark />
               <span>{s.brand}<small>{tagline}</small></span>
             </Link>
-            <nav className="main" aria-label={locale === "el" ? "Κύρια πλοήγηση" : "Main navigation"}><NavLinks items={nav} /></nav>
+            <nav className="main" aria-label={locale === "el" ? "Κύρια πλοήγηση" : "Main navigation"}><NavLinks labels={labels} /></nav>
             <div className="header-actions">
+              <PathSwitch labels={labels} />
               <span className="desktop-only">{lang}</span>
               {user?.role === "admin" && <Link href="/admin" className="linkbtn desktop-only">{s.nav.admin}</Link>}
               {user ? (
@@ -67,7 +67,7 @@ export default async function RootLayout({ children }: { children: React.ReactNo
               <details className="mobile-nav">
                 <summary><Icon name="menu" size={18} />{s.nav.menu}</summary>
                 <div className="panel">
-                  {nav.map((n) => <Link key={n.href} href={n.href}>{n.label}</Link>)}
+                  <NavLinks labels={labels} />
                   <hr />
                   {user ? (
                     <>
@@ -97,18 +97,17 @@ export default async function RootLayout({ children }: { children: React.ReactNo
                 <p style={{ marginTop: 16, maxWidth: 420 }}>{s.footer.note}</p>
               </div>
               <div>
-                <h3>{s.footer.explore}</h3>
+                <h3>{p.footer.paths}</h3>
                 <ul>
-                  <li><Link href="/opportunities">{s.nav.opportunities}</Link></li>
-                  <li><Link href="/categories">{s.footer.categories}</Link></li>
-                  <li><Link href="/for-me">{s.nav.forMe}</Link></li>
-                  <li><Link href="/guides">{s.footer.guides}</Link></li>
+                  <li><Link href={paths.opportunities("citizen")}>{p.name.citizen}</Link></li>
+                  <li><Link href={paths.opportunities("business")}>{p.name.business}</Link></li>
+                  <li><Link href="/">{s.nav.home}</Link></li>
                 </ul>
               </div>
               <div>
                 <h3>{s.footer.platform}</h3>
                 <ul>
-                  <li><Link href="/about">{s.footer.how}</Link></li>
+                  <li><Link href="/about">{p.nav.about}</Link></li>
                   <li><Link href="/about#faq">{s.footer.faq}</Link></li>
                   <li><Link href="/about#sources">{s.footer.sources}</Link></li>
                 </ul>

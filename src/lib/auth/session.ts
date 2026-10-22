@@ -22,7 +22,7 @@ export async function requireUser(): Promise<SessionUser> {
 
 export async function requireAdmin(): Promise<SessionUser> {
   const u = await requireUser();
-  if (u.role !== "admin") redirect("/dashboard?denied=1");
+  if (u.role !== "admin") redirect("/?denied=1");
   return u;
 }
 

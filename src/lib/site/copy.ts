@@ -291,7 +291,56 @@ const el = {
     req: { state: "Αποτέλεσμα", needs: "Χρειάζεται απάντηση", kinds: { mandatory: "Υποχρεωτική", conditional: "Υπό προϋπόθεση", informational: "Ενημερωτική", preferred: "Πλεονέκτημα" } as Record<string, string> } },
   auth: { side: "Ένα προφίλ. Πολλές ευκαιρίες. Ξεκάθαρη πληροφόρηση.", sideNote: "Η περιήγηση στις ευκαιρίες δεν απαιτεί λογαριασμό." },
   loading: "Φόρτωση…",
-  notFound: { title: "Η σελίδα δεν βρέθηκε", body: "Ίσως η διεύθυνση έχει αλλάξει. Δοκιμάστε τις ευκαιρίες ή τις κατηγορίες.", cta: "Στις ευκαιρίες" },
+  notFound: { title: "Η σελίδα δεν βρέθηκε", body: "Ίσως η διεύθυνση έχει αλλάξει. Ξεκινήστε από την αρχική και επιλέξτε διαδρομή.", cta: "Στην αρχική" },
+  // Two paths (owner decision, 22 Oct 2026): same navigation and functionality, separate content.
+  paths: {
+    nav: { opportunities: "Ευκαιρίες", news: "Νέα", guides: "Οδηγοί", about: "Τι είναι το Jackal", account: "Ο λογαριασμός μου" },
+    lookingAs: "Ψάχνω ως:", change: "Αλλαγή", changeAria: (x: string) => `Αλλαγή διαδρομής σε «${x}»`,
+    short: { citizen: "Πολίτης", business: "Επιχείρηση" },
+    name: { citizen: "Πολίτες", business: "Επιχειρήσεις & Επαγγελματίες" },
+    chooser: {
+      eyebrow: "ΕΠΙΔΟΜΑΤΑ · ΕΠΙΔΟΤΗΣΕΙΣ · ΦΟΡΟΛΟΓΙΚΑ ΚΙΝΗΤΡΑ",
+      title: "Ανακαλύψτε τις ευκαιρίες που σας αφορούν.",
+      lead: "Το Jackal συγκεντρώνει επιδόματα, ενισχύσεις και χρηματοδοτήσεις από επίσημες πηγές της Ελλάδας και της ΕΕ, με προθεσμία, πηγή και ημερομηνία ελέγχου σε κάθε πρόγραμμα. Διαλέξτε πώς ψάχνετε.",
+      question: "Ψάχνω ως…",
+      citizen: { d: "Για φυσικά πρόσωπα: επιδόματα, εργασία, στέγαση, σπουδές, φορολογικά και προγράμματα για να ξεκινήσετε δική σας δραστηριότητα.", cta: "Συνέχεια ως Πολίτης" },
+      business: { d: "Για επιχειρήσεις κάθε μορφής, ελεύθερους επαγγελματίες και οργανισμούς: επιδοτήσεις, χρηματοδοτήσεις, επενδυτικές δράσεις.", cta: "Συνέχεια ως Επιχείρηση" },
+      note: "Αλλάζετε διαδρομή οποτεδήποτε από το «Ψάχνω ως». Χωρίς εγγραφή.",
+      steps: [
+        { t: "Επιλέγετε διαδρομή", d: "Βλέπετε μόνο ό,τι αφορά τη διαδρομή σας: ευκαιρίες, νέα και οδηγούς." },
+        { t: "Φιλτράρετε", d: "Αναζήτηση και φίλτρα μέσα στη διαδρομή σας." },
+        { t: "Κάνετε την αίτηση στην πηγή", d: "Κάθε πρόγραμμα οδηγεί στην επίσημη αίτηση, με προθεσμία και ημερομηνία ελέγχου." },
+      ],
+    },
+    opps: {
+      title: { citizen: "Προγράμματα για πολίτες", business: "Προγράμματα για επιχειρήσεις & επαγγελματίες" },
+      lead: { citizen: "Επιδόματα, στήριξη και κίνητρα για φυσικά πρόσωπα — μόνο από επίσημες πηγές.", business: "Επιδοτήσεις, χρηματοδοτήσεις και επενδυτικές δράσεις για επιχειρήσεις, επαγγελματίες και οργανισμούς — μόνο από επίσημες πηγές." },
+      only: { citizen: "Μόνο προγράμματα πολιτών", business: "Μόνο προγράμματα επιχειρήσεων & επαγγελματιών" },
+    },
+    moved: (x: string) => `Αυτό το πρόγραμμα ανήκει στη διαδρομή «${x}». Σας μεταφέραμε εκεί.`,
+    news: {
+      title: { citizen: "Νέα για πολίτες", business: "Νέα για επιχειρήσεις & επαγγελματίες" },
+      lead: "Αλλαγές σε νόμους, ρυθμίσεις και προσκλήσεις, με ημερομηνία και σύνδεσμο στο επίσημο κείμενο. Τα νέα δεν είναι ευκαιρίες· είναι ό,τι αλλάζει.",
+      greece: "Ελλάδα", eu: "Ευρωπαϊκή Ένωση", official: "Επίσημο κείμενο", deadline: "Προθεσμία", effective: "Ισχύει από",
+      euEmpty: "Δεν υπάρχουν ακόμη ελεγμένα νέα από την ΕΕ. Θα εμφανίζονται μόνο με ημερομηνία και σύνδεσμο στην επίσημη πηγή.",
+      none: "Δεν υπάρχουν ακόμη ελεγμένα νέα για αυτή τη διαδρομή.",
+      feedTitle: "Ευκαιρίες: τι άνοιξε, τι λήγει, τι άλλαξε",
+      checked: "Ελέγχθηκε",
+      label: { manually_verified: "Ελέγχθηκε από το επίσημο κείμενο" },
+    },
+    guides: {
+      title: { citizen: "Οδηγοί για πολίτες", business: "Οδηγοί για επιχειρήσεις & επαγγελματίες" },
+      none: "Δεν υπάρχουν ακόμη ελεγμένοι οδηγοί για αυτή τη διαδρομή.",
+      platform: "Πώς διαβάζετε το Jackal",
+      platformLead: "Οδηγοί για τη χρήση της πλατφόρμας, ίδιοι και στις δύο διαδρομές.",
+    },
+    account: {
+      title: "Ο λογαριασμός μου",
+      lead: { citizen: "Αποθηκευμένα και προτάσεις μόνο από τα προγράμματα πολιτών.", business: "Αποθηκευμένα και προτάσεις μόνο από τα προγράμματα επιχειρήσεων & επαγγελματιών." },
+      reason: { citizen: "τρέχουσα ευκαιρία για πολίτες", business: "τρέχουσα ευκαιρία για επιχειρήσεις" },
+    },
+    footer: { paths: "Διαδρομές" },
+  },
 };
 
 type Copy = typeof el;
@@ -580,7 +629,55 @@ const en: Copy = {
     req: { state: "Result", needs: "Needs an answer", kinds: { mandatory: "Required", conditional: "Conditional", informational: "For information", preferred: "Advantage" } as Record<string, string> } },
   auth: { side: "One profile. Many opportunities. Clear information.", sideNote: "You can browse opportunities without an account." },
   loading: "Loading…",
-  notFound: { title: "Page not found", body: "The address may have changed. Try opportunities or categories.", cta: "Go to opportunities" },
+  notFound: { title: "Page not found", body: "The address may have changed. Start from the home page and choose a path.", cta: "Go to the home page" },
+  paths: {
+    nav: { opportunities: "Opportunities", news: "News", guides: "Guides", about: "What is Jackal", account: "My account" },
+    lookingAs: "Looking as:", change: "Change", changeAria: (x: string) => `Switch path to “${x}”`,
+    short: { citizen: "Citizen", business: "Business" },
+    name: { citizen: "Citizens", business: "Businesses & Professionals" },
+    chooser: {
+      eyebrow: "BENEFITS · GRANTS · TAX INCENTIVES",
+      title: "Find the opportunities that apply to you.",
+      lead: "Jackal brings together benefits, grants and funding from official Greek and EU sources, with the deadline, source and check date on every programme. Choose how you are looking.",
+      question: "I am looking as…",
+      citizen: { d: "For individuals: benefits, work, housing, studies, tax and programmes for starting your own activity.", cta: "Continue as a citizen" },
+      business: { d: "For businesses of any legal form, self-employed professionals and organisations: grants, funding, investment schemes.", cta: "Continue as a business" },
+      note: "Switch path at any time from “Looking as”. No sign-up needed.",
+      steps: [
+        { t: "Choose a path", d: "You only see what applies to your path: opportunities, news and guides." },
+        { t: "Filter", d: "Search and filters within your path." },
+        { t: "Apply at the source", d: "Every programme leads to the official application, with the deadline and check date." },
+      ],
+    },
+    opps: {
+      title: { citizen: "Programmes for citizens", business: "Programmes for businesses & professionals" },
+      lead: { citizen: "Benefits, support and incentives for individuals — from official sources only.", business: "Grants, funding and investment schemes for businesses, professionals and organisations — from official sources only." },
+      only: { citizen: "Citizen programmes only", business: "Business & professional programmes only" },
+    },
+    moved: (x: string) => `This programme belongs to the “${x}” path. We took you there.`,
+    news: {
+      title: { citizen: "News for citizens", business: "News for businesses & professionals" },
+      lead: "Changes to laws, arrangements and calls, with the date and a link to the official text. News items are not opportunities; they are what changes.",
+      greece: "Greece", eu: "European Union", official: "Official text", deadline: "Deadline", effective: "In force from",
+      euEmpty: "No checked EU news yet. Items will appear only with a date and a link to the official source.",
+      none: "No checked news for this path yet.",
+      feedTitle: "Opportunities: opened, closing, changed",
+      checked: "Checked",
+      label: { manually_verified: "Checked against the official text" },
+    },
+    guides: {
+      title: { citizen: "Guides for citizens", business: "Guides for businesses & professionals" },
+      none: "No checked guides for this path yet.",
+      platform: "How to read Jackal",
+      platformLead: "Guides to using the platform, the same in both paths.",
+    },
+    account: {
+      title: "My account",
+      lead: { citizen: "Saved items and suggestions from citizen programmes only.", business: "Saved items and suggestions from business & professional programmes only." },
+      reason: { citizen: "a current opportunity for citizens", business: "a current opportunity for businesses" },
+    },
+    footer: { paths: "Paths" },
+  },
 };
 
 export const SITE: Record<Locale, Copy> = { el, en };

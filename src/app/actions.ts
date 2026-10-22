@@ -21,7 +21,7 @@ export async function loginAction(_: FormState, form: FormData): Promise<FormSta
     if (e instanceof AuthError) return { error: e.code };
     throw e;
   }
-  redirect("/for-me");
+  redirect("/");
 }
 
 export async function registerAction(_: FormState, form: FormData): Promise<FormState> {
@@ -164,7 +164,7 @@ export async function toggleSourceAction(form: FormData): Promise<void> {
 /** Admin: run a source once now ("test"). A successful test moves a configured source to "tested". Audited. */
 export async function testSourceAction(form: FormData): Promise<void> {
   const user = await currentUser();
-  if (!user || user.role !== "admin") redirect("/dashboard?denied=1");
+  if (!user || user.role !== "admin") redirect("/?denied=1");
   const sourceId = String(form.get("source_id") ?? "");
   if (!/^[0-9a-f-]{36}$/i.test(sourceId)) redirect("/admin/sources?error=not_found");
   const r = await runSource(sql(), sourceId, { trigger: "test", triggeredBy: user.id, contactEmail: env().MONITOR_CONTACT_EMAIL });
@@ -208,7 +208,7 @@ export async function setCompletenessAction(form: FormData): Promise<void> {
 
 export async function extractDocumentAction(form: FormData): Promise<void> {
   const user = await currentUser();
-  if (!user || user.role !== "admin") redirect("/dashboard?denied=1");
+  if (!user || user.role !== "admin") redirect("/?denied=1");
   const id = uuid(form.get("opportunity_id"));
   const url = String(form.get("url") ?? "");
   if (!id || !url.startsWith("https://")) redirect("/admin/review?error=invalid_input");

@@ -7,19 +7,22 @@ import { mkdirSync, writeFileSync } from "node:fs";
 
 const out = process.argv[2] ?? "static-snapshot";
 const BASE = "http://127.0.0.1:3000";
-const MAX_PAGES = Number(process.env.SNAPSHOT_MAX_PAGES ?? 110); // per language (artifact file limits)
+const MAX_PAGES = Number(process.env.SNAPSHOT_MAX_PAGES ?? 140); // per language (artifact file limits)
 mkdirSync(`${out}/assets`, { recursive: true });
 
 const CATS = ["employment", "entrepreneurship", "business", "agriculture", "education", "housing-energy", "family", "innovation", "environment", "tenders", "tax"];
+// Two paths (22 Oct 2026): the same five sections in each; the home page only offers the choice.
+const P = ["politis", "epixeiriseis"];
 const SEEDS = [
-  "/", "/opportunities", "/categories", "/for-me", "/guides", "/about", "/login", "/register",
-  ...CATS.map((c) => `/opportunities?cat=${c}`),
-  "/opportunities?scope=gr", "/opportunities?scope=eu", "/opportunities?applicant=organisations", "/opportunities?applicant=individuals", "/opportunities?status=open", "/opportunities?status=upcoming", "/opportunities?status=all",
-  "/guides/eligibility-labels", "/guides/applying-officially", "/guides/unemployment-benefit-application", "/lab/espa-example",
-  ...["step-by-step", "benefits", "business-grants", "employment-education", "housing-energy", "eu-programmes", "faq-glossary", "news-updates"].map((c) => `/guides?cat=${c}`),
+  "/", "/about", "/login", "/register",
+  ...P.flatMap((p) => ["eukairies", "nea", "odigoi", "jackal", "logariasmos"].map((x) => `/${p}/${x}`)),
+  ...P.flatMap((p) => CATS.map((c) => `/${p}/eukairies?cat=${c}`)),
+  ...P.flatMap((p) => ["status=open", "status=upcoming", "status=all", "scope=gr"].map((q) => `/${p}/eukairies?${q}`)),
+  ...P.flatMap((p) => ["eligibility-labels", "applying-officially"].map((g) => `/${p}/odigoi/${g}`)),
+  "/politis/odigoi/unemployment-benefit-application", "/lab/espa-example",
 ];
-const ALLOWED_PATH = /^\/lab\/espa-example$|^\/$|^\/opportunities(\/[0-9a-f-]{36})?$|^\/categories$|^\/guides(\/[\w-]+)?$|^\/about$|^\/for-me$|^\/login$|^\/register$/;
-const LIST_PARAMS = new Set(["cat", "status", "scope", "type", "audience", "applicant"]);
+const ALLOWED_PATH = /^\/lab\/espa-example$|^\/$|^\/(politis|epixeiriseis)\/(eukairies(\/[0-9a-f-]{36})?|nea|odigoi(\/[\w-]+)?|jackal|logariasmos)$|^\/about$|^\/login$|^\/register$/;
+const LIST_PARAMS = new Set(["cat", "status", "scope", "type", "audience", "industry"]);
 const DEFAULTS = { status: "current", page: "1" };
 
 /** Same normalisation as assets/snap.js: drop empty and default params, sort the rest. */
@@ -33,8 +36,8 @@ function crawlable(key) {
   if (!ALLOWED_PATH.test(u.pathname)) return false;
   const params = [...u.searchParams.keys()];
   if (params.length === 0) return true;
-  if (u.pathname === "/guides") return params.length === 1 && params[0] === "cat"; // guide categories
-  return u.pathname === "/opportunities" && params.length === 1 && LIST_PARAMS.has(params[0]); // single-filter views only
+  if (/\/odigoi$/.test(u.pathname)) return params.length === 1 && params[0] === "cat"; // guide categories
+  return /\/eukairies$/.test(u.pathname) && params.length === 1 && LIST_PARAMS.has(params[0]); // single-filter views only
 }
 const fileOf = (locale, key) => {
   if (key === "/") return `${locale}--index.html`;
@@ -64,14 +67,14 @@ const BANNER = {
   en: `<div class="snap-banner">Private preview — static copy from a test database, ${new Date().toLocaleDateString("en-GB", { timeZone: "Europe/Athens", day: "numeric", month: "short", year: "numeric" })}. Sign-in, saving, search and profile changes only work in the full app. Not an official government service. <a href="en--index.html">Home</a></div>`,
 };
 const DEMO_BANNER = {
-  el: `<div class="snap-banner demo">Επίδειξη: «Για Εμένα» για ένα δοκιμαστικό προφίλ (άνεργος/η, νοικοκυριό, ενδιαφέροντα: εργασία, οικογένεια). Ενδεικτικό — όχι πραγματικό πρόσωπο.</div>`,
-  en: `<div class="snap-banner demo">Demo: "For Me" for a made-up test profile (unemployed, household; interests: work, family). Illustration — not a real person.</div>`,
+  el: `<div class="snap-banner demo">Επίδειξη: «Ο λογαριασμός μου» (Πολίτης) για ένα δοκιμαστικό προφίλ (άνεργος/η, νοικοκυριό, ενδιαφέροντα: εργασία, οικογένεια). Ενδεικτικό — όχι πραγματικό πρόσωπο.</div>`,
+  en: `<div class="snap-banner demo">Demo: "My account" (citizen) for a made-up test profile (unemployed, household; interests: work, family). Illustration — not a real person.</div>`,
 };
 
 const pages = { el: new Map(), en: new Map() }; // key -> { html, file }
 const browser = await chromium.launch();
 
-const ONB_NAV = (l) => `<div class="snap-banner demo">${l === "el" ? "Διαδρομή «Για Εμένα»:" : "«For Me» journey:"} <a href="${l}--for-me-onboarding-1.html">${l === "el" ? "1. Περιγραφές" : "1. Descriptions"}</a> · <a href="${l}--for-me-onboarding-2.html">${l === "el" ? "2. Ερωτήσεις" : "2. Questions"}</a> · <a href="${l}--for-me-demo.html">${l === "el" ? "3. Αποτελέσματα" : "3. Results"}</a></div>`;
+const ONB_NAV = (l) => `<div class="snap-banner demo">${l === "el" ? "Διαδρομή «Ο λογαριασμός μου» (Πολίτης):" : "«My account» journey (citizen):"} <a href="${l}--account-onboarding-1.html">${l === "el" ? "1. Περιγραφές" : "1. Descriptions"}</a> · <a href="${l}--account-onboarding-2.html">${l === "el" ? "2. Ερωτήσεις" : "2. Questions"}</a> · <a href="${l}--account-demo.html">${l === "el" ? "3. Αποτελέσματα" : "3. Results"}</a></div>`;
 
 async function capture(page, ctx, locale) {
   // Plain HTML: drop Next's scripts and preloads; keep server-rendered markup and stylesheets.
@@ -114,19 +117,19 @@ for (const locale of ["el", "en"]) {
   // Step-by-step onboarding (17 Oct 2026): who → interests → work. Two of its screens are kept as demo pages.
   for (const v of ["employee_jobseeker", "household"]) await page.check(`input[name="personas"][value="${v}"]`);
   const who = await capture(page, ctx, locale);
-  pages[locale].set("#onb-who", { html: who.html.replace(/<body([^>]*)>/, `<body$1>${DEMO_BANNER[locale]}${ONB_NAV(locale)}`), file: `${locale}--for-me-onboarding-1.html` });
+  pages[locale].set("#onb-who", { html: who.html.replace(/<body([^>]*)>/, `<body$1>${DEMO_BANNER[locale]}${ONB_NAV(locale)}`), file: `${locale}--account-onboarding-1.html` });
   await page.click('[data-step="interests"]');
   for (const v of ["employment", "family"]) await page.check(`input[name="interests"][value="${v}"]`);
   await page.click('[data-step="work"]');
   await page.selectOption('select[name="employment_status"]', "unemployed").catch(() => {});
   const work = await capture(page, ctx, locale);
-  pages[locale].set("#onb-work", { html: work.html.replace(/<body([^>]*)>/, `<body$1>${DEMO_BANNER[locale]}${ONB_NAV(locale)}`), file: `${locale}--for-me-onboarding-2.html` });
+  pages[locale].set("#onb-work", { html: work.html.replace(/<body([^>]*)>/, `<body$1>${DEMO_BANNER[locale]}${ONB_NAV(locale)}`), file: `${locale}--account-onboarding-2.html` });
   await Promise.all([page.waitForResponse((r) => r.request().method() === "POST"), page.locator("form button.btn-primary").last().click()]);
   await page.waitForLoadState("networkidle");
-  await page.goto(BASE + "/for-me", { waitUntil: "networkidle" });
-  if (await page.locator(".empty").count()) throw new Error(`${locale}: demo profile did not save — For Me is empty`);
+  await page.goto(BASE + "/politis/logariasmos", { waitUntil: "networkidle" });
+  if (await page.locator(".empty").count()) throw new Error(`${locale}: demo profile did not save — the account page is empty`);
   const demo = await capture(page, ctx, locale);
-  pages[locale].set("#demo", { html: demo.html.replace(/<body([^>]*)>/, `<body$1>${DEMO_BANNER[locale]}${ONB_NAV(locale)}`), file: `${locale}--for-me-demo.html` });
+  pages[locale].set("#demo", { html: demo.html.replace(/<body([^>]*)>/, `<body$1>${DEMO_BANNER[locale]}${ONB_NAV(locale)}`), file: `${locale}--account-demo.html` });
   await ctx.close();
 }
 await browser.close();

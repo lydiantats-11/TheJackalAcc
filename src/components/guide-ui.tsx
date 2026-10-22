@@ -24,8 +24,8 @@ export function formatDay(d: string, locale: Locale, month: "short" | "long" = "
   return new Date(`${d}T12:00:00Z`).toLocaleDateString(locale === "el" ? "el-GR" : "en-GB", { day: "numeric", month, year: "numeric" });
 }
 
-export function GuideCard({ a, state, status, s, locale }: {
-  a: Article; state: VerificationState; status: GuideRecordStatus | null; s: SiteCopy; locale: Locale;
+export function GuideCard({ a, href, state, status, s, locale }: {
+  a: Article; href: string; state: VerificationState; status: GuideRecordStatus | null; s: SiteCopy; locale: Locale;
 }) {
   const cat = guideCategory(a.categories[0] ?? "");
   return (
@@ -34,7 +34,7 @@ export function GuideCard({ a, state, status, s, locale }: {
         <span className="icon-tile navy" aria-hidden="true"><Icon name={cat?.icon ?? "book"} /></span>
         {status && <ApplicationBadge status={status} s={s} locale={locale} />}
       </div>
-      <h3><Link href={`/guides/${a.slug}`}>{a.title[locale]}</Link></h3>
+      <h3><Link href={href}>{a.title[locale]}</Link></h3>
       <p className="small muted clamp-3" style={{ margin: 0 }}>{a.intro[locale]}</p>
       <div className="tags">
         {a.categories.map((c) => { const x = guideCategory(c); return x ? <span key={c} className="tag cat">{x.name[locale]}</span> : null; })}

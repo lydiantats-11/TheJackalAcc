@@ -14,6 +14,7 @@ import { matches } from "@/lib/text/search";
 import { compareListed, listingApplicants, listingHaystack } from "./discovery";
 import { applicantAudienceOf, type ApplicantAudience } from "./applicants";
 import { isHandChecked } from "./provenance";
+import type { Audience } from "./audience";
 
 import { statusGroup, type StatusGroup } from "./status-group";
 export { statusGroup, type StatusGroup };
@@ -38,9 +39,13 @@ export interface ListingFilters {
 }
 
 
-export async function loadListing(sql: postgres.Sql, f: ListingFilters = {}, now = new Date()): Promise<ListedOpportunity[]> {
+/**
+ * The listing of ONE path. The path is required and applied in the database query, so search, filters, news and
+ * personal results can only ever see records classified for that path (never the other path's, never HOLD records).
+ */
+export async function loadListing(sql: postgres.Sql, audience: Audience, f: ListingFilters = {}, now = new Date()): Promise<ListedOpportunity[]> {
   // Search runs here, not in SQL, so Greek accents, case and final sigma are folded the same way as in Guides.
-  const rows = await listOpportunities(sql, { industry: f.industry, limit: 5000 });
+  const rows = (await listOpportunities(sql, { industry: f.industry, limit: 5000, audience })).filter((r) => r.audience === audience);
   // Records imported from a manual review carry their applicant type as a reviewed requirement (not a hard-coded map).
   const reviewedIds = rows.filter((r) => r.publication_basis === "manual_review" && !r.external_key?.startsWith("manual:")).map((r) => r.id);
   const reviewedReqs = reviewedIds.length ? await loadRequirements(sql, reviewedIds) : new Map();

@@ -1,4 +1,4 @@
-// Design preview: screenshots of the redesigned MVP (desktop + phone, Greek + English), as a guest and as a demo user.
+// Design preview: screenshots of both paths (Πολίτες, Επιχειρήσεις & Επαγγελματίες), desktop + phone, Greek + English, as a guest and as a demo user.
 // Usage: node scripts/design-preview.mjs <outDir>   (app running on http://127.0.0.1:3000 with a seeded preview database)
 import { chromium } from "playwright";
 import { mkdirSync, writeFileSync } from "node:fs";
@@ -6,7 +6,7 @@ import { mkdirSync, writeFileSync } from "node:fs";
 const out = process.argv[2] ?? "design-preview";
 mkdirSync(out, { recursive: true });
 const BASE = "http://127.0.0.1:3000";
-const ids = JSON.parse(process.env.PREVIEW_IDS ?? "{}"); // { a21, eu, dam22, epiro: uuid }
+const ids = JSON.parse(process.env.PREVIEW_IDS ?? "{}"); // { a21, eu, dam22, epiro, crete: uuid }
 const shots = [];
 const errors = [];
 
@@ -34,38 +34,33 @@ for (const [vp, size] of [["desktop", { width: 1440, height: 900 }], ["phone", {
     const page = await ctx.newPage();
     page.on("pageerror", (e) => errors.push(`${vp}/${lang} pageerror: ${e.message}`));
     const p = `${vp}-${lang}`;
-    // guest screens
+    // guest screens — the two paths (owner decision, 22 Oct 2026): home chooser, then each path from list to official application
     await shoot(page, `${p}-01-home`, "/");
-    await shoot(page, `${p}-02-opportunities`, "/opportunities");
-    if (lang === "el") {
-      await shoot(page, `${p}-03-category-family`, "/opportunities?cat=family");
-      await shoot(page, `${p}-04-category-empty`, "/opportunities?cat=tenders");
-      await shoot(page, `${p}-05-categories`, "/categories");
+    for (const [k, slug] of [["c", "politis"], ["b", "epixeiriseis"]]) {
+      const P = `/${slug}`;
+      await shoot(page, `${p}-${k}1-opportunities`, `${P}/eukairies`);
+      const detail = k === "c" ? ids.a21 : ids.crete;
+      if (detail) await shoot(page, `${p}-${k}2-detail`, `${P}/eukairies/${detail}`);
+      await shoot(page, `${p}-${k}3-news`, `${P}/nea`);
+      await shoot(page, `${p}-${k}4-guides`, `${P}/odigoi`);
+      if (lang === "el" && vp === "desktop") {
+        await shoot(page, `${p}-${k}5-about`, `${P}/jackal`);
+        await shoot(page, `${p}-${k}6-account-guest`, `${P}/logariasmos`);
+        await shoot(page, `${p}-${k}7-search`, `${P}/eukairies?q=` + encodeURIComponent(k === "c" ? "επίδομα" : "επενδυτικ"));
+      }
     }
-    if (ids.a21) await shoot(page, `${p}-06-detail-greek`, `/opportunities/${ids.a21}`);
-    if (lang === "el" && ids.eu) await shoot(page, `${p}-07-detail-eu`, `/opportunities/${ids.eu}`);
     if (lang === "el") {
-      await shoot(page, `${p}-08-guides`, "/guides");
-      await shoot(page, `${p}-09-guide`, "/guides/a21");
-      await shoot(page, `${p}-10-about`, "/about");
-      await shoot(page, `${p}-11-for-me-guest`, "/for-me");
-      await shoot(page, `${p}-12-login`, "/login", { full: false });
-      await shoot(page, `${p}-13-not-found`, "/this-page-does-not-exist", { full: false });
+      await shoot(page, `${p}-c8-guide`, "/politis/odigoi/a21");
+      if (ids.epiro) await shoot(page, `${p}-c9-detail-nea-eykairia`, `/politis/eukairies/${ids.epiro}`);
+      if (ids.dam22) await shoot(page, `${p}-b8-detail-dam22`, `/epixeiriseis/eukairies/${ids.dam22}`);
+      // a citizen record opened under the business path is moved to its own path, with a notice
+      if (ids.a21 && vp === "desktop") await shoot(page, `${p}-x1-wrong-path-redirect`, `/epixeiriseis/eukairies/${ids.a21}`, { full: false });
+      if (vp === "desktop") {
+        await shoot(page, `${p}-x2-about-shared`, "/about");
+        await shoot(page, `${p}-x3-login`, "/login", { full: false });
+        await shoot(page, `${p}-x4-not-found`, "/this-page-does-not-exist", { full: false });
+      }
     }
-    if (lang === "en") { await shoot(page, `${p}-08-guides`, "/guides"); await shoot(page, `${p}-09-guide`, "/guides/a21"); }
-    if (lang === "el") {
-      await shoot(page, `${p}-18-guides-search`, "/guides?q=" + encodeURIComponent("επιδομα") + "#results");
-      await shoot(page, `${p}-19-guides-category`, "/guides?cat=housing-energy#results");
-      await shoot(page, `${p}-20-guides-empty`, "/guides?cat=news-updates#results");
-      await shoot(page, `${p}-21-guide-draft`, "/guides/eic");
-      await shoot(page, `${p}-26-research-espa`, "/lab/espa-example");
-      await shoot(page, `${p}-27-business-opportunities`, "/opportunities?applicant=organisations&status=current");
-      if (ids.dam22) await shoot(page, `${p}-28-detail-business-dam22`, `/opportunities/${ids.dam22}`);
-      if (ids.epiro) await shoot(page, `${p}-29-detail-nea-eykairia`, `/opportunities/${ids.epiro}`);
-      await shoot(page, `${p}-22-guide-explainer`, "/guides/applying-officially");
-      await shoot(page, `${p}-23-guide-unemployment-draft`, "/guides/unemployment-benefit-application");
-    }
-    if (vp === "phone") await shoot(page, `${p}-14-menu-open`, "/", { full: false, before: async (pg) => { await pg.click("details.mobile-nav > summary"); } });
     // demo user: register, answer a few questions as "User A" (unemployed, looking for benefits), view For Me
     if (vp === "desktop" || lang === "el") {
       const email = `demo-${vp}-${lang}-${Date.now()}@preview.example`;
@@ -84,9 +79,10 @@ for (const [vp, size] of [["desktop", { width: 1440, height: 900 }], ["phone", {
       if (lang === "el") await shoot(page, `${p}-25-onboarding-work`, null).catch(() => {});
       await page.selectOption('select[name="employment_status"]', "unemployed").catch(() => errors.push("employment_status select missing"));
       await Promise.all([page.waitForLoadState("networkidle"), page.locator("form button.btn-primary").last().click()]);
-      await shoot(page, `${p}-15-profile`, "/profile");
-      await shoot(page, `${p}-16-for-me`, "/for-me");
-      if (ids.a21) await shoot(page, `${p}-17-detail-logged-in`, `/opportunities/${ids.a21}`);
+      await shoot(page, `${p}-15-profile`, "/profile?path=politis");
+      await shoot(page, `${p}-16-account-citizen`, "/politis/logariasmos");
+      if (vp === "desktop") await shoot(page, `${p}-16b-account-business`, "/epixeiriseis/logariasmos");
+      if (ids.a21) await shoot(page, `${p}-17-detail-logged-in`, `/politis/eukairies/${ids.a21}`);
     }
     await ctx.close();
   }

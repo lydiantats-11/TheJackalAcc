@@ -10,6 +10,7 @@ import { RecordStatusBadge, SyntheticLabel } from "./badges";
 import { cardAmount } from "./opportunity-details";
 import { displayAuthority, displayTitle } from "@/lib/site/verified";
 import { TimeLeftPill } from "./brief";
+import { paths } from "@/lib/site/audience";
 
 /** Short deadline for cards: date (and time when stated), naming Brussels time only when it applies. */
 function cardDeadline(o: ListedOpportunity["row"], t: Dictionary, s: SiteCopy, locale: Locale) {
@@ -38,15 +39,16 @@ export function OpportunityCard({ item, t, s, locale, extra }: {
   const guide = guideOf(o);
   const title = displayTitle(o, locale);
   const amount = cardAmount(o, t, s, locale);
+  // Listings only ever contain records of one path (loadListing), so the record's own path is the page's path.
+  const aud = o.audience ?? "citizen";
   return (
     <article className="opp-card">
       <div className="card-status"><RecordStatusBadge record={item.record} s={s} locale={locale} /><TimeLeftPill input={{ record: item.record, closesAt: o.closes_at, opensAt: o.opens_at, deadlineKind: o.deadline_kind, hasGuide: !!guide }} s={s} locale={locale} now={new Date()} /></div>
-      <h3 lang={title.lang}><Link href={`/opportunities/${o.id}`}>{title.text}</Link></h3>
+      <h3 lang={title.lang}><Link href={paths.opportunity(aud, o.id)}>{title.text}</Link></h3>
       {title.codeOnly && <p className="xs muted" style={{ margin: "-6px 0 0" }}>{s.card.codeOnly}</p>}
       <div className="tags">
         {cat && <span className="tag cat">{cat.name[locale]}</span>}
         {item.support !== "unconfirmed" && <span className="tag">{s.supportType[item.support]}</span>}
-        <span className="tag navy">{s.card.applicant[item.applicant]}</span>
         {locale === "el" && title.lang === "en" && <span className="tag en" lang="el">{s.card.inEnglish}</span>}
         {o.is_synthetic && <SyntheticLabel t={t} />}
       </div>
@@ -58,7 +60,7 @@ export function OpportunityCard({ item, t, s, locale, extra }: {
       </dl>
       <div className="foot">
         <span>{checkedLine(o, s, locale)}</span>
-        {guide && <Link href={`/guides/${guide}`}>{s.opps.guide} →</Link>}
+        {guide && <Link href={paths.guide(aud, guide)}>{s.opps.guide} →</Link>}
       </div>
     </article>
   );

@@ -10,7 +10,7 @@ import { loginAction } from "../actions";
 export const generateMetadata = titled(({ t }) => t.nav.login);
 
 export default async function LoginPage() {
-  if (await currentUser()) redirect("/for-me");
+  if (await currentUser()) redirect("/");
   const { t, locale } = await getDict();
   const s = SITE[locale];
   return (
