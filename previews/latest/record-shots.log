@@ -8,13 +8,13 @@
   {
     "key": "manual:art5a",
     "applyButton": true,
-    "mentions31March": true,
+    "mentions31March": false,
     "pending": []
   },
   {
     "key": "manual:art5b",
     "applyButton": true,
-    "mentions31March": true,
+    "mentions31March": false,
     "pending": []
   },
   {
@@ -39,7 +39,10 @@
     "key": "opske:23486",
     "applyButton": true,
     "mentions31March": false,
-    "pending": []
+    "pending": [
+      "Υπό επιβεβαίωση",
+      "Προϋπολογισμός έργου: Υπό επιβεβαίωση"
+    ]
   },
   {
     "key": "opske:24506",

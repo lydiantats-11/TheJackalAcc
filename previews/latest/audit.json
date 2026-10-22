@@ -126,19 +126,7 @@
       "lang": "el",
       "errors": []
     },
-    "el-desktop /politis/eukairies/c8661db5-9dd6-49dc-9f8e-ed2bbce56435": {
-      "status": 200,
-      "title": "Άρθρο 5Α ΚΦΕ — εναλλακτική φορολόγηση επενδυτών · Jackal Accountant",
-      "lang": "el",
-      "errors": []
-    },
-    "el-desktop /politis/odigoi/art5a": {
-      "status": 200,
-      "title": "Άρθρο 5Α ΚΦΕ — εναλλακτική φορολόγηση επενδυτών · Jackal Accountant",
-      "lang": "el",
-      "errors": []
-    },
-    "el-desktop /politis/eukairies/97602771-cf70-4a76-8208-53464c9f4a7b": {
+    "el-desktop /politis/eukairies/89585061-7245-4356-b79a-8a197014d356": {
       "status": 200,
       "title": "Άρθρο 5Β ΚΦΕ — 7% φόρος για συνταξιούχους με σύνταξη εξωτερικού · Jackal Accountant",
       "lang": "el",
@@ -150,7 +138,31 @@
       "lang": "el",
       "errors": []
     },
-    "el-desktop /politis/eukairies/3f59dcab-2c92-48de-841e-74edebb83904": {
+    "el-desktop /politis/eukairies/804c5a83-d8c3-4034-bc97-db9f2e78025c": {
+      "status": 200,
+      "title": "Α21 — Επίδομα παιδιού · Jackal Accountant",
+      "lang": "el",
+      "errors": []
+    },
+    "el-desktop /politis/odigoi/a21": {
+      "status": 200,
+      "title": "Α21 — Επίδομα παιδιού · Jackal Accountant",
+      "lang": "el",
+      "errors": []
+    },
+    "el-desktop /politis/eukairies/e84a98aa-e1de-42ab-b39f-bc5c6022eccb": {
+      "status": 200,
+      "title": "Άρθρο 5Α ΚΦΕ — εναλλακτική φορολόγηση επενδυτών · Jackal Accountant",
+      "lang": "el",
+      "errors": []
+    },
+    "el-desktop /politis/odigoi/art5a": {
+      "status": 200,
+      "title": "Άρθρο 5Α ΚΦΕ — εναλλακτική φορολόγηση επενδυτών · Jackal Accountant",
+      "lang": "el",
+      "errors": []
+    },
+    "el-desktop /politis/eukairies/4233d562-2b50-4912-9ded-cb5e724a6cf5": {
       "status": 200,
       "title": "Άρθρο 5Γ ΚΦΕ — 50% απαλλαγή φόρου για όσους μεταφέρουν τη φορολογική κατοικία τους στην Ελλάδα · Jackal Accountant",
       "lang": "el",
@@ -162,7 +174,7 @@
       "lang": "el",
       "errors": []
     },
-    "el-desktop /politis/eukairies/1af425a7-825c-4e5d-8d8b-ea09f193f693": {
+    "el-desktop /politis/eukairies/dfa9e31e-15ce-46cc-9870-6e801e2101fd": {
       "status": 200,
       "title": "Τακτική επιδότηση ανεργίας · Jackal Accountant",
       "lang": "el",
@@ -174,15 +186,15 @@
       "lang": "el",
       "errors": []
     },
-    "el-desktop /politis/eukairies/dec9e741-eaac-4000-af55-4b797702cf81": {
+    "el-desktop /politis/eukairies/020e037d-0622-4b33-a30d-3d702e38bad8": {
       "status": 200,
-      "title": "Α21 — Επίδομα παιδιού · Jackal Accountant",
+      "title": "DiscoverEU — δωρεάν ταξιδιωτικό πάσο για 18χρονους · Jackal Accountant",
       "lang": "el",
       "errors": []
     },
-    "el-desktop /politis/odigoi/a21": {
+    "el-desktop /politis/odigoi/discovereu": {
       "status": 200,
-      "title": "Α21 — Επίδομα παιδιού · Jackal Accountant",
+      "title": "DiscoverEU — δωρεάν ταξιδιωτικό πάσο για 18χρονους · Jackal Accountant",
       "lang": "el",
       "errors": []
     },
@@ -216,12 +228,6 @@
       "lang": "el",
       "errors": []
     },
-    "el-desktop /politis/odigoi/discovereu": {
-      "status": 200,
-      "title": "DiscoverEU — δωρεάν ταξιδιωτικό πάσο για 18χρονους · Jackal Accountant",
-      "lang": "el",
-      "errors": []
-    },
     "el-desktop /politis/odigoi/spiti2": {
       "status": 200,
       "title": "«Σπίτι μου ΙΙ» — δάνεια πρώτης κατοικίας · Jackal Accountant",
@@ -252,61 +258,61 @@
       "lang": "el",
       "errors": []
     },
-    "el-desktop /epixeiriseis/eukairies/9994dff9-5db7-4670-bda2-50df26b6181e": {
+    "el-desktop /epixeiriseis/eukairies/544d6490-426d-4b65-abe2-3ba7ac7922e7": {
       "status": 200,
       "title": "Ενίσχυση επενδυτικών σχεδίων νέων και υπό σύσταση ΜΜΕ που υλοποιούνται στις ηπειρωτικές περιοχές ΕΣΔΙΜ (ΔΑΜ21) · Jackal Accountant",
       "lang": "el",
       "errors": []
     },
-    "el-desktop /epixeiriseis/eukairies/178e28b9-882f-4c7e-8f92-d43c43dda093": {
+    "el-desktop /epixeiriseis/eukairies/9d6e69fe-bfe2-4e18-aa63-ce740f884c4e": {
       "status": 200,
       "title": "Ενίσχυση επενδυτικών σχεδίων παραγωγικών επενδύσεων νέων και υπό σύσταση μεγάλων επιχειρήσεων που υλοποιούνται στις ηπειρωτικές περιοχές ΕΣΔΙΜ (ΔΑΜ24) · Jackal Accountant",
       "lang": "el",
       "errors": []
     },
-    "el-desktop /epixeiriseis/eukairies/d0f1a7c3-7057-4047-b2dc-d7693d991962": {
+    "el-desktop /epixeiriseis/eukairies/a5083d51-ef57-4412-a629-2909aa6cb97f": {
       "status": 200,
       "title": "Υποστήριξη νέων καινοτόμων επιχειρήσεων στην Περιφέρεια Κρήτης («Καινοτομώ στην Κρήτη») · Jackal Accountant",
       "lang": "el",
       "errors": []
     },
-    "el-desktop /epixeiriseis/eukairies/ee53d2af-fe61-4a18-ba93-42c70022dfc2": {
+    "el-desktop /epixeiriseis/eukairies/197cc312-a744-4a2b-8a8a-97b728bbb42b": {
       "status": 200,
       "title": "«Επιχειρώ Στερεά» · Jackal Accountant",
       "lang": "el",
       "errors": []
     },
-    "el-desktop /epixeiriseis/eukairies/9539c753-e646-454f-b4af-db952243a6ec": {
+    "el-desktop /epixeiriseis/eukairies/e9ac9800-cbc8-413b-994b-f27b2ecf2477": {
       "status": 200,
       "title": "Ενίσχυση επιχειρηματικότητας στους τομείς προτεραιότητας της Περιφέρειας Νοτίου Αιγαίου · Jackal Accountant",
       "lang": "el",
       "errors": []
     },
-    "el-desktop /epixeiriseis/eukairies/1fbcfad9-cc11-4219-8668-7ddbf7c1f2cc": {
+    "el-desktop /epixeiriseis/eukairies/4e99d22a-3033-4766-bc2a-8f0e8ebc59f9": {
       "status": 200,
       "title": "Ενίσχυση επενδυτικών σχεδίων παραγωγικών επενδύσεων υφιστάμενων μεγάλων επιχειρήσεων που υλοποιούνται στις ηπειρωτικές περιοχές ΕΣΔΙΜ (ΔΑΜ23) · Jackal Accountant",
       "lang": "el",
       "errors": []
     },
-    "el-desktop /epixeiriseis/eukairies/5d450ccf-a208-491c-a9e7-c3183720681e": {
+    "el-desktop /epixeiriseis/eukairies/8ef96080-d19f-431f-9343-c9c02f5c3b8c": {
       "status": 200,
       "title": "Ενίσχυση επενδυτικών σχεδίων Υφιστάμενων ΜΜΕ που υλοποιούνται στις ηπειρωτικές περιοχές ΕΣΔΙΜ (ΔΑΜ22) · Jackal Accountant",
       "lang": "el",
       "errors": []
     },
-    "el-desktop /epixeiriseis/eukairies/9b138dd8-a05e-42ce-89ee-29cac5bb10fa": {
+    "el-desktop /epixeiriseis/eukairies/371af427-ca75-4b0b-9811-da21f1a3bc58": {
       "status": 200,
       "title": "Ενίσχυση επιχειρηματικότητας με έμφαση στον τουρισμό και τη δεύτερη μεταποίηση αγροτικών προϊόντων (Χίος, Μυτιλήνη, μικρά νησιά — Βόρειο Αιγαίο) · Jackal Accountant",
       "lang": "el",
       "errors": []
     },
-    "el-desktop /epixeiriseis/eukairies/915fe150-ebdd-4e06-b0a2-942de1ce537b": {
+    "el-desktop /epixeiriseis/eukairies/a82941d9-64c0-4481-b521-bdb1e9e0c159": {
       "status": 200,
       "title": "Ενίσχυση συνεργασίας μεταξύ επιχειρήσεων και ερευνητικών φορέων στους τομείς προτεραιότητας της Περιφέρειας Νοτίου Αιγαίου · Jackal Accountant",
       "lang": "el",
       "errors": []
     },
-    "el-desktop /epixeiriseis/eukairies/7a5a1cbe-2fe5-47c8-961e-a69979bdef78": {
+    "el-desktop /epixeiriseis/eukairies/84d57c7e-a7dc-4294-bcad-55f1177a322a": {
       "status": 200,
       "title": "Συμπράξεις Έρευνας και Καινοτομίας στην Αττική · Jackal Accountant",
       "lang": "el",
@@ -324,25 +330,19 @@
       "lang": "el",
       "errors": []
     },
-    "el-desktop /politis/eukairies/41f49556-aa05-457c-8f48-250d546192f3": {
+    "el-desktop /politis/eukairies/1016b1cc-569e-4b35-81f2-f42e9001a113": {
       "status": 200,
       "title": "Νέα Ευκαιρία: Στήριξη ανέργων και μισθωτών μερικής απασχόλησης για έναρξη επαγγελματικής δραστηριότητας στην Ήπειρο · Jackal Accountant",
       "lang": "el",
       "errors": []
     },
-    "el-desktop /politis/eukairies/cdff3a35-cefd-4c4a-aa21-a9fda388f2d1": {
-      "status": 200,
-      "title": "DiscoverEU — δωρεάν ταξιδιωτικό πάσο για 18χρονους · Jackal Accountant",
-      "lang": "el",
-      "errors": []
-    },
-    "el-desktop /politis/eukairies/ab01d62d-20fe-4dd4-a9e4-af1e267f18bd": {
+    "el-desktop /politis/eukairies/6c6817e9-074b-4dbc-815d-edd8646477ac": {
       "status": 200,
       "title": "«Σπίτι μου ΙΙ» — δάνεια πρώτης κατοικίας · Jackal Accountant",
       "lang": "el",
       "errors": []
     },
-    "el-desktop /politis/eukairies/b009f4ee-07e0-410a-a101-982dd2f2c1d2": {
+    "el-desktop /politis/eukairies/e5cceafe-fc55-4081-be6a-6a0066518af4": {
       "status": 200,
       "title": "Φοιτητικό στεγαστικό επίδομα · Jackal Accountant",
       "lang": "el",
@@ -474,19 +474,7 @@
       "lang": "en",
       "errors": []
     },
-    "en-desktop /politis/eukairies/c8661db5-9dd6-49dc-9f8e-ed2bbce56435": {
-      "status": 200,
-      "title": "Article 5A — alternative taxation for investors · Jackal Accountant",
-      "lang": "en",
-      "errors": []
-    },
-    "en-desktop /politis/odigoi/art5a": {
-      "status": 200,
-      "title": "Article 5A — alternative taxation for investors · Jackal Accountant",
-      "lang": "en",
-      "errors": []
-    },
-    "en-desktop /politis/eukairies/97602771-cf70-4a76-8208-53464c9f4a7b": {
+    "en-desktop /politis/eukairies/89585061-7245-4356-b79a-8a197014d356": {
       "status": 200,
       "title": "Article 5B — 7% tax for pensioners with a foreign pension · Jackal Accountant",
       "lang": "en",
@@ -498,7 +486,31 @@
       "lang": "en",
       "errors": []
     },
-    "en-desktop /politis/eukairies/3f59dcab-2c92-48de-841e-74edebb83904": {
+    "en-desktop /politis/eukairies/804c5a83-d8c3-4034-bc97-db9f2e78025c": {
+      "status": 200,
+      "title": "A21 — Child benefit · Jackal Accountant",
+      "lang": "en",
+      "errors": []
+    },
+    "en-desktop /politis/odigoi/a21": {
+      "status": 200,
+      "title": "A21 — Child benefit · Jackal Accountant",
+      "lang": "en",
+      "errors": []
+    },
+    "en-desktop /politis/eukairies/e84a98aa-e1de-42ab-b39f-bc5c6022eccb": {
+      "status": 200,
+      "title": "Article 5A — alternative taxation for investors · Jackal Accountant",
+      "lang": "en",
+      "errors": []
+    },
+    "en-desktop /politis/odigoi/art5a": {
+      "status": 200,
+      "title": "Article 5A — alternative taxation for investors · Jackal Accountant",
+      "lang": "en",
+      "errors": []
+    },
+    "en-desktop /politis/eukairies/4233d562-2b50-4912-9ded-cb5e724a6cf5": {
       "status": 200,
       "title": "Article 5C — 50% income-tax exemption for people moving tax residence to Greece · Jackal Accountant",
       "lang": "en",
@@ -510,7 +522,7 @@
       "lang": "en",
       "errors": []
     },
-    "en-desktop /politis/eukairies/1af425a7-825c-4e5d-8d8b-ea09f193f693": {
+    "en-desktop /politis/eukairies/dfa9e31e-15ce-46cc-9870-6e801e2101fd": {
       "status": 200,
       "title": "Regular unemployment benefit · Jackal Accountant",
       "lang": "en",
@@ -522,15 +534,15 @@
       "lang": "en",
       "errors": []
     },
-    "en-desktop /politis/eukairies/dec9e741-eaac-4000-af55-4b797702cf81": {
+    "en-desktop /politis/eukairies/020e037d-0622-4b33-a30d-3d702e38bad8": {
       "status": 200,
-      "title": "A21 — Child benefit · Jackal Accountant",
+      "title": "DiscoverEU — free travel pass for 18-year-olds · Jackal Accountant",
       "lang": "en",
       "errors": []
     },
-    "en-desktop /politis/odigoi/a21": {
+    "en-desktop /politis/odigoi/discovereu": {
       "status": 200,
-      "title": "A21 — Child benefit · Jackal Accountant",
+      "title": "DiscoverEU — free travel pass for 18-year-olds · Jackal Accountant",
       "lang": "en",
       "errors": []
     },
@@ -564,12 +576,6 @@
       "lang": "en",
       "errors": []
     },
-    "en-desktop /politis/odigoi/discovereu": {
-      "status": 200,
-      "title": "DiscoverEU — free travel pass for 18-year-olds · Jackal Accountant",
-      "lang": "en",
-      "errors": []
-    },
     "en-desktop /politis/odigoi/spiti2": {
       "status": 200,
       "title": "\"Spiti mou II\" — first-home loans · Jackal Accountant",
@@ -600,61 +606,61 @@
       "lang": "en",
       "errors": []
     },
-    "en-desktop /epixeiriseis/eukairies/9994dff9-5db7-4670-bda2-50df26b6181e": {
+    "en-desktop /epixeiriseis/eukairies/544d6490-426d-4b65-abe2-3ba7ac7922e7": {
       "status": 200,
       "title": "Ενίσχυση επενδυτικών σχεδίων νέων και υπό σύσταση ΜΜΕ που υλοποιούνται στις ηπειρωτικές περιοχές ΕΣΔΙΜ (ΔΑΜ21) · Jackal Accountant",
       "lang": "en",
       "errors": []
     },
-    "en-desktop /epixeiriseis/eukairies/178e28b9-882f-4c7e-8f92-d43c43dda093": {
+    "en-desktop /epixeiriseis/eukairies/9d6e69fe-bfe2-4e18-aa63-ce740f884c4e": {
       "status": 200,
       "title": "Ενίσχυση επενδυτικών σχεδίων παραγωγικών επενδύσεων νέων και υπό σύσταση μεγάλων επιχειρήσεων που υλοποιούνται στις ηπειρωτικές περιοχές ΕΣΔΙΜ (ΔΑΜ24) · Jackal Accountant",
       "lang": "en",
       "errors": []
     },
-    "en-desktop /epixeiriseis/eukairies/d0f1a7c3-7057-4047-b2dc-d7693d991962": {
+    "en-desktop /epixeiriseis/eukairies/a5083d51-ef57-4412-a629-2909aa6cb97f": {
       "status": 200,
       "title": "Υποστήριξη νέων καινοτόμων επιχειρήσεων στην Περιφέρεια Κρήτης («Καινοτομώ στην Κρήτη») · Jackal Accountant",
       "lang": "en",
       "errors": []
     },
-    "en-desktop /epixeiriseis/eukairies/ee53d2af-fe61-4a18-ba93-42c70022dfc2": {
+    "en-desktop /epixeiriseis/eukairies/197cc312-a744-4a2b-8a8a-97b728bbb42b": {
       "status": 200,
       "title": "«Επιχειρώ Στερεά» · Jackal Accountant",
       "lang": "en",
       "errors": []
     },
-    "en-desktop /epixeiriseis/eukairies/9539c753-e646-454f-b4af-db952243a6ec": {
+    "en-desktop /epixeiriseis/eukairies/e9ac9800-cbc8-413b-994b-f27b2ecf2477": {
       "status": 200,
       "title": "Ενίσχυση επιχειρηματικότητας στους τομείς προτεραιότητας της Περιφέρειας Νοτίου Αιγαίου · Jackal Accountant",
       "lang": "en",
       "errors": []
     },
-    "en-desktop /epixeiriseis/eukairies/1fbcfad9-cc11-4219-8668-7ddbf7c1f2cc": {
+    "en-desktop /epixeiriseis/eukairies/4e99d22a-3033-4766-bc2a-8f0e8ebc59f9": {
       "status": 200,
       "title": "Ενίσχυση επενδυτικών σχεδίων παραγωγικών επενδύσεων υφιστάμενων μεγάλων επιχειρήσεων που υλοποιούνται στις ηπειρωτικές περιοχές ΕΣΔΙΜ (ΔΑΜ23) · Jackal Accountant",
       "lang": "en",
       "errors": []
     },
-    "en-desktop /epixeiriseis/eukairies/5d450ccf-a208-491c-a9e7-c3183720681e": {
+    "en-desktop /epixeiriseis/eukairies/8ef96080-d19f-431f-9343-c9c02f5c3b8c": {
       "status": 200,
       "title": "Ενίσχυση επενδυτικών σχεδίων Υφιστάμενων ΜΜΕ που υλοποιούνται στις ηπειρωτικές περιοχές ΕΣΔΙΜ (ΔΑΜ22) · Jackal Accountant",
       "lang": "en",
       "errors": []
     },
-    "en-desktop /epixeiriseis/eukairies/9b138dd8-a05e-42ce-89ee-29cac5bb10fa": {
+    "en-desktop /epixeiriseis/eukairies/371af427-ca75-4b0b-9811-da21f1a3bc58": {
       "status": 200,
       "title": "Ενίσχυση επιχειρηματικότητας με έμφαση στον τουρισμό και τη δεύτερη μεταποίηση αγροτικών προϊόντων (Χίος, Μυτιλήνη, μικρά νησιά — Βόρειο Αιγαίο) · Jackal Accountant",
       "lang": "en",
       "errors": []
     },
-    "en-desktop /epixeiriseis/eukairies/915fe150-ebdd-4e06-b0a2-942de1ce537b": {
+    "en-desktop /epixeiriseis/eukairies/a82941d9-64c0-4481-b521-bdb1e9e0c159": {
       "status": 200,
       "title": "Ενίσχυση συνεργασίας μεταξύ επιχειρήσεων και ερευνητικών φορέων στους τομείς προτεραιότητας της Περιφέρειας Νοτίου Αιγαίου · Jackal Accountant",
       "lang": "en",
       "errors": []
     },
-    "en-desktop /epixeiriseis/eukairies/7a5a1cbe-2fe5-47c8-961e-a69979bdef78": {
+    "en-desktop /epixeiriseis/eukairies/84d57c7e-a7dc-4294-bcad-55f1177a322a": {
       "status": 200,
       "title": "Συμπράξεις Έρευνας και Καινοτομίας στην Αττική · Jackal Accountant",
       "lang": "en",
@@ -672,25 +678,19 @@
       "lang": "en",
       "errors": []
     },
-    "en-desktop /politis/eukairies/41f49556-aa05-457c-8f48-250d546192f3": {
+    "en-desktop /politis/eukairies/1016b1cc-569e-4b35-81f2-f42e9001a113": {
       "status": 200,
       "title": "Νέα Ευκαιρία: Στήριξη ανέργων και μισθωτών μερικής απασχόλησης για έναρξη επαγγελματικής δραστηριότητας στην Ήπειρο · Jackal Accountant",
       "lang": "en",
       "errors": []
     },
-    "en-desktop /politis/eukairies/cdff3a35-cefd-4c4a-aa21-a9fda388f2d1": {
-      "status": 200,
-      "title": "DiscoverEU — free travel pass for 18-year-olds · Jackal Accountant",
-      "lang": "en",
-      "errors": []
-    },
-    "en-desktop /politis/eukairies/ab01d62d-20fe-4dd4-a9e4-af1e267f18bd": {
+    "en-desktop /politis/eukairies/6c6817e9-074b-4dbc-815d-edd8646477ac": {
       "status": 200,
       "title": "\"Spiti mou II\" — first-home loans · Jackal Accountant",
       "lang": "en",
       "errors": []
     },
-    "en-desktop /politis/eukairies/b009f4ee-07e0-410a-a101-982dd2f2c1d2": {
+    "en-desktop /politis/eukairies/e5cceafe-fc55-4081-be6a-6a0066518af4": {
       "status": 200,
       "title": "Student housing allowance · Jackal Accountant",
       "lang": "en",
@@ -822,19 +822,7 @@
       "lang": "el",
       "errors": []
     },
-    "el-phone /politis/eukairies/c8661db5-9dd6-49dc-9f8e-ed2bbce56435": {
-      "status": 200,
-      "title": "Άρθρο 5Α ΚΦΕ — εναλλακτική φορολόγηση επενδυτών · Jackal Accountant",
-      "lang": "el",
-      "errors": []
-    },
-    "el-phone /politis/odigoi/art5a": {
-      "status": 200,
-      "title": "Άρθρο 5Α ΚΦΕ — εναλλακτική φορολόγηση επενδυτών · Jackal Accountant",
-      "lang": "el",
-      "errors": []
-    },
-    "el-phone /politis/eukairies/97602771-cf70-4a76-8208-53464c9f4a7b": {
+    "el-phone /politis/eukairies/89585061-7245-4356-b79a-8a197014d356": {
       "status": 200,
       "title": "Άρθρο 5Β ΚΦΕ — 7% φόρος για συνταξιούχους με σύνταξη εξωτερικού · Jackal Accountant",
       "lang": "el",
@@ -846,7 +834,31 @@
       "lang": "el",
       "errors": []
     },
-    "el-phone /politis/eukairies/3f59dcab-2c92-48de-841e-74edebb83904": {
+    "el-phone /politis/eukairies/804c5a83-d8c3-4034-bc97-db9f2e78025c": {
+      "status": 200,
+      "title": "Α21 — Επίδομα παιδιού · Jackal Accountant",
+      "lang": "el",
+      "errors": []
+    },
+    "el-phone /politis/odigoi/a21": {
+      "status": 200,
+      "title": "Α21 — Επίδομα παιδιού · Jackal Accountant",
+      "lang": "el",
+      "errors": []
+    },
+    "el-phone /politis/eukairies/e84a98aa-e1de-42ab-b39f-bc5c6022eccb": {
+      "status": 200,
+      "title": "Άρθρο 5Α ΚΦΕ — εναλλακτική φορολόγηση επενδυτών · Jackal Accountant",
+      "lang": "el",
+      "errors": []
+    },
+    "el-phone /politis/odigoi/art5a": {
+      "status": 200,
+      "title": "Άρθρο 5Α ΚΦΕ — εναλλακτική φορολόγηση επενδυτών · Jackal Accountant",
+      "lang": "el",
+      "errors": []
+    },
+    "el-phone /politis/eukairies/4233d562-2b50-4912-9ded-cb5e724a6cf5": {
       "status": 200,
       "title": "Άρθρο 5Γ ΚΦΕ — 50% απαλλαγή φόρου για όσους μεταφέρουν τη φορολογική κατοικία τους στην Ελλάδα · Jackal Accountant",
       "lang": "el",
@@ -858,7 +870,7 @@
       "lang": "el",
       "errors": []
     },
-    "el-phone /politis/eukairies/1af425a7-825c-4e5d-8d8b-ea09f193f693": {
+    "el-phone /politis/eukairies/dfa9e31e-15ce-46cc-9870-6e801e2101fd": {
       "status": 200,
       "title": "Τακτική επιδότηση ανεργίας · Jackal Accountant",
       "lang": "el",
@@ -870,15 +882,15 @@
       "lang": "el",
       "errors": []
     },
-    "el-phone /politis/eukairies/dec9e741-eaac-4000-af55-4b797702cf81": {
+    "el-phone /politis/eukairies/020e037d-0622-4b33-a30d-3d702e38bad8": {
       "status": 200,
-      "title": "Α21 — Επίδομα παιδιού · Jackal Accountant",
+      "title": "DiscoverEU — δωρεάν ταξιδιωτικό πάσο για 18χρονους · Jackal Accountant",
       "lang": "el",
       "errors": []
     },
-    "el-phone /politis/odigoi/a21": {
+    "el-phone /politis/odigoi/discovereu": {
       "status": 200,
-      "title": "Α21 — Επίδομα παιδιού · Jackal Accountant",
+      "title": "DiscoverEU — δωρεάν ταξιδιωτικό πάσο για 18χρονους · Jackal Accountant",
       "lang": "el",
       "errors": []
     },
@@ -912,12 +924,6 @@
       "lang": "el",
       "errors": []
     },
-    "el-phone /politis/odigoi/discovereu": {
-      "status": 200,
-      "title": "DiscoverEU — δωρεάν ταξιδιωτικό πάσο για 18χρονους · Jackal Accountant",
-      "lang": "el",
-      "errors": []
-    },
     "el-phone /politis/odigoi/spiti2": {
       "status": 200,
       "title": "«Σπίτι μου ΙΙ» — δάνεια πρώτης κατοικίας · Jackal Accountant",
@@ -948,61 +954,61 @@
       "lang": "el",
       "errors": []
     },
-    "el-phone /epixeiriseis/eukairies/9994dff9-5db7-4670-bda2-50df26b6181e": {
+    "el-phone /epixeiriseis/eukairies/544d6490-426d-4b65-abe2-3ba7ac7922e7": {
       "status": 200,
       "title": "Ενίσχυση επενδυτικών σχεδίων νέων και υπό σύσταση ΜΜΕ που υλοποιούνται στις ηπειρωτικές περιοχές ΕΣΔΙΜ (ΔΑΜ21) · Jackal Accountant",
       "lang": "el",
       "errors": []
     },
-    "el-phone /epixeiriseis/eukairies/178e28b9-882f-4c7e-8f92-d43c43dda093": {
+    "el-phone /epixeiriseis/eukairies/9d6e69fe-bfe2-4e18-aa63-ce740f884c4e": {
       "status": 200,
       "title": "Ενίσχυση επενδυτικών σχεδίων παραγωγικών επενδύσεων νέων και υπό σύσταση μεγάλων επιχειρήσεων που υλοποιούνται στις ηπειρωτικές περιοχές ΕΣΔΙΜ (ΔΑΜ24) · Jackal Accountant",
       "lang": "el",
       "errors": []
     },
-    "el-phone /epixeiriseis/eukairies/d0f1a7c3-7057-4047-b2dc-d7693d991962": {
+    "el-phone /epixeiriseis/eukairies/a5083d51-ef57-4412-a629-2909aa6cb97f": {
       "status": 200,
       "title": "Υποστήριξη νέων καινοτόμων επιχειρήσεων στην Περιφέρεια Κρήτης («Καινοτομώ στην Κρήτη») · Jackal Accountant",
       "lang": "el",
       "errors": []
     },
-    "el-phone /epixeiriseis/eukairies/ee53d2af-fe61-4a18-ba93-42c70022dfc2": {
+    "el-phone /epixeiriseis/eukairies/197cc312-a744-4a2b-8a8a-97b728bbb42b": {
       "status": 200,
       "title": "«Επιχειρώ Στερεά» · Jackal Accountant",
       "lang": "el",
       "errors": []
     },
-    "el-phone /epixeiriseis/eukairies/9539c753-e646-454f-b4af-db952243a6ec": {
+    "el-phone /epixeiriseis/eukairies/e9ac9800-cbc8-413b-994b-f27b2ecf2477": {
       "status": 200,
       "title": "Ενίσχυση επιχειρηματικότητας στους τομείς προτεραιότητας της Περιφέρειας Νοτίου Αιγαίου · Jackal Accountant",
       "lang": "el",
       "errors": []
     },
-    "el-phone /epixeiriseis/eukairies/1fbcfad9-cc11-4219-8668-7ddbf7c1f2cc": {
+    "el-phone /epixeiriseis/eukairies/4e99d22a-3033-4766-bc2a-8f0e8ebc59f9": {
       "status": 200,
       "title": "Ενίσχυση επενδυτικών σχεδίων παραγωγικών επενδύσεων υφιστάμενων μεγάλων επιχειρήσεων που υλοποιούνται στις ηπειρωτικές περιοχές ΕΣΔΙΜ (ΔΑΜ23) · Jackal Accountant",
       "lang": "el",
       "errors": []
     },
-    "el-phone /epixeiriseis/eukairies/5d450ccf-a208-491c-a9e7-c3183720681e": {
+    "el-phone /epixeiriseis/eukairies/8ef96080-d19f-431f-9343-c9c02f5c3b8c": {
       "status": 200,
       "title": "Ενίσχυση επενδυτικών σχεδίων Υφιστάμενων ΜΜΕ που υλοποιούνται στις ηπειρωτικές περιοχές ΕΣΔΙΜ (ΔΑΜ22) · Jackal Accountant",
       "lang": "el",
       "errors": []
     },
-    "el-phone /epixeiriseis/eukairies/9b138dd8-a05e-42ce-89ee-29cac5bb10fa": {
+    "el-phone /epixeiriseis/eukairies/371af427-ca75-4b0b-9811-da21f1a3bc58": {
       "status": 200,
       "title": "Ενίσχυση επιχειρηματικότητας με έμφαση στον τουρισμό και τη δεύτερη μεταποίηση αγροτικών προϊόντων (Χίος, Μυτιλήνη, μικρά νησιά — Βόρειο Αιγαίο) · Jackal Accountant",
       "lang": "el",
       "errors": []
     },
-    "el-phone /epixeiriseis/eukairies/915fe150-ebdd-4e06-b0a2-942de1ce537b": {
+    "el-phone /epixeiriseis/eukairies/a82941d9-64c0-4481-b521-bdb1e9e0c159": {
       "status": 200,
       "title": "Ενίσχυση συνεργασίας μεταξύ επιχειρήσεων και ερευνητικών φορέων στους τομείς προτεραιότητας της Περιφέρειας Νοτίου Αιγαίου · Jackal Accountant",
       "lang": "el",
       "errors": []
     },
-    "el-phone /epixeiriseis/eukairies/7a5a1cbe-2fe5-47c8-961e-a69979bdef78": {
+    "el-phone /epixeiriseis/eukairies/84d57c7e-a7dc-4294-bcad-55f1177a322a": {
       "status": 200,
       "title": "Συμπράξεις Έρευνας και Καινοτομίας στην Αττική · Jackal Accountant",
       "lang": "el",
@@ -1020,25 +1026,19 @@
       "lang": "el",
       "errors": []
     },
-    "el-phone /politis/eukairies/41f49556-aa05-457c-8f48-250d546192f3": {
+    "el-phone /politis/eukairies/1016b1cc-569e-4b35-81f2-f42e9001a113": {
       "status": 200,
       "title": "Νέα Ευκαιρία: Στήριξη ανέργων και μισθωτών μερικής απασχόλησης για έναρξη επαγγελματικής δραστηριότητας στην Ήπειρο · Jackal Accountant",
       "lang": "el",
       "errors": []
     },
-    "el-phone /politis/eukairies/cdff3a35-cefd-4c4a-aa21-a9fda388f2d1": {
-      "status": 200,
-      "title": "DiscoverEU — δωρεάν ταξιδιωτικό πάσο για 18χρονους · Jackal Accountant",
-      "lang": "el",
-      "errors": []
-    },
-    "el-phone /politis/eukairies/ab01d62d-20fe-4dd4-a9e4-af1e267f18bd": {
+    "el-phone /politis/eukairies/6c6817e9-074b-4dbc-815d-edd8646477ac": {
       "status": 200,
       "title": "«Σπίτι μου ΙΙ» — δάνεια πρώτης κατοικίας · Jackal Accountant",
       "lang": "el",
       "errors": []
     },
-    "el-phone /politis/eukairies/b009f4ee-07e0-410a-a101-982dd2f2c1d2": {
+    "el-phone /politis/eukairies/e5cceafe-fc55-4081-be6a-6a0066518af4": {
       "status": 200,
       "title": "Φοιτητικό στεγαστικό επίδομα · Jackal Accountant",
       "lang": "el",
@@ -1110,7 +1110,7 @@
       "lang": "el",
       "errors": []
     },
-    "el-signed-in /politis/eukairies/1af425a7-825c-4e5d-8d8b-ea09f193f693": {
+    "el-signed-in /politis/eukairies/dfa9e31e-15ce-46cc-9870-6e801e2101fd": {
       "status": 200,
       "title": "Τακτική επιδότηση ανεργίας · Jackal Accountant",
       "lang": "el",
@@ -1122,7 +1122,7 @@
       "lang": "el",
       "errors": []
     },
-    "el-signed-in /politis/eukairies/3f59dcab-2c92-48de-841e-74edebb83904": {
+    "el-signed-in /politis/eukairies/4233d562-2b50-4912-9ded-cb5e724a6cf5": {
       "status": 200,
       "title": "Άρθρο 5Γ ΚΦΕ — 50% απαλλαγή φόρου για όσους μεταφέρουν τη φορολογική κατοικία τους στην Ελλάδα · Jackal Accountant",
       "lang": "el",
@@ -1188,19 +1188,7 @@
       "lang": "el",
       "errors": []
     },
-    "el-signed-in /politis/eukairies/c8661db5-9dd6-49dc-9f8e-ed2bbce56435": {
-      "status": 200,
-      "title": "Άρθρο 5Α ΚΦΕ — εναλλακτική φορολόγηση επενδυτών · Jackal Accountant",
-      "lang": "el",
-      "errors": []
-    },
-    "el-signed-in /politis/odigoi/art5a": {
-      "status": 200,
-      "title": "Άρθρο 5Α ΚΦΕ — εναλλακτική φορολόγηση επενδυτών · Jackal Accountant",
-      "lang": "el",
-      "errors": []
-    },
-    "el-signed-in /politis/eukairies/97602771-cf70-4a76-8208-53464c9f4a7b": {
+    "el-signed-in /politis/eukairies/89585061-7245-4356-b79a-8a197014d356": {
       "status": 200,
       "title": "Άρθρο 5Β ΚΦΕ — 7% φόρος για συνταξιούχους με σύνταξη εξωτερικού · Jackal Accountant",
       "lang": "el",
@@ -1212,7 +1200,7 @@
       "lang": "el",
       "errors": []
     },
-    "el-signed-in /politis/eukairies/dec9e741-eaac-4000-af55-4b797702cf81": {
+    "el-signed-in /politis/eukairies/804c5a83-d8c3-4034-bc97-db9f2e78025c": {
       "status": 200,
       "title": "Α21 — Επίδομα παιδιού · Jackal Accountant",
       "lang": "el",
@@ -1224,67 +1212,91 @@
       "lang": "el",
       "errors": []
     },
+    "el-signed-in /politis/eukairies/e84a98aa-e1de-42ab-b39f-bc5c6022eccb": {
+      "status": 200,
+      "title": "Άρθρο 5Α ΚΦΕ — εναλλακτική φορολόγηση επενδυτών · Jackal Accountant",
+      "lang": "el",
+      "errors": []
+    },
+    "el-signed-in /politis/odigoi/art5a": {
+      "status": 200,
+      "title": "Άρθρο 5Α ΚΦΕ — εναλλακτική φορολόγηση επενδυτών · Jackal Accountant",
+      "lang": "el",
+      "errors": []
+    },
+    "el-signed-in /politis/eukairies/020e037d-0622-4b33-a30d-3d702e38bad8": {
+      "status": 200,
+      "title": "DiscoverEU — δωρεάν ταξιδιωτικό πάσο για 18χρονους · Jackal Accountant",
+      "lang": "el",
+      "errors": []
+    },
+    "el-signed-in /politis/odigoi/discovereu": {
+      "status": 200,
+      "title": "DiscoverEU — δωρεάν ταξιδιωτικό πάσο για 18χρονους · Jackal Accountant",
+      "lang": "el",
+      "errors": []
+    },
     "el-signed-in /epixeiriseis/eukairies?status=all": {
       "status": 200,
       "title": "Ευκαιρίες · Jackal Accountant",
       "lang": "el",
       "errors": []
     },
-    "el-signed-in /epixeiriseis/eukairies/9994dff9-5db7-4670-bda2-50df26b6181e": {
+    "el-signed-in /epixeiriseis/eukairies/544d6490-426d-4b65-abe2-3ba7ac7922e7": {
       "status": 200,
       "title": "Ενίσχυση επενδυτικών σχεδίων νέων και υπό σύσταση ΜΜΕ που υλοποιούνται στις ηπειρωτικές περιοχές ΕΣΔΙΜ (ΔΑΜ21) · Jackal Accountant",
       "lang": "el",
       "errors": []
     },
-    "el-signed-in /epixeiriseis/eukairies/178e28b9-882f-4c7e-8f92-d43c43dda093": {
+    "el-signed-in /epixeiriseis/eukairies/9d6e69fe-bfe2-4e18-aa63-ce740f884c4e": {
       "status": 200,
       "title": "Ενίσχυση επενδυτικών σχεδίων παραγωγικών επενδύσεων νέων και υπό σύσταση μεγάλων επιχειρήσεων που υλοποιούνται στις ηπειρωτικές περιοχές ΕΣΔΙΜ (ΔΑΜ24) · Jackal Accountant",
       "lang": "el",
       "errors": []
     },
-    "el-signed-in /epixeiriseis/eukairies/d0f1a7c3-7057-4047-b2dc-d7693d991962": {
+    "el-signed-in /epixeiriseis/eukairies/a5083d51-ef57-4412-a629-2909aa6cb97f": {
       "status": 200,
       "title": "Υποστήριξη νέων καινοτόμων επιχειρήσεων στην Περιφέρεια Κρήτης («Καινοτομώ στην Κρήτη») · Jackal Accountant",
       "lang": "el",
       "errors": []
     },
-    "el-signed-in /epixeiriseis/eukairies/ee53d2af-fe61-4a18-ba93-42c70022dfc2": {
+    "el-signed-in /epixeiriseis/eukairies/197cc312-a744-4a2b-8a8a-97b728bbb42b": {
       "status": 200,
       "title": "«Επιχειρώ Στερεά» · Jackal Accountant",
       "lang": "el",
       "errors": []
     },
-    "el-signed-in /epixeiriseis/eukairies/9539c753-e646-454f-b4af-db952243a6ec": {
+    "el-signed-in /epixeiriseis/eukairies/e9ac9800-cbc8-413b-994b-f27b2ecf2477": {
       "status": 200,
       "title": "Ενίσχυση επιχειρηματικότητας στους τομείς προτεραιότητας της Περιφέρειας Νοτίου Αιγαίου · Jackal Accountant",
       "lang": "el",
       "errors": []
     },
-    "el-signed-in /epixeiriseis/eukairies/1fbcfad9-cc11-4219-8668-7ddbf7c1f2cc": {
+    "el-signed-in /epixeiriseis/eukairies/4e99d22a-3033-4766-bc2a-8f0e8ebc59f9": {
       "status": 200,
       "title": "Ενίσχυση επενδυτικών σχεδίων παραγωγικών επενδύσεων υφιστάμενων μεγάλων επιχειρήσεων που υλοποιούνται στις ηπειρωτικές περιοχές ΕΣΔΙΜ (ΔΑΜ23) · Jackal Accountant",
       "lang": "el",
       "errors": []
     },
-    "el-signed-in /epixeiriseis/eukairies/5d450ccf-a208-491c-a9e7-c3183720681e": {
+    "el-signed-in /epixeiriseis/eukairies/8ef96080-d19f-431f-9343-c9c02f5c3b8c": {
       "status": 200,
       "title": "Ενίσχυση επενδυτικών σχεδίων Υφιστάμενων ΜΜΕ που υλοποιούνται στις ηπειρωτικές περιοχές ΕΣΔΙΜ (ΔΑΜ22) · Jackal Accountant",
       "lang": "el",
       "errors": []
     },
-    "el-signed-in /epixeiriseis/eukairies/9b138dd8-a05e-42ce-89ee-29cac5bb10fa": {
+    "el-signed-in /epixeiriseis/eukairies/371af427-ca75-4b0b-9811-da21f1a3bc58": {
       "status": 200,
       "title": "Ενίσχυση επιχειρηματικότητας με έμφαση στον τουρισμό και τη δεύτερη μεταποίηση αγροτικών προϊόντων (Χίος, Μυτιλήνη, μικρά νησιά — Βόρειο Αιγαίο) · Jackal Accountant",
       "lang": "el",
       "errors": []
     },
-    "el-signed-in /epixeiriseis/eukairies/915fe150-ebdd-4e06-b0a2-942de1ce537b": {
+    "el-signed-in /epixeiriseis/eukairies/a82941d9-64c0-4481-b521-bdb1e9e0c159": {
       "status": 200,
       "title": "Ενίσχυση συνεργασίας μεταξύ επιχειρήσεων και ερευνητικών φορέων στους τομείς προτεραιότητας της Περιφέρειας Νοτίου Αιγαίου · Jackal Accountant",
       "lang": "el",
       "errors": []
     },
-    "el-signed-in /epixeiriseis/eukairies/7a5a1cbe-2fe5-47c8-961e-a69979bdef78": {
+    "el-signed-in /epixeiriseis/eukairies/84d57c7e-a7dc-4294-bcad-55f1177a322a": {
       "status": 200,
       "title": "Συμπράξεις Έρευνας και Καινοτομίας στην Αττική · Jackal Accountant",
       "lang": "el",
@@ -1317,12 +1329,6 @@
     "el-signed-in /politis/odigoi?cat=eu-programmes": {
       "status": 200,
       "title": "Οδηγοί · Jackal Accountant",
-      "lang": "el",
-      "errors": []
-    },
-    "el-signed-in /politis/odigoi/discovereu": {
-      "status": 200,
-      "title": "DiscoverEU — δωρεάν ταξιδιωτικό πάσο για 18χρονους · Jackal Accountant",
       "lang": "el",
       "errors": []
     },
@@ -1362,25 +1368,19 @@
       "lang": "el",
       "errors": []
     },
-    "el-signed-in /politis/eukairies/41f49556-aa05-457c-8f48-250d546192f3": {
+    "el-signed-in /politis/eukairies/1016b1cc-569e-4b35-81f2-f42e9001a113": {
       "status": 200,
       "title": "Νέα Ευκαιρία: Στήριξη ανέργων και μισθωτών μερικής απασχόλησης για έναρξη επαγγελματικής δραστηριότητας στην Ήπειρο · Jackal Accountant",
       "lang": "el",
       "errors": []
     },
-    "el-signed-in /politis/eukairies/cdff3a35-cefd-4c4a-aa21-a9fda388f2d1": {
-      "status": 200,
-      "title": "DiscoverEU — δωρεάν ταξιδιωτικό πάσο για 18χρονους · Jackal Accountant",
-      "lang": "el",
-      "errors": []
-    },
-    "el-signed-in /politis/eukairies/ab01d62d-20fe-4dd4-a9e4-af1e267f18bd": {
+    "el-signed-in /politis/eukairies/6c6817e9-074b-4dbc-815d-edd8646477ac": {
       "status": 200,
       "title": "«Σπίτι μου ΙΙ» — δάνεια πρώτης κατοικίας · Jackal Accountant",
       "lang": "el",
       "errors": []
     },
-    "el-signed-in /politis/eukairies/b009f4ee-07e0-410a-a101-982dd2f2c1d2": {
+    "el-signed-in /politis/eukairies/e5cceafe-fc55-4081-be6a-6a0066518af4": {
       "status": 200,
       "title": "Φοιτητικό στεγαστικό επίδομα · Jackal Accountant",
       "lang": "el",
@@ -1398,12 +1398,12 @@
     {
       "step": "2b open records due for re-check stay listed (A21 in «Οικογένεια»)",
       "ok": true,
-      "detail": "1 cards, 1 «Χρειάζεται νέος έλεγχος» labels"
+      "detail": "1 cards, 0 «Χρειάζεται νέος έλεγχος» labels"
     },
     {
       "step": "2 citizen opportunities list shows cards",
       "ok": true,
-      "detail": "5 cards"
+      "detail": "6 cards"
     },
     {
       "step": "2a business opportunities list shows cards",
@@ -1413,7 +1413,7 @@
     {
       "step": "3 opportunity detail opens with official links",
       "ok": true,
-      "detail": "/politis/eukairies/c8661db5-9dd6-49dc-9f8e-ed2bbce56435, 7 official links"
+      "detail": "/politis/eukairies/89585061-7245-4356-b79a-8a197014d356, 11 official links"
     },
     {
       "step": "4 register leads to the profile",
@@ -1438,7 +1438,7 @@
     {
       "step": "7 opened match explains eligibility",
       "ok": true,
-      "detail": "/politis/eukairies/1af425a7-825c-4e5d-8d8b-ea09f193f693; decision record: true"
+      "detail": "/politis/eukairies/dfa9e31e-15ce-46cc-9870-6e801e2101fd; decision record: true"
     },
     {
       "step": "8 official source link present",
@@ -1508,7 +1508,7 @@
     },
     {
       "check": "filter status=open",
-      "cards": 4
+      "cards": 5
     },
     {
       "check": "filter type=benefit",

@@ -5,47 +5,448 @@
 
 [1m[30m[46m RUN [49m[39m[22m [36mv5.0.4 [39m[90m/home/runner/work/TheJackalAcc/TheJackalAcc[39m
 
- [32m✓[39m tests/ingestion.test.ts [2m([22m[2m27 tests[22m[2m)[22m[33m 1534[2mms[22m[39m
- [32m✓[39m tests/engine.test.ts [2m([22m[2m27 tests[22m[2m)[22m[32m 90[2mms[22m[39m
- [32m✓[39m tests/extraction.test.ts [2m([22m[2m13 tests[22m[2m)[22m[33m 1122[2mms[22m[39m
- [32m✓[39m tests/real-calls.test.ts [2m([22m[2m22 tests[22m[2m)[22m[32m 30[2mms[22m[39m
- [32m✓[39m tests/audience.test.ts [2m([22m[2m21 tests[22m[2m)[22m[32m 19[2mms[22m[39m
- [32m✓[39m tests/credibility-money.test.ts [2m([22m[2m18 tests[22m[2m)[22m[32m 10[2mms[22m[39m
- [32m✓[39m tests/guides-catalog.test.ts [2m([22m[2m20 tests[22m[2m)[22m[32m 15[2mms[22m[39m
- [32m✓[39m tests/auth-and-access.test.ts [2m([22m[2m11 tests[22m[2m)[22m[33m 1065[2mms[22m[39m
+ [32m✓[39m tests/ingestion.test.ts [2m([22m[2m27 tests[22m[2m)[22m[33m 1517[2mms[22m[39m
+ [32m✓[39m tests/engine.test.ts [2m([22m[2m27 tests[22m[2m)[22m[32m 65[2mms[22m[39m
+ [32m✓[39m tests/extraction.test.ts [2m([22m[2m13 tests[22m[2m)[22m[33m 1068[2mms[22m[39m
+ [32m✓[39m tests/real-calls.test.ts [2m([22m[2m22 tests[22m[2m)[22m[32m 24[2mms[22m[39m
+ [32m✓[39m tests/audience.test.ts [2m([22m[2m21 tests[22m[2m)[22m[32m 15[2mms[22m[39m
+ [32m✓[39m tests/credibility-money.test.ts [2m([22m[2m18 tests[22m[2m)[22m[32m 8[2mms[22m[39m
+ [31m❯[39m tests/guides-catalog.test.ts [2m([22m[2m20 tests[22m[2m | [22m[31m1 failed[39m[2m)[22m[32m 16[2mms[22m[39m
+   [32m✓[39m guide categories [2m(2)[22m
+     [32m✓[39m are exactly the eight approved categories, in the approved order and wording[32m 1[2mms[22m[39m
+     [32m✓[39m have Greek and English descriptions, with no Greek in the English text[32m 1[2mms[22m[39m
+   [32m✓[39m articles [2m(3)[22m
+     [32m✓[39m have unique slugs, known categories and https sources[32m 1[2mms[22m[39m
+     [32m✓[39m approved records match the owner's approval file[32m 0[2mms[22m[39m
+     [32m✓[39m a guide for an unapproved record is a draft, hidden from the list but reachable for review[32m 1[2mms[22m[39m
+   [31m❯[39m verification state (about the content, never the application status) [2m(4)[22m
+     [32m✓[39m reflects what the checked records say[32m 0[2mms[22m[39m
+     [32m✓[39m asks for a new check after the review interval (a trigger, not a verdict)[32m 0[2mms[22m[39m
+[31m     [31m×[31m stays independent of the programme's application status[39m[32m 4[2mms[22m[39m
+     [32m✓[39m every state has a Greek and English label and explanation[32m 1[2mms[22m[39m
+   [32m✓[39m search and filtering [2m(5)[22m
+     [32m✓[39m folds accents, case and final sigma[32m 0[2mms[22m[39m
+     [32m✓[39m finds guides in Greek without accents and in English[32m 3[2mms[22m[39m
+     [32m✓[39m requires every word to match[32m 0[2mms[22m[39m
+     [32m✓[39m filters by category, and combines category with words[32m 0[2mms[22m[39m
+     [32m✓[39m counts only public guides per category[32m 0[2mms[22m[39m
+   [32m✓[39m unemployment benefit application guide (draft) [2m(6)[22m
+     [32m✓[39m is a draft until the owner approves it, so it is not listed[32m 0[2mms[22m[39m
+     [32m✓[39m explains each official-source conflict instead of picking a value silently[32m 0[2mms[22m[39m
+     [32m✓[39m cites only official sources[32m 0[2mms[22m[39m
+     [32m✓[39m marks the screens it has not seen and never asks for credentials[32m 0[2mms[22m[39m
+     [32m✓[39m English text has Greek only inside «» official names or known acronyms[32m 0[2mms[22m[39m
+     [32m✓[39m Greek text addresses the reader formally[32m 1[2mms[22m[39m
+ [32m✓[39m tests/auth-and-access.test.ts [2m([22m[2m11 tests[22m[2m)[22m[33m 940[2mms[22m[39m
    [32m✓[39m auth & access control (PostgreSQL) [2m(11)[22m
-     [33m[2m✓[22m[39m rate-limits repeated failed logins[33m 344[2mms[22m[39m
- [32m✓[39m tests/end-to-end-flow.test.ts [2m([22m[2m3 tests[22m[2m)[22m[33m 446[2mms[22m[39m
- [32m✓[39m tests/personas.test.ts [2m([22m[2m13 tests[22m[2m)[22m[32m 62[2mms[22m[39m
- [32m✓[39m tests/residence-and-records.test.ts [2m([22m[2m15 tests[22m[2m)[22m[32m 14[2mms[22m[39m
- [32m✓[39m tests/official-details.test.ts [2m([22m[2m7 tests[22m[2m)[22m[32m 10[2mms[22m[39m
- [32m✓[39m tests/business-records.test.ts [2m([22m[2m9 tests[22m[2m)[22m[32m 20[2mms[22m[39m
- [32m✓[39m tests/discovery.test.ts [2m([22m[2m11 tests[22m[2m)[22m[32m 9[2mms[22m[39m
- [32m✓[39m tests/record-status.test.ts [2m([22m[2m10 tests[22m[2m)[22m[32m 6[2mms[22m[39m
- [32m✓[39m tests/status-and-sources.test.ts [2m([22m[2m12 tests[22m[2m)[22m[32m 32[2mms[22m[39m
- [32m✓[39m tests/guide-status.test.ts [2m([22m[2m12 tests[22m[2m)[22m[32m 20[2mms[22m[39m
- [32m✓[39m tests/brief-feed.test.ts [2m([22m[2m7 tests[22m[2m)[22m[32m 6[2mms[22m[39m
- [32m✓[39m tests/scenarios-and-money.test.ts [2m([22m[2m8 tests[22m[2m)[22m[32m 23[2mms[22m[39m
- [32m✓[39m tests/i18n.test.ts [2m([22m[2m26 tests[22m[2m)[22m[32m 12[2mms[22m[39m
- [32m✓[39m tests/industries.test.ts [2m([22m[2m5 tests[22m[2m)[22m[32m 58[2mms[22m[39m
- [32m✓[39m tests/daily-report.test.ts [2m([22m[2m6 tests[22m[2m)[22m[32m 5[2mms[22m[39m
- [32m✓[39m tests/profile-update.test.ts [2m([22m[2m6 tests[22m[2m)[22m[33m 1087[2mms[22m[39m
- [32m✓[39m tests/credibility.test.ts [2m([22m[2m7 tests[22m[2m)[22m[32m 5[2mms[22m[39m
- [32m✓[39m tests/decision-record.test.ts [2m([22m[2m5 tests[22m[2m)[22m[32m 11[2mms[22m[39m
- [32m✓[39m tests/govgr-watch.test.ts [2m([22m[2m5 tests[22m[2m)[22m[32m 6[2mms[22m[39m
- [32m✓[39m tests/taxonomy.test.ts [2m([22m[2m5 tests[22m[2m)[22m[32m 6[2mms[22m[39m
- [32m✓[39m tests/apply-cta.test.ts [2m([22m[2m5 tests[22m[2m)[22m[32m 4[2mms[22m[39m
- [32m✓[39m tests/record-audit.test.ts [2m([22m[2m3 tests[22m[2m)[22m[32m 8[2mms[22m[39m
- [32m✓[39m tests/document-lists.test.ts [2m([22m[2m5 tests[22m[2m)[22m[32m 5[2mms[22m[39m
+     [33m[2m✓[22m[39m rate-limits repeated failed logins[33m 321[2mms[22m[39m
+ [32m✓[39m tests/end-to-end-flow.test.ts [2m([22m[2m3 tests[22m[2m)[22m[33m 434[2mms[22m[39m
+ [32m✓[39m tests/corrections-2026-10-22.test.ts [2m([22m[2m12 tests[22m[2m)[22m[32m 6[2mms[22m[39m
+ [32m✓[39m tests/personas.test.ts [2m([22m[2m13 tests[22m[2m)[22m[32m 47[2mms[22m[39m
+ [32m✓[39m tests/residence-and-records.test.ts [2m([22m[2m15 tests[22m[2m)[22m[32m 12[2mms[22m[39m
+ [32m✓[39m tests/official-details.test.ts [2m([22m[2m7 tests[22m[2m)[22m[32m 6[2mms[22m[39m
+ [32m✓[39m tests/business-records.test.ts [2m([22m[2m9 tests[22m[2m)[22m[32m 37[2mms[22m[39m
+ [32m✓[39m tests/guide-status.test.ts [2m([22m[2m13 tests[22m[2m)[22m[32m 16[2mms[22m[39m
+ [32m✓[39m tests/discovery.test.ts [2m([22m[2m11 tests[22m[2m)[22m[32m 7[2mms[22m[39m
+ [32m✓[39m tests/record-status.test.ts [2m([22m[2m10 tests[22m[2m)[22m[32m 5[2mms[22m[39m
+ [32m✓[39m tests/status-and-sources.test.ts [2m([22m[2m12 tests[22m[2m)[22m[32m 33[2mms[22m[39m
+ [32m✓[39m tests/brief-feed.test.ts [2m([22m[2m7 tests[22m[2m)[22m[32m 5[2mms[22m[39m
+ [32m✓[39m tests/scenarios-and-money.test.ts [2m([22m[2m8 tests[22m[2m)[22m[32m 17[2mms[22m[39m
+ [32m✓[39m tests/i18n.test.ts [2m([22m[2m26 tests[22m[2m)[22m[32m 10[2mms[22m[39m
+ [32m✓[39m tests/industries.test.ts [2m([22m[2m5 tests[22m[2m)[22m[32m 46[2mms[22m[39m
+ [32m✓[39m tests/daily-report.test.ts [2m([22m[2m6 tests[22m[2m)[22m[32m 4[2mms[22m[39m
+ [32m✓[39m tests/profile-update.test.ts [2m([22m[2m6 tests[22m[2m)[22m[32m 293[2mms[22m[39m
+ [32m✓[39m tests/credibility.test.ts [2m([22m[2m7 tests[22m[2m)[22m[32m 4[2mms[22m[39m
+ [32m✓[39m tests/decision-record.test.ts [2m([22m[2m5 tests[22m[2m)[22m[32m 10[2mms[22m[39m
+ [32m✓[39m tests/govgr-watch.test.ts [2m([22m[2m5 tests[22m[2m)[22m[32m 5[2mms[22m[39m
+ [32m✓[39m tests/taxonomy.test.ts [2m([22m[2m5 tests[22m[2m)[22m[32m 5[2mms[22m[39m
+ [31m❯[39m tests/apply-cta.test.ts [2m([22m[2m5 tests[22m[2m | [22m[31m1 failed[39m[2m)[22m[32m 6[2mms[22m[39m
+   [31m❯[39m application call-to-action [2m(5)[22m
+     [32m✓[39m is offered while open, rolling or upcoming, and when the status is only unconfirmed[32m 1[2mms[22m[39m
+     [32m✓[39m is never offered after the deadline, for closed or for suspended programmes[32m 0[2mms[22m[39m
+     [32m✓[39m «Νέα Ευκαιρία» (deadline 21/10/2026 15:00 Athens) loses the CTA one minute after the deadline[32m 0[2mms[22m[39m
+     [32m✓[39m a closed programme has no CTA even without a recorded deadline[32m 0[2mms[22m[39m
+[31m     [31m×[31m the programme page and the guide page both apply the rule[39m[32m 4[2mms[22m[39m
+ [32m✓[39m tests/record-audit.test.ts [2m([22m[2m3 tests[22m[2m)[22m[32m 6[2mms[22m[39m
+ [32m✓[39m tests/document-lists.test.ts [2m([22m[2m5 tests[22m[2m)[22m[32m 4[2mms[22m[39m
  [32m✓[39m tests/change-detection.test.ts [2m([22m[2m2 tests[22m[2m)[22m[32m 3[2mms[22m[39m
- [32m✓[39m tests/proxy.test.ts [2m([22m[2m2 tests[22m[2m)[22m[32m 10[2mms[22m[39m
- [32m✓[39m tests/question-impact.test.ts [2m([22m[2m2 tests[22m[2m)[22m[32m 6[2mms[22m[39m
+ [32m✓[39m tests/proxy.test.ts [2m([22m[2m2 tests[22m[2m)[22m[32m 7[2mms[22m[39m
+ [32m✓[39m tests/question-impact.test.ts [2m([22m[2m2 tests[22m[2m)[22m[32m 5[2mms[22m[39m
 
-[2m Test Files [22m [1m[32m33 passed[39m[22m[90m (33)[39m
-[2m      Tests [22m [1m[32m350 passed[39m[22m[90m (350)[39m
-[2m   Start at [22m 12:57:02
-[2m   Duration [22m 10.31s[2m (tests 75%, import 17%, transform 7%, worker 1%)[22m
+[31m⎯⎯⎯⎯⎯⎯⎯[39m[1m[41m Failed Tests 2 [49m[22m[31m⎯⎯⎯⎯⎯⎯⎯[39m
 
-[2m    Isolate [22m [33m33 workers spawned[39m[2m · ~74ms startup each (spawn + environment, per file)[22m
-[2m            [22m [2mat least ~2.36s faster with [22m[33misolate: false[39m[2m — reuses workers across files instead of one per file[22m
+[41m[1m FAIL [22m[49m tests/apply-cta.test.ts[2m > [22mapplication call-to-action[2m > [22mthe programme page and the guide page both apply the rule
+[31m[1mAssertionError[22m: expected 'import Link from "next/link";\nimport…' to contain 'const canApply = applicationCtaAllowe…'[39m
 
+[32m- Expected[39m
+[31m+ Received[39m
+
+[32m- const canApply = applicationCtaAllowed(status.application);[39m
+[31m+ import Link from "next/link";[39m
+[31m+ import { checkedLine } from "@/components/opportunity-card";[39m
+[31m+ import { unknownsOf } from "@/lib/site/unknowns";[39m
+[31m+ import { OpportunityBrief } from "@/components/brief";[39m
+[31m+ import { applicationCtaAllowed } from "@/lib/site/brief";[39m
+[31m+ import { applicantAudienceOf } from "@/lib/site/applicants";[39m
+[31m+ import { notFound, redirect } from "next/navigation";[39m
+[31m+ import { paths } from "@/lib/site/audience";[39m
+[31m+ import { audienceParam } from "@/lib/site/path-params";[39m
+[31m+ import { getDict } from "@/lib/i18n/server";[39m
+[31m+ import { isDatabaseConfigured, sql } from "@/lib/db";[39m
+[31m+ import { getOpportunity, loadHistory, loadRequirements, toMatchable } from "@/lib/data/opportunities";[39m
+[31m+ import { ChangeHistory } from "@/components/change-history";[39m
+[31m+ import { currentUser } from "@/lib/auth/session";[39m
+[31m+ import { getProfile, listSavedIds } from "@/lib/data/user";[39m
+[31m+ import { assess } from "@/lib/domain/eligibility";[39m
+[31m+ import { runScenario, type Scenario } from "@/lib/domain/scenarios";[39m
+[31m+ import { estimateAward } from "@/lib/domain/funding";[39m
+[31m+ import { formatDay } from "@/lib/format";[39m
+[31m+ import { SITE } from "@/lib/site/copy";[39m
+[31m+ import { audiencesOf, categoriesOf, categoryBySlug, guideOf, scopeOf, supportTypeOf } from "@/lib/site/taxonomy";[39m
+[31m+ import { EligibilityBadge, RecordStatusBadge, StateBadge, SyntheticLabel } from "@/components/badges";[39m
+[31m+ import { recordStatus } from "@/lib/domain/record-status";[39m
+[31m+ import { deadlineText } from "@/components/opportunity-facts";[39m
+[31m+ import { RequirementsTable } from "@/components/requirements-table";[39m
+[31m+ import { DecisionRecordView } from "@/components/decision-record";[39m
+[31m+ import { buildDecisionRecord } from "@/lib/domain/decision-record";[39m
+[31m+ import { hasApplicantMoney, moneyOf } from "@/lib/site/money";[39m
+[31m+ import { KeyFacts, OfficialConditions, OfficialScope, VerifiedSteps, briefWhat, keyAmount } from "@/components/opportunity-details";[39m
+[31m+ import { displayAuthority, displayTitle, verifiedFor } from "@/lib/site/verified";[39m
+[31m+ import { Icon } from "@/components/icons";[39m
+[31m+ import { toggleSaveAction } from "@/app/actions";[39m
+[31m+[39m
+[31m+ const SCENARIO_KINDS = ["register_business", "establish_in_region", "increase_cofinancing", "change_project_start", "obtain_dypa_registration"] as const;[39m
+[31m+[39m
+[31m+ function buildScenario(kind: string, regions: string[], now: Date): Scenario | null {[39m
+[31m+   const inDays = (d: number) => new Date(now.getTime() + d * 86_400_000).toISOString().slice(0, 10);[39m
+[31m+   switch (kind) {[39m
+[31m+     case "register_business": return { kind, legal_form: "sole_proprietor", registration_date: inDays(30) };[39m
+[31m+     case "establish_in_region": return regions[0] ? { kind, region: regions[0] } : null;[39m
+[31m+     case "increase_cofinancing": return { kind, range: "over_50k" };[39m
+[31m+     case "change_project_start": return { kind, start_date: inDays(90) };[39m
+[31m+     case "obtain_dypa_registration": return { kind };[39m
+[31m+     default: return null;[39m
+[31m+   }[39m
+[31m+ }[39m
+[31m+[39m
+[31m+ export async function generateMetadata({ params }: { params: Promise<{ aud: string; id: string }> }) {[39m
+[31m+   const { locale } = await getDict();[39m
+[31m+   if (!isDatabaseConfigured()) return {};[39m
+[31m+   const o = await getOpportunity(sql(), (await params).id).catch(() => null);[39m
+[31m+   return o ? { title: displayTitle(o, locale).text } : {};[39m
+[31m+ }[39m
+[31m+[39m
+[31m+ /**[39m
+[31m+  * One programme, inside its own path. A record of the other path is never rendered here: its address redirects to the[39m
+[31m+  * right path (with a notice); unclassified (HOLD) records are not served at all (getOpportunity returns null).[39m
+[31m+  */[39m
+[31m+ export default async function OpportunityPage({ params, searchParams }: { params: Promise<{ aud: string; id: string }>; searchParams: Promise<{ scenario?: string; moved?: string }> }) {[39m
+[31m+   const aud = await audienceParam(params);[39m
+[31m+   const { t, locale } = await getDict();[39m
+[31m+   const s = SITE[locale];[39m
+[31m+   if (!isDatabaseConfigured()) return <div className="container"><div className="notice bad">{t.noDb}</div></div>;[39m
+[31m+   const { id } = await params;[39m
+[31m+   const o = await getOpportunity(sql(), id);[39m
+[31m+   if (!o || !o.audience) notFound();[39m
+[31m+   if (o.audience !== aud) redirect(`${paths.opportunity(o.audience, o.id)}?moved=1`);[39m
+[31m+   const moved = (await searchParams).moved === "1";[39m
+[31m+   const user = await currentUser();[39m
+[31m+   const [profile, savedIds, reqMap, history] = await Promise.all([[39m
+[31m+     user ? getProfile(sql(), user) : Promise.resolve(null),[39m
+[31m+     user ? listSavedIds(sql(), user) : Promise.resolve([] as string[]),[39m
+[31m+     loadRequirements(sql(), [o.id]),[39m
+[31m+     loadHistory(sql(), o.id).catch(() => []),[39m
+[31m+   ]);[39m
+[31m+   const now = new Date();[39m
+[31m+   const matchable = toMatchable(o, reqMap.get(o.id) ?? []);[39m
+[31m+   const a = assess(matchable, profile ?? {}, { now });[39m
+[31m+   const record = user && profile ? buildDecisionRecord(matchable, profile, { now }) : null;[39m
+[31m+   const regionReq = matchable.requirements.find((r) => r.category === "geography" || r.category === "business_location");[39m
+[31m+   const regions = ((regionReq?.value as { regions?: string[] } | undefined)?.regions ?? []).filter((r) => r.length > 2);[39m
+[31m+   const scenarioKind = (await searchParams).scenario;[39m
+[31m+   const scenario = user && profile && scenarioKind ? buildScenario(scenarioKind, regions, now) : null;[39m
+[31m+   const sr = scenario ? runScenario(matchable, profile!, scenario, now) : null;[39m
+[31m+   const budget = typeof profile?.project_budget_eur === "number" ? profile.project_budget_eur : null;[39m
+[31m+   const estimate = budget !== null && o.funding_intensity_pct !== null[39m
+[31m+     ? estimateAward({ eligible_expenditure: budget, intensity_pct: Number(o.funding_intensity_pct), min_award: o.funding_min ? Number(o.funding_min) : null, max_award: o.funding_max ? Number(o.funding_max) : null, currency: o.currency ?? "EUR" })[39m
+[31m+     : null;[39m
+[31m+[39m
+[31m+   const cats = categoriesOf(o).map((c) => categoryBySlug(c)).filter((c) => !!c);[39m
+[31m+   const audiences = audiencesOf(o);[39m
+[31m+   const scope = scopeOf(o);[39m
+[31m+   const guide = guideOf(o);[39m
+[31m+   const saved = savedIds.includes(o.id);[39m
+[31m+   const title = displayTitle(o, locale);[39m
+[31m+   const verified = verifiedFor(o.external_key);[39m
+[31m+   const amount = keyAmount(o, t, s, locale);[39m
+[31m+   const status = recordStatus(matchable, now);[39m
+[31m+   // No application call-to-action once the deadline has passed or the programme is closed (official page stays linked).[39m
+[31m+   const canApply = applicationCtaAllowed(status.application, status.display);[39m
+[31m+   const applicant = applicantAudienceOf(o, matchable.requirements);[39m
+[31m+   // Reviewer notes recorded with records imported from a manual review (Greek, from the official documents).[39m
+[31m+   const recordNotes = o.publication_basis === "manual_review" && !o.external_key?.startsWith("manual:") ? o.uncertainties ?? [] : [];[39m
+[31m+   const unknowns = unknownsOf({[39m
+[31m+     record: status, hasConflict: !!o.has_conflict, completeness: o.requirement_set_completeness, deadlineKind: o.deadline_kind,[39m
+[31m+     hasDeadline: !!o.closes_at, amountState: o.funding_amount_state, applicant,[39m
+[31m+     amountRecorded: !!verifiedFor(o.external_key)?.benefit || hasApplicantMoney(moneyOf(o)),[39m
+[31m+     documentsApproved: false,[39m
+[31m+   });[39m
+[31m+[39m
+[31m+   return ([39m
+[31m+     <div className="container">[39m
+[31m+       <nav className="crumbs" aria-label={s.detail.breadcrumb}>[39m
+[31m+         <Link href={paths.opportunities(aud)}>{s.paths.opps.title[aud]}</Link>[39m
+[31m+         {cats[0] && <> / <Link href={paths.opportunities(aud, `cat=${cats[0].slug}`)}>{cats[0].name[locale]}</Link></>}[39m
+[31m+       </nav>[39m
+[31m+       {moved && <div className="notice info" role="status" style={{ marginBottom: 16 }}><Icon name="info" size={18} /><span>{s.paths.moved(s.paths.name[aud])}</span></div>}[39m
+[31m+       <header className="detail-head">[39m
+[31m+         <div className="tags" style={{ marginBottom: 12 }}>[39m
+[31m+           <RecordStatusBadge record={status} s={s} locale={locale} detail />[39m
+[31m+           {cats.map((c) => <span key={c.slug} className="tag cat">{c.name[locale]}</span>)}[39m
+[31m+           <span className="tag">{s.supportType[supportTypeOf(o.opportunity_type)]}</span>[39m
+[31m+           <span className="tag navy">{s.scope[scope]}</span>[39m
+[31m+           {o.is_synthetic && <SyntheticLabel t={t} />}[39m
+[31m+         </div>[39m
+[31m+         <h1 lang={title.lang}>{title.text}</h1>[39m
+[31m+         {title.text !== o.official_title && <p className="small muted" style={{ margin: "0 0 4px" }} lang={o.title_lang}>{o.official_title}</p>}[39m
+[31m+         <p className="muted" style={{ margin: 0 }}>{displayAuthority(o, locale)}{o.official_identifier ? ` · ${o.official_identifier}` : ""}</p>[39m
+[31m+       </header>[39m
+[31m+       {o.is_synthetic && <div className="notice" style={{ marginBottom: 16 }}>{t.synthetic}.</div>}[39m
+[31m+       {o.has_conflict && <div className="notice bad" role="alert" style={{ marginBottom: 16 }}>{t.ui.conflict}</div>}[39m
+[31m+       <OpportunityBrief[39m
+[31m+         input={{ record: status, closesAt: o.closes_at, opensAt: o.opens_at, deadlineKind: o.deadline_kind, hasGuide: !!guide }}[39m
+[31m+         what={briefWhat(o, t, s, locale)} who={s.paths.name[aud]} s={s} locale={locale} now={now}[39m
+[31m+         applyUrl={o.application_url ?? o.canonical_url} guideHref={guide ? paths.guide(aud, guide) : undefined}[39m
+[31m+         similarHref={cats[0] ? paths.opportunities(aud, `cat=${cats[0].slug}`) : paths.opportunities(aud)} />[39m
+[31m+[39m
+[31m+       <div className="with-aside-r">[39m
+[31m+         <div>[39m
+[31m+           <nav className="toc" aria-label={s.detail.overview}>[39m
+[31m+             <a href="#overview">{s.detail.overview}</a>[39m
+[31m+             <a href="#details">{s.facts.title}</a>[39m
+[31m+             <a href="#eligibility">{s.detail.eligibility}</a>[39m
+[31m+             <a href="#apply">{s.detail.howToApply}</a>[39m
+[31m+             <a href="#sources">{s.detail.sources}</a>[39m
+[31m+             <a href="#unknowns">{s.detail.unknownTitle}</a>[39m
+[31m+             <a href="#history">{s.history.title}</a>[39m
+[31m+           </nav>[39m
+[31m+[39m
+[31m+           <div className="stack-lg">[39m
+[31m+             <section id="overview" className="card">[39m
+[31m+               <div className="section-label sl-official">{verified || o.summary_plain ? t.opp.sectionSummary : t.opp.sectionFacts}</div>[39m
+[31m+               {verified ? ([39m
+[31m+                 <>[39m
+[31m+                   <p style={{ fontSize: "1.05rem" }}>{verified.summary[locale]}</p>[39m
+[31m+                   <p className="xs muted" style={{ margin: 0 }}>{t.opp.summaryAdmin}{locale === "en" && scope === "gr" ? ` ${s.facts.translatedNote}` : ""}</p>[39m
+[31m+                 </>[39m
+[31m+               ) : o.summary_plain ? ([39m
+[31m+                 <>[39m
+[31m+                   <p style={{ fontSize: "1.05rem" }}>{o.summary_plain}</p>[39m
+[31m+                   <p className="xs muted" style={{ margin: 0 }}>{o.summary_origin === "ai" ? t.opp.summaryAi : t.opp.summaryAdmin}</p>[39m
+[31m+                 </>[39m
+[31m+               ) : !o.official_details?.scope_excerpt ? <p className="muted" style={{ margin: 0 }}>{t.opp.sectionFactsNote}</p> : null}[39m
+[31m+               <OfficialScope o={o} s={s} />[39m
+[31m+             </section>[39m
+[31m+[39m
+[31m+             <KeyFacts o={o} s={s} locale={locale} t={t} />[39m
+[31m+[39m
+[31m+             <section id="eligibility" className="card">[39m
+[31m+               <div className="section-label sl-score">{t.opp.sectionMatch}</div>[39m
+[31m+               <p className="small muted" style={{ marginTop: 0 }}>{t.opp.sectionMatchNote}</p>[39m
+[31m+               <OfficialConditions o={o} s={s} locale={locale} />[39m
+[31m+               {!user ? ([39m
+[31m+                 <div className="notice info"><Icon name="user" size={18} /><span>{s.detail.saveHint} <Link href="/login">{t.nav.login}</Link> · <Link href="/register">{t.nav.register}</Link></span></div>[39m
+[31m+               ) : ([39m
+[31m+                 <>[39m
+[31m+                   <div className="row" style={{ marginBottom: 12 }}>[39m
+[31m+                     <EligibilityBadge status={a.eligibility} t={t} />[39m
+[31m+                     <span className="badge b-plain">{t.opp.relevance}: {a.relevance_score ?? "—"}/100</span>[39m
+[31m+                     <span className="badge b-plain">{t.opp.coverage}: {Math.round(a.evidence_coverage * 100)}%</span>[39m
+[31m+                     <span className="badge b-plain">{t.opp.unresolved}: {a.unresolved_count}</span>[39m
+[31m+                   </div>[39m
+[31m+                   {a.questions.length > 0 && ([39m
+[31m+                     <div className="notice info" style={{ marginBottom: 12 }}>[39m
+[31m+                       <Icon name="info" size={18} />[39m
+[31m+                       <span>{t.opp.questions} {a.questions.map((q) => t.question[q] ?? q).join(" · ")} <Link href={`/profile?ask=${a.questions.join(",")}`}>{t.opp.answerInProfile} →</Link></span>[39m
+[31m+                     </div>[39m
+[31m+                   )}[39m
+[31m+                 </>[39m
+[31m+               )}[39m
+[31m+               {user && a.obligations.length > 0 && ([39m
+[31m+                 <div className="notice info" style={{ marginBottom: 12 }}>[39m
+[31m+                   <div><strong>{t.obligations.title}</strong>[39m
+[31m+                     <ul className="small" style={{ margin: "6px 0 0" }}>{a.obligations.map((ob) => <li key={ob}>{t.obligations[ob] ?? ob}</li>)}</ul></div>[39m
+[31m+                 </div>[39m
+[31m+               )}[39m
+[31m+               {o.requirement_set_completeness !== "complete" && <div className="notice small" style={{ marginBottom: 12 }}><Icon name="alert" size={18} /><span>{t.ui.requirementsIncomplete}</span></div>}[39m
+[31m+               <div className="section-label sl-unverified" style={{ marginTop: 10 }}>{t.opp.sectionRequirements}</div>[39m
+[31m+               <RequirementsTable results={a.results} t={t} copy={s.detail.req} />[39m
+[31m+               {record && <DecisionRecordView record={record} s={s} t={t} opportunityId={o.id} />}[39m
+[31m+               <p className="small muted" style={{ marginBottom: 0 }}>{t.opp.authorityDecides}</p>[39m
+[31m+             </section>[39m
+[31m+[39m
+[31m+             {estimate && ([39m
+[31m+               <section className="card">[39m
+[31m+                 <div className="section-label sl-score">{t.ui.estimate}</div>[39m
+[31m+                 <p className="small muted" style={{ marginTop: 0 }}>{t.ui.estimateNote}</p>[39m
+[31m+                 <p className="kpi">{estimate.estimated_award !== null ? new Intl.NumberFormat(locale === "el" ? "el-GR" : "en-GB", { style: "currency", currency: estimate.currency }).format(estimate.estimated_award) : "—"}</p>[39m
+[31m+                 <details><summary>{t.ui.howCalculated}</summary>[39m
+[31m+                   <p className="small">{t.ui.formula}: <code>{estimate.formula}</code></p>[39m
+[31m+                   <ul className="small">{estimate.steps.map((st) => <li key={st}>{st}</li>)}</ul>[39m
+[31m+                   <p className="small muted">{estimate.rounding}</p>[39m
+[31m+                 </details>[39m
+[31m+               </section>[39m
+[31m+             )}[39m
+[31m+[39m
+[31m+             {user && ([39m
+[31m+               <section className="card">[39m
+[31m+                 <div className="section-label sl-ai">{t.ui.scenarios}</div>[39m
+[31m+                 <form className="row">[39m
+[31m+                   <select name="scenario" defaultValue={scenarioKind ?? ""} aria-label={t.ui.scenarios} style={{ maxWidth: 420 }}>[39m
+[31m+                     <option value="">—</option>[39m
+[31m+                     {SCENARIO_KINDS.filter((k) => k !== "establish_in_region" || regions.length > 0).map((k) => <option key={k} value={k}>{t.scenario[k]}</option>)}[39m
+[31m+                   </select>[39m
+[31m+                   <button className="btn btn-ghost btn-sm">{t.ui.run}</button>[39m
+[31m+                 </form>[39m
+[31m+                 {sr && ([39m
+[31m+                   <div className="stack" style={{ marginTop: 12 }}>[39m
+[31m+                     <div className="notice info">{t.ui.scenarioNote}</div>[39m
+[31m+                     <div className="row">[39m
+[31m+                       <span className="small">{t.ui.permissible}</span>[39m
+[31m+                       <span className={`badge ${sr.permissible === "no" ? "b-bad" : sr.permissible === "yes" ? "b-ok" : "b-warn"}`}>{t.ui[sr.permissible]}</span>[39m
+[31m+                       <EligibilityBadge status={sr.outcome.eligibility} t={t} hypothetical />[39m
+[31m+                     </div>[39m
+[31m+                     {sr.permissibility_reasons.length > 0 && <ul className="small">{sr.permissibility_reasons.map((r) => <li key={r}>{t.scenario.reasons[r] ?? r}</li>)}</ul>}[39m
+[31m+                     <div><strong className="small">{t.ui.changes}</strong>[39m
+[31m+                       {sr.changes.length === 0 ? <p className="small muted">{t.ui.none}</p> : ([39m
+[31m+                         <ul className="small">{sr.changes.map((c) => <li key={c.requirement_key}>{t.criterion[c.category] ?? c.category}: <StateBadge state={c.from} t={t} /> → <StateBadge state={c.to} t={t} /></li>)}</ul>[39m
+[31m+                       )}</div>[39m
+[31m+                     {sr.evidence_needed.length > 0 && <div><strong className="small">{t.ui.evidenceNeeded}</strong><ul className="small">{sr.evidence_needed.map((e) => <li key={e}>{e.replaceAll("_", " ")}</li>)}</ul></div>}[39m
+[31m+                     {sr.remaining_blockers.length > 0 && <div><strong className="small">{t.ui.blockers}</strong>[39m
+[31m+                       <ul className="small">{sr.remaining_blockers.map((b) => <li key={b.requirement_key}><StateBadge state={b.state} t={t} /> {b.original_text}</li>)}</ul></div>}[39m
+[31m+                   </div>[39m
+[31m+                 )}[39m
+[31m+               </section>[39m
+[31m+             )}[39m
+[31m+[39m
+[31m+             <section id="apply" className="card">[39m
+[31m+               <h2 style={{ marginTop: 0 }}>{s.detail.howToApply}</h2>[39m
+[31m+               <VerifiedSteps o={o} s={s} locale={locale} />[39m
+[31m+               <p>{canApply ? s.detail.applySteps : status.display === "unverified" || status.display === "conflicting" ? s.detail.applyUnconfirmed : s.detail.applyClosed}</p>[39m
+[31m+               <div className="row">[39m
+[31m+                 {canApply[39m
+[31m+                   ? <a className="btn btn-primary" href={o.application_url ?? o.canonical_url} target="_blank" rel="noopener noreferrer">{o.application_url ? t.opp.apply : t.opp.official} <Icon name="external" size={16} /></a>[39m
+[31m+                   : <a className="btn btn-ghost" href={o.canonical_url} target="_blank" rel="noopener noreferrer">{s.detail.officialPage} <Icon name="external" size={16} /></a>}[39m
+[31m+                 {guide && <Link className="btn btn-ghost" href={paths.guide(aud, guide)}><Icon name="book" size={16} />{s.detail.guideCta}</Link>}[39m
+[31m+               </div>[39m
+[31m+             </section>[39m
+[31m+[39m
+[31m+             <section id="sources" className="card">[39m
+[31m+               <h2 style={{ marginTop: 0 }}>{s.detail.sources}</h2>[39m
+[31m+               <ul className="checklist small">[39m
+[31m+                 <li><Icon name="shield" size={16} /><span><a href={o.canonical_url} target="_blank" rel="noopener noreferrer">{t.opp.officialPage}{o.source_name ? ` · ${o.source_name}` : ` · ${new URL(o.canonical_url).hostname}`}</a></span></li>[39m
+[31m+                 {verified?.sources.filter((src) => src.url !== o.canonical_url).map((src) => ([39m
+[31m+                   <li key={src.url}><Icon name="shield" size={16} /><span><a href={src.url} target="_blank" rel="noopener noreferrer">{src.label}</a> <span className="muted">· {s.card.checked} {formatDay(new Date(`${src.checkedOn}T12:00:00Z`), locale, "UTC")}</span></span></li>[39m
+[31m+                 ))}[39m
+[31m+                 {o.official_details?.documents?.map((doc) => ([39m
+[31m+                   <li key={doc.url}><Icon name="book" size={16} /><span><a href={doc.url} target="_blank" rel="noopener noreferrer" lang={o.official_details?.source === "manual-review" ? "el" : "en"}>{doc.label}</a></span></li>[39m
+[31m+                 ))}[39m
+[31m+                 {o.application_url && o.application_url !== o.canonical_url && <li><Icon name="external" size={16} /><span><a href={o.application_url} target="_blank" rel="noopener noreferrer">{o.application_url}</a></span></li>}[39m
+[31m+                 <li><Icon name="calendar" size={16} /><span>{t.ui.freshness}: {formatDay(o.last_verified_at, locale) ?? <span className="unknown">{t.opp.never}</span>}{o.source_name ? ` · ${o.source_name}` : ""}</span></li>[39m
+[31m+                 {o.deadline_original_text && <li><Icon name="info" size={16} /><span>{t.ui.originalDeadline}: <code>{o.deadline_original_text}</code>{o.deadline_is_date_only ? ` — ${t.ui.dateOnly}` : ""}</span></li>}[39m
+[31m+               </ul>[39m
+[31m+             </section>[39m
+[31m+[39m
+[31m+             <section id="unknowns" className="card unknowns">[39m
+[31m+               <h2 style={{ marginTop: 0 }}>{s.detail.unknownTitle}</h2>[39m
+[31m+               <p className="small muted" style={{ marginTop: 0 }}>{s.detail.unknownLead}</p>[39m
+[31m+               {unknowns.length === 0 && recordNotes.length === 0 ? <p className="small" style={{ margin: 0 }}>{s.detail.unknownNone}</p> : ([39m
+[31m+                 <ul className="checklist small">[39m
+[31m+                   {unknowns.map((u) => <li key={u}><Icon name="alert" size={16} /><span>{s.detail.unknown[u]}</span></li>)}[39m
+[31m+                   {recordNotes.map((n) => <li key={n}><Icon name="alert" size={16} /><span lang="el">{n}</span></li>)}[39m
+[31m+                 </ul>[39m
+[31m+               )}[39m
+[31m+             </section>[39m
+[31m+[39m
+[31m+             <ChangeHistory entries={history} s={s} locale={locale} />[39m
+[31m+           </div>[39m
+[31m+         </div>[39m
+[31m+[39m
+[31m+         <aside className="sticky stack">[39m
+[31m+           <div className="card keyinfo">[39m
+[31m+             <h2 style={{ marginTop: 0, fontSize: "1.05rem" }}>{s.detail.keyInfo}</h2>[39m
+[31m+             <dl>[39m
+[31m+               <div><dt>{t.opp.deadline}</dt><dd>{deadlineText(o, t, locale)}</dd></div>[39m
+[31m+               <div><dt>{amount.label}</dt><dd>{amount.value}</dd></div>[39m
+[31m+               <div><dt>{s.opps.type}</dt><dd>{s.supportType[supportTypeOf(o.opportunity_type)]}</dd></div>[39m
+[31m+               {cats.length > 0 && <div><dt>{s.detail.category}</dt><dd>{cats.map((c) => c.name[locale]).join(", ")}</dd></div>}[39m
+[31m+               <div><dt>{s.detail.applicant}</dt><dd>{s.paths.name[aud]}</dd></div>[39m
+[31m+               {audiences.length > 0 && <div><dt>{s.detail.forWhom}</dt><dd>{audiences.map((p) => t.opt.personas[p] ?? p).join(", ")}</dd></div>}[39m
+[31m+               <div><dt>{s.opps.scope}</dt><dd>{s.scope[scope]}</dd></div>[39m
+[31m+               <div><dt>{t.opp.authority}</dt><dd>{displayAuthority(o, locale) ?? <span className="unknown">{t.opp.deadlineUnknown}</span>}</dd></div>[39m
+[31m+               {o.funding_intensity_pct && <div><dt>{t.opp.intensity}</dt><dd>{Number(o.funding_intensity_pct)}%</dd></div>}[39m
+[31m+               <div><dt>{s.card.source}</dt><dd>{checkedLine(o, s, locale)}</dd></div>[39m
+[31m+             </dl>[39m
+[31m+             <div className="stack" style={{ marginTop: 16 }}>[39m
+[31m+               <a className="btn btn-primary btn-block" href={o.canonical_url} target="_blank" rel="noopener noreferrer">{t.opp.official} <Icon name="external" size={16} /></a>[39m
+[31m+               {user ? ([39m
+[31m+                 <form action={toggleSaveAction}>[39m
+[31m+                   <input type="hidden" name="opportunity_id" value={o.id} />[39m
+[31m+                   <button className="btn btn-ghost btn-block"><Icon name="bookmark" size={16} />{saved ? t.opp.unsave : t.opp.save}</button>[39m
+[31m+                 </form>[39m
+[31m+               ) : <Link className="btn btn-ghost btn-block" href="/login"><Icon name="bookmark" size={16} />{t.opp.save}</Link>}[39m
+[31m+             </div>[39m
+[31m+           </div>[39m
+[31m+           <div className="card flat trust-box">[39m
+[31m+             <h2 style={{ marginTop: 0, fontSize: "1rem" }}><Icon name="shield" size={18} /> {s.detail.trustTitle}</h2>[39m
+[31m+             <p className="small" style={{ margin: "0 0 8px" }}>{s.detail.trustBody}</p>[39m
+[31m+             <p className="xs muted" style={{ margin: "0 0 8px" }}>{checkedLine(o, s, locale)}</p>[39m
+[31m+             <Link href={`${paths.about(aud)}#sources`} className="small">{s.detail.trustLink} →</Link>[39m
+[31m+           </div>[39m
+[31m+           {(cats.length > 0 || audiences.length > 0) && <p className="xs muted" style={{ padding: "0 4px" }}>{s.opps.indicative}</p>}[39m
+[31m+         </aside>[39m
+[31m+       </div>[39m
+[31m+     </div>[39m
+[31m+   );[39m
+[31m+ }[39m
+[31m+[39m
+
+[36m [2m❯[22m tests/apply-cta.test.ts:[2m30:20[22m[39m
+    [90m 28|[39m   it("the programme page and the guide page both apply the rule", () =…
+    [90m 29|[39m     const detail = read("src/app/[aud]/eukairies/[id]/page.tsx");
+    [90m 30|[39m     expect(detail).toContain("const canApply = applicationCtaAllowed(s…
+    [90m   |[39m                    [31m^[39m
+    [90m 31|[39m     expect(detail).toContain("{canApply");
+    [90m 32|[39m     const guide = read("src/app/[aud]/odigoi/[slug]/page.tsx");
+
+[31m[2m⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/2]⎯[22m[39m
+
+[41m[1m FAIL [22m[49m tests/guides-catalog.test.ts[2m > [22mverification state (about the content, never the application status)[2m > [22mstays independent of the programme's application status
+[31m[1mAssertionError[22m: expected 'unverified' to be 'deadline_passed' // Object.is equality[39m
+
+Expected: [32m"[7mdeadline_pass[27med"[39m
+Received: [31m"[7munverifi[27med"[39m
+
+[36m [2m❯[22m tests/guides-catalog.test.ts:[2m84:56[22m[39m
+    [90m 82|[39m   it("stays independent of the programme's application status", () => {
+    [90m 83|[39m     const d = articleBySlug("discovereu")!;
+    [90m 84|[39m     expect(programmeStatus(d.recordKey!, NOW).display).toBe("deadline_…
+    [90m   |[39m                                                        [31m^[39m
+    [90m 85|[39m     expect(verificationOf(d, NOW)).toBe("conflicting");
+    [90m 86|[39m   });
+
+[31m[2m⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[2/2]⎯[22m[39m
+
+
+[2m Test Files [22m [1m[31m2 failed[39m[22m[2m | [22m[1m[32m32 passed[39m[22m[90m (34)[39m
+[2m      Tests [22m [1m[31m2 failed[39m[22m[2m | [22m[1m[32m361 passed[39m[22m[90m (363)[39m
+[2m   Start at [22m 13:03:31
+[2m   Duration [22m 8.66s[2m (tests 74%, import 17%, transform 8%, worker 1%)[22m
+
+[2m    Isolate [22m [33m34 workers spawned[39m[2m · ~63ms startup each (spawn + environment, per file)[22m
+[2m            [22m [2mat least ~2.09s faster with [22m[33misolate: false[39m[2m — reuses workers across files instead of one per file[22m
+
+
+::error file=/home/runner/work/TheJackalAcc/TheJackalAcc/tests/apply-cta.test.ts,title=tests/apply-cta.test.ts > application call-to-action > the programme page and the guide page both apply the rule,line=30,column=20::AssertionError: expected 'import Link from "next/link";\nimport…' to contain 'const canApply = applicationCtaAllowe…'%0A%0A- Expected%0A+ Received%0A%0A- const canApply = applicationCtaAllowed(status.application);%0A+ import Link from "next/link";%0A+ import { checkedLine } from "@/components/opportunity-card";%0A+ import { unknownsOf } from "@/lib/site/unknowns";%0A+ import { OpportunityBrief } from "@/components/brief";%0A+ import { applicationCtaAllowed } from "@/lib/site/brief";%0A+ import { applicantAudienceOf } from "@/lib/site/applicants";%0A+ import { notFound, redirect } from "next/navigation";%0A+ import { paths } from "@/lib/site/audience";%0A+ import { audienceParam } from "@/lib/site/path-params";%0A+ import { getDict } from "@/lib/i18n/server";%0A+ import { isDatabaseConfigured, sql } from "@/lib/db";%0A+ import { getOpportunity, loadHistory, loadRequirements, toMatchable } from "@/lib/data/opportunities";%0A+ import { ChangeHistory } from "@/components/change-history";%0A+ import { currentUser } from "@/lib/auth/session";%0A+ import { getProfile, listSavedIds } from "@/lib/data/user";%0A+ import { assess } from "@/lib/domain/eligibility";%0A+ import { runScenario, type Scenario } from "@/lib/domain/scenarios";%0A+ import { estimateAward } from "@/lib/domain/funding";%0A+ import { formatDay } from "@/lib/format";%0A+ import { SITE } from "@/lib/site/copy";%0A+ import { audiencesOf, categoriesOf, categoryBySlug, guideOf, scopeOf, supportTypeOf } from "@/lib/site/taxonomy";%0A+ import { EligibilityBadge, RecordStatusBadge, StateBadge, SyntheticLabel } from "@/components/badges";%0A+ import { recordStatus } from "@/lib/domain/record-status";%0A+ import { deadlineText } from "@/components/opportunity-facts";%0A+ import { RequirementsTable } from "@/components/requirements-table";%0A+ import { DecisionRecordView } from "@/components/decision-record";%0A+ import { buildDecisionRecord } from "@/lib/domain/decision-record";%0A+ import { hasApplicantMoney, moneyOf } from "@/lib/site/money";%0A+ import { KeyFacts, OfficialConditions, OfficialScope, VerifiedSteps, briefWhat, keyAmount } from "@/components/opportunity-details";%0A+ import { displayAuthority, displayTitle, verifiedFor } from "@/lib/site/verified";%0A+ import { Icon } from "@/components/icons";%0A+ import { toggleSaveAction } from "@/app/actions";%0A+%0A+ const SCENARIO_KINDS = ["register_business", "establish_in_region", "increase_cofinancing", "change_project_start", "obtain_dypa_registration"] as const;%0A+%0A+ function buildScenario(kind: string, regions: string[], now: Date): Scenario | null {%0A+   const inDays = (d: number) => new Date(now.getTime() + d * 86_400_000).toISOString().slice(0, 10);%0A+   switch (kind) {%0A+     case "register_business": return { kind, legal_form: "sole_proprietor", registration_date: inDays(30) };%0A+     case "establish_in_region": return regions[0] ? { kind, region: regions[0] } : null;%0A+     case "increase_cofinancing": return { kind, range: "over_50k" };%0A+     case "change_project_start": return { kind, start_date: inDays(90) };%0A+     case "obtain_dypa_registration": return { kind };%0A+     default: return null;%0A+   }%0A+ }%0A+%0A+ export async function generateMetadata({ params }: { params: Promise<{ aud: string; id: string }> }) {%0A+   const { locale } = await getDict();%0A+   if (!isDatabaseConfigured()) return {};%0A+   const o = await getOpportunity(sql(), (await params).id).catch(() => null);%0A+   return o ? { title: displayTitle(o, locale).text } : {};%0A+ }%0A+%0A+ /**%0A+  * One programme, inside its own path. A record of the other path is never rendered here: its address redirects to the%0A+  * right path (with a notice); unclassified (HOLD) records are not served at all (getOpportunity returns null).%0A+  */%0A+ export default async function OpportunityPage({ params, searchParams }: { params: Promise<{ aud: string; id: string }>; searchParams: Promise<{ scenario?: string; moved?: string }> }) {%0A+   const aud = await audienceParam(params);%0A+   const { t, locale } = await getDict();%0A+   const s = SITE[locale];%0A+   if (!isDatabaseConfigured()) return <div className="container"><div className="notice bad">{t.noDb}</div></div>;%0A+   const { id } = await params;%0A+   const o = await getOpportunity(sql(), id);%0A+   if (!o || !o.audience) notFound();%0A+   if (o.audience !== aud) redirect(`${paths.opportunity(o.audience, o.id)}?moved=1`);%0A+   const moved = (await searchParams).moved === "1";%0A+   const user = await currentUser();%0A+   const [profile, savedIds, reqMap, history] = await Promise.all([%0A+     user ? getProfile(sql(), user) : Promise.resolve(null),%0A+     user ? listSavedIds(sql(), user) : Promise.resolve([] as string[]),%0A+     loadRequirements(sql(), [o.id]),%0A+     loadHistory(sql(), o.id).catch(() => []),%0A+   ]);%0A+   const now = new Date();%0A+   const matchable = toMatchable(o, reqMap.get(o.id) ?? []);%0A+   const a = assess(matchable, profile ?? {}, { now });%0A+   const record = user && profile ? buildDecisionRecord(matchable, profile, { now }) : null;%0A+   const regionReq = matchable.requirements.find((r) => r.category === "geography" || r.category === "business_location");%0A+   const regions = ((regionReq?.value as { regions?: string[] } | undefined)?.regions ?? []).filter((r) => r.length > 2);%0A+   const scenarioKind = (await searchParams).scenario;%0A+   const scenario = user && profile && scenarioKind ? buildScenario(scenarioKind, regions, now) : null;%0A+   const sr = scenario ? runScenario(matchable, profile!, scenario, now) : null;%0A+   const budget = typeof profile?.project_budget_eur === "number" ? profile.project_budget_eur : null;%0A+   const estimate = budget !== null && o.funding_intensity_pct !== null%0A+     ? estimateAward({ eligible_expenditure: budget, intensity_pct: Number(o.funding_intensity_pct), min_award: o.funding_min ? Number(o.funding_min) : null, max_award: o.funding_max ? Number(o.funding_max) : null, currency: o.currency ?? "EUR" })%0A+     : null;%0A+%0A+   const cats = categoriesOf(o).map((c) => categoryBySlug(c)).filter((c) => !!c);%0A+   const audiences = audiencesOf(o);%0A+   const scope = scopeOf(o);%0A+   const guide = guideOf(o);%0A+   const saved = savedIds.includes(o.id);%0A+   const title = displayTitle(o, locale);%0A+   const verified = verifiedFor(o.external_key);%0A+   const amount = keyAmount(o, t, s, locale);%0A+   const status = recordStatus(matchable, now);%0A+   // No application call-to-action once the deadline has passed or the programme is closed (official page stays linked).%0A+   const canApply = applicationCtaAllowed(status.application, status.display);%0A+   const applicant = applicantAudienceOf(o, matchable.requirements);%0A+   // Reviewer notes recorded with records imported from a manual review (Greek, from the official documents).%0A+   const recordNotes = o.publication_basis === "manual_review" && !o.external_key?.startsWith("manual:") ? o.uncertainties ?? [] : [];%0A+   const unknowns = unknownsOf({%0A+     record: status, hasConflict: !!o.has_conflict, completeness: o.requirement_set_completeness, deadlineKind: o.deadline_kind,%0A+     hasDeadline: !!o.closes_at, amountState: o.funding_amount_state, applicant,%0A+     amountRecorded: !!verifiedFor(o.external_key)?.benefit || hasApplicantMoney(moneyOf(o)),%0A+     documentsApproved: false,%0A+   });%0A+%0A+   return (%0A+     <div className="container">%0A+       <nav className="crumbs" aria-label={s.detail.breadcrumb}>%0A+         <Link href={paths.opportunities(aud)}>{s.paths.opps.title[aud]}</Link>%0A+         {cats[0] && <> / <Link href={paths.opportunities(aud, `cat=${cats[0].slug}`)}>{cats[0].name[locale]}</Link></>}%0A+       </nav>%0A+       {moved && <div className="notice info" role="status" style={{ marginBottom: 16 }}><Icon name="info" size={18} /><span>{s.paths.moved(s.paths.name[aud])}</span></div>}%0A+       <header className="detail-head">%0A+         <div className="tags" style={{ marginBottom: 12 }}>%0A+           <RecordStatusBadge record={status} s={s} locale={locale} detail />%0A+           {cats.map((c) => <span key={c.slug} className="tag cat">{c.name[locale]}</span>)}%0A+           <span className="tag">{s.supportType[supportTypeOf(o.opportunity_type)]}</span>%0A+           <span className="tag navy">{s.scope[scope]}</span>%0A+           {o.is_synthetic && <SyntheticLabel t={t} />}%0A+         </div>%0A+         <h1 lang={title.lang}>{title.text}</h1>%0A+         {title.text !== o.official_title && <p className="small muted" style={{ margin: "0 0 4px" }} lang={o.title_lang}>{o.official_title}</p>}%0A+         <p className="muted" style={{ margin: 0 }}>{displayAuthority(o, locale)}{o.official_identifier ? ` · ${o.official_identifier}` : ""}</p>%0A+       </header>%0A+       {o.is_synthetic && <div className="notice" style={{ marginBottom: 16 }}>{t.synthetic}.</div>}%0A+       {o.has_conflict && <div className="notice bad" role="alert" style={{ marginBottom: 16 }}>{t.ui.conflict}</div>}%0A+       <OpportunityBrief%0A+         input={{ record: status, closesAt: o.closes_at, opensAt: o.opens_at, deadlineKind: o.deadline_kind, hasGuide: !!guide }}%0A+         what={briefWhat(o, t, s, locale)} who={s.paths.name[aud]} s={s} locale={locale} now={now}%0A+         applyUrl={o.application_url ?? o.canonical_url} guideHref={guide ? paths.guide(aud, guide) : undefined}%0A+         similarHref={cats[0] ? paths.opportunities(aud, `cat=${cats[0].slug}`) : paths.opportunities(aud)} />%0A+%0A+       <div className="with-aside-r">%0A+         <div>%0A+           <nav className="toc" aria-label={s.detail.overview}>%0A+             <a href="#overview">{s.detail.overview}</a>%0A+             <a href="#details">{s.facts.title}</a>%0A+             <a href="#eligibility">{s.detail.eligibility}</a>%0A+             <a href="#apply">{s.detail.howToApply}</a>%0A+             <a href="#sources">{s.detail.sources}</a>%0A+             <a href="#unknowns">{s.detail.unknownTitle}</a>%0A+             <a href="#history">{s.history.title}</a>%0A+           </nav>%0A+%0A+           <div className="stack-lg">%0A+             <section id="overview" className="card">%0A+               <div className="section-label sl-official">{verified || o.summary_plain ? t.opp.sectionSummary : t.opp.sectionFacts}</div>%0A+               {verified ? (%0A+                 <>%0A+                   <p style={{ fontSize: "1.05rem" }}>{verified.summary[locale]}</p>%0A+                   <p className="xs muted" style={{ margin: 0 }}>{t.opp.summaryAdmin}{locale === "en" && scope === "gr" ? ` ${s.facts.translatedNote}` : ""}</p>%0A+                 </>%0A+               ) : o.summary_plain ? (%0A+                 <>%0A+                   <p style={{ fontSize: "1.05rem" }}>{o.summary_plain}</p>%0A+                   <p className="xs muted" style={{ margin: 0 }}>{o.summary_origin === "ai" ? t.opp.summaryAi : t.opp.summaryAdmin}</p>%0A+                 </>%0A+               ) : !o.official_details?.scope_excerpt ? <p className="muted" style={{ margin: 0 }}>{t.opp.sectionFactsNote}</p> : null}%0A+               <OfficialScope o={o} s={s} />%0A+             </section>%0A+%0A+             <KeyFacts o={o} s={s} locale={locale} t={t} />%0A+%0A+             <section id="eligibility" className="card">%0A+               <div className="section-label sl-score">{t.opp.sectionMatch}</div>%0A+               <p className="small muted" style={{ marginTop: 0 }}>{t.opp.sectionMatchNote}</p>%0A+               <OfficialConditions o={o} s={s} locale={locale} />%0A+               {!user ? (%0A+                 <div className="notice info"><Icon name="user" size={18} /><span>{s.detail.saveHint} <Link href="/login">{t.nav.login}</Link> · <Link href="/register">{t.nav.register}</Link></span></div>%0A+               ) : (%0A+                 <>%0A+                   <div className="row" style={{ marginBottom: 12 }}>%0A+                     <EligibilityBadge status={a.eligibility} t={t} />%0A+                     <span className="badge b-plain">{t.opp.relevance}: {a.relevance_score ?? "—"}/100</span>%0A+                     <span className="badge b-plain">{t.opp.coverage}: {Math.round(a.evidence_coverage * 100)}%25</span>%0A+                     <span className="badge b-plain">{t.opp.unresolved}: {a.unresolved_count}</span>%0A+                   </div>%0A+                   {a.questions.length > 0 && (%0A+                     <div className="notice info" style={{ marginBottom: 12 }}>%0A+                       <Icon name="info" size={18} />%0A+                       <span>{t.opp.questions} {a.questions.map((q) => t.question[q] ?? q).join(" · ")} <Link href={`/profile?ask=${a.questions.join(",")}`}>{t.opp.answerInProfile} →</Link></span>%0A+                     </div>%0A+                   )}%0A+                 </>%0A+               )}%0A+               {user && a.obligations.length > 0 && (%0A+                 <div className="notice info" style={{ marginBottom: 12 }}>%0A+                   <div><strong>{t.obligations.title}</strong>%0A+                     <ul className="small" style={{ margin: "6px 0 0" }}>{a.obligations.map((ob) => <li key={ob}>{t.obligations[ob] ?? ob}</li>)}</ul></div>%0A+                 </div>%0A+               )}%0A+               {o.requirement_set_completeness !== "complete" && <div className="notice small" style={{ marginBottom: 12 }}><Icon name="alert" size={18} /><span>{t.ui.requirementsIncomplete}</span></div>}%0A+               <div className="section-label sl-unverified" style={{ marginTop: 10 }}>{t.opp.sectionRequirements}</div>%0A+               <RequirementsTable results={a.results} t={t} copy={s.detail.req} />%0A+               {record && <DecisionRecordView record={record} s={s} t={t} opportunityId={o.id} />}%0A+               <p className="small muted" style={{ marginBottom: 0 }}>{t.opp.authorityDecides}</p>%0A+             </section>%0A+%0A+             {estimate && (%0A+               <section className="card">%0A+                 <div className="section-label sl-score">{t.ui.estimate}</div>%0A+                 <p className="small muted" style={{ marginTop: 0 }}>{t.ui.estimateNote}</p>%0A+                 <p className="kpi">{estimate.estimated_award !== null ? new Intl.NumberFormat(locale === "el" ? "el-GR" : "en-GB", { style: "currency", currency: estimate.currency }).format(estimate.estimated_award) : "—"}</p>%0A+                 <details><summary>{t.ui.howCalculated}</summary>%0A+                   <p className="small">{t.ui.formula}: <code>{estimate.formula}</code></p>%0A+                   <ul className="small">{estimate.steps.map((st) => <li key={st}>{st}</li>)}</ul>%0A+                   <p className="small muted">{estimate.rounding}</p>%0A+                 </details>%0A+               </section>%0A+             )}%0A+%0A+             {user && (%0A+               <section className="card">%0A+                 <div className="section-label sl-ai">{t.ui.scenarios}</div>%0A+                 <form className="row">%0A+                   <select name="scenario" defaultValue={scenarioKind ?? ""} aria-label={t.ui.scenarios} style={{ maxWidth: 420 }}>%0A+                     <option value="">—</option>%0A+                     {SCENARIO_KINDS.filter((k) => k !== "establish_in_region" || regions.length > 0).map((k) => <option key={k} value={k}>{t.scenario[k]}</option>)}%0A+                   </select>%0A+                   <button className="btn btn-ghost btn-sm">{t.ui.run}</button>%0A+                 </form>%0A+                 {sr && (%0A+                   <div className="stack" style={{ marginTop: 12 }}>%0A+                     <div className="notice info">{t.ui.scenarioNote}</div>%0A+                     <div className="row">%0A+                       <span className="small">{t.ui.permissible}</span>%0A+                       <span className={`badge ${sr.permissible === "no" ? "b-bad" : sr.permissible === "yes" ? "b-ok" : "b-warn"}`}>{t.ui[sr.permissible]}</span>%0A+                       <EligibilityBadge status={sr.outcome.eligibility} t={t} hypothetical />%0A+                     </div>%0A+                     {sr.permissibility_reasons.length > 0 && <ul className="small">{sr.permissibility_reasons.map((r) => <li key={r}>{t.scenario.reasons[r] ?? r}</li>)}</ul>}%0A+                     <div><strong className="small">{t.ui.changes}</strong>%0A+                       {sr.changes.length === 0 ? <p className="small muted">{t.ui.none}</p> : (%0A+                         <ul className="small">{sr.changes.map((c) => <li key={c.requirement_key}>{t.criterion[c.category] ?? c.category}: <StateBadge state={c.from} t={t} /> → <StateBadge state={c.to} t={t} /></li>)}</ul>%0A+                       )}</div>%0A+                     {sr.evidence_needed.length > 0 && <div><strong className="small">{t.ui.evidenceNeeded}</strong><ul className="small">{sr.evidence_needed.map((e) => <li key={e}>{e.replaceAll("_", " ")}</li>)}</ul></div>}%0A+                     {sr.remaining_blockers.length > 0 && <div><strong className="small">{t.ui.blockers}</strong>%0A+                       <ul className="small">{sr.remaining_blockers.map((b) => <li key={b.requirement_key}><StateBadge state={b.state} t={t} /> {b.original_text}</li>)}</ul></div>}%0A+                   </div>%0A+                 )}%0A+               </section>%0A+             )}%0A+%0A+             <section id="apply" className="card">%0A+               <h2 style={{ marginTop: 0 }}>{s.detail.howToApply}</h2>%0A+               <VerifiedSteps o={o} s={s} locale={locale} />%0A+               <p>{canApply ? s.detail.applySteps : status.display === "unverified" || status.display === "conflicting" ? s.detail.applyUnconfirmed : s.detail.applyClosed}</p>%0A+               <div className="row">%0A+                 {canApply%0A+                   ? <a className="btn btn-primary" href={o.application_url ?? o.canonical_url} target="_blank" rel="noopener noreferrer">{o.application_url ? t.opp.apply : t.opp.official} <Icon name="external" size={16} /></a>%0A+                   : <a className="btn btn-ghost" href={o.canonical_url} target="_blank" rel="noopener noreferrer">{s.detail.officialPage} <Icon name="external" size={16} /></a>}%0A+                 {guide && <Link className="btn btn-ghost" href={paths.guide(aud, guide)}><Icon name="book" size={16} />{s.detail.guideCta}</Link>}%0A+               </div>%0A+             </section>%0A+%0A+             <section id="sources" className="card">%0A+               <h2 style={{ marginTop: 0 }}>{s.detail.sources}</h2>%0A+               <ul className="checklist small">%0A+                 <li><Icon name="shield" size={16} /><span><a href={o.canonical_url} target="_blank" rel="noopener noreferrer">{t.opp.officialPage}{o.source_name ? ` · ${o.source_name}` : ` · ${new URL(o.canonical_url).hostname}`}</a></span></li>%0A+                 {verified?.sources.filter((src) => src.url !== o.canonical_url).map((src) => (%0A+                   <li key={src.url}><Icon name="shield" size={16} /><span><a href={src.url} target="_blank" rel="noopener noreferrer">{src.label}</a> <span className="muted">· {s.card.checked} {formatDay(new Date(`${src.checkedOn}T12:00:00Z`), locale, "UTC")}</span></span></li>%0A+                 ))}%0A+                 {o.official_details?.documents?.map((doc) => (%0A+                   <li key={doc.url}><Icon name="book" size={16} /><span><a href={doc.url} target="_blank" rel="noopener noreferrer" lang={o.official_details?.source === "manual-review" ? "el" : "en"}>{doc.label}</a></span></li>%0A+                 ))}%0A+                 {o.application_url && o.application_url !== o.canonical_url && <li><Icon name="external" size={16} /><span><a href={o.application_url} target="_blank" rel="noopener noreferrer">{o.application_url}</a></span></li>}%0A+                 <li><Icon name="calendar" size={16} /><span>{t.ui.freshness}: {formatDay(o.last_verified_at, locale) ?? <span className="unknown">{t.opp.never}</span>}{o.source_name ? ` · ${o.source_name}` : ""}</span></li>%0A+                 {o.deadline_original_text && <li><Icon name="info" size={16} /><span>{t.ui.originalDeadline}: <code>{o.deadline_original_text}</code>{o.deadline_is_date_only ? ` — ${t.ui.dateOnly}` : ""}</span></li>}%0A+               </ul>%0A+             </section>%0A+%0A+             <section id="unknowns" className="card unknowns">%0A+               <h2 style={{ marginTop: 0 }}>{s.detail.unknownTitle}</h2>%0A+               <p className="small muted" style={{ marginTop: 0 }}>{s.detail.unknownLead}</p>%0A+               {unknowns.length === 0 && recordNotes.length === 0 ? <p className="small" style={{ margin: 0 }}>{s.detail.unknownNone}</p> : (%0A+                 <ul className="checklist small">%0A+                   {unknowns.map((u) => <li key={u}><Icon name="alert" size={16} /><span>{s.detail.unknown[u]}</span></li>)}%0A+                   {recordNotes.map((n) => <li key={n}><Icon name="alert" size={16} /><span lang="el">{n}</span></li>)}%0A+                 </ul>%0A+               )}%0A+             </section>%0A+%0A+             <ChangeHistory entries={history} s={s} locale={locale} />%0A+           </div>%0A+         </div>%0A+%0A+         <aside className="sticky stack">%0A+           <div className="card keyinfo">%0A+             <h2 style={{ marginTop: 0, fontSize: "1.05rem" }}>{s.detail.keyInfo}</h2>%0A+             <dl>%0A+               <div><dt>{t.opp.deadline}</dt><dd>{deadlineText(o, t, locale)}</dd></div>%0A+               <div><dt>{amount.label}</dt><dd>{amount.value}</dd></div>%0A+               <div><dt>{s.opps.type}</dt><dd>{s.supportType[supportTypeOf(o.opportunity_type)]}</dd></div>%0A+               {cats.length > 0 && <div><dt>{s.detail.category}</dt><dd>{cats.map((c) => c.name[locale]).join(", ")}</dd></div>}%0A+               <div><dt>{s.detail.applicant}</dt><dd>{s.paths.name[aud]}</dd></div>%0A+               {audiences.length > 0 && <div><dt>{s.detail.forWhom}</dt><dd>{audiences.map((p) => t.opt.personas[p] ?? p).join(", ")}</dd></div>}%0A+               <div><dt>{s.opps.scope}</dt><dd>{s.scope[scope]}</dd></div>%0A+               <div><dt>{t.opp.authority}</dt><dd>{displayAuthority(o, locale) ?? <span className="unknown">{t.opp.deadlineUnknown}</span>}</dd></div>%0A+               {o.funding_intensity_pct && <div><dt>{t.opp.intensity}</dt><dd>{Number(o.funding_intensity_pct)}%25</dd></div>}%0A+               <div><dt>{s.card.source}</dt><dd>{checkedLine(o, s, locale)}</dd></div>%0A+             </dl>%0A+             <div className="stack" style={{ marginTop: 16 }}>%0A+               <a className="btn btn-primary btn-block" href={o.canonical_url} target="_blank" rel="noopener noreferrer">{t.opp.official} <Icon name="external" size={16} /></a>%0A+               {user ? (%0A+                 <form action={toggleSaveAction}>%0A+                   <input type="hidden" name="opportunity_id" value={o.id} />%0A+                   <button className="btn btn-ghost btn-block"><Icon name="bookmark" size={16} />{saved ? t.opp.unsave : t.opp.save}</button>%0A+                 </form>%0A+               ) : <Link className="btn btn-ghost btn-block" href="/login"><Icon name="bookmark" size={16} />{t.opp.save}</Link>}%0A+             </div>%0A+           </div>%0A+           <div className="card flat trust-box">%0A+             <h2 style={{ marginTop: 0, fontSize: "1rem" }}><Icon name="shield" size={18} /> {s.detail.trustTitle}</h2>%0A+             <p className="small" style={{ margin: "0 0 8px" }}>{s.detail.trustBody}</p>%0A+             <p className="xs muted" style={{ margin: "0 0 8px" }}>{checkedLine(o, s, locale)}</p>%0A+             <Link href={`${paths.about(aud)}#sources`} className="small">{s.detail.trustLink} →</Link>%0A+           </div>%0A+           {(cats.length > 0 || audiences.length > 0) && <p className="xs muted" style={{ padding: "0 4px" }}>{s.opps.indicative}</p>}%0A+         </aside>%0A+       </div>%0A+     </div>%0A+   );%0A+ }%0A+%0A%0A ❯ tests/apply-cta.test.ts:30:20%0A%0A
+
+::error file=/home/runner/work/TheJackalAcc/TheJackalAcc/tests/guides-catalog.test.ts,title=tests/guides-catalog.test.ts > verification state (about the content%2C never the application status) > stays independent of the programme's application status,line=84,column=56::AssertionError: expected 'unverified' to be 'deadline_passed' // Object.is equality%0A%0AExpected: "deadline_passed"%0AReceived: "unverified"%0A%0A ❯ tests/guides-catalog.test.ts:84:56%0A%0A

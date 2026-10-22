@@ -47,137 +47,137 @@
     {
       "name": "citizen record under /epixeiriseis redirects to /politis",
       "ok": true,
-      "detail": "200 /politis/eukairies/c8661db5-9dd6-49dc-9f8e-ed2bbce56435?moved=1"
+      "detail": "200 /politis/eukairies/89585061-7245-4356-b79a-8a197014d356?moved=1"
     },
     {
       "name": "citizen record under /epixeiriseis redirects to /politis",
       "ok": true,
-      "detail": "200 /politis/eukairies/97602771-cf70-4a76-8208-53464c9f4a7b?moved=1"
+      "detail": "200 /politis/eukairies/804c5a83-d8c3-4034-bc97-db9f2e78025c?moved=1"
     },
     {
       "name": "citizen record under /epixeiriseis redirects to /politis",
       "ok": true,
-      "detail": "200 /politis/eukairies/3f59dcab-2c92-48de-841e-74edebb83904?moved=1"
+      "detail": "200 /politis/eukairies/e84a98aa-e1de-42ab-b39f-bc5c6022eccb?moved=1"
     },
     {
       "name": "citizen record under /epixeiriseis redirects to /politis",
       "ok": true,
-      "detail": "200 /politis/eukairies/1af425a7-825c-4e5d-8d8b-ea09f193f693?moved=1"
+      "detail": "200 /politis/eukairies/4233d562-2b50-4912-9ded-cb5e724a6cf5?moved=1"
     },
     {
       "name": "citizen record under /epixeiriseis redirects to /politis",
       "ok": true,
-      "detail": "200 /politis/eukairies/dec9e741-eaac-4000-af55-4b797702cf81?moved=1"
+      "detail": "200 /politis/eukairies/dfa9e31e-15ce-46cc-9870-6e801e2101fd?moved=1"
     },
     {
       "name": "old address /opportunities/<citizen id> leads to its path",
       "ok": true,
-      "detail": "200 /politis/eukairies/c8661db5-9dd6-49dc-9f8e-ed2bbce56435"
+      "detail": "200 /politis/eukairies/89585061-7245-4356-b79a-8a197014d356"
     },
     {
       "name": "business record under /politis redirects to /epixeiriseis",
       "ok": true,
-      "detail": "200 /epixeiriseis/eukairies/9994dff9-5db7-4670-bda2-50df26b6181e?moved=1"
+      "detail": "200 /epixeiriseis/eukairies/544d6490-426d-4b65-abe2-3ba7ac7922e7?moved=1"
     },
     {
       "name": "business record under /politis redirects to /epixeiriseis",
       "ok": true,
-      "detail": "200 /epixeiriseis/eukairies/178e28b9-882f-4c7e-8f92-d43c43dda093?moved=1"
+      "detail": "200 /epixeiriseis/eukairies/9d6e69fe-bfe2-4e18-aa63-ce740f884c4e?moved=1"
     },
     {
       "name": "business record under /politis redirects to /epixeiriseis",
       "ok": true,
-      "detail": "200 /epixeiriseis/eukairies/d0f1a7c3-7057-4047-b2dc-d7693d991962?moved=1"
+      "detail": "200 /epixeiriseis/eukairies/a5083d51-ef57-4412-a629-2909aa6cb97f?moved=1"
     },
     {
       "name": "business record under /politis redirects to /epixeiriseis",
       "ok": true,
-      "detail": "200 /epixeiriseis/eukairies/ee53d2af-fe61-4a18-ba93-42c70022dfc2?moved=1"
+      "detail": "200 /epixeiriseis/eukairies/197cc312-a744-4a2b-8a8a-97b728bbb42b?moved=1"
     },
     {
       "name": "business record under /politis redirects to /epixeiriseis",
       "ok": true,
-      "detail": "200 /epixeiriseis/eukairies/9539c753-e646-454f-b4af-db952243a6ec?moved=1"
+      "detail": "200 /epixeiriseis/eukairies/e9ac9800-cbc8-413b-994b-f27b2ecf2477?moved=1"
     },
     {
       "name": "old address /opportunities/<business id> leads to its path",
       "ok": true,
-      "detail": "200 /epixeiriseis/eukairies/9994dff9-5db7-4670-bda2-50df26b6181e"
+      "detail": "200 /epixeiriseis/eukairies/544d6490-426d-4b65-abe2-3ba7ac7922e7"
     },
     {
       "name": "HOLD record is not found under /politis",
       "ok": true,
-      "detail": "598484ee-b933-46f5-98c0-564f11b31a75"
+      "detail": "b31976a5-5cb9-4058-a685-423e9f26b425"
     },
     {
       "name": "HOLD record is not found under /epixeiriseis",
       "ok": true,
-      "detail": "598484ee-b933-46f5-98c0-564f11b31a75"
+      "detail": "b31976a5-5cb9-4058-a685-423e9f26b425"
     },
     {
       "name": "HOLD record is not found at the old address",
       "ok": true,
-      "detail": "598484ee-b933-46f5-98c0-564f11b31a75"
+      "detail": "b31976a5-5cb9-4058-a685-423e9f26b425"
     },
     {
       "name": "HOLD record is not found under /politis",
       "ok": true,
-      "detail": "c392627e-9f9a-46ac-8414-75985185e75b"
+      "detail": "fefe822f-0144-4b4d-b61d-efa8cfeff4cd"
     },
     {
       "name": "HOLD record is not found under /epixeiriseis",
       "ok": true,
-      "detail": "c392627e-9f9a-46ac-8414-75985185e75b"
+      "detail": "fefe822f-0144-4b4d-b61d-efa8cfeff4cd"
     },
     {
       "name": "HOLD record is not found at the old address",
       "ok": true,
-      "detail": "c392627e-9f9a-46ac-8414-75985185e75b"
+      "detail": "fefe822f-0144-4b4d-b61d-efa8cfeff4cd"
     },
     {
       "name": "HOLD record is not found under /politis",
       "ok": true,
-      "detail": "6a23e18a-ff55-4efb-93b3-f62a1f0321d1"
+      "detail": "fe14f86b-ec84-4a7d-aefb-ab213f499c8c"
     },
     {
       "name": "HOLD record is not found under /epixeiriseis",
       "ok": true,
-      "detail": "6a23e18a-ff55-4efb-93b3-f62a1f0321d1"
+      "detail": "fe14f86b-ec84-4a7d-aefb-ab213f499c8c"
     },
     {
       "name": "HOLD record is not found at the old address",
       "ok": true,
-      "detail": "6a23e18a-ff55-4efb-93b3-f62a1f0321d1"
+      "detail": "fe14f86b-ec84-4a7d-aefb-ab213f499c8c"
     },
     {
       "name": "HOLD record is not found under /politis",
       "ok": true,
-      "detail": "54997ad5-958a-4c35-8f3c-d8bd59d6faa0"
+      "detail": "d0c24cd6-82a5-4818-86a7-5c5c9756b668"
     },
     {
       "name": "HOLD record is not found under /epixeiriseis",
       "ok": true,
-      "detail": "54997ad5-958a-4c35-8f3c-d8bd59d6faa0"
+      "detail": "d0c24cd6-82a5-4818-86a7-5c5c9756b668"
     },
     {
       "name": "HOLD record is not found at the old address",
       "ok": true,
-      "detail": "54997ad5-958a-4c35-8f3c-d8bd59d6faa0"
+      "detail": "d0c24cd6-82a5-4818-86a7-5c5c9756b668"
     },
     {
       "name": "HOLD record is not found under /politis",
       "ok": true,
-      "detail": "fdbae9d0-b3d6-4945-bb21-cad889e9fa45"
+      "detail": "1a0d1535-39aa-4da1-ace2-b381993b0295"
     },
     {
       "name": "HOLD record is not found under /epixeiriseis",
       "ok": true,
-      "detail": "fdbae9d0-b3d6-4945-bb21-cad889e9fa45"
+      "detail": "1a0d1535-39aa-4da1-ace2-b381993b0295"
     },
     {
       "name": "HOLD record is not found at the old address",
       "ok": true,
-      "detail": "fdbae9d0-b3d6-4945-bb21-cad889e9fa45"
+      "detail": "1a0d1535-39aa-4da1-ace2-b381993b0295"
     },
     {
       "name": "old mixed page /opportunities leads to the home page",
@@ -282,7 +282,7 @@
     {
       "name": "citizen journey: details page has the official application link",
       "ok": true,
-      "detail": "https://www.aade.gr/sites/default/files/2023-09/forolologika_kinitra_pros_newn_forol_kat_kfe_new_EL.pdf#article-5a"
+      "detail": "https://www.aade.gr/egkyklioi-kai-apofaseis/1192-22-09-2026"
     },
     {
       "name": "citizen journey: «Ψάχνω ως» switch is shown",
@@ -330,12 +330,12 @@
         },
         {
           "step": "details",
-          "url": "http://127.0.0.1:3000/politis/eukairies/c8661db5-9dd6-49dc-9f8e-ed2bbce56435",
-          "title": "Άρθρο 5Α ΚΦΕ — εναλλακτική φορολόγηση επενδυτών"
+          "url": "http://127.0.0.1:3000/politis/eukairies/89585061-7245-4356-b79a-8a197014d356",
+          "title": "Άρθρο 5Β ΚΦΕ — 7% φόρος για συνταξιούχους με σύνταξη εξωτερικού"
         },
         {
           "step": "official application",
-          "url": "https://www.aade.gr/sites/default/files/2023-09/forolologika_kinitra_pros_newn_forol_kat_kfe_new_EL.pdf#article-5a"
+          "url": "https://www.aade.gr/egkyklioi-kai-apofaseis/1192-22-09-2026"
         }
       ]
     },
@@ -352,7 +352,7 @@
         },
         {
           "step": "details",
-          "url": "http://127.0.0.1:3000/epixeiriseis/eukairies/9994dff9-5db7-4670-bda2-50df26b6181e",
+          "url": "http://127.0.0.1:3000/epixeiriseis/eukairies/544d6490-426d-4b65-abe2-3ba7ac7922e7",
           "title": "Ενίσχυση επενδυτικών σχεδίων νέων και υπό σύσταση ΜΜΕ που υλοποιούνται στις ηπειρωτικές περιοχές ΕΣΔΙΜ (ΔΑΜ21)"
         },
         {
