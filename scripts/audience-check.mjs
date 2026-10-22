@@ -7,13 +7,13 @@
 //  5. Journey for each path: home → choice → opportunities → details → official application link.
 //  6. Database: every record's audience (the 56-record classification table).
 import { chromium } from "playwright";
-import { mkdirSync, writeFileSync } from "node:fs";
+import { mkdirSync, readFileSync, writeFileSync } from "node:fs";
 
 const out = process.argv[2] ?? "audience-check";
 mkdirSync(out, { recursive: true });
 const BASE = "http://127.0.0.1:3000";
 const ids = JSON.parse(process.env.PREVIEW_IDS ?? "{}");
-const classification = JSON.parse(process.env.CLASSIFICATION ?? "[]");
+const classification = process.env.CLASSIFICATION_FILE ? JSON.parse(readFileSync(process.env.CLASSIFICATION_FILE, "utf8")) : [];
 const PATHS = { citizen: "politis", business: "epixeiriseis" };
 const failures = [];
 const checks = [];
@@ -153,6 +153,7 @@ await browser.close();
 
 // 6 — classification table (from the database, passed in by the workflow)
 const counts = classification.reduce((m, r) => { const k = r.audience ?? "hold"; m[k] = (m[k] ?? 0) + 1; return m; }, {});
-writeFileSync(`${out}/audience-check.json`, JSON.stringify({ counts, listed: { citizen: listed.citizen.length, business: listed.business.length }, checks, failures, journey, classification }, null, 2));
+const classified = classification.filter((r) => r.audience).map(({ external_key, audience, title }) => ({ external_key, audience, title }));
+writeFileSync(`${out}/audience-check.json`, JSON.stringify({ counts, listed: { citizen: listed.citizen.length, business: listed.business.length }, checks, failures, journey, classified }, null, 2));
 console.log(JSON.stringify({ counts, checks: checks.length, failed: failures.length, failures }, null, 2));
 if (failures.length) process.exitCode = 1;

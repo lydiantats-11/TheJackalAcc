@@ -12,7 +12,9 @@ import { APPROVED_RECORDS } from "@/lib/site/guide-catalog";
 
 const root = join(__dirname, "..");
 const read = (p: string) => readFileSync(join(root, p), "utf8");
-const seed = read("db/seed/audience-2026-10-22.sql");
+const seedRaw = read("db/seed/audience-2026-10-22.sql");
+/** The seed without SQL comments (comments may contain quotes and words like "deleted"). */
+const seed = seedRaw.split("\n").map((l) => l.replace(/--.*$/, "")).join("\n");
 const business = JSON.parse(read("data/business-records-2026-10-20.json")).records as Array<Record<string, any>>;
 
 /** Keys listed in one UPDATE … SET audience = '<a>' … IN (…) block of the seed. */
@@ -80,7 +82,7 @@ describe("classification of the approved records (seed of 22 Oct 2026)", () => {
   it("EU Funding & Tenders calls stay unclassified (HOLD): first everything is reset, nothing is deleted", () => {
     expect(seed).toContain("UPDATE opportunities SET audience = NULL;");
     expect(seed).not.toMatch(/eu-topic:/);
-    expect(seed).not.toMatch(/DELETE/i);
+    expect(seed).not.toMatch(/\bDELETE\b/i);
   });
   it("the database allows only one of the two values, or none", () => {
     const m = read("db/migrations/0011_audience.sql");
