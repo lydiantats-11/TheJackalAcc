@@ -27,7 +27,7 @@
       var key = currentKey();
       var file = location.pathname.split("/").pop() || "";
       var target = key && (window.SNAP_MANIFEST[other] || {})[key];
-      if (!target && /--for-me-demo\.html$/.test(file)) target = other + "--for-me-demo.html";
+      if (!target && /--account-demo\.html$/.test(file)) target = other + "--account-demo.html";
       location.href = target || other + "--index.html";
       return;
     }
@@ -35,7 +35,8 @@
       var params = [];
       new FormData(form).forEach(function (v, k) { params.push([k, String(v)]); });
       var path = new URL(form.getAttribute("action"), location.href).pathname;
-      path = path.indexOf("/opportunities") >= 0 ? "/opportunities" : path;
+      var m = path.match(/\/(politis|epixeiriseis)\/(eukairies|odigoi)/);
+      path = m ? m[0] : path;
       location.href = M[keyOf(path, params)] || locale + "--missing.html";
       return;
     }
