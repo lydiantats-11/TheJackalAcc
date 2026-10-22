@@ -68,15 +68,15 @@ describe("verification state (about the content, never the application status)",
     expect(state("art5c")).toBe("incomplete");
     expect(state("a21")).toBe("incomplete");
     expect(state("studenthousing")).toBe("incomplete");
-    expect(state("art5b")).toBe("needs_reverification"); // guide PDF dated 2023, later amendments not checked
+    expect(state("art5b")).toBe("incomplete"); // 22 Oct 2026: deadline from A.1192/2026; the start year of the 15 years is still to be checked
     expect(state("eligibility-labels")).toBe("educational");
   });
 
   it("asks for a new check after the review interval (a trigger, not a verdict)", () => {
     const a21 = articleBySlug("a21")!;
-    expect(reviewDue(a21, new Date("2026-11-13T00:00:00Z"))).toBe(false);
-    expect(reviewDue(a21, new Date("2026-11-14T12:00:00Z"))).toBe(true);
-    expect(state("a21", new Date("2026-11-14T12:00:00Z"))).toBe("needs_reverification");
+    expect(reviewDue(a21, new Date("2026-11-20T00:00:00Z"))).toBe(false); // checked again 22 Oct 2026
+    expect(reviewDue(a21, new Date("2026-11-22T12:00:00Z"))).toBe(true);
+    expect(state("a21", new Date("2026-11-22T12:00:00Z"))).toBe("needs_reverification");
   });
 
   it("stays independent of the programme's application status", () => {

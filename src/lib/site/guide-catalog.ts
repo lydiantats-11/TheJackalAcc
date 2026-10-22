@@ -6,10 +6,10 @@
  *   is turned into one `Article` shape and rendered by one template.
  * - Verification state is about the GUIDE'S CONTENT (checked against official sources?), never about whether applications
  *   are open; the programme's application status is computed separately in guide-status.ts.
- * - Nothing here is written from memory: programme facts come from data/official-records-2026-10-14.v2.json; procedure
+ * - Nothing here is written from memory: programme facts come from data/official-records-2026-10-14.v2.json with the corrections of 22 Oct 2026 (checked-records.ts); procedure
  *   articles live in src/content/guides/ with their own official sources and check dates.
  */
-import records from "../../../data/official-records-2026-10-14.v2.json";
+import { CHECKED_RECORDS as records } from "./checked-records";
 import type { Locale } from "@/lib/i18n/dictionaries";
 import { PROCEDURE_ARTICLES } from "@/content/guides";
 import { GENERAL_GUIDES } from "./guides";

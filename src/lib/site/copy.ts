@@ -79,7 +79,7 @@ const el = {
   status: { current: "Τρέχουσες (ανοιχτές, προσεχείς, προς επανέλεγχο)", open: "Ανοιχτές", upcoming: "Προσεχείς", recheck: "Χρειάζονται νέο έλεγχο", passed: "Η προθεσμία έληξε", closed: "Κλειστές", all: "Όλες, μαζί με όσες έληξαν" },
   /** Canonical record status labels (record-status.ts), shared by every page. */
   record: {
-    labels: { open: "Ανοιχτές αιτήσεις", rolling: "Συνεχής υποβολή", upcoming: "Δεν έχουν ανοίξει ακόμη", recheck: "Χρειάζεται νέος έλεγχος", deadline_passed: "Η προθεσμία έληξε", closed: "Κλειστές αιτήσεις", suspended: "Σε αναστολή", unverified: "Μη επιβεβαιωμένη κατάσταση", conflicting: "Αντικρουόμενα επίσημα στοιχεία", unknown: "Ελέγξτε την επίσημη σελίδα" },
+    labels: { open: "Ανοιχτές αιτήσεις", rolling: "Συνεχής υποβολή", upcoming: "Δεν έχουν ανοίξει ακόμη", recheck: "Χρειάζεται νέος έλεγχος", deadline_passed: "Η προθεσμία έληξε", closed: "Κλειστές αιτήσεις", suspended: "Σε αναστολή", unverified: "Υπό επιβεβαίωση", conflicting: "Αντικρουόμενα επίσημα στοιχεία", unknown: "Ελέγξτε την επίσημη σελίδα" },
     lastKnown: (status: string, date: string) => `Τελευταίος έλεγχος ${date}: ${String(status).toLowerCase()}`,
     recheckHelp: "Η επίσημη πηγή δεν έχει ελεγχθεί μέσα στο διάστημα επανελέγχου. Επιβεβαιώστε την κατάσταση στην επίσημη σελίδα πριν κάνετε αίτηση.",
   },
@@ -222,7 +222,7 @@ const el = {
     documents: "Επίσημα έγγραφα", stepsTitle: "Βήματα αίτησης (από την επίσημη πηγή)", openEnded: "Χωρίς σταθερή προθεσμία",
   },
   card: { deadline: "Προθεσμία", amount: "Ποσό", source: "Πηγή", checked: "Ελέγχθηκε", retrieved: "Ανακτήθηκε από την επίσημη πύλη", syntheticDate: "Δοκιμαστική καταχώριση — δεν ελέγχθηκε", amountNone: "Βλ. επίσημη πηγή", brussels: "ώρα Βρυξελλών", budget: "Προϋπολογισμός πρόσκλησης", benefit: "Όφελος", intensity: (p: string) => `${p} του προϋπολογισμού του έργου`,
-    money: { rate: "Ποσοστό ενίσχυσης", eligible: "Επιλέξιμη δαπάνη έργου", subsidised: "Επιχορηγούμενος προϋπολογισμός έργου", project: "Προϋπολογισμός έργου", grant: "Ποσό επιχορήγησης", upTo: "έως", from: "από" },
+    money: { rate: "Ποσοστό ενίσχυσης", eligible: "Επιλέξιμη δαπάνη έργου", subsidised: "Επιχορηγούμενος προϋπολογισμός έργου", project: "Προϋπολογισμός έργου", grant: "Ποσό επιχορήγησης", upTo: "έως", from: "από", pending: "Υπό επιβεβαίωση", pendingNote: "Το ποσό δεν αναφέρεται στην επίσημη σελίδα που ελέγξαμε. Θα εμφανιστεί όταν επιβεβαιωθεί από το κείμενο της πρόσκλησης." },
     applicant: { individuals: "Για ιδιώτες", both: "Για ιδιώτες και επιχειρήσεις", organisations: "Για επιχειρήσεις & φορείς", unknown: "Είδος αιτούντα: δεν έχει καταγραφεί" },
     inEnglish: "Στα αγγλικά", codeOnly: "Η πηγή δίνει μόνο κωδικό, χωρίς τίτλο" },
   brief: {
@@ -287,7 +287,7 @@ const el = {
     trustTitle: "Γιατί να εμπιστευτώ αυτή την πληροφορία;",
     trustBody: "Η καταχώριση συνδέεται με την επίσημη πηγή της και δείχνει πότε ελέγχθηκε ή ανακτήθηκε. Ξεχωρίζουμε όσα ελέγξαμε από όσα παραμένουν άγνωστα, και την τελική απόφαση την παίρνει ο αρμόδιος φορέας.",
     trustLink: "Πώς ελέγχουμε τις πηγές",
-    breadcrumb: "Διαδρομή πλοήγησης", back: "Όλες οι ευκαιρίες", overview: "Επισκόπηση", eligibility: "Επιλεξιμότητα", howToApply: "Πώς γίνεται η αίτηση", sources: "Πηγές", keyInfo: "Με μια ματιά", category: "Κατηγορία", forWhom: "Πιθανό κοινό (ενδεικτικό)", applicant: "Ποιος κάνει αίτηση", guideCta: "Διαβάστε τον οδηγό βήμα προς βήμα", applySteps: "Η αίτηση υποβάλλεται στην επίσημη σελίδα του φορέα. Ελέγξτε εκεί τα δικαιολογητικά και την προθεσμία πριν την υποβάλετε.", applyClosed: "Αυτή τη στιγμή δεν γίνονται αιτήσεις. Η επίσημη σελίδα παραμένει για ενημέρωση και για πιθανή νέα πρόσκληση.", officialPage: "Επίσημη σελίδα του προγράμματος", saveHint: "Συνδεθείτε για να αποθηκεύσετε την ευκαιρία και να δείτε αν σας αφορά.",
+    breadcrumb: "Διαδρομή πλοήγησης", back: "Όλες οι ευκαιρίες", overview: "Επισκόπηση", eligibility: "Επιλεξιμότητα", howToApply: "Πώς γίνεται η αίτηση", sources: "Πηγές", keyInfo: "Με μια ματιά", category: "Κατηγορία", forWhom: "Πιθανό κοινό (ενδεικτικό)", applicant: "Ποιος κάνει αίτηση", guideCta: "Διαβάστε τον οδηγό βήμα προς βήμα", applySteps: "Η αίτηση υποβάλλεται στην επίσημη σελίδα του φορέα. Ελέγξτε εκεί τα δικαιολογητικά και την προθεσμία πριν την υποβάλετε.", applyClosed: "Αυτή τη στιγμή δεν γίνονται αιτήσεις. Η επίσημη σελίδα παραμένει για ενημέρωση και για πιθανή νέα πρόσκληση.", applyUnconfirmed: "Δεν έχουμε επιβεβαιώσει αν γίνονται αιτήσεις αυτή τη στιγμή. Ελέγξτε την επίσημη σελίδα πριν κάνετε οτιδήποτε.", officialPage: "Επίσημη σελίδα του προγράμματος", saveHint: "Συνδεθείτε για να αποθηκεύσετε την ευκαιρία και να δείτε αν σας αφορά.",
     req: { state: "Αποτέλεσμα", needs: "Χρειάζεται απάντηση", kinds: { mandatory: "Υποχρεωτική", conditional: "Υπό προϋπόθεση", informational: "Ενημερωτική", preferred: "Πλεονέκτημα" } as Record<string, string> } },
   auth: { side: "Ένα προφίλ. Πολλές ευκαιρίες. Ξεκάθαρη πληροφόρηση.", sideNote: "Η περιήγηση στις ευκαιρίες δεν απαιτεί λογαριασμό." },
   loading: "Φόρτωση…",
@@ -417,7 +417,7 @@ const en: Copy = {
   scope: { eu: "European Union", gr: "Greece" },
   status: { current: "Current (open, upcoming, awaiting re-check)", open: "Open", upcoming: "Upcoming", recheck: "Awaiting re-check", passed: "Deadline passed", closed: "Closed", all: "All, including expired" },
   record: {
-    labels: { open: "Open for applications", rolling: "Rolling applications", upcoming: "Not open yet", recheck: "Needs re-checking", deadline_passed: "Deadline passed", closed: "Closed", suspended: "Suspended", unverified: "Status not confirmed", conflicting: "Conflicting official information", unknown: "Check the official page" },
+    labels: { open: "Open for applications", rolling: "Rolling applications", upcoming: "Not open yet", recheck: "Needs re-checking", deadline_passed: "Deadline passed", closed: "Closed", suspended: "Suspended", unverified: "Pending confirmation", conflicting: "Conflicting official information", unknown: "Check the official page" },
     lastKnown: (status: string, date: string) => `Last checked ${date}: ${String(status).toLowerCase()}`,
     recheckHelp: "The official source has not been checked within its re-check interval. Confirm the status on the official page before applying.",
   },
@@ -560,7 +560,7 @@ const en: Copy = {
     documents: "Official documents", stepsTitle: "How to apply (from the official source)", openEnded: "No fixed deadline",
   },
   card: { deadline: "Deadline", amount: "Amount", source: "Source", checked: "Checked", retrieved: "Retrieved from the official portal", syntheticDate: "Test listing — not checked", amountNone: "See official source", brussels: "Brussels time", budget: "Call budget", benefit: "Benefit", intensity: (p: string) => `${p} of the project budget`,
-    money: { rate: "Subsidy rate", eligible: "Eligible project expenditure", subsidised: "Subsidised project budget", project: "Project budget", grant: "Grant amount", upTo: "up to", from: "from" },
+    money: { rate: "Subsidy rate", eligible: "Eligible project expenditure", subsidised: "Subsidised project budget", project: "Project budget", grant: "Grant amount", upTo: "up to", from: "from", pending: "Pending confirmation", pendingNote: "The amount is not stated on the official page we checked. It will be shown once confirmed from the call text." },
     applicant: { individuals: "For individuals", both: "For individuals and businesses", organisations: "For businesses & organisations", unknown: "Applicant type: not recorded" },
     inEnglish: "In English", codeOnly: "The source gives only a code, no title" },
   brief: {
@@ -625,7 +625,7 @@ const en: Copy = {
     trustTitle: "Why can I trust this information?",
     trustBody: "This listing links to its official source and shows when it was checked or retrieved. We separate what we checked from what is still unknown, and the responsible authority makes the final decision.",
     trustLink: "How we check sources",
-    breadcrumb: "Breadcrumb", back: "All opportunities", overview: "Overview", eligibility: "Eligibility", howToApply: "How to apply", sources: "Sources", keyInfo: "At a glance", category: "Category", forWhom: "Likely audience (indicative)", applicant: "Who applies", guideCta: "Read the step-by-step guide", applySteps: "Applications are made on the authority's official page. Check the documents and deadline there before you submit.", applyClosed: "Applications are not being accepted at the moment. The official page stays available for updates and any new call.", officialPage: "Official programme page", saveHint: "Log in to save this opportunity and see whether it applies to you.",
+    breadcrumb: "Breadcrumb", back: "All opportunities", overview: "Overview", eligibility: "Eligibility", howToApply: "How to apply", sources: "Sources", keyInfo: "At a glance", category: "Category", forWhom: "Likely audience (indicative)", applicant: "Who applies", guideCta: "Read the step-by-step guide", applySteps: "Applications are made on the authority's official page. Check the documents and deadline there before you submit.", applyClosed: "Applications are not being accepted at the moment. The official page stays available for updates and any new call.", applyUnconfirmed: "We have not confirmed whether applications are being accepted at the moment. Check the official page before doing anything.", officialPage: "Official programme page", saveHint: "Log in to save this opportunity and see whether it applies to you.",
     req: { state: "Result", needs: "Needs an answer", kinds: { mandatory: "Required", conditional: "Conditional", informational: "For information", preferred: "Advantage" } as Record<string, string> } },
   auth: { side: "One profile. Many opportunities. Clear information.", sideNote: "You can browse opportunities without an account." },
   loading: "Loading…",

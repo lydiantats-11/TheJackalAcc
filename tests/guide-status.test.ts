@@ -14,20 +14,27 @@ const live = (display: RecordStatus["display"], application: RecordStatus["appli
   ({ display, application, freshness: display === "recheck" ? "recheck" : "current", lastVerifiedAt: at("2026-10-13T21:00:00Z") });
 
 describe("programme status on guides (from the checked file, same rules as the database)", () => {
-  it("DiscoverEU: re-check due after 1 day, deadline 15 Oct 2026 12:00 Brussels", () => {
-    expect(d("manual:discovereu", "2026-09-30T12:00:00Z")).toBe("upcoming");
-    expect(d("manual:discovereu", "2026-10-14T12:00:00Z")).toBe("open");
-    expect(d("manual:discovereu", "2026-10-15T09:59:59Z")).toBe("recheck"); // checked 14 Oct, interval 1 day
-    expect(d("manual:discovereu", "2026-10-15T10:00:01Z")).toBe("deadline_passed");
+  it("DiscoverEU: «Υπό επιβεβαίωση» since 22 Oct 2026 — the official page does not confirm the round; no dates shown as fact", () => {
+    for (const t of ["2026-10-01T12:00:00Z", "2026-10-23T12:00:00Z", "2027-03-01T12:00:00Z"]) expect(d("manual:discovereu", t)).toBe("unverified");
+    expect(verifiedCloses("manual:discovereu")).toBeNull();
   });
 
-  it("A21: open while fresh, «needs re-check» after 3 days with the last verified status kept, passed after 13 Nov", () => {
-    expect(d("manual:a21", "2026-10-16T08:00:00Z")).toBe("open");
-    const s = statusFromVerified("manual:a21", at("2026-10-17T12:00:00Z"));
+  it("A21: checked again 22 Oct 2026; open while fresh, «needs re-check» after 3 days with the last verified status kept, passed after 13 Nov", () => {
+    expect(d("manual:a21", "2026-10-23T08:00:00Z")).toBe("open");
+    const s = statusFromVerified("manual:a21", at("2026-10-26T12:00:00Z"));
     expect(s.display).toBe("recheck");
     expect(s.application).toBe("open");
-    expect(s.lastVerifiedAt?.toISOString()).toBe("2026-10-13T21:00:00.000Z"); // 14 Oct, midnight Athens
+    expect(s.lastVerifiedAt?.toISOString()).toBe("2026-10-21T21:00:00.000Z"); // 22 Oct, midnight Athens
     expect(d("manual:a21", "2026-11-13T16:00:01Z")).toBe("deadline_passed");
+  });
+
+  it("Articles 5Β and 5Α: the deadlines of Decisions A.1192/2026 and A.1147/2026 (owner approval 22 Oct 2026)", () => {
+    expect(verifiedCloses("manual:art5b")!.toISOString()).toBe("2026-10-31T21:59:59.999Z"); // 31 Oct, Athens (winter time)
+    expect(d("manual:art5b", "2026-10-23T08:00:00Z")).toBe("open");
+    expect(d("manual:art5b", "2026-10-31T22:00:01Z")).toBe("deadline_passed");
+    expect(verifiedCloses("manual:art5a")!.toISOString()).toBe("2027-09-30T20:59:59.999Z"); // next deadline, 30 Sep 2027
+    expect(d("manual:art5a", "2026-10-23T08:00:00Z")).toBe("open");
+    expect(d("manual:art5a", "2026-12-01T08:00:00Z")).toBe("recheck"); // checked 22 Oct, interval 30 days
   });
 
   it("a date-only deadline counts the whole day (Athens time)", () => {
@@ -41,8 +48,8 @@ describe("programme status on guides (from the checked file, same rules as the d
   });
 
   it("rolling programmes are rolling while fresh and «needs re-check» after 30 days", () => {
-    for (const k of ["manual:art5c", "manual:art5b", "manual:art5a", "manual:unemployment"]) {
-      expect(d(k, "2026-10-16T08:00:00Z")).toBe("rolling");
+    for (const k of ["manual:art5c", "manual:unemployment"]) {
+      expect(d(k, "2026-10-23T08:00:00Z")).toBe("rolling");
       expect(d(k, "2027-06-01T08:00:00Z")).toBe("recheck");
     }
   });
@@ -65,8 +72,9 @@ describe("guides follow the live record exactly", () => {
     expect(programmeStatus("manual:unemployment", now, live("rolling", "rolling")).display).toBe("rolling");
   });
   it("a verified closing time that has passed wins over a live open or re-check answer", () => {
-    expect(programmeStatus("manual:discovereu", now, live("open", "open")).display).toBe("deadline_passed");
-    expect(programmeStatus("manual:discovereu", now, live("recheck", "open")).display).toBe("deadline_passed");
+    const later = at("2026-11-02T12:00:00Z");
+    expect(programmeStatus("manual:art5b", later, live("open", "open")).display).toBe("deadline_passed");
+    expect(programmeStatus("manual:art5b", later, live("recheck", "open")).display).toBe("deadline_passed");
   });
   it("no guide shows an actionable status once its verified closing time has passed", () => {
     for (const g of PROGRAMME_GUIDES) {

@@ -97,7 +97,7 @@ export default async function OpportunityPage({ params, searchParams }: { params
   const amount = keyAmount(o, t, s, locale);
   const status = recordStatus(matchable, now);
   // No application call-to-action once the deadline has passed or the programme is closed (official page stays linked).
-  const canApply = applicationCtaAllowed(status.application);
+  const canApply = applicationCtaAllowed(status.application, status.display);
   const applicant = applicantAudienceOf(o, matchable.requirements);
   // Reviewer notes recorded with records imported from a manual review (Greek, from the official documents).
   const recordNotes = o.publication_basis === "manual_review" && !o.external_key?.startsWith("manual:") ? o.uncertainties ?? [] : [];
@@ -248,7 +248,7 @@ export default async function OpportunityPage({ params, searchParams }: { params
             <section id="apply" className="card">
               <h2 style={{ marginTop: 0 }}>{s.detail.howToApply}</h2>
               <VerifiedSteps o={o} s={s} locale={locale} />
-              <p>{canApply ? s.detail.applySteps : s.detail.applyClosed}</p>
+              <p>{canApply ? s.detail.applySteps : status.display === "unverified" || status.display === "conflicting" ? s.detail.applyUnconfirmed : s.detail.applyClosed}</p>
               <div className="row">
                 {canApply
                   ? <a className="btn btn-primary" href={o.application_url ?? o.canonical_url} target="_blank" rel="noopener noreferrer">{o.application_url ? t.opp.apply : t.opp.official} <Icon name="external" size={16} /></a>

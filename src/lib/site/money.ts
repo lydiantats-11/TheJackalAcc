@@ -26,6 +26,8 @@ export interface Money {
   projectBudget: (Range & { basis: "eligible" | "subsidised" | "project"; note?: string }) | null;
   grant: Range | null;
   programmeBudget: number | null;
+  /** The project budget is awaiting confirmation: shown as «Υπό επιβεβαίωση», never as a number. */
+  projectBudgetPending: boolean;
 }
 
 type Row = { funding_amount_state: string; funding_min: number | string | null; funding_max: number | string | null; funding_intensity_pct: number | string | null; official_details: OfficialDetails | null };
@@ -36,12 +38,13 @@ export function moneyOf(o: Row): Money {
   const d = o.official_details;
   const f = d?.funding;
   const rate = f?.rate ?? (num(o.funding_intensity_pct) !== null ? { min: num(o.funding_intensity_pct), max: num(o.funding_intensity_pct) } : null);
-  const projectBudget = f?.project_budget ?? null;
+  const projectBudgetPending = !!f?.pending?.includes("project_budget");
+  const projectBudget = projectBudgetPending ? null : f?.project_budget ?? null;
   let grant: Range | null = f?.grant ?? null;
   if (!grant && o.funding_amount_state === "known") grant = { min: num(o.funding_min), max: num(o.funding_max) };
   if (!grant && d?.budget && (d.budget.min_grant_eur || d.budget.max_grant_eur)) grant = { min: d.budget.min_grant_eur, max: d.budget.max_grant_eur };
   const programmeBudget = d?.budget && d.budget.total_eur > 0 ? d.budget.total_eur : null;
-  return { rate, projectBudget, grant, programmeBudget };
+  return { rate, projectBudget, grant, programmeBudget, projectBudgetPending };
 }
 
 /** True when the record states at least one figure about what an applicant gets (rate, project budget or grant). */

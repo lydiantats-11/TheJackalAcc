@@ -56,7 +56,8 @@ export function cardAmount(o: OpportunityRow, t: Dictionary, s: SiteCopy, l: Loc
   if (v?.benefit) return { label: s.card.benefit, value: <span className="clamp-3" title={v.benefit[l]}>{v.benefit[l]}</span> };
   const m = moneyOf(o);
   if (m.rate) {
-    return { label: s.card.money.rate, value: <>{pctText(m.rate)}{m.projectBudget && <span className="xs muted" style={{ display: "block", fontWeight: 500 }}>{s.card.money[m.projectBudget.basis]}: {rangeEur(m.projectBudget, l, s)}</span>}</> };
+    return { label: s.card.money.rate, value: <>{pctText(m.rate)}{m.projectBudget && <span className="xs muted" style={{ display: "block", fontWeight: 500 }}>{s.card.money[m.projectBudget.basis]}: {rangeEur(m.projectBudget, l, s)}</span>}
+      {m.projectBudgetPending && <span className="xs muted" style={{ display: "block", fontWeight: 500 }} data-pending="project_budget">{s.card.money.project}: {s.card.money.pending}</span>}</> };
   }
   if (m.grant) return { label: s.card.money.grant, value: o.funding_amount_state === "known" ? amountText(o, t, l) : rangeEur(m.grant, l, s) };
   if (m.projectBudget) return { label: s.card.money[m.projectBudget.basis], value: rangeEur(m.projectBudget, l, s) };
@@ -150,6 +151,7 @@ export function KeyFacts({ o, s, locale, t }: { o: OpportunityRow; s: SiteCopy; 
           </>
         )}
         {!v && m.rate && <Row k={s.card.money.rate}>{pctText(m.rate)}{m.rate.note && <div className="xs muted" style={{ marginTop: 4 }}>{m.rate.note}</div>}</Row>}
+        {!v && m.projectBudgetPending && <Row k={s.card.money.project}><span className="tag gold" data-pending="project_budget">{s.card.money.pending}</span><div className="xs muted" style={{ marginTop: 4 }}>{s.card.money.pendingNote}</div></Row>}
         {!v && m.projectBudget && <Row k={s.card.money[m.projectBudget.basis]}>{rangeEur(m.projectBudget, locale, s)}{m.projectBudget.note && <div className="xs muted" style={{ marginTop: 4 }}>{m.projectBudget.note}</div>}</Row>}
         {!v && m.grant && <Row k={s.card.money.grant}>{o.funding_amount_state === "known" ? amountText(o, t, locale) : rangeEur(m.grant, locale, s)}</Row>}
         {d?.budget && d.budget.total_eur > 0 && (

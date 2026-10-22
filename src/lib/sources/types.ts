@@ -69,6 +69,11 @@ export interface OfficialDetails {
     rate?: { min: number | null; max: number | null; note?: string } | null;
     project_budget?: { min: number | null; max: number | null; basis: "eligible" | "subsidised" | "project"; note?: string } | null;
     grant?: { min: number | null; max: number | null } | null;
+    /**
+     * Figures the record does not confirm yet (owner, 22 Oct 2026: «Υπό επιβεβαίωση» until documented). A listed figure is
+     * never shown as a number; the page says it is pending confirmation.
+     */
+    pending?: Array<"project_budget"> | null;
   } | null;
 }
 

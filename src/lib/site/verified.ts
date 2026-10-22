@@ -1,10 +1,11 @@
 /**
  * Verified facts of the hand-checked official records, in Greek and English, straight from
- * data/official-records-2026-10-14.v2.json (checked by hand on 14 Oct 2026; approved by the owner on 15 Oct 2026).
+ * data/official-records-2026-10-14.v2.json (checked by hand on 14 Oct 2026; approved by the owner on 15 Oct 2026), with the
+ * corrections of 22 Oct 2026 applied (checked-records.ts).
  * Nothing here is written by hand: amounts, periods, conditions and steps are the checked file's own values.
  * Display only — the eligibility engine reads the imported requirements, never this module.
  */
-import records from "../../../data/official-records-2026-10-14.v2.json";
+import { CHECKED_RECORDS as records } from "./checked-records";
 import type { Locale } from "@/lib/i18n/dictionaries";
 
 type L = Record<Locale, string>;
@@ -35,7 +36,7 @@ export interface VerifiedFacts {
   conflicts: L[];
 }
 
-const raw = records as { verification: { checked_on: string }; records: RawRecord[] };
+const raw = records as unknown as { verification: { checked_on: string }; records: RawRecord[] };
 
 const BY_KEY = new Map<string, VerifiedFacts>(raw.records.map((r) => [`manual:${r.id}`, {
   key: `manual:${r.id}`,

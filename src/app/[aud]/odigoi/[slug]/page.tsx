@@ -52,7 +52,7 @@ export default async function GuidePage({ params }: { params: Promise<{ aud: str
   const live = a.recordKey ? (await loadLiveGuideRecords([a.recordKey], now)).get(a.recordKey) : undefined;
   const status = a.recordKey ? programmeStatus(a.recordKey, now, live) : null;
   // The guide never offers «apply» for a programme whose deadline has passed or that is closed.
-  const canApply = !status || applicationCtaAllowed(status.application);
+  const canApply = !status || applicationCtaAllowed(status.application, status.display);
   const cat = guideCategory(a.categories[0] ?? "");
   const related = ARTICLES.filter((o) => o.slug !== a.slug && !o.flags.draft && (articleAudience(o) === aud || isPlatformGuide(o)) && (a.related.includes(o.slug) || (a.recordKey !== null && o.recordKey === a.recordKey)));
   const limitations = [

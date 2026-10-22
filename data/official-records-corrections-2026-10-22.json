@@ -1,0 +1,245 @@
+{
+  "schema_version": "jackal-record-corrections/1",
+  "applies_to": "official-records-2026-10-14.v2.json",
+  "checked_on": "2026-10-22",
+  "checked_by": "manual reading of the official decisions and pages (Claude), 22 Oct 2026",
+  "approved": "Owner (Lydia), 22 Oct 2026 15:52, Phase 1 of the credibility sprint («Προχώρησε στις 6 διορθώσεις προγραμμάτων, αφού επαληθεύσεις κάθε αλλαγή από την επίσημη πηγή») — development and preview only",
+  "note": "Corrections of the hand-checked records. Each entry replaces the named fields of the record in the v2 file (application_status, official_sources, application_steps, uncertainties); everything else stays as checked on 14 Oct 2026. The v2 file is kept unchanged as the record of what was checked then.",
+  "records": {
+    "art5b": {
+      "why": {
+        "el": "Η προθεσμία «31 Μαρτίου» προερχόταν από οδηγό του 2023 και την καταργημένη Α.1217/2020. Η Α.1192/2026 (ΦΕΚ Β' 5767/24.9.2026), άρθρο 4 παρ. 1, ορίζει αίτηση έως 31 Οκτωβρίου του έτους άφιξης ή του επόμενου έτους και δικαιολογητικά έως 30 Νοεμβρίου.",
+        "en": "The «31 March» deadline came from a 2023 guide and the repealed Decision A.1217/2020. Decision A.1192/2026 (Gazette B 5767/24.9.2026), Article 4(1), sets the application by 31 October of the year of arrival or the following year, and documents by 30 November."
+      },
+      "application_status": {
+        "value": "open",
+        "verified_on": "2026-10-22",
+        "stale_after_days": 30,
+        "timezone": "Europe/Athens",
+        "verified_time_precision": "date",
+        "opens_at": null,
+        "closes_at": "2026-10-31",
+        "deadline_original_wording": {
+          "el": "Αίτηση έως 31 Οκτωβρίου του έτους μεταφοράς της φορολογικής κατοικίας ή του επόμενου έτους· δικαιολογητικά έως 30 Νοεμβρίου του ίδιου έτους. Μεταφορά έως 2/7: αίτηση το ίδιο ή το επόμενο έτος. Μεταφορά μετά τις 2/7: αίτηση μόνο για το επόμενο έτος. Η 31/10/2026 ισχύει για όσους μετέφεραν την κατοικία τους το 2025 ή έως 2/7/2026· όσοι τη μετέφεραν μετά τις 2/7/2026 υποβάλλουν έως 31/10/2027 (Α.1192/2026, άρθρο 4 παρ. 1).",
+          "en": "Apply by 31 October of the year the tax residence moves, or of the following year; documents by 30 November of that year. Moved by 2 Jul: apply that year or the next. Moved after 2 Jul: apply only for the next year. 31 Oct 2026 applies to those who moved in 2025 or by 2 Jul 2026; those who moved after 2 Jul 2026 apply by 31 Oct 2027 (Decision A.1192/2026, Article 4(1))."
+        },
+        "milestones": [
+          {
+            "label": "application",
+            "rule": "31 Oct of the year of the move or of the following year (A.1192/2026 art. 4(1))"
+          },
+          {
+            "label": "documents",
+            "rule": "30 Nov of the year the application is filed (A.1192/2026 art. 4(1))"
+          }
+        ]
+      },
+      "official_sources": [
+        {
+          "label": "ΑΑΔΕ — Α.1192/2026 (ΦΕΚ Β' 5767/24.9.2026), άρθρο 4 παρ. 1",
+          "url": "https://aade.gr/sites/default/files/2026-09/a1192_2026.pdf",
+          "checked_on": "2026-10-22"
+        },
+        {
+          "label": "ΑΑΔΕ — Α.1192/2026, μορφή ΦΕΚ",
+          "url": "https://www.aade.gr/sites/default/files/2026-09/a1192_2026fek.pdf",
+          "checked_on": "2026-10-22"
+        },
+        {
+          "label": "ΑΑΔΕ — σελίδα της απόφασης Α.1192/22-09-2026",
+          "url": "https://www.aade.gr/egkyklioi-kai-apofaseis/1192-22-09-2026",
+          "checked_on": "2026-10-22"
+        },
+        {
+          "label": "ΑΑΔΕ — Φορολογικά κίνητρα άρθρων 5Α, 5Β, 5Γ (PDF 2023· η προθεσμία του έχει αντικατασταθεί)",
+          "url": "https://www.aade.gr/sites/default/files/2023-09/forolologika_kinitra_pros_newn_forol_kat_kfe_new_EL.pdf",
+          "checked_on": "2026-10-14"
+        }
+      ],
+      "application_steps": {
+        "el": [
+          "Αίτηση υπαγωγής μέσω myAADE («Τα Αιτήματά μου») ή στο ΚΕ.ΦΟ.Δ.Ε. Αττικής ή Θεσσαλονίκης (αυτοπροσώπως, ταχυδρομικά ή με courier), έως 31 Οκτωβρίου του έτους μεταφοράς της κατοικίας ή του επόμενου έτους.",
+          "Τα δικαιολογητικά μπορούν να συμπληρωθούν έως 30 Νοεμβρίου του έτους της αίτησης.",
+          "Η ΑΑΔΕ εξετάζει την αίτηση εντός 60 ημερών από την υποβολή (Α.1192/2026)."
+        ],
+        "en": [
+          "Apply through myAADE («My requests») or to the KE.FO.D.E. of Attica or Thessaloniki (in person, by post or courier), by 31 October of the year the residence moves or of the following year.",
+          "Supporting documents may be completed by 30 November of the year of the application.",
+          "ΑΑΔΕ reviews the application within 60 days of submission (Decision A.1192/2026)."
+        ]
+      },
+      "uncertainties": [
+        "UNVERIFIED: the summary says the 15 tax years run «from the year after the application»; Decision A.1192/2026 states 15 tax years in total — the start year is still to be checked against the decision",
+        "Deadline depends on the year the residence moved: moved after 2 Jul 2026 → apply by 31 Oct 2027 (A.1192/2026 art. 4(1))"
+      ]
+    },
+    "art5a": {
+      "why": {
+        "el": "Η προθεσμία «31 Μαρτίου» προερχόταν από οδηγό του 2023. Η Α.1147/2026 (ΦΕΚ Β' 4431/20.7.2026, ορθή επανάληψη ως προς το άρθρο 3 σε ΦΕΚ Β' 4838/4.8.2026), άρθρο 4 παρ. 1, ορίζει αίτηση έως 30 Σεπτεμβρίου του έτους άφιξης ή του επόμενου έτους και δικαιολογητικά έως 31 Οκτωβρίου.",
+        "en": "The «31 March» deadline came from a 2023 guide. Decision A.1147/2026 (Gazette B 4431/20.7.2026, corrected as to Article 3 in Gazette B 4838/4.8.2026), Article 4(1), sets the application by 30 September of the year of arrival or the following year, and documents by 31 October."
+      },
+      "application_status": {
+        "value": "open",
+        "verified_on": "2026-10-22",
+        "stale_after_days": 30,
+        "timezone": "Europe/Athens",
+        "verified_time_precision": "date",
+        "opens_at": null,
+        "closes_at": "2027-09-30",
+        "deadline_original_wording": {
+          "el": "Αίτηση έως 30 Σεπτεμβρίου του έτους μεταφοράς της φορολογικής κατοικίας ή του επόμενου έτους· δικαιολογητικά έως 31 Οκτωβρίου του ίδιου έτους. Μεταφορά έως 2/7: αίτηση το ίδιο ή το επόμενο έτος. Μεταφορά μετά τις 2/7: αίτηση μόνο για το επόμενο έτος. Η προθεσμία της 30/9/2026 έχει λήξει· όσοι μετέφεραν την κατοικία τους το 2026 υποβάλλουν έως 30/9/2027 (Α.1147/2026, άρθρο 4 παρ. 1).",
+          "en": "Apply by 30 September of the year the tax residence moves, or of the following year; documents by 31 October of that year. Moved by 2 Jul: apply that year or the next. Moved after 2 Jul: apply only for the next year. The 30 Sep 2026 deadline has passed; those who moved in 2026 apply by 30 Sep 2027 (Decision A.1147/2026, Article 4(1))."
+        },
+        "milestones": [
+          {
+            "label": "application",
+            "rule": "30 Sep of the year of the move or of the following year (A.1147/2026 art. 4(1))"
+          },
+          {
+            "label": "documents",
+            "rule": "31 Oct of the year the application is filed (A.1147/2026 art. 4(1))"
+          }
+        ]
+      },
+      "official_sources": [
+        {
+          "label": "ΑΑΔΕ — Α.1147/2026, κείμενο με ορθή επανάληψη (ΦΕΚ Β' 4838/4.8.2026), άρθρο 4 παρ. 1",
+          "url": "https://aade.gr/sites/default/files/2026-08/a1147_2026orthi.pdf",
+          "checked_on": "2026-10-22"
+        },
+        {
+          "label": "ΑΑΔΕ — Α.1147/2026 (ΦΕΚ Β' 4431/20.7.2026)",
+          "url": "https://www.aade.gr/sites/default/files/2026-07/a1147fek.pdf",
+          "checked_on": "2026-10-22"
+        },
+        {
+          "label": "ΑΑΔΕ — Φορολογικά κίνητρα άρθρων 5Α, 5Β, 5Γ (PDF 2023· η προθεσμία του έχει αντικατασταθεί)",
+          "url": "https://www.aade.gr/sites/default/files/2023-09/forolologika_kinitra_pros_newn_forol_kat_kfe_new_EL.pdf",
+          "checked_on": "2026-10-14"
+        }
+      ],
+      "application_steps": {
+        "el": [
+          "Αίτηση υπαγωγής μέσω myAADE («Τα Αιτήματά μου») ή στο ΚΕ.ΦΟ.Δ.Ε. Αττικής ή Θεσσαλονίκης (αυτοπροσώπως, ταχυδρομικά ή με courier), έως 30 Σεπτεμβρίου του έτους μεταφοράς της κατοικίας ή του επόμενου έτους.",
+          "Τα δικαιολογητικά μπορούν να συμπληρωθούν έως 31 Οκτωβρίου του έτους της αίτησης.",
+          "Η ΑΑΔΕ αποφασίζει εντός 60 ημερών από την υποβολή και το αργότερο την τελευταία εργάσιμη του Νοεμβρίου (Α.1147/2026)."
+        ],
+        "en": [
+          "Apply through myAADE («My requests») or to the KE.FO.D.E. of Attica or Thessaloniki (in person, by post or courier), by 30 September of the year the residence moves or of the following year.",
+          "Supporting documents may be completed by 31 October of the year of the application.",
+          "ΑΑΔΕ decides within 60 days of submission and no later than the last working day of November (Decision A.1147/2026)."
+        ]
+      },
+      "uncertainties": [
+        "Deadline depends on the year the residence moved; the 30 Sep 2026 deadline has passed, the next is 30 Sep 2027 (A.1147/2026 art. 4(1))"
+      ]
+    },
+    "art5c": {
+      "why": {
+        "el": "Η προθεσμία ήταν σωστή. Προστέθηκε η Α.1096/2026, που η ΑΑΔΕ αναφέρει στη σελίδα της αίτησης, και ενημερώθηκε η ημερομηνία ελέγχου.",
+        "en": "The deadline was correct. Decision A.1096/2026, which AADE cites on the application page, is added and the check date updated."
+      },
+      "application_status": {
+        "value": "rolling",
+        "verified_on": "2026-10-22",
+        "stale_after_days": 30,
+        "deadline_original_wording": {
+          "el": "Έναρξη εργασίας έως 2/7: αίτηση έως το τέλος του ίδιου έτους · μετά τις 2/7: έως το τέλος του επόμενου",
+          "en": "Work starts by 2 Jul: apply by the end of that year · after 2 Jul: by the end of the next year"
+        },
+        "timezone": "Europe/Athens",
+        "verified_time_precision": "date",
+        "opens_at": null,
+        "closes_at": null,
+        "milestones": [
+          {
+            "label": "deadline rule",
+            "rule": "work starts on/before 2 Jul → by end of that year; after 2 Jul → by end of next year"
+          }
+        ]
+      },
+      "official_sources_add": [
+        {
+          "label": "ΑΑΔΕ — Α.1096/29-04-2026 (επέκταση σε όσους παρέχουν υπηρεσίες στο Ελληνικό Δημόσιο)",
+          "url": "https://www.aade.gr/egkyklioi-kai-apofaseis/1096-29-04-2026",
+          "checked_on": "2026-10-22"
+        }
+      ]
+    },
+    "discovereu": {
+      "why": {
+        "el": "Στις 22/10/2026 η επίσημη σελίδα γράφει ότι οι αιτήσεις είναι κλειστές και ότι ο επόμενος γύρος «θα γίνει» 1–15/10/2026. Δεν επιβεβαιώνεται ότι ο γύρος πραγματοποιήθηκε. Υπό επιβεβαίωση μέχρι να υπάρξει τεκμηρίωση.",
+        "en": "On 22 Oct 2026 the official page says applications are closed and that the next round «will take place» 1–15 Oct 2026. It does not confirm the round took place. Pending confirmation until documented."
+      },
+      "application_status": {
+        "value": "unconfirmed",
+        "verified_on": "2026-10-22",
+        "stale_after_days": 1,
+        "timezone": "Europe/Brussels",
+        "verified_time_precision": "date",
+        "opens_at": null,
+        "closes_at": null,
+        "deadline_original_wording": {
+          "el": "Υπό επιβεβαίωση: η επίσημη σελίδα ανέφερε προγραμματισμένο γύρο αιτήσεων 1–15/10/2026, αλλά στις 22/10/2026 γράφει ότι οι αιτήσεις είναι κλειστές και δεν επιβεβαιώνει ότι ο γύρος πραγματοποιήθηκε.",
+          "en": "Pending confirmation: the official page announced a planned application round on 1–15 Oct 2026, but on 22 Oct 2026 it says applications are closed and does not confirm the round took place."
+        },
+        "milestones": [
+          {
+            "label": "travel period (winners of that round, indicative)",
+            "from": "2027-03-01",
+            "to": "2028-05-31"
+          }
+        ]
+      },
+      "official_sources_add": [
+        {
+          "label": "youth.europa.eu — DiscoverEU (έλεγχος 22/10/2026)",
+          "url": "https://youth.europa.eu/discovereu_en",
+          "checked_on": "2026-10-22"
+        }
+      ]
+    },
+    "a21": {
+      "why": {
+        "el": "Η προθεσμία ήταν σωστή. Η ανακοίνωση του ΟΠΕΚΑ της 8/10/2026 ορίζει νέες ή τροποποιητικές αιτήσεις έως Παρασκευή 13/11/2026, 18:00. Ενημερώθηκε μόνο η ημερομηνία ελέγχου.",
+        "en": "The deadline was correct. The ΟΠΕΚΑ announcement of 8 Oct 2026 sets new or amended applications until Friday 13 Nov 2026, 18:00. Only the check date is updated."
+      },
+      "application_status": {
+        "value": "open",
+        "verified_on": "2026-10-22",
+        "stale_after_days": 3,
+        "deadline_original_wording": {
+          "el": "Νέες ή τροποποιητικές αιτήσεις έως Παρ. 13/11/2026, 18:00 (επαναλειτουργία πλατφόρμας 5/10/2026)",
+          "en": "New or amended applications until Fri 13 Nov 2026, 18:00 Athens time (platform reopened 5 Oct 2026)"
+        },
+        "timezone": "Europe/Athens",
+        "verified_time_precision": "date",
+        "opens_at": "2026-10-05",
+        "closes_at": "2026-11-13T16:00:00Z",
+        "milestones": [
+          {
+            "label": "supplementary payment",
+            "date": "2026-10-09"
+          }
+        ]
+      },
+      "official_sources": [
+        {
+          "label": "ΟΠΕΚΑ — Επίδομα παιδιού Α21",
+          "url": "https://opeka.gov.gr/oikogeneia/epidoma-paidiou-a21/",
+          "checked_on": "2026-10-14"
+        },
+        {
+          "label": "ΟΠΕΚΑ — ανακοίνωση 8/10/2026 (προθεσμία 13/11/2026, 18:00)",
+          "url": "https://opeka.gov.gr/katavoli-tis-sympliromatikis-pliromis-epidomatos-paidioy-a21-ypovoli-neon-aitiseon/",
+          "checked_on": "2026-10-22"
+        },
+        {
+          "label": "ΟΠΕΚΑ — ανακοίνωση 29/9/2026 (επαναλειτουργία 5/10/2026)",
+          "url": "https://opeka.gov.gr/oloklirosi-tis-diadikasias-elegchoy-ekkatharisis-kai-pliromis-toy-epidomatos-paidioy-a21-metathesi-tis-imerominias-epanaleitoyrgias-tis-efarmogis-ti-deytera-5-10-2026/",
+          "checked_on": "2026-10-14"
+        }
+      ]
+    }
+  }
+}

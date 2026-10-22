@@ -63,8 +63,10 @@ export function nextActionOf(x: BriefInput, now: Date): NextAction {
 /**
  * An application call-to-action («Επίσημη αίτηση») is offered only while applications may be accepted: never after the
  * official deadline, never for a closed or suspended programme (owner, 22 Oct 2026). The official page stays linked as
- * information. Unverified or unknown status keeps the link, but the status badge says it is unconfirmed.
+ * information. A programme whose status is pending confirmation («Υπό επιβεβαίωση») or contradicted by another official
+ * source gets no application button either (owner, 22 Oct 2026, Phase 1): only the official page, as information.
  */
-export function applicationCtaAllowed(application: string | null | undefined): boolean {
+export function applicationCtaAllowed(application: string | null | undefined, display?: string | null): boolean {
+  if (display === "unverified" || display === "conflicting") return false;
   return application !== "closed" && application !== "deadline_passed" && application !== "suspended";
 }

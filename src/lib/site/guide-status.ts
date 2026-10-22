@@ -15,7 +15,7 @@
  */
 import { normaliseDeadline } from "@/lib/domain/deadline";
 import { recordStatus, type ApplicationStatus, type DisplayStatus, type RecordStatus } from "@/lib/domain/record-status";
-import records from "../../../data/official-records-2026-10-14.v2.json";
+import { CHECKED_RECORDS as records } from "./checked-records";
 import { verifiedFor } from "./verified";
 
 export type ProgrammeStatus = DisplayStatus | "unknown";
@@ -25,7 +25,7 @@ const UNKNOWN: GuideRecordStatus = { display: "unknown", application: "unknown",
 
 interface RawStatus { value: string; verified_on?: string; stale_after_days?: number }
 const RAW = new Map(
-  (records as { records: Array<{ id: string; application_status: RawStatus }> }).records.map((r) => [`manual:${r.id}`, r.application_status]),
+  (records as unknown as { records: Array<{ id: string; application_status: RawStatus }> }).records.map((r) => [`manual:${r.id}`, r.application_status]),
 );
 
 /** A verified date as an instant. A date-only closing date ("2026-05-31") counts as open until the end of that day. */
@@ -50,7 +50,8 @@ export function statusFromVerified(recordKey: string, now: Date): GuideRecordSta
   const tz = v.period.timezone ?? "Europe/Athens";
   const closes = instant(v.period.closes, tz, true);
   const opens = instant(v.period.opens, tz, false);
-  const status = raw.value === "closed" ? "closed" : raw.value === "future" || (opens && opens > now) ? "upcoming" : "open";
+  // «unconfirmed»: the official page does not confirm the round (owner, 22 Oct 2026: «Υπό επιβεβαίωση»).
+  const status = raw.value === "closed" ? "closed" : raw.value === "unconfirmed" ? "unverified" : raw.value === "future" || (opens && opens > now) ? "upcoming" : "open";
   const r = recordStatus({
     status,
     closes_at: closes,

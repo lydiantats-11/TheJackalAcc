@@ -1,16 +1,16 @@
 /**
  * Guides. Programme guides are generated ONLY from the hand-checked official records
- * (data/official-records-2026-10-14.v2.json, checked on 14 Oct 2026) — no programme facts are written here by hand.
+ * (data/official-records-2026-10-14.v2.json, checked on 14 Oct 2026, with the corrections of 22 Oct 2026 — checked-records.ts) — no programme facts are written here by hand.
  * The two general guides explain how the platform and official applications work, without programme-specific claims.
  */
-import records from "../../../data/official-records-2026-10-14.v2.json";
+import { CHECKED_RECORDS as records } from "./checked-records";
 import type { Locale } from "@/lib/i18n/dictionaries";
 import { MANUAL_RECORDS } from "./taxonomy";
 
 type L = Record<Locale, string>;
 interface RawRecord {
   id: string; official_title: L; issuing_authority: L; summary: L;
-  application_status: { value: string; deadline_original_wording?: L | null };
+  application_status: { value: string; verified_on?: string; deadline_original_wording?: L | null };
   funding_or_benefit: { value: L | null };
   eligibility_rules: Array<{ label: L }>;
   application_steps: Record<Locale, string[]>;
@@ -27,15 +27,15 @@ export interface ProgrammeGuide {
 export interface GeneralGuide { kind: "general"; slug: string; title: L; summary: L; sections: Array<{ h: L; items: L[] }> }
 export type Guide = ProgrammeGuide | GeneralGuide;
 
-const CHECKED_ON = (records as { verification: { checked_on: string } }).verification.checked_on;
+const CHECKED_ON = (records as unknown as { verification: { checked_on: string } }).verification.checked_on;
 
-export const PROGRAMME_GUIDES: ProgrammeGuide[] = (records as { records: RawRecord[] }).records
+export const PROGRAMME_GUIDES: ProgrammeGuide[] = (records as unknown as { records: RawRecord[] }).records
   .filter((r) => MANUAL_RECORDS[r.id]?.guide)
   .map((r) => ({
     kind: "programme", slug: MANUAL_RECORDS[r.id]!.guide!, title: r.official_title, authority: r.issuing_authority, summary: r.summary,
     deadline: r.application_status.deadline_original_wording ?? null, amount: r.funding_or_benefit.value,
     who: r.eligibility_rules.map((x) => x.label), steps: r.application_steps, sources: r.official_sources.map(({ label, url }) => ({ label, url })),
-    applyUrl: r.official_application_url, warnings: r.conflicts ?? [], checkedOn: CHECKED_ON, recordKey: `manual:${r.id}`,
+    applyUrl: r.official_application_url, warnings: r.conflicts ?? [], checkedOn: r.application_status.verified_on ?? CHECKED_ON, recordKey: `manual:${r.id}`,
     categories: MANUAL_RECORDS[r.id]!.categories,
   }));
 

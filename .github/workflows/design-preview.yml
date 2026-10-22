@@ -63,6 +63,7 @@ jobs:
           psql "$DATABASE_URL" -c "UPDATE opportunities SET review_status = 'rejected' WHERE is_synthetic" || true
           npm run worker -- --test eu-funding-tenders | tail -15
           psql "$DATABASE_URL" -v ON_ERROR_STOP=1 -q -f db/seed/audience-2026-10-22.sql
+          psql "$DATABASE_URL" -v ON_ERROR_STOP=1 -q -f db/seed/corrections-2026-10-22.sql   # Phase 1 corrections, owner approval 22 Oct 2026 15:52 (preview only)
           psql "$DATABASE_URL" -c "SELECT coalesce(audience, 'HOLD') AS path, count(*) FROM opportunities WHERE review_status = 'approved' AND NOT is_synthetic AND merged_into_id IS NULL GROUP BY 1 ORDER BY 1" | tee classification.log
           psql "$DATABASE_URL" -c "SELECT coalesce(audience, 'HOLD') AS path, count(*) AS current_programmes FROM opportunities WHERE review_status = 'approved' AND NOT is_synthetic AND merged_into_id IS NULL AND status IN ('open','upcoming','extended') AND (closes_at IS NULL OR closes_at > now()) GROUP BY 1 ORDER BY 1" | tee -a classification.log
           psql "$DATABASE_URL" -c "SELECT coalesce(o.audience, 'HOLD') AS path, o.external_key, o.official_identifier, left(o.official_title, 90) AS title FROM opportunities o WHERE o.review_status = 'approved' AND NOT o.is_synthetic AND o.merged_into_id IS NULL ORDER BY 1, 2" | tee -a classification.log
