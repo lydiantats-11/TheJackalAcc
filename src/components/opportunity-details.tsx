@@ -142,9 +142,11 @@ export function KeyFacts({ o, s, locale, t }: { o: OpportunityRow; s: SiteCopy; 
             <Row k={f.benefit}>{v.benefit ? v.benefit[locale] : <span className="muted">{s.card.amountNone}</span>}
               {v.benefitState !== "verified" && <div className="xs muted" style={{ marginTop: 4 }}>{f.partial}</div>}</Row>
             <Row k={f.period}>
-              {v.period.opens || v.period.closes ? (
-                <>{verifiedDate(v.period.opens, locale, v.period.timezone) ?? "—"} → {verifiedDate(v.period.closes, locale, v.period.timezone) ?? f.openEnded}</>
-              ) : f.openEnded}
+              {o.status === "unverified" ? <span className="tag gold" data-pending="period">{s.card.money.pending}</span>
+                : v.period.opens && v.period.closes ? <>{verifiedDate(v.period.opens, locale, v.period.timezone)} → {verifiedDate(v.period.closes, locale, v.period.timezone)}</>
+                : v.period.closes ? <>{s.brief.until(verifiedDate(v.period.closes, locale, v.period.timezone) ?? "")}</>
+                : v.period.opens ? <>{verifiedDate(v.period.opens, locale, v.period.timezone)} → {f.openEnded}</>
+                : f.openEnded}
               {v.period.wording && <div className="xs muted" style={{ marginTop: 4 }}>{f.officialWording}: «{v.period.wording[locale]}»</div>}
               {deadlineNote}
             </Row>

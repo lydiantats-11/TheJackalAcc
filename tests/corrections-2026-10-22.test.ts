@@ -80,6 +80,13 @@ describe("«Υπό επιβεβαίωση»", () => {
     expect(applicationCtaAllowed("open", "open")).toBe(true);
     expect(applicationCtaAllowed("deadline_passed", "deadline_passed")).toBe(false);
   });
+  it("the summary box at the top of the page follows the same rule (no «Επίσημη σελίδα αίτησης» button when not allowed)", () => {
+    expect(read("src/components/brief.tsx")).toMatch(/\{canApply\s*\?\s*<a className="btn btn-primary btn-sm" href=\{applyUrl\}/);
+    expect(read("src/app/[aud]/eukairies/[id]/page.tsx")).toContain("canApply={canApply}");
+  });
+  it("a programme pending confirmation never shows «no fixed deadline»", () => {
+    expect(read("src/components/opportunity-details.tsx")).toContain('o.status === "unverified" ? <span className="tag gold" data-pending="period">');
+  });
   it("a budget pending confirmation is never shown as a number (ΔΑΜ24)", () => {
     const m = moneyOf({ funding_amount_state: "unknown", funding_min: null, funding_max: null, funding_intensity_pct: null,
       official_details: { funding: { rate: { min: 50, max: 50 }, project_budget: null, grant: null, pending: ["project_budget"] } } as never });

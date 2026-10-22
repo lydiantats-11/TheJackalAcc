@@ -31,6 +31,7 @@ for (const [vp, size] of [["desktop", { width: 1440, height: 900 }], ["phone", {
         return {
           title: txt("h1")[0] ?? null,
           applyButton: !!document.querySelector("#apply a.btn-primary"),
+          briefApplyButton: !!document.querySelector(".brief a.btn-primary"),
           applyLinks: [...document.querySelectorAll("#apply a")].map((a) => `${(a.textContent ?? "").trim()} → ${a.getAttribute("href")}`),
           pending: txt("[data-pending]"),
           mentions31March: /31 Μαρτίου|31\/3\/2027|31 Mar/.test(body),
@@ -49,4 +50,4 @@ for (const [vp, size] of [["desktop", { width: 1440, height: 900 }], ["phone", {
 }
 await browser.close();
 writeFileSync(`${out}/records.json`, JSON.stringify(report, null, 2));
-console.log(JSON.stringify(report.map((r) => ({ key: r.key, applyButton: r.applyButton, mentions31March: r.mentions31March, pending: r.pending, error: r.error })), null, 2));
+console.log(JSON.stringify(report.map((r) => ({ key: r.key, applyButton: r.applyButton, briefApplyButton: r.briefApplyButton, mentions31March: r.mentions31March, pending: r.pending, error: r.error })), null, 2));

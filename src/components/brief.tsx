@@ -33,9 +33,11 @@ export function TimeLeftPill({ input, s, locale, now }: { input: BriefInput; s: 
 }
 
 /** «Με μια ματιά» box at the top of a detail page. */
-export function OpportunityBrief({ input, what, who, s, locale, now, applyUrl, guideHref, similarHref }: {
+export function OpportunityBrief({ input, what, who, s, locale, now, applyUrl, guideHref, similarHref, canApply = true, officialUrl }: {
   input: BriefInput; what: React.ReactNode; who: string; s: SiteCopy; locale: Locale; now: Date;
   applyUrl: string; guideHref?: string; similarHref: string;
+  /** false: no application button (closed, passed, suspended, pending confirmation or contradicted) — the official page only, as information. */
+  canApply?: boolean; officialUrl?: string;
 }) {
   const b = s.brief;
   const t = timeLeftOf(input, now);
@@ -54,7 +56,9 @@ export function OpportunityBrief({ input, what, who, s, locale, now, applyUrl, g
             ? <Link className="btn btn-ghost btn-sm" href={similarHref}>{b.similarCta} →</Link>
             : <>
                 {guideHref && <Link className="btn btn-ghost btn-sm" href={guideHref}><Icon name="book" size={14} />{b.guideCta}</Link>}
-                <a className="btn btn-primary btn-sm" href={applyUrl} target="_blank" rel="noopener noreferrer">{b.applyCta} <Icon name="external" size={14} /></a>
+                {canApply
+                  ? <a className="btn btn-primary btn-sm" href={applyUrl} target="_blank" rel="noopener noreferrer">{b.applyCta} <Icon name="external" size={14} /></a>
+                  : <a className="btn btn-ghost btn-sm" href={officialUrl ?? applyUrl} target="_blank" rel="noopener noreferrer" data-no-apply>{s.detail.officialPage} <Icon name="external" size={14} /></a>}
               </>}
         </span>
       </div>
