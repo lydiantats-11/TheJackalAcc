@@ -5,50 +5,71 @@
 
 [1m[30m[46m RUN [49m[39m[22m [36mv5.0.4 [39m[90m/home/runner/work/TheJackalAcc/TheJackalAcc[39m
 
- [32m✓[39m tests/ingestion.test.ts [2m([22m[2m27 tests[22m[2m)[22m[33m 1600[2mms[22m[39m
- [32m✓[39m tests/engine.test.ts [2m([22m[2m27 tests[22m[2m)[22m[32m 86[2mms[22m[39m
- [32m✓[39m tests/corrections-2026-10-23.test.ts [2m([22m[2m22 tests[22m[2m)[22m[32m 44[2mms[22m[39m
- [32m✓[39m tests/extraction.test.ts [2m([22m[2m13 tests[22m[2m)[22m[33m 1072[2mms[22m[39m
- [32m✓[39m tests/knowledge.test.ts [2m([22m[2m19 tests[22m[2m)[22m[32m 27[2mms[22m[39m
- [32m✓[39m tests/real-calls.test.ts [2m([22m[2m22 tests[22m[2m)[22m[32m 30[2mms[22m[39m
- [32m✓[39m tests/audience.test.ts [2m([22m[2m21 tests[22m[2m)[22m[32m 19[2mms[22m[39m
- [32m✓[39m tests/credibility-money.test.ts [2m([22m[2m18 tests[22m[2m)[22m[32m 12[2mms[22m[39m
+ [32m✓[39m tests/ingestion.test.ts [2m([22m[2m27 tests[22m[2m)[22m[33m 1833[2mms[22m[39m
+ [32m✓[39m tests/engine.test.ts [2m([22m[2m27 tests[22m[2m)[22m[32m 93[2mms[22m[39m
+ [32m✓[39m tests/corrections-2026-10-23.test.ts [2m([22m[2m22 tests[22m[2m)[22m[32m 52[2mms[22m[39m
+ [32m✓[39m tests/extraction.test.ts [2m([22m[2m13 tests[22m[2m)[22m[33m 1180[2mms[22m[39m
+ [32m✓[39m tests/knowledge.test.ts [2m([22m[2m19 tests[22m[2m)[22m[32m 32[2mms[22m[39m
+ [32m✓[39m tests/real-calls.test.ts [2m([22m[2m22 tests[22m[2m)[22m[32m 32[2mms[22m[39m
+ [32m✓[39m tests/audience.test.ts [2m([22m[2m21 tests[22m[2m)[22m[32m 20[2mms[22m[39m
+ [32m✓[39m tests/credibility-money.test.ts [2m([22m[2m18 tests[22m[2m)[22m[32m 11[2mms[22m[39m
  [32m✓[39m tests/guides-catalog.test.ts [2m([22m[2m20 tests[22m[2m)[22m[32m 16[2mms[22m[39m
  [32m✓[39m tests/corrections-2026-10-22.test.ts [2m([22m[2m15 tests[22m[2m)[22m[32m 9[2mms[22m[39m
- [32m✓[39m tests/auth-and-access.test.ts [2m([22m[2m11 tests[22m[2m)[22m[33m 1043[2mms[22m[39m
+ [32m✓[39m tests/auth-and-access.test.ts [2m([22m[2m11 tests[22m[2m)[22m[33m 1072[2mms[22m[39m
    [32m✓[39m auth & access control (PostgreSQL) [2m(11)[22m
-     [33m[2m✓[22m[39m rate-limits repeated failed logins[33m 350[2mms[22m[39m
- [32m✓[39m tests/end-to-end-flow.test.ts [2m([22m[2m3 tests[22m[2m)[22m[33m 454[2mms[22m[39m
- [32m✓[39m tests/personas.test.ts [2m([22m[2m13 tests[22m[2m)[22m[32m 63[2mms[22m[39m
- [32m✓[39m tests/residence-and-records.test.ts [2m([22m[2m15 tests[22m[2m)[22m[32m 14[2mms[22m[39m
+     [33m[2m✓[22m[39m rate-limits repeated failed logins[33m 357[2mms[22m[39m
+ [32m✓[39m tests/end-to-end-flow.test.ts [2m([22m[2m3 tests[22m[2m)[22m[33m 486[2mms[22m[39m
+ [32m✓[39m tests/personas.test.ts [2m([22m[2m13 tests[22m[2m)[22m[32m 64[2mms[22m[39m
+ [32m✓[39m tests/residence-and-records.test.ts [2m([22m[2m15 tests[22m[2m)[22m[32m 15[2mms[22m[39m
  [32m✓[39m tests/official-details.test.ts [2m([22m[2m7 tests[22m[2m)[22m[32m 8[2mms[22m[39m
- [32m✓[39m tests/guide-status.test.ts [2m([22m[2m13 tests[22m[2m)[22m[32m 27[2mms[22m[39m
- [32m✓[39m tests/business-records.test.ts [2m([22m[2m9 tests[22m[2m)[22m[32m 21[2mms[22m[39m
+ [32m✓[39m tests/guide-status.test.ts [2m([22m[2m13 tests[22m[2m)[22m[32m 28[2mms[22m[39m
+ [31m❯[39m tests/seed-corrections-db.test.ts [2m([22m[2m7 tests[22m[2m | [22m[33m5 skipped[39m[2m)[22m[32m 232[2mms[22m[39m
+   [32m✓[39m corrections-2026-10-23.sql against the schema — static check (no database needed) [2m(2)[22m
+     [32m✓[39m every update that sets closes_at also sets a deadline_state the schema accepts with it[32m 1[2mms[22m[39m
+     [32m✓[39m is one transaction, guarded so a rerun changes nothing[32m 0[2mms[22m[39m
+   [31m❯[39m corrections-2026-10-23.sql on PostgreSQL (CI run 39947182245) [2m(5)[22m
+     [2m[90m↓[39m[22m Article 5Α: no confirmed period → no deadline, deadline_state 'unknown', «Υπό επιβεβαίωση»
+     [2m[90m↓[39m[22m Article 5Β: only the confirmed 2026 period (31/10/2026 23:59 Athens), never 31/10/2027
+     [2m[90m↓[39m[22m changes only the approved records; requirements only of 5Α / 5Β
+     [2m[90m↓[39m[22m a rerun changes nothing
+     [2m[90m↓[39m[22m the check constraints are still in force
+ [32m✓[39m tests/business-records.test.ts [2m([22m[2m9 tests[22m[2m)[22m[32m 20[2mms[22m[39m
  [32m✓[39m tests/discovery.test.ts [2m([22m[2m11 tests[22m[2m)[22m[32m 9[2mms[22m[39m
- [32m✓[39m tests/record-status.test.ts [2m([22m[2m10 tests[22m[2m)[22m[32m 6[2mms[22m[39m
- [32m✓[39m tests/status-and-sources.test.ts [2m([22m[2m12 tests[22m[2m)[22m[32m 31[2mms[22m[39m
+ [32m✓[39m tests/record-status.test.ts [2m([22m[2m10 tests[22m[2m)[22m[32m 7[2mms[22m[39m
+ [32m✓[39m tests/status-and-sources.test.ts [2m([22m[2m12 tests[22m[2m)[22m[32m 45[2mms[22m[39m
  [32m✓[39m tests/brief-feed.test.ts [2m([22m[2m7 tests[22m[2m)[22m[32m 6[2mms[22m[39m
- [32m✓[39m tests/scenarios-and-money.test.ts [2m([22m[2m8 tests[22m[2m)[22m[32m 22[2mms[22m[39m
+ [32m✓[39m tests/scenarios-and-money.test.ts [2m([22m[2m8 tests[22m[2m)[22m[32m 21[2mms[22m[39m
  [32m✓[39m tests/i18n.test.ts [2m([22m[2m26 tests[22m[2m)[22m[32m 12[2mms[22m[39m
- [32m✓[39m tests/industries.test.ts [2m([22m[2m5 tests[22m[2m)[22m[32m 71[2mms[22m[39m
+ [32m✓[39m tests/industries.test.ts [2m([22m[2m5 tests[22m[2m)[22m[32m 60[2mms[22m[39m
  [32m✓[39m tests/daily-report.test.ts [2m([22m[2m6 tests[22m[2m)[22m[32m 5[2mms[22m[39m
- [32m✓[39m tests/profile-update.test.ts [2m([22m[2m6 tests[22m[2m)[22m[33m 334[2mms[22m[39m
+ [32m✓[39m tests/profile-update.test.ts [2m([22m[2m6 tests[22m[2m)[22m[33m 331[2mms[22m[39m
  [32m✓[39m tests/credibility.test.ts [2m([22m[2m7 tests[22m[2m)[22m[32m 6[2mms[22m[39m
  [32m✓[39m tests/decision-record.test.ts [2m([22m[2m5 tests[22m[2m)[22m[32m 11[2mms[22m[39m
  [32m✓[39m tests/govgr-watch.test.ts [2m([22m[2m5 tests[22m[2m)[22m[32m 6[2mms[22m[39m
  [32m✓[39m tests/taxonomy.test.ts [2m([22m[2m5 tests[22m[2m)[22m[32m 6[2mms[22m[39m
  [32m✓[39m tests/apply-cta.test.ts [2m([22m[2m5 tests[22m[2m)[22m[32m 4[2mms[22m[39m
- [32m✓[39m tests/record-audit.test.ts [2m([22m[2m3 tests[22m[2m)[22m[32m 8[2mms[22m[39m
+ [32m✓[39m tests/record-audit.test.ts [2m([22m[2m3 tests[22m[2m)[22m[32m 9[2mms[22m[39m
  [32m✓[39m tests/document-lists.test.ts [2m([22m[2m5 tests[22m[2m)[22m[32m 5[2mms[22m[39m
  [32m✓[39m tests/change-detection.test.ts [2m([22m[2m2 tests[22m[2m)[22m[32m 3[2mms[22m[39m
- [32m✓[39m tests/proxy.test.ts [2m([22m[2m2 tests[22m[2m)[22m[32m 10[2mms[22m[39m
+ [32m✓[39m tests/proxy.test.ts [2m([22m[2m2 tests[22m[2m)[22m[32m 8[2mms[22m[39m
  [32m✓[39m tests/question-impact.test.ts [2m([22m[2m2 tests[22m[2m)[22m[32m 6[2mms[22m[39m
 
-[2m Test Files [22m [1m[32m36 passed[39m[22m[90m (36)[39m
-[2m      Tests [22m [1m[32m407 passed[39m[22m[90m (407)[39m
-[2m   Start at [22m 12:01:36
-[2m   Duration [22m 10.20s[2m (tests 70%, import 20%, transform 9%, worker 1%)[22m
+[31m⎯⎯⎯⎯⎯⎯[39m[1m[41m Failed Suites 1 [49m[22m[31m⎯⎯⎯⎯⎯⎯⎯[39m
 
-[2m    Isolate [22m [33m36 workers spawned[39m[2m · ~74ms startup each (spawn + environment, per file)[22m
-[2m            [22m [2mat least ~2.61s faster with [22m[33misolate: false[39m[2m — reuses workers across files instead of one per file[22m
+[41m[1m FAIL [22m[49m tests/seed-corrections-db.test.ts[2m > [22mcorrections-2026-10-23.sql on PostgreSQL (CI run 39947182245)
+[31m[1mError[22m: UNSAFE_TRANSACTION: Only use sql.begin, sql.reserved or max: 1[39m
+[90m [2m❯[22m CommandComplete node_modules/postgres/src/connection.js:[2m606:29[22m[39m
+[90m [2m❯[22m handle node_modules/postgres/src/connection.js:[2m489:6[22m[39m
+[90m [2m❯[22m Socket.data node_modules/postgres/src/connection.js:[2m324:9[22m[39m
+
+[31m[2m⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯[22m[39m
+
+
+[2m Test Files [22m [1m[31m1 failed[39m[22m[2m | [22m[1m[32m36 passed[39m[22m[90m (37)[39m
+[2m      Tests [22m [1m[32m409 passed[39m[22m[2m | [22m[33m5 skipped[39m[90m (414)[39m
+[2m   Start at [22m 12:34:03
+[2m   Duration [22m 11.22s[2m (tests 71%, import 19%, transform 8%, worker 1%)[22m
+
+[2m    Isolate [22m [33m37 workers spawned[39m[2m · ~77ms startup each (spawn + environment, per file)[22m
+[2m            [22m [2mat least ~2.79s faster with [22m[33misolate: false[39m[2m — reuses workers across files instead of one per file[22m
 
