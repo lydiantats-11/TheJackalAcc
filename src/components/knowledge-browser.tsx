@@ -59,6 +59,8 @@ export function KnowledgeBrowser({
   const usedTopics = topics.filter((t) => items.some((i) => i.topic === t.id));
   const heads = compact && showLetters && !searching; // letter headings only in the dictionary
   const n = visible.size;
+  // The banner already says the entries are under verification; mark single rows only when a list mixes the two.
+  const markDrafts = items.some((i) => i.isDraft) && items.some((i) => !i.isDraft);
 
   return (
     <div className={`kn-browser${compact ? " is-compact" : ""}`} data-search-only={searchOnly || undefined} data-compact={compact || undefined}>
@@ -109,7 +111,7 @@ export function KnowledgeBrowser({
                       </Link>
                       <span className="kn-row-meta">
                         {!i.snippet && <span className="kn-pending" data-pending>{labels.pending}</span>}
-                        {i.isDraft && <span className="kn-flag">{labels.reviewFlag}</span>}
+                        {markDrafts && i.isDraft && <span className="kn-flag">{labels.reviewFlag}</span>}
                         {i.synthetic && <span className="tag gold">{labels.fixtureTag}</span>}
                       </span>
                     </li>
@@ -124,7 +126,7 @@ export function KnowledgeBrowser({
                         {showKind && <span className="tag">{labels.kindName[i.kind]}</span>}
                         <span className="tag">{topics.find((t) => t.id === i.topic)?.name}</span>
                         {i.synthetic && <span className="tag gold">{labels.fixtureTag}</span>}
-                        {i.isDraft && <span className="kn-flag">{labels.reviewFlag}</span>}
+                        {markDrafts && i.isDraft && <span className="kn-flag">{labels.reviewFlag}</span>}
                       </div>
                     </li>
                   )}

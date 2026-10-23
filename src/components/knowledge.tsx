@@ -115,6 +115,7 @@ const hasText = (e: Entry, l: Locale) => !!(e.body && (e.body[l] || e.body.el));
  */
 export function CompactList({ entries, locale, s, letters = false }: { entries: Entry[]; locale: Locale; s: SiteCopy; letters?: boolean }) {
   const k = s.knowledge;
+  const markDrafts = entries.some((e) => e.draftPreview) && entries.some((e) => !e.draftPreview); // see knowledge-browser.tsx
   let last = "";
   return (
     <ul className="kn-compact">
@@ -133,7 +134,7 @@ export function CompactList({ entries, locale, s, letters = false }: { entries: 
             </Link>
             <span className="kn-row-meta">
               {!hasText(e, locale) && <span className="kn-pending" data-pending>{k.pendingContent}</span>}
-              {e.draftPreview && <span className="kn-flag">{k.reviewFlag}</span>}
+              {markDrafts && e.draftPreview && <span className="kn-flag">{k.reviewFlag}</span>}
             </span>
           </li>,
         ];

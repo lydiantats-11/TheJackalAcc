@@ -171,7 +171,7 @@ describe("the K1 register as drafts in the private preview (owner, 23 Oct 2026 1
     expect(SITE.el.knowledge.draftBanner).toMatch(/^ΥΠΟ ΕΠΑΛΗΘΕΥΣΗ — ΜΟΝΟ ΓΙΑ ΕΣΩΤΕΡΙΚΟ ΕΛΕΓΧΟ/);
     expect(SITE.el.knowledge.draftTag).toBe("Υπό επαλήθευση");
     expect(SITE.en.knowledge.draftBanner).toMatch(/^UNDER VERIFICATION — FOR INTERNAL REVIEW ONLY/);
-    expect(read("src/components/knowledge-browser.tsx")).toContain("{i.isDraft && <span className=\"kn-flag\">{labels.reviewFlag}</span>}");
+    expect(read("src/components/knowledge-browser.tsx")).toContain("{markDrafts && i.isDraft && <span className=\"kn-flag\">{labels.reviewFlag}</span>}");
     const entry = read("src/app/gnosi/oros/[id]/page.tsx");
     expect(entry).toContain("{e.draftPreview && <span className=\"kn-flag\">{k.reviewFlag}</span>}");
     expect(entry).toContain("k.draftStates[v.status]");
