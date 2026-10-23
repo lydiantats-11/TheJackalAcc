@@ -16,6 +16,7 @@ must be re-estimated by the developer.
 | End-to-end tests of signed-in journeys | 1 | Playwright is already in CI |
 | Phase 2A — categories, filters, profile questions | 2–3 | **Paused** by the owner; proposal document «Φάση 2Α» ready for review |
 | Γνώση editorial workflow | 0.5–1 | Admin screens for verification, review and approval of entries |
+| Γνώση UX follow-ups (after the owner's design review) | 0.5 | Comparison table as stacked cards on phones (it scrolls inside its box today); optional «Σχετικοί όροι» once the register has related IDs; fill CMP-001 from official sources |
 
 ## Content and owner work
 
