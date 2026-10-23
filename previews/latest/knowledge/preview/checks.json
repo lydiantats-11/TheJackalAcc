@@ -31,6 +31,11 @@
       "detail": ""
     },
     {
+      "name": "preview/desktop/el: the home page lists no entries until the visitor searches",
+      "ok": true,
+      "detail": "0 of 221"
+    },
+    {
       "name": "preview/desktop/el/hub: nav",
       "ok": true,
       "detail": "Γνώση | Τι είναι το Jackal"
@@ -63,7 +68,17 @@
     {
       "name": "preview/desktop/el: dictionary lists the 166 register terms, all marked draft",
       "ok": true,
-      "detail": "166 / 166"
+      "detail": "166 / 166 / 166"
+    },
+    {
+      "name": "preview/desktop/el: no duplicate entries in the dictionary",
+      "ok": true,
+      "detail": "166"
+    },
+    {
+      "name": "preview/desktop/el: the 126 terms without text say «content in preparation»",
+      "ok": true,
+      "detail": "126"
     },
     {
       "name": "preview/desktop/el/lexiko: nav",
@@ -291,6 +306,11 @@
       "detail": ""
     },
     {
+      "name": "preview/desktop/en: the home page lists no entries until the visitor searches",
+      "ok": true,
+      "detail": "0 of 221"
+    },
+    {
       "name": "preview/desktop/en/hub: nav",
       "ok": true,
       "detail": "Knowledge | What is Jackal"
@@ -323,7 +343,17 @@
     {
       "name": "preview/desktop/en: dictionary lists the 166 register terms, all marked draft",
       "ok": true,
-      "detail": "166 / 166"
+      "detail": "166 / 166 / 166"
+    },
+    {
+      "name": "preview/desktop/en: no duplicate entries in the dictionary",
+      "ok": true,
+      "detail": "166"
+    },
+    {
+      "name": "preview/desktop/en: the 126 terms without text say «content in preparation»",
+      "ok": true,
+      "detail": "126"
     },
     {
       "name": "preview/desktop/en/lexiko: nav",
@@ -551,6 +581,11 @@
       "detail": ""
     },
     {
+      "name": "preview/phone/el: the home page lists no entries until the visitor searches",
+      "ok": true,
+      "detail": "0 of 221"
+    },
+    {
       "name": "preview/phone/el/hub: nav",
       "ok": true,
       "detail": "Γνώση | Τι είναι το Jackal"
@@ -583,7 +618,17 @@
     {
       "name": "preview/phone/el: dictionary lists the 166 register terms, all marked draft",
       "ok": true,
-      "detail": "166 / 166"
+      "detail": "166 / 166 / 166"
+    },
+    {
+      "name": "preview/phone/el: no duplicate entries in the dictionary",
+      "ok": true,
+      "detail": "166"
+    },
+    {
+      "name": "preview/phone/el: the 126 terms without text say «content in preparation»",
+      "ok": true,
+      "detail": "126"
     },
     {
       "name": "preview/phone/el/lexiko: nav",
@@ -824,6 +869,71 @@
       "name": "preview: «ΙΚΕ» second result is the ΙΚΕ question, not a word that merely contains the letters",
       "ok": true,
       "detail": "ΙΚΕ | Ποια η διαφορά ΙΚΕ και ατομικής επιχείρησης; | ΑΑΔΕ"
+    },
+    {
+      "name": "preview: topic forologia loads with Μάθε τα βασικά · Λεξικό · Συχνές Ερωτήσεις",
+      "ok": true,
+      "detail": "vasika · lexiko · syxnes-erotiseis"
+    },
+    {
+      "name": "preview: topic epixeirimatikotita loads with Μάθε τα βασικά · Λεξικό · Συχνές Ερωτήσεις",
+      "ok": true,
+      "detail": "vasika · sygkriseis · lexiko · syxnes-erotiseis"
+    },
+    {
+      "name": "preview: the legal-forms comparison is shown as a placeholder only (no values)",
+      "ok": true,
+      "detail": "1 / 0"
+    },
+    {
+      "name": "preview: topic oikonomika loads with Μάθε τα βασικά · Λεξικό · Συχνές Ερωτήσεις",
+      "ok": true,
+      "detail": "vasika · lexiko · syxnes-erotiseis"
+    },
+    {
+      "name": "preview: topic ergasia loads with Μάθε τα βασικά · Λεξικό · Συχνές Ερωτήσεις",
+      "ok": true,
+      "detail": "vasika · lexiko · syxnes-erotiseis"
+    },
+    {
+      "name": "preview: topic epidotiseis loads with Μάθε τα βασικά · Λεξικό · Συχνές Ερωτήσεις",
+      "ok": true,
+      "detail": "vasika · lexiko · syxnes-erotiseis"
+    },
+    {
+      "name": "preview: topic akinita loads with Μάθε τα βασικά · Λεξικό · Συχνές Ερωτήσεις",
+      "ok": true,
+      "detail": "vasika · lexiko · syxnes-erotiseis"
+    },
+    {
+      "name": "preview: topic koinonikes-paroxes loads with Μάθε τα βασικά · Λεξικό · Συχνές Ερωτήσεις",
+      "ok": true,
+      "detail": "vasika · lexiko · syxnes-erotiseis"
+    },
+    {
+      "name": "preview: topic nomothesia loads with Μάθε τα βασικά · Λεξικό · Συχνές Ερωτήσεις",
+      "ok": true,
+      "detail": "vasika · lexiko · syxnes-erotiseis"
+    },
+    {
+      "name": "preview: the eight topics together list all 221 entries, each once",
+      "ok": true,
+      "detail": "221 / 221"
+    },
+    {
+      "name": "preview: English switch — Knowledge home in English",
+      "ok": true,
+      "detail": "Knowledge | Knowledge · Topics · Dictionary · Learn the Basics · FAQ"
+    },
+    {
+      "name": "preview/phone: /gnosi/themata/epixeirimatikotita no sideways scroll",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "preview/phone: /gnosi/themata/forologia no sideways scroll",
+      "ok": true,
+      "detail": ""
     },
     {
       "name": "from /epixeiriseis, Γνώση shows the five tabs of that path",
