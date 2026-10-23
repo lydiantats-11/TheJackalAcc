@@ -695,7 +695,8 @@ main:has(> section.band:last-child) { padding-bottom: 0; }
 .kn-hero .lead { max-width: 52ch; }
 .kn-hub-search .kn-search input { padding: 15px 20px; font-size: 1.05rem; box-shadow: 0 1px 2px rgba(16, 43, 73, .06); }
 .kn-block h2, .kn-topic-section h2 { font-size: 1.2rem; margin: 0 0 var(--sp-3); }
-.kn-topic strong { font-size: 1.02rem; }
+.kn-topic strong { font-size: 1.02rem; overflow-wrap: anywhere; hyphens: auto; }
+.kn-topic-select { display: none; width: 100%; font: inherit; padding: 10px 14px; border: 1px solid var(--line-strong); border-radius: var(--radius-sm); background: var(--surface); color: var(--ink); margin-bottom: var(--sp-3); }
 .kn-topic-count { color: var(--accent); font-weight: 600; margin-top: auto; padding-top: 6px; }
 .kn-teasers { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: var(--sp-3); }
 .kn-teaser { display: flex; flex-direction: column; gap: 6px; text-decoration: none; color: var(--ink); height: 100%; }
@@ -743,6 +744,10 @@ p.kn-pending { margin: 6px 0 8px; }
   .kn-topics { gap: var(--sp-2); }
   .kn-topic { padding: 12px; }
   .kn-topic .small.muted { display: none; }
+  .kn-topic strong { font-size: .95rem; }
+  .kn-chips { display: none; }
+  .kn-topic-select { display: block; }
+  .kn-fixture { font-size: .78rem; padding: 8px 12px; }
   .kn-search .btn { display: none; }
   .kn-tabs { gap: 0 14px; }
   .kn-tabs a.kn-tabs-home { width: 100%; border-right: 0; padding-bottom: 2px; }

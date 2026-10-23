@@ -71,6 +71,13 @@ export function KnowledgeBrowser({
       </form>
 
       {showTopics && usedTopics.length > 1 && (
+        // Phones: one dropdown instead of a wall of chips (owner review, 23 Oct 2026); same filter, same state.
+        <select className="kn-topic-select" aria-label={labels.topicLabel} value={topic} onChange={(e) => setTopic(e.target.value)}>
+          <option value="">{labels.allTopics}</option>
+          {usedTopics.map((t) => <option key={t.id} value={t.id}>{t.name}</option>)}
+        </select>
+      )}
+      {showTopics && usedTopics.length > 1 && (
         <div className="kn-chips" role="group" aria-label={labels.topicLabel}>
           <button type="button" className="chip" data-topic="" aria-pressed={!topic} onClick={() => setTopic("")}>{labels.allTopics}</button>
           {usedTopics.map((t) => (
