@@ -281,7 +281,7 @@ export function MoveYearDeadlines({ rule, s, locale, now }: { rule: MoveYearRule
                       : <>{c.inYear(w.year)}: {c.until(day_(w.applicationBy))} <span className={w.state === "passed" ? "tag" : "tag green"}>{w.state === "passed" ? c.passed : c.open}</span></>}
                   </div>
                 ))}</td>
-                <td>{r.windows.map((w) => w.state === "previous_rules" ? null : <div key={w.year}>{c.until(day_(w.documentsBy))}</div>)}</td>
+                <td>{r.windows.map((w) => <div key={w.year}>{w.state === "previous_rules" ? <span className="muted">—</span> : c.until(day_(w.documentsBy))}</div>)}</td>
               </tr>
             ))}
           </tbody>
