@@ -1,0 +1,537 @@
+{
+ "schema": "jackal-knowledge-fixtures/1",
+ "note": "SYNTHETIC development fixtures for the interface only (owner approval, 23 Oct 2026). Never public; shown only when JACKAL_KNOWLEDGE_FIXTURES=1, under a banner. They contain no definitions and no real rules.",
+ "entries": [
+  {
+   "id": "DEV-001",
+   "kind": "term",
+   "topic": "forologia",
+   "title": {
+    "el": "Άλφα (δοκιμαστικός όρος)",
+    "en": "Alpha (test term)"
+   },
+   "body": {
+    "el": "Δοκιμαστικό κείμενο για τον έλεγχο της διάταξης. Δεν είναι ορισμός και δεν περιγράφει πραγματικό κανόνα. Σύνδεση με άλλη εγγραφή: [[DEV-002]].",
+    "en": "Test text for checking the layout. It is not a definition and describes no real rule. Link to another entry: [[DEV-002]]."
+   },
+   "sources": [],
+   "verification": {
+    "status": "unverified"
+   },
+   "editorial_review": null,
+   "publication": {
+    "approved": false,
+    "approved_by": null,
+    "approved_on": null
+   },
+   "related": [
+    "DEV-002",
+    "DEV-003"
+   ],
+   "synthetic": true
+  },
+  {
+   "id": "DEV-002",
+   "kind": "term",
+   "topic": "epixeirimatikotita",
+   "title": {
+    "el": "Βήτα (δοκιμαστικός όρος)",
+    "en": "Beta (test term)"
+   },
+   "body": {
+    "el": "Δοκιμαστικό κείμενο για τον έλεγχο της διάταξης. Δεν είναι ορισμός και δεν περιγράφει πραγματικό κανόνα. Σύνδεση με άλλη εγγραφή: [[DEV-003]].",
+    "en": "Test text for checking the layout. It is not a definition and describes no real rule. Link to another entry: [[DEV-003]]."
+   },
+   "sources": [],
+   "verification": {
+    "status": "unverified"
+   },
+   "editorial_review": null,
+   "publication": {
+    "approved": false,
+    "approved_by": null,
+    "approved_on": null
+   },
+   "related": [
+    "DEV-003",
+    "DEV-004"
+   ],
+   "synthetic": true
+  },
+  {
+   "id": "DEV-003",
+   "kind": "term",
+   "topic": "oikonomika",
+   "title": {
+    "el": "Γάμμα (δοκιμαστικός όρος)",
+    "en": "Gamma (test term)"
+   },
+   "body": {
+    "el": "Δοκιμαστικό κείμενο για τον έλεγχο της διάταξης. Δεν είναι ορισμός και δεν περιγράφει πραγματικό κανόνα. Σύνδεση με άλλη εγγραφή: [[DEV-004]].",
+    "en": "Test text for checking the layout. It is not a definition and describes no real rule. Link to another entry: [[DEV-004]]."
+   },
+   "sources": [],
+   "verification": {
+    "status": "unverified"
+   },
+   "editorial_review": null,
+   "publication": {
+    "approved": false,
+    "approved_by": null,
+    "approved_on": null
+   },
+   "related": [
+    "DEV-004",
+    "DEV-005"
+   ],
+   "synthetic": true
+  },
+  {
+   "id": "DEV-004",
+   "kind": "term",
+   "topic": "ergasia",
+   "title": {
+    "el": "Δέλτα (δοκιμαστικός όρος)",
+    "en": "Delta (test term)"
+   },
+   "body": {
+    "el": "Δοκιμαστικό κείμενο για τον έλεγχο της διάταξης. Δεν είναι ορισμός και δεν περιγράφει πραγματικό κανόνα. Σύνδεση με άλλη εγγραφή: [[DEV-005]].",
+    "en": "Test text for checking the layout. It is not a definition and describes no real rule. Link to another entry: [[DEV-005]]."
+   },
+   "sources": [],
+   "verification": {
+    "status": "unverified"
+   },
+   "editorial_review": null,
+   "publication": {
+    "approved": false,
+    "approved_by": null,
+    "approved_on": null
+   },
+   "related": [
+    "DEV-005",
+    "DEV-006"
+   ],
+   "synthetic": true
+  },
+  {
+   "id": "DEV-005",
+   "kind": "term",
+   "topic": "epidotiseis",
+   "title": {
+    "el": "Έψιλον (δοκιμαστικός όρος)",
+    "en": "Epsilon (test term)"
+   },
+   "body": {
+    "el": "Δοκιμαστικό κείμενο για τον έλεγχο της διάταξης. Δεν είναι ορισμός και δεν περιγράφει πραγματικό κανόνα. Σύνδεση με άλλη εγγραφή: [[DEV-006]].",
+    "en": "Test text for checking the layout. It is not a definition and describes no real rule. Link to another entry: [[DEV-006]]."
+   },
+   "sources": [],
+   "verification": {
+    "status": "unverified"
+   },
+   "editorial_review": null,
+   "publication": {
+    "approved": false,
+    "approved_by": null,
+    "approved_on": null
+   },
+   "related": [
+    "DEV-006",
+    "DEV-007"
+   ],
+   "synthetic": true
+  },
+  {
+   "id": "DEV-006",
+   "kind": "term",
+   "topic": "akinita",
+   "title": {
+    "el": "Ζήτα (δοκιμαστικός όρος)",
+    "en": "Zeta (test term)"
+   },
+   "body": {
+    "el": "Δοκιμαστικό κείμενο για τον έλεγχο της διάταξης. Δεν είναι ορισμός και δεν περιγράφει πραγματικό κανόνα. Σύνδεση με άλλη εγγραφή: [[DEV-007]].",
+    "en": "Test text for checking the layout. It is not a definition and describes no real rule. Link to another entry: [[DEV-007]]."
+   },
+   "sources": [],
+   "verification": {
+    "status": "unverified"
+   },
+   "editorial_review": null,
+   "publication": {
+    "approved": false,
+    "approved_by": null,
+    "approved_on": null
+   },
+   "related": [
+    "DEV-007",
+    "DEV-008"
+   ],
+   "synthetic": true
+  },
+  {
+   "id": "DEV-007",
+   "kind": "term",
+   "topic": "koinonikes-paroxes",
+   "title": {
+    "el": "Ήτα (δοκιμαστικός όρος)",
+    "en": "Eta (test term)"
+   },
+   "body": {
+    "el": "Δοκιμαστικό κείμενο για τον έλεγχο της διάταξης. Δεν είναι ορισμός και δεν περιγράφει πραγματικό κανόνα. Σύνδεση με άλλη εγγραφή: [[DEV-008]].",
+    "en": "Test text for checking the layout. It is not a definition and describes no real rule. Link to another entry: [[DEV-008]]."
+   },
+   "sources": [],
+   "verification": {
+    "status": "unverified"
+   },
+   "editorial_review": null,
+   "publication": {
+    "approved": false,
+    "approved_by": null,
+    "approved_on": null
+   },
+   "related": [
+    "DEV-008",
+    "DEV-009"
+   ],
+   "synthetic": true
+  },
+  {
+   "id": "DEV-008",
+   "kind": "term",
+   "topic": "nomothesia",
+   "title": {
+    "el": "Θήτα (δοκιμαστικός όρος)",
+    "en": "Theta (test term)"
+   },
+   "body": {
+    "el": "Δοκιμαστικό κείμενο για τον έλεγχο της διάταξης. Δεν είναι ορισμός και δεν περιγράφει πραγματικό κανόνα. Σύνδεση με άλλη εγγραφή: [[DEV-009]].",
+    "en": "Test text for checking the layout. It is not a definition and describes no real rule. Link to another entry: [[DEV-009]]."
+   },
+   "sources": [],
+   "verification": {
+    "status": "unverified"
+   },
+   "editorial_review": null,
+   "publication": {
+    "approved": false,
+    "approved_by": null,
+    "approved_on": null
+   },
+   "related": [
+    "DEV-009",
+    "DEV-010"
+   ],
+   "synthetic": true
+  },
+  {
+   "id": "DEV-009",
+   "kind": "term",
+   "topic": "forologia",
+   "title": {
+    "el": "Ιώτα (δοκιμαστικός όρος)",
+    "en": "Iota (test term)"
+   },
+   "body": {
+    "el": "Δοκιμαστικό κείμενο για τον έλεγχο της διάταξης. Δεν είναι ορισμός και δεν περιγράφει πραγματικό κανόνα. Σύνδεση με άλλη εγγραφή: [[DEV-010]].",
+    "en": "Test text for checking the layout. It is not a definition and describes no real rule. Link to another entry: [[DEV-010]]."
+   },
+   "sources": [],
+   "verification": {
+    "status": "unverified"
+   },
+   "editorial_review": null,
+   "publication": {
+    "approved": false,
+    "approved_by": null,
+    "approved_on": null
+   },
+   "related": [
+    "DEV-010",
+    "DEV-011"
+   ],
+   "synthetic": true
+  },
+  {
+   "id": "DEV-010",
+   "kind": "term",
+   "topic": "epixeirimatikotita",
+   "title": {
+    "el": "Κάππα (δοκιμαστικός όρος)",
+    "en": "Kappa (test term)"
+   },
+   "body": {
+    "el": "Δοκιμαστικό κείμενο για τον έλεγχο της διάταξης. Δεν είναι ορισμός και δεν περιγράφει πραγματικό κανόνα. Σύνδεση με άλλη εγγραφή: [[DEV-011]].",
+    "en": "Test text for checking the layout. It is not a definition and describes no real rule. Link to another entry: [[DEV-011]]."
+   },
+   "sources": [],
+   "verification": {
+    "status": "unverified"
+   },
+   "editorial_review": null,
+   "publication": {
+    "approved": false,
+    "approved_by": null,
+    "approved_on": null
+   },
+   "related": [
+    "DEV-011",
+    "DEV-012"
+   ],
+   "synthetic": true
+  },
+  {
+   "id": "DEV-011",
+   "kind": "article",
+   "topic": "oikonomika",
+   "title": {
+    "el": "Λάμδα: δοκιμαστικό άρθρο",
+    "en": "Lambda: test article"
+   },
+   "body": {
+    "el": "Δοκιμαστικό κείμενο για τον έλεγχο της διάταξης. Δεν είναι ορισμός και δεν περιγράφει πραγματικό κανόνα. Σύνδεση με άλλη εγγραφή: [[DEV-012]].",
+    "en": "Test text for checking the layout. It is not a definition and describes no real rule. Link to another entry: [[DEV-012]]."
+   },
+   "sources": [],
+   "verification": {
+    "status": "unverified"
+   },
+   "editorial_review": null,
+   "publication": {
+    "approved": false,
+    "approved_by": null,
+    "approved_on": null
+   },
+   "related": [
+    "DEV-012",
+    "DEV-013"
+   ],
+   "synthetic": true
+  },
+  {
+   "id": "DEV-012",
+   "kind": "article",
+   "topic": "ergasia",
+   "title": {
+    "el": "Μι: δοκιμαστικό άρθρο",
+    "en": "Mu: test article"
+   },
+   "body": {
+    "el": "Δοκιμαστικό κείμενο για τον έλεγχο της διάταξης. Δεν είναι ορισμός και δεν περιγράφει πραγματικό κανόνα. Σύνδεση με άλλη εγγραφή: [[DEV-013]].",
+    "en": "Test text for checking the layout. It is not a definition and describes no real rule. Link to another entry: [[DEV-013]]."
+   },
+   "sources": [],
+   "verification": {
+    "status": "unverified"
+   },
+   "editorial_review": null,
+   "publication": {
+    "approved": false,
+    "approved_by": null,
+    "approved_on": null
+   },
+   "related": [
+    "DEV-013",
+    "DEV-014"
+   ],
+   "synthetic": true
+  },
+  {
+   "id": "DEV-013",
+   "kind": "article",
+   "topic": "epidotiseis",
+   "title": {
+    "el": "Νι: δοκιμαστικό άρθρο",
+    "en": "Nu: test article"
+   },
+   "body": {
+    "el": "Δοκιμαστικό κείμενο για τον έλεγχο της διάταξης. Δεν είναι ορισμός και δεν περιγράφει πραγματικό κανόνα. Σύνδεση με άλλη εγγραφή: [[DEV-014]].",
+    "en": "Test text for checking the layout. It is not a definition and describes no real rule. Link to another entry: [[DEV-014]]."
+   },
+   "sources": [],
+   "verification": {
+    "status": "unverified"
+   },
+   "editorial_review": null,
+   "publication": {
+    "approved": false,
+    "approved_by": null,
+    "approved_on": null
+   },
+   "related": [
+    "DEV-014",
+    "DEV-015"
+   ],
+   "synthetic": true
+  },
+  {
+   "id": "DEV-014",
+   "kind": "article",
+   "topic": "akinita",
+   "title": {
+    "el": "Ξι: δοκιμαστικό άρθρο",
+    "en": "Xi: test article"
+   },
+   "body": {
+    "el": "Δοκιμαστικό κείμενο για τον έλεγχο της διάταξης. Δεν είναι ορισμός και δεν περιγράφει πραγματικό κανόνα. Σύνδεση με άλλη εγγραφή: [[DEV-015]].",
+    "en": "Test text for checking the layout. It is not a definition and describes no real rule. Link to another entry: [[DEV-015]]."
+   },
+   "sources": [],
+   "verification": {
+    "status": "unverified"
+   },
+   "editorial_review": null,
+   "publication": {
+    "approved": false,
+    "approved_by": null,
+    "approved_on": null
+   },
+   "related": [
+    "DEV-015",
+    "DEV-016"
+   ],
+   "synthetic": true
+  },
+  {
+   "id": "DEV-015",
+   "kind": "faq",
+   "topic": "koinonikes-paroxes",
+   "title": {
+    "el": "Δοκιμαστική ερώτηση Όμικρον;",
+    "en": "Test question Omicron?"
+   },
+   "body": {
+    "el": "Δοκιμαστικό κείμενο για τον έλεγχο της διάταξης. Δεν είναι ορισμός και δεν περιγράφει πραγματικό κανόνα. Σύνδεση με άλλη εγγραφή: [[DEV-016]].",
+    "en": "Test text for checking the layout. It is not a definition and describes no real rule. Link to another entry: [[DEV-016]]."
+   },
+   "sources": [],
+   "verification": {
+    "status": "unverified"
+   },
+   "editorial_review": null,
+   "publication": {
+    "approved": false,
+    "approved_by": null,
+    "approved_on": null
+   },
+   "related": [
+    "DEV-016",
+    "DEV-017"
+   ],
+   "synthetic": true
+  },
+  {
+   "id": "DEV-016",
+   "kind": "faq",
+   "topic": "nomothesia",
+   "title": {
+    "el": "Δοκιμαστική ερώτηση Πι;",
+    "en": "Test question Pi?"
+   },
+   "body": {
+    "el": "Δοκιμαστικό κείμενο για τον έλεγχο της διάταξης. Δεν είναι ορισμός και δεν περιγράφει πραγματικό κανόνα. Σύνδεση με άλλη εγγραφή: [[DEV-017]].",
+    "en": "Test text for checking the layout. It is not a definition and describes no real rule. Link to another entry: [[DEV-017]]."
+   },
+   "sources": [],
+   "verification": {
+    "status": "unverified"
+   },
+   "editorial_review": null,
+   "publication": {
+    "approved": false,
+    "approved_by": null,
+    "approved_on": null
+   },
+   "related": [
+    "DEV-017",
+    "DEV-018"
+   ],
+   "synthetic": true
+  },
+  {
+   "id": "DEV-017",
+   "kind": "faq",
+   "topic": "forologia",
+   "title": {
+    "el": "Δοκιμαστική ερώτηση Ρο;",
+    "en": "Test question Rho?"
+   },
+   "body": {
+    "el": "Δοκιμαστικό κείμενο για τον έλεγχο της διάταξης. Δεν είναι ορισμός και δεν περιγράφει πραγματικό κανόνα. Σύνδεση με άλλη εγγραφή: [[DEV-018]].",
+    "en": "Test text for checking the layout. It is not a definition and describes no real rule. Link to another entry: [[DEV-018]]."
+   },
+   "sources": [],
+   "verification": {
+    "status": "unverified"
+   },
+   "editorial_review": null,
+   "publication": {
+    "approved": false,
+    "approved_by": null,
+    "approved_on": null
+   },
+   "related": [
+    "DEV-018",
+    "DEV-001"
+   ],
+   "synthetic": true
+  },
+  {
+   "id": "DEV-018",
+   "kind": "faq",
+   "topic": "epixeirimatikotita",
+   "title": {
+    "el": "Δοκιμαστική ερώτηση Σίγμα;",
+    "en": "Test question Sigma?"
+   },
+   "body": {
+    "el": "Δοκιμαστικό κείμενο για τον έλεγχο της διάταξης. Δεν είναι ορισμός και δεν περιγράφει πραγματικό κανόνα. Σύνδεση με άλλη εγγραφή: [[DEV-001]].",
+    "en": "Test text for checking the layout. It is not a definition and describes no real rule. Link to another entry: [[DEV-001]]."
+   },
+   "sources": [],
+   "verification": {
+    "status": "unverified"
+   },
+   "editorial_review": null,
+   "publication": {
+    "approved": false,
+    "approved_by": null,
+    "approved_on": null
+   },
+   "related": [
+    "DEV-001",
+    "DEV-002"
+   ],
+   "synthetic": true
+  },
+  {
+   "id": "DEV-099",
+   "kind": "term",
+   "topic": "oikonomika",
+   "title": {
+    "el": "Example term (Latin index test)",
+    "en": "Example term (Latin index test)"
+   },
+   "body": {
+    "el": "Δοκιμαστικό κείμενο για τον έλεγχο του λατινικού ευρετηρίου. Όχι πραγματικό περιεχόμενο.",
+    "en": "Test text for the Latin index. Not real content."
+   },
+   "sources": [],
+   "verification": {
+    "status": "unverified"
+   },
+   "editorial_review": null,
+   "publication": {
+    "approved": false,
+    "approved_by": null,
+    "approved_on": null
+   },
+   "related": [
+    "DEV-001"
+   ],
+   "synthetic": true
+  }
+ ]
+}

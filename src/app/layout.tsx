@@ -8,6 +8,8 @@ import { SITE } from "@/lib/site/copy";
 import { LogoMark } from "@/components/brand";
 import { Icon } from "@/components/icons";
 import { NavLinks, PathBar, type NavLabels } from "@/components/site-nav";
+import { cookies } from "next/headers";
+import { PATH_COOKIE, audienceFromSlug } from "@/lib/site/audience";
 import { paths } from "@/lib/site/audience";
 import { logoutAction, setLocaleAction } from "./actions";
 
@@ -26,10 +28,11 @@ export default async function RootLayout({ children }: { children: React.ReactNo
   const s = SITE[locale];
   const user = await currentUser().catch(() => null);
   const tagline = locale === "el" ? "Ελλάδα · ΕΕ" : "Greece · EU";
+  const lastPath = audienceFromSlug((await cookies()).get(PATH_COOKIE)?.value ?? null);
   // Two paths, one navigation (owner decision, 22 Oct 2026): the five sections are built from the address by NavLinks.
   const p = s.paths;
   const labels: NavLabels = {
-    nav: p.nav, lookingAs: p.lookingAs, change: p.change, short: p.short,
+    nav: { ...p.nav, knowledge: s.knowledge.nav }, lookingAs: p.lookingAs, change: p.change, short: p.short,
     changeAria: { citizen: p.changeAria(p.name.citizen), business: p.changeAria(p.name.business) },
   };
   const lang = (
@@ -48,7 +51,7 @@ export default async function RootLayout({ children }: { children: React.ReactNo
               <LogoMark />
               <span>{s.brand}<small>{tagline}</small></span>
             </Link>
-            <nav className="main" aria-label={locale === "el" ? "Κύρια πλοήγηση" : "Main navigation"}><NavLinks labels={labels} /></nav>
+            <nav className="main" aria-label={locale === "el" ? "Κύρια πλοήγηση" : "Main navigation"}><NavLinks labels={labels} lastPath={lastPath} /></nav>
             <div className="header-actions">
               <span className="desktop-only">{lang}</span>
               {user?.role === "admin" && <Link href="/admin" className="linkbtn desktop-only">{s.nav.admin}</Link>}
@@ -66,7 +69,7 @@ export default async function RootLayout({ children }: { children: React.ReactNo
               <details className="mobile-nav">
                 <summary><Icon name="menu" size={18} />{s.nav.menu}</summary>
                 <div className="panel">
-                  <NavLinks labels={labels} />
+                  <NavLinks labels={labels} lastPath={lastPath} />
                   <hr />
                   {user ? (
                     <>

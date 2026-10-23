@@ -23,6 +23,13 @@ export const otherAudience = (a: Audience): Audience => (a === "citizen" ? "busi
 export const SECTION_SLUG = { opportunities: "eukairies", news: "nea", guides: "odigoi", about: "jackal", account: "logariasmos" } as const;
 export type Section = keyof typeof SECTION_SLUG;
 
+/** The five navigation tabs (owner, 23 Oct 2026): «Γνώση» replaces «Οδηγοί» in the navigation and is universal. */
+export type NavItem = "opportunities" | "news" | "knowledge" | "about" | "account";
+/** Γνώση (Knowledge): one address for everyone, outside the two paths. */
+export const KNOWLEDGE_PATH = "/gnosi";
+/** First-party cookie remembering the last path chosen, so universal pages can link back to it (no personal data). */
+export const PATH_COOKIE = "jk_path";
+
 const base = (a: Audience) => `/${AUDIENCE_SLUG[a]}`;
 
 export const paths = {

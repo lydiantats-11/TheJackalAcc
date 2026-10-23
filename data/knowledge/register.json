@@ -1,0 +1,6608 @@
+{
+ "schema": "jackal-knowledge-register/1",
+ "source_workbook": "K1_Verification_Progress_2026-10-23.xlsx",
+ "imported_on": "2026-10-23",
+ "note": "Register of planned Knowledge entries. Nothing here is published; see the publication gate.",
+ "sheet_disagreements": [
+  {
+   "id": "LEX-0031",
+   "register": "source_located",
+   "evidence_gate": "draft"
+  },
+  {
+   "id": "LEX-0041",
+   "register": "draft",
+   "evidence_gate": "source_located_draft_checked"
+  },
+  {
+   "id": "LEX-0048",
+   "register": "draft",
+   "evidence_gate": "source_located"
+  },
+  {
+   "id": "LEX-0116",
+   "register": "source_located",
+   "evidence_gate": "draft"
+  },
+  {
+   "id": "LEX-0127",
+   "register": "source_located",
+   "evidence_gate": "draft"
+  },
+  {
+   "id": "LEX-0129",
+   "register": "source_located",
+   "evidence_gate": "draft"
+  },
+  {
+   "id": "LEX-0131",
+   "register": "source_located",
+   "evidence_gate": "source_located_draft_checked"
+  }
+ ],
+ "entries": [
+  {
+   "id": "LEX-0001",
+   "kind": "term",
+   "topic": "forologia",
+   "title": {
+    "el": "ΑΦΜ",
+    "en": "Tax Identification Number (AFM)"
+   },
+   "priority": "Υψηλή — K1",
+   "body": null,
+   "sources": [],
+   "verification": {
+    "status": "draft",
+    "checked_on": "2026-10-23",
+    "candidate_authority": "ΑΑΔΕ",
+    "starting_point": "https://www.aade.gr/",
+    "locator_note": "Μη εντοπισμένο ακριβές σημείο",
+    "note": "Μη δημοσιεύσιμο πριν από έλεγχο",
+    "evidence_gate": "NOT VERIFIED",
+    "remaining": "Locate precise official source; check amendments; review EL/EN against it"
+   },
+   "editorial_review": null,
+   "publication": {
+    "approved": false,
+    "approved_by": null,
+    "approved_on": null
+   },
+   "related": [],
+   "draft": {
+    "el": "Ο ΑΦΜ είναι ο μοναδικός αριθμός φορολογικής ταυτοποίησης που χρησιμοποιείται στις συναλλαγές με τη φορολογική διοίκηση.",
+    "en": "The AFM is the tax identification number used in dealings with the Greek tax administration.",
+    "status": "RESEARCH DRAFT — exact source pending",
+    "note": "Internal draft from the K1 workbook — not verified, not approved, never rendered."
+   },
+   "k1_order": 1
+  },
+  {
+   "id": "LEX-0002",
+   "kind": "term",
+   "topic": "forologia",
+   "title": {
+    "el": "ΑΑΔΕ",
+    "en": "Independent Authority for Public Revenue (AADE)"
+   },
+   "priority": "Υψηλή — K1",
+   "body": null,
+   "sources": [],
+   "verification": {
+    "status": "draft",
+    "checked_on": "2026-10-23",
+    "candidate_authority": "ΑΑΔΕ",
+    "starting_point": "https://www.aade.gr/",
+    "locator_note": "Απαιτείται επίσημη σελίδα αποστολής/αρμοδιοτήτων",
+    "note": "Μη δημοσιεύσιμο πριν από έλεγχο",
+    "evidence_gate": "NOT VERIFIED",
+    "remaining": "Locate precise official source; check amendments; review EL/EN against it"
+   },
+   "editorial_review": null,
+   "publication": {
+    "approved": false,
+    "approved_by": null,
+    "approved_on": null
+   },
+   "related": [],
+   "draft": {
+    "el": "Η ΑΑΔΕ είναι η Ανεξάρτητη Αρχή Δημοσίων Εσόδων, αρμόδια για φορολογικές και συναφείς διοικητικές λειτουργίες.",
+    "en": "AADE is Greece’s Independent Authority for Public Revenue, responsible for tax administration and related functions.",
+    "status": "RESEARCH DRAFT — exact source pending",
+    "note": "Internal draft from the K1 workbook — not verified, not approved, never rendered."
+   },
+   "k1_order": 40
+  },
+  {
+   "id": "LEX-0003",
+   "kind": "term",
+   "topic": "forologia",
+   "title": {
+    "el": "Taxisnet",
+    "en": null
+   },
+   "priority": "Μεσαία",
+   "body": null,
+   "sources": [],
+   "verification": {
+    "status": "unverified",
+    "checked_on": null,
+    "candidate_authority": "ΑΑΔΕ",
+    "starting_point": null,
+    "locator_note": null,
+    "note": "Μη δημοσιεύσιμο πριν από έλεγχο"
+   },
+   "editorial_review": null,
+   "publication": {
+    "approved": false,
+    "approved_by": null,
+    "approved_on": null
+   },
+   "related": [],
+   "draft": null
+  },
+  {
+   "id": "LEX-0004",
+   "kind": "term",
+   "topic": "forologia",
+   "title": {
+    "el": "myAADE",
+    "en": null
+   },
+   "priority": "Μεσαία",
+   "body": null,
+   "sources": [],
+   "verification": {
+    "status": "unverified",
+    "checked_on": null,
+    "candidate_authority": "ΑΑΔΕ",
+    "starting_point": null,
+    "locator_note": null,
+    "note": "Μη δημοσιεύσιμο πριν από έλεγχο"
+   },
+   "editorial_review": null,
+   "publication": {
+    "approved": false,
+    "approved_by": null,
+    "approved_on": null
+   },
+   "related": [],
+   "draft": null
+  },
+  {
+   "id": "LEX-0005",
+   "kind": "term",
+   "topic": "forologia",
+   "title": {
+    "el": "Ε1",
+    "en": "E1 income tax return"
+   },
+   "priority": "Υψηλή — K1",
+   "body": null,
+   "sources": [],
+   "verification": {
+    "status": "draft",
+    "checked_on": "2026-10-23",
+    "candidate_authority": "ΑΑΔΕ",
+    "starting_point": "https://www.aade.gr/",
+    "locator_note": "Εντοπισμός ισχύοντος εντύπου Ε1",
+    "note": "Μη δημοσιεύσιμο πριν από έλεγχο",
+    "evidence_gate": "NOT VERIFIED",
+    "remaining": "Locate precise official source; check amendments; review EL/EN against it"
+   },
+   "editorial_review": null,
+   "publication": {
+    "approved": false,
+    "approved_by": null,
+    "approved_on": null
+   },
+   "related": [],
+   "draft": {
+    "el": "Το Ε1 είναι το βασικό έντυπο δήλωσης φορολογίας εισοδήματος φυσικών προσώπων στην Ελλάδα.",
+    "en": "E1 is the main personal income-tax return form in Greece.",
+    "status": "RESEARCH DRAFT — exact source pending",
+    "note": "Internal draft from the K1 workbook — not verified, not approved, never rendered."
+   },
+   "k1_order": 6
+  },
+  {
+   "id": "LEX-0006",
+   "kind": "term",
+   "topic": "forologia",
+   "title": {
+    "el": "Ε2",
+    "en": null
+   },
+   "priority": "Μεσαία",
+   "body": null,
+   "sources": [],
+   "verification": {
+    "status": "unverified",
+    "checked_on": null,
+    "candidate_authority": "ΑΑΔΕ",
+    "starting_point": null,
+    "locator_note": null,
+    "note": "Μη δημοσιεύσιμο πριν από έλεγχο"
+   },
+   "editorial_review": null,
+   "publication": {
+    "approved": false,
+    "approved_by": null,
+    "approved_on": null
+   },
+   "related": [],
+   "draft": null
+  },
+  {
+   "id": "LEX-0007",
+   "kind": "term",
+   "topic": "forologia",
+   "title": {
+    "el": "Ε3",
+    "en": null
+   },
+   "priority": "Μεσαία",
+   "body": null,
+   "sources": [],
+   "verification": {
+    "status": "unverified",
+    "checked_on": null,
+    "candidate_authority": "ΑΑΔΕ",
+    "starting_point": null,
+    "locator_note": null,
+    "note": "Μη δημοσιεύσιμο πριν από έλεγχο"
+   },
+   "editorial_review": null,
+   "publication": {
+    "approved": false,
+    "approved_by": null,
+    "approved_on": null
+   },
+   "related": [],
+   "draft": null
+  },
+  {
+   "id": "LEX-0008",
+   "kind": "term",
+   "topic": "forologia",
+   "title": {
+    "el": "Ε9",
+    "en": "E9 property declaration"
+   },
+   "priority": "Υψηλή — K1",
+   "body": null,
+   "sources": [],
+   "verification": {
+    "status": "draft",
+    "checked_on": "2026-10-23",
+    "candidate_authority": "ΑΑΔΕ",
+    "starting_point": "https://www.aade.gr/omogeneis-katoikoi-exoterikoy/kefalaio/forologia-akinitis-perioysias-e9-enfia",
+    "locator_note": "Δήλωση στοιχείων ακινήτων (Ε9)",
+    "note": "Μη δημοσιεύσιμο πριν από έλεγχο",
+    "evidence_gate": "NOT VERIFIED",
+    "remaining": "Locate precise official source; check amendments; review EL/EN against it"
+   },
+   "editorial_review": null,
+   "publication": {
+    "approved": false,
+    "approved_by": null,
+    "approved_on": null
+   },
+   "related": [],
+   "draft": {
+    "el": "Το Ε9 είναι η δήλωση στοιχείων ακινήτων για ακίνητη περιουσία στην Ελλάδα· τα δηλωμένα στοιχεία χρησιμοποιούνται και για τον ΕΝΦΙΑ.",
+    "en": "E9 is the Greek real-estate information declaration; reported data also feed property-tax assessment.",
+    "status": "SOURCE-LOCATED DRAFT — review required",
+    "note": "Internal draft from the K1 workbook — not verified, not approved, never rendered."
+   },
+   "k1_order": 7
+  },
+  {
+   "id": "LEX-0009",
+   "kind": "term",
+   "topic": "forologia",
+   "title": {
+    "el": "εκκαθαριστικό",
+    "en": null
+   },
+   "priority": "Μεσαία",
+   "body": null,
+   "sources": [],
+   "verification": {
+    "status": "unverified",
+    "checked_on": null,
+    "candidate_authority": "ΑΑΔΕ",
+    "starting_point": null,
+    "locator_note": null,
+    "note": "Μη δημοσιεύσιμο πριν από έλεγχο"
+   },
+   "editorial_review": null,
+   "publication": {
+    "approved": false,
+    "approved_by": null,
+    "approved_on": null
+   },
+   "related": [],
+   "draft": null
+  },
+  {
+   "id": "LEX-0010",
+   "kind": "term",
+   "topic": "forologia",
+   "title": {
+    "el": "φορολογητέο εισόδημα",
+    "en": "Taxable income"
+   },
+   "priority": "Υψηλή — K1",
+   "body": null,
+   "sources": [],
+   "verification": {
+    "status": "draft",
+    "checked_on": "2026-10-23",
+    "candidate_authority": "ΑΑΔΕ",
+    "starting_point": "https://www.aade.gr/",
+    "locator_note": "Απαιτείται ακριβές άρθρο ΚΦΕ",
+    "note": "Μη δημοσιεύσιμο πριν από έλεγχο",
+    "evidence_gate": "NOT VERIFIED",
+    "remaining": "Locate precise official source; check amendments; review EL/EN against it"
+   },
+   "editorial_review": null,
+   "publication": {
+    "approved": false,
+    "approved_by": null,
+    "approved_on": null
+   },
+   "related": [],
+   "draft": {
+    "el": "Φορολογητέο εισόδημα είναι το εισόδημα που λαμβάνεται υπόψη για την επιβολή φόρου σύμφωνα με τον εφαρμοστέο φορολογικό νόμο, μετά τις προβλεπόμενες προσαρμογές.",
+    "en": "Taxable income is income subject to taxation after adjustments under the applicable tax rules.",
+    "status": "RESEARCH DRAFT — exact source pending",
+    "note": "Internal draft from the K1 workbook — not verified, not approved, never rendered."
+   },
+   "k1_order": 4
+  },
+  {
+   "id": "LEX-0011",
+   "kind": "term",
+   "topic": "forologia",
+   "title": {
+    "el": "καθαρό εισόδημα",
+    "en": null
+   },
+   "priority": "Μεσαία",
+   "body": null,
+   "sources": [],
+   "verification": {
+    "status": "unverified",
+    "checked_on": null,
+    "candidate_authority": "ΑΑΔΕ",
+    "starting_point": null,
+    "locator_note": null,
+    "note": "Μη δημοσιεύσιμο πριν από έλεγχο"
+   },
+   "editorial_review": null,
+   "publication": {
+    "approved": false,
+    "approved_by": null,
+    "approved_on": null
+   },
+   "related": [],
+   "draft": null
+  },
+  {
+   "id": "LEX-0012",
+   "kind": "term",
+   "topic": "forologia",
+   "title": {
+    "el": "τεκμαρτό εισόδημα",
+    "en": "Presumptive income"
+   },
+   "priority": "Υψηλή — K1",
+   "body": null,
+   "sources": [],
+   "verification": {
+    "status": "draft",
+    "checked_on": "2026-10-23",
+    "candidate_authority": "ΑΑΔΕ",
+    "starting_point": "https://www.aade.gr/",
+    "locator_note": "Απαιτείται διάκριση τεκμηρίων διαβίωσης και ελάχιστου τεκμαρτού επιχειρηματικού εισοδήματος",
+    "note": "Μη δημοσιεύσιμο πριν από έλεγχο",
+    "evidence_gate": "NOT VERIFIED",
+    "remaining": "Locate precise official source; check amendments; review EL/EN against it"
+   },
+   "editorial_review": null,
+   "publication": {
+    "approved": false,
+    "approved_by": null,
+    "approved_on": null
+   },
+   "related": [],
+   "draft": {
+    "el": "Τεκμαρτό εισόδημα είναι εισόδημα που προσδιορίζεται με νόμιμους τεκμαρτούς κανόνες αντί αποκλειστικά από δηλωθέντα πραγματικά ποσά. Οι μηχανισμοί διαφέρουν ανά περίπτωση.",
+    "en": "Presumptive income is income determined using statutory presumptions rather than only reported actual amounts; methods vary by case.",
+    "status": "RESEARCH DRAFT — exact source pending",
+    "note": "Internal draft from the K1 workbook — not verified, not approved, never rendered."
+   },
+   "k1_order": 5
+  },
+  {
+   "id": "LEX-0013",
+   "kind": "term",
+   "topic": "forologia",
+   "title": {
+    "el": "τεκμήρια",
+    "en": null
+   },
+   "priority": "Μεσαία",
+   "body": null,
+   "sources": [],
+   "verification": {
+    "status": "unverified",
+    "checked_on": null,
+    "candidate_authority": "ΑΑΔΕ",
+    "starting_point": null,
+    "locator_note": null,
+    "note": "Μη δημοσιεύσιμο πριν από έλεγχο"
+   },
+   "editorial_review": null,
+   "publication": {
+    "approved": false,
+    "approved_by": null,
+    "approved_on": null
+   },
+   "related": [],
+   "draft": null
+  },
+  {
+   "id": "LEX-0014",
+   "kind": "term",
+   "topic": "forologia",
+   "title": {
+    "el": "ΦΠΑ",
+    "en": "Value Added Tax (VAT)"
+   },
+   "priority": "Υψηλή — K1",
+   "body": null,
+   "sources": [],
+   "verification": {
+    "status": "draft",
+    "checked_on": "2026-10-23",
+    "candidate_authority": "ΑΑΔΕ",
+    "starting_point": "https://www.aade.gr/",
+    "locator_note": "Απαιτείται παραπομπή στον ισχύοντα Κώδικα ΦΠΑ",
+    "note": "Μη δημοσιεύσιμο πριν από έλεγχο",
+    "evidence_gate": "NOT VERIFIED",
+    "remaining": "Locate precise official source; check amendments; review EL/EN against it"
+   },
+   "editorial_review": null,
+   "publication": {
+    "approved": false,
+    "approved_by": null,
+    "approved_on": null
+   },
+   "related": [],
+   "draft": {
+    "el": "Ο ΦΠΑ είναι έμμεσος φόρος που εφαρμόζεται σε φορολογητέες παραδόσεις αγαθών και παροχές υπηρεσιών, με τους κανόνες και τις εξαιρέσεις του Κώδικα ΦΠΑ.",
+    "en": "VAT is an indirect tax on taxable supplies of goods and services, subject to statutory rules and exemptions.",
+    "status": "RESEARCH DRAFT — exact source pending",
+    "note": "Internal draft from the K1 workbook — not verified, not approved, never rendered."
+   },
+   "k1_order": 2
+  },
+  {
+   "id": "LEX-0015",
+   "kind": "term",
+   "topic": "forologia",
+   "title": {
+    "el": "παρακράτηση φόρου",
+    "en": null
+   },
+   "priority": "Μεσαία",
+   "body": null,
+   "sources": [],
+   "verification": {
+    "status": "unverified",
+    "checked_on": null,
+    "candidate_authority": "ΑΑΔΕ",
+    "starting_point": null,
+    "locator_note": null,
+    "note": "Μη δημοσιεύσιμο πριν από έλεγχο"
+   },
+   "editorial_review": null,
+   "publication": {
+    "approved": false,
+    "approved_by": null,
+    "approved_on": null
+   },
+   "related": [],
+   "draft": null
+  },
+  {
+   "id": "LEX-0016",
+   "kind": "term",
+   "topic": "forologia",
+   "title": {
+    "el": "φορολογική ενημερότητα",
+    "en": "Tax clearance certificate"
+   },
+   "priority": "Υψηλή — K1",
+   "body": null,
+   "sources": [],
+   "verification": {
+    "status": "draft",
+    "checked_on": "2026-10-23",
+    "candidate_authority": "ΑΑΔΕ",
+    "starting_point": "https://www.aade.gr/",
+    "locator_note": "Απαιτείται ακριβής σελίδα αποδεικτικού ενημερότητας",
+    "note": "Μη δημοσιεύσιμο πριν από έλεγχο",
+    "evidence_gate": "NOT VERIFIED",
+    "remaining": "Locate precise official source; check amendments; review EL/EN against it"
+   },
+   "editorial_review": null,
+   "publication": {
+    "approved": false,
+    "approved_by": null,
+    "approved_on": null
+   },
+   "related": [],
+   "draft": {
+    "el": "Η φορολογική ενημερότητα είναι αποδεικτικό που εκδίδεται υπό συγκεκριμένες προϋποθέσεις και χρησιμοποιείται σε ορισμένες συναλλαγές και διαδικασίες.",
+    "en": "A tax-clearance certificate is issued subject to conditions and may be required for particular transactions.",
+    "status": "RESEARCH DRAFT — exact source pending",
+    "note": "Internal draft from the K1 workbook — not verified, not approved, never rendered."
+   },
+   "k1_order": 8
+  },
+  {
+   "id": "LEX-0017",
+   "kind": "term",
+   "topic": "forologia",
+   "title": {
+    "el": "φορολογική κατοικία",
+    "en": "Tax residence"
+   },
+   "priority": "Υψηλή — K1",
+   "body": null,
+   "sources": [],
+   "verification": {
+    "status": "draft",
+    "checked_on": "2026-10-23",
+    "candidate_authority": "ΑΑΔΕ",
+    "starting_point": "https://aade.gr/omogeneis-katoikoi-exoterikoy/eisodima/forologiki-katoikia-gia-fysika-prosopa-fke",
+    "locator_note": "Κριτήρια φορολογικής κατοικίας, άρθρο 4 ΚΦΕ",
+    "note": "Μη δημοσιεύσιμο πριν από έλεγχο",
+    "evidence_gate": "NOT VERIFIED",
+    "remaining": "Locate precise official source; check amendments; review EL/EN against it"
+   },
+   "editorial_review": null,
+   "publication": {
+    "approved": false,
+    "approved_by": null,
+    "approved_on": null
+   },
+   "related": [],
+   "draft": {
+    "el": "Η φορολογική κατοικία καθορίζει ποιο κράτος θεωρεί ένα πρόσωπο φορολογικό του κάτοικο, βάσει κριτηρίων όπως η κατοικία, οι δεσμοί και η παρουσία. Δεν κρίνεται μόνο από την ιθαγένεια.",
+    "en": "Tax residence is determined under legal tests such as home, vital interests and presence, not citizenship alone.",
+    "status": "SOURCE-LOCATED DRAFT — review required",
+    "note": "Internal draft from the K1 workbook — not verified, not approved, never rendered."
+   },
+   "k1_order": 3
+  },
+  {
+   "id": "LEX-0018",
+   "kind": "term",
+   "topic": "forologia",
+   "title": {
+    "el": "διπλή φορολογία",
+    "en": null
+   },
+   "priority": "Μεσαία",
+   "body": null,
+   "sources": [],
+   "verification": {
+    "status": "unverified",
+    "checked_on": null,
+    "candidate_authority": "ΑΑΔΕ",
+    "starting_point": null,
+    "locator_note": null,
+    "note": "Μη δημοσιεύσιμο πριν από έλεγχο"
+   },
+   "editorial_review": null,
+   "publication": {
+    "approved": false,
+    "approved_by": null,
+    "approved_on": null
+   },
+   "related": [],
+   "draft": null
+  },
+  {
+   "id": "LEX-0019",
+   "kind": "term",
+   "topic": "forologia",
+   "title": {
+    "el": "φορολογική απαλλαγή",
+    "en": null
+   },
+   "priority": "Μεσαία",
+   "body": null,
+   "sources": [],
+   "verification": {
+    "status": "unverified",
+    "checked_on": null,
+    "candidate_authority": "ΑΑΔΕ",
+    "starting_point": null,
+    "locator_note": null,
+    "note": "Μη δημοσιεύσιμο πριν από έλεγχο"
+   },
+   "editorial_review": null,
+   "publication": {
+    "approved": false,
+    "approved_by": null,
+    "approved_on": null
+   },
+   "related": [],
+   "draft": null
+  },
+  {
+   "id": "LEX-0020",
+   "kind": "term",
+   "topic": "forologia",
+   "title": {
+    "el": "φορολογική πίστωση",
+    "en": null
+   },
+   "priority": "Μεσαία",
+   "body": null,
+   "sources": [],
+   "verification": {
+    "status": "unverified",
+    "checked_on": null,
+    "candidate_authority": "ΑΑΔΕ",
+    "starting_point": null,
+    "locator_note": null,
+    "note": "Μη δημοσιεύσιμο πριν από έλεγχο"
+   },
+   "editorial_review": null,
+   "publication": {
+    "approved": false,
+    "approved_by": null,
+    "approved_on": null
+   },
+   "related": [],
+   "draft": null
+  },
+  {
+   "id": "LEX-0021",
+   "kind": "term",
+   "topic": "forologia",
+   "title": {
+    "el": "φορολογική δήλωση",
+    "en": null
+   },
+   "priority": "Μεσαία",
+   "body": null,
+   "sources": [],
+   "verification": {
+    "status": "unverified",
+    "checked_on": null,
+    "candidate_authority": "ΑΑΔΕ",
+    "starting_point": null,
+    "locator_note": null,
+    "note": "Μη δημοσιεύσιμο πριν από έλεγχο"
+   },
+   "editorial_review": null,
+   "publication": {
+    "approved": false,
+    "approved_by": null,
+    "approved_on": null
+   },
+   "related": [],
+   "draft": null
+  },
+  {
+   "id": "LEX-0022",
+   "kind": "term",
+   "topic": "forologia",
+   "title": {
+    "el": "κέντρο ζωτικών συμφερόντων",
+    "en": null
+   },
+   "priority": "Μεσαία",
+   "body": null,
+   "sources": [],
+   "verification": {
+    "status": "unverified",
+    "checked_on": null,
+    "candidate_authority": "ΑΑΔΕ",
+    "starting_point": null,
+    "locator_note": null,
+    "note": "Μη δημοσιεύσιμο πριν από έλεγχο"
+   },
+   "editorial_review": null,
+   "publication": {
+    "approved": false,
+    "approved_by": null,
+    "approved_on": null
+   },
+   "related": [],
+   "draft": null
+  },
+  {
+   "id": "BAS-0023",
+   "kind": "article",
+   "topic": "forologia",
+   "title": {
+    "el": "Πώς λειτουργεί η φορολογία εισοδήματος;",
+    "en": null
+   },
+   "priority": "Μεσαία",
+   "body": null,
+   "sources": [],
+   "verification": {
+    "status": "unverified",
+    "checked_on": null,
+    "candidate_authority": "ΑΑΔΕ",
+    "starting_point": null,
+    "locator_note": null,
+    "note": "Μη δημοσιεύσιμο πριν από έλεγχο"
+   },
+   "editorial_review": null,
+   "publication": {
+    "approved": false,
+    "approved_by": null,
+    "approved_on": null
+   },
+   "related": [],
+   "draft": null
+  },
+  {
+   "id": "BAS-0024",
+   "kind": "article",
+   "topic": "forologia",
+   "title": {
+    "el": "Τι είναι ο ΦΠΑ;",
+    "en": null
+   },
+   "priority": "Μεσαία",
+   "body": null,
+   "sources": [],
+   "verification": {
+    "status": "unverified",
+    "checked_on": null,
+    "candidate_authority": "ΑΑΔΕ",
+    "starting_point": null,
+    "locator_note": null,
+    "note": "Μη δημοσιεύσιμο πριν από έλεγχο"
+   },
+   "editorial_review": null,
+   "publication": {
+    "approved": false,
+    "approved_by": null,
+    "approved_on": null
+   },
+   "related": [],
+   "draft": null
+  },
+  {
+   "id": "BAS-0025",
+   "kind": "article",
+   "topic": "forologia",
+   "title": {
+    "el": "Τι σημαίνει φορολογική κατοικία;",
+    "en": null
+   },
+   "priority": "Μεσαία",
+   "body": null,
+   "sources": [],
+   "verification": {
+    "status": "unverified",
+    "checked_on": null,
+    "candidate_authority": "ΑΑΔΕ",
+    "starting_point": null,
+    "locator_note": null,
+    "note": "Μη δημοσιεύσιμο πριν από έλεγχο"
+   },
+   "editorial_review": null,
+   "publication": {
+    "approved": false,
+    "approved_by": null,
+    "approved_on": null
+   },
+   "related": [],
+   "draft": null
+  },
+  {
+   "id": "BAS-0026",
+   "kind": "article",
+   "topic": "forologia",
+   "title": {
+    "el": "Ποια η διαφορά εισοδήματος και φορολογητέου εισοδήματος;",
+    "en": null
+   },
+   "priority": "Μεσαία",
+   "body": null,
+   "sources": [],
+   "verification": {
+    "status": "unverified",
+    "checked_on": null,
+    "candidate_authority": "ΑΑΔΕ",
+    "starting_point": null,
+    "locator_note": null,
+    "note": "Μη δημοσιεύσιμο πριν από έλεγχο"
+   },
+   "editorial_review": null,
+   "publication": {
+    "approved": false,
+    "approved_by": null,
+    "approved_on": null
+   },
+   "related": [],
+   "draft": null
+  },
+  {
+   "id": "FAQ-0027",
+   "kind": "faq",
+   "topic": "forologia",
+   "title": {
+    "el": "Πού βρίσκω το εκκαθαριστικό μου;",
+    "en": null
+   },
+   "priority": "Μεσαία",
+   "body": null,
+   "sources": [],
+   "verification": {
+    "status": "unverified",
+    "checked_on": null,
+    "candidate_authority": "ΑΑΔΕ",
+    "starting_point": null,
+    "locator_note": null,
+    "note": "Μη δημοσιεύσιμο πριν από έλεγχο"
+   },
+   "editorial_review": null,
+   "publication": {
+    "approved": false,
+    "approved_by": null,
+    "approved_on": null
+   },
+   "related": [],
+   "draft": null
+  },
+  {
+   "id": "FAQ-0028",
+   "kind": "faq",
+   "topic": "forologia",
+   "title": {
+    "el": "Πώς ελέγχω τις φορολογικές μου οφειλές;",
+    "en": null
+   },
+   "priority": "Μεσαία",
+   "body": null,
+   "sources": [],
+   "verification": {
+    "status": "unverified",
+    "checked_on": null,
+    "candidate_authority": "ΑΑΔΕ",
+    "starting_point": null,
+    "locator_note": null,
+    "note": "Μη δημοσιεύσιμο πριν από έλεγχο"
+   },
+   "editorial_review": null,
+   "publication": {
+    "approved": false,
+    "approved_by": null,
+    "approved_on": null
+   },
+   "related": [],
+   "draft": null
+  },
+  {
+   "id": "FAQ-0029",
+   "kind": "faq",
+   "topic": "forologia",
+   "title": {
+    "el": "Πότε χρειάζεται φορολογική ενημερότητα;",
+    "en": null
+   },
+   "priority": "Μεσαία",
+   "body": null,
+   "sources": [],
+   "verification": {
+    "status": "unverified",
+    "checked_on": null,
+    "candidate_authority": "ΑΑΔΕ",
+    "starting_point": null,
+    "locator_note": null,
+    "note": "Μη δημοσιεύσιμο πριν από έλεγχο"
+   },
+   "editorial_review": null,
+   "publication": {
+    "approved": false,
+    "approved_by": null,
+    "approved_on": null
+   },
+   "related": [],
+   "draft": null
+  },
+  {
+   "id": "FAQ-0030",
+   "kind": "faq",
+   "topic": "forologia",
+   "title": {
+    "el": "Τι ισχύει αν έχω εισόδημα από το εξωτερικό;",
+    "en": null
+   },
+   "priority": "Μεσαία",
+   "body": null,
+   "sources": [],
+   "verification": {
+    "status": "unverified",
+    "checked_on": null,
+    "candidate_authority": "ΑΑΔΕ",
+    "starting_point": null,
+    "locator_note": null,
+    "note": "Μη δημοσιεύσιμο πριν από έλεγχο"
+   },
+   "editorial_review": null,
+   "publication": {
+    "approved": false,
+    "approved_by": null,
+    "approved_on": null
+   },
+   "related": [],
+   "draft": null
+  },
+  {
+   "id": "LEX-0031",
+   "kind": "term",
+   "topic": "epixeirimatikotita",
+   "title": {
+    "el": "Ατομική επιχείρηση",
+    "en": "Sole Proprietorship"
+   },
+   "priority": "Υψηλή — K1",
+   "body": null,
+   "sources": [],
+   "verification": {
+    "status": "draft",
+    "checked_on": null,
+    "candidate_authority": "ΓΕΜΗ / gov.gr",
+    "starting_point": "https://www.businessportal.gr/θέλω-να-συστήσω-μια-νέα-επιχείρηση/",
+    "locator_note": "Παραπομπή στην έναρξη ατομικής επιχείρησης",
+    "note": "Μη δημοσιεύσιμο πριν από έλεγχο",
+    "evidence_gate": "NOT VERIFIED",
+    "remaining": "Locate precise official source; check amendments; review EL/EN against it"
+   },
+   "editorial_review": null,
+   "publication": {
+    "approved": false,
+    "approved_by": null,
+    "approved_on": null
+   },
+   "related": [],
+   "draft": {
+    "el": "Επιχειρηματική δραστηριότητα φυσικού προσώπου· η έναρξη παραπέμπεται από την ΥΜΣ στην υπηρεσία του gov.gr.",
+    "en": "Business activity conducted by an individual; the GEMI portal directs formation to the gov.gr sole-proprietor service.",
+    "status": "DRAFT — not approved",
+    "note": "Internal draft from the K1 workbook — not verified, not approved, never rendered."
+   },
+   "k1_order": 14
+  },
+  {
+   "id": "LEX-0032",
+   "kind": "term",
+   "topic": "epixeirimatikotita",
+   "title": {
+    "el": "ΟΕ",
+    "en": "General Partnership (OE)"
+   },
+   "priority": "Υψηλή — K1",
+   "body": null,
+   "sources": [],
+   "verification": {
+    "status": "source_located",
+    "checked_on": null,
+    "candidate_authority": "ΓΕΜΗ",
+    "starting_point": "https://www.businessportal.gr/ποιοι-εγγραφονται-στο-γεμη/",
+    "locator_note": "Υποχρεωτική εγγραφή ΟΕ · ν. 4072/2012",
+    "note": "Μη δημοσιεύσιμο πριν από έλεγχο",
+    "evidence_gate": "OFFICIAL PRIMARY SOURCE LOCATED — editorial draft",
+    "official_source_candidate": {
+     "url": "https://gge.mindev.gov.gr/tomeas-emporiou/vasika-xaraktiristika-etaireion/",
+     "scope": "Γενική Γραμματεία Εμπορίου — Ομόρρυθμη Εταιρεία",
+     "amendment": null
+    },
+    "remaining": "Locate precise official source; check amendments; review EL/EN against it"
+   },
+   "editorial_review": null,
+   "publication": {
+    "approved": false,
+    "approved_by": null,
+    "approved_on": null
+   },
+   "related": [],
+   "draft": {
+    "el": "Εταιρική νομική μορφή που καταχωρίζεται υποχρεωτικά στο ΓΕΜΗ.",
+    "en": "A Greek general partnership legal form subject to mandatory registration with GEMI.",
+    "status": "DRAFT — not approved",
+    "note": "Internal draft from the K1 workbook — not verified, not approved, never rendered."
+   },
+   "k1_order": 11
+  },
+  {
+   "id": "LEX-0033",
+   "kind": "term",
+   "topic": "epixeirimatikotita",
+   "title": {
+    "el": "ΕΕ",
+    "en": "Limited Partnership (EE)"
+   },
+   "priority": "Υψηλή — K1",
+   "body": null,
+   "sources": [],
+   "verification": {
+    "status": "source_located",
+    "checked_on": null,
+    "candidate_authority": "ΓΕΜΗ",
+    "starting_point": "https://www.businessportal.gr/ποιοι-εγγραφονται-στο-γεμη/",
+    "locator_note": "Υποχρεωτική εγγραφή ΕΕ · ν. 4072/2012",
+    "note": "Μη δημοσιεύσιμο πριν από έλεγχο",
+    "evidence_gate": "OFFICIAL PRIMARY SOURCE LOCATED — editorial draft",
+    "official_source_candidate": {
+     "url": "https://gge.mindev.gov.gr/tomeas-emporiou/vasika-xaraktiristika-etaireion/",
+     "scope": "Γενική Γραμματεία Εμπορίου — Ετερόρρυθμη Εταιρεία",
+     "amendment": null
+    },
+    "remaining": "Locate precise official source; check amendments; review EL/EN against it"
+   },
+   "editorial_review": null,
+   "publication": {
+    "approved": false,
+    "approved_by": null,
+    "approved_on": null
+   },
+   "related": [],
+   "draft": {
+    "el": "Εταιρική νομική μορφή που καταχωρίζεται υποχρεωτικά στο ΓΕΜΗ.",
+    "en": "A Greek limited partnership legal form subject to mandatory registration with GEMI.",
+    "status": "DRAFT — not approved",
+    "note": "Internal draft from the K1 workbook — not verified, not approved, never rendered."
+   },
+   "k1_order": 12
+  },
+  {
+   "id": "LEX-0034",
+   "kind": "term",
+   "topic": "epixeirimatikotita",
+   "title": {
+    "el": "ΙΚΕ",
+    "en": "Private Company (IKE)"
+   },
+   "priority": "Υψηλή — K1",
+   "body": null,
+   "sources": [],
+   "verification": {
+    "status": "source_located",
+    "checked_on": null,
+    "candidate_authority": "ΓΕΜΗ / ΥΜΣ",
+    "starting_point": "https://www.businessportal.gr/θέλω-να-συστήσω-μια-νέα-επιχείρηση/",
+    "locator_note": "Κατάλογος νομικών μορφών ΥΜΣ",
+    "note": "Μη δημοσιεύσιμο πριν από έλεγχο",
+    "evidence_gate": "OFFICIAL PRIMARY SOURCE LOCATED — editorial draft",
+    "official_source_candidate": {
+     "url": "https://gge.mindev.gov.gr/tomeas-emporiou/vasika-xaraktiristika-etaireion/",
+     "scope": "Γενική Γραμματεία Εμπορίου, Βασικά χαρακτηριστικά εταιρειών — ΙΚΕ",
+     "amendment": null
+    },
+    "remaining": "Locate precise official source; check amendments; review EL/EN against it"
+   },
+   "editorial_review": null,
+   "publication": {
+    "approved": false,
+    "approved_by": null,
+    "approved_on": null
+   },
+   "related": [],
+   "draft": {
+    "el": "Μορφή εταιρείας που περιλαμβάνεται στις νομικές μορφές σύστασης μέσω ΥΜΣ. Οι ειδικοί εταιρικοί κανόνες εξετάζονται χωριστά.",
+    "en": "A Greek company legal form available through the One-Stop Shop company formation service. Its specific legal characteristics require separate legal verification.",
+    "status": "DRAFT — not approved",
+    "note": "Internal draft from the K1 workbook — not verified, not approved, never rendered."
+   },
+   "k1_order": 9
+  },
+  {
+   "id": "LEX-0035",
+   "kind": "term",
+   "topic": "epixeirimatikotita",
+   "title": {
+    "el": "ΕΠΕ",
+    "en": "Limited Liability Company (EPE)"
+   },
+   "priority": "Υψηλή — K1",
+   "body": null,
+   "sources": [],
+   "verification": {
+    "status": "source_located",
+    "checked_on": null,
+    "candidate_authority": "ΓΕΜΗ",
+    "starting_point": "https://www.businessportal.gr/ποιοι-εγγραφονται-στο-γεμη/",
+    "locator_note": "Υποχρεωτική εγγραφή ΕΠΕ · ν. 3190/1955",
+    "note": "Μη δημοσιεύσιμο πριν από έλεγχο",
+    "evidence_gate": "OFFICIAL PRIMARY SOURCE LOCATED — editorial draft",
+    "official_source_candidate": {
+     "url": "https://gge.mindev.gov.gr/tomeas-emporiou/vasika-xaraktiristika-etaireion/",
+     "scope": "Γενική Γραμματεία Εμπορίου — Εταιρεία Περιορισμένης Ευθύνης",
+     "amendment": null
+    },
+    "remaining": "Locate precise official source; check amendments; review EL/EN against it"
+   },
+   "editorial_review": null,
+   "publication": {
+    "approved": false,
+    "approved_by": null,
+    "approved_on": null
+   },
+   "related": [],
+   "draft": {
+    "el": "Εταιρική νομική μορφή που καταχωρίζεται υποχρεωτικά στο ΓΕΜΗ.",
+    "en": "A Greek limited liability company legal form subject to mandatory GEMI registration.",
+    "status": "DRAFT — not approved",
+    "note": "Internal draft from the K1 workbook — not verified, not approved, never rendered."
+   },
+   "k1_order": 13
+  },
+  {
+   "id": "LEX-0036",
+   "kind": "term",
+   "topic": "epixeirimatikotita",
+   "title": {
+    "el": "ΑΕ",
+    "en": "Société Anonyme (AE)"
+   },
+   "priority": "Υψηλή — K1",
+   "body": null,
+   "sources": [],
+   "verification": {
+    "status": "source_located",
+    "checked_on": null,
+    "candidate_authority": "ΓΕΜΗ",
+    "starting_point": "https://www.businessportal.gr/ποιοι-εγγραφονται-στο-γεμη/",
+    "locator_note": "Υποχρεωτική εγγραφή ΑΕ · ν. 4548/2018",
+    "note": "Μη δημοσιεύσιμο πριν από έλεγχο",
+    "evidence_gate": "OFFICIAL PRIMARY SOURCE LOCATED — editorial draft",
+    "official_source_candidate": {
+     "url": "https://www.gov.gr/el/sdg/starting-running-and-closing-business/registering-changing-legal-form-of-or-closing-business/general/how-to-start-business-in-greece",
+     "scope": "gov.gr, How to start business in Greece — Ν. 4548/2018",
+     "amendment": null
+    },
+    "remaining": "Locate precise official source; check amendments; review EL/EN against it"
+   },
+   "editorial_review": null,
+   "publication": {
+    "approved": false,
+    "approved_by": null,
+    "approved_on": null
+   },
+   "related": [],
+   "draft": {
+    "el": "Νομική μορφή εταιρείας που αναφέρεται στις διαθέσιμες μορφές σύστασης μέσω ΥΜΣ.",
+    "en": "A Greek company legal form listed among the forms available for establishment through the One-Stop Shop.",
+    "status": "DRAFT — not approved",
+    "note": "Internal draft from the K1 workbook — not verified, not approved, never rendered."
+   },
+   "k1_order": 10
+  },
+  {
+   "id": "LEX-0037",
+   "kind": "term",
+   "topic": "epixeirimatikotita",
+   "title": {
+    "el": "ΚοινΣΕπ",
+    "en": null
+   },
+   "priority": "Υψηλή",
+   "body": null,
+   "sources": [],
+   "verification": {
+    "status": "unverified",
+    "checked_on": null,
+    "candidate_authority": "ΓΕΜΗ / Business Portal; Ευρωπαϊκή Επιτροπή — SME",
+    "starting_point": null,
+    "locator_note": null,
+    "note": "Μη δημοσιεύσιμο πριν από έλεγχο"
+   },
+   "editorial_review": null,
+   "publication": {
+    "approved": false,
+    "approved_by": null,
+    "approved_on": null
+   },
+   "related": [],
+   "draft": null
+  },
+  {
+   "id": "LEX-0038",
+   "kind": "term",
+   "topic": "epixeirimatikotita",
+   "title": {
+    "el": "ΓΕΜΗ",
+    "en": null
+   },
+   "priority": "Υψηλή",
+   "body": null,
+   "sources": [],
+   "verification": {
+    "status": "unverified",
+    "checked_on": null,
+    "candidate_authority": "ΓΕΜΗ / Business Portal; Ευρωπαϊκή Επιτροπή — SME",
+    "starting_point": null,
+    "locator_note": null,
+    "note": "Μη δημοσιεύσιμο πριν από έλεγχο"
+   },
+   "editorial_review": null,
+   "publication": {
+    "approved": false,
+    "approved_by": null,
+    "approved_on": null
+   },
+   "related": [],
+   "draft": null
+  },
+  {
+   "id": "LEX-0039",
+   "kind": "term",
+   "topic": "epixeirimatikotita",
+   "title": {
+    "el": "ΥΜΣ",
+    "en": null
+   },
+   "priority": "Υψηλή",
+   "body": null,
+   "sources": [],
+   "verification": {
+    "status": "unverified",
+    "checked_on": null,
+    "candidate_authority": "ΓΕΜΗ / Business Portal; Ευρωπαϊκή Επιτροπή — SME",
+    "starting_point": null,
+    "locator_note": null,
+    "note": "Μη δημοσιεύσιμο πριν από έλεγχο"
+   },
+   "editorial_review": null,
+   "publication": {
+    "approved": false,
+    "approved_by": null,
+    "approved_on": null
+   },
+   "related": [],
+   "draft": null
+  },
+  {
+   "id": "LEX-0040",
+   "kind": "term",
+   "topic": "epixeirimatikotita",
+   "title": {
+    "el": "καταστατικό",
+    "en": null
+   },
+   "priority": "Υψηλή",
+   "body": null,
+   "sources": [],
+   "verification": {
+    "status": "unverified",
+    "checked_on": null,
+    "candidate_authority": "ΓΕΜΗ / Business Portal; Ευρωπαϊκή Επιτροπή — SME",
+    "starting_point": null,
+    "locator_note": null,
+    "note": "Μη δημοσιεύσιμο πριν από έλεγχο"
+   },
+   "editorial_review": null,
+   "publication": {
+    "approved": false,
+    "approved_by": null,
+    "approved_on": null
+   },
+   "related": [],
+   "draft": null
+  },
+  {
+   "id": "LEX-0041",
+   "kind": "term",
+   "topic": "epixeirimatikotita",
+   "title": {
+    "el": "ΚΑΔ",
+    "en": "Activity code (KAD)"
+   },
+   "priority": "Υψηλή — K1",
+   "body": null,
+   "sources": [],
+   "verification": {
+    "status": "draft",
+    "checked_on": "2026-10-23",
+    "candidate_authority": "ΓΕΜΗ / Business Portal; Ευρωπαϊκή Επιτροπή — SME",
+    "starting_point": "https://opske.gr/el/call/prosklisi-ypobolis-aitiseon-hrimatodotisis-sti-drasi-paragoyme-stin-ellada-toy-programmatos",
+    "locator_note": "Επιλέξιμοι ΚΑΔ — Παράρτημα ΙΙ της συγκεκριμένης πρόσκλησης",
+    "note": "Μη δημοσιεύσιμο πριν από έλεγχο",
+    "evidence_gate": "Official source + draft checked",
+    "official_source_candidate": {
+     "url": "https://www.aade.gr/egkyklioi-kai-apofaseis/1003-12-01-2026",
+     "scope": "Α.1003/2026, άρθρο 1· τροποποίηση Α.1117/2026",
+     "amendment": "https://www.aade.gr/egkyklioi-kai-apofaseis/1117-28-05-2026"
+    },
+    "remaining": "Verify exact source paragraph, legal currency and translation; sign-off required"
+   },
+   "editorial_review": null,
+   "publication": {
+    "approved": false,
+    "approved_by": null,
+    "approved_on": null
+   },
+   "related": [],
+   "draft": {
+    "el": "Ο ΚΑΔ είναι κωδικός ταξινόμησης της οικονομικής δραστηριότητας μιας επιχείρησης. Η επιλεξιμότητα εξαρτάται από τους συγκεκριμένους ΚΑΔ που αναφέρει η πρόσκληση.",
+    "en": "KAD is a Greek economic-activity classification code; grant eligibility depends on the codes specified in each call.",
+    "status": "SOURCE-LOCATED DRAFT — review required",
+    "note": "Internal draft from the K1 workbook — not verified, not approved, never rendered."
+   },
+   "k1_order": 15
+  },
+  {
+   "id": "LEX-0042",
+   "kind": "term",
+   "topic": "epixeirimatikotita",
+   "title": {
+    "el": "κύριος ΚΑΔ",
+    "en": null
+   },
+   "priority": "Υψηλή",
+   "body": null,
+   "sources": [],
+   "verification": {
+    "status": "unverified",
+    "checked_on": null,
+    "candidate_authority": "ΓΕΜΗ / Business Portal; Ευρωπαϊκή Επιτροπή — SME",
+    "starting_point": null,
+    "locator_note": null,
+    "note": "Μη δημοσιεύσιμο πριν από έλεγχο"
+   },
+   "editorial_review": null,
+   "publication": {
+    "approved": false,
+    "approved_by": null,
+    "approved_on": null
+   },
+   "related": [],
+   "draft": null
+  },
+  {
+   "id": "LEX-0043",
+   "kind": "term",
+   "topic": "epixeirimatikotita",
+   "title": {
+    "el": "δευτερεύων ΚΑΔ",
+    "en": null
+   },
+   "priority": "Υψηλή",
+   "body": null,
+   "sources": [],
+   "verification": {
+    "status": "unverified",
+    "checked_on": null,
+    "candidate_authority": "ΓΕΜΗ / Business Portal; Ευρωπαϊκή Επιτροπή — SME",
+    "starting_point": null,
+    "locator_note": null,
+    "note": "Μη δημοσιεύσιμο πριν από έλεγχο"
+   },
+   "editorial_review": null,
+   "publication": {
+    "approved": false,
+    "approved_by": null,
+    "approved_on": null
+   },
+   "related": [],
+   "draft": null
+  },
+  {
+   "id": "LEX-0044",
+   "kind": "term",
+   "topic": "epixeirimatikotita",
+   "title": {
+    "el": "νεοσύστατη επιχείρηση",
+    "en": null
+   },
+   "priority": "Υψηλή",
+   "body": null,
+   "sources": [],
+   "verification": {
+    "status": "unverified",
+    "checked_on": null,
+    "candidate_authority": "ΓΕΜΗ / Business Portal; Ευρωπαϊκή Επιτροπή — SME",
+    "starting_point": null,
+    "locator_note": null,
+    "note": "Μη δημοσιεύσιμο πριν από έλεγχο"
+   },
+   "editorial_review": null,
+   "publication": {
+    "approved": false,
+    "approved_by": null,
+    "approved_on": null
+   },
+   "related": [],
+   "draft": null
+  },
+  {
+   "id": "LEX-0045",
+   "kind": "term",
+   "topic": "epixeirimatikotita",
+   "title": {
+    "el": "υπό σύσταση επιχείρηση",
+    "en": null
+   },
+   "priority": "Υψηλή",
+   "body": null,
+   "sources": [],
+   "verification": {
+    "status": "unverified",
+    "checked_on": null,
+    "candidate_authority": "ΓΕΜΗ / Business Portal; Ευρωπαϊκή Επιτροπή — SME",
+    "starting_point": null,
+    "locator_note": null,
+    "note": "Μη δημοσιεύσιμο πριν από έλεγχο"
+   },
+   "editorial_review": null,
+   "publication": {
+    "approved": false,
+    "approved_by": null,
+    "approved_on": null
+   },
+   "related": [],
+   "draft": null
+  },
+  {
+   "id": "LEX-0046",
+   "kind": "term",
+   "topic": "epixeirimatikotita",
+   "title": {
+    "el": "υφιστάμενη επιχείρηση",
+    "en": null
+   },
+   "priority": "Υψηλή",
+   "body": null,
+   "sources": [],
+   "verification": {
+    "status": "unverified",
+    "checked_on": null,
+    "candidate_authority": "ΓΕΜΗ / Business Portal; Ευρωπαϊκή Επιτροπή — SME",
+    "starting_point": null,
+    "locator_note": null,
+    "note": "Μη δημοσιεύσιμο πριν από έλεγχο"
+   },
+   "editorial_review": null,
+   "publication": {
+    "approved": false,
+    "approved_by": null,
+    "approved_on": null
+   },
+   "related": [],
+   "draft": null
+  },
+  {
+   "id": "LEX-0047",
+   "kind": "term",
+   "topic": "epixeirimatikotita",
+   "title": {
+    "el": "ΜΜΕ",
+    "en": "Small and Medium-sized Enterprises (SMEs)"
+   },
+   "priority": "Υψηλή — K1",
+   "body": null,
+   "sources": [],
+   "verification": {
+    "status": "source_located",
+    "checked_on": null,
+    "candidate_authority": "Ευρωπαϊκή Επιτροπή",
+    "starting_point": "https://single-market-economy.ec.europa.eu/smes/sme-fundamentals/sme-definition_en",
+    "locator_note": "Recommendation 2003/361/EC · SME definition table and group rule",
+    "note": "Μη δημοσιεύσιμο πριν από έλεγχο",
+    "evidence_gate": "OFFICIAL PRIMARY SOURCE LOCATED — editorial draft",
+    "official_source_candidate": {
+     "url": "https://eur-lex.europa.eu/eli/reco/2003/361/oj/gle",
+     "scope": "Σύσταση 2003/361/ΕΚ, Παράρτημα, άρθρα 2–6",
+     "amendment": null
+    },
+    "remaining": "Verify exact source paragraph, legal currency and translation; sign-off required"
+   },
+   "editorial_review": null,
+   "publication": {
+    "approved": false,
+    "approved_by": null,
+    "approved_on": null
+   },
+   "related": [],
+   "draft": {
+    "el": "Η κατάταξη βασίζεται σε προσωπικό και σε κύκλο εργασιών ή σύνολο ισολογισμού. Πολύ μικρή: <10 και έως €2 εκ.· μικρή: <50 και έως €10 εκ.· μεσαία: <250 και έως €50 εκ. κύκλο εργασιών ή €43 εκ. ισολογισμό. Εξετάζονται και σχέσεις επιχειρήσεων.",
+    "en": "SME status uses staff headcount plus turnover or balance-sheet total. Micro: <10 and up to €2m; small: <50 and up to €10m; medium: <250 and up to €50m turnover or €43m balance sheet. Group relationships also matter.",
+    "status": "DRAFT — not approved",
+    "note": "Internal draft from the K1 workbook — not verified, not approved, never rendered."
+   },
+   "k1_order": 16
+  },
+  {
+   "id": "LEX-0048",
+   "kind": "term",
+   "topic": "epixeirimatikotita",
+   "title": {
+    "el": "ΕΜΕ",
+    "en": "Annual Work Units (AWU)"
+   },
+   "priority": "Υψηλή — K1",
+   "body": null,
+   "sources": [],
+   "verification": {
+    "status": "draft",
+    "checked_on": "2026-10-23",
+    "candidate_authority": "ΓΕΜΗ / Business Portal; Ευρωπαϊκή Επιτροπή — SME",
+    "starting_point": "https://competition-policy.ec.europa.eu/document/download/13d86416-7f23-466e-83aa-0af8105b72d2_en?filename=empty_file_en.pdf",
+    "locator_note": "Παράρτημα Ι, άρθρο 5 — Staff headcount",
+    "note": "Μη δημοσιεύσιμο πριν από έλεγχο",
+    "evidence_gate": "OFFICIAL PRIMARY SOURCE LOCATED — editorial draft",
+    "official_source_candidate": {
+     "url": "https://eur-lex.europa.eu/eli/reco/2003/361/oj/gle",
+     "scope": "Σύσταση 2003/361/ΕΚ, Παράρτημα, άρθρο 5",
+     "amendment": null
+    },
+    "remaining": "Locate precise official source; check amendments; review EL/EN against it"
+   },
+   "editorial_review": null,
+   "publication": {
+    "approved": false,
+    "approved_by": null,
+    "approved_on": null
+   },
+   "related": [],
+   "draft": {
+    "el": "Οι ΕΜΕ εκφράζουν την απασχόληση ως ισοδύναμο πλήρους ετήσιας εργασίας. Μερική ή εποχική απασχόληση συνυπολογίζεται αναλογικά, σύμφωνα με τον εφαρμοστέο ορισμό.",
+    "en": "AWU measures work as full-time annual equivalents; part-time and seasonal work count proportionally under applicable rules.",
+    "status": "SOURCE-LOCATED DRAFT — review required",
+    "note": "Internal draft from the K1 workbook — not verified, not approved, never rendered."
+   },
+   "k1_order": 17
+  },
+  {
+   "id": "LEX-0049",
+   "kind": "term",
+   "topic": "epixeirimatikotita",
+   "title": {
+    "el": "συνδεδεμένη επιχείρηση",
+    "en": "Linked Enterprise"
+   },
+   "priority": "Υψηλή — K1",
+   "body": null,
+   "sources": [],
+   "verification": {
+    "status": "source_located",
+    "checked_on": null,
+    "candidate_authority": "Ευρωπαϊκή Επιτροπή",
+    "starting_point": "https://single-market-economy.ec.europa.eu/smes/sme-fundamentals/sme-definition_en",
+    "locator_note": "SME definition · enterprise group data",
+    "note": "Μη δημοσιεύσιμο πριν από έλεγχο",
+    "evidence_gate": "OFFICIAL PRIMARY SOURCE LOCATED — editorial draft",
+    "official_source_candidate": {
+     "url": "https://eur-lex.europa.eu/eli/reco/2003/361/oj/gle",
+     "scope": "Σύσταση 2003/361/ΕΚ, Παράρτημα, άρθρο 3(3)",
+     "amendment": null
+    },
+    "remaining": "Locate precise official source; check amendments; review EL/EN against it"
+   },
+   "editorial_review": null,
+   "publication": {
+    "approved": false,
+    "approved_by": null,
+    "approved_on": null
+   },
+   "related": [],
+   "draft": {
+    "el": "Η σχέση με άλλες επιχειρήσεις μπορεί να επηρεάζει τα στοιχεία προσωπικού και οικονομικών μεγεθών που συνυπολογίζονται για την κατάταξη ΜΜΕ. Απαιτείται έλεγχος του ειδικού ορισμού.",
+    "en": "Links to other enterprises can affect the staff and financial data counted toward SME classification; the exact relationship test needs verification.",
+    "status": "DRAFT — not approved",
+    "note": "Internal draft from the K1 workbook — not verified, not approved, never rendered."
+   },
+   "k1_order": 18
+  },
+  {
+   "id": "LEX-0050",
+   "kind": "term",
+   "topic": "epixeirimatikotita",
+   "title": {
+    "el": "συνεργαζόμενη επιχείρηση",
+    "en": null
+   },
+   "priority": "Υψηλή",
+   "body": null,
+   "sources": [],
+   "verification": {
+    "status": "unverified",
+    "checked_on": null,
+    "candidate_authority": "ΓΕΜΗ / Business Portal; Ευρωπαϊκή Επιτροπή — SME",
+    "starting_point": null,
+    "locator_note": null,
+    "note": "Μη δημοσιεύσιμο πριν από έλεγχο"
+   },
+   "editorial_review": null,
+   "publication": {
+    "approved": false,
+    "approved_by": null,
+    "approved_on": null
+   },
+   "related": [],
+   "draft": null
+  },
+  {
+   "id": "LEX-0051",
+   "kind": "term",
+   "topic": "epixeirimatikotita",
+   "title": {
+    "el": "αυτόνομη επιχείρηση",
+    "en": null
+   },
+   "priority": "Υψηλή",
+   "body": null,
+   "sources": [],
+   "verification": {
+    "status": "unverified",
+    "checked_on": null,
+    "candidate_authority": "ΓΕΜΗ / Business Portal; Ευρωπαϊκή Επιτροπή — SME",
+    "starting_point": null,
+    "locator_note": null,
+    "note": "Μη δημοσιεύσιμο πριν από έλεγχο"
+   },
+   "editorial_review": null,
+   "publication": {
+    "approved": false,
+    "approved_by": null,
+    "approved_on": null
+   },
+   "related": [],
+   "draft": null
+  },
+  {
+   "id": "LEX-0052",
+   "kind": "term",
+   "topic": "epixeirimatikotita",
+   "title": {
+    "el": "πραγματικός δικαιούχος",
+    "en": null
+   },
+   "priority": "Υψηλή",
+   "body": null,
+   "sources": [],
+   "verification": {
+    "status": "unverified",
+    "checked_on": null,
+    "candidate_authority": "ΓΕΜΗ / Business Portal; Ευρωπαϊκή Επιτροπή — SME",
+    "starting_point": null,
+    "locator_note": null,
+    "note": "Μη δημοσιεύσιμο πριν από έλεγχο"
+   },
+   "editorial_review": null,
+   "publication": {
+    "approved": false,
+    "approved_by": null,
+    "approved_on": null
+   },
+   "related": [],
+   "draft": null
+  },
+  {
+   "id": "LEX-0053",
+   "kind": "term",
+   "topic": "epixeirimatikotita",
+   "title": {
+    "el": "υποκατάστημα",
+    "en": null
+   },
+   "priority": "Υψηλή",
+   "body": null,
+   "sources": [],
+   "verification": {
+    "status": "unverified",
+    "checked_on": null,
+    "candidate_authority": "ΓΕΜΗ / Business Portal; Ευρωπαϊκή Επιτροπή — SME",
+    "starting_point": null,
+    "locator_note": null,
+    "note": "Μη δημοσιεύσιμο πριν από έλεγχο"
+   },
+   "editorial_review": null,
+   "publication": {
+    "approved": false,
+    "approved_by": null,
+    "approved_on": null
+   },
+   "related": [],
+   "draft": null
+  },
+  {
+   "id": "LEX-0054",
+   "kind": "term",
+   "topic": "epixeirimatikotita",
+   "title": {
+    "el": "κλεισμένη διαχειριστική χρήση",
+    "en": "Closed financial year"
+   },
+   "priority": "Υψηλή — K1",
+   "body": null,
+   "sources": [],
+   "verification": {
+    "status": "draft",
+    "checked_on": "2026-10-23",
+    "candidate_authority": "ΓΕΜΗ / Business Portal; Ευρωπαϊκή Επιτροπή — SME",
+    "starting_point": "https://opske.gr/",
+    "locator_note": "Απαιτείται συγκεκριμένη πρόσκληση με ορισμό κλεισμένων χρήσεων",
+    "note": "Μη δημοσιεύσιμο πριν από έλεγχο",
+    "evidence_gate": "NOT VERIFIED",
+    "remaining": "Locate precise official source; check amendments; review EL/EN against it"
+   },
+   "editorial_review": null,
+   "publication": {
+    "approved": false,
+    "approved_by": null,
+    "approved_on": null
+   },
+   "related": [],
+   "draft": {
+    "el": "Κλεισμένη διαχειριστική χρήση είναι λογιστική περίοδος που έχει ολοκληρωθεί. Η απαίτηση για εγκεκριμένες ή υποβλημένες οικονομικές καταστάσεις διαφέρει ανά πρόσκληση.",
+    "en": "A closed financial year is a completed accounting period; filing or approval requirements vary by grant call.",
+    "status": "RESEARCH DRAFT — exact source pending",
+    "note": "Internal draft from the K1 workbook — not verified, not approved, never rendered."
+   },
+   "k1_order": 21
+  },
+  {
+   "id": "LEX-0055",
+   "kind": "term",
+   "topic": "epixeirimatikotita",
+   "title": {
+    "el": "κύκλος εργασιών",
+    "en": "Annual turnover"
+   },
+   "priority": "Υψηλή — K1",
+   "body": null,
+   "sources": [],
+   "verification": {
+    "status": "draft",
+    "checked_on": "2026-10-23",
+    "candidate_authority": "ΓΕΜΗ / Business Portal; Ευρωπαϊκή Επιτροπή — SME",
+    "starting_point": "https://competition-policy.ec.europa.eu/document/download/13d86416-7f23-466e-83aa-0af8105b72d2_en?filename=empty_file_en.pdf",
+    "locator_note": "Παράρτημα Ι, άρθρο 4 — οικονομικά στοιχεία και ΦΠΑ",
+    "note": "Μη δημοσιεύσιμο πριν από έλεγχο",
+    "evidence_gate": "NOT VERIFIED",
+    "remaining": "Locate precise official source; check amendments; review EL/EN against it"
+   },
+   "editorial_review": null,
+   "publication": {
+    "approved": false,
+    "approved_by": null,
+    "approved_on": null
+   },
+   "related": [],
+   "draft": {
+    "el": "Ο κύκλος εργασιών περιγράφει την αξία πωλήσεων αγαθών και υπηρεσιών κατά την εξεταζόμενη περίοδο· δεν ταυτίζεται με το κέρδος.",
+    "en": "Turnover measures sales of goods and services over a period; it is not profit.",
+    "status": "SOURCE-LOCATED DRAFT — review required",
+    "note": "Internal draft from the K1 workbook — not verified, not approved, never rendered."
+   },
+   "k1_order": 19
+  },
+  {
+   "id": "BAS-0056",
+   "kind": "article",
+   "topic": "epixeirimatikotita",
+   "title": {
+    "el": "Τι είναι μια επιχείρηση;",
+    "en": null
+   },
+   "priority": "Μεσαία",
+   "body": null,
+   "sources": [],
+   "verification": {
+    "status": "unverified",
+    "checked_on": null,
+    "candidate_authority": "ΓΕΜΗ / Business Portal; Ευρωπαϊκή Επιτροπή — SME",
+    "starting_point": null,
+    "locator_note": null,
+    "note": "Μη δημοσιεύσιμο πριν από έλεγχο"
+   },
+   "editorial_review": null,
+   "publication": {
+    "approved": false,
+    "approved_by": null,
+    "approved_on": null
+   },
+   "related": [],
+   "draft": null
+  },
+  {
+   "id": "BAS-0057",
+   "kind": "article",
+   "topic": "epixeirimatikotita",
+   "title": {
+    "el": "Ποιες είναι οι νομικές μορφές στην Ελλάδα;",
+    "en": null
+   },
+   "priority": "Μεσαία",
+   "body": null,
+   "sources": [],
+   "verification": {
+    "status": "unverified",
+    "checked_on": null,
+    "candidate_authority": "ΓΕΜΗ / Business Portal; Ευρωπαϊκή Επιτροπή — SME",
+    "starting_point": null,
+    "locator_note": null,
+    "note": "Μη δημοσιεύσιμο πριν από έλεγχο"
+   },
+   "editorial_review": null,
+   "publication": {
+    "approved": false,
+    "approved_by": null,
+    "approved_on": null
+   },
+   "related": [],
+   "draft": null
+  },
+  {
+   "id": "BAS-0058",
+   "kind": "article",
+   "topic": "epixeirimatikotita",
+   "title": {
+    "el": "Πώς ορίζεται το μέγεθος μιας επιχείρησης;",
+    "en": null
+   },
+   "priority": "Μεσαία",
+   "body": null,
+   "sources": [],
+   "verification": {
+    "status": "unverified",
+    "checked_on": null,
+    "candidate_authority": "ΓΕΜΗ / Business Portal; Ευρωπαϊκή Επιτροπή — SME",
+    "starting_point": null,
+    "locator_note": null,
+    "note": "Μη δημοσιεύσιμο πριν από έλεγχο"
+   },
+   "editorial_review": null,
+   "publication": {
+    "approved": false,
+    "approved_by": null,
+    "approved_on": null
+   },
+   "related": [],
+   "draft": null
+  },
+  {
+   "id": "BAS-0059",
+   "kind": "article",
+   "topic": "epixeirimatikotita",
+   "title": {
+    "el": "Τι είναι ο ΚΑΔ;",
+    "en": null
+   },
+   "priority": "Μεσαία",
+   "body": null,
+   "sources": [],
+   "verification": {
+    "status": "unverified",
+    "checked_on": null,
+    "candidate_authority": "ΓΕΜΗ / Business Portal; Ευρωπαϊκή Επιτροπή — SME",
+    "starting_point": null,
+    "locator_note": null,
+    "note": "Μη δημοσιεύσιμο πριν από έλεγχο"
+   },
+   "editorial_review": null,
+   "publication": {
+    "approved": false,
+    "approved_by": null,
+    "approved_on": null
+   },
+   "related": [],
+   "draft": null
+  },
+  {
+   "id": "FAQ-0060",
+   "kind": "faq",
+   "topic": "epixeirimatikotita",
+   "title": {
+    "el": "Ποια η διαφορά ΙΚΕ και ατομικής επιχείρησης;",
+    "en": null
+   },
+   "priority": "Μεσαία",
+   "body": null,
+   "sources": [],
+   "verification": {
+    "status": "unverified",
+    "checked_on": null,
+    "candidate_authority": "ΓΕΜΗ / Business Portal; Ευρωπαϊκή Επιτροπή — SME",
+    "starting_point": null,
+    "locator_note": null,
+    "note": "Μη δημοσιεύσιμο πριν από έλεγχο"
+   },
+   "editorial_review": null,
+   "publication": {
+    "approved": false,
+    "approved_by": null,
+    "approved_on": null
+   },
+   "related": [],
+   "draft": null
+  },
+  {
+   "id": "FAQ-0061",
+   "kind": "faq",
+   "topic": "epixeirimatikotita",
+   "title": {
+    "el": "Πώς βρίσκω τον ΚΑΔ μου;",
+    "en": null
+   },
+   "priority": "Μεσαία",
+   "body": null,
+   "sources": [],
+   "verification": {
+    "status": "unverified",
+    "checked_on": null,
+    "candidate_authority": "ΓΕΜΗ / Business Portal; Ευρωπαϊκή Επιτροπή — SME",
+    "starting_point": null,
+    "locator_note": null,
+    "note": "Μη δημοσιεύσιμο πριν από έλεγχο"
+   },
+   "editorial_review": null,
+   "publication": {
+    "approved": false,
+    "approved_by": null,
+    "approved_on": null
+   },
+   "related": [],
+   "draft": null
+  },
+  {
+   "id": "FAQ-0062",
+   "kind": "faq",
+   "topic": "epixeirimatikotita",
+   "title": {
+    "el": "Πώς γνωρίζω αν η επιχείρησή μου είναι μικρή ή μεσαία;",
+    "en": null
+   },
+   "priority": "Μεσαία",
+   "body": null,
+   "sources": [],
+   "verification": {
+    "status": "unverified",
+    "checked_on": null,
+    "candidate_authority": "ΓΕΜΗ / Business Portal; Ευρωπαϊκή Επιτροπή — SME",
+    "starting_point": null,
+    "locator_note": null,
+    "note": "Μη δημοσιεύσιμο πριν από έλεγχο"
+   },
+   "editorial_review": null,
+   "publication": {
+    "approved": false,
+    "approved_by": null,
+    "approved_on": null
+   },
+   "related": [],
+   "draft": null
+  },
+  {
+   "id": "FAQ-0063",
+   "kind": "faq",
+   "topic": "epixeirimatikotita",
+   "title": {
+    "el": "Τι γίνεται αν δεν έχω κλεισμένη χρήση;",
+    "en": null
+   },
+   "priority": "Μεσαία",
+   "body": null,
+   "sources": [],
+   "verification": {
+    "status": "unverified",
+    "checked_on": null,
+    "candidate_authority": "ΓΕΜΗ / Business Portal; Ευρωπαϊκή Επιτροπή — SME",
+    "starting_point": null,
+    "locator_note": null,
+    "note": "Μη δημοσιεύσιμο πριν από έλεγχο"
+   },
+   "editorial_review": null,
+   "publication": {
+    "approved": false,
+    "approved_by": null,
+    "approved_on": null
+   },
+   "related": [],
+   "draft": null
+  },
+  {
+   "id": "LEX-0064",
+   "kind": "term",
+   "topic": "oikonomika",
+   "title": {
+    "el": "έσοδα",
+    "en": null
+   },
+   "priority": "Μεσαία",
+   "body": null,
+   "sources": [],
+   "verification": {
+    "status": "unverified",
+    "checked_on": null,
+    "candidate_authority": "gov.gr",
+    "starting_point": null,
+    "locator_note": null,
+    "note": "Μη δημοσιεύσιμο πριν από έλεγχο"
+   },
+   "editorial_review": null,
+   "publication": {
+    "approved": false,
+    "approved_by": null,
+    "approved_on": null
+   },
+   "related": [],
+   "draft": null
+  },
+  {
+   "id": "LEX-0065",
+   "kind": "term",
+   "topic": "oikonomika",
+   "title": {
+    "el": "έξοδα",
+    "en": null
+   },
+   "priority": "Μεσαία",
+   "body": null,
+   "sources": [],
+   "verification": {
+    "status": "unverified",
+    "checked_on": null,
+    "candidate_authority": "gov.gr",
+    "starting_point": null,
+    "locator_note": null,
+    "note": "Μη δημοσιεύσιμο πριν από έλεγχο"
+   },
+   "editorial_review": null,
+   "publication": {
+    "approved": false,
+    "approved_by": null,
+    "approved_on": null
+   },
+   "related": [],
+   "draft": null
+  },
+  {
+   "id": "LEX-0066",
+   "kind": "term",
+   "topic": "oikonomika",
+   "title": {
+    "el": "κέρδος",
+    "en": null
+   },
+   "priority": "Μεσαία",
+   "body": null,
+   "sources": [],
+   "verification": {
+    "status": "unverified",
+    "checked_on": null,
+    "candidate_authority": "gov.gr",
+    "starting_point": null,
+    "locator_note": null,
+    "note": "Μη δημοσιεύσιμο πριν από έλεγχο"
+   },
+   "editorial_review": null,
+   "publication": {
+    "approved": false,
+    "approved_by": null,
+    "approved_on": null
+   },
+   "related": [],
+   "draft": null
+  },
+  {
+   "id": "LEX-0067",
+   "kind": "term",
+   "topic": "oikonomika",
+   "title": {
+    "el": "ζημία",
+    "en": null
+   },
+   "priority": "Μεσαία",
+   "body": null,
+   "sources": [],
+   "verification": {
+    "status": "unverified",
+    "checked_on": null,
+    "candidate_authority": "gov.gr",
+    "starting_point": null,
+    "locator_note": null,
+    "note": "Μη δημοσιεύσιμο πριν από έλεγχο"
+   },
+   "editorial_review": null,
+   "publication": {
+    "approved": false,
+    "approved_by": null,
+    "approved_on": null
+   },
+   "related": [],
+   "draft": null
+  },
+  {
+   "id": "LEX-0068",
+   "kind": "term",
+   "topic": "oikonomika",
+   "title": {
+    "el": "EBITDA",
+    "en": null
+   },
+   "priority": "Μεσαία",
+   "body": null,
+   "sources": [],
+   "verification": {
+    "status": "unverified",
+    "checked_on": null,
+    "candidate_authority": "gov.gr",
+    "starting_point": null,
+    "locator_note": null,
+    "note": "Μη δημοσιεύσιμο πριν από έλεγχο"
+   },
+   "editorial_review": null,
+   "publication": {
+    "approved": false,
+    "approved_by": null,
+    "approved_on": null
+   },
+   "related": [],
+   "draft": null
+  },
+  {
+   "id": "LEX-0069",
+   "kind": "term",
+   "topic": "oikonomika",
+   "title": {
+    "el": "ισολογισμός",
+    "en": "Balance sheet"
+   },
+   "priority": "Υψηλή — K1",
+   "body": null,
+   "sources": [],
+   "verification": {
+    "status": "draft",
+    "checked_on": "2026-10-23",
+    "candidate_authority": "gov.gr",
+    "starting_point": "https://www.et.gr/",
+    "locator_note": "Απαιτείται παραπομπή στα Ελληνικά Λογιστικά Πρότυπα",
+    "note": "Μη δημοσιεύσιμο πριν από έλεγχο",
+    "evidence_gate": "NOT VERIFIED",
+    "remaining": "Locate precise official source; check amendments; review EL/EN against it"
+   },
+   "editorial_review": null,
+   "publication": {
+    "approved": false,
+    "approved_by": null,
+    "approved_on": null
+   },
+   "related": [],
+   "draft": {
+    "el": "Ο ισολογισμός αποτυπώνει την οικονομική θέση μιας οντότητας σε συγκεκριμένη ημερομηνία, περιλαμβάνοντας περιουσιακά στοιχεία, υποχρεώσεις και καθαρή θέση.",
+    "en": "A balance sheet shows an entity’s assets, liabilities and equity at a reporting date.",
+    "status": "RESEARCH DRAFT — exact source pending",
+    "note": "Internal draft from the K1 workbook — not verified, not approved, never rendered."
+   },
+   "k1_order": 20
+  },
+  {
+   "id": "LEX-0070",
+   "kind": "term",
+   "topic": "oikonomika",
+   "title": {
+    "el": "ενεργητικό",
+    "en": null
+   },
+   "priority": "Μεσαία",
+   "body": null,
+   "sources": [],
+   "verification": {
+    "status": "unverified",
+    "checked_on": null,
+    "candidate_authority": "gov.gr",
+    "starting_point": null,
+    "locator_note": null,
+    "note": "Μη δημοσιεύσιμο πριν από έλεγχο"
+   },
+   "editorial_review": null,
+   "publication": {
+    "approved": false,
+    "approved_by": null,
+    "approved_on": null
+   },
+   "related": [],
+   "draft": null
+  },
+  {
+   "id": "LEX-0071",
+   "kind": "term",
+   "topic": "oikonomika",
+   "title": {
+    "el": "παθητικό",
+    "en": null
+   },
+   "priority": "Μεσαία",
+   "body": null,
+   "sources": [],
+   "verification": {
+    "status": "unverified",
+    "checked_on": null,
+    "candidate_authority": "gov.gr",
+    "starting_point": null,
+    "locator_note": null,
+    "note": "Μη δημοσιεύσιμο πριν από έλεγχο"
+   },
+   "editorial_review": null,
+   "publication": {
+    "approved": false,
+    "approved_by": null,
+    "approved_on": null
+   },
+   "related": [],
+   "draft": null
+  },
+  {
+   "id": "LEX-0072",
+   "kind": "term",
+   "topic": "oikonomika",
+   "title": {
+    "el": "ίδια κεφάλαια",
+    "en": null
+   },
+   "priority": "Μεσαία",
+   "body": null,
+   "sources": [],
+   "verification": {
+    "status": "unverified",
+    "checked_on": null,
+    "candidate_authority": "gov.gr",
+    "starting_point": null,
+    "locator_note": null,
+    "note": "Μη δημοσιεύσιμο πριν από έλεγχο"
+   },
+   "editorial_review": null,
+   "publication": {
+    "approved": false,
+    "approved_by": null,
+    "approved_on": null
+   },
+   "related": [],
+   "draft": null
+  },
+  {
+   "id": "LEX-0073",
+   "kind": "term",
+   "topic": "oikonomika",
+   "title": {
+    "el": "κεφάλαιο κίνησης",
+    "en": null
+   },
+   "priority": "Μεσαία",
+   "body": null,
+   "sources": [],
+   "verification": {
+    "status": "unverified",
+    "checked_on": null,
+    "candidate_authority": "gov.gr",
+    "starting_point": null,
+    "locator_note": null,
+    "note": "Μη δημοσιεύσιμο πριν από έλεγχο"
+   },
+   "editorial_review": null,
+   "publication": {
+    "approved": false,
+    "approved_by": null,
+    "approved_on": null
+   },
+   "related": [],
+   "draft": null
+  },
+  {
+   "id": "LEX-0074",
+   "kind": "term",
+   "topic": "oikonomika",
+   "title": {
+    "el": "ταμειακές ροές",
+    "en": null
+   },
+   "priority": "Μεσαία",
+   "body": null,
+   "sources": [],
+   "verification": {
+    "status": "unverified",
+    "checked_on": null,
+    "candidate_authority": "gov.gr",
+    "starting_point": null,
+    "locator_note": null,
+    "note": "Μη δημοσιεύσιμο πριν από έλεγχο"
+   },
+   "editorial_review": null,
+   "publication": {
+    "approved": false,
+    "approved_by": null,
+    "approved_on": null
+   },
+   "related": [],
+   "draft": null
+  },
+  {
+   "id": "LEX-0075",
+   "kind": "term",
+   "topic": "oikonomika",
+   "title": {
+    "el": "ρευστότητα",
+    "en": null
+   },
+   "priority": "Μεσαία",
+   "body": null,
+   "sources": [],
+   "verification": {
+    "status": "unverified",
+    "checked_on": null,
+    "candidate_authority": "gov.gr",
+    "starting_point": null,
+    "locator_note": null,
+    "note": "Μη δημοσιεύσιμο πριν από έλεγχο"
+   },
+   "editorial_review": null,
+   "publication": {
+    "approved": false,
+    "approved_by": null,
+    "approved_on": null
+   },
+   "related": [],
+   "draft": null
+  },
+  {
+   "id": "LEX-0076",
+   "kind": "term",
+   "topic": "oikonomika",
+   "title": {
+    "el": "δάνειο",
+    "en": null
+   },
+   "priority": "Μεσαία",
+   "body": null,
+   "sources": [],
+   "verification": {
+    "status": "unverified",
+    "checked_on": null,
+    "candidate_authority": "gov.gr",
+    "starting_point": null,
+    "locator_note": null,
+    "note": "Μη δημοσιεύσιμο πριν από έλεγχο"
+   },
+   "editorial_review": null,
+   "publication": {
+    "approved": false,
+    "approved_by": null,
+    "approved_on": null
+   },
+   "related": [],
+   "draft": null
+  },
+  {
+   "id": "LEX-0077",
+   "kind": "term",
+   "topic": "oikonomika",
+   "title": {
+    "el": "επιτόκιο",
+    "en": null
+   },
+   "priority": "Μεσαία",
+   "body": null,
+   "sources": [],
+   "verification": {
+    "status": "unverified",
+    "checked_on": null,
+    "candidate_authority": "gov.gr",
+    "starting_point": null,
+    "locator_note": null,
+    "note": "Μη δημοσιεύσιμο πριν από έλεγχο"
+   },
+   "editorial_review": null,
+   "publication": {
+    "approved": false,
+    "approved_by": null,
+    "approved_on": null
+   },
+   "related": [],
+   "draft": null
+  },
+  {
+   "id": "LEX-0078",
+   "kind": "term",
+   "topic": "oikonomika",
+   "title": {
+    "el": "εγγύηση",
+    "en": null
+   },
+   "priority": "Μεσαία",
+   "body": null,
+   "sources": [],
+   "verification": {
+    "status": "unverified",
+    "checked_on": null,
+    "candidate_authority": "gov.gr",
+    "starting_point": null,
+    "locator_note": null,
+    "note": "Μη δημοσιεύσιμο πριν από έλεγχο"
+   },
+   "editorial_review": null,
+   "publication": {
+    "approved": false,
+    "approved_by": null,
+    "approved_on": null
+   },
+   "related": [],
+   "draft": null
+  },
+  {
+   "id": "LEX-0079",
+   "kind": "term",
+   "topic": "oikonomika",
+   "title": {
+    "el": "επένδυση",
+    "en": null
+   },
+   "priority": "Μεσαία",
+   "body": null,
+   "sources": [],
+   "verification": {
+    "status": "unverified",
+    "checked_on": null,
+    "candidate_authority": "gov.gr",
+    "starting_point": null,
+    "locator_note": null,
+    "note": "Μη δημοσιεύσιμο πριν από έλεγχο"
+   },
+   "editorial_review": null,
+   "publication": {
+    "approved": false,
+    "approved_by": null,
+    "approved_on": null
+   },
+   "related": [],
+   "draft": null
+  },
+  {
+   "id": "LEX-0080",
+   "kind": "term",
+   "topic": "oikonomika",
+   "title": {
+    "el": "απόσβεση",
+    "en": null
+   },
+   "priority": "Μεσαία",
+   "body": null,
+   "sources": [],
+   "verification": {
+    "status": "unverified",
+    "checked_on": null,
+    "candidate_authority": "gov.gr",
+    "starting_point": null,
+    "locator_note": null,
+    "note": "Μη δημοσιεύσιμο πριν από έλεγχο"
+   },
+   "editorial_review": null,
+   "publication": {
+    "approved": false,
+    "approved_by": null,
+    "approved_on": null
+   },
+   "related": [],
+   "draft": null
+  },
+  {
+   "id": "LEX-0081",
+   "kind": "term",
+   "topic": "oikonomika",
+   "title": {
+    "el": "οικονομική χρήση",
+    "en": null
+   },
+   "priority": "Μεσαία",
+   "body": null,
+   "sources": [],
+   "verification": {
+    "status": "unverified",
+    "checked_on": null,
+    "candidate_authority": "gov.gr",
+    "starting_point": null,
+    "locator_note": null,
+    "note": "Μη δημοσιεύσιμο πριν από έλεγχο"
+   },
+   "editorial_review": null,
+   "publication": {
+    "approved": false,
+    "approved_by": null,
+    "approved_on": null
+   },
+   "related": [],
+   "draft": null
+  },
+  {
+   "id": "LEX-0082",
+   "kind": "term",
+   "topic": "oikonomika",
+   "title": {
+    "el": "ετήσιος προϋπολογισμός",
+    "en": null
+   },
+   "priority": "Μεσαία",
+   "body": null,
+   "sources": [],
+   "verification": {
+    "status": "unverified",
+    "checked_on": null,
+    "candidate_authority": "gov.gr",
+    "starting_point": null,
+    "locator_note": null,
+    "note": "Μη δημοσιεύσιμο πριν από έλεγχο"
+   },
+   "editorial_review": null,
+   "publication": {
+    "approved": false,
+    "approved_by": null,
+    "approved_on": null
+   },
+   "related": [],
+   "draft": null
+  },
+  {
+   "id": "BAS-0083",
+   "kind": "article",
+   "topic": "oikonomika",
+   "title": {
+    "el": "Ποια η διαφορά εσόδων, κερδών και ταμειακών ροών;",
+    "en": null
+   },
+   "priority": "Μεσαία",
+   "body": null,
+   "sources": [],
+   "verification": {
+    "status": "unverified",
+    "checked_on": null,
+    "candidate_authority": "gov.gr",
+    "starting_point": null,
+    "locator_note": null,
+    "note": "Μη δημοσιεύσιμο πριν από έλεγχο"
+   },
+   "editorial_review": null,
+   "publication": {
+    "approved": false,
+    "approved_by": null,
+    "approved_on": null
+   },
+   "related": [],
+   "draft": null
+  },
+  {
+   "id": "BAS-0084",
+   "kind": "article",
+   "topic": "oikonomika",
+   "title": {
+    "el": "Τι είναι ο ισολογισμός;",
+    "en": null
+   },
+   "priority": "Μεσαία",
+   "body": null,
+   "sources": [],
+   "verification": {
+    "status": "unverified",
+    "checked_on": null,
+    "candidate_authority": "gov.gr",
+    "starting_point": null,
+    "locator_note": null,
+    "note": "Μη δημοσιεύσιμο πριν από έλεγχο"
+   },
+   "editorial_review": null,
+   "publication": {
+    "approved": false,
+    "approved_by": null,
+    "approved_on": null
+   },
+   "related": [],
+   "draft": null
+  },
+  {
+   "id": "BAS-0085",
+   "kind": "article",
+   "topic": "oikonomika",
+   "title": {
+    "el": "Πώς λειτουργεί ένα δάνειο;",
+    "en": null
+   },
+   "priority": "Μεσαία",
+   "body": null,
+   "sources": [],
+   "verification": {
+    "status": "unverified",
+    "checked_on": null,
+    "candidate_authority": "gov.gr",
+    "starting_point": null,
+    "locator_note": null,
+    "note": "Μη δημοσιεύσιμο πριν από έλεγχο"
+   },
+   "editorial_review": null,
+   "publication": {
+    "approved": false,
+    "approved_by": null,
+    "approved_on": null
+   },
+   "related": [],
+   "draft": null
+  },
+  {
+   "id": "BAS-0086",
+   "kind": "article",
+   "topic": "oikonomika",
+   "title": {
+    "el": "Τι είναι τα ίδια κεφάλαια;",
+    "en": null
+   },
+   "priority": "Μεσαία",
+   "body": null,
+   "sources": [],
+   "verification": {
+    "status": "unverified",
+    "checked_on": null,
+    "candidate_authority": "gov.gr",
+    "starting_point": null,
+    "locator_note": null,
+    "note": "Μη δημοσιεύσιμο πριν από έλεγχο"
+   },
+   "editorial_review": null,
+   "publication": {
+    "approved": false,
+    "approved_by": null,
+    "approved_on": null
+   },
+   "related": [],
+   "draft": null
+  },
+  {
+   "id": "FAQ-0087",
+   "kind": "faq",
+   "topic": "oikonomika",
+   "title": {
+    "el": "Ο τζίρος είναι το ίδιο με το κέρδος;",
+    "en": null
+   },
+   "priority": "Μεσαία",
+   "body": null,
+   "sources": [],
+   "verification": {
+    "status": "unverified",
+    "checked_on": null,
+    "candidate_authority": "gov.gr",
+    "starting_point": null,
+    "locator_note": null,
+    "note": "Μη δημοσιεύσιμο πριν από έλεγχο"
+   },
+   "editorial_review": null,
+   "publication": {
+    "approved": false,
+    "approved_by": null,
+    "approved_on": null
+   },
+   "related": [],
+   "draft": null
+  },
+  {
+   "id": "FAQ-0088",
+   "kind": "faq",
+   "topic": "oikonomika",
+   "title": {
+    "el": "Μπορώ να λάβω χρηματοδότηση χωρίς ίδια κεφάλαια;",
+    "en": null
+   },
+   "priority": "Μεσαία",
+   "body": null,
+   "sources": [],
+   "verification": {
+    "status": "unverified",
+    "checked_on": null,
+    "candidate_authority": "gov.gr",
+    "starting_point": null,
+    "locator_note": null,
+    "note": "Μη δημοσιεύσιμο πριν από έλεγχο"
+   },
+   "editorial_review": null,
+   "publication": {
+    "approved": false,
+    "approved_by": null,
+    "approved_on": null
+   },
+   "related": [],
+   "draft": null
+  },
+  {
+   "id": "FAQ-0089",
+   "kind": "faq",
+   "topic": "oikonomika",
+   "title": {
+    "el": "Ποια οικονομικά στοιχεία μπορεί να ζητήσει ένα πρόγραμμα;",
+    "en": null
+   },
+   "priority": "Μεσαία",
+   "body": null,
+   "sources": [],
+   "verification": {
+    "status": "unverified",
+    "checked_on": null,
+    "candidate_authority": "gov.gr",
+    "starting_point": null,
+    "locator_note": null,
+    "note": "Μη δημοσιεύσιμο πριν από έλεγχο"
+   },
+   "editorial_review": null,
+   "publication": {
+    "approved": false,
+    "approved_by": null,
+    "approved_on": null
+   },
+   "related": [],
+   "draft": null
+  },
+  {
+   "id": "LEX-0090",
+   "kind": "term",
+   "topic": "ergasia",
+   "title": {
+    "el": "ΔΥΠΑ",
+    "en": "Public Employment Service (DYPA)"
+   },
+   "priority": "Υψηλή — K1",
+   "body": null,
+   "sources": [],
+   "verification": {
+    "status": "draft",
+    "checked_on": "2026-10-23",
+    "candidate_authority": "ΔΥΠΑ; e-ΕΦΚΑ",
+    "starting_point": "https://www1.dypa.gov.gr/eggrafh-sto-mhtroo-anergon-deltia-anergias",
+    "locator_note": "Υπηρεσίες μητρώου ανέργων",
+    "note": "Μη δημοσιεύσιμο πριν από έλεγχο",
+    "evidence_gate": "NOT VERIFIED",
+    "remaining": "Locate precise official source; check amendments; review EL/EN against it"
+   },
+   "editorial_review": null,
+   "publication": {
+    "approved": false,
+    "approved_by": null,
+    "approved_on": null
+   },
+   "related": [],
+   "draft": {
+    "el": "Η ΔΥΠΑ είναι ο δημόσιος φορέας απασχόλησης της Ελλάδας, με υπηρεσίες για αναζητούντες εργασία και εργοδότες.",
+    "en": "DYPA is Greece’s public employment service, providing services for jobseekers and employers.",
+    "status": "SOURCE-LOCATED DRAFT — review required",
+    "note": "Internal draft from the K1 workbook — not verified, not approved, never rendered."
+   },
+   "k1_order": 22
+  },
+  {
+   "id": "LEX-0091",
+   "kind": "term",
+   "topic": "ergasia",
+   "title": {
+    "el": "ΕΡΓΑΝΗ",
+    "en": null
+   },
+   "priority": "Μεσαία",
+   "body": null,
+   "sources": [],
+   "verification": {
+    "status": "unverified",
+    "checked_on": null,
+    "candidate_authority": "ΔΥΠΑ; e-ΕΦΚΑ",
+    "starting_point": null,
+    "locator_note": null,
+    "note": "Μη δημοσιεύσιμο πριν από έλεγχο"
+   },
+   "editorial_review": null,
+   "publication": {
+    "approved": false,
+    "approved_by": null,
+    "approved_on": null
+   },
+   "related": [],
+   "draft": null
+  },
+  {
+   "id": "LEX-0092",
+   "kind": "term",
+   "topic": "ergasia",
+   "title": {
+    "el": "e-ΕΦΚΑ",
+    "en": null
+   },
+   "priority": "Μεσαία",
+   "body": null,
+   "sources": [],
+   "verification": {
+    "status": "unverified",
+    "checked_on": null,
+    "candidate_authority": "ΔΥΠΑ; e-ΕΦΚΑ",
+    "starting_point": null,
+    "locator_note": null,
+    "note": "Μη δημοσιεύσιμο πριν από έλεγχο"
+   },
+   "editorial_review": null,
+   "publication": {
+    "approved": false,
+    "approved_by": null,
+    "approved_on": null
+   },
+   "related": [],
+   "draft": null
+  },
+  {
+   "id": "LEX-0093",
+   "kind": "term",
+   "topic": "ergasia",
+   "title": {
+    "el": "ΑΜΚΑ",
+    "en": null
+   },
+   "priority": "Μεσαία",
+   "body": null,
+   "sources": [],
+   "verification": {
+    "status": "unverified",
+    "checked_on": null,
+    "candidate_authority": "ΔΥΠΑ; e-ΕΦΚΑ",
+    "starting_point": null,
+    "locator_note": null,
+    "note": "Μη δημοσιεύσιμο πριν από έλεγχο"
+   },
+   "editorial_review": null,
+   "publication": {
+    "approved": false,
+    "approved_by": null,
+    "approved_on": null
+   },
+   "related": [],
+   "draft": null
+  },
+  {
+   "id": "LEX-0094",
+   "kind": "term",
+   "topic": "ergasia",
+   "title": {
+    "el": "μισθωτός",
+    "en": null
+   },
+   "priority": "Μεσαία",
+   "body": null,
+   "sources": [],
+   "verification": {
+    "status": "unverified",
+    "checked_on": null,
+    "candidate_authority": "ΔΥΠΑ; e-ΕΦΚΑ",
+    "starting_point": null,
+    "locator_note": null,
+    "note": "Μη δημοσιεύσιμο πριν από έλεγχο"
+   },
+   "editorial_review": null,
+   "publication": {
+    "approved": false,
+    "approved_by": null,
+    "approved_on": null
+   },
+   "related": [],
+   "draft": null
+  },
+  {
+   "id": "LEX-0095",
+   "kind": "term",
+   "topic": "ergasia",
+   "title": {
+    "el": "αυτοαπασχολούμενος",
+    "en": null
+   },
+   "priority": "Μεσαία",
+   "body": null,
+   "sources": [],
+   "verification": {
+    "status": "unverified",
+    "checked_on": null,
+    "candidate_authority": "ΔΥΠΑ; e-ΕΦΚΑ",
+    "starting_point": null,
+    "locator_note": null,
+    "note": "Μη δημοσιεύσιμο πριν από έλεγχο"
+   },
+   "editorial_review": null,
+   "publication": {
+    "approved": false,
+    "approved_by": null,
+    "approved_on": null
+   },
+   "related": [],
+   "draft": null
+  },
+  {
+   "id": "LEX-0096",
+   "kind": "term",
+   "topic": "ergasia",
+   "title": {
+    "el": "άνεργος",
+    "en": null
+   },
+   "priority": "Μεσαία",
+   "body": null,
+   "sources": [],
+   "verification": {
+    "status": "unverified",
+    "checked_on": null,
+    "candidate_authority": "ΔΥΠΑ; e-ΕΦΚΑ",
+    "starting_point": null,
+    "locator_note": null,
+    "note": "Μη δημοσιεύσιμο πριν από έλεγχο"
+   },
+   "editorial_review": null,
+   "publication": {
+    "approved": false,
+    "approved_by": null,
+    "approved_on": null
+   },
+   "related": [],
+   "draft": null
+  },
+  {
+   "id": "LEX-0097",
+   "kind": "term",
+   "topic": "ergasia",
+   "title": {
+    "el": "εγγεγραμμένος άνεργος",
+    "en": "Registered unemployed person"
+   },
+   "priority": "Υψηλή — K1",
+   "body": null,
+   "sources": [],
+   "verification": {
+    "status": "draft",
+    "checked_on": "2026-10-23",
+    "candidate_authority": "ΔΥΠΑ; e-ΕΦΚΑ",
+    "starting_point": "https://www1.dypa.gov.gr/eggrafh-sto-mhtroo-anergon-deltia-anergias",
+    "locator_note": "Εγγραφή στο ψηφιακό μητρώο ανέργων",
+    "note": "Μη δημοσιεύσιμο πριν από έλεγχο",
+    "evidence_gate": "NOT VERIFIED",
+    "remaining": "Locate precise official source; check amendments; review EL/EN against it"
+   },
+   "editorial_review": null,
+   "publication": {
+    "approved": false,
+    "approved_by": null,
+    "approved_on": null
+   },
+   "related": [],
+   "draft": {
+    "el": "Εγγεγραμμένος άνεργος είναι πρόσωπο καταχωρισμένο στο σχετικό ψηφιακό μητρώο της ΔΥΠΑ, υπό τις ισχύουσες προϋποθέσεις εγγραφής και διατήρησης.",
+    "en": "A registered unemployed person is recorded in DYPA’s digital jobseeker register, subject to applicable conditions.",
+    "status": "SOURCE-LOCATED DRAFT — review required",
+    "note": "Internal draft from the K1 workbook — not verified, not approved, never rendered."
+   },
+   "k1_order": 23
+  },
+  {
+   "id": "LEX-0098",
+   "kind": "term",
+   "topic": "ergasia",
+   "title": {
+    "el": "μακροχρόνια ανεργία",
+    "en": null
+   },
+   "priority": "Μεσαία",
+   "body": null,
+   "sources": [],
+   "verification": {
+    "status": "unverified",
+    "checked_on": null,
+    "candidate_authority": "ΔΥΠΑ; e-ΕΦΚΑ",
+    "starting_point": null,
+    "locator_note": null,
+    "note": "Μη δημοσιεύσιμο πριν από έλεγχο"
+   },
+   "editorial_review": null,
+   "publication": {
+    "approved": false,
+    "approved_by": null,
+    "approved_on": null
+   },
+   "related": [],
+   "draft": null
+  },
+  {
+   "id": "LEX-0099",
+   "kind": "term",
+   "topic": "ergasia",
+   "title": {
+    "el": "σύμβαση εργασίας",
+    "en": null
+   },
+   "priority": "Μεσαία",
+   "body": null,
+   "sources": [],
+   "verification": {
+    "status": "unverified",
+    "checked_on": null,
+    "candidate_authority": "ΔΥΠΑ; e-ΕΦΚΑ",
+    "starting_point": null,
+    "locator_note": null,
+    "note": "Μη δημοσιεύσιμο πριν από έλεγχο"
+   },
+   "editorial_review": null,
+   "publication": {
+    "approved": false,
+    "approved_by": null,
+    "approved_on": null
+   },
+   "related": [],
+   "draft": null
+  },
+  {
+   "id": "LEX-0100",
+   "kind": "term",
+   "topic": "ergasia",
+   "title": {
+    "el": "πλήρης απασχόληση",
+    "en": null
+   },
+   "priority": "Μεσαία",
+   "body": null,
+   "sources": [],
+   "verification": {
+    "status": "unverified",
+    "checked_on": null,
+    "candidate_authority": "ΔΥΠΑ; e-ΕΦΚΑ",
+    "starting_point": null,
+    "locator_note": null,
+    "note": "Μη δημοσιεύσιμο πριν από έλεγχο"
+   },
+   "editorial_review": null,
+   "publication": {
+    "approved": false,
+    "approved_by": null,
+    "approved_on": null
+   },
+   "related": [],
+   "draft": null
+  },
+  {
+   "id": "LEX-0101",
+   "kind": "term",
+   "topic": "ergasia",
+   "title": {
+    "el": "μερική απασχόληση",
+    "en": null
+   },
+   "priority": "Μεσαία",
+   "body": null,
+   "sources": [],
+   "verification": {
+    "status": "unverified",
+    "checked_on": null,
+    "candidate_authority": "ΔΥΠΑ; e-ΕΦΚΑ",
+    "starting_point": null,
+    "locator_note": null,
+    "note": "Μη δημοσιεύσιμο πριν από έλεγχο"
+   },
+   "editorial_review": null,
+   "publication": {
+    "approved": false,
+    "approved_by": null,
+    "approved_on": null
+   },
+   "related": [],
+   "draft": null
+  },
+  {
+   "id": "LEX-0102",
+   "kind": "term",
+   "topic": "ergasia",
+   "title": {
+    "el": "μικτός μισθός",
+    "en": null
+   },
+   "priority": "Μεσαία",
+   "body": null,
+   "sources": [],
+   "verification": {
+    "status": "unverified",
+    "checked_on": null,
+    "candidate_authority": "ΔΥΠΑ; e-ΕΦΚΑ",
+    "starting_point": null,
+    "locator_note": null,
+    "note": "Μη δημοσιεύσιμο πριν από έλεγχο"
+   },
+   "editorial_review": null,
+   "publication": {
+    "approved": false,
+    "approved_by": null,
+    "approved_on": null
+   },
+   "related": [],
+   "draft": null
+  },
+  {
+   "id": "LEX-0103",
+   "kind": "term",
+   "topic": "ergasia",
+   "title": {
+    "el": "καθαρός μισθός",
+    "en": null
+   },
+   "priority": "Μεσαία",
+   "body": null,
+   "sources": [],
+   "verification": {
+    "status": "unverified",
+    "checked_on": null,
+    "candidate_authority": "ΔΥΠΑ; e-ΕΦΚΑ",
+    "starting_point": null,
+    "locator_note": null,
+    "note": "Μη δημοσιεύσιμο πριν από έλεγχο"
+   },
+   "editorial_review": null,
+   "publication": {
+    "approved": false,
+    "approved_by": null,
+    "approved_on": null
+   },
+   "related": [],
+   "draft": null
+  },
+  {
+   "id": "LEX-0104",
+   "kind": "term",
+   "topic": "ergasia",
+   "title": {
+    "el": "ασφαλιστικές εισφορές",
+    "en": "Social security contributions"
+   },
+   "priority": "Υψηλή — K1",
+   "body": null,
+   "sources": [],
+   "verification": {
+    "status": "draft",
+    "checked_on": "2026-10-23",
+    "candidate_authority": "ΔΥΠΑ; e-ΕΦΚΑ",
+    "starting_point": "https://www.efka.gov.gr/",
+    "locator_note": "Απαιτείται ακριβής ενότητα εισφορών",
+    "note": "Μη δημοσιεύσιμο πριν από έλεγχο",
+    "evidence_gate": "NOT VERIFIED",
+    "remaining": "Locate precise official source; check amendments; review EL/EN against it"
+   },
+   "editorial_review": null,
+   "publication": {
+    "approved": false,
+    "approved_by": null,
+    "approved_on": null
+   },
+   "related": [],
+   "draft": {
+    "el": "Ασφαλιστικές εισφορές είναι ποσά που καταβάλλονται στο σύστημα κοινωνικής ασφάλισης, ανάλογα με την ιδιότητα και τους ισχύοντες κανόνες.",
+    "en": "Social-security contributions are payments to the insurance system, varying by insured status and applicable rules.",
+    "status": "RESEARCH DRAFT — exact source pending",
+    "note": "Internal draft from the K1 workbook — not verified, not approved, never rendered."
+   },
+   "k1_order": 24
+  },
+  {
+   "id": "LEX-0105",
+   "kind": "term",
+   "topic": "ergasia",
+   "title": {
+    "el": "ασφαλιστική ικανότητα",
+    "en": null
+   },
+   "priority": "Μεσαία",
+   "body": null,
+   "sources": [],
+   "verification": {
+    "status": "unverified",
+    "checked_on": null,
+    "candidate_authority": "ΔΥΠΑ; e-ΕΦΚΑ",
+    "starting_point": null,
+    "locator_note": null,
+    "note": "Μη δημοσιεύσιμο πριν από έλεγχο"
+   },
+   "editorial_review": null,
+   "publication": {
+    "approved": false,
+    "approved_by": null,
+    "approved_on": null
+   },
+   "related": [],
+   "draft": null
+  },
+  {
+   "id": "LEX-0106",
+   "kind": "term",
+   "topic": "ergasia",
+   "title": {
+    "el": "ένσημα",
+    "en": null
+   },
+   "priority": "Μεσαία",
+   "body": null,
+   "sources": [],
+   "verification": {
+    "status": "unverified",
+    "checked_on": null,
+    "candidate_authority": "ΔΥΠΑ; e-ΕΦΚΑ",
+    "starting_point": null,
+    "locator_note": null,
+    "note": "Μη δημοσιεύσιμο πριν από έλεγχο"
+   },
+   "editorial_review": null,
+   "publication": {
+    "approved": false,
+    "approved_by": null,
+    "approved_on": null
+   },
+   "related": [],
+   "draft": null
+  },
+  {
+   "id": "LEX-0107",
+   "kind": "term",
+   "topic": "ergasia",
+   "title": {
+    "el": "εποχική απασχόληση",
+    "en": null
+   },
+   "priority": "Μεσαία",
+   "body": null,
+   "sources": [],
+   "verification": {
+    "status": "unverified",
+    "checked_on": null,
+    "candidate_authority": "ΔΥΠΑ; e-ΕΦΚΑ",
+    "starting_point": null,
+    "locator_note": null,
+    "note": "Μη δημοσιεύσιμο πριν από έλεγχο"
+   },
+   "editorial_review": null,
+   "publication": {
+    "approved": false,
+    "approved_by": null,
+    "approved_on": null
+   },
+   "related": [],
+   "draft": null
+  },
+  {
+   "id": "LEX-0108",
+   "kind": "term",
+   "topic": "ergasia",
+   "title": {
+    "el": "εργοδότης",
+    "en": null
+   },
+   "priority": "Μεσαία",
+   "body": null,
+   "sources": [],
+   "verification": {
+    "status": "unverified",
+    "checked_on": null,
+    "candidate_authority": "ΔΥΠΑ; e-ΕΦΚΑ",
+    "starting_point": null,
+    "locator_note": null,
+    "note": "Μη δημοσιεύσιμο πριν από έλεγχο"
+   },
+   "editorial_review": null,
+   "publication": {
+    "approved": false,
+    "approved_by": null,
+    "approved_on": null
+   },
+   "related": [],
+   "draft": null
+  },
+  {
+   "id": "LEX-0109",
+   "kind": "term",
+   "topic": "ergasia",
+   "title": {
+    "el": "ασφαλιστική ενημερότητα",
+    "en": null
+   },
+   "priority": "Μεσαία",
+   "body": null,
+   "sources": [],
+   "verification": {
+    "status": "unverified",
+    "checked_on": null,
+    "candidate_authority": "ΔΥΠΑ; e-ΕΦΚΑ",
+    "starting_point": null,
+    "locator_note": null,
+    "note": "Μη δημοσιεύσιμο πριν από έλεγχο"
+   },
+   "editorial_review": null,
+   "publication": {
+    "approved": false,
+    "approved_by": null,
+    "approved_on": null
+   },
+   "related": [],
+   "draft": null
+  },
+  {
+   "id": "BAS-0110",
+   "kind": "article",
+   "topic": "ergasia",
+   "title": {
+    "el": "Ποια η διαφορά μισθωτού και αυτοαπασχολούμενου;",
+    "en": null
+   },
+   "priority": "Μεσαία",
+   "body": null,
+   "sources": [],
+   "verification": {
+    "status": "unverified",
+    "checked_on": null,
+    "candidate_authority": "ΔΥΠΑ; e-ΕΦΚΑ",
+    "starting_point": null,
+    "locator_note": null,
+    "note": "Μη δημοσιεύσιμο πριν από έλεγχο"
+   },
+   "editorial_review": null,
+   "publication": {
+    "approved": false,
+    "approved_by": null,
+    "approved_on": null
+   },
+   "related": [],
+   "draft": null
+  },
+  {
+   "id": "BAS-0111",
+   "kind": "article",
+   "topic": "ergasia",
+   "title": {
+    "el": "Πώς λειτουργεί η κοινωνική ασφάλιση;",
+    "en": null
+   },
+   "priority": "Μεσαία",
+   "body": null,
+   "sources": [],
+   "verification": {
+    "status": "unverified",
+    "checked_on": null,
+    "candidate_authority": "ΔΥΠΑ; e-ΕΦΚΑ",
+    "starting_point": null,
+    "locator_note": null,
+    "note": "Μη δημοσιεύσιμο πριν από έλεγχο"
+   },
+   "editorial_review": null,
+   "publication": {
+    "approved": false,
+    "approved_by": null,
+    "approved_on": null
+   },
+   "related": [],
+   "draft": null
+  },
+  {
+   "id": "BAS-0112",
+   "kind": "article",
+   "topic": "ergasia",
+   "title": {
+    "el": "Τι σημαίνει εγγεγραμμένος άνεργος;",
+    "en": null
+   },
+   "priority": "Μεσαία",
+   "body": null,
+   "sources": [],
+   "verification": {
+    "status": "unverified",
+    "checked_on": null,
+    "candidate_authority": "ΔΥΠΑ; e-ΕΦΚΑ",
+    "starting_point": null,
+    "locator_note": null,
+    "note": "Μη δημοσιεύσιμο πριν από έλεγχο"
+   },
+   "editorial_review": null,
+   "publication": {
+    "approved": false,
+    "approved_by": null,
+    "approved_on": null
+   },
+   "related": [],
+   "draft": null
+  },
+  {
+   "id": "FAQ-0113",
+   "kind": "faq",
+   "topic": "ergasia",
+   "title": {
+    "el": "Μπορώ να εργάζομαι και να διατηρώ επιχείρηση;",
+    "en": null
+   },
+   "priority": "Μεσαία",
+   "body": null,
+   "sources": [],
+   "verification": {
+    "status": "unverified",
+    "checked_on": null,
+    "candidate_authority": "ΔΥΠΑ; e-ΕΦΚΑ",
+    "starting_point": null,
+    "locator_note": null,
+    "note": "Μη δημοσιεύσιμο πριν από έλεγχο"
+   },
+   "editorial_review": null,
+   "publication": {
+    "approved": false,
+    "approved_by": null,
+    "approved_on": null
+   },
+   "related": [],
+   "draft": null
+  },
+  {
+   "id": "FAQ-0114",
+   "kind": "faq",
+   "topic": "ergasia",
+   "title": {
+    "el": "Πώς ελέγχω την ασφαλιστική μου κατάσταση;",
+    "en": null
+   },
+   "priority": "Μεσαία",
+   "body": null,
+   "sources": [],
+   "verification": {
+    "status": "unverified",
+    "checked_on": null,
+    "candidate_authority": "ΔΥΠΑ; e-ΕΦΚΑ",
+    "starting_point": null,
+    "locator_note": null,
+    "note": "Μη δημοσιεύσιμο πριν από έλεγχο"
+   },
+   "editorial_review": null,
+   "publication": {
+    "approved": false,
+    "approved_by": null,
+    "approved_on": null
+   },
+   "related": [],
+   "draft": null
+  },
+  {
+   "id": "FAQ-0115",
+   "kind": "faq",
+   "topic": "ergasia",
+   "title": {
+    "el": "Τι συμβαίνει αν αλλάξει η εργασιακή μου κατάσταση;",
+    "en": null
+   },
+   "priority": "Μεσαία",
+   "body": null,
+   "sources": [],
+   "verification": {
+    "status": "unverified",
+    "checked_on": null,
+    "candidate_authority": "ΔΥΠΑ; e-ΕΦΚΑ",
+    "starting_point": null,
+    "locator_note": null,
+    "note": "Μη δημοσιεύσιμο πριν από έλεγχο"
+   },
+   "editorial_review": null,
+   "publication": {
+    "approved": false,
+    "approved_by": null,
+    "approved_on": null
+   },
+   "related": [],
+   "draft": null
+  },
+  {
+   "id": "LEX-0116",
+   "kind": "term",
+   "topic": "epidotiseis",
+   "title": {
+    "el": "ΕΣΠΑ",
+    "en": "Partnership Agreement for Regional Development (ESPA)"
+   },
+   "priority": "Υψηλή — K1",
+   "body": null,
+   "sources": [],
+   "verification": {
+    "status": "draft",
+    "checked_on": null,
+    "candidate_authority": "Γενική Γραμματεία ΕΣΠΑ",
+    "starting_point": "https://www.espa.gr/el/Pages/espa2021-2027.aspx",
+    "locator_note": "ΕΣΠΑ 2021–2027 · επίσημη περιγραφή",
+    "note": "Μη δημοσιεύσιμο πριν από έλεγχο",
+    "evidence_gate": "NOT VERIFIED",
+    "remaining": "Locate precise official source; check amendments; review EL/EN against it"
+   },
+   "editorial_review": null,
+   "publication": {
+    "approved": false,
+    "approved_by": null,
+    "approved_on": null
+   },
+   "related": [],
+   "draft": {
+    "el": "Πλαίσιο προγραμμάτων της Ελλάδας για την περίοδο 2021–2027, με τομεακά και περιφερειακά προγράμματα.",
+    "en": "Greece’s 2021–2027 partnership framework comprising sectoral and regional programmes.",
+    "status": "DRAFT — not approved",
+    "note": "Internal draft from the K1 workbook — not verified, not approved, never rendered."
+   },
+   "k1_order": 25
+  },
+  {
+   "id": "LEX-0117",
+   "kind": "term",
+   "topic": "epidotiseis",
+   "title": {
+    "el": "ΟΠΣΚΕ",
+    "en": "State Aid Information System (OPSKE)"
+   },
+   "priority": "Υψηλή — K1",
+   "body": null,
+   "sources": [],
+   "verification": {
+    "status": "draft",
+    "checked_on": "2026-10-23",
+    "candidate_authority": "ΕΣΠΑ; ΟΠΣΚΕ; Ευρωπαϊκή Επιτροπή — State Aid",
+    "starting_point": "https://opske.gr/el/call/ypostirixi-neon-kainotomon-epiheiriseon-stin-perifereia-kritis-kainotomo-stin-kriti",
+    "locator_note": "Μετάβαση στο ΟΠΣΚΕ / πρόσκληση",
+    "note": "Μη δημοσιεύσιμο πριν από έλεγχο",
+    "evidence_gate": "NOT VERIFIED",
+    "remaining": "Locate precise official source; check amendments; review EL/EN against it"
+   },
+   "editorial_review": null,
+   "publication": {
+    "approved": false,
+    "approved_by": null,
+    "approved_on": null
+   },
+   "related": [],
+   "draft": {
+    "el": "Το ΟΠΣΚΕ είναι το πληροφοριακό σύστημα που χρησιμοποιείται για διαδικασίες κρατικών ενισχύσεων επιχειρήσεων, όπου αυτό ορίζεται από την πρόσκληση.",
+    "en": "OPSKE is a Greek information system used for business state-aid procedures where specified by a call.",
+    "status": "SOURCE-LOCATED DRAFT — review required",
+    "note": "Internal draft from the K1 workbook — not verified, not approved, never rendered."
+   },
+   "k1_order": 26
+  },
+  {
+   "id": "LEX-0118",
+   "kind": "term",
+   "topic": "epidotiseis",
+   "title": {
+    "el": "ΕΦΕΠΑΕ",
+    "en": null
+   },
+   "priority": "Υψηλή",
+   "body": null,
+   "sources": [],
+   "verification": {
+    "status": "unverified",
+    "checked_on": null,
+    "candidate_authority": "ΕΣΠΑ; ΟΠΣΚΕ; Ευρωπαϊκή Επιτροπή — State Aid",
+    "starting_point": null,
+    "locator_note": null,
+    "note": "Μη δημοσιεύσιμο πριν από έλεγχο"
+   },
+   "editorial_review": null,
+   "publication": {
+    "approved": false,
+    "approved_by": null,
+    "approved_on": null
+   },
+   "related": [],
+   "draft": null
+  },
+  {
+   "id": "LEX-0119",
+   "kind": "term",
+   "topic": "epidotiseis",
+   "title": {
+    "el": "πρόσκληση",
+    "en": "Call for proposals"
+   },
+   "priority": "Υψηλή — K1",
+   "body": null,
+   "sources": [],
+   "verification": {
+    "status": "draft",
+    "checked_on": "2026-10-23",
+    "candidate_authority": "ΕΣΠΑ; ΟΠΣΚΕ; Ευρωπαϊκή Επιτροπή — State Aid",
+    "starting_point": "https://opske.gr/el/call/ypostirixi-neon-kainotomon-epiheiriseon-stin-perifereia-kritis-kainotomo-stin-kriti",
+    "locator_note": "Πρόσκληση υποβολής αιτήσεων χρηματοδότησης",
+    "note": "Μη δημοσιεύσιμο πριν από έλεγχο",
+    "evidence_gate": "NOT VERIFIED",
+    "remaining": "Locate precise official source; check amendments; review EL/EN against it"
+   },
+   "editorial_review": null,
+   "publication": {
+    "approved": false,
+    "approved_by": null,
+    "approved_on": null
+   },
+   "related": [],
+   "draft": {
+    "el": "Πρόσκληση είναι η επίσημη δημοσίευση όρων συμμετοχής, προθεσμιών και διαδικασίας υποβολής για συγκεκριμένη δράση.",
+    "en": "A call for proposals publishes a programme’s conditions, deadlines and application process.",
+    "status": "SOURCE-LOCATED DRAFT — review required",
+    "note": "Internal draft from the K1 workbook — not verified, not approved, never rendered."
+   },
+   "k1_order": 35
+  },
+  {
+   "id": "LEX-0120",
+   "kind": "term",
+   "topic": "epidotiseis",
+   "title": {
+    "el": "δικαιούχος",
+    "en": "Beneficiary"
+   },
+   "priority": "Υψηλή — K1",
+   "body": null,
+   "sources": [],
+   "verification": {
+    "status": "draft",
+    "checked_on": "2026-10-23",
+    "candidate_authority": "ΕΣΠΑ; ΟΠΣΚΕ; Ευρωπαϊκή Επιτροπή — State Aid",
+    "starting_point": "https://opske.gr/el/call/ypostirixi-neon-kainotomon-epiheiriseon-stin-perifereia-kritis-kainotomo-stin-kriti",
+    "locator_note": "Σε ποιους απευθύνεται — δυνητικοί δικαιούχοι",
+    "note": "Μη δημοσιεύσιμο πριν από έλεγχο",
+    "evidence_gate": "NOT VERIFIED",
+    "remaining": "Locate precise official source; check amendments; review EL/EN against it"
+   },
+   "editorial_review": null,
+   "publication": {
+    "approved": false,
+    "approved_by": null,
+    "approved_on": null
+   },
+   "related": [],
+   "draft": {
+    "el": "Δικαιούχος είναι το πρόσωπο ή ο φορέας που αναγνωρίζεται ως αποδέκτης της ενίσχυσης από τους όρους συγκεκριμένου προγράμματος.",
+    "en": "A beneficiary is a person or entity entitled to support under the specific programme terms.",
+    "status": "SOURCE-LOCATED DRAFT — review required",
+    "note": "Internal draft from the K1 workbook — not verified, not approved, never rendered."
+   },
+   "k1_order": 33
+  },
+  {
+   "id": "LEX-0121",
+   "kind": "term",
+   "topic": "epidotiseis",
+   "title": {
+    "el": "ωφελούμενος",
+    "en": null
+   },
+   "priority": "Υψηλή",
+   "body": null,
+   "sources": [],
+   "verification": {
+    "status": "unverified",
+    "checked_on": null,
+    "candidate_authority": "ΕΣΠΑ; ΟΠΣΚΕ; Ευρωπαϊκή Επιτροπή — State Aid",
+    "starting_point": null,
+    "locator_note": null,
+    "note": "Μη δημοσιεύσιμο πριν από έλεγχο"
+   },
+   "editorial_review": null,
+   "publication": {
+    "approved": false,
+    "approved_by": null,
+    "approved_on": null
+   },
+   "related": [],
+   "draft": null
+  },
+  {
+   "id": "LEX-0122",
+   "kind": "term",
+   "topic": "epidotiseis",
+   "title": {
+    "el": "επιλέξιμος",
+    "en": "Eligible"
+   },
+   "priority": "Υψηλή — K1",
+   "body": null,
+   "sources": [],
+   "verification": {
+    "status": "draft",
+    "checked_on": "2026-10-23",
+    "candidate_authority": "ΕΣΠΑ; ΟΠΣΚΕ; Ευρωπαϊκή Επιτροπή — State Aid",
+    "starting_point": "https://opske.gr/el/call/prosklisi-ypobolis-aitiseon-hrimatodotisis-sti-drasi-paragoyme-stin-ellada-toy-programmatos",
+    "locator_note": "Επιλέξιμοι ΚΑΔ / επιλέξιμες δαπάνες",
+    "note": "Μη δημοσιεύσιμο πριν από έλεγχο",
+    "evidence_gate": "NOT VERIFIED",
+    "remaining": "Locate precise official source; check amendments; review EL/EN against it"
+   },
+   "editorial_review": null,
+   "publication": {
+    "approved": false,
+    "approved_by": null,
+    "approved_on": null
+   },
+   "related": [],
+   "draft": {
+    "el": "Επιλέξιμος σημαίνει ότι πληρούνται τα εφαρμοστέα κριτήρια για συγκεκριμένο πρόσωπο, φορέα, δραστηριότητα ή δαπάνη· δεν σημαίνει αυτόματη έγκριση.",
+    "en": "Eligible means the relevant criteria are met for a person, entity, activity or cost; it does not guarantee approval.",
+    "status": "SOURCE-LOCATED DRAFT — review required",
+    "note": "Internal draft from the K1 workbook — not verified, not approved, never rendered."
+   },
+   "k1_order": 34
+  },
+  {
+   "id": "LEX-0123",
+   "kind": "term",
+   "topic": "epidotiseis",
+   "title": {
+    "el": "επιχορήγηση",
+    "en": "Grant"
+   },
+   "priority": "Υψηλή — K1",
+   "body": null,
+   "sources": [],
+   "verification": {
+    "status": "draft",
+    "checked_on": "2026-10-23",
+    "candidate_authority": "ΕΣΠΑ; ΟΠΣΚΕ; Ευρωπαϊκή Επιτροπή — State Aid",
+    "starting_point": "https://opske.gr/el/call/ypostirixi-neon-kainotomon-epiheiriseon-stin-perifereia-kritis-kainotomo-stin-kriti",
+    "locator_note": "Είδος ενίσχυσης: Επιχορήγηση / Επιδότηση",
+    "note": "Μη δημοσιεύσιμο πριν από έλεγχο",
+    "evidence_gate": "NOT VERIFIED",
+    "remaining": "Locate precise official source; check amendments; review EL/EN against it"
+   },
+   "editorial_review": null,
+   "publication": {
+    "approved": false,
+    "approved_by": null,
+    "approved_on": null
+   },
+   "related": [],
+   "draft": {
+    "el": "Επιχορήγηση είναι χρηματοδοτική ενίσχυση που παρέχεται υπό καθορισμένους όρους και υποχρεώσεις· η τήρησή τους επηρεάζει τη διατήρησή της.",
+    "en": "A grant is financial support subject to specified conditions and obligations; non-compliance may affect entitlement.",
+    "status": "SOURCE-LOCATED DRAFT — review required",
+    "note": "Internal draft from the K1 workbook — not verified, not approved, never rendered."
+   },
+   "k1_order": 27
+  },
+  {
+   "id": "LEX-0124",
+   "kind": "term",
+   "topic": "epidotiseis",
+   "title": {
+    "el": "επιδότηση",
+    "en": null
+   },
+   "priority": "Υψηλή",
+   "body": null,
+   "sources": [],
+   "verification": {
+    "status": "unverified",
+    "checked_on": null,
+    "candidate_authority": "ΕΣΠΑ; ΟΠΣΚΕ; Ευρωπαϊκή Επιτροπή — State Aid",
+    "starting_point": null,
+    "locator_note": null,
+    "note": "Μη δημοσιεύσιμο πριν από έλεγχο"
+   },
+   "editorial_review": null,
+   "publication": {
+    "approved": false,
+    "approved_by": null,
+    "approved_on": null
+   },
+   "related": [],
+   "draft": null
+  },
+  {
+   "id": "LEX-0125",
+   "kind": "term",
+   "topic": "epidotiseis",
+   "title": {
+    "el": "χρηματοδότηση",
+    "en": null
+   },
+   "priority": "Υψηλή",
+   "body": null,
+   "sources": [],
+   "verification": {
+    "status": "unverified",
+    "checked_on": null,
+    "candidate_authority": "ΕΣΠΑ; ΟΠΣΚΕ; Ευρωπαϊκή Επιτροπή — State Aid",
+    "starting_point": null,
+    "locator_note": null,
+    "note": "Μη δημοσιεύσιμο πριν από έλεγχο"
+   },
+   "editorial_review": null,
+   "publication": {
+    "approved": false,
+    "approved_by": null,
+    "approved_on": null
+   },
+   "related": [],
+   "draft": null
+  },
+  {
+   "id": "LEX-0126",
+   "kind": "term",
+   "topic": "epidotiseis",
+   "title": {
+    "el": "επιλέξιμη δαπάνη",
+    "en": "Eligible Expenditure"
+   },
+   "priority": "Υψηλή — K1",
+   "body": null,
+   "sources": [],
+   "verification": {
+    "status": "source_located",
+    "checked_on": null,
+    "candidate_authority": "ΟΠΣΚΕ",
+    "starting_point": "https://opske.gr/el/call/prosklisi-ypobolis-aitiseon-hrimatodotisis-sti-drasi-paragoyme-stin-ellada-toy-programmatos",
+    "locator_note": "Επιλέξιμες κατηγορίες δαπανών · όρια",
+    "note": "Μη δημοσιεύσιμο πριν από έλεγχο",
+    "evidence_gate": "OFFICIAL PRIMARY SOURCE LOCATED — editorial draft",
+    "official_source_candidate": {
+     "url": "https://www.espa.gr/el/Pages/eLibraryFS.aspx?item=2536",
+     "scope": "ΕΣΠΑ 2021–2027, ΥΑ 114947/29.11.2022 — εθνικοί κανόνες επιλεξιμότητας",
+     "amendment": null
+    },
+    "remaining": "Locate precise official source; check amendments; review EL/EN against it"
+   },
+   "editorial_review": null,
+   "publication": {
+    "approved": false,
+    "approved_by": null,
+    "approved_on": null
+   },
+   "related": [],
+   "draft": {
+    "el": "Κατηγορία δαπάνης που η συγκεκριμένη πρόσκληση επιτρέπει να περιληφθεί στον προϋπολογισμό χρηματοδότησης, υπό όρους και όρια.",
+    "en": "An expense category that the specific funding call permits within the funded project, subject to its conditions and limits.",
+    "status": "DRAFT — not approved",
+    "note": "Internal draft from the K1 workbook — not verified, not approved, never rendered."
+   },
+   "k1_order": 28
+  },
+  {
+   "id": "LEX-0127",
+   "kind": "term",
+   "topic": "epidotiseis",
+   "title": {
+    "el": "επιχορηγούμενος προϋπολογισμός",
+    "en": "Subsidised Project Budget"
+   },
+   "priority": "Υψηλή — K1",
+   "body": null,
+   "sources": [],
+   "verification": {
+    "status": "draft",
+    "checked_on": null,
+    "candidate_authority": "ΟΠΣΚΕ",
+    "starting_point": "https://opske.gr/el/call/eksyghronismos-mikris-epiheirimatikotitas-dytikis-elladas-2025-mikres-ependyseis",
+    "locator_note": "Προϋπολογισμός · Ένταση ενίσχυσης · Προϋπολογισμός προγράμματος",
+    "note": "Μη δημοσιεύσιμο πριν από έλεγχο",
+    "evidence_gate": "NOT VERIFIED",
+    "remaining": "Locate precise official source; check amendments; review EL/EN against it"
+   },
+   "editorial_review": null,
+   "publication": {
+    "approved": false,
+    "approved_by": null,
+    "approved_on": null
+   },
+   "related": [],
+   "draft": {
+    "el": "Το μέρος του προϋπολογισμού επενδυτικού σχεδίου που λαμβάνεται υπόψη για την επιχορήγηση, όπως προσδιορίζεται στην πρόσκληση· δεν είναι το ίδιο με τη δημόσια δαπάνη ή τον συνολικό προϋπολογισμό δράσης.",
+    "en": "The project budget used to determine grant support under the specific call; distinct from the public grant amount and total scheme budget.",
+    "status": "DRAFT — not approved",
+    "note": "Internal draft from the K1 workbook — not verified, not approved, never rendered."
+   },
+   "k1_order": 29
+  },
+  {
+   "id": "LEX-0128",
+   "kind": "term",
+   "topic": "epidotiseis",
+   "title": {
+    "el": "δημόσια δαπάνη",
+    "en": null
+   },
+   "priority": "Υψηλή",
+   "body": null,
+   "sources": [],
+   "verification": {
+    "status": "unverified",
+    "checked_on": null,
+    "candidate_authority": "ΕΣΠΑ; ΟΠΣΚΕ; Ευρωπαϊκή Επιτροπή — State Aid",
+    "starting_point": null,
+    "locator_note": null,
+    "note": "Μη δημοσιεύσιμο πριν από έλεγχο"
+   },
+   "editorial_review": null,
+   "publication": {
+    "approved": false,
+    "approved_by": null,
+    "approved_on": null
+   },
+   "related": [],
+   "draft": null
+  },
+  {
+   "id": "LEX-0129",
+   "kind": "term",
+   "topic": "epidotiseis",
+   "title": {
+    "el": "ίδια συμμετοχή",
+    "en": "Private Contribution"
+   },
+   "priority": "Υψηλή — K1",
+   "body": null,
+   "sources": [],
+   "verification": {
+    "status": "draft",
+    "checked_on": null,
+    "candidate_authority": "ΟΠΣΚΕ",
+    "starting_point": "https://opske.gr/el/call/eksyghronismos-mikris-epiheirimatikotitas-dytikis-elladas-2025-mikres-ependyseis",
+    "locator_note": "Ένταση ενίσχυσης · ιδιωτική συμμετοχή",
+    "note": "Μη δημοσιεύσιμο πριν από έλεγχο",
+    "evidence_gate": "NOT VERIFIED",
+    "remaining": "Locate precise official source; check amendments; review EL/EN against it"
+   },
+   "editorial_review": null,
+   "publication": {
+    "approved": false,
+    "approved_by": null,
+    "approved_on": null
+   },
+   "related": [],
+   "draft": {
+    "el": "Το μέρος του χρηματοδοτικού κόστους που καλύπτεται από ιδιωτικούς πόρους, σύμφωνα με τους όρους της πρόσκλησης.",
+    "en": "The share of financing covered by private sources under the relevant call.",
+    "status": "DRAFT — not approved",
+    "note": "Internal draft from the K1 workbook — not verified, not approved, never rendered."
+   },
+   "k1_order": 32
+  },
+  {
+   "id": "LEX-0130",
+   "kind": "term",
+   "topic": "epidotiseis",
+   "title": {
+    "el": "ένταση ενίσχυσης",
+    "en": null
+   },
+   "priority": "Υψηλή",
+   "body": null,
+   "sources": [],
+   "verification": {
+    "status": "unverified",
+    "checked_on": null,
+    "candidate_authority": "ΕΣΠΑ; ΟΠΣΚΕ; Ευρωπαϊκή Επιτροπή — State Aid",
+    "starting_point": null,
+    "locator_note": null,
+    "note": "Μη δημοσιεύσιμο πριν από έλεγχο"
+   },
+   "editorial_review": null,
+   "publication": {
+    "approved": false,
+    "approved_by": null,
+    "approved_on": null
+   },
+   "related": [],
+   "draft": null
+  },
+  {
+   "id": "LEX-0131",
+   "kind": "term",
+   "topic": "epidotiseis",
+   "title": {
+    "el": "de minimis",
+    "en": "De minimis Aid"
+   },
+   "priority": "Υψηλή — K1",
+   "body": null,
+   "sources": [],
+   "verification": {
+    "status": "source_located",
+    "checked_on": null,
+    "candidate_authority": "Ευρωπαϊκή Επιτροπή",
+    "starting_point": "https://competition-policy.ec.europa.eu/state-aid/legislation/regulations_en",
+    "locator_note": "De minimis Regulation (EU) 2023/2831",
+    "note": "Μη δημοσιεύσιμο πριν από έλεγχο",
+    "evidence_gate": "Official source + draft checked",
+    "official_source_candidate": {
+     "url": "https://competition-policy.ec.europa.eu/state-aid/legislation/regulations_en",
+     "scope": "Κανονισμός (ΕΕ) 2023/2831· πεδίο εφαρμογής και όρια",
+     "amendment": "https://competition-policy.ec.europa.eu/state-aid/procedures_en"
+    },
+    "remaining": "Verify exact source paragraph, legal currency and translation; sign-off required"
+   },
+   "editorial_review": null,
+   "publication": {
+    "approved": false,
+    "approved_by": null,
+    "approved_on": null
+   },
+   "related": [],
+   "draft": {
+    "el": "Κατηγορία μικρών κρατικών ενισχύσεων με ειδικό κανονιστικό πλαίσιο. Ο γενικός κανονισμός είναι ο (ΕΕ) 2023/2831· το εφαρμοστέο όριο και οι εξαιρέσεις πρέπει να ελέγχονται ανά περίπτωση.",
+    "en": "A category of small-value State aid under a dedicated regulatory regime. General Regulation (EU) 2023/2831 applies, subject to scope and sector-specific rules.",
+    "status": "DRAFT — not approved",
+    "note": "Internal draft from the K1 workbook — not verified, not approved, never rendered."
+   },
+   "k1_order": 30
+  },
+  {
+   "id": "LEX-0132",
+   "kind": "term",
+   "topic": "epidotiseis",
+   "title": {
+    "el": "ΓΑΚ",
+    "en": "General Block Exemption Regulation (GBER)"
+   },
+   "priority": "Υψηλή — K1",
+   "body": null,
+   "sources": [],
+   "verification": {
+    "status": "draft",
+    "checked_on": "2026-10-23",
+    "candidate_authority": "ΕΣΠΑ; ΟΠΣΚΕ; Ευρωπαϊκή Επιτροπή — State Aid",
+    "starting_point": "https://opske.gr/el/call/enishysi-ependytikon-shedion-yfistamenon-megalon-epiheiriseon-gia-tin-proothisi-tis-paragogis",
+    "locator_note": "Αναφορά στα άρθρα 33 και 41 ΓΑΚ — απαιτείται σύνδεση με πρωτογενή κανονισμό 651/2014",
+    "note": "Μη δημοσιεύσιμο πριν από έλεγχο",
+    "evidence_gate": "NOT VERIFIED",
+    "remaining": "Locate precise official source; check amendments; review EL/EN against it"
+   },
+   "editorial_review": null,
+   "publication": {
+    "approved": false,
+    "approved_by": null,
+    "approved_on": null
+   },
+   "related": [],
+   "draft": {
+    "el": "Ο ΓΑΚ είναι ο ενωσιακός κανονισμός που προβλέπει κατηγορίες κρατικών ενισχύσεων που μπορούν, υπό προϋποθέσεις, να εξαιρούνται από προηγούμενη κοινοποίηση.",
+    "en": "GBER sets categories of state aid that may be exempt from prior notification when conditions are met.",
+    "status": "RESEARCH DRAFT — exact source pending",
+    "note": "Internal draft from the K1 workbook — not verified, not approved, never rendered."
+   },
+   "k1_order": 31
+  },
+  {
+   "id": "LEX-0133",
+   "kind": "term",
+   "topic": "epidotiseis",
+   "title": {
+    "el": "σώρευση ενισχύσεων",
+    "en": null
+   },
+   "priority": "Υψηλή",
+   "body": null,
+   "sources": [],
+   "verification": {
+    "status": "unverified",
+    "checked_on": null,
+    "candidate_authority": "ΕΣΠΑ; ΟΠΣΚΕ; Ευρωπαϊκή Επιτροπή — State Aid",
+    "starting_point": null,
+    "locator_note": null,
+    "note": "Μη δημοσιεύσιμο πριν από έλεγχο"
+   },
+   "editorial_review": null,
+   "publication": {
+    "approved": false,
+    "approved_by": null,
+    "approved_on": null
+   },
+   "related": [],
+   "draft": null
+  },
+  {
+   "id": "LEX-0134",
+   "kind": "term",
+   "topic": "epidotiseis",
+   "title": {
+    "el": "ένταξη",
+    "en": null
+   },
+   "priority": "Υψηλή",
+   "body": null,
+   "sources": [],
+   "verification": {
+    "status": "unverified",
+    "checked_on": null,
+    "candidate_authority": "ΕΣΠΑ; ΟΠΣΚΕ; Ευρωπαϊκή Επιτροπή — State Aid",
+    "starting_point": null,
+    "locator_note": null,
+    "note": "Μη δημοσιεύσιμο πριν από έλεγχο"
+   },
+   "editorial_review": null,
+   "publication": {
+    "approved": false,
+    "approved_by": null,
+    "approved_on": null
+   },
+   "related": [],
+   "draft": null
+  },
+  {
+   "id": "LEX-0135",
+   "kind": "term",
+   "topic": "epidotiseis",
+   "title": {
+    "el": "εκταμίευση",
+    "en": null
+   },
+   "priority": "Υψηλή",
+   "body": null,
+   "sources": [],
+   "verification": {
+    "status": "unverified",
+    "checked_on": null,
+    "candidate_authority": "ΕΣΠΑ; ΟΠΣΚΕ; Ευρωπαϊκή Επιτροπή — State Aid",
+    "starting_point": null,
+    "locator_note": null,
+    "note": "Μη δημοσιεύσιμο πριν από έλεγχο"
+   },
+   "editorial_review": null,
+   "publication": {
+    "approved": false,
+    "approved_by": null,
+    "approved_on": null
+   },
+   "related": [],
+   "draft": null
+  },
+  {
+   "id": "LEX-0136",
+   "kind": "term",
+   "topic": "epidotiseis",
+   "title": {
+    "el": "επενδυτικό σχέδιο",
+    "en": null
+   },
+   "priority": "Υψηλή",
+   "body": null,
+   "sources": [],
+   "verification": {
+    "status": "unverified",
+    "checked_on": null,
+    "candidate_authority": "ΕΣΠΑ; ΟΠΣΚΕ; Ευρωπαϊκή Επιτροπή — State Aid",
+    "starting_point": null,
+    "locator_note": null,
+    "note": "Μη δημοσιεύσιμο πριν από έλεγχο"
+   },
+   "editorial_review": null,
+   "publication": {
+    "approved": false,
+    "approved_by": null,
+    "approved_on": null
+   },
+   "related": [],
+   "draft": null
+  },
+  {
+   "id": "LEX-0137",
+   "kind": "term",
+   "topic": "epidotiseis",
+   "title": {
+    "el": "προκαταβολή",
+    "en": null
+   },
+   "priority": "Υψηλή",
+   "body": null,
+   "sources": [],
+   "verification": {
+    "status": "unverified",
+    "checked_on": null,
+    "candidate_authority": "ΕΣΠΑ; ΟΠΣΚΕ; Ευρωπαϊκή Επιτροπή — State Aid",
+    "starting_point": null,
+    "locator_note": null,
+    "note": "Μη δημοσιεύσιμο πριν από έλεγχο"
+   },
+   "editorial_review": null,
+   "publication": {
+    "approved": false,
+    "approved_by": null,
+    "approved_on": null
+   },
+   "related": [],
+   "draft": null
+  },
+  {
+   "id": "LEX-0138",
+   "kind": "term",
+   "topic": "epidotiseis",
+   "title": {
+    "el": "εγγυητική επιστολή",
+    "en": null
+   },
+   "priority": "Υψηλή",
+   "body": null,
+   "sources": [],
+   "verification": {
+    "status": "unverified",
+    "checked_on": null,
+    "candidate_authority": "ΕΣΠΑ; ΟΠΣΚΕ; Ευρωπαϊκή Επιτροπή — State Aid",
+    "starting_point": null,
+    "locator_note": null,
+    "note": "Μη δημοσιεύσιμο πριν από έλεγχο"
+   },
+   "editorial_review": null,
+   "publication": {
+    "approved": false,
+    "approved_by": null,
+    "approved_on": null
+   },
+   "related": [],
+   "draft": null
+  },
+  {
+   "id": "LEX-0139",
+   "kind": "term",
+   "topic": "epidotiseis",
+   "title": {
+    "el": "επαλήθευση δαπανών",
+    "en": null
+   },
+   "priority": "Υψηλή",
+   "body": null,
+   "sources": [],
+   "verification": {
+    "status": "unverified",
+    "checked_on": null,
+    "candidate_authority": "ΕΣΠΑ; ΟΠΣΚΕ; Ευρωπαϊκή Επιτροπή — State Aid",
+    "starting_point": null,
+    "locator_note": null,
+    "note": "Μη δημοσιεύσιμο πριν από έλεγχο"
+   },
+   "editorial_review": null,
+   "publication": {
+    "approved": false,
+    "approved_by": null,
+    "approved_on": null
+   },
+   "related": [],
+   "draft": null
+  },
+  {
+   "id": "LEX-0140",
+   "kind": "term",
+   "topic": "epidotiseis",
+   "title": {
+    "el": "υποχρέωση διατήρησης",
+    "en": null
+   },
+   "priority": "Υψηλή",
+   "body": null,
+   "sources": [],
+   "verification": {
+    "status": "unverified",
+    "checked_on": null,
+    "candidate_authority": "ΕΣΠΑ; ΟΠΣΚΕ; Ευρωπαϊκή Επιτροπή — State Aid",
+    "starting_point": null,
+    "locator_note": null,
+    "note": "Μη δημοσιεύσιμο πριν από έλεγχο"
+   },
+   "editorial_review": null,
+   "publication": {
+    "approved": false,
+    "approved_by": null,
+    "approved_on": null
+   },
+   "related": [],
+   "draft": null
+  },
+  {
+   "id": "LEX-0141",
+   "kind": "term",
+   "topic": "epidotiseis",
+   "title": {
+    "el": "προθεσμία υποβολής",
+    "en": null
+   },
+   "priority": "Υψηλή",
+   "body": null,
+   "sources": [],
+   "verification": {
+    "status": "unverified",
+    "checked_on": null,
+    "candidate_authority": "ΕΣΠΑ; ΟΠΣΚΕ; Ευρωπαϊκή Επιτροπή — State Aid",
+    "starting_point": null,
+    "locator_note": null,
+    "note": "Μη δημοσιεύσιμο πριν από έλεγχο"
+   },
+   "editorial_review": null,
+   "publication": {
+    "approved": false,
+    "approved_by": null,
+    "approved_on": null
+   },
+   "related": [],
+   "draft": null
+  },
+  {
+   "id": "LEX-0142",
+   "kind": "term",
+   "topic": "epidotiseis",
+   "title": {
+    "el": "ανοιχτή πρόσκληση",
+    "en": null
+   },
+   "priority": "Υψηλή",
+   "body": null,
+   "sources": [],
+   "verification": {
+    "status": "unverified",
+    "checked_on": null,
+    "candidate_authority": "ΕΣΠΑ; ΟΠΣΚΕ; Ευρωπαϊκή Επιτροπή — State Aid",
+    "starting_point": null,
+    "locator_note": null,
+    "note": "Μη δημοσιεύσιμο πριν από έλεγχο"
+   },
+   "editorial_review": null,
+   "publication": {
+    "approved": false,
+    "approved_by": null,
+    "approved_on": null
+   },
+   "related": [],
+   "draft": null
+  },
+  {
+   "id": "LEX-0143",
+   "kind": "term",
+   "topic": "epidotiseis",
+   "title": {
+    "el": "κλειστή πρόσκληση",
+    "en": null
+   },
+   "priority": "Υψηλή",
+   "body": null,
+   "sources": [],
+   "verification": {
+    "status": "unverified",
+    "checked_on": null,
+    "candidate_authority": "ΕΣΠΑ; ΟΠΣΚΕ; Ευρωπαϊκή Επιτροπή — State Aid",
+    "starting_point": null,
+    "locator_note": null,
+    "note": "Μη δημοσιεύσιμο πριν από έλεγχο"
+   },
+   "editorial_review": null,
+   "publication": {
+    "approved": false,
+    "approved_by": null,
+    "approved_on": null
+   },
+   "related": [],
+   "draft": null
+  },
+  {
+   "id": "LEX-0144",
+   "kind": "term",
+   "topic": "epidotiseis",
+   "title": {
+    "el": "υπό επιβεβαίωση",
+    "en": null
+   },
+   "priority": "Υψηλή",
+   "body": null,
+   "sources": [],
+   "verification": {
+    "status": "unverified",
+    "checked_on": null,
+    "candidate_authority": "ΕΣΠΑ; ΟΠΣΚΕ; Ευρωπαϊκή Επιτροπή — State Aid",
+    "starting_point": null,
+    "locator_note": null,
+    "note": "Μη δημοσιεύσιμο πριν από έλεγχο"
+   },
+   "editorial_review": null,
+   "publication": {
+    "approved": false,
+    "approved_by": null,
+    "approved_on": null
+   },
+   "related": [],
+   "draft": null
+  },
+  {
+   "id": "BAS-0145",
+   "kind": "article",
+   "topic": "epidotiseis",
+   "title": {
+    "el": "Τι είναι το ΕΣΠΑ;",
+    "en": null
+   },
+   "priority": "Μεσαία",
+   "body": null,
+   "sources": [],
+   "verification": {
+    "status": "unverified",
+    "checked_on": null,
+    "candidate_authority": "ΕΣΠΑ; ΟΠΣΚΕ; Ευρωπαϊκή Επιτροπή — State Aid",
+    "starting_point": null,
+    "locator_note": null,
+    "note": "Μη δημοσιεύσιμο πριν από έλεγχο"
+   },
+   "editorial_review": null,
+   "publication": {
+    "approved": false,
+    "approved_by": null,
+    "approved_on": null
+   },
+   "related": [],
+   "draft": null
+  },
+  {
+   "id": "BAS-0146",
+   "kind": "article",
+   "topic": "epidotiseis",
+   "title": {
+    "el": "Ποια η διαφορά επιδότησης, επιχορήγησης και δανείου;",
+    "en": null
+   },
+   "priority": "Μεσαία",
+   "body": null,
+   "sources": [],
+   "verification": {
+    "status": "unverified",
+    "checked_on": null,
+    "candidate_authority": "ΕΣΠΑ; ΟΠΣΚΕ; Ευρωπαϊκή Επιτροπή — State Aid",
+    "starting_point": null,
+    "locator_note": null,
+    "note": "Μη δημοσιεύσιμο πριν από έλεγχο"
+   },
+   "editorial_review": null,
+   "publication": {
+    "approved": false,
+    "approved_by": null,
+    "approved_on": null
+   },
+   "related": [],
+   "draft": null
+  },
+  {
+   "id": "BAS-0147",
+   "kind": "article",
+   "topic": "epidotiseis",
+   "title": {
+    "el": "Τι είναι οι κρατικές ενισχύσεις;",
+    "en": null
+   },
+   "priority": "Μεσαία",
+   "body": null,
+   "sources": [],
+   "verification": {
+    "status": "unverified",
+    "checked_on": null,
+    "candidate_authority": "ΕΣΠΑ; ΟΠΣΚΕ; Ευρωπαϊκή Επιτροπή — State Aid",
+    "starting_point": null,
+    "locator_note": null,
+    "note": "Μη δημοσιεύσιμο πριν από έλεγχο"
+   },
+   "editorial_review": null,
+   "publication": {
+    "approved": false,
+    "approved_by": null,
+    "approved_on": null
+   },
+   "related": [],
+   "draft": null
+  },
+  {
+   "id": "BAS-0148",
+   "kind": "article",
+   "topic": "epidotiseis",
+   "title": {
+    "el": "Τι σημαίνει επιλεξιμότητα;",
+    "en": null
+   },
+   "priority": "Μεσαία",
+   "body": null,
+   "sources": [],
+   "verification": {
+    "status": "unverified",
+    "checked_on": null,
+    "candidate_authority": "ΕΣΠΑ; ΟΠΣΚΕ; Ευρωπαϊκή Επιτροπή — State Aid",
+    "starting_point": null,
+    "locator_note": null,
+    "note": "Μη δημοσιεύσιμο πριν από έλεγχο"
+   },
+   "editorial_review": null,
+   "publication": {
+    "approved": false,
+    "approved_by": null,
+    "approved_on": null
+   },
+   "related": [],
+   "draft": null
+  },
+  {
+   "id": "FAQ-0149",
+   "kind": "faq",
+   "topic": "epidotiseis",
+   "title": {
+    "el": "Μπορώ να συμμετέχω σε περισσότερα από ένα προγράμματα;",
+    "en": null
+   },
+   "priority": "Μεσαία",
+   "body": null,
+   "sources": [],
+   "verification": {
+    "status": "unverified",
+    "checked_on": null,
+    "candidate_authority": "ΕΣΠΑ; ΟΠΣΚΕ; Ευρωπαϊκή Επιτροπή — State Aid",
+    "starting_point": null,
+    "locator_note": null,
+    "note": "Μη δημοσιεύσιμο πριν από έλεγχο"
+   },
+   "editorial_review": null,
+   "publication": {
+    "approved": false,
+    "approved_by": null,
+    "approved_on": null
+   },
+   "related": [],
+   "draft": null
+  },
+  {
+   "id": "FAQ-0150",
+   "kind": "faq",
+   "topic": "epidotiseis",
+   "title": {
+    "el": "Πρέπει να επιστρέψω μια επιχορήγηση;",
+    "en": null
+   },
+   "priority": "Μεσαία",
+   "body": null,
+   "sources": [],
+   "verification": {
+    "status": "unverified",
+    "checked_on": null,
+    "candidate_authority": "ΕΣΠΑ; ΟΠΣΚΕ; Ευρωπαϊκή Επιτροπή — State Aid",
+    "starting_point": null,
+    "locator_note": null,
+    "note": "Μη δημοσιεύσιμο πριν από έλεγχο"
+   },
+   "editorial_review": null,
+   "publication": {
+    "approved": false,
+    "approved_by": null,
+    "approved_on": null
+   },
+   "related": [],
+   "draft": null
+  },
+  {
+   "id": "FAQ-0151",
+   "kind": "faq",
+   "topic": "epidotiseis",
+   "title": {
+    "el": "Τι γίνεται αν η αίτησή μου απορριφθεί;",
+    "en": null
+   },
+   "priority": "Μεσαία",
+   "body": null,
+   "sources": [],
+   "verification": {
+    "status": "unverified",
+    "checked_on": null,
+    "candidate_authority": "ΕΣΠΑ; ΟΠΣΚΕ; Ευρωπαϊκή Επιτροπή — State Aid",
+    "starting_point": null,
+    "locator_note": null,
+    "note": "Μη δημοσιεύσιμο πριν από έλεγχο"
+   },
+   "editorial_review": null,
+   "publication": {
+    "approved": false,
+    "approved_by": null,
+    "approved_on": null
+   },
+   "related": [],
+   "draft": null
+  },
+  {
+   "id": "FAQ-0152",
+   "kind": "faq",
+   "topic": "epidotiseis",
+   "title": {
+    "el": "Πότε καταβάλλονται τα χρήματα;",
+    "en": null
+   },
+   "priority": "Μεσαία",
+   "body": null,
+   "sources": [],
+   "verification": {
+    "status": "unverified",
+    "checked_on": null,
+    "candidate_authority": "ΕΣΠΑ; ΟΠΣΚΕ; Ευρωπαϊκή Επιτροπή — State Aid",
+    "starting_point": null,
+    "locator_note": null,
+    "note": "Μη δημοσιεύσιμο πριν από έλεγχο"
+   },
+   "editorial_review": null,
+   "publication": {
+    "approved": false,
+    "approved_by": null,
+    "approved_on": null
+   },
+   "related": [],
+   "draft": null
+  },
+  {
+   "id": "LEX-0153",
+   "kind": "term",
+   "topic": "akinita",
+   "title": {
+    "el": "κύρια κατοικία",
+    "en": null
+   },
+   "priority": "Μεσαία",
+   "body": null,
+   "sources": [],
+   "verification": {
+    "status": "unverified",
+    "checked_on": null,
+    "candidate_authority": "Ελληνικό Κτηματολόγιο; ΑΑΔΕ",
+    "starting_point": null,
+    "locator_note": null,
+    "note": "Μη δημοσιεύσιμο πριν από έλεγχο"
+   },
+   "editorial_review": null,
+   "publication": {
+    "approved": false,
+    "approved_by": null,
+    "approved_on": null
+   },
+   "related": [],
+   "draft": null
+  },
+  {
+   "id": "LEX-0154",
+   "kind": "term",
+   "topic": "akinita",
+   "title": {
+    "el": "πρώτη κατοικία",
+    "en": null
+   },
+   "priority": "Μεσαία",
+   "body": null,
+   "sources": [],
+   "verification": {
+    "status": "unverified",
+    "checked_on": null,
+    "candidate_authority": "Ελληνικό Κτηματολόγιο; ΑΑΔΕ",
+    "starting_point": null,
+    "locator_note": null,
+    "note": "Μη δημοσιεύσιμο πριν από έλεγχο"
+   },
+   "editorial_review": null,
+   "publication": {
+    "approved": false,
+    "approved_by": null,
+    "approved_on": null
+   },
+   "related": [],
+   "draft": null
+  },
+  {
+   "id": "LEX-0155",
+   "kind": "term",
+   "topic": "akinita",
+   "title": {
+    "el": "μισθωτήριο",
+    "en": null
+   },
+   "priority": "Μεσαία",
+   "body": null,
+   "sources": [],
+   "verification": {
+    "status": "unverified",
+    "checked_on": null,
+    "candidate_authority": "Ελληνικό Κτηματολόγιο; ΑΑΔΕ",
+    "starting_point": null,
+    "locator_note": null,
+    "note": "Μη δημοσιεύσιμο πριν από έλεγχο"
+   },
+   "editorial_review": null,
+   "publication": {
+    "approved": false,
+    "approved_by": null,
+    "approved_on": null
+   },
+   "related": [],
+   "draft": null
+  },
+  {
+   "id": "LEX-0156",
+   "kind": "term",
+   "topic": "akinita",
+   "title": {
+    "el": "ιδιοκτήτης",
+    "en": null
+   },
+   "priority": "Μεσαία",
+   "body": null,
+   "sources": [],
+   "verification": {
+    "status": "unverified",
+    "checked_on": null,
+    "candidate_authority": "Ελληνικό Κτηματολόγιο; ΑΑΔΕ",
+    "starting_point": null,
+    "locator_note": null,
+    "note": "Μη δημοσιεύσιμο πριν από έλεγχο"
+   },
+   "editorial_review": null,
+   "publication": {
+    "approved": false,
+    "approved_by": null,
+    "approved_on": null
+   },
+   "related": [],
+   "draft": null
+  },
+  {
+   "id": "LEX-0157",
+   "kind": "term",
+   "topic": "akinita",
+   "title": {
+    "el": "μισθωτής",
+    "en": null
+   },
+   "priority": "Μεσαία",
+   "body": null,
+   "sources": [],
+   "verification": {
+    "status": "unverified",
+    "checked_on": null,
+    "candidate_authority": "Ελληνικό Κτηματολόγιο; ΑΑΔΕ",
+    "starting_point": null,
+    "locator_note": null,
+    "note": "Μη δημοσιεύσιμο πριν από έλεγχο"
+   },
+   "editorial_review": null,
+   "publication": {
+    "approved": false,
+    "approved_by": null,
+    "approved_on": null
+   },
+   "related": [],
+   "draft": null
+  },
+  {
+   "id": "LEX-0158",
+   "kind": "term",
+   "topic": "akinita",
+   "title": {
+    "el": "ΕΝΦΙΑ",
+    "en": "Unified Property Tax (ENFIA)"
+   },
+   "priority": "Υψηλή — K1",
+   "body": null,
+   "sources": [],
+   "verification": {
+    "status": "draft",
+    "checked_on": "2026-10-23",
+    "candidate_authority": "Ελληνικό Κτηματολόγιο; ΑΑΔΕ",
+    "starting_point": "https://www.aade.gr/omogeneis-katoikoi-exoterikoy/kefalaio/forologia-akinitis-perioysias-e9-enfia",
+    "locator_note": "Ενιαίος Φόρος Ιδιοκτησίας Ακινήτων",
+    "note": "Μη δημοσιεύσιμο πριν από έλεγχο",
+    "evidence_gate": "NOT VERIFIED",
+    "remaining": "Locate precise official source; check amendments; review EL/EN against it"
+   },
+   "editorial_review": null,
+   "publication": {
+    "approved": false,
+    "approved_by": null,
+    "approved_on": null
+   },
+   "related": [],
+   "draft": {
+    "el": "Ο ΕΝΦΙΑ είναι ετήσιος φόρος ακίνητης περιουσίας στην Ελλάδα, ο οποίος υπολογίζεται με βάση τα στοιχεία και τους κανόνες που ισχύουν για το αντίστοιχο έτος.",
+    "en": "ENFIA is Greece’s annual property tax, calculated under the rules and property records applicable to each year.",
+    "status": "SOURCE-LOCATED DRAFT — review required",
+    "note": "Internal draft from the K1 workbook — not verified, not approved, never rendered."
+   },
+   "k1_order": 38
+  },
+  {
+   "id": "LEX-0159",
+   "kind": "term",
+   "topic": "akinita",
+   "title": {
+    "el": "αντικειμενική αξία",
+    "en": null
+   },
+   "priority": "Μεσαία",
+   "body": null,
+   "sources": [],
+   "verification": {
+    "status": "unverified",
+    "checked_on": null,
+    "candidate_authority": "Ελληνικό Κτηματολόγιο; ΑΑΔΕ",
+    "starting_point": null,
+    "locator_note": null,
+    "note": "Μη δημοσιεύσιμο πριν από έλεγχο"
+   },
+   "editorial_review": null,
+   "publication": {
+    "approved": false,
+    "approved_by": null,
+    "approved_on": null
+   },
+   "related": [],
+   "draft": null
+  },
+  {
+   "id": "LEX-0160",
+   "kind": "term",
+   "topic": "akinita",
+   "title": {
+    "el": "Κτηματολόγιο",
+    "en": null
+   },
+   "priority": "Μεσαία",
+   "body": null,
+   "sources": [],
+   "verification": {
+    "status": "unverified",
+    "checked_on": null,
+    "candidate_authority": "Ελληνικό Κτηματολόγιο; ΑΑΔΕ",
+    "starting_point": null,
+    "locator_note": null,
+    "note": "Μη δημοσιεύσιμο πριν από έλεγχο"
+   },
+   "editorial_review": null,
+   "publication": {
+    "approved": false,
+    "approved_by": null,
+    "approved_on": null
+   },
+   "related": [],
+   "draft": null
+  },
+  {
+   "id": "LEX-0161",
+   "kind": "term",
+   "topic": "akinita",
+   "title": {
+    "el": "ΚΑΕΚ",
+    "en": null
+   },
+   "priority": "Μεσαία",
+   "body": null,
+   "sources": [],
+   "verification": {
+    "status": "unverified",
+    "checked_on": null,
+    "candidate_authority": "Ελληνικό Κτηματολόγιο; ΑΑΔΕ",
+    "starting_point": null,
+    "locator_note": null,
+    "note": "Μη δημοσιεύσιμο πριν από έλεγχο"
+   },
+   "editorial_review": null,
+   "publication": {
+    "approved": false,
+    "approved_by": null,
+    "approved_on": null
+   },
+   "related": [],
+   "draft": null
+  },
+  {
+   "id": "LEX-0162",
+   "kind": "term",
+   "topic": "akinita",
+   "title": {
+    "el": "ΠΕΑ",
+    "en": null
+   },
+   "priority": "Μεσαία",
+   "body": null,
+   "sources": [],
+   "verification": {
+    "status": "unverified",
+    "checked_on": null,
+    "candidate_authority": "Ελληνικό Κτηματολόγιο; ΑΑΔΕ",
+    "starting_point": null,
+    "locator_note": null,
+    "note": "Μη δημοσιεύσιμο πριν από έλεγχο"
+   },
+   "editorial_review": null,
+   "publication": {
+    "approved": false,
+    "approved_by": null,
+    "approved_on": null
+   },
+   "related": [],
+   "draft": null
+  },
+  {
+   "id": "LEX-0163",
+   "kind": "term",
+   "topic": "akinita",
+   "title": {
+    "el": "ενεργειακή κλάση",
+    "en": null
+   },
+   "priority": "Μεσαία",
+   "body": null,
+   "sources": [],
+   "verification": {
+    "status": "unverified",
+    "checked_on": null,
+    "candidate_authority": "Ελληνικό Κτηματολόγιο; ΑΑΔΕ",
+    "starting_point": null,
+    "locator_note": null,
+    "note": "Μη δημοσιεύσιμο πριν από έλεγχο"
+   },
+   "editorial_review": null,
+   "publication": {
+    "approved": false,
+    "approved_by": null,
+    "approved_on": null
+   },
+   "related": [],
+   "draft": null
+  },
+  {
+   "id": "LEX-0164",
+   "kind": "term",
+   "topic": "akinita",
+   "title": {
+    "el": "επικαρπία",
+    "en": null
+   },
+   "priority": "Μεσαία",
+   "body": null,
+   "sources": [],
+   "verification": {
+    "status": "unverified",
+    "checked_on": null,
+    "candidate_authority": "Ελληνικό Κτηματολόγιο; ΑΑΔΕ",
+    "starting_point": null,
+    "locator_note": null,
+    "note": "Μη δημοσιεύσιμο πριν από έλεγχο"
+   },
+   "editorial_review": null,
+   "publication": {
+    "approved": false,
+    "approved_by": null,
+    "approved_on": null
+   },
+   "related": [],
+   "draft": null
+  },
+  {
+   "id": "LEX-0165",
+   "kind": "term",
+   "topic": "akinita",
+   "title": {
+    "el": "ψιλή κυριότητα",
+    "en": null
+   },
+   "priority": "Μεσαία",
+   "body": null,
+   "sources": [],
+   "verification": {
+    "status": "unverified",
+    "checked_on": null,
+    "candidate_authority": "Ελληνικό Κτηματολόγιο; ΑΑΔΕ",
+    "starting_point": null,
+    "locator_note": null,
+    "note": "Μη δημοσιεύσιμο πριν από έλεγχο"
+   },
+   "editorial_review": null,
+   "publication": {
+    "approved": false,
+    "approved_by": null,
+    "approved_on": null
+   },
+   "related": [],
+   "draft": null
+  },
+  {
+   "id": "LEX-0166",
+   "kind": "term",
+   "topic": "akinita",
+   "title": {
+    "el": "συνιδιοκτησία",
+    "en": null
+   },
+   "priority": "Μεσαία",
+   "body": null,
+   "sources": [],
+   "verification": {
+    "status": "unverified",
+    "checked_on": null,
+    "candidate_authority": "Ελληνικό Κτηματολόγιο; ΑΑΔΕ",
+    "starting_point": null,
+    "locator_note": null,
+    "note": "Μη δημοσιεύσιμο πριν από έλεγχο"
+   },
+   "editorial_review": null,
+   "publication": {
+    "approved": false,
+    "approved_by": null,
+    "approved_on": null
+   },
+   "related": [],
+   "draft": null
+  },
+  {
+   "id": "LEX-0167",
+   "kind": "term",
+   "topic": "akinita",
+   "title": {
+    "el": "κύριος χώρος",
+    "en": null
+   },
+   "priority": "Μεσαία",
+   "body": null,
+   "sources": [],
+   "verification": {
+    "status": "unverified",
+    "checked_on": null,
+    "candidate_authority": "Ελληνικό Κτηματολόγιο; ΑΑΔΕ",
+    "starting_point": null,
+    "locator_note": null,
+    "note": "Μη δημοσιεύσιμο πριν από έλεγχο"
+   },
+   "editorial_review": null,
+   "publication": {
+    "approved": false,
+    "approved_by": null,
+    "approved_on": null
+   },
+   "related": [],
+   "draft": null
+  },
+  {
+   "id": "LEX-0168",
+   "kind": "term",
+   "topic": "akinita",
+   "title": {
+    "el": "εμπράγματο δικαίωμα",
+    "en": null
+   },
+   "priority": "Μεσαία",
+   "body": null,
+   "sources": [],
+   "verification": {
+    "status": "unverified",
+    "checked_on": null,
+    "candidate_authority": "Ελληνικό Κτηματολόγιο; ΑΑΔΕ",
+    "starting_point": null,
+    "locator_note": null,
+    "note": "Μη δημοσιεύσιμο πριν από έλεγχο"
+   },
+   "editorial_review": null,
+   "publication": {
+    "approved": false,
+    "approved_by": null,
+    "approved_on": null
+   },
+   "related": [],
+   "draft": null
+  },
+  {
+   "id": "BAS-0169",
+   "kind": "article",
+   "topic": "akinita",
+   "title": {
+    "el": "Ποια η διαφορά κύριας και πρώτης κατοικίας;",
+    "en": null
+   },
+   "priority": "Μεσαία",
+   "body": null,
+   "sources": [],
+   "verification": {
+    "status": "unverified",
+    "checked_on": null,
+    "candidate_authority": "Ελληνικό Κτηματολόγιο; ΑΑΔΕ",
+    "starting_point": null,
+    "locator_note": null,
+    "note": "Μη δημοσιεύσιμο πριν από έλεγχο"
+   },
+   "editorial_review": null,
+   "publication": {
+    "approved": false,
+    "approved_by": null,
+    "approved_on": null
+   },
+   "related": [],
+   "draft": null
+  },
+  {
+   "id": "BAS-0170",
+   "kind": "article",
+   "topic": "akinita",
+   "title": {
+    "el": "Πώς λειτουργεί η φορολογία ακινήτων;",
+    "en": null
+   },
+   "priority": "Μεσαία",
+   "body": null,
+   "sources": [],
+   "verification": {
+    "status": "unverified",
+    "checked_on": null,
+    "candidate_authority": "Ελληνικό Κτηματολόγιο; ΑΑΔΕ",
+    "starting_point": null,
+    "locator_note": null,
+    "note": "Μη δημοσιεύσιμο πριν από έλεγχο"
+   },
+   "editorial_review": null,
+   "publication": {
+    "approved": false,
+    "approved_by": null,
+    "approved_on": null
+   },
+   "related": [],
+   "draft": null
+  },
+  {
+   "id": "BAS-0171",
+   "kind": "article",
+   "topic": "akinita",
+   "title": {
+    "el": "Τι είναι η ενεργειακή απόδοση κτιρίου;",
+    "en": null
+   },
+   "priority": "Μεσαία",
+   "body": null,
+   "sources": [],
+   "verification": {
+    "status": "unverified",
+    "checked_on": null,
+    "candidate_authority": "Ελληνικό Κτηματολόγιο; ΑΑΔΕ",
+    "starting_point": null,
+    "locator_note": null,
+    "note": "Μη δημοσιεύσιμο πριν από έλεγχο"
+   },
+   "editorial_review": null,
+   "publication": {
+    "approved": false,
+    "approved_by": null,
+    "approved_on": null
+   },
+   "related": [],
+   "draft": null
+  },
+  {
+   "id": "FAQ-0172",
+   "kind": "faq",
+   "topic": "akinita",
+   "title": {
+    "el": "Πού βρίσκω το Ε9;",
+    "en": null
+   },
+   "priority": "Μεσαία",
+   "body": null,
+   "sources": [],
+   "verification": {
+    "status": "unverified",
+    "checked_on": null,
+    "candidate_authority": "Ελληνικό Κτηματολόγιο; ΑΑΔΕ",
+    "starting_point": null,
+    "locator_note": null,
+    "note": "Μη δημοσιεύσιμο πριν από έλεγχο"
+   },
+   "editorial_review": null,
+   "publication": {
+    "approved": false,
+    "approved_by": null,
+    "approved_on": null
+   },
+   "related": [],
+   "draft": null
+  },
+  {
+   "id": "FAQ-0173",
+   "kind": "faq",
+   "topic": "akinita",
+   "title": {
+    "el": "Τι διαφορά έχει η ψιλή κυριότητα από την επικαρπία;",
+    "en": null
+   },
+   "priority": "Μεσαία",
+   "body": null,
+   "sources": [],
+   "verification": {
+    "status": "unverified",
+    "checked_on": null,
+    "candidate_authority": "Ελληνικό Κτηματολόγιο; ΑΑΔΕ",
+    "starting_point": null,
+    "locator_note": null,
+    "note": "Μη δημοσιεύσιμο πριν από έλεγχο"
+   },
+   "editorial_review": null,
+   "publication": {
+    "approved": false,
+    "approved_by": null,
+    "approved_on": null
+   },
+   "related": [],
+   "draft": null
+  },
+  {
+   "id": "FAQ-0174",
+   "kind": "faq",
+   "topic": "akinita",
+   "title": {
+    "el": "Μπορώ να αιτηθώ ενίσχυση για ακίνητο που ενοικιάζω;",
+    "en": null
+   },
+   "priority": "Μεσαία",
+   "body": null,
+   "sources": [],
+   "verification": {
+    "status": "unverified",
+    "checked_on": null,
+    "candidate_authority": "Ελληνικό Κτηματολόγιο; ΑΑΔΕ",
+    "starting_point": null,
+    "locator_note": null,
+    "note": "Μη δημοσιεύσιμο πριν από έλεγχο"
+   },
+   "editorial_review": null,
+   "publication": {
+    "approved": false,
+    "approved_by": null,
+    "approved_on": null
+   },
+   "related": [],
+   "draft": null
+  },
+  {
+   "id": "LEX-0175",
+   "kind": "term",
+   "topic": "koinonikes-paroxes",
+   "title": {
+    "el": "ΟΠΕΚΑ",
+    "en": null
+   },
+   "priority": "Μεσαία",
+   "body": null,
+   "sources": [],
+   "verification": {
+    "status": "unverified",
+    "checked_on": null,
+    "candidate_authority": "ΟΠΕΚΑ",
+    "starting_point": null,
+    "locator_note": null,
+    "note": "Μη δημοσιεύσιμο πριν από έλεγχο"
+   },
+   "editorial_review": null,
+   "publication": {
+    "approved": false,
+    "approved_by": null,
+    "approved_on": null
+   },
+   "related": [],
+   "draft": null
+  },
+  {
+   "id": "LEX-0176",
+   "kind": "term",
+   "topic": "koinonikes-paroxes",
+   "title": {
+    "el": "Α21",
+    "en": "A21 child benefit"
+   },
+   "priority": "Υψηλή — K1",
+   "body": null,
+   "sources": [],
+   "verification": {
+    "status": "draft",
+    "checked_on": "2026-10-23",
+    "candidate_authority": "ΟΠΕΚΑ",
+    "starting_point": "https://opeka.gr/epidomata/",
+    "locator_note": "Απαιτείται ειδική επίσημη σελίδα επιδόματος παιδιού",
+    "note": "Μη δημοσιεύσιμο πριν από έλεγχο",
+    "evidence_gate": "NOT VERIFIED",
+    "remaining": "Locate precise official source; check amendments; review EL/EN against it"
+   },
+   "editorial_review": null,
+   "publication": {
+    "approved": false,
+    "approved_by": null,
+    "approved_on": null
+   },
+   "related": [],
+   "draft": {
+    "el": "Το Α21 είναι η ονομασία της αίτησης/παροχής επιδόματος παιδιού, με κριτήρια και διαδικασία που ορίζονται από τον αρμόδιο φορέα.",
+    "en": "A21 refers to Greece’s child-benefit application/benefit, subject to the responsible authority’s criteria.",
+    "status": "RESEARCH DRAFT — exact source pending",
+    "note": "Internal draft from the K1 workbook — not verified, not approved, never rendered."
+   },
+   "k1_order": 36
+  },
+  {
+   "id": "LEX-0177",
+   "kind": "term",
+   "topic": "koinonikes-paroxes",
+   "title": {
+    "el": "επίδομα στέγασης",
+    "en": null
+   },
+   "priority": "Μεσαία",
+   "body": null,
+   "sources": [],
+   "verification": {
+    "status": "unverified",
+    "checked_on": null,
+    "candidate_authority": "ΟΠΕΚΑ",
+    "starting_point": null,
+    "locator_note": null,
+    "note": "Μη δημοσιεύσιμο πριν από έλεγχο"
+   },
+   "editorial_review": null,
+   "publication": {
+    "approved": false,
+    "approved_by": null,
+    "approved_on": null
+   },
+   "related": [],
+   "draft": null
+  },
+  {
+   "id": "LEX-0178",
+   "kind": "term",
+   "topic": "koinonikes-paroxes",
+   "title": {
+    "el": "επίδομα γέννησης",
+    "en": null
+   },
+   "priority": "Μεσαία",
+   "body": null,
+   "sources": [],
+   "verification": {
+    "status": "unverified",
+    "checked_on": null,
+    "candidate_authority": "ΟΠΕΚΑ",
+    "starting_point": null,
+    "locator_note": null,
+    "note": "Μη δημοσιεύσιμο πριν από έλεγχο"
+   },
+   "editorial_review": null,
+   "publication": {
+    "approved": false,
+    "approved_by": null,
+    "approved_on": null
+   },
+   "related": [],
+   "draft": null
+  },
+  {
+   "id": "LEX-0179",
+   "kind": "term",
+   "topic": "koinonikes-paroxes",
+   "title": {
+    "el": "ελάχιστο εγγυημένο εισόδημα",
+    "en": null
+   },
+   "priority": "Μεσαία",
+   "body": null,
+   "sources": [],
+   "verification": {
+    "status": "unverified",
+    "checked_on": null,
+    "candidate_authority": "ΟΠΕΚΑ",
+    "starting_point": null,
+    "locator_note": null,
+    "note": "Μη δημοσιεύσιμο πριν από έλεγχο"
+   },
+   "editorial_review": null,
+   "publication": {
+    "approved": false,
+    "approved_by": null,
+    "approved_on": null
+   },
+   "related": [],
+   "draft": null
+  },
+  {
+   "id": "LEX-0180",
+   "kind": "term",
+   "topic": "koinonikes-paroxes",
+   "title": {
+    "el": "νοικοκυριό",
+    "en": "Household"
+   },
+   "priority": "Υψηλή — K1",
+   "body": null,
+   "sources": [],
+   "verification": {
+    "status": "draft",
+    "checked_on": "2026-10-23",
+    "candidate_authority": "ΟΠΕΚΑ",
+    "starting_point": "https://opeka.gr/epidomata/",
+    "locator_note": "Απαιτείται ορισμός ανά επίδομα — όχι γενικός",
+    "note": "Μη δημοσιεύσιμο πριν από έλεγχο",
+    "evidence_gate": "NOT VERIFIED",
+    "remaining": "Locate precise official source; check amendments; review EL/EN against it"
+   },
+   "editorial_review": null,
+   "publication": {
+    "approved": false,
+    "approved_by": null,
+    "approved_on": null
+   },
+   "related": [],
+   "draft": {
+    "el": "Το νοικοκυριό είναι μονάδα προσώπων που ορίζεται από τους κανόνες συγκεκριμένης παροχής ή στατιστικής χρήσης· δεν έχει πάντα τον ίδιο ορισμό.",
+    "en": "A household is a unit of persons defined for a specific benefit or statistical purpose; definitions vary.",
+    "status": "RESEARCH DRAFT — exact source pending",
+    "note": "Internal draft from the K1 workbook — not verified, not approved, never rendered."
+   },
+   "k1_order": 37
+  },
+  {
+   "id": "LEX-0181",
+   "kind": "term",
+   "topic": "koinonikes-paroxes",
+   "title": {
+    "el": "εξαρτώμενο μέλος",
+    "en": null
+   },
+   "priority": "Μεσαία",
+   "body": null,
+   "sources": [],
+   "verification": {
+    "status": "unverified",
+    "checked_on": null,
+    "candidate_authority": "ΟΠΕΚΑ",
+    "starting_point": null,
+    "locator_note": null,
+    "note": "Μη δημοσιεύσιμο πριν από έλεγχο"
+   },
+   "editorial_review": null,
+   "publication": {
+    "approved": false,
+    "approved_by": null,
+    "approved_on": null
+   },
+   "related": [],
+   "draft": null
+  },
+  {
+   "id": "LEX-0182",
+   "kind": "term",
+   "topic": "koinonikes-paroxes",
+   "title": {
+    "el": "οικογενειακό εισόδημα",
+    "en": null
+   },
+   "priority": "Μεσαία",
+   "body": null,
+   "sources": [],
+   "verification": {
+    "status": "unverified",
+    "checked_on": null,
+    "candidate_authority": "ΟΠΕΚΑ",
+    "starting_point": null,
+    "locator_note": null,
+    "note": "Μη δημοσιεύσιμο πριν από έλεγχο"
+   },
+   "editorial_review": null,
+   "publication": {
+    "approved": false,
+    "approved_by": null,
+    "approved_on": null
+   },
+   "related": [],
+   "draft": null
+  },
+  {
+   "id": "LEX-0183",
+   "kind": "term",
+   "topic": "koinonikes-paroxes",
+   "title": {
+    "el": "μονογονεϊκή οικογένεια",
+    "en": null
+   },
+   "priority": "Μεσαία",
+   "body": null,
+   "sources": [],
+   "verification": {
+    "status": "unverified",
+    "checked_on": null,
+    "candidate_authority": "ΟΠΕΚΑ",
+    "starting_point": null,
+    "locator_note": null,
+    "note": "Μη δημοσιεύσιμο πριν από έλεγχο"
+   },
+   "editorial_review": null,
+   "publication": {
+    "approved": false,
+    "approved_by": null,
+    "approved_on": null
+   },
+   "related": [],
+   "draft": null
+  },
+  {
+   "id": "LEX-0184",
+   "kind": "term",
+   "topic": "koinonikes-paroxes",
+   "title": {
+    "el": "αναπηρία",
+    "en": null
+   },
+   "priority": "Μεσαία",
+   "body": null,
+   "sources": [],
+   "verification": {
+    "status": "unverified",
+    "checked_on": null,
+    "candidate_authority": "ΟΠΕΚΑ",
+    "starting_point": null,
+    "locator_note": null,
+    "note": "Μη δημοσιεύσιμο πριν από έλεγχο"
+   },
+   "editorial_review": null,
+   "publication": {
+    "approved": false,
+    "approved_by": null,
+    "approved_on": null
+   },
+   "related": [],
+   "draft": null
+  },
+  {
+   "id": "LEX-0185",
+   "kind": "term",
+   "topic": "koinonikes-paroxes",
+   "title": {
+    "el": "ΚΕΠΑ",
+    "en": null
+   },
+   "priority": "Μεσαία",
+   "body": null,
+   "sources": [],
+   "verification": {
+    "status": "unverified",
+    "checked_on": null,
+    "candidate_authority": "ΟΠΕΚΑ",
+    "starting_point": null,
+    "locator_note": null,
+    "note": "Μη δημοσιεύσιμο πριν από έλεγχο"
+   },
+   "editorial_review": null,
+   "publication": {
+    "approved": false,
+    "approved_by": null,
+    "approved_on": null
+   },
+   "related": [],
+   "draft": null
+  },
+  {
+   "id": "LEX-0186",
+   "kind": "term",
+   "topic": "koinonikes-paroxes",
+   "title": {
+    "el": "κοινωνικό τιμολόγιο",
+    "en": null
+   },
+   "priority": "Μεσαία",
+   "body": null,
+   "sources": [],
+   "verification": {
+    "status": "unverified",
+    "checked_on": null,
+    "candidate_authority": "ΟΠΕΚΑ",
+    "starting_point": null,
+    "locator_note": null,
+    "note": "Μη δημοσιεύσιμο πριν από έλεγχο"
+   },
+   "editorial_review": null,
+   "publication": {
+    "approved": false,
+    "approved_by": null,
+    "approved_on": null
+   },
+   "related": [],
+   "draft": null
+  },
+  {
+   "id": "LEX-0187",
+   "kind": "term",
+   "topic": "koinonikes-paroxes",
+   "title": {
+    "el": "περιουσιακό κριτήριο",
+    "en": null
+   },
+   "priority": "Μεσαία",
+   "body": null,
+   "sources": [],
+   "verification": {
+    "status": "unverified",
+    "checked_on": null,
+    "candidate_authority": "ΟΠΕΚΑ",
+    "starting_point": null,
+    "locator_note": null,
+    "note": "Μη δημοσιεύσιμο πριν από έλεγχο"
+   },
+   "editorial_review": null,
+   "publication": {
+    "approved": false,
+    "approved_by": null,
+    "approved_on": null
+   },
+   "related": [],
+   "draft": null
+  },
+  {
+   "id": "LEX-0188",
+   "kind": "term",
+   "topic": "koinonikes-paroxes",
+   "title": {
+    "el": "εισοδηματικό κριτήριο",
+    "en": null
+   },
+   "priority": "Μεσαία",
+   "body": null,
+   "sources": [],
+   "verification": {
+    "status": "unverified",
+    "checked_on": null,
+    "candidate_authority": "ΟΠΕΚΑ",
+    "starting_point": null,
+    "locator_note": null,
+    "note": "Μη δημοσιεύσιμο πριν από έλεγχο"
+   },
+   "editorial_review": null,
+   "publication": {
+    "approved": false,
+    "approved_by": null,
+    "approved_on": null
+   },
+   "related": [],
+   "draft": null
+  },
+  {
+   "id": "LEX-0189",
+   "kind": "term",
+   "topic": "koinonikes-paroxes",
+   "title": {
+    "el": "προστατευόμενο τέκνο",
+    "en": null
+   },
+   "priority": "Μεσαία",
+   "body": null,
+   "sources": [],
+   "verification": {
+    "status": "unverified",
+    "checked_on": null,
+    "candidate_authority": "ΟΠΕΚΑ",
+    "starting_point": null,
+    "locator_note": null,
+    "note": "Μη δημοσιεύσιμο πριν από έλεγχο"
+   },
+   "editorial_review": null,
+   "publication": {
+    "approved": false,
+    "approved_by": null,
+    "approved_on": null
+   },
+   "related": [],
+   "draft": null
+  },
+  {
+   "id": "BAS-0190",
+   "kind": "article",
+   "topic": "koinonikes-paroxes",
+   "title": {
+    "el": "Πώς λειτουργούν τα κοινωνικά επιδόματα;",
+    "en": null
+   },
+   "priority": "Μεσαία",
+   "body": null,
+   "sources": [],
+   "verification": {
+    "status": "unverified",
+    "checked_on": null,
+    "candidate_authority": "ΟΠΕΚΑ",
+    "starting_point": null,
+    "locator_note": null,
+    "note": "Μη δημοσιεύσιμο πριν από έλεγχο"
+   },
+   "editorial_review": null,
+   "publication": {
+    "approved": false,
+    "approved_by": null,
+    "approved_on": null
+   },
+   "related": [],
+   "draft": null
+  },
+  {
+   "id": "BAS-0191",
+   "kind": "article",
+   "topic": "koinonikes-paroxes",
+   "title": {
+    "el": "Τι είναι το νοικοκυριό;",
+    "en": null
+   },
+   "priority": "Μεσαία",
+   "body": null,
+   "sources": [],
+   "verification": {
+    "status": "unverified",
+    "checked_on": null,
+    "candidate_authority": "ΟΠΕΚΑ",
+    "starting_point": null,
+    "locator_note": null,
+    "note": "Μη δημοσιεύσιμο πριν από έλεγχο"
+   },
+   "editorial_review": null,
+   "publication": {
+    "approved": false,
+    "approved_by": null,
+    "approved_on": null
+   },
+   "related": [],
+   "draft": null
+  },
+  {
+   "id": "BAS-0192",
+   "kind": "article",
+   "topic": "koinonikes-paroxes",
+   "title": {
+    "el": "Πώς χρησιμοποιούνται τα εισοδηματικά και περιουσιακά κριτήρια;",
+    "en": null
+   },
+   "priority": "Μεσαία",
+   "body": null,
+   "sources": [],
+   "verification": {
+    "status": "unverified",
+    "checked_on": null,
+    "candidate_authority": "ΟΠΕΚΑ",
+    "starting_point": null,
+    "locator_note": null,
+    "note": "Μη δημοσιεύσιμο πριν από έλεγχο"
+   },
+   "editorial_review": null,
+   "publication": {
+    "approved": false,
+    "approved_by": null,
+    "approved_on": null
+   },
+   "related": [],
+   "draft": null
+  },
+  {
+   "id": "FAQ-0193",
+   "kind": "faq",
+   "topic": "koinonikes-paroxes",
+   "title": {
+    "el": "Πώς υπολογίζεται το νοικοκυριό μου;",
+    "en": null
+   },
+   "priority": "Μεσαία",
+   "body": null,
+   "sources": [],
+   "verification": {
+    "status": "unverified",
+    "checked_on": null,
+    "candidate_authority": "ΟΠΕΚΑ",
+    "starting_point": null,
+    "locator_note": null,
+    "note": "Μη δημοσιεύσιμο πριν από έλεγχο"
+   },
+   "editorial_review": null,
+   "publication": {
+    "approved": false,
+    "approved_by": null,
+    "approved_on": null
+   },
+   "related": [],
+   "draft": null
+  },
+  {
+   "id": "FAQ-0194",
+   "kind": "faq",
+   "topic": "koinonikes-paroxes",
+   "title": {
+    "el": "Τι γίνεται αν αλλάξει το εισόδημά μου;",
+    "en": null
+   },
+   "priority": "Μεσαία",
+   "body": null,
+   "sources": [],
+   "verification": {
+    "status": "unverified",
+    "checked_on": null,
+    "candidate_authority": "ΟΠΕΚΑ",
+    "starting_point": null,
+    "locator_note": null,
+    "note": "Μη δημοσιεύσιμο πριν από έλεγχο"
+   },
+   "editorial_review": null,
+   "publication": {
+    "approved": false,
+    "approved_by": null,
+    "approved_on": null
+   },
+   "related": [],
+   "draft": null
+  },
+  {
+   "id": "FAQ-0195",
+   "kind": "faq",
+   "topic": "koinonikes-paroxes",
+   "title": {
+    "el": "Μπορώ να λαμβάνω δύο διαφορετικά επιδόματα;",
+    "en": null
+   },
+   "priority": "Μεσαία",
+   "body": null,
+   "sources": [],
+   "verification": {
+    "status": "unverified",
+    "checked_on": null,
+    "candidate_authority": "ΟΠΕΚΑ",
+    "starting_point": null,
+    "locator_note": null,
+    "note": "Μη δημοσιεύσιμο πριν από έλεγχο"
+   },
+   "editorial_review": null,
+   "publication": {
+    "approved": false,
+    "approved_by": null,
+    "approved_on": null
+   },
+   "related": [],
+   "draft": null
+  },
+  {
+   "id": "LEX-0196",
+   "kind": "term",
+   "topic": "nomothesia",
+   "title": {
+    "el": "ΦΕΚ",
+    "en": "Government Gazette (FEK)"
+   },
+   "priority": "Υψηλή — K1",
+   "body": null,
+   "sources": [],
+   "verification": {
+    "status": "draft",
+    "checked_on": "2026-10-23",
+    "candidate_authority": "gov.gr; Μίτος",
+    "starting_point": "https://www.et.gr/",
+    "locator_note": "Απαιτείται συγκεκριμένη σελίδα για την Εφημερίδα της Κυβερνήσεως",
+    "note": "Μη δημοσιεύσιμο πριν από έλεγχο",
+    "evidence_gate": "NOT VERIFIED",
+    "remaining": "Locate precise official source; check amendments; review EL/EN against it"
+   },
+   "editorial_review": null,
+   "publication": {
+    "approved": false,
+    "approved_by": null,
+    "approved_on": null
+   },
+   "related": [],
+   "draft": {
+    "el": "Το ΦΕΚ είναι το επίσημο φύλλο δημοσίευσης νόμων και άλλων πράξεων που δημοσιεύονται στην Εφημερίδα της Κυβερνήσεως.",
+    "en": "FEK is an issue of the Greek Government Gazette used for official publication of laws and other acts.",
+    "status": "RESEARCH DRAFT — exact source pending",
+    "note": "Internal draft from the K1 workbook — not verified, not approved, never rendered."
+   },
+   "k1_order": 39
+  },
+  {
+   "id": "LEX-0197",
+   "kind": "term",
+   "topic": "nomothesia",
+   "title": {
+    "el": "νόμος",
+    "en": null
+   },
+   "priority": "Μεσαία",
+   "body": null,
+   "sources": [],
+   "verification": {
+    "status": "unverified",
+    "checked_on": null,
+    "candidate_authority": "gov.gr; Μίτος",
+    "starting_point": null,
+    "locator_note": null,
+    "note": "Μη δημοσιεύσιμο πριν από έλεγχο"
+   },
+   "editorial_review": null,
+   "publication": {
+    "approved": false,
+    "approved_by": null,
+    "approved_on": null
+   },
+   "related": [],
+   "draft": null
+  },
+  {
+   "id": "LEX-0198",
+   "kind": "term",
+   "topic": "nomothesia",
+   "title": {
+    "el": "υπουργική απόφαση",
+    "en": null
+   },
+   "priority": "Μεσαία",
+   "body": null,
+   "sources": [],
+   "verification": {
+    "status": "unverified",
+    "checked_on": null,
+    "candidate_authority": "gov.gr; Μίτος",
+    "starting_point": null,
+    "locator_note": null,
+    "note": "Μη δημοσιεύσιμο πριν από έλεγχο"
+   },
+   "editorial_review": null,
+   "publication": {
+    "approved": false,
+    "approved_by": null,
+    "approved_on": null
+   },
+   "related": [],
+   "draft": null
+  },
+  {
+   "id": "LEX-0199",
+   "kind": "term",
+   "topic": "nomothesia",
+   "title": {
+    "el": "ΚΥΑ",
+    "en": null
+   },
+   "priority": "Μεσαία",
+   "body": null,
+   "sources": [],
+   "verification": {
+    "status": "unverified",
+    "checked_on": null,
+    "candidate_authority": "gov.gr; Μίτος",
+    "starting_point": null,
+    "locator_note": null,
+    "note": "Μη δημοσιεύσιμο πριν από έλεγχο"
+   },
+   "editorial_review": null,
+   "publication": {
+    "approved": false,
+    "approved_by": null,
+    "approved_on": null
+   },
+   "related": [],
+   "draft": null
+  },
+  {
+   "id": "LEX-0200",
+   "kind": "term",
+   "topic": "nomothesia",
+   "title": {
+    "el": "εγκύκλιος",
+    "en": null
+   },
+   "priority": "Μεσαία",
+   "body": null,
+   "sources": [],
+   "verification": {
+    "status": "unverified",
+    "checked_on": null,
+    "candidate_authority": "gov.gr; Μίτος",
+    "starting_point": null,
+    "locator_note": null,
+    "note": "Μη δημοσιεύσιμο πριν από έλεγχο"
+   },
+   "editorial_review": null,
+   "publication": {
+    "approved": false,
+    "approved_by": null,
+    "approved_on": null
+   },
+   "related": [],
+   "draft": null
+  },
+  {
+   "id": "LEX-0201",
+   "kind": "term",
+   "topic": "nomothesia",
+   "title": {
+    "el": "κανονισμός ΕΕ",
+    "en": null
+   },
+   "priority": "Μεσαία",
+   "body": null,
+   "sources": [],
+   "verification": {
+    "status": "unverified",
+    "checked_on": null,
+    "candidate_authority": "gov.gr; Μίτος",
+    "starting_point": null,
+    "locator_note": null,
+    "note": "Μη δημοσιεύσιμο πριν από έλεγχο"
+   },
+   "editorial_review": null,
+   "publication": {
+    "approved": false,
+    "approved_by": null,
+    "approved_on": null
+   },
+   "related": [],
+   "draft": null
+  },
+  {
+   "id": "LEX-0202",
+   "kind": "term",
+   "topic": "nomothesia",
+   "title": {
+    "el": "οδηγία ΕΕ",
+    "en": null
+   },
+   "priority": "Μεσαία",
+   "body": null,
+   "sources": [],
+   "verification": {
+    "status": "unverified",
+    "checked_on": null,
+    "candidate_authority": "gov.gr; Μίτος",
+    "starting_point": null,
+    "locator_note": null,
+    "note": "Μη δημοσιεύσιμο πριν από έλεγχο"
+   },
+   "editorial_review": null,
+   "publication": {
+    "approved": false,
+    "approved_by": null,
+    "approved_on": null
+   },
+   "related": [],
+   "draft": null
+  },
+  {
+   "id": "LEX-0203",
+   "kind": "term",
+   "topic": "nomothesia",
+   "title": {
+    "el": "gov.gr",
+    "en": null
+   },
+   "priority": "Μεσαία",
+   "body": null,
+   "sources": [],
+   "verification": {
+    "status": "unverified",
+    "checked_on": null,
+    "candidate_authority": "gov.gr; Μίτος",
+    "starting_point": null,
+    "locator_note": null,
+    "note": "Μη δημοσιεύσιμο πριν από έλεγχο"
+   },
+   "editorial_review": null,
+   "publication": {
+    "approved": false,
+    "approved_by": null,
+    "approved_on": null
+   },
+   "related": [],
+   "draft": null
+  },
+  {
+   "id": "LEX-0204",
+   "kind": "term",
+   "topic": "nomothesia",
+   "title": {
+    "el": "Μίτος",
+    "en": null
+   },
+   "priority": "Μεσαία",
+   "body": null,
+   "sources": [],
+   "verification": {
+    "status": "unverified",
+    "checked_on": null,
+    "candidate_authority": "gov.gr; Μίτος",
+    "starting_point": null,
+    "locator_note": null,
+    "note": "Μη δημοσιεύσιμο πριν από έλεγχο"
+   },
+   "editorial_review": null,
+   "publication": {
+    "approved": false,
+    "approved_by": null,
+    "approved_on": null
+   },
+   "related": [],
+   "draft": null
+  },
+  {
+   "id": "LEX-0205",
+   "kind": "term",
+   "topic": "nomothesia",
+   "title": {
+    "el": "υπεύθυνη δήλωση",
+    "en": null
+   },
+   "priority": "Μεσαία",
+   "body": null,
+   "sources": [],
+   "verification": {
+    "status": "unverified",
+    "checked_on": null,
+    "candidate_authority": "gov.gr; Μίτος",
+    "starting_point": null,
+    "locator_note": null,
+    "note": "Μη δημοσιεύσιμο πριν από έλεγχο"
+   },
+   "editorial_review": null,
+   "publication": {
+    "approved": false,
+    "approved_by": null,
+    "approved_on": null
+   },
+   "related": [],
+   "draft": null
+  },
+  {
+   "id": "LEX-0206",
+   "kind": "term",
+   "topic": "nomothesia",
+   "title": {
+    "el": "εξουσιοδότηση",
+    "en": null
+   },
+   "priority": "Μεσαία",
+   "body": null,
+   "sources": [],
+   "verification": {
+    "status": "unverified",
+    "checked_on": null,
+    "candidate_authority": "gov.gr; Μίτος",
+    "starting_point": null,
+    "locator_note": null,
+    "note": "Μη δημοσιεύσιμο πριν από έλεγχο"
+   },
+   "editorial_review": null,
+   "publication": {
+    "approved": false,
+    "approved_by": null,
+    "approved_on": null
+   },
+   "related": [],
+   "draft": null
+  },
+  {
+   "id": "LEX-0207",
+   "kind": "term",
+   "topic": "nomothesia",
+   "title": {
+    "el": "δημόσια σύμβαση",
+    "en": null
+   },
+   "priority": "Μεσαία",
+   "body": null,
+   "sources": [],
+   "verification": {
+    "status": "unverified",
+    "checked_on": null,
+    "candidate_authority": "gov.gr; Μίτος",
+    "starting_point": null,
+    "locator_note": null,
+    "note": "Μη δημοσιεύσιμο πριν από έλεγχο"
+   },
+   "editorial_review": null,
+   "publication": {
+    "approved": false,
+    "approved_by": null,
+    "approved_on": null
+   },
+   "related": [],
+   "draft": null
+  },
+  {
+   "id": "LEX-0208",
+   "kind": "term",
+   "topic": "nomothesia",
+   "title": {
+    "el": "ΕΣΗΔΗΣ",
+    "en": null
+   },
+   "priority": "Μεσαία",
+   "body": null,
+   "sources": [],
+   "verification": {
+    "status": "unverified",
+    "checked_on": null,
+    "candidate_authority": "gov.gr; Μίτος",
+    "starting_point": null,
+    "locator_note": null,
+    "note": "Μη δημοσιεύσιμο πριν από έλεγχο"
+   },
+   "editorial_review": null,
+   "publication": {
+    "approved": false,
+    "approved_by": null,
+    "approved_on": null
+   },
+   "related": [],
+   "draft": null
+  },
+  {
+   "id": "LEX-0209",
+   "kind": "term",
+   "topic": "nomothesia",
+   "title": {
+    "el": "ΚΗΜΔΗΣ",
+    "en": null
+   },
+   "priority": "Μεσαία",
+   "body": null,
+   "sources": [],
+   "verification": {
+    "status": "unverified",
+    "checked_on": null,
+    "candidate_authority": "gov.gr; Μίτος",
+    "starting_point": null,
+    "locator_note": null,
+    "note": "Μη δημοσιεύσιμο πριν από έλεγχο"
+   },
+   "editorial_review": null,
+   "publication": {
+    "approved": false,
+    "approved_by": null,
+    "approved_on": null
+   },
+   "related": [],
+   "draft": null
+  },
+  {
+   "id": "LEX-0210",
+   "kind": "term",
+   "topic": "nomothesia",
+   "title": {
+    "el": "TED",
+    "en": null
+   },
+   "priority": "Μεσαία",
+   "body": null,
+   "sources": [],
+   "verification": {
+    "status": "unverified",
+    "checked_on": null,
+    "candidate_authority": "gov.gr; Μίτος",
+    "starting_point": null,
+    "locator_note": null,
+    "note": "Μη δημοσιεύσιμο πριν από έλεγχο"
+   },
+   "editorial_review": null,
+   "publication": {
+    "approved": false,
+    "approved_by": null,
+    "approved_on": null
+   },
+   "related": [],
+   "draft": null
+  },
+  {
+   "id": "LEX-0211",
+   "kind": "term",
+   "topic": "nomothesia",
+   "title": {
+    "el": "CPV",
+    "en": null
+   },
+   "priority": "Μεσαία",
+   "body": null,
+   "sources": [],
+   "verification": {
+    "status": "unverified",
+    "checked_on": null,
+    "candidate_authority": "gov.gr; Μίτος",
+    "starting_point": null,
+    "locator_note": null,
+    "note": "Μη δημοσιεύσιμο πριν από έλεγχο"
+   },
+   "editorial_review": null,
+   "publication": {
+    "approved": false,
+    "approved_by": null,
+    "approved_on": null
+   },
+   "related": [],
+   "draft": null
+  },
+  {
+   "id": "LEX-0212",
+   "kind": "term",
+   "topic": "nomothesia",
+   "title": {
+    "el": "δημόσιος διαγωνισμός",
+    "en": null
+   },
+   "priority": "Μεσαία",
+   "body": null,
+   "sources": [],
+   "verification": {
+    "status": "unverified",
+    "checked_on": null,
+    "candidate_authority": "gov.gr; Μίτος",
+    "starting_point": null,
+    "locator_note": null,
+    "note": "Μη δημοσιεύσιμο πριν από έλεγχο"
+   },
+   "editorial_review": null,
+   "publication": {
+    "approved": false,
+    "approved_by": null,
+    "approved_on": null
+   },
+   "related": [],
+   "draft": null
+  },
+  {
+   "id": "LEX-0213",
+   "kind": "term",
+   "topic": "nomothesia",
+   "title": {
+    "el": "διοικητική πράξη",
+    "en": null
+   },
+   "priority": "Μεσαία",
+   "body": null,
+   "sources": [],
+   "verification": {
+    "status": "unverified",
+    "checked_on": null,
+    "candidate_authority": "gov.gr; Μίτος",
+    "starting_point": null,
+    "locator_note": null,
+    "note": "Μη δημοσιεύσιμο πριν από έλεγχο"
+   },
+   "editorial_review": null,
+   "publication": {
+    "approved": false,
+    "approved_by": null,
+    "approved_on": null
+   },
+   "related": [],
+   "draft": null
+  },
+  {
+   "id": "LEX-0214",
+   "kind": "term",
+   "topic": "nomothesia",
+   "title": {
+    "el": "τροποποίηση",
+    "en": null
+   },
+   "priority": "Μεσαία",
+   "body": null,
+   "sources": [],
+   "verification": {
+    "status": "unverified",
+    "checked_on": null,
+    "candidate_authority": "gov.gr; Μίτος",
+    "starting_point": null,
+    "locator_note": null,
+    "note": "Μη δημοσιεύσιμο πριν από έλεγχο"
+   },
+   "editorial_review": null,
+   "publication": {
+    "approved": false,
+    "approved_by": null,
+    "approved_on": null
+   },
+   "related": [],
+   "draft": null
+  },
+  {
+   "id": "LEX-0215",
+   "kind": "term",
+   "topic": "nomothesia",
+   "title": {
+    "el": "επίσημη πηγή",
+    "en": null
+   },
+   "priority": "Μεσαία",
+   "body": null,
+   "sources": [],
+   "verification": {
+    "status": "unverified",
+    "checked_on": null,
+    "candidate_authority": "gov.gr; Μίτος",
+    "starting_point": null,
+    "locator_note": null,
+    "note": "Μη δημοσιεύσιμο πριν από έλεγχο"
+   },
+   "editorial_review": null,
+   "publication": {
+    "approved": false,
+    "approved_by": null,
+    "approved_on": null
+   },
+   "related": [],
+   "draft": null
+  },
+  {
+   "id": "BAS-0216",
+   "kind": "article",
+   "topic": "nomothesia",
+   "title": {
+    "el": "Πώς διαβάζουμε ένα ΦΕΚ;",
+    "en": null
+   },
+   "priority": "Μεσαία",
+   "body": null,
+   "sources": [],
+   "verification": {
+    "status": "unverified",
+    "checked_on": null,
+    "candidate_authority": "gov.gr; Μίτος",
+    "starting_point": null,
+    "locator_note": null,
+    "note": "Μη δημοσιεύσιμο πριν από έλεγχο"
+   },
+   "editorial_review": null,
+   "publication": {
+    "approved": false,
+    "approved_by": null,
+    "approved_on": null
+   },
+   "related": [],
+   "draft": null
+  },
+  {
+   "id": "BAS-0217",
+   "kind": "article",
+   "topic": "nomothesia",
+   "title": {
+    "el": "Ποια η διαφορά νόμου, ΚΥΑ και εγκυκλίου;",
+    "en": null
+   },
+   "priority": "Μεσαία",
+   "body": null,
+   "sources": [],
+   "verification": {
+    "status": "unverified",
+    "checked_on": null,
+    "candidate_authority": "gov.gr; Μίτος",
+    "starting_point": null,
+    "locator_note": null,
+    "note": "Μη δημοσιεύσιμο πριν από έλεγχο"
+   },
+   "editorial_review": null,
+   "publication": {
+    "approved": false,
+    "approved_by": null,
+    "approved_on": null
+   },
+   "related": [],
+   "draft": null
+  },
+  {
+   "id": "BAS-0218",
+   "kind": "article",
+   "topic": "nomothesia",
+   "title": {
+    "el": "Πώς αναγνωρίζουμε μια επίσημη δημόσια πηγή;",
+    "en": null
+   },
+   "priority": "Μεσαία",
+   "body": null,
+   "sources": [],
+   "verification": {
+    "status": "unverified",
+    "checked_on": null,
+    "candidate_authority": "gov.gr; Μίτος",
+    "starting_point": null,
+    "locator_note": null,
+    "note": "Μη δημοσιεύσιμο πριν από έλεγχο"
+   },
+   "editorial_review": null,
+   "publication": {
+    "approved": false,
+    "approved_by": null,
+    "approved_on": null
+   },
+   "related": [],
+   "draft": null
+  },
+  {
+   "id": "FAQ-0219",
+   "kind": "faq",
+   "topic": "nomothesia",
+   "title": {
+    "el": "Πώς βρίσκω το επίσημο ΦΕΚ;",
+    "en": null
+   },
+   "priority": "Μεσαία",
+   "body": null,
+   "sources": [],
+   "verification": {
+    "status": "unverified",
+    "checked_on": null,
+    "candidate_authority": "gov.gr; Μίτος",
+    "starting_point": null,
+    "locator_note": null,
+    "note": "Μη δημοσιεύσιμο πριν από έλεγχο"
+   },
+   "editorial_review": null,
+   "publication": {
+    "approved": false,
+    "approved_by": null,
+    "approved_on": null
+   },
+   "related": [],
+   "draft": null
+  },
+  {
+   "id": "FAQ-0220",
+   "kind": "faq",
+   "topic": "nomothesia",
+   "title": {
+    "el": "Πώς γνωρίζω αν ένας νόμος έχει τροποποιηθεί;",
+    "en": null
+   },
+   "priority": "Μεσαία",
+   "body": null,
+   "sources": [],
+   "verification": {
+    "status": "unverified",
+    "checked_on": null,
+    "candidate_authority": "gov.gr; Μίτος",
+    "starting_point": null,
+    "locator_note": null,
+    "note": "Μη δημοσιεύσιμο πριν από έλεγχο"
+   },
+   "editorial_review": null,
+   "publication": {
+    "approved": false,
+    "approved_by": null,
+    "approved_on": null
+   },
+   "related": [],
+   "draft": null
+  },
+  {
+   "id": "FAQ-0221",
+   "kind": "faq",
+   "topic": "nomothesia",
+   "title": {
+    "el": "Ποια πηγή υπερισχύει όταν υπάρχουν αντικρουόμενες πληροφορίες;",
+    "en": null
+   },
+   "priority": "Μεσαία",
+   "body": null,
+   "sources": [],
+   "verification": {
+    "status": "unverified",
+    "checked_on": null,
+    "candidate_authority": "gov.gr; Μίτος",
+    "starting_point": null,
+    "locator_note": null,
+    "note": "Μη δημοσιεύσιμο πριν από έλεγχο"
+   },
+   "editorial_review": null,
+   "publication": {
+    "approved": false,
+    "approved_by": null,
+    "approved_on": null
+   },
+   "related": [],
+   "draft": null
+  }
+ ]
+}

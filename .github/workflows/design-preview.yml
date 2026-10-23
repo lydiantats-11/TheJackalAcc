@@ -80,17 +80,22 @@ jobs:
           psql "$DATABASE_URL" -At -c "SELECT coalesce(json_agg(json_build_object('id',id,'external_key',external_key,'audience',audience,'review_status',review_status,'status',status,'closes_at',closes_at,'title',official_title) ORDER BY external_key),'[]') FROM opportunities WHERE NOT is_synthetic AND merged_into_id IS NULL AND review_status = 'approved'" > classification.json
           export CLASSIFICATION_FILE=classification.json
           echo "$PREVIEW_IDS"
-          PORT=3000 npm start > next.log 2>&1 &
+          JACKAL_KNOWLEDGE_FIXTURES=1 PORT=3000 npm start > next.log 2>&1 &   # preview only: synthetic Knowledge fixtures under a banner
           for i in $(seq 1 60); do curl -fs -o /dev/null http://127.0.0.1:3000/ && break; sleep 1; done
           node scripts/design-preview.mjs "$OUT"
           export RECORD_IDS=$(psql "$DATABASE_URL" -At -c "SELECT coalesce(json_agg(json_build_object('key', k, 'id', o.id, 'audience', o.audience) ORDER BY k), '[]') FROM unnest(ARRAY['manual:art5a','manual:art5b','manual:art5c','manual:a21','opske:23467','opske:24506','opske:23486','manual:discovereu','opske:23487','opske:23466']) k LEFT JOIN opportunities o ON o.external_key = k AND o.merged_into_id IS NULL")
           node scripts/record-shots.mjs "$OUT" 2>&1 | tee record-shots.log || echo "record shots failed"
           node scripts/site-audit.mjs "$OUT" || echo "audit script failed"
           node scripts/audience-check.mjs "$OUT" 2>&1 | tee audience-check.log || echo "audience check reported failures"
+          # Γνώση: the preview server (fixtures) and a second server without fixtures = what the public page shows today
+          PORT=3001 npm start > next-nofixtures.log 2>&1 &
+          for i in $(seq 1 60); do curl -fs -o /dev/null http://127.0.0.1:3001/ && break; sleep 1; done
+          node scripts/knowledge-shots.mjs "$OUT" http://127.0.0.1:3000 preview 2>&1 | tee knowledge-shots.log || echo "knowledge checks reported failures"
+          node scripts/knowledge-shots.mjs "$OUT" http://127.0.0.1:3001 production 2>&1 | tee -a knowledge-shots.log || echo "knowledge checks reported failures"
       - name: Save to the live-test-results branch
         if: always()
         run: |
-          mkdir -p "$OUT"; cp -f typecheck.log tests.log build.log next.log quality-report.json business-import.log classification.log classification.json audience-check.log record-shots.log "$OUT"/ 2>/dev/null || true
+          mkdir -p "$OUT"; cp -f typecheck.log tests.log build.log next.log quality-report.json business-import.log classification.log classification.json audience-check.log record-shots.log knowledge-shots.log "$OUT"/ 2>/dev/null || true
           cp -r "$OUT" /tmp/out
           git config user.name "jackal-live-test"; git config user.email "actions@users.noreply.github.com"
           git fetch --depth 1 origin live-test-results && git checkout -B live-test-results FETCH_HEAD
