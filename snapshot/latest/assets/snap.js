@@ -91,8 +91,10 @@
     }
     if (input) input.addEventListener("input", apply);
     box.querySelectorAll(".kn-chips button[data-topic]").forEach(function (b) {
-      b.addEventListener("click", function () { var v = b.getAttribute("data-topic"); state.topic = state.topic === v ? "" : v; press(".kn-chips button", "data-topic", state.topic); apply(); });
+      b.addEventListener("click", function () { var v = b.getAttribute("data-topic"); state.topic = state.topic === v ? "" : v; press(".kn-chips button", "data-topic", state.topic); if (sel) sel.value = state.topic; apply(); });
     });
+    var sel = box.querySelector(".kn-topic-select");
+    if (sel) sel.addEventListener("change", function () { state.topic = sel.value; press(".kn-chips button", "data-topic", state.topic); apply(); });
     box.querySelectorAll(".kn-letters button[data-letter]").forEach(function (b) {
       b.addEventListener("click", function () { var v = b.getAttribute("data-letter"); state.letter = state.letter === v ? "" : v; press(".kn-letters button", "data-letter", state.letter); apply(); });
     });
