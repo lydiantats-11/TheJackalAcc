@@ -16,6 +16,10 @@ import { TEST_DB_URL, freshDatabase } from "./db-helper";
 
 const root = join(__dirname, "..");
 const seed = (name: string) => readFileSync(join(root, "db/seed", `${name}.sql`), "utf8");
+/** Runs a seed file as ONE transaction, like `psql -f` does with the file's own BEGIN/COMMIT (postgres.js does not
+ *  allow BEGIN/COMMIT on a pooled connection, so the file's own lines are replaced by sql.begin). */
+const apply = (sql: postgres.Sql, name: string) =>
+  sql.begin((tx) => tx.unsafe(seed(name).replace(/^(BEGIN|COMMIT);\s*$/gm, "")));
 const BEFORE = [
   "official-records-2026-10-14", "approvals-2026-10-15", "business-records-2026-10-20", "approvals-2026-10-20",
   "audience-2026-10-22", "corrections-2026-10-22",
@@ -57,9 +61,9 @@ describe.skipIf(!TEST_DB_URL)("corrections-2026-10-23.sql on PostgreSQL (CI run 
   let before: Awaited<ReturnType<typeof snapshot>>;
   beforeAll(async () => {
     sql = await freshDatabase();
-    for (const s of BEFORE) await sql.unsafe(seed(s));
+    for (const s of BEFORE) await apply(sql, s);
     before = await snapshot(sql);
-    await sql.unsafe(seed("corrections-2026-10-23"));
+    await apply(sql, "corrections-2026-10-23");
   });
   afterAll(async () => { await sql?.end(); });
 
@@ -83,7 +87,7 @@ describe.skipIf(!TEST_DB_URL)("corrections-2026-10-23.sql on PostgreSQL (CI run 
   });
   it("a rerun changes nothing", async () => {
     const once = await snapshot(sql);
-    await sql.unsafe(seed("corrections-2026-10-23"));
+    await apply(sql, "corrections-2026-10-23");
     const twice = await snapshot(sql);
     expect(twice).toEqual(once);
   });
