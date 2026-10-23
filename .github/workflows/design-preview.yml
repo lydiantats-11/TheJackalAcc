@@ -41,10 +41,14 @@ jobs:
       - uses: actions/setup-node@v4
         with: { node-version: 22 }
       - run: npm install --no-audit --no-fund
+      # The checks below keep going after a failure so every log and screenshot is still saved, but the last step
+      # («Fail the run if any check failed») turns the whole run red. A failing test never shows a green tick.
       - name: Typecheck
+        id: typecheck
         continue-on-error: true
         run: npm run typecheck 2>&1 | tee typecheck.log
       - name: Tests (incl. database tests)
+        id: tests
         continue-on-error: true
         run: |
           psql -h 127.0.0.1 -U app -d jackal -c "CREATE DATABASE funding_test"
@@ -69,6 +73,7 @@ jobs:
           psql "$DATABASE_URL" -c "SELECT coalesce(audience, 'HOLD') AS path, count(*) AS current_programmes FROM opportunities WHERE review_status = 'approved' AND NOT is_synthetic AND merged_into_id IS NULL AND status IN ('open','upcoming','extended') AND (closes_at IS NULL OR closes_at > now()) GROUP BY 1 ORDER BY 1" | tee -a classification.log
           psql "$DATABASE_URL" -c "SELECT coalesce(o.audience, 'HOLD') AS path, o.external_key, o.official_identifier, left(o.official_title, 90) AS title FROM opportunities o WHERE o.review_status = 'approved' AND NOT o.is_synthetic AND o.merged_into_id IS NULL ORDER BY 1, 2" | tee -a classification.log
       - name: Quality report (gold set, coverage, freshness, efficiency)
+        id: quality
         continue-on-error: true
         run: npx tsx scripts/quality-report.ts > quality-report.json && cat quality-report.json | head -60
       - name: Build
@@ -84,14 +89,14 @@ jobs:
           for i in $(seq 1 60); do curl -fs -o /dev/null http://127.0.0.1:3000/ && break; sleep 1; done
           node scripts/design-preview.mjs "$OUT"
           export RECORD_IDS=$(psql "$DATABASE_URL" -At -c "SELECT coalesce(json_agg(json_build_object('key', k, 'id', o.id, 'audience', o.audience) ORDER BY k), '[]') FROM unnest(ARRAY['manual:art5a','manual:art5b','manual:art5c','manual:a21','opske:23467','opske:24506','opske:23486','manual:discovereu','opske:23487','opske:23466']) k LEFT JOIN opportunities o ON o.external_key = k AND o.merged_into_id IS NULL")
-          node scripts/record-shots.mjs "$OUT" 2>&1 | tee record-shots.log || echo "record shots failed"
+          node scripts/record-shots.mjs "$OUT" 2>&1 | tee record-shots.log || { echo "record shots failed"; echo "record shots failed" >> "$RUNNER_TEMP/failed-checks"; }
           node scripts/site-audit.mjs "$OUT" || echo "audit script failed"
-          node scripts/audience-check.mjs "$OUT" 2>&1 | tee audience-check.log || echo "audience check reported failures"
+          node scripts/audience-check.mjs "$OUT" 2>&1 | tee audience-check.log || { echo "audience check reported failures"; echo "audience check reported failures" >> "$RUNNER_TEMP/failed-checks"; }
           # Γνώση: the preview server (fixtures) and a second server without fixtures = what the public page shows today
           PORT=3001 npm start > next-nofixtures.log 2>&1 &
           for i in $(seq 1 60); do curl -fs -o /dev/null http://127.0.0.1:3001/ && break; sleep 1; done
-          node scripts/knowledge-shots.mjs "$OUT" http://127.0.0.1:3000 preview 2>&1 | tee knowledge-shots.log || echo "knowledge checks reported failures"
-          node scripts/knowledge-shots.mjs "$OUT" http://127.0.0.1:3001 production 2>&1 | tee -a knowledge-shots.log || echo "knowledge checks reported failures"
+          node scripts/knowledge-shots.mjs "$OUT" http://127.0.0.1:3000 preview 2>&1 | tee knowledge-shots.log || { echo "knowledge checks reported failures"; echo "knowledge checks reported failures" >> "$RUNNER_TEMP/failed-checks"; }
+          node scripts/knowledge-shots.mjs "$OUT" http://127.0.0.1:3001 production 2>&1 | tee -a knowledge-shots.log || { echo "knowledge checks reported failures"; echo "knowledge checks reported failures" >> "$RUNNER_TEMP/failed-checks"; }
       - name: Save to the live-test-results branch
         if: always()
         run: |
@@ -101,3 +106,10 @@ jobs:
           git fetch --depth 1 origin live-test-results && git checkout -B live-test-results FETCH_HEAD
           rm -rf previews/latest && mkdir -p previews/latest && cp -r /tmp/out/. previews/latest/
           git add previews && git commit -qm "Design preview, run ${GITHUB_RUN_NUMBER} (${GITHUB_SHA::7})" && git push origin live-test-results
+      - name: Fail the run if any check failed
+        if: always()
+        run: |
+          echo "typecheck: ${{ steps.typecheck.outcome }} · tests: ${{ steps.tests.outcome }} · quality report: ${{ steps.quality.outcome }}"
+          [ -f "$RUNNER_TEMP/failed-checks" ] && { echo "browser checks that failed:"; cat "$RUNNER_TEMP/failed-checks"; }
+          [ "${{ steps.typecheck.outcome }}" = success ] && [ "${{ steps.tests.outcome }}" = success ] \
+            && [ "${{ steps.quality.outcome }}" = success ] && [ ! -f "$RUNNER_TEMP/failed-checks" ]
