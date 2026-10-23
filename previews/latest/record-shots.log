@@ -14,20 +14,24 @@
     "applyButton": true,
     "briefApplyButton": true,
     "mentions31March": false,
-    "moveYearTable": false,
+    "moveYearTable": true,
     "oldStartWording": false,
     "eligibleLabel": false,
-    "pending": []
+    "pending": [
+      "Εξαρτάται από το έτος μεταφοράς κατοικίας — δείτε τον πίνακα παρακάτω."
+    ]
   },
   {
     "key": "manual:art5b",
     "applyButton": true,
     "briefApplyButton": true,
     "mentions31March": false,
-    "moveYearTable": false,
-    "oldStartWording": true,
+    "moveYearTable": true,
+    "oldStartWording": false,
     "eligibleLabel": false,
-    "pending": []
+    "pending": [
+      "Εξαρτάται από το έτος μεταφοράς κατοικίας — δείτε τον πίνακα παρακάτω."
+    ]
   },
   {
     "key": "manual:art5c",
@@ -58,7 +62,7 @@
     "mentions31March": false,
     "moveYearTable": false,
     "oldStartWording": false,
-    "eligibleLabel": true,
+    "eligibleLabel": false,
     "pending": []
   },
   {
@@ -91,7 +95,7 @@
     "mentions31March": false,
     "moveYearTable": false,
     "oldStartWording": false,
-    "eligibleLabel": true,
+    "eligibleLabel": false,
     "pending": []
   },
   {

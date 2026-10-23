@@ -5,46 +5,112 @@
 
 [1m[30m[46m RUN [49m[39m[22m [36mv5.0.4 [39m[90m/home/runner/work/TheJackalAcc/TheJackalAcc[39m
 
- [32m✓[39m tests/ingestion.test.ts [2m([22m[2m27 tests[22m[2m)[22m[33m 1564[2mms[22m[39m
- [32m✓[39m tests/engine.test.ts [2m([22m[2m27 tests[22m[2m)[22m[32m 68[2mms[22m[39m
- [32m✓[39m tests/extraction.test.ts [2m([22m[2m13 tests[22m[2m)[22m[33m 983[2mms[22m[39m
- [32m✓[39m tests/real-calls.test.ts [2m([22m[2m22 tests[22m[2m)[22m[32m 24[2mms[22m[39m
- [32m✓[39m tests/audience.test.ts [2m([22m[2m21 tests[22m[2m)[22m[32m 15[2mms[22m[39m
- [32m✓[39m tests/credibility-money.test.ts [2m([22m[2m18 tests[22m[2m)[22m[32m 8[2mms[22m[39m
- [32m✓[39m tests/guides-catalog.test.ts [2m([22m[2m20 tests[22m[2m)[22m[32m 12[2mms[22m[39m
- [32m✓[39m tests/corrections-2026-10-22.test.ts [2m([22m[2m15 tests[22m[2m)[22m[32m 7[2mms[22m[39m
- [32m✓[39m tests/auth-and-access.test.ts [2m([22m[2m11 tests[22m[2m)[22m[33m 800[2mms[22m[39m
- [32m✓[39m tests/end-to-end-flow.test.ts [2m([22m[2m3 tests[22m[2m)[22m[33m 406[2mms[22m[39m
- [32m✓[39m tests/personas.test.ts [2m([22m[2m13 tests[22m[2m)[22m[32m 48[2mms[22m[39m
- [32m✓[39m tests/residence-and-records.test.ts [2m([22m[2m15 tests[22m[2m)[22m[32m 12[2mms[22m[39m
- [32m✓[39m tests/official-details.test.ts [2m([22m[2m7 tests[22m[2m)[22m[32m 6[2mms[22m[39m
- [32m✓[39m tests/business-records.test.ts [2m([22m[2m9 tests[22m[2m)[22m[32m 17[2mms[22m[39m
- [32m✓[39m tests/guide-status.test.ts [2m([22m[2m13 tests[22m[2m)[22m[32m 17[2mms[22m[39m
- [32m✓[39m tests/discovery.test.ts [2m([22m[2m11 tests[22m[2m)[22m[32m 7[2mms[22m[39m
- [32m✓[39m tests/record-status.test.ts [2m([22m[2m10 tests[22m[2m)[22m[32m 5[2mms[22m[39m
- [32m✓[39m tests/status-and-sources.test.ts [2m([22m[2m12 tests[22m[2m)[22m[32m 45[2mms[22m[39m
- [32m✓[39m tests/brief-feed.test.ts [2m([22m[2m7 tests[22m[2m)[22m[32m 5[2mms[22m[39m
- [32m✓[39m tests/scenarios-and-money.test.ts [2m([22m[2m8 tests[22m[2m)[22m[32m 17[2mms[22m[39m
- [32m✓[39m tests/i18n.test.ts [2m([22m[2m26 tests[22m[2m)[22m[32m 11[2mms[22m[39m
- [32m✓[39m tests/industries.test.ts [2m([22m[2m5 tests[22m[2m)[22m[32m 46[2mms[22m[39m
- [32m✓[39m tests/daily-report.test.ts [2m([22m[2m6 tests[22m[2m)[22m[32m 4[2mms[22m[39m
- [32m✓[39m tests/profile-update.test.ts [2m([22m[2m6 tests[22m[2m)[22m[32m 284[2mms[22m[39m
- [32m✓[39m tests/credibility.test.ts [2m([22m[2m7 tests[22m[2m)[22m[32m 5[2mms[22m[39m
- [32m✓[39m tests/decision-record.test.ts [2m([22m[2m5 tests[22m[2m)[22m[32m 10[2mms[22m[39m
- [32m✓[39m tests/govgr-watch.test.ts [2m([22m[2m5 tests[22m[2m)[22m[32m 5[2mms[22m[39m
- [32m✓[39m tests/taxonomy.test.ts [2m([22m[2m5 tests[22m[2m)[22m[32m 5[2mms[22m[39m
- [32m✓[39m tests/apply-cta.test.ts [2m([22m[2m5 tests[22m[2m)[22m[32m 3[2mms[22m[39m
- [32m✓[39m tests/record-audit.test.ts [2m([22m[2m3 tests[22m[2m)[22m[32m 7[2mms[22m[39m
- [32m✓[39m tests/document-lists.test.ts [2m([22m[2m5 tests[22m[2m)[22m[32m 4[2mms[22m[39m
+ [32m✓[39m tests/ingestion.test.ts [2m([22m[2m27 tests[22m[2m)[22m[33m 3030[2mms[22m[39m
+   [32m✓[39m ingestion pipeline + worker (PostgreSQL) [2m(15)[22m
+     [33m[2m✓[22m[39m #15 an outage changes no opportunity; repeated failures degrade an active source; recovery restores it[33m 380[2mms[22m[39m
+     [33m[2m✓[22m[39m a passed deadline is swept to 'unverified', not 'closed'[33m 443[2mms[22m[39m
+ [32m✓[39m tests/engine.test.ts [2m([22m[2m27 tests[22m[2m)[22m[32m 91[2mms[22m[39m
+ [32m✓[39m tests/extraction.test.ts [2m([22m[2m13 tests[22m[2m)[22m[33m 2624[2mms[22m[39m
+   [32m✓[39m AI extraction with human review (PostgreSQL) [2m(9)[22m
+     [33m[2m✓[22m[39m stages candidates as pending; nothing reaches eligibility before review; quotes are verified verbatim[33m 484[2mms[22m[39m
+     [33m[2m✓[22m[39m approval publishes a versioned rule with the official quote, and re-matches users[33m 440[2mms[22m[39m
+     [33m[2m✓[22m[39m a later extraction proposing a different rule is flagged; approving it creates version 2 and keeps version 1[33m 370[2mms[22m[39m
+ [31m❯[39m tests/corrections-2026-10-23.test.ts [2m([22m[2m19 tests[22m[2m | [22m[31m1 failed[39m[2m)[22m[32m 42[2mms[22m[39m
+   [31m❯[39m 1. ΔΑΜ22 and ΔΑΜ23 — the exact budget term of the official call [2m(4)[22m
+     [32m✓[39m ΔΑΜ22: «επιχορηγούμενος προϋπολογισμός» €300.000–€12.000.000 (ΕΦΕΠΑΕ call page)[32m 2[2mms[22m[39m
+     [32m✓[39m ΔΑΜ23: «προϋπολογισμός πράξης (έργου)» €5.000.000–€40.000.000 (ΟΠΣΚΕ call page)[32m 0[2mms[22m[39m
+     [32m✓[39m neither summary calls the amount «επιλέξιμος», and no amount becomes an estimated grant[32m 1[2mms[22m[39m
+[31m     [31m×[31m the database seed carries the same amounts, basis and summaries[39m[32m 11[2mms[22m[39m
+   [32m✓[39m 2. Article 5Β — the 15 years [2m(3)[22m
+     [32m✓[39m the summary no longer claims a start year; it says 15 tax years in total (A.1192/2026 art. 4(3))[32m 0[2mms[22m[39m
+     [32m✓[39m what stays unknown is recorded: the decision and the republished law text differ on the first year[32m 0[2mms[22m[39m
+     [32m✓[39m the database summary says the same[32m 0[2mms[22m[39m
+   [32m✓[39m 3. Articles 5Α / 5Β — deadlines by year of move, never one date for everyone [2m(5)[22m
+     [32m✓[39m 5Β on 23 Oct 2026: four rows, application and documents apart, 2025 windows under the previous rules[32m 13[2mms[22m[39m
+     [32m✓[39m 5Α on 23 Oct 2026: the 2026 window has passed, 2027 is open; documents by 31 Oct of the year of application[32m 3[2mms[22m[39m
+     [32m✓[39m after 31 Oct 2026, 5Β is still open for people who moved later (it does not close for everyone)[32m 3[2mms[22m[39m
+     [32m✓[39m the period of application is kept apart: 15 tax years; 5Α from the tax year for which the application is filed[32m 0[2mms[22m[39m
+     [32m✓[39m no recorded wording names one date as if it applied to everyone[32m 0[2mms[22m[39m
+   [32m✓[39m 4. one source for every page [2m(7)[22m
+     [32m✓[39m database rows take the deadline from the rule (cards, details, listings, personalised results)[32m 1[2mms[22m[39m
+     [32m✓[39m the database seed's next deadline is the rule's own, computed the same way[32m 2[2mms[22m[39m
+     [32m✓[39m personalised results: the deadline factor is an explicit unknown, never the next date shown as the user's[32m 0[2mms[22m[39m
+     [32m✓[39m cards, the summary box and the side panel say «next» and «depends on the year you moved»[32m 1[2mms[22m[39m
+     [32m✓[39m the programme page and the guide show the same table from the same rule[32m 0[2mms[22m[39m
+     [32m✓[39m eligibility rules unchanged; their evidence now points to the 2026 decisions, with verbatim quotes where we have them[32m 1[2mms[22m[39m
+     [32m✓[39m the seed is generated from the corrections file, never edited by hand[32m 0[2mms[22m[39m
+ [32m✓[39m tests/real-calls.test.ts [2m([22m[2m22 tests[22m[2m)[22m[32m 30[2mms[22m[39m
+ [32m✓[39m tests/audience.test.ts [2m([22m[2m21 tests[22m[2m)[22m[32m 19[2mms[22m[39m
+ [32m✓[39m tests/credibility-money.test.ts [2m([22m[2m18 tests[22m[2m)[22m[32m 13[2mms[22m[39m
+ [32m✓[39m tests/guides-catalog.test.ts [2m([22m[2m20 tests[22m[2m)[22m[32m 16[2mms[22m[39m
+ [32m✓[39m tests/corrections-2026-10-22.test.ts [2m([22m[2m15 tests[22m[2m)[22m[32m 9[2mms[22m[39m
+ [32m✓[39m tests/auth-and-access.test.ts [2m([22m[2m11 tests[22m[2m)[22m[33m 1652[2mms[22m[39m
+   [32m✓[39m auth & access control (PostgreSQL) [2m(11)[22m
+     [33m[2m✓[22m[39m rate-limits repeated failed logins[33m 478[2mms[22m[39m
+ [32m✓[39m tests/end-to-end-flow.test.ts [2m([22m[2m3 tests[22m[2m)[22m[33m 937[2mms[22m[39m
+   [32m✓[39m end-to-end: source to explained match (PostgreSQL) [2m(3)[22m
+     [33m[2m✓[22m[39m ingests, matches with unknowns preserved, then re-matches after requirements are recorded[33m 330[2mms[22m[39m
+ [32m✓[39m tests/personas.test.ts [2m([22m[2m13 tests[22m[2m)[22m[32m 64[2mms[22m[39m
+ [32m✓[39m tests/guide-status.test.ts [2m([22m[2m13 tests[22m[2m)[22m[32m 28[2mms[22m[39m
+ [32m✓[39m tests/residence-and-records.test.ts [2m([22m[2m15 tests[22m[2m)[22m[32m 14[2mms[22m[39m
+ [32m✓[39m tests/official-details.test.ts [2m([22m[2m7 tests[22m[2m)[22m[32m 9[2mms[22m[39m
+ [32m✓[39m tests/business-records.test.ts [2m([22m[2m9 tests[22m[2m)[22m[32m 20[2mms[22m[39m
+ [32m✓[39m tests/discovery.test.ts [2m([22m[2m11 tests[22m[2m)[22m[32m 9[2mms[22m[39m
+ [32m✓[39m tests/record-status.test.ts [2m([22m[2m10 tests[22m[2m)[22m[32m 6[2mms[22m[39m
+ [32m✓[39m tests/status-and-sources.test.ts [2m([22m[2m12 tests[22m[2m)[22m[32m 36[2mms[22m[39m
+ [32m✓[39m tests/brief-feed.test.ts [2m([22m[2m7 tests[22m[2m)[22m[32m 6[2mms[22m[39m
+ [32m✓[39m tests/scenarios-and-money.test.ts [2m([22m[2m8 tests[22m[2m)[22m[32m 21[2mms[22m[39m
+ [32m✓[39m tests/i18n.test.ts [2m([22m[2m26 tests[22m[2m)[22m[32m 12[2mms[22m[39m
+ [32m✓[39m tests/industries.test.ts [2m([22m[2m5 tests[22m[2m)[22m[32m 60[2mms[22m[39m
+ [32m✓[39m tests/daily-report.test.ts [2m([22m[2m6 tests[22m[2m)[22m[32m 5[2mms[22m[39m
+ [32m✓[39m tests/profile-update.test.ts [2m([22m[2m6 tests[22m[2m)[22m[33m 1930[2mms[22m[39m
+ [32m✓[39m tests/credibility.test.ts [2m([22m[2m7 tests[22m[2m)[22m[32m 6[2mms[22m[39m
+ [32m✓[39m tests/decision-record.test.ts [2m([22m[2m5 tests[22m[2m)[22m[32m 11[2mms[22m[39m
+ [32m✓[39m tests/govgr-watch.test.ts [2m([22m[2m5 tests[22m[2m)[22m[32m 6[2mms[22m[39m
+ [32m✓[39m tests/taxonomy.test.ts [2m([22m[2m5 tests[22m[2m)[22m[32m 6[2mms[22m[39m
+ [32m✓[39m tests/apply-cta.test.ts [2m([22m[2m5 tests[22m[2m)[22m[32m 4[2mms[22m[39m
+ [32m✓[39m tests/record-audit.test.ts [2m([22m[2m3 tests[22m[2m)[22m[32m 8[2mms[22m[39m
+ [32m✓[39m tests/document-lists.test.ts [2m([22m[2m5 tests[22m[2m)[22m[32m 5[2mms[22m[39m
  [32m✓[39m tests/change-detection.test.ts [2m([22m[2m2 tests[22m[2m)[22m[32m 3[2mms[22m[39m
- [32m✓[39m tests/proxy.test.ts [2m([22m[2m2 tests[22m[2m)[22m[32m 7[2mms[22m[39m
- [32m✓[39m tests/question-impact.test.ts [2m([22m[2m2 tests[22m[2m)[22m[32m 5[2mms[22m[39m
+ [32m✓[39m tests/proxy.test.ts [2m([22m[2m2 tests[22m[2m)[22m[32m 10[2mms[22m[39m
+ [32m✓[39m tests/question-impact.test.ts [2m([22m[2m2 tests[22m[2m)[22m[32m 6[2mms[22m[39m
 
-[2m Test Files [22m [1m[32m34 passed[39m[22m[90m (34)[39m
-[2m      Tests [22m [1m[32m366 passed[39m[22m[90m (366)[39m
-[2m   Start at [22m 08:32:26
-[2m   Duration [22m 8.42s[2m (tests 73%, import 17%, transform 8%, worker 1%)[22m
+[31m⎯⎯⎯⎯⎯⎯⎯[39m[1m[41m Failed Tests 1 [49m[22m[31m⎯⎯⎯⎯⎯⎯⎯[39m
 
-[2m    Isolate [22m [33m34 workers spawned[39m[2m · ~62ms startup each (spawn + environment, per file)[22m
-[2m            [22m [2mat least ~2.06s faster with [22m[33misolate: false[39m[2m — reuses workers across files instead of one per file[22m
+[41m[1m FAIL [22m[49m tests/corrections-2026-10-23.test.ts[2m > [22m1. ΔΑΜ22 and ΔΑΜ23 — the exact budget term of the official call[2m > [22mthe database seed carries the same amounts, basis and summaries
+[31m[1mAssertionError[22m: expected '-- ΔΑΜ22: Ελάχιστος / μέγιστος επιχορ…' to contain '{"min":300000,"max":12000000,"basis":…'[39m
 
+[32m- Expected[39m
+[31m+ Received[39m
+
+[32m- {"min":300000,"max":12000000,"basis":"subsidised"}[39m
+[31m+ -- ΔΑΜ22: Ελάχιστος / μέγιστος επιχορηγούμενος προϋπολογισμός: 300.000 ευρώ έως 12.000.000€[39m
+[31m+ UPDATE opportunities SET[39m
+[31m+ [7m  official_details = jsonb_set(official_details, '{funding,project_budget}', '[27m{"min":[7m [27m300000,[7m [27m"max":[7m [27m12000000,[7m [27m"basis":[7m [27m"subsidised"}[7m'::jsonb),[27m[39m
+[31m+   summary_plain = 'Επενδυτικά σχέδια υφιστάμενων ΜΜΕ στις περιοχές δίκαιης μετάβασης (Δυτική Μακεδονία, Μεγαλόπολη). Ένταση 70% για πολύ μικρές και μικρές, 60% για μεσαίες. Επιχορηγούμενος προϋπολογισμός €300.000–€12.000.000.',[39m
+[31m+   status_evidence = status_evidence || '{"rechecked_at": "2026-10-23T12:00:00+03:00", "recheck": "ΕΦΕΠΑΕ — σελίδα της δράσης ΔΑΜ22: «Ελάχιστος / μέγιστος επιχορηγούμενος προϋπολογισμός: 300.000 ευρώ έως 12.000.000€»", "source": "https://efepae.gr/drasi/%ce%b5%ce%bd%ce%af%cf%83%cf%87%cf%85%cf%83%ce%b7-%ce%b5%cf%80%ce%b5%ce%bd%ce%b4%cf%85%cf%84%ce%b9%ce%ba%cf%8e%ce%bd-%cf%83%cf%87%ce%b5%ce%b4%ce%af%cf%89%ce%bd-%cf%85%cf%86%ce%b9%cf%83%cf%84%ce%ac-3/"}'::jsonb,[39m
+[31m+   last_retrieved_at = '2026-10-23T12:00:00+03:00', last_verified_at = '2026-10-23T12:00:00+03:00',[39m
+[31m+   version = version + 1, updated_at = now()[39m
+[31m+[39m
+
+[36m [2m❯[22m tests/corrections-2026-10-23.test.ts:[2m50:21[22m[39m
+    [90m 48|[39m     for (const k of ["opske:23487", "opske:23466"]) {
+    [90m 49|[39m       const block = sql.slice(sql.indexOf(`-- ${b[k].label}:`), sql.in…
+    [90m 50|[39m       expect(block).toContain(JSON.stringify(b[k].project_budget));
+    [90m   |[39m                     [31m^[39m
+    [90m 51|[39m       expect(block).toContain(b[k].summary_plain.replace(/'/g, "''"));
+    [90m 52|[39m     }
+
+[31m[2m⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯[22m[39m
+
+
+[2m Test Files [22m [1m[31m1 failed[39m[22m[2m | [22m[1m[32m34 passed[39m[22m[90m (35)[39m
+[2m      Tests [22m [1m[31m1 failed[39m[22m[2m | [22m[1m[32m384 passed[39m[22m[90m (385)[39m
+[2m   Start at [22m 08:38:34
+[2m   Duration [22m 15.68s[2m (tests 83%, import 11%, transform 4%, worker 1%)[22m
+
+[2m    Isolate [22m [33m35 workers spawned[39m[2m · ~74ms startup each (spawn + environment, per file)[22m
+[2m            [22m [2mat least ~2.53s faster with [22m[33misolate: false[39m[2m — reuses workers across files instead of one per file[22m
+
+
+::error file=/home/runner/work/TheJackalAcc/TheJackalAcc/tests/corrections-2026-10-23.test.ts,title=tests/corrections-2026-10-23.test.ts > 1. ΔΑΜ22 and ΔΑΜ23 — the exact budget term of the official call > the database seed carries the same amounts%2C basis and summaries,line=50,column=21::AssertionError: expected '-- ΔΑΜ22: Ελάχιστος / μέγιστος επιχορ…' to contain '{"min":300000,"max":12000000,"basis":…'%0A%0A- Expected%0A+ Received%0A%0A- {"min":300000,"max":12000000,"basis":"subsidised"}%0A+ -- ΔΑΜ22: Ελάχιστος / μέγιστος επιχορηγούμενος προϋπολογισμός: 300.000 ευρώ έως 12.000.000€%0A+ UPDATE opportunities SET%0A+   official_details = jsonb_set(official_details, '{funding,project_budget}', '{"min": 300000, "max": 12000000, "basis": "subsidised"}'::jsonb),%0A+   summary_plain = 'Επενδυτικά σχέδια υφιστάμενων ΜΜΕ στις περιοχές δίκαιης μετάβασης (Δυτική Μακεδονία, Μεγαλόπολη). Ένταση 70%25 για πολύ μικρές και μικρές, 60%25 για μεσαίες. Επιχορηγούμενος προϋπολογισμός €300.000–€12.000.000.',%0A+   status_evidence = status_evidence || '{"rechecked_at": "2026-10-23T12:00:00+03:00", "recheck": "ΕΦΕΠΑΕ — σελίδα της δράσης ΔΑΜ22: «Ελάχιστος / μέγιστος επιχορηγούμενος προϋπολογισμός: 300.000 ευρώ έως 12.000.000€»", "source": "https://efepae.gr/drasi/%25ce%25b5%25ce%25bd%25ce%25af%25cf%2583%25cf%2587%25cf%2585%25cf%2583%25ce%25b7-%25ce%25b5%25cf%2580%25ce%25b5%25ce%25bd%25ce%25b4%25cf%2585%25cf%2584%25ce%25b9%25ce%25ba%25cf%258e%25ce%25bd-%25cf%2583%25cf%2587%25ce%25b5%25ce%25b4%25ce%25af%25cf%2589%25ce%25bd-%25cf%2585%25cf%2586%25ce%25b9%25cf%2583%25cf%2584%25ce%25ac-3/"}'::jsonb,%0A+   last_retrieved_at = '2026-10-23T12:00:00+03:00', last_verified_at = '2026-10-23T12:00:00+03:00',%0A+   version = version + 1, updated_at = now()%0A+%0A%0A ❯ tests/corrections-2026-10-23.test.ts:50:21%0A%0A
