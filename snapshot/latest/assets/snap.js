@@ -45,33 +45,49 @@
   }, true);
 
   // Γνώση (Knowledge): the same live search, topic chips and A–Ω index as the app, over the server-rendered list.
+  // Mirrors src/components/knowledge-browser.tsx: search-only home page, letter headings in the dictionary.
   function fold(s) { return s.normalize("NFD").replace(/\p{M}/gu, "").toLowerCase().replace(/ς/g, "σ"); }
   document.querySelectorAll(".kn-browser").forEach(function (box) {
-    var input = box.querySelector("#kn-q"), count = box.querySelector(".kn-count");
-    var items = [].slice.call(box.querySelectorAll(".kn-item"));
+    var input = box.querySelector("#kn-q"), count = box.querySelector(".kn-count"), none = box.querySelector(".kn-noresults");
+    var list = box.querySelector(".kn-list, .kn-compact");
+    var original = list ? [].slice.call(list.children) : [];
+    var items = original.filter(function (li) { return li.classList.contains("kn-item"); });
+    var heads = original.filter(function (li) { return li.hasAttribute("data-letter-head"); });
+    var searchOnly = box.hasAttribute("data-search-only");
     var state = { topic: "", letter: "" };
     function press(sel, attr, value) {
       box.querySelectorAll(sel).forEach(function (b) { b.setAttribute("aria-pressed", String(b.getAttribute(attr) === value)); });
     }
     function apply() {
       var words = fold(input ? input.value : "").split(/[^\p{L}\p{N}]+/u).filter(Boolean), n = 0, whole = words.join(" ");
+      function starts(text) { var ws = text.split(/[^\p{L}\p{N}]+/u); return words.every(function (w) { return ws.some(function (x) { return x.indexOf(w) === 0; }); }); }
       function rank(li) {
         var ft = li.getAttribute("data-ft") || "";
-        if (!words.length) return 0;
-        function starts(text) { var ws = text.split(/[^\p{L}\p{N}]+/u); return words.every(function (w) { return ws.some(function (x) { return x.indexOf(w) === 0; }); }); }
         return ft.split("|").indexOf(whole) !== -1 ? 0 : starts(ft) ? 1 : starts(li.getAttribute("data-hay") || "") ? 2 : 3;
       }
+      var hideAll = searchOnly && !words.length;
       items.forEach(function (li) {
         var hay = li.getAttribute("data-hay") || "";
-        var show = (!state.topic || li.getAttribute("data-topic") === state.topic) && (!state.letter || li.getAttribute("data-letter") === state.letter)
+        var show = !hideAll && (!state.topic || li.getAttribute("data-topic") === state.topic) && (!state.letter || li.getAttribute("data-letter") === state.letter)
           && words.every(function (w) { return hay.indexOf(w) !== -1; });
         li.hidden = !show; if (show) n++;
       });
-      // Same order as the app: exact title, then title matches, then text matches; otherwise alphabetical.
-      var list = items.length && items[0].parentNode;
-      if (list) items.map(function (li, k) { return { li: li, k: k, r: rank(li) }; })
-        .sort(function (a, b) { return a.r - b.r || a.k - b.k; }).forEach(function (x) { list.appendChild(x.li); });
-      if (count) count.textContent = n + " " + (n === 1 ? count.getAttribute("data-one") : count.getAttribute("data-many"));
+      if (list) {
+        if (words.length) {
+          // Ranked: exact title, then title words, then text words, then letters inside a word; no letter headings.
+          heads.forEach(function (h) { h.hidden = true; });
+          items.map(function (li, k) { return { li: li, k: k, r: rank(li) }; })
+            .sort(function (a, b) { return a.r - b.r || a.k - b.k; }).forEach(function (x) { list.appendChild(x.li); });
+        } else {
+          original.forEach(function (li) { list.appendChild(li); });
+          heads.forEach(function (h) {
+            var L = h.getAttribute("data-letter-head");
+            h.hidden = !items.some(function (li) { return !li.hidden && li.getAttribute("data-letter") === L; });
+          });
+        }
+      }
+      if (count) { count.hidden = hideAll; count.textContent = n + " " + (n === 1 ? count.getAttribute("data-one") : count.getAttribute("data-many")); }
+      if (none) none.hidden = !(n === 0 && !hideAll);
     }
     if (input) input.addEventListener("input", apply);
     box.querySelectorAll(".kn-chips button[data-topic]").forEach(function (b) {
