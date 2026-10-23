@@ -5,49 +5,49 @@
 
 [1m[30m[46m RUN [49m[39m[22m [36mv5.0.4 [39m[90m/home/runner/work/TheJackalAcc/TheJackalAcc[39m
 
- [32m✓[39m tests/ingestion.test.ts [2m([22m[2m27 tests[22m[2m)[22m[33m 1579[2mms[22m[39m
- [32m✓[39m tests/engine.test.ts [2m([22m[2m27 tests[22m[2m)[22m[32m 144[2mms[22m[39m
- [32m✓[39m tests/extraction.test.ts [2m([22m[2m13 tests[22m[2m)[22m[33m 1239[2mms[22m[39m
- [32m✓[39m tests/corrections-2026-10-23.test.ts [2m([22m[2m19 tests[22m[2m)[22m[32m 43[2mms[22m[39m
- [32m✓[39m tests/real-calls.test.ts [2m([22m[2m22 tests[22m[2m)[22m[32m 39[2mms[22m[39m
- [32m✓[39m tests/audience.test.ts [2m([22m[2m21 tests[22m[2m)[22m[32m 26[2mms[22m[39m
- [32m✓[39m tests/credibility-money.test.ts [2m([22m[2m18 tests[22m[2m)[22m[32m 18[2mms[22m[39m
- [32m✓[39m tests/guides-catalog.test.ts [2m([22m[2m20 tests[22m[2m)[22m[32m 21[2mms[22m[39m
- [32m✓[39m tests/corrections-2026-10-22.test.ts [2m([22m[2m15 tests[22m[2m)[22m[32m 12[2mms[22m[39m
- [32m✓[39m tests/auth-and-access.test.ts [2m([22m[2m11 tests[22m[2m)[22m[33m 1172[2mms[22m[39m
+ [32m✓[39m tests/ingestion.test.ts [2m([22m[2m27 tests[22m[2m)[22m[33m 1542[2mms[22m[39m
+ [32m✓[39m tests/engine.test.ts [2m([22m[2m27 tests[22m[2m)[22m[32m 89[2mms[22m[39m
+ [32m✓[39m tests/corrections-2026-10-23.test.ts [2m([22m[2m22 tests[22m[2m)[22m[32m 47[2mms[22m[39m
+ [32m✓[39m tests/extraction.test.ts [2m([22m[2m13 tests[22m[2m)[22m[33m 1059[2mms[22m[39m
+ [32m✓[39m tests/real-calls.test.ts [2m([22m[2m22 tests[22m[2m)[22m[32m 34[2mms[22m[39m
+ [32m✓[39m tests/audience.test.ts [2m([22m[2m21 tests[22m[2m)[22m[32m 19[2mms[22m[39m
+ [32m✓[39m tests/credibility-money.test.ts [2m([22m[2m18 tests[22m[2m)[22m[32m 14[2mms[22m[39m
+ [32m✓[39m tests/guides-catalog.test.ts [2m([22m[2m20 tests[22m[2m)[22m[32m 16[2mms[22m[39m
+ [32m✓[39m tests/corrections-2026-10-22.test.ts [2m([22m[2m15 tests[22m[2m)[22m[32m 9[2mms[22m[39m
+ [32m✓[39m tests/auth-and-access.test.ts [2m([22m[2m11 tests[22m[2m)[22m[33m 1009[2mms[22m[39m
    [32m✓[39m auth & access control (PostgreSQL) [2m(11)[22m
-     [33m[2m✓[22m[39m rate-limits repeated failed logins[33m 385[2mms[22m[39m
- [32m✓[39m tests/end-to-end-flow.test.ts [2m([22m[2m3 tests[22m[2m)[22m[33m 538[2mms[22m[39m
- [32m✓[39m tests/personas.test.ts [2m([22m[2m13 tests[22m[2m)[22m[32m 91[2mms[22m[39m
- [32m✓[39m tests/guide-status.test.ts [2m([22m[2m13 tests[22m[2m)[22m[32m 39[2mms[22m[39m
- [32m✓[39m tests/residence-and-records.test.ts [2m([22m[2m15 tests[22m[2m)[22m[32m 19[2mms[22m[39m
- [32m✓[39m tests/official-details.test.ts [2m([22m[2m7 tests[22m[2m)[22m[32m 12[2mms[22m[39m
- [32m✓[39m tests/business-records.test.ts [2m([22m[2m9 tests[22m[2m)[22m[32m 27[2mms[22m[39m
- [32m✓[39m tests/discovery.test.ts [2m([22m[2m11 tests[22m[2m)[22m[32m 12[2mms[22m[39m
- [32m✓[39m tests/record-status.test.ts [2m([22m[2m10 tests[22m[2m)[22m[32m 9[2mms[22m[39m
- [32m✓[39m tests/status-and-sources.test.ts [2m([22m[2m12 tests[22m[2m)[22m[32m 53[2mms[22m[39m
- [32m✓[39m tests/brief-feed.test.ts [2m([22m[2m7 tests[22m[2m)[22m[32m 8[2mms[22m[39m
- [32m✓[39m tests/scenarios-and-money.test.ts [2m([22m[2m8 tests[22m[2m)[22m[32m 28[2mms[22m[39m
- [32m✓[39m tests/i18n.test.ts [2m([22m[2m26 tests[22m[2m)[22m[32m 16[2mms[22m[39m
- [32m✓[39m tests/industries.test.ts [2m([22m[2m5 tests[22m[2m)[22m[32m 82[2mms[22m[39m
- [32m✓[39m tests/daily-report.test.ts [2m([22m[2m6 tests[22m[2m)[22m[32m 7[2mms[22m[39m
- [32m✓[39m tests/profile-update.test.ts [2m([22m[2m6 tests[22m[2m)[22m[33m 361[2mms[22m[39m
- [32m✓[39m tests/credibility.test.ts [2m([22m[2m7 tests[22m[2m)[22m[32m 8[2mms[22m[39m
- [32m✓[39m tests/decision-record.test.ts [2m([22m[2m5 tests[22m[2m)[22m[32m 15[2mms[22m[39m
- [32m✓[39m tests/govgr-watch.test.ts [2m([22m[2m5 tests[22m[2m)[22m[32m 9[2mms[22m[39m
- [32m✓[39m tests/taxonomy.test.ts [2m([22m[2m5 tests[22m[2m)[22m[32m 8[2mms[22m[39m
- [32m✓[39m tests/apply-cta.test.ts [2m([22m[2m5 tests[22m[2m)[22m[32m 5[2mms[22m[39m
- [32m✓[39m tests/record-audit.test.ts [2m([22m[2m3 tests[22m[2m)[22m[32m 12[2mms[22m[39m
- [32m✓[39m tests/document-lists.test.ts [2m([22m[2m5 tests[22m[2m)[22m[32m 7[2mms[22m[39m
+     [33m[2m✓[22m[39m rate-limits repeated failed logins[33m 339[2mms[22m[39m
+ [32m✓[39m tests/end-to-end-flow.test.ts [2m([22m[2m3 tests[22m[2m)[22m[33m 500[2mms[22m[39m
+ [32m✓[39m tests/personas.test.ts [2m([22m[2m13 tests[22m[2m)[22m[32m 69[2mms[22m[39m
+ [32m✓[39m tests/residence-and-records.test.ts [2m([22m[2m15 tests[22m[2m)[22m[32m 16[2mms[22m[39m
+ [32m✓[39m tests/official-details.test.ts [2m([22m[2m7 tests[22m[2m)[22m[32m 8[2mms[22m[39m
+ [32m✓[39m tests/guide-status.test.ts [2m([22m[2m13 tests[22m[2m)[22m[32m 30[2mms[22m[39m
+ [32m✓[39m tests/business-records.test.ts [2m([22m[2m9 tests[22m[2m)[22m[32m 22[2mms[22m[39m
+ [32m✓[39m tests/discovery.test.ts [2m([22m[2m11 tests[22m[2m)[22m[32m 10[2mms[22m[39m
+ [32m✓[39m tests/record-status.test.ts [2m([22m[2m10 tests[22m[2m)[22m[32m 7[2mms[22m[39m
+ [32m✓[39m tests/status-and-sources.test.ts [2m([22m[2m12 tests[22m[2m)[22m[32m 39[2mms[22m[39m
+ [32m✓[39m tests/brief-feed.test.ts [2m([22m[2m7 tests[22m[2m)[22m[32m 7[2mms[22m[39m
+ [32m✓[39m tests/scenarios-and-money.test.ts [2m([22m[2m8 tests[22m[2m)[22m[32m 24[2mms[22m[39m
+ [32m✓[39m tests/i18n.test.ts [2m([22m[2m26 tests[22m[2m)[22m[32m 14[2mms[22m[39m
+ [32m✓[39m tests/industries.test.ts [2m([22m[2m5 tests[22m[2m)[22m[32m 68[2mms[22m[39m
+ [32m✓[39m tests/daily-report.test.ts [2m([22m[2m6 tests[22m[2m)[22m[32m 6[2mms[22m[39m
+ [32m✓[39m tests/profile-update.test.ts [2m([22m[2m6 tests[22m[2m)[22m[33m 346[2mms[22m[39m
+ [32m✓[39m tests/credibility.test.ts [2m([22m[2m7 tests[22m[2m)[22m[32m 6[2mms[22m[39m
+ [32m✓[39m tests/decision-record.test.ts [2m([22m[2m5 tests[22m[2m)[22m[32m 14[2mms[22m[39m
+ [32m✓[39m tests/govgr-watch.test.ts [2m([22m[2m5 tests[22m[2m)[22m[32m 7[2mms[22m[39m
+ [32m✓[39m tests/taxonomy.test.ts [2m([22m[2m5 tests[22m[2m)[22m[32m 7[2mms[22m[39m
+ [32m✓[39m tests/apply-cta.test.ts [2m([22m[2m5 tests[22m[2m)[22m[32m 4[2mms[22m[39m
+ [32m✓[39m tests/record-audit.test.ts [2m([22m[2m3 tests[22m[2m)[22m[32m 9[2mms[22m[39m
+ [32m✓[39m tests/document-lists.test.ts [2m([22m[2m5 tests[22m[2m)[22m[32m 6[2mms[22m[39m
  [32m✓[39m tests/change-detection.test.ts [2m([22m[2m2 tests[22m[2m)[22m[32m 4[2mms[22m[39m
  [32m✓[39m tests/proxy.test.ts [2m([22m[2m2 tests[22m[2m)[22m[32m 13[2mms[22m[39m
- [32m✓[39m tests/question-impact.test.ts [2m([22m[2m2 tests[22m[2m)[22m[32m 8[2mms[22m[39m
+ [32m✓[39m tests/question-impact.test.ts [2m([22m[2m2 tests[22m[2m)[22m[32m 7[2mms[22m[39m
 
 [2m Test Files [22m [1m[32m35 passed[39m[22m[90m (35)[39m
-[2m      Tests [22m [1m[32m385 passed[39m[22m[90m (385)[39m
-[2m   Start at [22m 08:52:28
-[2m   Duration [22m 12.11s[2m (tests 67%, import 23%, transform 8%, worker 2%)[22m
+[2m      Tests [22m [1m[32m388 passed[39m[22m[90m (388)[39m
+[2m   Start at [22m 11:36:23
+[2m   Duration [22m 10.42s[2m (tests 70%, import 20%, transform 9%, worker 2%)[22m
 
-[2m    Isolate [22m [33m35 workers spawned[39m[2m · ~97ms startup each (spawn + environment, per file)[22m
-[2m            [22m [2mat least ~3.28s faster with [22m[33misolate: false[39m[2m — reuses workers across files instead of one per file[22m
+[2m    Isolate [22m [33m35 workers spawned[39m[2m · ~82ms startup each (spawn + environment, per file)[22m
+[2m            [22m [2mat least ~2.79s faster with [22m[33misolate: false[39m[2m — reuses workers across files instead of one per file[22m
 
