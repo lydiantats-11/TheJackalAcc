@@ -1,7 +1,7 @@
 [
   {
     "key": "manual:a21",
-    "path": "/politis/eukairies/a9db4bd4-a142-456b-9b4a-9c35e56e575b",
+    "path": "/politis/eukairies/aecec564-9e46-4466-a73e-8f9f64793223",
     "status": 200,
     "title": "Α21 — Επίδομα παιδιού",
     "applyButton": true,
@@ -36,7 +36,7 @@
   },
   {
     "key": "manual:art5a",
-    "path": "/politis/eukairies/353d5fcb-969d-4a7d-bc3d-c802f725663b",
+    "path": "/politis/eukairies/cb990b59-588e-475f-941e-8c52dd9fbab5",
     "status": 200,
     "title": "Άρθρο 5Α ΚΦΕ — εναλλακτική φορολόγηση επενδυτών",
     "applyButton": false,
@@ -76,7 +76,7 @@
   },
   {
     "key": "manual:art5b",
-    "path": "/politis/eukairies/423d626d-b215-4513-9d77-a5b55e56814a",
+    "path": "/politis/eukairies/a5dc9fb4-69b1-447e-9ab3-a64c624e2fb8",
     "status": 200,
     "title": "Άρθρο 5Β ΚΦΕ — 7% φόρος για συνταξιούχους με σύνταξη εξωτερικού",
     "applyButton": true,
@@ -115,7 +115,7 @@
   },
   {
     "key": "manual:art5c",
-    "path": "/politis/eukairies/c46f76b8-9642-4c22-9ad2-a35f26758b98",
+    "path": "/politis/eukairies/034f0bac-2fc5-4203-b005-e41b98482f89",
     "status": 200,
     "title": "Άρθρο 5Γ ΚΦΕ — 50% απαλλαγή φόρου για όσους μεταφέρουν τη φορολογική κατοικία τους στην Ελλάδα",
     "applyButton": true,
@@ -147,7 +147,7 @@
   },
   {
     "key": "manual:discovereu",
-    "path": "/politis/eukairies/e89fccbf-958b-470a-9282-813ec563184d",
+    "path": "/politis/eukairies/34be2bb3-8da1-4e4a-b9c1-292760f9c179",
     "status": 200,
     "title": "DiscoverEU — δωρεάν ταξιδιωτικό πάσο για 18χρονους",
     "applyButton": false,
@@ -185,7 +185,7 @@
   },
   {
     "key": "opske:23466",
-    "path": "/epixeiriseis/eukairies/b4d66a0c-059b-4ab5-bef5-3ee65b108d27",
+    "path": "/epixeiriseis/eukairies/498244c8-b107-416c-a051-04b213cddaf6",
     "status": 200,
     "title": "Ενίσχυση επενδυτικών σχεδίων παραγωγικών επενδύσεων υφιστάμενων μεγάλων επιχειρήσεων που υλοποιούνται στις ηπειρωτικές περιοχές ΕΣΔΙΜ (ΔΑΜ23)",
     "applyButton": true,
@@ -214,7 +214,7 @@
   },
   {
     "key": "opske:23467",
-    "path": "/epixeiriseis/eukairies/5fba86cf-cb9e-4ffa-8dbc-456655d9e2a6",
+    "path": "/epixeiriseis/eukairies/19d0fd88-95db-41de-8ec4-3bf3bd8910b0",
     "status": 200,
     "title": "Ενίσχυση επενδυτικών σχεδίων νέων και υπό σύσταση ΜΜΕ που υλοποιούνται στις ηπειρωτικές περιοχές ΕΣΔΙΜ (ΔΑΜ21)",
     "applyButton": true,
@@ -243,7 +243,7 @@
   },
   {
     "key": "opske:23486",
-    "path": "/epixeiriseis/eukairies/f2ba3fba-fe4d-40eb-abec-222f7d1eafd0",
+    "path": "/epixeiriseis/eukairies/4d7cebfa-cc39-4296-89c2-751646dafda0",
     "status": 200,
     "title": "Ενίσχυση επενδυτικών σχεδίων παραγωγικών επενδύσεων νέων και υπό σύσταση μεγάλων επιχειρήσεων που υλοποιούνται στις ηπειρωτικές περιοχές ΕΣΔΙΜ (ΔΑΜ24)",
     "applyButton": true,
@@ -277,7 +277,7 @@
   },
   {
     "key": "opske:23487",
-    "path": "/epixeiriseis/eukairies/c44b9062-1331-47bf-951e-945f440b4c17",
+    "path": "/epixeiriseis/eukairies/0e493da8-0869-40ca-b2b0-1b62d7a37b63",
     "status": 200,
     "title": "Ενίσχυση επενδυτικών σχεδίων Υφιστάμενων ΜΜΕ που υλοποιούνται στις ηπειρωτικές περιοχές ΕΣΔΙΜ (ΔΑΜ22)",
     "applyButton": true,
@@ -306,7 +306,7 @@
   },
   {
     "key": "opske:24506",
-    "path": "/epixeiriseis/eukairies/2515d046-bd4f-4500-848b-252663351759",
+    "path": "/epixeiriseis/eukairies/fae43101-80ae-4edf-8c92-150e2cdc14e3",
     "status": 200,
     "title": "Ενίσχυση επιχειρηματικότητας στους τομείς προτεραιότητας της Περιφέρειας Νοτίου Αιγαίου",
     "applyButton": true,
@@ -321,7 +321,7 @@
     "eligibleLabel": false,
     "cardDeadline": null,
     "deadlineLines": [
-      "8 ημέρες ακόμη · έως 30 Οκτ 2026",
+      "7 ημέρες ακόμη · έως 30 Οκτ 2026",
       "Επαλήθευση προθεσμίας: 22 Οκτ 2026 · Βάσει: Πρόσκληση Α.Π. 1839/24-07-2026 και 1η τροποποίηση (γνώμη ΕΥΚΕ-ΧΕ 148960/18-09-2026)",
       "Η αίτηση υποβάλλεται στην επίσημη σελίδα του φορέα. Ελέγξτε εκεί τα δικαιολογητικά και την προθεσμία πριν την υποβάλετε.",
       "Αρχική διατύπωση προθεσμίας: 30/10/2026 15:00",

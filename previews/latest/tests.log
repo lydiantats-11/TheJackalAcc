@@ -5,76 +5,51 @@
 
 [1m[30m[46m RUN [49m[39m[22m [36mv5.0.4 [39m[90m/home/runner/work/TheJackalAcc/TheJackalAcc[39m
 
- [32m✓[39m tests/ingestion.test.ts [2m([22m[2m27 tests[22m[2m)[22m[33m 3870[2mms[22m[39m
+ [32m✓[39m tests/ingestion.test.ts [2m([22m[2m27 tests[22m[2m)[22m[33m 4019[2mms[22m[39m
    [32m✓[39m ingestion pipeline + worker (PostgreSQL) [2m(15)[22m
-     [33m[2m✓[22m[39m #1/#2 paginates, creates one record per topic, and a re-run creates no duplicates or extra events[33m 507[2mms[22m[39m
- [32m✓[39m tests/engine.test.ts [2m([22m[2m27 tests[22m[2m)[22m[32m 64[2mms[22m[39m
- [32m✓[39m tests/corrections-2026-10-23.test.ts [2m([22m[2m22 tests[22m[2m)[22m[32m 34[2mms[22m[39m
- [32m✓[39m tests/extraction.test.ts [2m([22m[2m13 tests[22m[2m)[22m[33m 1005[2mms[22m[39m
- [32m✓[39m tests/knowledge.test.ts [2m([22m[2m19 tests[22m[2m)[22m[32m 21[2mms[22m[39m
- [32m✓[39m tests/real-calls.test.ts [2m([22m[2m22 tests[22m[2m)[22m[32m 24[2mms[22m[39m
- [32m✓[39m tests/audience.test.ts [2m([22m[2m21 tests[22m[2m)[22m[32m 15[2mms[22m[39m
+     [33m[2m✓[22m[39m #1/#2 paginates, creates one record per topic, and a re-run creates no duplicates or extra events[33m 409[2mms[22m[39m
+ [32m✓[39m tests/engine.test.ts [2m([22m[2m27 tests[22m[2m)[22m[32m 73[2mms[22m[39m
+ [32m✓[39m tests/corrections-2026-10-23.test.ts [2m([22m[2m22 tests[22m[2m)[22m[32m 30[2mms[22m[39m
+ [32m✓[39m tests/extraction.test.ts [2m([22m[2m13 tests[22m[2m)[22m[33m 902[2mms[22m[39m
+ [32m✓[39m tests/knowledge.test.ts [2m([22m[2m20 tests[22m[2m)[22m[32m 25[2mms[22m[39m
+ [32m✓[39m tests/real-calls.test.ts [2m([22m[2m22 tests[22m[2m)[22m[32m 23[2mms[22m[39m
+ [32m✓[39m tests/audience.test.ts [2m([22m[2m21 tests[22m[2m)[22m[32m 14[2mms[22m[39m
  [32m✓[39m tests/credibility-money.test.ts [2m([22m[2m18 tests[22m[2m)[22m[32m 10[2mms[22m[39m
  [32m✓[39m tests/guides-catalog.test.ts [2m([22m[2m20 tests[22m[2m)[22m[32m 12[2mms[22m[39m
- [32m✓[39m tests/corrections-2026-10-22.test.ts [2m([22m[2m15 tests[22m[2m)[22m[32m 7[2mms[22m[39m
- [32m✓[39m tests/auth-and-access.test.ts [2m([22m[2m11 tests[22m[2m)[22m[33m 844[2mms[22m[39m
- [32m✓[39m tests/end-to-end-flow.test.ts [2m([22m[2m3 tests[22m[2m)[22m[33m 391[2mms[22m[39m
- [32m✓[39m tests/personas.test.ts [2m([22m[2m13 tests[22m[2m)[22m[32m 50[2mms[22m[39m
- [32m✓[39m tests/seed-corrections-db.test.ts [2m([22m[2m7 tests[22m[2m)[22m[32m 244[2mms[22m[39m
- [32m✓[39m tests/residence-and-records.test.ts [2m([22m[2m15 tests[22m[2m)[22m[32m 11[2mms[22m[39m
+ [32m✓[39m tests/corrections-2026-10-22.test.ts [2m([22m[2m15 tests[22m[2m)[22m[32m 6[2mms[22m[39m
+ [32m✓[39m tests/auth-and-access.test.ts [2m([22m[2m11 tests[22m[2m)[22m[33m 743[2mms[22m[39m
+ [32m✓[39m tests/end-to-end-flow.test.ts [2m([22m[2m3 tests[22m[2m)[22m[33m 355[2mms[22m[39m
+ [32m✓[39m tests/personas.test.ts [2m([22m[2m13 tests[22m[2m)[22m[32m 44[2mms[22m[39m
+ [32m✓[39m tests/seed-corrections-db.test.ts [2m([22m[2m7 tests[22m[2m)[22m[32m 208[2mms[22m[39m
+ [32m✓[39m tests/residence-and-records.test.ts [2m([22m[2m15 tests[22m[2m)[22m[32m 10[2mms[22m[39m
  [32m✓[39m tests/official-details.test.ts [2m([22m[2m7 tests[22m[2m)[22m[32m 6[2mms[22m[39m
  [32m✓[39m tests/guide-status.test.ts [2m([22m[2m13 tests[22m[2m)[22m[32m 20[2mms[22m[39m
- [32m✓[39m tests/business-records.test.ts [2m([22m[2m9 tests[22m[2m)[22m[32m 16[2mms[22m[39m
+ [32m✓[39m tests/business-records.test.ts [2m([22m[2m9 tests[22m[2m)[22m[32m 15[2mms[22m[39m
  [32m✓[39m tests/discovery.test.ts [2m([22m[2m11 tests[22m[2m)[22m[32m 7[2mms[22m[39m
  [32m✓[39m tests/record-status.test.ts [2m([22m[2m10 tests[22m[2m)[22m[32m 5[2mms[22m[39m
- [32m✓[39m tests/status-and-sources.test.ts [2m([22m[2m12 tests[22m[2m)[22m[32m 31[2mms[22m[39m
+ [32m✓[39m tests/status-and-sources.test.ts [2m([22m[2m12 tests[22m[2m)[22m[32m 45[2mms[22m[39m
  [32m✓[39m tests/brief-feed.test.ts [2m([22m[2m7 tests[22m[2m)[22m[32m 4[2mms[22m[39m
- [32m✓[39m tests/scenarios-and-money.test.ts [2m([22m[2m8 tests[22m[2m)[22m[32m 16[2mms[22m[39m
+ [32m✓[39m tests/scenarios-and-money.test.ts [2m([22m[2m8 tests[22m[2m)[22m[32m 17[2mms[22m[39m
  [32m✓[39m tests/i18n.test.ts [2m([22m[2m26 tests[22m[2m)[22m[32m 9[2mms[22m[39m
- [32m✓[39m tests/industries.test.ts [2m([22m[2m5 tests[22m[2m)[22m[32m 47[2mms[22m[39m
+ [32m✓[39m tests/industries.test.ts [2m([22m[2m5 tests[22m[2m)[22m[32m 40[2mms[22m[39m
  [32m✓[39m tests/daily-report.test.ts [2m([22m[2m6 tests[22m[2m)[22m[32m 4[2mms[22m[39m
- [32m✓[39m tests/profile-update.test.ts [2m([22m[2m6 tests[22m[2m)[22m[32m 252[2mms[22m[39m
+ [32m✓[39m tests/profile-update.test.ts [2m([22m[2m6 tests[22m[2m)[22m[32m 230[2mms[22m[39m
  [32m✓[39m tests/credibility.test.ts [2m([22m[2m7 tests[22m[2m)[22m[32m 4[2mms[22m[39m
- [32m✓[39m tests/decision-record.test.ts [2m([22m[2m5 tests[22m[2m)[22m[32m 9[2mms[22m[39m
- [32m✓[39m tests/govgr-watch.test.ts [2m([22m[2m5 tests[22m[2m)[22m[32m 5[2mms[22m[39m
- [32m✓[39m tests/taxonomy.test.ts [2m([22m[2m5 tests[22m[2m)[22m[32m 5[2mms[22m[39m
+ [32m✓[39m tests/decision-record.test.ts [2m([22m[2m5 tests[22m[2m)[22m[32m 8[2mms[22m[39m
+ [32m✓[39m tests/govgr-watch.test.ts [2m([22m[2m5 tests[22m[2m)[22m[32m 4[2mms[22m[39m
+ [32m✓[39m tests/taxonomy.test.ts [2m([22m[2m5 tests[22m[2m)[22m[32m 4[2mms[22m[39m
  [32m✓[39m tests/apply-cta.test.ts [2m([22m[2m5 tests[22m[2m)[22m[32m 3[2mms[22m[39m
- [32m✓[39m tests/record-audit.test.ts [2m([22m[2m3 tests[22m[2m)[22m[32m 7[2mms[22m[39m
+ [32m✓[39m tests/record-audit.test.ts [2m([22m[2m3 tests[22m[2m)[22m[32m 6[2mms[22m[39m
  [32m✓[39m tests/document-lists.test.ts [2m([22m[2m5 tests[22m[2m)[22m[32m 4[2mms[22m[39m
  [32m✓[39m tests/change-detection.test.ts [2m([22m[2m2 tests[22m[2m)[22m[32m 2[2mms[22m[39m
  [32m✓[39m tests/proxy.test.ts [2m([22m[2m2 tests[22m[2m)[22m[32m 6[2mms[22m[39m
  [32m✓[39m tests/question-impact.test.ts [2m([22m[2m2 tests[22m[2m)[22m[32m 4[2mms[22m[39m
- [31m❯[39m tests/zz-ci-failcheck.test.ts [2m([22m[2m1 test[22m[2m | [22m[31m1 failed[39m[2m)[22m[32m 5[2mms[22m[39m
-[31m   [31m×[31m deliberately fails (CI gate check)[39m[32m 4[2mms[22m[39m
 
-[31m⎯⎯⎯⎯⎯⎯⎯[39m[1m[41m Failed Tests 1 [49m[22m[31m⎯⎯⎯⎯⎯⎯⎯[39m
+[2m Test Files [22m [1m[32m37 passed[39m[22m[90m (37)[39m
+[2m      Tests [22m [1m[32m415 passed[39m[22m[90m (415)[39m
+[2m   Start at [22m 13:00:49
+[2m   Duration [22m 10.86s[2m (tests 81%, import 12%, transform 6%, worker 1%)[22m
 
-[41m[1m FAIL [22m[49m tests/zz-ci-failcheck.test.ts[2m > [22mdeliberately fails (CI gate check)
-[31m[1mAssertionError[22m: expected 2 to be 3 // Object.is equality[39m
+[2m    Isolate [22m [33m37 workers spawned[39m[2m · ~57ms startup each (spawn + environment, per file)[22m
+[2m            [22m [2mat least ~2.05s faster with [22m[33misolate: false[39m[2m — reuses workers across files instead of one per file[22m
 
-[32m- Expected[39m
-[31m+ Received[39m
-
-[32m- 3[39m
-[31m+ 2[39m
-
-[36m [2m❯[22m tests/zz-ci-failcheck.test.ts:[2m3:64[22m[39m
-    [90m  1|[39m // TEMPORARY — branch ci-failcheck only, never merged. Proves a failin…
-    [90m  2|[39m import { expect, it } from "vitest";
-    [90m  3|[39m it("deliberately fails (CI gate check)", () => { expect(1 + 1).toBe(3)…
-    [90m   |[39m                                                                [31m^[39m
-    [90m  4|[39m
-
-[31m[2m⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯[22m[39m
-
-
-[2m Test Files [22m [1m[31m1 failed[39m[22m[2m | [22m[1m[32m37 passed[39m[22m[90m (38)[39m
-[2m      Tests [22m [1m[31m1 failed[39m[22m[2m | [22m[1m[32m414 passed[39m[22m[90m (415)[39m
-[2m   Start at [22m 12:52:00
-[2m   Duration [22m 11.29s[2m (tests 80%, import 13%, transform 6%, worker 1%)[22m
-
-[2m    Isolate [22m [33m38 workers spawned[39m[2m · ~59ms startup each (spawn + environment, per file)[22m
-[2m            [22m [2mat least ~2.18s faster with [22m[33misolate: false[39m[2m — reuses workers across files instead of one per file[22m
-
-
-::error file=/home/runner/work/TheJackalAcc/TheJackalAcc/tests/zz-ci-failcheck.test.ts,title=tests/zz-ci-failcheck.test.ts > deliberately fails (CI gate check),line=3,column=64::AssertionError: expected 2 to be 3 // Object.is equality%0A%0A- Expected%0A+ Received%0A%0A- 3%0A+ 2%0A%0A ❯ tests/zz-ci-failcheck.test.ts:3:64%0A%0A
