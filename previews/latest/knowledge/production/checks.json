@@ -1,6 +1,11 @@
 {
   "checks": [
     {
+      "name": "production/desktop/el/hub: no server error",
+      "ok": true,
+      "detail": ""
+    },
+    {
       "name": "production/desktop/el/hub: no sideways scroll",
       "ok": true,
       "detail": ""
@@ -31,6 +36,11 @@
       "detail": "Γνώση | Τι είναι το Jackal"
     },
     {
+      "name": "production/desktop/el/lexiko: no server error",
+      "ok": true,
+      "detail": ""
+    },
+    {
       "name": "production/desktop/el/lexiko: no sideways scroll",
       "ok": true,
       "detail": ""
@@ -52,6 +62,11 @@
     },
     {
       "name": "production/desktop/el/lexiko: nav",
+      "ok": true,
+      "detail": "Γνώση | Τι είναι το Jackal"
+    },
+    {
+      "name": "production/desktop/el/vasika: no server error",
       "ok": true,
       "detail": ""
     },
@@ -78,6 +93,11 @@
     {
       "name": "production/desktop/el/vasika: nav",
       "ok": true,
+      "detail": "Γνώση | Τι είναι το Jackal"
+    },
+    {
+      "name": "production/desktop/el/faq: no server error",
+      "ok": true,
       "detail": ""
     },
     {
@@ -102,6 +122,11 @@
     },
     {
       "name": "production/desktop/el/faq: nav",
+      "ok": true,
+      "detail": "Γνώση | Τι είναι το Jackal"
+    },
+    {
+      "name": "production/desktop/el/themata: no server error",
       "ok": true,
       "detail": ""
     },
@@ -131,6 +156,11 @@
       "detail": "Γνώση | Τι είναι το Jackal"
     },
     {
+      "name": "production/desktop/el/topic-forologia: no server error",
+      "ok": true,
+      "detail": ""
+    },
+    {
       "name": "production/desktop/el/topic-forologia: no sideways scroll",
       "ok": true,
       "detail": ""
@@ -152,6 +182,11 @@
     },
     {
       "name": "production/desktop/el/topic-forologia: nav",
+      "ok": true,
+      "detail": "Γνώση | Τι είναι το Jackal"
+    },
+    {
+      "name": "production/desktop/el/entry-dev-001: no server error",
       "ok": true,
       "detail": ""
     },
@@ -181,6 +216,11 @@
       "detail": "Γνώση | Τι είναι το Jackal"
     },
     {
+      "name": "production/desktop/el/search: no server error",
+      "ok": true,
+      "detail": ""
+    },
+    {
       "name": "production/desktop/el/search: no sideways scroll",
       "ok": true,
       "detail": ""
@@ -203,12 +243,17 @@
     {
       "name": "production/desktop/el/search: nav",
       "ok": true,
-      "detail": ""
+      "detail": "Γνώση | Τι είναι το Jackal"
     },
     {
       "name": "production/desktop/el: unapproved register entry LEX-0001 is not served",
       "ok": true,
       "detail": "200"
+    },
+    {
+      "name": "production/desktop/en/hub: no server error",
+      "ok": true,
+      "detail": ""
     },
     {
       "name": "production/desktop/en/hub: no sideways scroll",
@@ -241,6 +286,11 @@
       "detail": "Knowledge | What is Jackal"
     },
     {
+      "name": "production/desktop/en/lexiko: no server error",
+      "ok": true,
+      "detail": ""
+    },
+    {
       "name": "production/desktop/en/lexiko: no sideways scroll",
       "ok": true,
       "detail": ""
@@ -262,6 +312,11 @@
     },
     {
       "name": "production/desktop/en/lexiko: nav",
+      "ok": true,
+      "detail": "Knowledge | What is Jackal"
+    },
+    {
+      "name": "production/desktop/en/vasika: no server error",
       "ok": true,
       "detail": ""
     },
@@ -288,6 +343,11 @@
     {
       "name": "production/desktop/en/vasika: nav",
       "ok": true,
+      "detail": "Knowledge | What is Jackal"
+    },
+    {
+      "name": "production/desktop/en/faq: no server error",
+      "ok": true,
       "detail": ""
     },
     {
@@ -312,6 +372,11 @@
     },
     {
       "name": "production/desktop/en/faq: nav",
+      "ok": true,
+      "detail": "Knowledge | What is Jackal"
+    },
+    {
+      "name": "production/desktop/en/themata: no server error",
       "ok": true,
       "detail": ""
     },
@@ -341,6 +406,11 @@
       "detail": "Knowledge | What is Jackal"
     },
     {
+      "name": "production/desktop/en/topic-forologia: no server error",
+      "ok": true,
+      "detail": ""
+    },
+    {
       "name": "production/desktop/en/topic-forologia: no sideways scroll",
       "ok": true,
       "detail": ""
@@ -362,6 +432,11 @@
     },
     {
       "name": "production/desktop/en/topic-forologia: nav",
+      "ok": true,
+      "detail": "Knowledge | What is Jackal"
+    },
+    {
+      "name": "production/desktop/en/entry-dev-001: no server error",
       "ok": true,
       "detail": ""
     },
@@ -391,6 +466,11 @@
       "detail": "Knowledge | What is Jackal"
     },
     {
+      "name": "production/desktop/en/search: no server error",
+      "ok": true,
+      "detail": ""
+    },
+    {
       "name": "production/desktop/en/search: no sideways scroll",
       "ok": true,
       "detail": ""
@@ -413,12 +493,17 @@
     {
       "name": "production/desktop/en/search: nav",
       "ok": true,
-      "detail": ""
+      "detail": "Knowledge | What is Jackal"
     },
     {
       "name": "production/desktop/en: unapproved register entry LEX-0001 is not served",
       "ok": true,
       "detail": "200"
+    },
+    {
+      "name": "production/phone/el/hub: no server error",
+      "ok": true,
+      "detail": ""
     },
     {
       "name": "production/phone/el/hub: no sideways scroll",
@@ -451,6 +536,11 @@
       "detail": "Γνώση | Τι είναι το Jackal"
     },
     {
+      "name": "production/phone/el/lexiko: no server error",
+      "ok": true,
+      "detail": ""
+    },
+    {
       "name": "production/phone/el/lexiko: no sideways scroll",
       "ok": true,
       "detail": ""
@@ -472,6 +562,11 @@
     },
     {
       "name": "production/phone/el/lexiko: nav",
+      "ok": true,
+      "detail": "Γνώση | Τι είναι το Jackal"
+    },
+    {
+      "name": "production/phone/el/vasika: no server error",
       "ok": true,
       "detail": ""
     },
@@ -498,6 +593,11 @@
     {
       "name": "production/phone/el/vasika: nav",
       "ok": true,
+      "detail": "Γνώση | Τι είναι το Jackal"
+    },
+    {
+      "name": "production/phone/el/faq: no server error",
+      "ok": true,
       "detail": ""
     },
     {
@@ -522,6 +622,11 @@
     },
     {
       "name": "production/phone/el/faq: nav",
+      "ok": true,
+      "detail": "Γνώση | Τι είναι το Jackal"
+    },
+    {
+      "name": "production/phone/el/themata: no server error",
       "ok": true,
       "detail": ""
     },
@@ -551,6 +656,11 @@
       "detail": "Γνώση | Τι είναι το Jackal"
     },
     {
+      "name": "production/phone/el/topic-forologia: no server error",
+      "ok": true,
+      "detail": ""
+    },
+    {
       "name": "production/phone/el/topic-forologia: no sideways scroll",
       "ok": true,
       "detail": ""
@@ -572,6 +682,11 @@
     },
     {
       "name": "production/phone/el/topic-forologia: nav",
+      "ok": true,
+      "detail": "Γνώση | Τι είναι το Jackal"
+    },
+    {
+      "name": "production/phone/el/entry-dev-001: no server error",
       "ok": true,
       "detail": ""
     },
@@ -601,6 +716,11 @@
       "detail": "Γνώση | Τι είναι το Jackal"
     },
     {
+      "name": "production/phone/el/search: no server error",
+      "ok": true,
+      "detail": ""
+    },
+    {
       "name": "production/phone/el/search: no sideways scroll",
       "ok": true,
       "detail": ""
@@ -623,7 +743,7 @@
     {
       "name": "production/phone/el/search: nav",
       "ok": true,
-      "detail": ""
+      "detail": "Γνώση | Τι είναι το Jackal"
     },
     {
       "name": "production/phone/el: unapproved register entry LEX-0001 is not served",

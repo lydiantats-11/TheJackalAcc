@@ -1,0 +1,791 @@
+{
+  "checks": [
+    {
+      "name": "preview/desktop/el/hub: no server error",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "preview/desktop/el/hub: no sideways scroll",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "preview/desktop/el/hub: no opportunity or news links",
+      "ok": true,
+      "detail": "0"
+    },
+    {
+      "name": "preview/desktop/el/hub: page loads",
+      "ok": true,
+      "detail": "200"
+    },
+    {
+      "name": "preview/desktop/el: four section tabs",
+      "ok": true,
+      "detail": "Γνώση | Λεξικό | Μάθε τα βασικά | Συχνές Ερωτήσεις | Θέματα"
+    },
+    {
+      "name": "preview/desktop/el/hub: test-content banner shown",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "preview/desktop/el/hub: nav",
+      "ok": true,
+      "detail": "Γνώση | Τι είναι το Jackal"
+    },
+    {
+      "name": "preview/desktop/el/lexiko: no server error",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "preview/desktop/el/lexiko: no sideways scroll",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "preview/desktop/el/lexiko: no opportunity or news links",
+      "ok": true,
+      "detail": "0"
+    },
+    {
+      "name": "preview/desktop/el/lexiko: page loads",
+      "ok": true,
+      "detail": "200"
+    },
+    {
+      "name": "preview/desktop/el/lexiko: test-content banner shown",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "preview/desktop/el: dictionary lists entries",
+      "ok": true,
+      "detail": "11"
+    },
+    {
+      "name": "preview/desktop/el/lexiko: nav",
+      "ok": true,
+      "detail": "Γνώση | Τι είναι το Jackal"
+    },
+    {
+      "name": "preview/desktop/el/vasika: no server error",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "preview/desktop/el/vasika: no sideways scroll",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "preview/desktop/el/vasika: no opportunity or news links",
+      "ok": true,
+      "detail": "0"
+    },
+    {
+      "name": "preview/desktop/el/vasika: page loads",
+      "ok": true,
+      "detail": "200"
+    },
+    {
+      "name": "preview/desktop/el/vasika: test-content banner shown",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "preview/desktop/el/vasika: nav",
+      "ok": true,
+      "detail": "Γνώση | Τι είναι το Jackal"
+    },
+    {
+      "name": "preview/desktop/el/faq: no server error",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "preview/desktop/el/faq: no sideways scroll",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "preview/desktop/el/faq: no opportunity or news links",
+      "ok": true,
+      "detail": "0"
+    },
+    {
+      "name": "preview/desktop/el/faq: page loads",
+      "ok": true,
+      "detail": "200"
+    },
+    {
+      "name": "preview/desktop/el/faq: test-content banner shown",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "preview/desktop/el/faq: nav",
+      "ok": true,
+      "detail": "Γνώση | Τι είναι το Jackal"
+    },
+    {
+      "name": "preview/desktop/el/themata: no server error",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "preview/desktop/el/themata: no sideways scroll",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "preview/desktop/el/themata: no opportunity or news links",
+      "ok": true,
+      "detail": "0"
+    },
+    {
+      "name": "preview/desktop/el/themata: page loads",
+      "ok": true,
+      "detail": "200"
+    },
+    {
+      "name": "preview/desktop/el/themata: test-content banner shown",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "preview/desktop/el/themata: nav",
+      "ok": true,
+      "detail": "Γνώση | Τι είναι το Jackal"
+    },
+    {
+      "name": "preview/desktop/el/topic-forologia: no server error",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "preview/desktop/el/topic-forologia: no sideways scroll",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "preview/desktop/el/topic-forologia: no opportunity or news links",
+      "ok": true,
+      "detail": "0"
+    },
+    {
+      "name": "preview/desktop/el/topic-forologia: page loads",
+      "ok": true,
+      "detail": "200"
+    },
+    {
+      "name": "preview/desktop/el/topic-forologia: test-content banner shown",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "preview/desktop/el/topic-forologia: nav",
+      "ok": true,
+      "detail": "Γνώση | Τι είναι το Jackal"
+    },
+    {
+      "name": "preview/desktop/el/entry-dev-001: no server error",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "preview/desktop/el/entry-dev-001: no sideways scroll",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "preview/desktop/el/entry-dev-001: no opportunity or news links",
+      "ok": true,
+      "detail": "0"
+    },
+    {
+      "name": "preview/desktop/el/entry-dev-001: page loads",
+      "ok": true,
+      "detail": "200"
+    },
+    {
+      "name": "preview/desktop/el/entry-dev-001: test-content banner shown",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "preview/desktop/el/entry-dev-001: nav",
+      "ok": true,
+      "detail": "Γνώση | Τι είναι το Jackal"
+    },
+    {
+      "name": "preview/desktop/el/search: no server error",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "preview/desktop/el/search: no sideways scroll",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "preview/desktop/el/search: no opportunity or news links",
+      "ok": true,
+      "detail": "0"
+    },
+    {
+      "name": "preview/desktop/el/search: page loads",
+      "ok": true,
+      "detail": "200"
+    },
+    {
+      "name": "preview/desktop/el/search: test-content banner shown",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "preview/desktop/el/search: nav",
+      "ok": true,
+      "detail": "Γνώση | Τι είναι το Jackal"
+    },
+    {
+      "name": "preview/desktop/el: unapproved register entry LEX-0001 is not served",
+      "ok": true,
+      "detail": "200"
+    },
+    {
+      "name": "preview/desktop/en/hub: no server error",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "preview/desktop/en/hub: no sideways scroll",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "preview/desktop/en/hub: no opportunity or news links",
+      "ok": true,
+      "detail": "0"
+    },
+    {
+      "name": "preview/desktop/en/hub: page loads",
+      "ok": true,
+      "detail": "200"
+    },
+    {
+      "name": "preview/desktop/en: four section tabs",
+      "ok": true,
+      "detail": "Knowledge | Dictionary | Learn the Basics | FAQ | Topics"
+    },
+    {
+      "name": "preview/desktop/en/hub: test-content banner shown",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "preview/desktop/en/hub: nav",
+      "ok": true,
+      "detail": "Knowledge | What is Jackal"
+    },
+    {
+      "name": "preview/desktop/en/lexiko: no server error",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "preview/desktop/en/lexiko: no sideways scroll",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "preview/desktop/en/lexiko: no opportunity or news links",
+      "ok": true,
+      "detail": "0"
+    },
+    {
+      "name": "preview/desktop/en/lexiko: page loads",
+      "ok": true,
+      "detail": "200"
+    },
+    {
+      "name": "preview/desktop/en/lexiko: test-content banner shown",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "preview/desktop/en: dictionary lists entries",
+      "ok": true,
+      "detail": "11"
+    },
+    {
+      "name": "preview/desktop/en/lexiko: nav",
+      "ok": true,
+      "detail": "Knowledge | What is Jackal"
+    },
+    {
+      "name": "preview/desktop/en/vasika: no server error",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "preview/desktop/en/vasika: no sideways scroll",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "preview/desktop/en/vasika: no opportunity or news links",
+      "ok": true,
+      "detail": "0"
+    },
+    {
+      "name": "preview/desktop/en/vasika: page loads",
+      "ok": true,
+      "detail": "200"
+    },
+    {
+      "name": "preview/desktop/en/vasika: test-content banner shown",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "preview/desktop/en/vasika: nav",
+      "ok": true,
+      "detail": "Knowledge | What is Jackal"
+    },
+    {
+      "name": "preview/desktop/en/faq: no server error",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "preview/desktop/en/faq: no sideways scroll",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "preview/desktop/en/faq: no opportunity or news links",
+      "ok": true,
+      "detail": "0"
+    },
+    {
+      "name": "preview/desktop/en/faq: page loads",
+      "ok": true,
+      "detail": "200"
+    },
+    {
+      "name": "preview/desktop/en/faq: test-content banner shown",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "preview/desktop/en/faq: nav",
+      "ok": true,
+      "detail": "Knowledge | What is Jackal"
+    },
+    {
+      "name": "preview/desktop/en/themata: no server error",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "preview/desktop/en/themata: no sideways scroll",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "preview/desktop/en/themata: no opportunity or news links",
+      "ok": true,
+      "detail": "0"
+    },
+    {
+      "name": "preview/desktop/en/themata: page loads",
+      "ok": true,
+      "detail": "200"
+    },
+    {
+      "name": "preview/desktop/en/themata: test-content banner shown",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "preview/desktop/en/themata: nav",
+      "ok": true,
+      "detail": "Knowledge | What is Jackal"
+    },
+    {
+      "name": "preview/desktop/en/topic-forologia: no server error",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "preview/desktop/en/topic-forologia: no sideways scroll",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "preview/desktop/en/topic-forologia: no opportunity or news links",
+      "ok": true,
+      "detail": "0"
+    },
+    {
+      "name": "preview/desktop/en/topic-forologia: page loads",
+      "ok": true,
+      "detail": "200"
+    },
+    {
+      "name": "preview/desktop/en/topic-forologia: test-content banner shown",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "preview/desktop/en/topic-forologia: nav",
+      "ok": true,
+      "detail": "Knowledge | What is Jackal"
+    },
+    {
+      "name": "preview/desktop/en/entry-dev-001: no server error",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "preview/desktop/en/entry-dev-001: no sideways scroll",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "preview/desktop/en/entry-dev-001: no opportunity or news links",
+      "ok": true,
+      "detail": "0"
+    },
+    {
+      "name": "preview/desktop/en/entry-dev-001: page loads",
+      "ok": true,
+      "detail": "200"
+    },
+    {
+      "name": "preview/desktop/en/entry-dev-001: test-content banner shown",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "preview/desktop/en/entry-dev-001: nav",
+      "ok": true,
+      "detail": "Knowledge | What is Jackal"
+    },
+    {
+      "name": "preview/desktop/en/search: no server error",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "preview/desktop/en/search: no sideways scroll",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "preview/desktop/en/search: no opportunity or news links",
+      "ok": true,
+      "detail": "0"
+    },
+    {
+      "name": "preview/desktop/en/search: page loads",
+      "ok": true,
+      "detail": "200"
+    },
+    {
+      "name": "preview/desktop/en/search: test-content banner shown",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "preview/desktop/en/search: nav",
+      "ok": true,
+      "detail": "Knowledge | What is Jackal"
+    },
+    {
+      "name": "preview/desktop/en: unapproved register entry LEX-0001 is not served",
+      "ok": true,
+      "detail": "200"
+    },
+    {
+      "name": "preview/phone/el/hub: no server error",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "preview/phone/el/hub: no sideways scroll",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "preview/phone/el/hub: no opportunity or news links",
+      "ok": true,
+      "detail": "0"
+    },
+    {
+      "name": "preview/phone/el/hub: page loads",
+      "ok": true,
+      "detail": "200"
+    },
+    {
+      "name": "preview/phone/el: four section tabs",
+      "ok": true,
+      "detail": "Γνώση | Λεξικό | Μάθε τα βασικά | Συχνές Ερωτήσεις | Θέματα"
+    },
+    {
+      "name": "preview/phone/el/hub: test-content banner shown",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "preview/phone/el/hub: nav",
+      "ok": true,
+      "detail": "Γνώση | Τι είναι το Jackal"
+    },
+    {
+      "name": "preview/phone/el/lexiko: no server error",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "preview/phone/el/lexiko: no sideways scroll",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "preview/phone/el/lexiko: no opportunity or news links",
+      "ok": true,
+      "detail": "0"
+    },
+    {
+      "name": "preview/phone/el/lexiko: page loads",
+      "ok": true,
+      "detail": "200"
+    },
+    {
+      "name": "preview/phone/el/lexiko: test-content banner shown",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "preview/phone/el: dictionary lists entries",
+      "ok": true,
+      "detail": "11"
+    },
+    {
+      "name": "preview/phone/el/lexiko: nav",
+      "ok": true,
+      "detail": "Γνώση | Τι είναι το Jackal"
+    },
+    {
+      "name": "preview/phone/el/vasika: no server error",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "preview/phone/el/vasika: no sideways scroll",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "preview/phone/el/vasika: no opportunity or news links",
+      "ok": true,
+      "detail": "0"
+    },
+    {
+      "name": "preview/phone/el/vasika: page loads",
+      "ok": true,
+      "detail": "200"
+    },
+    {
+      "name": "preview/phone/el/vasika: test-content banner shown",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "preview/phone/el/vasika: nav",
+      "ok": true,
+      "detail": "Γνώση | Τι είναι το Jackal"
+    },
+    {
+      "name": "preview/phone/el/faq: no server error",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "preview/phone/el/faq: no sideways scroll",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "preview/phone/el/faq: no opportunity or news links",
+      "ok": true,
+      "detail": "0"
+    },
+    {
+      "name": "preview/phone/el/faq: page loads",
+      "ok": true,
+      "detail": "200"
+    },
+    {
+      "name": "preview/phone/el/faq: test-content banner shown",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "preview/phone/el/faq: nav",
+      "ok": true,
+      "detail": "Γνώση | Τι είναι το Jackal"
+    },
+    {
+      "name": "preview/phone/el/themata: no server error",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "preview/phone/el/themata: no sideways scroll",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "preview/phone/el/themata: no opportunity or news links",
+      "ok": true,
+      "detail": "0"
+    },
+    {
+      "name": "preview/phone/el/themata: page loads",
+      "ok": true,
+      "detail": "200"
+    },
+    {
+      "name": "preview/phone/el/themata: test-content banner shown",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "preview/phone/el/themata: nav",
+      "ok": true,
+      "detail": "Γνώση | Τι είναι το Jackal"
+    },
+    {
+      "name": "preview/phone/el/topic-forologia: no server error",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "preview/phone/el/topic-forologia: no sideways scroll",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "preview/phone/el/topic-forologia: no opportunity or news links",
+      "ok": true,
+      "detail": "0"
+    },
+    {
+      "name": "preview/phone/el/topic-forologia: page loads",
+      "ok": true,
+      "detail": "200"
+    },
+    {
+      "name": "preview/phone/el/topic-forologia: test-content banner shown",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "preview/phone/el/topic-forologia: nav",
+      "ok": true,
+      "detail": "Γνώση | Τι είναι το Jackal"
+    },
+    {
+      "name": "preview/phone/el/entry-dev-001: no server error",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "preview/phone/el/entry-dev-001: no sideways scroll",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "preview/phone/el/entry-dev-001: no opportunity or news links",
+      "ok": true,
+      "detail": "0"
+    },
+    {
+      "name": "preview/phone/el/entry-dev-001: page loads",
+      "ok": true,
+      "detail": "200"
+    },
+    {
+      "name": "preview/phone/el/entry-dev-001: test-content banner shown",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "preview/phone/el/entry-dev-001: nav",
+      "ok": true,
+      "detail": "Γνώση | Τι είναι το Jackal"
+    },
+    {
+      "name": "preview/phone/el/search: no server error",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "preview/phone/el/search: no sideways scroll",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "preview/phone/el/search: no opportunity or news links",
+      "ok": true,
+      "detail": "0"
+    },
+    {
+      "name": "preview/phone/el/search: page loads",
+      "ok": true,
+      "detail": "200"
+    },
+    {
+      "name": "preview/phone/el/search: test-content banner shown",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "preview/phone/el/search: nav",
+      "ok": true,
+      "detail": "Γνώση | Τι είναι το Jackal"
+    },
+    {
+      "name": "preview/phone/el: unapproved register entry LEX-0001 is not served",
+      "ok": true,
+      "detail": "200"
+    },
+    {
+      "name": "preview: letter Β narrows the dictionary",
+      "ok": true,
+      "detail": "11 → 1"
+    },
+    {
+      "name": "preview: accent-free search finds «Γάμμα»",
+      "ok": true,
+      "detail": "1"
+    },
+    {
+      "name": "from /epixeiriseis, Γνώση shows the five tabs of that path",
+      "ok": false,
+      "detail": "/gnosi /about"
+    }
+  ],
+  "failures": [
+    {
+      "name": "from /epixeiriseis, Γνώση shows the five tabs of that path",
+      "ok": false,
+      "detail": "/gnosi /about"
+    }
+  ]
+}
