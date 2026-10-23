@@ -2,7 +2,8 @@
 /**
  * Γνώση — live search, topic filter and A–Ω index over the entries the server allowed (visibleEntries()).
  * Receives only display fields; never the register. Works without JavaScript too: the server renders the full list and
- * the search form submits ?q= to the same page.
+ * the search form submits ?q= to the same page. The data-* attributes let the static preview copy filter the same list
+ * without React (scripts/snapshot-assets/snap.js).
  */
 import Link from "next/link";
 import { useMemo, useState } from "react";
@@ -53,28 +54,28 @@ export function KnowledgeBrowser({ items, topics, letters, labels, initialQ = ""
 
       {usedTopics.length > 1 && (
         <div className="kn-chips" role="group" aria-label={labels.topicLabel}>
-          <button type="button" className="chip" aria-pressed={!topic} onClick={() => setTopic("")}>{labels.allTopics}</button>
+          <button type="button" className="chip" data-topic="" aria-pressed={!topic} onClick={() => setTopic("")}>{labels.allTopics}</button>
           {usedTopics.map((t) => (
-            <button key={t.id} type="button" className="chip" aria-pressed={topic === t.id} onClick={() => setTopic(topic === t.id ? "" : t.id)}>{t.name}</button>
+            <button key={t.id} type="button" className="chip" data-topic={t.id} aria-pressed={topic === t.id} onClick={() => setTopic(topic === t.id ? "" : t.id)}>{t.name}</button>
           ))}
         </div>
       )}
 
       {showLetters && (
         <nav className="kn-letters" aria-label={labels.letters}>
-          <button type="button" aria-pressed={!letter} onClick={() => setLetter("")}>{labels.all}</button>
+          <button type="button" data-letter="" aria-pressed={!letter} onClick={() => setLetter("")}>{labels.all}</button>
           {letters.map((l) => (
-            <button key={l} type="button" disabled={!present.has(l)} aria-pressed={letter === l} onClick={() => setLetter(letter === l ? "" : l)}>{l}</button>
+            <button key={l} type="button" data-letter={l} disabled={!present.has(l)} aria-pressed={letter === l} onClick={() => setLetter(letter === l ? "" : l)}>{l}</button>
           ))}
         </nav>
       )}
 
-      <p className="small muted" aria-live="polite" style={{ margin: "4px 0 12px" }}>{items.length ? `${shown.length} ${shown.length === 1 ? labels.results.one : labels.results.many}` : null}</p>
+      <p className="small muted kn-count" aria-live="polite" data-one={labels.results.one} data-many={labels.results.many} style={{ margin: "4px 0 12px" }}>{items.length ? `${shown.length} ${shown.length === 1 ? labels.results.one : labels.results.many}` : null}</p>
 
       {!items.length ? <p className="kn-empty">{labels.empty}</p> : !shown.length ? <p className="kn-empty">{labels.noResults}</p> : (
         <ul className="kn-list">
           {shown.map((i) => (
-            <li key={i.id} className="kn-item" data-synthetic={i.synthetic || undefined}>
+            <li key={i.id} className="kn-item" data-synthetic={i.synthetic || undefined} data-topic={i.topic} data-letter={i.letter} data-hay={i.hay}>
               <Link href={`${base}/${i.id}`}>
                 <span className="kn-item-title">{i.title}</span>
                 {i.alt && <span className="kn-item-alt">{i.alt}</span>}

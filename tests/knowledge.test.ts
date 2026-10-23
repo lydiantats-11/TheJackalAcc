@@ -103,9 +103,12 @@ describe("synthetic development fixtures", () => {
     process.env.JACKAL_KNOWLEDGE_FIXTURES = "1";
     expect(visibleEntries().length).toBe(FIXTURES_FOR_TESTS.length);
   });
-  it("only the preview workflow turns them on; the layout shows the test-content banner whenever one is visible", () => {
+  it("only the two private preview workflows turn them on; the layout shows the test-content banner whenever one is visible", () => {
     expect(read(".github/workflows/design-preview.yml")).toContain("JACKAL_KNOWLEDGE_FIXTURES=1 PORT=3000 npm start");
-    expect(read(".github/workflows/static-snapshot.yml")).not.toContain("JACKAL_KNOWLEDGE_FIXTURES");
+    expect(read(".github/workflows/static-snapshot.yml")).toContain("JACKAL_KNOWLEDGE_FIXTURES=1 PORT=3000 npm start");
+    for (const f of readdirSync(join(root, ".github/workflows")).filter((x) => !["design-preview.yml", "static-snapshot.yml"].includes(x))) {
+      expect(read(`.github/workflows/${f}`), f).not.toContain("JACKAL_KNOWLEDGE_FIXTURES");
+    }
     expect(read("src/app/gnosi/layout.tsx")).toContain("{anySynthetic && <FixtureBanner s={s} />}");
     expect(SITE.el.knowledge.fixtureBanner).toMatch(/^ΔΟΚΙΜΑΣΤΙΚΟ ΠΕΡΙΕΧΟΜΕΝΟ/);
   });
@@ -158,6 +161,18 @@ describe("navigation: five tabs, Γνώση replaces Οδηγοί and is univers
     const nav = read("src/components/site-nav.tsx");
     expect(nav).toContain("<Link href={KNOWLEDGE_PATH} aria-current={current(KNOWLEDGE_PATH)}>{labels.nav.knowledge}</Link>");
     expect(nav).toContain('s === "knowledge" ? KNOWLEDGE_PATH');
+  });
+});
+
+describe("private preview copy (static snapshot)", () => {
+  it("captures the Γνώση pages and filters them without the app's scripts, with the same accent folding", () => {
+    const crawl = read("scripts/static-snapshot.mjs");
+    for (const p of ['"/gnosi"', '"/gnosi/lexiko"', '"/gnosi/vasika"', '"/gnosi/syxnes-erotiseis"', '"/gnosi/themata"']) expect(crawl).toContain(p);
+    const snap = read("scripts/snapshot-assets/snap.js");
+    expect(snap).toContain('s.normalize("NFD").replace(/\\p{M}/gu, "").toLowerCase().replace(/ς/g, "σ")');
+    expect(read("src/lib/text/search.ts")).toContain('s.normalize("NFD").replace(/\\p{M}/gu, "").toLowerCase().replace(/ς/g, "σ")');
+    const browser = read("src/components/knowledge-browser.tsx");
+    for (const a of ["data-topic={i.topic}", "data-letter={i.letter}", "data-hay={i.hay}", "data-letter={l}", "data-topic={t.id}"]) expect(browser).toContain(a);
   });
 });
 

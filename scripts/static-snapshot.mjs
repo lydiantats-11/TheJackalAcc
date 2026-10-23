@@ -20,8 +20,10 @@ const SEEDS = [
   ...P.flatMap((p) => ["status=open", "status=upcoming", "status=all", "scope=gr"].map((q) => `/${p}/eukairies?${q}`)),
   ...P.flatMap((p) => ["eligibility-labels", "applying-officially"].map((g) => `/${p}/odigoi/${g}`)),
   "/politis/odigoi/unemployment-benefit-application", "/lab/espa-example",
+  // Γνώση (Phase K): the universal Knowledge page, its four sections, eight topics and entry pages (found by crawling).
+  "/gnosi", "/gnosi/lexiko", "/gnosi/vasika", "/gnosi/syxnes-erotiseis", "/gnosi/themata",
 ];
-const ALLOWED_PATH = /^\/lab\/espa-example$|^\/$|^\/(politis|epixeiriseis)\/(eukairies(\/[0-9a-f-]{36})?|nea|odigoi(\/[\w-]+)?|jackal|logariasmos)$|^\/about$|^\/login$|^\/register$/;
+const ALLOWED_PATH = /^\/gnosi(\/(lexiko|vasika|syxnes-erotiseis|themata(\/[\w-]+)?|oros\/[\w-]+))?$|^\/lab\/espa-example$|^\/$|^\/(politis|epixeiriseis)\/(eukairies(\/[0-9a-f-]{36})?|nea|odigoi(\/[\w-]+)?|jackal|logariasmos)$|^\/about$|^\/login$|^\/register$/;
 const LIST_PARAMS = new Set(["cat", "status", "scope", "type", "audience", "industry"]);
 const DEFAULTS = { status: "current", page: "1" };
 
@@ -63,8 +65,8 @@ async function saveCss(ctx, path) {
 }
 
 const BANNER = {
-  el: `<div class="snap-banner">Ιδιωτική προεπισκόπηση — στατικό αντίγραφο της ${new Date().toLocaleDateString("el-GR", { timeZone: "Europe/Athens" })} από βάση δοκιμών. Η σύνδεση, η αποθήκευση, η αναζήτηση και οι αλλαγές προφίλ λειτουργούν μόνο στην πλήρη εφαρμογή. Δεν είναι επίσημη κρατική υπηρεσία. <a href="el--index.html">Αρχική</a></div>`,
-  en: `<div class="snap-banner">Private preview — static copy from a test database, ${new Date().toLocaleDateString("en-GB", { timeZone: "Europe/Athens", day: "numeric", month: "short", year: "numeric" })}. Sign-in, saving, search and profile changes only work in the full app. Not an official government service. <a href="en--index.html">Home</a></div>`,
+  el: `<div class="snap-banner">Ιδιωτική προεπισκόπηση — στατικό αντίγραφο της ${new Date().toLocaleDateString("el-GR", { timeZone: "Europe/Athens" })} από βάση δοκιμών. Η σύνδεση, η αποθήκευση, η αναζήτηση ευκαιριών και οι αλλαγές προφίλ λειτουργούν μόνο στην πλήρη εφαρμογή· η αναζήτηση της Γνώσης λειτουργεί κανονικά. Δεν είναι επίσημη κρατική υπηρεσία. <a href="el--index.html">Αρχική</a></div>`,
+  en: `<div class="snap-banner">Private preview — static copy from a test database, ${new Date().toLocaleDateString("en-GB", { timeZone: "Europe/Athens", day: "numeric", month: "short", year: "numeric" })}. Sign-in, saving, opportunity search and profile changes only work in the full app; Knowledge search works here. Not an official government service. <a href="en--index.html">Home</a></div>`,
 };
 const DEMO_BANNER = {
   el: `<div class="snap-banner demo">Επίδειξη: «Ο λογαριασμός μου» (Πολίτης) για ένα δοκιμαστικό προφίλ (άνεργος/η, νοικοκυριό, ενδιαφέροντα: εργασία, οικογένεια). Ενδεικτικό — όχι πραγματικό πρόσωπο.</div>`,

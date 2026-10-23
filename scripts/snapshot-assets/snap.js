@@ -21,6 +21,7 @@
   document.addEventListener("submit", function (e) {
     var form = e.target;
     e.preventDefault();
+    if (form.classList.contains("kn-search")) return; // Γνώση: filtered live below
     if (form.classList.contains("lang")) {
       var want = e.submitter && e.submitter.value;
       if (!want || want === locale) return;
@@ -42,4 +43,32 @@
     }
     note(form, locale === "el" ? "Στην προεπισκόπηση αυτό δεν αποθηκεύεται — λειτουργεί στην πλήρη εφαρμογή." : "Nothing is saved in this preview — this works in the full app.");
   }, true);
+
+  // Γνώση (Knowledge): the same live search, topic chips and A–Ω index as the app, over the server-rendered list.
+  function fold(s) { return s.normalize("NFD").replace(/\p{M}/gu, "").toLowerCase().replace(/ς/g, "σ"); }
+  document.querySelectorAll(".kn-browser").forEach(function (box) {
+    var input = box.querySelector("#kn-q"), count = box.querySelector(".kn-count");
+    var items = [].slice.call(box.querySelectorAll(".kn-item"));
+    var state = { topic: "", letter: "" };
+    function press(sel, attr, value) {
+      box.querySelectorAll(sel).forEach(function (b) { b.setAttribute("aria-pressed", String(b.getAttribute(attr) === value)); });
+    }
+    function apply() {
+      var words = fold(input ? input.value : "").split(/[^\p{L}\p{N}]+/u).filter(Boolean), n = 0;
+      items.forEach(function (li) {
+        var hay = li.getAttribute("data-hay") || "";
+        var show = (!state.topic || li.getAttribute("data-topic") === state.topic) && (!state.letter || li.getAttribute("data-letter") === state.letter)
+          && words.every(function (w) { return hay.indexOf(w) !== -1; });
+        li.hidden = !show; if (show) n++;
+      });
+      if (count) count.textContent = n + " " + (n === 1 ? count.getAttribute("data-one") : count.getAttribute("data-many"));
+    }
+    if (input) input.addEventListener("input", apply);
+    box.querySelectorAll(".kn-chips button[data-topic]").forEach(function (b) {
+      b.addEventListener("click", function () { var v = b.getAttribute("data-topic"); state.topic = state.topic === v ? "" : v; press(".kn-chips button", "data-topic", state.topic); apply(); });
+    });
+    box.querySelectorAll(".kn-letters button[data-letter]").forEach(function (b) {
+      b.addEventListener("click", function () { var v = b.getAttribute("data-letter"); state.letter = state.letter === v ? "" : v; press(".kn-letters button", "data-letter", state.letter); apply(); });
+    });
+  });
 })();
