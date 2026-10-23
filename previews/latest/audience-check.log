@@ -1,0 +1,10 @@
+{
+  "counts": {
+    "hold": 1009,
+    "citizen": 9,
+    "business": 10
+  },
+  "checks": 61,
+  "failed": 0,
+  "failures": []
+}

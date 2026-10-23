@@ -1,0 +1,462 @@
+{
+  "counts": {
+    "hold": 1009,
+    "citizen": 9,
+    "business": 10
+  },
+  "listed": {
+    "citizen": 9,
+    "business": 10
+  },
+  "checks": [
+    {
+      "name": "no programme appears in both paths",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "citizen: every listed programme is classified citizen",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "citizen: every citizen programme is listed (any status)",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "business: every listed programme is classified business",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "business: every business programme is listed (any status)",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "citizen: no unclassified (HOLD) programme is listed",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "business: no unclassified (HOLD) programme is listed",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "citizen record under /epixeiriseis redirects to /politis",
+      "ok": true,
+      "detail": "200 /politis/eukairies/c437a3a6-ac36-49b3-bbae-c7bf75f38968?moved=1"
+    },
+    {
+      "name": "citizen record under /epixeiriseis redirects to /politis",
+      "ok": true,
+      "detail": "200 /politis/eukairies/e8544d89-5ea5-4d22-be66-ae8eb971b91c?moved=1"
+    },
+    {
+      "name": "citizen record under /epixeiriseis redirects to /politis",
+      "ok": true,
+      "detail": "200 /politis/eukairies/31e993b4-474d-4d47-b5de-3236085b3a0b?moved=1"
+    },
+    {
+      "name": "citizen record under /epixeiriseis redirects to /politis",
+      "ok": true,
+      "detail": "200 /politis/eukairies/e297a9b8-683f-4377-b8a8-09a2103b6745?moved=1"
+    },
+    {
+      "name": "citizen record under /epixeiriseis redirects to /politis",
+      "ok": true,
+      "detail": "200 /politis/eukairies/a6be3414-f3cd-45bf-913d-06fc2794b770?moved=1"
+    },
+    {
+      "name": "old address /opportunities/<citizen id> leads to its path",
+      "ok": true,
+      "detail": "200 /politis/eukairies/c437a3a6-ac36-49b3-bbae-c7bf75f38968"
+    },
+    {
+      "name": "business record under /politis redirects to /epixeiriseis",
+      "ok": true,
+      "detail": "200 /epixeiriseis/eukairies/9e08f707-f1d3-4aeb-8a57-1d7dcea74f09?moved=1"
+    },
+    {
+      "name": "business record under /politis redirects to /epixeiriseis",
+      "ok": true,
+      "detail": "200 /epixeiriseis/eukairies/d7369471-34f8-42ab-92b4-d6741747d4c5?moved=1"
+    },
+    {
+      "name": "business record under /politis redirects to /epixeiriseis",
+      "ok": true,
+      "detail": "200 /epixeiriseis/eukairies/6890470e-0161-41b6-a2ce-4be53a0dff93?moved=1"
+    },
+    {
+      "name": "business record under /politis redirects to /epixeiriseis",
+      "ok": true,
+      "detail": "200 /epixeiriseis/eukairies/2a7aaba1-7e7d-4662-91d1-792b59bcddbd?moved=1"
+    },
+    {
+      "name": "business record under /politis redirects to /epixeiriseis",
+      "ok": true,
+      "detail": "200 /epixeiriseis/eukairies/eca573d7-403f-41a6-9b5e-7e45ad638616?moved=1"
+    },
+    {
+      "name": "old address /opportunities/<business id> leads to its path",
+      "ok": true,
+      "detail": "200 /epixeiriseis/eukairies/9e08f707-f1d3-4aeb-8a57-1d7dcea74f09"
+    },
+    {
+      "name": "HOLD record is not found under /politis",
+      "ok": true,
+      "detail": "974277d7-eb5e-4512-bc23-44f4e01cd4ff"
+    },
+    {
+      "name": "HOLD record is not found under /epixeiriseis",
+      "ok": true,
+      "detail": "974277d7-eb5e-4512-bc23-44f4e01cd4ff"
+    },
+    {
+      "name": "HOLD record is not found at the old address",
+      "ok": true,
+      "detail": "974277d7-eb5e-4512-bc23-44f4e01cd4ff"
+    },
+    {
+      "name": "HOLD record is not found under /politis",
+      "ok": true,
+      "detail": "99046fd0-b93c-4423-be54-ea643d264eff"
+    },
+    {
+      "name": "HOLD record is not found under /epixeiriseis",
+      "ok": true,
+      "detail": "99046fd0-b93c-4423-be54-ea643d264eff"
+    },
+    {
+      "name": "HOLD record is not found at the old address",
+      "ok": true,
+      "detail": "99046fd0-b93c-4423-be54-ea643d264eff"
+    },
+    {
+      "name": "HOLD record is not found under /politis",
+      "ok": true,
+      "detail": "ce62d78f-4ce1-45b8-a937-7c086179a1a8"
+    },
+    {
+      "name": "HOLD record is not found under /epixeiriseis",
+      "ok": true,
+      "detail": "ce62d78f-4ce1-45b8-a937-7c086179a1a8"
+    },
+    {
+      "name": "HOLD record is not found at the old address",
+      "ok": true,
+      "detail": "ce62d78f-4ce1-45b8-a937-7c086179a1a8"
+    },
+    {
+      "name": "HOLD record is not found under /politis",
+      "ok": true,
+      "detail": "9b83da01-a977-4e05-a4b3-e3d67239648c"
+    },
+    {
+      "name": "HOLD record is not found under /epixeiriseis",
+      "ok": true,
+      "detail": "9b83da01-a977-4e05-a4b3-e3d67239648c"
+    },
+    {
+      "name": "HOLD record is not found at the old address",
+      "ok": true,
+      "detail": "9b83da01-a977-4e05-a4b3-e3d67239648c"
+    },
+    {
+      "name": "HOLD record is not found under /politis",
+      "ok": true,
+      "detail": "c49b65bc-a225-4d2f-8b38-7562f9ac87e3"
+    },
+    {
+      "name": "HOLD record is not found under /epixeiriseis",
+      "ok": true,
+      "detail": "c49b65bc-a225-4d2f-8b38-7562f9ac87e3"
+    },
+    {
+      "name": "HOLD record is not found at the old address",
+      "ok": true,
+      "detail": "c49b65bc-a225-4d2f-8b38-7562f9ac87e3"
+    },
+    {
+      "name": "old mixed page /opportunities leads to the home page",
+      "ok": true,
+      "detail": "200 /"
+    },
+    {
+      "name": "old mixed page /for-me leads to the home page",
+      "ok": true,
+      "detail": "200 /"
+    },
+    {
+      "name": "old mixed page /guides leads to the home page",
+      "ok": true,
+      "detail": "200 /"
+    },
+    {
+      "name": "old mixed page /categories leads to the home page",
+      "ok": true,
+      "detail": "200 /"
+    },
+    {
+      "name": "old mixed page /dashboard leads to the home page",
+      "ok": true,
+      "detail": "200 /"
+    },
+    {
+      "name": "unknown path is not found",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "search «ενίσχυση» in /politis returns only citizen programmes",
+      "ok": true,
+      "detail": "0 hits; leaks: "
+    },
+    {
+      "name": "search «ΔΑΜ» in /politis returns only citizen programmes",
+      "ok": true,
+      "detail": "0 hits; leaks: "
+    },
+    {
+      "name": "search «επίδομα» in /epixeiriseis returns only business programmes",
+      "ok": true,
+      "detail": "0 hits; leaks: "
+    },
+    {
+      "name": "search «Νέα Ευκαιρία» in /epixeiriseis returns only business programmes",
+      "ok": true,
+      "detail": "0 hits; leaks: "
+    },
+    {
+      "name": "citizen: news page shows only citizen articles",
+      "ok": true,
+      "detail": "citizen"
+    },
+    {
+      "name": "citizen: news page links no other-path programme",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "business: news page shows only business articles",
+      "ok": true,
+      "detail": "business,business"
+    },
+    {
+      "name": "business: news page links no other-path programme",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "citizen guide under /epixeiriseis redirects to /politis",
+      "ok": true,
+      "detail": "200 /politis/odigoi/a21"
+    },
+    {
+      "name": "business guides list has no citizen guide",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "citizen guides list has no business guide",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "home page lists no programme",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "home page offers both paths",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "citizen journey: opportunities page lists programmes",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "citizen journey: details page has the official application link",
+      "ok": true,
+      "detail": "https://www.aade.gr/egkyklioi-kai-apofaseis/1192-22-09-2026"
+    },
+    {
+      "name": "citizen journey: «Ψάχνω ως» switch is shown",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "citizen journey: «Αλλαγή» opens the other path's opportunities, no filters",
+      "ok": true,
+      "detail": "http://127.0.0.1:3000/epixeiriseis/eukairies"
+    },
+    {
+      "name": "business journey: opportunities page lists programmes",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "business journey: details page has the official application link",
+      "ok": true,
+      "detail": "https://app.opske.gr/"
+    },
+    {
+      "name": "business journey: «Ψάχνω ως» switch is shown",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "business journey: «Αλλαγή» opens the other path's opportunities, no filters",
+      "ok": true,
+      "detail": "http://127.0.0.1:3000/politis/eukairies"
+    }
+  ],
+  "failures": [],
+  "journey": [
+    {
+      "path": "citizen",
+      "steps": [
+        {
+          "step": "home",
+          "url": "http://127.0.0.1:3000/"
+        },
+        {
+          "step": "choice",
+          "url": "http://127.0.0.1:3000/politis/eukairies"
+        },
+        {
+          "step": "details",
+          "url": "http://127.0.0.1:3000/politis/eukairies/c437a3a6-ac36-49b3-bbae-c7bf75f38968",
+          "title": "Άρθρο 5Β ΚΦΕ — 7% φόρος για συνταξιούχους με σύνταξη εξωτερικού"
+        },
+        {
+          "step": "official application",
+          "url": "https://www.aade.gr/egkyklioi-kai-apofaseis/1192-22-09-2026"
+        }
+      ]
+    },
+    {
+      "path": "business",
+      "steps": [
+        {
+          "step": "home",
+          "url": "http://127.0.0.1:3000/"
+        },
+        {
+          "step": "choice",
+          "url": "http://127.0.0.1:3000/epixeiriseis/eukairies"
+        },
+        {
+          "step": "details",
+          "url": "http://127.0.0.1:3000/epixeiriseis/eukairies/9e08f707-f1d3-4aeb-8a57-1d7dcea74f09",
+          "title": "Ενίσχυση επενδυτικών σχεδίων νέων και υπό σύσταση ΜΜΕ που υλοποιούνται στις ηπειρωτικές περιοχές ΕΣΔΙΜ (ΔΑΜ21)"
+        },
+        {
+          "step": "official application",
+          "url": "https://app.opske.gr/"
+        }
+      ]
+    }
+  ],
+  "classified": [
+    {
+      "external_key": "manual:a21",
+      "audience": "citizen",
+      "title": "Α21 — Επίδομα παιδιού"
+    },
+    {
+      "external_key": "manual:art5a",
+      "audience": "citizen",
+      "title": "Άρθρο 5Α ΚΦΕ — εναλλακτική φορολόγηση επενδυτών"
+    },
+    {
+      "external_key": "manual:art5b",
+      "audience": "citizen",
+      "title": "Άρθρο 5Β ΚΦΕ — 7% φόρος για συνταξιούχους με σύνταξη εξωτερικού"
+    },
+    {
+      "external_key": "manual:art5c",
+      "audience": "citizen",
+      "title": "Άρθρο 5Γ ΚΦΕ — 50% απαλλαγή φόρου για όσους μεταφέρουν τη φορολογική κατοικία τους στην Ελλάδα"
+    },
+    {
+      "external_key": "manual:discovereu",
+      "audience": "citizen",
+      "title": "DiscoverEU — δωρεάν ταξιδιωτικό πάσο για 18χρονους"
+    },
+    {
+      "external_key": "manual:spiti2",
+      "audience": "citizen",
+      "title": "«Σπίτι μου ΙΙ» — δάνεια πρώτης κατοικίας"
+    },
+    {
+      "external_key": "manual:studenthousing",
+      "audience": "citizen",
+      "title": "Φοιτητικό στεγαστικό επίδομα"
+    },
+    {
+      "external_key": "manual:unemployment",
+      "audience": "citizen",
+      "title": "Τακτική επιδότηση ανεργίας"
+    },
+    {
+      "external_key": "opske:20505",
+      "audience": "business",
+      "title": "Ενίσχυση επιχειρηματικότητας με έμφαση στον τουρισμό και τη δεύτερη μεταποίηση αγροτικών προϊόντων (Χίος, Μυτιλήνη, μικρά νησιά — Βόρειο Αιγαίο)"
+    },
+    {
+      "external_key": "opske:21766",
+      "audience": "business",
+      "title": "«Επιχειρώ Στερεά»"
+    },
+    {
+      "external_key": "opske:23466",
+      "audience": "business",
+      "title": "Ενίσχυση επενδυτικών σχεδίων παραγωγικών επενδύσεων υφιστάμενων μεγάλων επιχειρήσεων που υλοποιούνται στις ηπειρωτικές περιοχές ΕΣΔΙΜ (ΔΑΜ23)"
+    },
+    {
+      "external_key": "opske:23467",
+      "audience": "business",
+      "title": "Ενίσχυση επενδυτικών σχεδίων νέων και υπό σύσταση ΜΜΕ που υλοποιούνται στις ηπειρωτικές περιοχές ΕΣΔΙΜ (ΔΑΜ21)"
+    },
+    {
+      "external_key": "opske:23486",
+      "audience": "business",
+      "title": "Ενίσχυση επενδυτικών σχεδίων παραγωγικών επενδύσεων νέων και υπό σύσταση μεγάλων επιχειρήσεων που υλοποιούνται στις ηπειρωτικές περιοχές ΕΣΔΙΜ (ΔΑΜ24)"
+    },
+    {
+      "external_key": "opske:23487",
+      "audience": "business",
+      "title": "Ενίσχυση επενδυτικών σχεδίων Υφιστάμενων ΜΜΕ που υλοποιούνται στις ηπειρωτικές περιοχές ΕΣΔΙΜ (ΔΑΜ22)"
+    },
+    {
+      "external_key": "opske:24506",
+      "audience": "business",
+      "title": "Ενίσχυση επιχειρηματικότητας στους τομείς προτεραιότητας της Περιφέρειας Νοτίου Αιγαίου"
+    },
+    {
+      "external_key": "opske:24767",
+      "audience": "business",
+      "title": "Ενίσχυση συνεργασίας μεταξύ επιχειρήσεων και ερευνητικών φορέων στους τομείς προτεραιότητας της Περιφέρειας Νοτίου Αιγαίου"
+    },
+    {
+      "external_key": "opske:24787",
+      "audience": "business",
+      "title": "Υποστήριξη νέων καινοτόμων επιχειρήσεων στην Περιφέρεια Κρήτης («Καινοτομώ στην Κρήτη»)"
+    },
+    {
+      "external_key": "opske:code:αττ130",
+      "audience": "business",
+      "title": "Συμπράξεις Έρευνας και Καινοτομίας στην Αττική"
+    },
+    {
+      "external_key": "opske:code:ΠΗΠΕ-06/3.0",
+      "audience": "citizen",
+      "title": "Νέα Ευκαιρία: Στήριξη ανέργων και μισθωτών μερικής απασχόλησης για έναρξη επαγγελματικής δραστηριότητας στην Ήπειρο"
+    }
+  ]
+}

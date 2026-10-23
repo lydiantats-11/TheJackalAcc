@@ -1,0 +1,171 @@
+
+> funding-radar@0.1.0 start
+> next start
+
+▲ Next.js 16.4.0
+- Local:         http://localhost:3000
+- Network:       http://10.1.0.43:3000
+✓ Ready in 79ms
+✓ Running next.config.ts took 25ms
+⨯ Error: Functions cannot be passed directly to Client Components unless you explicitly expose it by marking it with "use server". Or maybe you meant to call this function rather than return it.
+  {searchLabel: ..., searchPlaceholder: ..., searchButton: ..., all: ..., allTopics: ..., topicLabel: ..., letters: ..., noResults: ..., results: function results, fixtureTag: ..., empty: ..., kindName: ...}
+                                                                                                                                                  ^^^^^^^^^^^^^^^^
+    at ignore-listed frames {
+  digest: '3737863058'
+}
+⨯ Error: Functions cannot be passed directly to Client Components unless you explicitly expose it by marking it with "use server". Or maybe you meant to call this function rather than return it.
+  {searchLabel: ..., searchPlaceholder: ..., searchButton: ..., all: ..., allTopics: ..., topicLabel: ..., letters: ..., noResults: ..., results: function results, fixtureTag: ..., empty: ..., kindName: ...}
+                                                                                                                                                  ^^^^^^^^^^^^^^^^
+    at ignore-listed frames {
+  digest: '3737863058'
+}
+⨯ Error: Functions cannot be passed directly to Client Components unless you explicitly expose it by marking it with "use server". Or maybe you meant to call this function rather than return it.
+  {searchLabel: ..., searchPlaceholder: ..., searchButton: ..., all: ..., allTopics: ..., topicLabel: ..., letters: ..., noResults: ..., results: function results, fixtureTag: ..., empty: ..., kindName: ...}
+                                                                                                                                                  ^^^^^^^^^^^^^^^^
+    at ignore-listed frames {
+  digest: '3737863058'
+}
+⨯ Error: Functions cannot be passed directly to Client Components unless you explicitly expose it by marking it with "use server". Or maybe you meant to call this function rather than return it.
+  {searchLabel: ..., searchPlaceholder: ..., searchButton: ..., all: ..., allTopics: ..., topicLabel: ..., letters: ..., noResults: ..., results: function results, fixtureTag: ..., empty: ..., kindName: ...}
+                                                                                                                                                  ^^^^^^^^^^^^^^^^
+    at ignore-listed frames {
+  digest: '3737863058'
+}
+⨯ Error: Functions cannot be passed directly to Client Components unless you explicitly expose it by marking it with "use server". Or maybe you meant to call this function rather than return it.
+  {searchLabel: ..., searchPlaceholder: ..., searchButton: ..., all: ..., allTopics: ..., topicLabel: ..., letters: ..., noResults: ..., results: function results, fixtureTag: ..., empty: ..., kindName: ...}
+                                                                                                                                                  ^^^^^^^^^^^^^^^^
+    at ignore-listed frames {
+  digest: '3737863058'
+}
+⨯ Error: Functions cannot be passed directly to Client Components unless you explicitly expose it by marking it with "use server". Or maybe you meant to call this function rather than return it.
+  {searchLabel: ..., searchPlaceholder: ..., searchButton: ..., all: ..., allTopics: ..., topicLabel: ..., letters: ..., noResults: ..., results: function results, fixtureTag: ..., empty: ..., kindName: ...}
+                                                                                                                                                  ^^^^^^^^^^^^^^^^
+    at ignore-listed frames {
+  digest: '3737863058'
+}
+⨯ Error: Functions cannot be passed directly to Client Components unless you explicitly expose it by marking it with "use server". Or maybe you meant to call this function rather than return it.
+  {searchLabel: ..., searchPlaceholder: ..., searchButton: ..., all: ..., allTopics: ..., topicLabel: ..., letters: ..., noResults: ..., results: function results, fixtureTag: ..., empty: ..., kindName: ...}
+                                                                                                                                                  ^^^^^^^^^^^^^^^^
+    at ignore-listed frames {
+  digest: '3737863058'
+}
+⨯ Error: Functions cannot be passed directly to Client Components unless you explicitly expose it by marking it with "use server". Or maybe you meant to call this function rather than return it.
+  {searchLabel: ..., searchPlaceholder: ..., searchButton: ..., all: ..., allTopics: ..., topicLabel: ..., letters: ..., noResults: ..., results: function results, fixtureTag: ..., empty: ..., kindName: ...}
+                                                                                                                                                  ^^^^^^^^^^^^^^^^
+    at ignore-listed frames {
+  digest: '3737863058'
+}
+⨯ Error: Functions cannot be passed directly to Client Components unless you explicitly expose it by marking it with "use server". Or maybe you meant to call this function rather than return it.
+  {searchLabel: ..., searchPlaceholder: ..., searchButton: ..., all: ..., allTopics: ..., topicLabel: ..., letters: ..., noResults: ..., results: function results, fixtureTag: ..., empty: ..., kindName: ...}
+                                                                                                                                                  ^^^^^^^^^^^^^^^^
+    at ignore-listed frames {
+  digest: '3737863058'
+}
+⨯ Error: Functions cannot be passed directly to Client Components unless you explicitly expose it by marking it with "use server". Or maybe you meant to call this function rather than return it.
+  {searchLabel: ..., searchPlaceholder: ..., searchButton: ..., all: ..., allTopics: ..., topicLabel: ..., letters: ..., noResults: ..., results: function results, fixtureTag: ..., empty: ..., kindName: ...}
+                                                                                                                                                  ^^^^^^^^^^^^^^^^
+    at ignore-listed frames {
+  digest: '934000033'
+}
+⨯ Error: Functions cannot be passed directly to Client Components unless you explicitly expose it by marking it with "use server". Or maybe you meant to call this function rather than return it.
+  {searchLabel: ..., searchPlaceholder: ..., searchButton: ..., all: ..., allTopics: ..., topicLabel: ..., letters: ..., noResults: ..., results: function results, fixtureTag: ..., empty: ..., kindName: ...}
+                                                                                                                                                  ^^^^^^^^^^^^^^^^
+    at ignore-listed frames {
+  digest: '934000033'
+}
+⨯ Error: Functions cannot be passed directly to Client Components unless you explicitly expose it by marking it with "use server". Or maybe you meant to call this function rather than return it.
+  {searchLabel: ..., searchPlaceholder: ..., searchButton: ..., all: ..., allTopics: ..., topicLabel: ..., letters: ..., noResults: ..., results: function results, fixtureTag: ..., empty: ..., kindName: ...}
+                                                                                                                                                  ^^^^^^^^^^^^^^^^
+    at ignore-listed frames {
+  digest: '934000033'
+}
+⨯ Error: Functions cannot be passed directly to Client Components unless you explicitly expose it by marking it with "use server". Or maybe you meant to call this function rather than return it.
+  {searchLabel: ..., searchPlaceholder: ..., searchButton: ..., all: ..., allTopics: ..., topicLabel: ..., letters: ..., noResults: ..., results: function results, fixtureTag: ..., empty: ..., kindName: ...}
+                                                                                                                                                  ^^^^^^^^^^^^^^^^
+    at ignore-listed frames {
+  digest: '934000033'
+}
+⨯ Error: Functions cannot be passed directly to Client Components unless you explicitly expose it by marking it with "use server". Or maybe you meant to call this function rather than return it.
+  {searchLabel: ..., searchPlaceholder: ..., searchButton: ..., all: ..., allTopics: ..., topicLabel: ..., letters: ..., noResults: ..., results: function results, fixtureTag: ..., empty: ..., kindName: ...}
+                                                                                                                                                  ^^^^^^^^^^^^^^^^
+    at ignore-listed frames {
+  digest: '3737863058'
+}
+⨯ Error: Functions cannot be passed directly to Client Components unless you explicitly expose it by marking it with "use server". Or maybe you meant to call this function rather than return it.
+  {searchLabel: ..., searchPlaceholder: ..., searchButton: ..., all: ..., allTopics: ..., topicLabel: ..., letters: ..., noResults: ..., results: function results, fixtureTag: ..., empty: ..., kindName: ...}
+                                                                                                                                                  ^^^^^^^^^^^^^^^^
+    at ignore-listed frames {
+  digest: '3737863058'
+}
+⨯ Error: Functions cannot be passed directly to Client Components unless you explicitly expose it by marking it with "use server". Or maybe you meant to call this function rather than return it.
+  {searchLabel: ..., searchPlaceholder: ..., searchButton: ..., all: ..., allTopics: ..., topicLabel: ..., letters: ..., noResults: ..., results: function results, fixtureTag: ..., empty: ..., kindName: ...}
+                                                                                                                                                  ^^^^^^^^^^^^^^^^
+    at ignore-listed frames {
+  digest: '934000033'
+}
+⨯ Error: Functions cannot be passed directly to Client Components unless you explicitly expose it by marking it with "use server". Or maybe you meant to call this function rather than return it.
+  {searchLabel: ..., searchPlaceholder: ..., searchButton: ..., all: ..., allTopics: ..., topicLabel: ..., letters: ..., noResults: ..., results: function results, fixtureTag: ..., empty: ..., kindName: ...}
+                                                                                                                                                  ^^^^^^^^^^^^^^^^
+    at ignore-listed frames {
+  digest: '934000033'
+}
+⨯ Error: Functions cannot be passed directly to Client Components unless you explicitly expose it by marking it with "use server". Or maybe you meant to call this function rather than return it.
+  {searchLabel: ..., searchPlaceholder: ..., searchButton: ..., all: ..., allTopics: ..., topicLabel: ..., letters: ..., noResults: ..., results: function results, fixtureTag: ..., empty: ..., kindName: ...}
+                                                                                                                                                  ^^^^^^^^^^^^^^^^
+    at ignore-listed frames {
+  digest: '934000033'
+}
+⨯ Error: Functions cannot be passed directly to Client Components unless you explicitly expose it by marking it with "use server". Or maybe you meant to call this function rather than return it.
+  {searchLabel: ..., searchPlaceholder: ..., searchButton: ..., all: ..., allTopics: ..., topicLabel: ..., letters: ..., noResults: ..., results: function results, fixtureTag: ..., empty: ..., kindName: ...}
+                                                                                                                                                  ^^^^^^^^^^^^^^^^
+    at ignore-listed frames {
+  digest: '934000033'
+}
+⨯ Error: Functions cannot be passed directly to Client Components unless you explicitly expose it by marking it with "use server". Or maybe you meant to call this function rather than return it.
+  {searchLabel: ..., searchPlaceholder: ..., searchButton: ..., all: ..., allTopics: ..., topicLabel: ..., letters: ..., noResults: ..., results: function results, fixtureTag: ..., empty: ..., kindName: ...}
+                                                                                                                                                  ^^^^^^^^^^^^^^^^
+    at ignore-listed frames {
+  digest: '3737863058'
+}
+⨯ Error: Functions cannot be passed directly to Client Components unless you explicitly expose it by marking it with "use server". Or maybe you meant to call this function rather than return it.
+  {searchLabel: ..., searchPlaceholder: ..., searchButton: ..., all: ..., allTopics: ..., topicLabel: ..., letters: ..., noResults: ..., results: function results, fixtureTag: ..., empty: ..., kindName: ...}
+                                                                                                                                                  ^^^^^^^^^^^^^^^^
+    at ignore-listed frames {
+  digest: '3737863058'
+}
+⨯ Error: Functions cannot be passed directly to Client Components unless you explicitly expose it by marking it with "use server". Or maybe you meant to call this function rather than return it.
+  {searchLabel: ..., searchPlaceholder: ..., searchButton: ..., all: ..., allTopics: ..., topicLabel: ..., letters: ..., noResults: ..., results: function results, fixtureTag: ..., empty: ..., kindName: ...}
+                                                                                                                                                  ^^^^^^^^^^^^^^^^
+    at ignore-listed frames {
+  digest: '934000033'
+}
+⨯ Error: Functions cannot be passed directly to Client Components unless you explicitly expose it by marking it with "use server". Or maybe you meant to call this function rather than return it.
+  {searchLabel: ..., searchPlaceholder: ..., searchButton: ..., all: ..., allTopics: ..., topicLabel: ..., letters: ..., noResults: ..., results: function results, fixtureTag: ..., empty: ..., kindName: ...}
+                                                                                                                                                  ^^^^^^^^^^^^^^^^
+    at ignore-listed frames {
+  digest: '934000033'
+}
+⨯ Error: Functions cannot be passed directly to Client Components unless you explicitly expose it by marking it with "use server". Or maybe you meant to call this function rather than return it.
+  {searchLabel: ..., searchPlaceholder: ..., searchButton: ..., all: ..., allTopics: ..., topicLabel: ..., letters: ..., noResults: ..., results: function results, fixtureTag: ..., empty: ..., kindName: ...}
+                                                                                                                                                  ^^^^^^^^^^^^^^^^
+    at ignore-listed frames {
+  digest: '934000033'
+}
+⨯ Error: Functions cannot be passed directly to Client Components unless you explicitly expose it by marking it with "use server". Or maybe you meant to call this function rather than return it.
+  {searchLabel: ..., searchPlaceholder: ..., searchButton: ..., all: ..., allTopics: ..., topicLabel: ..., letters: ..., noResults: ..., results: function results, fixtureTag: ..., empty: ..., kindName: ...}
+                                                                                                                                                  ^^^^^^^^^^^^^^^^
+    at ignore-listed frames {
+  digest: '934000033'
+}
+⨯ Error: Functions cannot be passed directly to Client Components unless you explicitly expose it by marking it with "use server". Or maybe you meant to call this function rather than return it.
+  {searchLabel: ..., searchPlaceholder: ..., searchButton: ..., all: ..., allTopics: ..., topicLabel: ..., letters: ..., noResults: ..., results: function results, fixtureTag: ..., empty: ..., kindName: ...}
+                                                                                                                                                  ^^^^^^^^^^^^^^^^
+    at ignore-listed frames {
+  digest: '3737863058'
+}
+⨯ Error: Functions cannot be passed directly to Client Components unless you explicitly expose it by marking it with "use server". Or maybe you meant to call this function rather than return it.
+  {searchLabel: ..., searchPlaceholder: ..., searchButton: ..., all: ..., allTopics: ..., topicLabel: ..., letters: ..., noResults: ..., results: function results, fixtureTag: ..., empty: ..., kindName: ...}
+                                                                                                                                                  ^^^^^^^^^^^^^^^^
+    at ignore-listed frames {
+  digest: '934000033'
+}
