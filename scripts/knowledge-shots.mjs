@@ -85,6 +85,8 @@ if (label === "preview") {
     ok(`preview: search «${q}»${first ? ` lists «${first}» first` : " finds entries"}`, first ? got[0] === first : got.length > 0, `${got.length}: ${got.slice(0, 4).join(" | ")}`);
   }
   await page.fill("#kn-q", "ΙΚΕ");
+  const ike = await page.locator(".kn-item .kn-item-title").allInnerTexts();
+  ok("preview: «ΙΚΕ» second result is the ΙΚΕ question, not a word that merely contains the letters", ike[1] === "Ποια η διαφορά ΙΚΕ και ατομικής επιχείρησης;", ike.slice(0, 3).join(" | "));
   await page.screenshot({ path: `${out}/desktop-el-search-ike.jpg`, type: "jpeg", quality: 80 });
   await page.goto(`${BASE}/gnosi/lexiko`, { waitUntil: "networkidle" });
   await page.fill("#kn-q", "αφμ");

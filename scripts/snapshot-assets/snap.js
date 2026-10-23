@@ -58,7 +58,8 @@
       function rank(li) {
         var ft = li.getAttribute("data-ft") || "";
         if (!words.length) return 0;
-        return ft.split("|").indexOf(whole) !== -1 ? 0 : words.every(function (w) { return ft.indexOf(w) !== -1; }) ? 1 : 2;
+        function starts(text) { var ws = text.split(/[^\p{L}\p{N}]+/u); return words.every(function (w) { return ws.some(function (x) { return x.indexOf(w) === 0; }); }); }
+        return ft.split("|").indexOf(whole) !== -1 ? 0 : starts(ft) ? 1 : starts(li.getAttribute("data-hay") || "") ? 2 : 3;
       }
       items.forEach(function (li) {
         var hay = li.getAttribute("data-hay") || "";

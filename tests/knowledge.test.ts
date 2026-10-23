@@ -161,7 +161,8 @@ describe("the K1 register as drafts in the private preview (owner, 23 Oct 2026 1
     expect(ids("ΕΣΠΑ")[0]).toBe("LEX-0116");
     expect(ids("ΕΣΠΑ")).toEqual(expect.arrayContaining(["BAS-0145"]));
     expect(ids("ΙΚΕ")[0]).toBe("LEX-0034");
-    expect(ids("ΙΚΕ").indexOf("FAQ-0060")).toBeLessThan(ids("ΙΚΕ").indexOf("LEX-0002"));
+    expect(ids("ΙΚΕ")[1]).toBe("FAQ-0060"); // «Ποια η διαφορά ΙΚΕ και…», not «…φορολογικές…»
+    expect(ids("ΙΚΕ").indexOf("FAQ-0028")).toBeGreaterThan(1);
     expect(filterAndRank(items, "").length).toBe(221);
     expect(filterAndRank(items, "", "forologia").every((i) => i.topic === "forologia")).toBe(true);
   });
