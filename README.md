@@ -1,3 +1,6 @@
+> **Developer handover (23 Oct 2026): start with [`docs/handover/`](docs/handover/README.md).** This README describes the
+> project as of 13 Oct 2026 («Funding Radar» was the working name of Jackal Accountant); the handover pack is current.
+
 # Funding Radar (working name)
 
 Greek-first platform that finds official Greek and EU funding opportunities and explains, honestly, whether they
