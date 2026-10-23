@@ -7,7 +7,7 @@
  * το Jackal» are offered, so nothing audience-specific is shown before the visitor chooses.
  */
 import Link from "next/link";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { usePathname } from "next/navigation";
 import { AUDIENCE_SLUG, KNOWLEDGE_PATH, PATH_COOKIE, audienceFromSlug, paths, switchHref, type Audience, type NavItem } from "@/lib/site/audience";
 
@@ -32,7 +32,11 @@ export function NavLinks({ labels, lastPath = null }: { labels: NavLabels; lastP
   const path = usePathname() ?? "/";
   const inPath = useAudience();
   const onKnowledge = path === KNOWLEDGE_PATH || path.startsWith(`${KNOWLEDGE_PATH}/`);
-  const a = inPath ?? (onKnowledge ? lastPath : null);
+  // The root layout is not re-rendered on client navigation, so the cookie it read can be stale: also remember the
+  // path chosen in this visit on the client.
+  const [remembered, setRemembered] = useState<Audience | null>(lastPath);
+  useEffect(() => { if (inPath) setRemembered(inPath); }, [inPath]);
+  const a = inPath ?? (onKnowledge ? remembered ?? lastPath : null);
   const current = (href: string) => (path === href || path.startsWith(`${href}/`) ? "page" : undefined);
   if (!a) {
     return (
