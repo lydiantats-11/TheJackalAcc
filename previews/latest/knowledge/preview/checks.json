@@ -777,15 +777,9 @@
     },
     {
       "name": "from /epixeiriseis, Γνώση shows the five tabs of that path",
-      "ok": false,
-      "detail": "/gnosi /about"
+      "ok": true,
+      "detail": "/epixeiriseis/eukairies /epixeiriseis/nea /gnosi /epixeiriseis/jackal /epixeiriseis/logariasmos"
     }
   ],
-  "failures": [
-    {
-      "name": "from /epixeiriseis, Γνώση shows the five tabs of that path",
-      "ok": false,
-      "detail": "/gnosi /about"
-    }
-  ]
+  "failures": []
 }

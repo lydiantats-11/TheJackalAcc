@@ -1,14 +1,8 @@
 {
   "label": "preview",
   "checks": 156,
-  "failed": 1,
-  "failures": [
-    {
-      "name": "from /epixeiriseis, Γνώση shows the five tabs of that path",
-      "ok": false,
-      "detail": "/gnosi /about"
-    }
-  ]
+  "failed": 0,
+  "failures": []
 }
 {
   "label": "production",
