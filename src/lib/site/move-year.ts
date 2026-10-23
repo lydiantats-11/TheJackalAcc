@@ -26,6 +26,11 @@ export interface MoveYearRule {
   documents_by: string;
   /** The 2026 rules apply to application windows closing on or after this date (YYYY-MM-DD). */
   rules_in_force_from: string;
+  /**
+   * Last year of application whose window the official decisions confirm (owner, 23 Oct 2026: a later year that only
+   * follows from the rule is «conditional» — never shown as an open, confirmed period or as everyone's next deadline).
+   */
+  confirmed_through: number;
   timezone: string;
   /** Period of application of the regime once approved. */
   regime: { years: number; start: L | null };
@@ -37,7 +42,8 @@ export interface ApplicationWindow {
   /** End of the last day for the application, as an instant. */
   applicationBy: Date;
   documentsBy: Date;
-  state: "passed" | "open" | "previous_rules";
+  /** open / passed: confirmed by the decisions · conditional: follows from the rule, not confirmed · previous_rules: before 25 Jun 2026. */
+  state: "passed" | "open" | "conditional" | "previous_rules";
 }
 
 export interface MoveYearRow {
@@ -68,7 +74,9 @@ export function applicationWindow(rule: MoveYearRule, year: number, now: Date): 
   const applicationBy = endOfDay(`${year}-${rule.application_by}`, rule.timezone);
   const documentsBy = endOfDay(`${year}-${rule.documents_by}`, rule.timezone);
   const inForce = new Date(`${rule.rules_in_force_from}T00:00:00Z`);
-  const state = applicationBy.getTime() < inForce.getTime() ? "previous_rules" : applicationBy.getTime() < now.getTime() ? "passed" : "open";
+  const state = applicationBy.getTime() < inForce.getTime() ? "previous_rules"
+    : year > rule.confirmed_through ? "conditional"
+    : applicationBy.getTime() < now.getTime() ? "passed" : "open";
   return { year, applicationBy, documentsBy, state };
 }
 
@@ -83,10 +91,24 @@ export function moveYearRows(rule: MoveYearRule, now: Date): MoveYearRow[] {
   return rows;
 }
 
-/** The next application deadline that is still open for someone (the earliest open window), or null. */
+/**
+ * The earliest CONFIRMED window still open (never a conditional one), or null. It applies only to people who moved in
+ * the year before it or by the cutoff day of its own year — never to everyone.
+ */
+export function confirmedOpenWindow(rule: MoveYearRule, now: Date): ApplicationWindow | null {
+  const open = moveYearRows(rule, now).flatMap((r) => r.windows).filter((w) => w.state === "open");
+  return open.length ? open.reduce((a, b) => (b.applicationBy.getTime() < a.applicationBy.getTime() ? b : a)) : null;
+}
+
+/** The deadline of that confirmed window, or null when no confirmed window is open. */
 export function nextDeadline(rule: MoveYearRule, now: Date): Date | null {
-  const open = moveYearRows(rule, now).flatMap((r) => r.windows).filter((w) => w.state === "open").map((w) => w.applicationBy.getTime());
-  return open.length ? new Date(Math.min(...open)) : null;
+  return confirmedOpenWindow(rule, now)?.applicationBy ?? null;
+}
+
+/** "2/7" for display. */
+export function cutoffLabel(rule: MoveYearRule): string {
+  const { day, month } = cutoffDayMonth(rule);
+  return `${day}/${month}`;
 }
 
 /** "02-07" → day and month for display. */

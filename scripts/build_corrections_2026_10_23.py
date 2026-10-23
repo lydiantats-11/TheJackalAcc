@@ -31,8 +31,9 @@ def j(o) -> str:
     return q(json.dumps(o, ensure_ascii=False)) + "::jsonb"
 
 
-def next_deadline_utc(rule: dict, now: datetime) -> str:
-    """Same arithmetic as src/lib/site/move-year.ts: the earliest application deadline still open for someone."""
+def next_deadline_utc(rule: dict, now: datetime) -> str | None:
+    """Same arithmetic as src/lib/site/move-year.ts: the earliest CONFIRMED application window still open, or None
+    (windows after `confirmed_through` are conditional and never become a deadline)."""
     tz = ZoneInfo(rule["timezone"])
     y0 = now.astimezone(tz).year
     in_force = datetime.fromisoformat(rule["rules_in_force_from"] + "T00:00:00+00:00")
@@ -41,9 +42,9 @@ def next_deadline_utc(rule: dict, now: datetime) -> str:
         for a in (y, y + 1):
             m, d = map(int, rule["application_by"].split("-"))
             end = datetime(a, m, d, tzinfo=tz) + timedelta(days=1) - timedelta(seconds=1)
-            if end >= in_force and end >= now:
+            if end >= in_force and end >= now and a <= rule["confirmed_through"]:
                 found.append(end)
-    return min(found).astimezone(ZoneInfo("UTC")).strftime("%Y-%m-%dT%H:%M:%SZ")
+    return min(found).astimezone(ZoneInfo("UTC")).strftime("%Y-%m-%dT%H:%M:%SZ") if found else None
 
 
 def main() -> None:
@@ -88,7 +89,8 @@ def main() -> None:
         sets = [
             f"summary_plain = {q(summary + ' Ποσό / όφελος: ' + benefit)}",
             f"deadline_original_text = {q(f['application_status']['deadline_original_wording']['el'])}",
-            f"closes_at = {q(next_deadline_utc(rule, now))}",
+            # no confirmed window open → no date and «Υπό επιβεβαίωση» (owner, 23 Oct 2026 14:32)
+            (f"closes_at = {q(nd)}, status = 'open'" if (nd := next_deadline_utc(rule, now)) else "closes_at = NULL, status = 'unverified'"),
             f"status_evidence = status_evidence || {j({'rechecked_at': CHECKED_AT, 'deadline_rule': 'by_year_of_move', 'governing_document': rule['basis']['el']})}",
             f"last_retrieved_at = {q(CHECKED_AT)}, last_verified_at = {q(CHECKED_AT)}",
             "version = version + 1, updated_at = now()",

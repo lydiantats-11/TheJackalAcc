@@ -29,15 +29,14 @@ describe("programme status on guides (from the checked file, same rules as the d
     expect(d("manual:a21", "2026-11-13T16:00:01Z")).toBe("deadline_passed");
   });
 
-  it("Articles 5Β and 5Α: the next deadline still open for someone, by year of move (A.1192/2026, A.1147/2026)", () => {
+  it("Articles 5Β and 5Α: only a confirmed window gives a deadline (A.1192/2026, A.1147/2026)", () => {
     expect(verifiedCloses("manual:art5b", at("2026-10-23T08:00:00Z"))!.toISOString()).toBe("2026-10-31T21:59:59.999Z");
     expect(d("manual:art5b", "2026-10-23T08:00:00Z")).toBe("open");
-    // after 31 Oct 2026 the programme stays open for people who moved after 2 Jul 2026 (next: 31 Oct 2027)
-    expect(verifiedCloses("manual:art5b", at("2026-11-02T08:00:00Z"))!.toISOString()).toBe("2027-10-31T21:59:59.999Z");
-    expect(d("manual:art5b", "2026-11-02T08:00:00Z")).toBe("open");
-    expect(verifiedCloses("manual:art5a", at("2026-10-23T08:00:00Z"))!.toISOString()).toBe("2027-09-30T20:59:59.999Z");
-    expect(d("manual:art5a", "2026-10-23T08:00:00Z")).toBe("open");
-    expect(d("manual:art5a", "2026-12-01T08:00:00Z")).toBe("recheck"); // checked 22 Oct, interval 30 days
+    // after 31 Oct 2026 no confirmed window is open: no date, «Υπό επιβεβαίωση» (owner, 23 Oct 2026 14:32)
+    expect(verifiedCloses("manual:art5b", at("2026-11-02T08:00:00Z"))).toBeNull();
+    expect(d("manual:art5b", "2026-11-02T08:00:00Z")).toBe("unverified");
+    expect(verifiedCloses("manual:art5a", at("2026-10-23T08:00:00Z"))).toBeNull(); // 2026 passed, 2027 not confirmed
+    expect(d("manual:art5a", "2026-10-23T08:00:00Z")).toBe("unverified");
   });
 
   it("a date-only deadline counts the whole day (Athens time)", () => {

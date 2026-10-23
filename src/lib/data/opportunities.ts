@@ -5,7 +5,7 @@ import { requirementRecordSchema, type RequirementRecord } from "@/lib/domain/en
 import type { OfficialDetails } from "@/lib/sources/types";
 import type { Audience } from "@/lib/site/audience";
 import { verifiedFor } from "@/lib/site/verified";
-import { nextDeadline } from "@/lib/site/move-year";
+import { confirmedOpenWindow, cutoffLabel } from "@/lib/site/move-year";
 
 export interface OpportunityRow {
   id: string;
@@ -29,8 +29,11 @@ export interface OpportunityRow {
   opens_at: Date | null;
   published_on: Date | null;
   deadline_kind: OpportunityForMatching["deadline_kind"];
-  /** "move_year": the deadline depends on the year the person moved (5Α, 5Β); closes_at is then the next one still open for someone. */
-  deadline_rule?: "move_year" | null;
+  /**
+   * The deadline depends on the year the person moved (5Α, 5Β). `year` = the confirmed window whose deadline closes_at
+   * holds (it applies to moves in year-1 or by `cutoff` of year), or null when no confirmed window is open.
+   */
+  deadline_rule?: { year: number | null; cutoff: string } | null;
   deadline_original_text: string | null;
   deadline_is_date_only: boolean;
   deadline_timezone: string;
@@ -104,8 +107,11 @@ const showTestRecords = () => process.env.JACKAL_SHOW_TEST_RECORDS === "true";
 export function withDeadlineRule<T extends OpportunityRow>(row: T, now: Date = new Date()): T {
   const rule = verifiedFor(row.external_key)?.deadlineRule;
   if (!rule) return row;
-  const next = nextDeadline(rule, now);
-  return { ...row, closes_at: next, deadline_kind: next ? "official" : "not_announced", deadline_is_date_only: true, deadline_timezone: rule.timezone, deadline_rule: "move_year" };
+  const w = confirmedOpenWindow(rule, now);
+  const base = { deadline_is_date_only: true, deadline_timezone: rule.timezone };
+  // No confirmed window open: no date at all and «Υπό επιβεβαίωση» — a conditional future period is never shown as open.
+  if (!w) return { ...row, ...base, closes_at: null, deadline_kind: "not_announced", status: "unverified", deadline_rule: { year: null, cutoff: cutoffLabel(rule) } };
+  return { ...row, ...base, closes_at: w.applicationBy, deadline_kind: "official", deadline_rule: { year: w.year, cutoff: cutoffLabel(rule) } };
 }
 
 /** Public listing: only approved records (pending AI extractions never appear), never test records. */
@@ -178,7 +184,7 @@ export function toMatchable(row: OpportunityRow, requirements: RequirementRecord
     opportunity_type: row.opportunity_type,
     closes_at: row.closes_at,
     deadline_kind: row.deadline_kind,
-    deadline_depends_on_move_year: row.deadline_rule === "move_year",
+    deadline_depends_on_move_year: !!row.deadline_rule,
     last_verified_at: row.last_verified_at,
     stale_after_hours: row.is_synthetic ? 24 * 365 * 10 : row.stale_after_days ? row.stale_after_days * 24 : row.source_stale_after_hours ?? 72,
     has_conflict: row.has_conflict,

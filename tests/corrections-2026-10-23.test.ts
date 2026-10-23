@@ -10,7 +10,7 @@ import { readFileSync } from "node:fs";
 import { join } from "node:path";
 import { CHECKED_RECORDS } from "@/lib/site/checked-records";
 import { verifiedFor } from "@/lib/site/verified";
-import { moveYearRows, nextDeadline, type MoveYearRule } from "@/lib/site/move-year";
+import { confirmedOpenWindow, moveYearRows, nextDeadline, type MoveYearRule } from "@/lib/site/move-year";
 import { statusFromVerified } from "@/lib/site/guide-status";
 import { PROGRAMME_GUIDES } from "@/lib/site/guides";
 import { timeLeftOf } from "@/lib/site/brief";
@@ -72,75 +72,101 @@ describe("2. Article 5Β — the 15 years", () => {
   });
 });
 
-describe("3. Articles 5Α / 5Β — deadlines by year of move, never one date for everyone", () => {
+describe("3. Articles 5Α / 5Β — deadlines by year of move; only confirmed periods are open (P0, owner 23 Oct 2026 14:32)", () => {
   const now = at("2026-10-23T09:00:00Z");
-  it("5Β on 23 Oct 2026: four rows, application and documents apart, 2025 windows under the previous rules", () => {
+  it("5Β on 23 Oct 2026: 2026 window confirmed and open; 2027 windows are conditional, never «open»", () => {
     const rows = moveYearRows(rule("art5b"), now);
     expect(rows.map((r) => `${r.moveYear}-${r.part}`)).toEqual(["2025-by_cutoff", "2025-after_cutoff", "2026-by_cutoff", "2026-after_cutoff"]);
     const w = (i: number) => rows[i]!.windows.map((x) => `${x.year}:${x.state}`);
     expect(w(0)).toEqual(["2025:previous_rules", "2026:open"]);
     expect(w(1)).toEqual(["2026:open"]);
-    expect(w(2)).toEqual(["2026:open", "2027:open"]);
-    expect(w(3)).toEqual(["2027:open"]);
+    expect(w(2)).toEqual(["2026:open", "2027:conditional"]);
+    expect(w(3)).toEqual(["2027:conditional"]);
     expect(rows[1]!.windows[0]!.applicationBy.toISOString()).toBe("2026-10-31T21:59:59.999Z");
     expect(rows[1]!.windows[0]!.documentsBy.toISOString()).toBe("2026-11-30T21:59:59.999Z");
   });
-  it("5Α on 23 Oct 2026: the 2026 window has passed, 2027 is open; documents by 31 Oct of the year of application", () => {
+  it("5Α on 23 Oct 2026: the 2026 window has passed and 2027 is conditional — no confirmed deadline at all", () => {
     const rows = moveYearRows(rule("art5a"), now);
     expect(rows[1]!.windows.map((x) => x.state)).toEqual(["passed"]);
-    expect(rows[2]!.windows.map((x) => `${x.year}:${x.state}`)).toEqual(["2026:passed", "2027:open"]);
-    expect(rows[3]!.windows[0]!.applicationBy.toISOString()).toBe("2027-09-30T20:59:59.999Z");
+    expect(rows[2]!.windows.map((x) => `${x.year}:${x.state}`)).toEqual(["2026:passed", "2027:conditional"]);
     expect(rows[3]!.windows[0]!.documentsBy.toISOString()).toBe("2027-10-31T21:59:59.999Z"); // 25-hour day counted whole
-    expect(nextDeadline(rule("art5a"), now)!.toISOString()).toBe("2027-09-30T20:59:59.999Z");
+    expect(nextDeadline(rule("art5a"), now)).toBeNull();
+    expect(statusFromVerified("manual:art5a", now).display).toBe("unverified");
   });
-  it("after 31 Oct 2026, 5Β is still open for people who moved later (it does not close for everyone)", () => {
+  it("after 31 Oct 2026, 5Β shows NO universal next deadline (no 31/10/2027) and becomes «Υπό επιβεβαίωση»", () => {
     const later = at("2026-11-05T09:00:00Z");
-    expect(nextDeadline(rule("art5b"), later)!.toISOString()).toBe("2027-10-31T21:59:59.999Z");
-    expect(statusFromVerified("manual:art5b", later).display).toBe("open");
+    expect(nextDeadline(rule("art5b"), later)).toBeNull();
+    expect(confirmedOpenWindow(rule("art5b"), later)).toBeNull();
+    expect(statusFromVerified("manual:art5b", later).display).toBe("unverified");
+  });
+  it("only windows in or before the confirmed year can ever be «open»", () => {
+    for (const id of ["art5a", "art5b"]) {
+      const r = rule(id);
+      expect(r.confirmed_through).toBe(2026);
+      for (const t of ["2026-01-10T09:00:00Z", "2026-10-23T09:00:00Z", "2026-12-20T09:00:00Z", "2027-03-01T09:00:00Z"])
+        for (const w of moveYearRows(r, at(t)).flatMap((x) => x.windows)) if (w.year > 2026) expect(w.state).toBe("conditional");
+    }
   });
   it("the period of application is kept apart: 15 tax years; 5Α from the tax year for which the application is filed", () => {
     expect(rule("art5a").regime.years).toBe(15);
     expect(rule("art5a").regime.start!.el).toBe("από το φορολογικό έτος για το οποίο υποβάλλεται η αίτηση");
   });
-  it("no recorded wording names one date as if it applied to everyone", () => {
+  it("no recorded wording names one date as if it applied to everyone, nor claims later years follow the same rule", () => {
     for (const id of ["art5a", "art5b"]) {
       const w = rec(id).application_status.deadline_original_wording;
       expect(w.el).not.toMatch(/\d{1,2}\/\d{1,2}\/20\d\d/);
       expect(w.en).not.toMatch(/\d{1,2} (Sep|Oct|Nov) 20\d\d/);
       expect(rec(id).application_status.closes_at).toBeNull();
     }
+    expect(read("src/lib/site/copy.ts")).not.toMatch(/ισχύει ο ίδιος κανόνας|same rule applies to moves in later years/);
   });
 });
 
 describe("4. one source for every page", () => {
-  const base = { id: "x", external_key: "manual:art5b", closes_at: at("2026-10-31T21:59:59Z"), deadline_kind: "official", deadline_is_date_only: true, deadline_timezone: "Europe/Athens" } as unknown as OpportunityRow;
-  it("database rows take the deadline from the rule (cards, details, listings, personalised results)", () => {
-    const r = withDeadlineRule(base, at("2026-11-05T09:00:00Z"));
-    expect(r.closes_at!.toISOString()).toBe("2027-10-31T21:59:59.999Z");
-    expect(r.deadline_rule).toBe("move_year");
+  const base = { id: "x", external_key: "manual:art5b", status: "open", closes_at: at("2026-10-31T21:59:59Z"), deadline_kind: "official", deadline_is_date_only: true, deadline_timezone: "Europe/Athens" } as unknown as OpportunityRow;
+  it("database rows take only the confirmed deadline from the rule, with who it applies to", () => {
+    const r = withDeadlineRule(base, at("2026-10-23T09:00:00Z"));
+    expect(r.closes_at!.toISOString()).toBe("2026-10-31T21:59:59.999Z");
+    expect(r.deadline_rule).toEqual({ year: 2026, cutoff: "2/7" });
     const other = { ...base, external_key: "manual:a21" } as OpportunityRow;
     expect(withDeadlineRule(other)).toBe(other);
   });
-  it("the database seed's next deadline is the rule's own, computed the same way", () => {
-    const checked = at("2026-10-23T09:00:00Z");
+  it("with no confirmed window open, the row has no date and is «Υπό επιβεβαίωση» (no application button follows)", () => {
+    const r = withDeadlineRule(base, at("2026-11-05T09:00:00Z"));
+    expect(r.closes_at).toBeNull();
+    expect(r.status).toBe("unverified");
+    expect(r.deadline_rule).toEqual({ year: null, cutoff: "2/7" });
+    const a = withDeadlineRule({ ...base, external_key: "manual:art5a" } as OpportunityRow, at("2026-10-23T09:00:00Z"));
+    expect([a.closes_at, a.status]).toEqual([null, "unverified"]);
+  });
+  it("the database seed carries the same confirmed deadline, or none", () => {
     const iso = (d: Date) => d.toISOString().replace(/\.\d{3}Z$/, "Z");
-    expect(sql).toContain(`closes_at = '${iso(nextDeadline(rule("art5b"), checked)!)}'`);
-    expect(sql).toContain(`closes_at = '${iso(nextDeadline(rule("art5a"), checked)!)}'`);
+    expect(sql).toContain(`closes_at = '${iso(nextDeadline(rule("art5b"), at("2026-10-23T09:00:00Z"))!)}', status = 'open'`);
+    expect(sql).toMatch(/closes_at = NULL, status = 'unverified'[\s\S]*?WHERE external_key = 'manual:art5a'/);
+    expect(sql).not.toContain("2027-");
     for (const id of ["art5a", "art5b"]) expect(sql).toContain(`deadline_original_text = '${rec(id).application_status.deadline_original_wording.el}'`);
   });
-  it("personalised results: the deadline factor is an explicit unknown, never the next date shown as the user's", () => {
+  it("personalised results: the deadline factor is an explicit unknown, never a date shown as the user's", () => {
     const f = deadlineFactor({ id: "x", status: "open", opportunity_type: "tax_incentive", closes_at: at("2026-10-31T21:59:59Z"), deadline_kind: "official",
       deadline_depends_on_move_year: true, last_verified_at: null, requirement_set_completeness: "partial", requirements: [] }, at("2026-10-23T09:00:00Z"));
     expect(f).toEqual({ state: "unknown", fit: null, reason: "deadline_depends_on_move_year" });
-    expect(read("src/lib/data/opportunities.ts")).toContain('deadline_depends_on_move_year: row.deadline_rule === "move_year"');
+    expect(read("src/lib/data/opportunities.ts")).toContain("deadline_depends_on_move_year: !!row.deadline_rule");
   });
-  it("cards, the summary box and the side panel say «next» and «depends on the year you moved»", () => {
-    const t = timeLeftOf({ record: { display: "open", application: "open" }, closesAt: at("2026-10-31T21:59:59Z"), opensAt: null, deadlineKind: "official", hasGuide: true, moveYear: true }, at("2026-10-23T09:00:00Z"));
-    expect(t).toMatchObject({ kind: "days_left", next: true });
-    expect(read("src/components/opportunity-card.tsx")).toContain('if (o.deadline_rule === "move_year") return <>{s.card.nextDeadline}');
-    expect(read("src/components/opportunity-facts.tsx")).toContain('if (o.deadline_rule === "move_year")');
-    expect(read("src/app/[aud]/eukairies/[id]/page.tsx")).toContain('moveYear: o.deadline_rule === "move_year"');
-    expect(read("src/components/opportunity-card.tsx")).toContain('moveYear: o.deadline_rule === "move_year"');
+  it("cards, the summary box and the side panel name who the deadline is for; nothing says «next»", () => {
+    const note = "μόνο για μεταφορά κατοικίας το 2025 ή έως 2/7/2026";
+    const t = timeLeftOf({ record: { display: "open", application: "open" }, closesAt: at("2026-10-31T21:59:59Z"), opensAt: null, deadlineKind: "official", hasGuide: true, moveYearNote: note }, at("2026-10-23T09:00:00Z"));
+    expect(t).toMatchObject({ kind: "days_left", note });
+    const copy = read("src/lib/site/copy.ts");
+    expect(copy).toContain("forMoves: (cut: string, y: number) => `μόνο για μεταφορά κατοικίας το ${y - 1} ή έως ${cut}/${y}`");
+    expect(copy).not.toMatch(/Επόμενη προθεσμία σε|Next deadline in|nextDeadline: "Επόμενη"/);
+    expect(read("src/components/opportunity-card.tsx")).toContain("if (o.deadline_rule?.year) return <>{when}");
+    expect(read("src/components/opportunity-facts.tsx")).toContain("Καμία επιβεβαιωμένη περίοδος υποβολής ανοιχτή");
+    for (const f of ["src/app/[aud]/eukairies/[id]/page.tsx", "src/components/opportunity-card.tsx"]) expect(read(f)).toContain("moveYearNote: o.deadline_rule?.year ? s.moveYear.forMoves(");
+  });
+  it("the table marks conditional periods «not confirmed», with no green «open» tag", () => {
+    const d = read("src/components/opportunity-details.tsx");
+    expect(d).toContain('w.state === "conditional" ? <span className="muted">');
+    expect(d).toContain("{c.conditional}</span>");
   });
   it("the programme page and the guide show the same table from the same rule", () => {
     expect(read("src/components/opportunity-details.tsx")).toContain("{v?.deadlineRule && <MoveYearDeadlines rule={v.deadlineRule}");

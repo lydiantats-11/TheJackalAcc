@@ -130,7 +130,7 @@ export default async function OpportunityPage({ params, searchParams }: { params
       {o.is_synthetic && <div className="notice" style={{ marginBottom: 16 }}>{t.synthetic}.</div>}
       {o.has_conflict && <div className="notice bad" role="alert" style={{ marginBottom: 16 }}>{t.ui.conflict}</div>}
       <OpportunityBrief
-        input={{ record: status, closesAt: o.closes_at, opensAt: o.opens_at, deadlineKind: o.deadline_kind, hasGuide: !!guide, moveYear: o.deadline_rule === "move_year" }}
+        input={{ record: status, closesAt: o.closes_at, opensAt: o.opens_at, deadlineKind: o.deadline_kind, hasGuide: !!guide, moveYearNote: o.deadline_rule?.year ? s.moveYear.forMoves(o.deadline_rule.cutoff, o.deadline_rule.year) : undefined }}
         what={briefWhat(o, t, s, locale)} who={s.paths.name[aud]} s={s} locale={locale} now={now}
         applyUrl={o.application_url ?? o.canonical_url} canApply={canApply} officialUrl={o.canonical_url} guideHref={guide ? paths.guide(aud, guide) : undefined}
         similarHref={cats[0] ? paths.opportunities(aud, `cat=${cats[0].slug}`) : paths.opportunities(aud)} />

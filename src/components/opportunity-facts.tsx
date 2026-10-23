@@ -4,12 +4,16 @@ import type { Dictionary, Locale } from "@/lib/i18n/dictionaries";
 import { formatDate, formatMoney, zoneLabel } from "@/lib/format";
 
 export function deadlineText(o: OpportunityRow, t: Dictionary, locale: Locale) {
+  // 5Α / 5Β (owner, 23 Oct 2026): only a confirmed deadline, with who it applies to; never one date for everyone.
+  if (o.deadline_rule) {
+    const el = locale === "el";
+    if (!o.deadline_rule.year || !o.closes_at) return <span className="unknown">{el ? "Καμία επιβεβαιωμένη περίοδος υποβολής ανοιχτή" : "No confirmed application period open"}</span>;
+    const y = o.deadline_rule.year;
+    return <>{new Intl.DateTimeFormat(el ? "el-GR" : "en-GB", { dateStyle: "medium", timeZone: o.deadline_timezone }).format(o.closes_at)} <span className="muted small">· {el ? `μόνο για μεταφορά κατοικίας το ${y - 1} ή έως ${o.deadline_rule.cutoff}/${y}` : `only for moves in ${y - 1} or by ${o.deadline_rule.cutoff}/${y}`}</span></>;
+  }
   if (o.deadline_kind === "rolling") return <>{t.opp.deadlineRolling}</>;
   if (o.deadline_kind === "not_applicable") return <>{t.opp.deadlineNone}</>;
   if (o.deadline_kind !== "official" || !o.closes_at) return <span className="unknown">{t.opp.deadlineUnknown}</span>;
-  // 5Α / 5Β: the next deadline, never one date for everyone (owner, 23 Oct 2026).
-  if (o.deadline_rule === "move_year")
-    return <>{locale === "el" ? "Επόμενη: " : "Next: "}{new Intl.DateTimeFormat(locale === "el" ? "el-GR" : "en-GB", { dateStyle: "medium", timeZone: o.deadline_timezone }).format(o.closes_at)} <span className="muted small">· {locale === "el" ? "ανάλογα με το έτος μεταφοράς" : "depends on the year you moved"}</span></>;
   if (o.deadline_is_date_only)
     return <>{new Intl.DateTimeFormat(locale === "el" ? "el-GR" : "en-GB", { dateStyle: "medium", timeZone: o.deadline_timezone }).format(o.closes_at)} <span className="muted small">· {zoneLabel(o.deadline_timezone, locale)}</span></>;
   return <>{formatDate(o.closes_at, locale, o.deadline_timezone)} <span className="muted small">· {zoneLabel(o.deadline_timezone, locale)}</span></>;

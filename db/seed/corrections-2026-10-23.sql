@@ -23,7 +23,7 @@ ON CONFLICT (opportunity_id, version) DO NOTHING;
 UPDATE opportunities SET
   summary_plain = 'Συντελεστής 7% στο σύνολο του εισοδήματος αλλοδαπής προέλευσης, για 15 φορολογικά έτη συνολικά. Ποσό / όφελος: Φόρος 7% για 15 έτη',
   deadline_original_text = 'Αίτηση το αργότερο έως 31 Οκτωβρίου του έτους άφιξης ή του επόμενου φορολογικού έτους· δικαιολογητικά έως 30 Νοεμβρίου του έτους της αίτησης. Μεταφορά έως 2/7: αίτηση το ίδιο ή το επόμενο έτος· μεταφορά μετά τις 2/7: αίτηση για το επόμενο έτος (Α.1192/2026, άρθρο 4 παρ. 1).',
-  closes_at = '2026-10-31T21:59:59Z',
+  closes_at = '2026-10-31T21:59:59Z', status = 'open',
   status_evidence = status_evidence || '{"rechecked_at": "2026-10-23T12:00:00+03:00", "deadline_rule": "by_year_of_move", "governing_document": "Α.1192/2026 (ΦΕΚ Β'' 5767/24.9.2026), άρθρο 4 παρ. 1 και 3"}'::jsonb,
   last_retrieved_at = '2026-10-23T12:00:00+03:00', last_verified_at = '2026-10-23T12:00:00+03:00',
   version = version + 1, updated_at = now()
@@ -45,7 +45,7 @@ WHERE requirement_key = 'activity_in_greece-4' AND superseded_at IS NULL
 UPDATE opportunities SET
   summary_plain = 'Σταθερός ετήσιος φόρος 100.000 € για όλο το εισόδημα αλλοδαπής προέλευσης, για 15 φορολογικά έτη, με επένδυση τουλάχιστον 500.000 € στην Ελλάδα. Ποσό / όφελος: 100.000 €/έτος ανεξαρτήτως εισοδήματος αλλοδαπής, 15 έτη',
   deadline_original_text = 'Αίτηση το αργότερο έως 30 Σεπτεμβρίου του έτους άφιξης ή του επόμενου φορολογικού έτους· δικαιολογητικά έως 31 Οκτωβρίου του έτους της αίτησης. Μεταφορά έως 2/7: αίτηση το ίδιο ή το επόμενο έτος· μεταφορά μετά τις 2/7: αίτηση για το επόμενο έτος (Α.1147/2026, άρθρο 4 παρ. 1).',
-  closes_at = '2027-09-30T20:59:59Z',
+  closes_at = NULL, status = 'unverified',
   status_evidence = status_evidence || '{"rechecked_at": "2026-10-23T12:00:00+03:00", "deadline_rule": "by_year_of_move", "governing_document": "Α.1147/2026 (ΦΕΚ Β'' 4431/20.7.2026), άρθρο 4 παρ. 1 και 4"}'::jsonb,
   last_retrieved_at = '2026-10-23T12:00:00+03:00', last_verified_at = '2026-10-23T12:00:00+03:00',
   version = version + 1, updated_at = now()

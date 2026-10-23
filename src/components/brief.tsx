@@ -13,10 +13,8 @@ import { Icon } from "./icons";
 export function timeLeftText(t: TimeLeft, s: SiteCopy, l: Locale): { text: string; sub?: string; tone: "urgent" | "soon" | "calm" | "muted" } {
   const b = s.brief;
   switch (t.kind) {
-    case "days_left": return t.next
-      ? { text: b.nextIn(t.days), sub: `${b.until(formatDay(t.until, l) ?? "")} · ${b.byMoveYear}`, tone: t.urgent ? "urgent" : "soon" }
-      : { text: b.daysLeft(t.days), sub: b.until(formatDay(t.until, l) ?? ""), tone: t.urgent ? "urgent" : "soon" };
-    case "last_day": return { text: t.next ? b.nextLastDay : b.lastDay, sub: t.next ? `${b.until(formatDay(t.until, l) ?? "")} · ${b.byMoveYear}` : b.until(formatDay(t.until, l) ?? ""), tone: "urgent" };
+    case "days_left": return { text: b.daysLeft(t.days), sub: t.note ? `${b.until(formatDay(t.until, l) ?? "")} · ${t.note}` : b.until(formatDay(t.until, l) ?? ""), tone: t.urgent ? "urgent" : "soon" };
+    case "last_day": return { text: b.lastDay, sub: t.note ? `${b.until(formatDay(t.until, l) ?? "")} · ${t.note}` : b.until(formatDay(t.until, l) ?? ""), tone: "urgent" };
     case "opens_in": return { text: b.opensIn(t.days), sub: b.on(formatDay(t.on, l) ?? ""), tone: "soon" };
     case "rolling": return { text: b.rolling, tone: "calm" };
     case "no_deadline_recorded": return { text: b.noDeadline, tone: "muted" };

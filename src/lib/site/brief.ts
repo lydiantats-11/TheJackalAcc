@@ -8,8 +8,8 @@ import type { RecordStatus } from "@/lib/domain/record-status";
 const DAY = 86_400_000;
 
 export type TimeLeft =
-  | { kind: "days_left"; days: number; urgent: boolean; until: Date; next?: boolean }
-  | { kind: "last_day"; until: Date; next?: boolean }
+  | { kind: "days_left"; days: number; urgent: boolean; until: Date; note?: string }
+  | { kind: "last_day"; until: Date; note?: string }
   | { kind: "opens_in"; days: number; on: Date }
   | { kind: "rolling" }
   | { kind: "no_deadline_recorded" }
@@ -25,8 +25,8 @@ export interface BriefInput {
   opensAt: Date | null;
   deadlineKind: string | null;
   hasGuide: boolean;
-  /** The deadline depends on the year of move (5Α, 5Β): closesAt is the next one, not everyone's (owner, 23 Oct 2026). */
-  moveYear?: boolean;
+  /** 5Α / 5Β: who the confirmed deadline applies to (e.g. «για μεταφορά το 2025 ή έως 2/7/2026») — never everyone's. */
+  moveYearNote?: string;
 }
 
 /** Whole days left until the deadline (rounded up), counted against `now`. */
@@ -46,7 +46,7 @@ export function timeLeftOf(x: BriefInput, now: Date): TimeLeft {
   if (d === "rolling" || x.deadlineKind === "rolling") return { kind: "rolling" };
   if (x.deadlineKind === "official" && x.closesAt) {
     const days = daysUntil(x.closesAt, now);
-    const next = x.moveYear ? { next: true } : {};
+    const next = x.moveYearNote ? { note: x.moveYearNote } : {};
     if (days <= 1) return { kind: "last_day", until: x.closesAt, ...next };
     return { kind: "days_left", days, urgent: days <= 7, until: x.closesAt, ...next };
   }

@@ -86,7 +86,8 @@
         "basis": {
           "el": "Α.1192/2026 (ΦΕΚ Β' 5767/24.9.2026), άρθρο 4 παρ. 1 και 3",
           "en": "Decision A.1192/2026 (Gazette B 5767/24.9.2026), Article 4(1) and 4(3)"
-        }
+        },
+        "confirmed_through": 2026
       },
       "conflicts": [
         {
@@ -191,7 +192,8 @@
         "basis": {
           "el": "Α.1147/2026 (ΦΕΚ Β' 4431/20.7.2026), άρθρο 4 παρ. 1 και 4",
           "en": "Decision A.1147/2026 (Gazette B 4431/20.7.2026), Article 4(1) and 4(4)"
-        }
+        },
+        "confirmed_through": 2026
       },
       "eligibility_evidence": {
         "NEW:prior_tax_residence": {
@@ -346,5 +348,6 @@
       },
       "summary_plain": "Παραγωγικές επενδύσεις υφιστάμενων μεγάλων επιχειρήσεων στις περιοχές δίκαιης μετάβασης. Προϋπολογισμός πράξης (έργου) €5.000.000–€40.000.000. Ένταση 50% για ενσώματα και άυλα στοιχεία· άλλα ποσοστά για κτίρια (30%), μισθούς εργαζομένων με αναπηρία (75%) και ΑΠΕ (45%)."
     }
-  }
+  },
+  "p0_2026_10_23": "Owner, 23 Oct 2026 14:32 (P0): windows after 2026 are «conditional» (they follow from the rule but are not confirmed); no universal next deadline; with no confirmed open window the record shows «Υπό επιβεβαίωση»."
 }

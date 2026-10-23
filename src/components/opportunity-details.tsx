@@ -278,10 +278,11 @@ export function MoveYearDeadlines({ rule, s, locale, now }: { rule: MoveYearRule
                   <div key={w.year} data-window={w.state}>
                     {i > 0 && <span className="muted">{c.or} </span>}
                     {w.state === "previous_rules" ? <>{c.inYear(w.year)}: <span className="muted">{c.previousRules}</span></>
+                      : w.state === "conditional" ? <span className="muted">{c.inYear(w.year)}: {c.until(day_(w.applicationBy))} <span className="tag gold" data-conditional>{c.conditional}</span></span>
                       : <>{c.inYear(w.year)}: {c.until(day_(w.applicationBy))} <span className={w.state === "passed" ? "tag" : "tag green"}>{w.state === "passed" ? c.passed : c.open}</span></>}
                   </div>
                 ))}</td>
-                <td>{r.windows.map((w) => <div key={w.year}>{w.state === "previous_rules" ? <span className="muted">—</span> : c.until(day_(w.documentsBy))}</div>)}</td>
+                <td>{r.windows.map((w) => <div key={w.year} className={w.state === "conditional" ? "muted" : undefined}>{w.state === "previous_rules" ? "—" : c.until(day_(w.documentsBy))}</div>)}</td>
               </tr>
             ))}
           </tbody>
@@ -289,7 +290,7 @@ export function MoveYearDeadlines({ rule, s, locale, now }: { rule: MoveYearRule
       </div>
       <p className="xs muted" style={{ margin: "8px 0 0" }}>
         <strong>{c.regime}:</strong> {c.regimeYears(rule.regime.years)}{rule.regime.start ? `, ${rule.regime.start[locale]}` : ` · ${c.startUnconfirmed}`}.
-        {" "}{c.basis}: {rule.basis[locale]}. {c.later}
+        {" "}{c.basis}: {rule.basis[locale]}. {c.conditionalNote}
       </p>
     </div>
   );

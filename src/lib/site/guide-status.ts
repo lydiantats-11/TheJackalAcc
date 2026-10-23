@@ -55,7 +55,9 @@ export function statusFromVerified(recordKey: string, now: Date): GuideRecordSta
   const closes = verifiedCloses(recordKey, now);
   const opens = instant(v.period.opens, tz, false);
   // «unconfirmed»: the official page does not confirm the round (owner, 22 Oct 2026: «Υπό επιβεβαίωση»).
-  const status = raw.value === "closed" ? "closed" : raw.value === "unconfirmed" ? "unverified" : raw.value === "future" || (opens && opens > now) ? "upcoming" : "open";
+  // 5Α / 5Β with no confirmed window open: «Υπό επιβεβαίωση», never «open» on the strength of a conditional future period.
+  const noConfirmedWindow = !!v.deadlineRule && !closes;
+  const status = raw.value === "closed" ? "closed" : raw.value === "unconfirmed" || noConfirmedWindow ? "unverified" : raw.value === "future" || (opens && opens > now) ? "upcoming" : "open";
   const r = recordStatus({
     status,
     closes_at: closes,
