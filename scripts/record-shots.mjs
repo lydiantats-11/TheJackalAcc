@@ -35,6 +35,10 @@ for (const [vp, size] of [["desktop", { width: 1440, height: 900 }], ["phone", {
           applyLinks: [...document.querySelectorAll("#apply a")].map((a) => `${(a.textContent ?? "").trim()} → ${a.getAttribute("href")}`),
           pending: txt("[data-pending]"),
           mentions31March: /31 Μαρτίου|31\/3\/2027|31 Mar/.test(body),
+          moveYearTable: !!document.querySelector("[data-move-year]"),
+          oldStartWording: /μετά την αίτηση/.test(body),
+          eligibleLabel: /Επιλέξιμη δαπάνη|[Εε]πιλέξιμος προϋπολογισμός/.test(body),
+          cardDeadline: null,
           deadlineLines: body.split("\n").filter((l) => /Προθεσμία|προθεσμία|έως|Έως/.test(l)).slice(0, 8),
           statusLines: body.split("\n").filter((l) => /Ανοιχτές αιτήσεις|Υπό επιβεβαίωση|Μη επιβεβαιωμένη|Χρειάζεται νέος έλεγχος|έληξε|Κλειστές|Ελέγχθηκε|Τελευταίος έλεγχος/.test(l)).slice(0, 8),
         };
@@ -50,4 +54,4 @@ for (const [vp, size] of [["desktop", { width: 1440, height: 900 }], ["phone", {
 }
 await browser.close();
 writeFileSync(`${out}/records.json`, JSON.stringify(report, null, 2));
-console.log(JSON.stringify(report.map((r) => ({ key: r.key, applyButton: r.applyButton, briefApplyButton: r.briefApplyButton, mentions31March: r.mentions31March, pending: r.pending, error: r.error })), null, 2));
+console.log(JSON.stringify(report.map((r) => ({ key: r.key, applyButton: r.applyButton, briefApplyButton: r.briefApplyButton, mentions31March: r.mentions31March, moveYearTable: r.moveYearTable, oldStartWording: r.oldStartWording, eligibleLabel: r.eligibleLabel, pending: r.pending, error: r.error })), null, 2));

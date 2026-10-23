@@ -82,7 +82,7 @@ jobs:
           PORT=3000 npm start > next.log 2>&1 &
           for i in $(seq 1 60); do curl -fs -o /dev/null http://127.0.0.1:3000/ && break; sleep 1; done
           node scripts/design-preview.mjs "$OUT"
-          export RECORD_IDS=$(psql "$DATABASE_URL" -At -c "SELECT coalesce(json_agg(json_build_object('key', k, 'id', o.id, 'audience', o.audience) ORDER BY k), '[]') FROM unnest(ARRAY['manual:art5a','manual:art5b','manual:art5c','manual:a21','opske:23467','opske:24506','opske:23486','manual:discovereu']) k LEFT JOIN opportunities o ON o.external_key = k AND o.merged_into_id IS NULL")
+          export RECORD_IDS=$(psql "$DATABASE_URL" -At -c "SELECT coalesce(json_agg(json_build_object('key', k, 'id', o.id, 'audience', o.audience) ORDER BY k), '[]') FROM unnest(ARRAY['manual:art5a','manual:art5b','manual:art5c','manual:a21','opske:23467','opske:24506','opske:23486','manual:discovereu','opske:23487','opske:23466']) k LEFT JOIN opportunities o ON o.external_key = k AND o.merged_into_id IS NULL")
           node scripts/record-shots.mjs "$OUT" 2>&1 | tee record-shots.log || echo "record shots failed"
           node scripts/site-audit.mjs "$OUT" || echo "audit script failed"
           node scripts/audience-check.mjs "$OUT" 2>&1 | tee audience-check.log || echo "audience check reported failures"
