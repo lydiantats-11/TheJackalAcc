@@ -7,6 +7,7 @@
  */
 import { CHECKED_RECORDS as records } from "./checked-records";
 import type { Locale } from "@/lib/i18n/dictionaries";
+import type { MoveYearRule } from "./move-year";
 
 type L = Record<Locale, string>;
 interface RawRecord {
@@ -18,6 +19,7 @@ interface RawRecord {
   official_sources: Array<{ label: string; url: string; checked_on: string }>;
   official_application_url: string | null;
   conflicts?: L[];
+  deadline_rule?: MoveYearRule;
 }
 
 export interface VerifiedFacts {
@@ -34,6 +36,8 @@ export interface VerifiedFacts {
   steps: Record<Locale, string[]>;
   sources: Array<{ label: string; url: string; checkedOn: string }>;
   conflicts: L[];
+  /** Deadlines that depend on the year of move (5Α, 5Β): the one source for every page that shows them. */
+  deadlineRule: MoveYearRule | null;
 }
 
 const raw = records as unknown as { verification: { checked_on: string }; records: RawRecord[] };
@@ -56,6 +60,7 @@ const BY_KEY = new Map<string, VerifiedFacts>(raw.records.map((r) => [`manual:${
   steps: r.application_steps,
   sources: r.official_sources.map((x) => ({ label: x.label, url: x.url, checkedOn: x.checked_on })),
   conflicts: r.conflicts ?? [],
+  deadlineRule: r.deadline_rule ?? null,
 }]));
 
 /** Verified facts for a record, by its external key ("manual:<id>"); null for everything else. */

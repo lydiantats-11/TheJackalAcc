@@ -14,6 +14,7 @@ import { formatDate, formatDay } from "@/lib/format";
 import { amountText } from "./opportunity-facts";
 import { hasApplicantMoney, moneyOf, pctText, type Range } from "@/lib/site/money";
 import { Icon } from "./icons";
+import { cutoffDayMonth, moveYearRows, type MoveYearRule } from "@/lib/site/move-year";
 
 const loc = (l: Locale) => (l === "el" ? "el-GR" : "en-GB");
 const eur = (n: number, l: Locale, compact = false) =>
@@ -142,7 +143,8 @@ export function KeyFacts({ o, s, locale, t }: { o: OpportunityRow; s: SiteCopy; 
             <Row k={f.benefit}>{v.benefit ? v.benefit[locale] : <span className="muted">{s.card.amountNone}</span>}
               {v.benefitState !== "verified" && <div className="xs muted" style={{ marginTop: 4 }}>{f.partial}</div>}</Row>
             <Row k={f.period}>
-              {o.status === "unverified" ? <span className="tag gold" data-pending="period">{s.card.money.pending}</span>
+              {v.deadlineRule ? <span data-pending="move_year">{s.moveYear.inTable}</span>
+                : o.status === "unverified" ? <span className="tag gold" data-pending="period">{s.card.money.pending}</span>
                 : v.period.opens && v.period.closes ? <>{verifiedDate(v.period.opens, locale, v.period.timezone)} → {verifiedDate(v.period.closes, locale, v.period.timezone)}</>
                 : v.period.closes ? <>{s.brief.until(verifiedDate(v.period.closes, locale, v.period.timezone) ?? "")}</>
                 : v.period.opens ? <>{verifiedDate(v.period.opens, locale, v.period.timezone)} → {f.openEnded}</>
@@ -179,6 +181,7 @@ export function KeyFacts({ o, s, locale, t }: { o: OpportunityRow; s: SiteCopy; 
         {d?.action_type && <Row k={f.actionType}><span lang="en">{d.action_type}</span></Row>}
         {d?.call && <Row k={f.call}><span lang="en">{d.call.title ? `${d.call.title} · ` : ""}{d.call.identifier}</span></Row>}
       </dl>
+      {v?.deadlineRule && <MoveYearDeadlines rule={v.deadlineRule} s={s} locale={locale} now={new Date()} />}
       {v && v.conflicts.length > 0 && (
         <div className="notice bad small" style={{ marginTop: 12 }}><Icon name="alert" size={18} /><div><strong>{f.conflicts}</strong>
           <ul style={{ margin: "4px 0 0" }}>{v.conflicts.map((c) => <li key={c.en}>{c[locale]}</li>)}</ul></div></div>
@@ -248,5 +251,46 @@ export function VerifiedSteps({ o, s, locale }: { o: OpportunityRow; s: SiteCopy
       <div className="kpi-label">{s.facts.stepsTitle}</div>
       <ol className="steps-list small">{v.steps[locale].map((st) => <li key={st}>{st}</li>)}</ol>
     </>
+  );
+}
+
+/**
+ * Deadlines by year of move (5Α, 5Β; owner, 23 Oct 2026): application, supporting documents and period of application
+ * kept apart, one row per year of move, from the rule recorded once (move-year.ts). No single date is shown as everyone's.
+ */
+export function MoveYearDeadlines({ rule, s, locale, now }: { rule: MoveYearRule; s: SiteCopy; locale: Locale; now: Date }) {
+  const c = s.moveYear;
+  const { day, month } = cutoffDayMonth(rule);
+  const cut = `${day}/${month}`;
+  const day_ = (d: Date) => formatDay(d, locale, rule.timezone) ?? "";
+  const rows = moveYearRows(rule, now);
+  return (
+    <div className="move-year" data-move-year>
+      <p className="small" style={{ margin: "0 0 8px" }}>{c.lead}</p>
+      <div style={{ overflowX: "auto" }}>
+        <table className="table small">
+          <thead><tr><th scope="col">{c.moved}</th><th scope="col">{c.application}</th><th scope="col">{c.documents}</th></tr></thead>
+          <tbody>
+            {rows.map((r) => (
+              <tr key={`${r.moveYear}-${r.part}`} data-move-row={`${r.moveYear}-${r.part}`}>
+                <th scope="row">{r.part === "by_cutoff" ? c.byCutoff(cut, r.moveYear) : c.afterCutoff(cut, r.moveYear)}</th>
+                <td>{r.windows.map((w, i) => (
+                  <div key={w.year} data-window={w.state}>
+                    {i > 0 && <span className="muted">{c.or} </span>}
+                    {w.state === "previous_rules" ? <>{c.inYear(w.year)}: <span className="muted">{c.previousRules}</span></>
+                      : <>{c.inYear(w.year)}: {c.until(day_(w.applicationBy))} <span className={w.state === "passed" ? "tag" : "tag green"}>{w.state === "passed" ? c.passed : c.open}</span></>}
+                  </div>
+                ))}</td>
+                <td>{r.windows.map((w) => w.state === "previous_rules" ? null : <div key={w.year}>{c.until(day_(w.documentsBy))}</div>)}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+      <p className="xs muted" style={{ margin: "8px 0 0" }}>
+        <strong>{c.regime}:</strong> {c.regimeYears(rule.regime.years)}{rule.regime.start ? `, ${rule.regime.start[locale]}` : ` · ${c.startUnconfirmed}`}.
+        {" "}{c.basis}: {rule.basis[locale]}. {c.later}
+      </p>
+    </div>
   );
 }

@@ -17,6 +17,7 @@ import { normaliseDeadline } from "@/lib/domain/deadline";
 import { recordStatus, type ApplicationStatus, type DisplayStatus, type RecordStatus } from "@/lib/domain/record-status";
 import { CHECKED_RECORDS as records } from "./checked-records";
 import { verifiedFor } from "./verified";
+import { nextDeadline } from "./move-year";
 
 export type ProgrammeStatus = DisplayStatus | "unknown";
 export interface GuideRecordStatus { display: ProgrammeStatus; application: ApplicationStatus | "unknown"; lastVerifiedAt: Date | null }
@@ -37,9 +38,12 @@ export function instant(v: string | null, tz: string, endOfDay: boolean): Date |
 }
 
 /** Closing instant of a hand-checked record, or null when it has no fixed deadline. */
-export function verifiedCloses(recordKey: string): Date | null {
+export function verifiedCloses(recordKey: string, now: Date = new Date()): Date | null {
   const v = verifiedFor(recordKey);
-  return v ? instant(v.period.closes, v.period.timezone ?? "Europe/Athens", true) : null;
+  if (!v) return null;
+  // 5Α / 5Β: the next deadline still open for someone, from the rule by year of move — never one date for everyone.
+  if (v.deadlineRule) return nextDeadline(v.deadlineRule, now);
+  return instant(v.period.closes, v.period.timezone ?? "Europe/Athens", true);
 }
 
 /** Canonical status of a hand-checked record from the checked file alone (same rules as the database import). */
@@ -48,7 +52,7 @@ export function statusFromVerified(recordKey: string, now: Date): GuideRecordSta
   const raw = RAW.get(recordKey);
   if (!v || !raw) return UNKNOWN;
   const tz = v.period.timezone ?? "Europe/Athens";
-  const closes = instant(v.period.closes, tz, true);
+  const closes = verifiedCloses(recordKey, now);
   const opens = instant(v.period.opens, tz, false);
   // «unconfirmed»: the official page does not confirm the round (owner, 22 Oct 2026: «Υπό επιβεβαίωση»).
   const status = raw.value === "closed" ? "closed" : raw.value === "unconfirmed" ? "unverified" : raw.value === "future" || (opens && opens > now) ? "upcoming" : "open";
@@ -70,7 +74,7 @@ export type LiveRecord = RecordStatus;
 /** The status to show on a guide. */
 export function programmeStatus(recordKey: string, now: Date, live?: LiveRecord | null): GuideRecordStatus {
   if (!live) return statusFromVerified(recordKey, now);
-  const closes = verifiedCloses(recordKey);
+  const closes = verifiedCloses(recordKey, now);
   if (closes && closes.getTime() < now.getTime() && live.application !== "closed") {
     return { display: "deadline_passed", application: "deadline_passed", lastVerifiedAt: live.lastVerifiedAt };
   }

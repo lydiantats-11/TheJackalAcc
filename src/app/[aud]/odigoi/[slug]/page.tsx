@@ -9,6 +9,8 @@ import { getDict } from "@/lib/i18n/server";
 import { SITE } from "@/lib/site/copy";
 import { ARTICLES, articleAudience, articleBySlug, guideCategory, isPlatformGuide, reviewDue, verificationOf, type Article } from "@/lib/site/guide-catalog";
 import { programmeStatus } from "@/lib/site/guide-status";
+import { verifiedFor } from "@/lib/site/verified";
+import { MoveYearDeadlines } from "@/components/opportunity-details";
 import { loadLiveGuideRecords } from "@/lib/site/guide-live";
 import { applicationCtaAllowed } from "@/lib/site/brief";
 import { ApplicationBadge, VerificationBadge, formatDay } from "@/components/guide-ui";
@@ -83,7 +85,9 @@ export default async function GuidePage({ params }: { params: Promise<{ aud: str
       ))}
     </ol>
   ) });
-  if (a.timing) sections.push({ id: "timing", title: g.sec.timing, body: <p style={{ margin: 0 }}>{a.timing[locale]}</p> });
+  // 5Α / 5Β: the same table as the programme page, from the same rule (move-year.ts) — never one date for everyone.
+  const rule = a.recordKey ? verifiedFor(a.recordKey)?.deadlineRule ?? null : null;
+  if (a.timing) sections.push({ id: "timing", title: g.sec.timing, body: <>{<p style={{ margin: 0 }}>{a.timing[locale]}</p>}{rule && <MoveYearDeadlines rule={rule} s={s} locale={locale} now={now} />}</> });
   if (a.afterSubmission.length) sections.push({ id: "after", title: g.sec.after, body: list(a.afterSubmission.map((x) => x[locale]), "arrow") });
   if (a.mistakes.length) sections.push({ id: "mistakes", title: g.sec.mistakes, body: list(a.mistakes.map((x) => x[locale]), "alert") });
   a.sections.forEach((x, i) => sections.push({ id: `part-${i + 1}`, title: x.h[locale], body: list(x.items.map((y) => y[locale])) }));

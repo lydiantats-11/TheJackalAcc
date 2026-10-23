@@ -18,6 +18,7 @@ function cardDeadline(o: ListedOpportunity["row"], t: Dictionary, s: SiteCopy, l
   if (o.deadline_kind === "not_applicable") return <>{t.opp.deadlineNone}</>;
   if (o.deadline_kind !== "official" || !o.closes_at) return <span className="muted">{t.opp.deadlineUnknown}</span>;
   const when = o.deadline_is_date_only ? formatDay(o.closes_at, locale, o.deadline_timezone) : formatDate(o.closes_at, locale, o.deadline_timezone);
+  if (o.deadline_rule === "move_year") return <>{s.card.nextDeadline}: {when}<span className="muted"> · {s.brief.byMoveYear}</span></>;
   return <>{when}{o.deadline_timezone === "Europe/Brussels" ? <span className="muted"> · {s.card.brussels}</span> : null}</>;
 }
 
@@ -43,7 +44,7 @@ export function OpportunityCard({ item, t, s, locale, extra }: {
   const aud = o.audience ?? "citizen";
   return (
     <article className="opp-card">
-      <div className="card-status"><RecordStatusBadge record={item.record} s={s} locale={locale} /><TimeLeftPill input={{ record: item.record, closesAt: o.closes_at, opensAt: o.opens_at, deadlineKind: o.deadline_kind, hasGuide: !!guide }} s={s} locale={locale} now={new Date()} /></div>
+      <div className="card-status"><RecordStatusBadge record={item.record} s={s} locale={locale} /><TimeLeftPill input={{ record: item.record, closesAt: o.closes_at, opensAt: o.opens_at, deadlineKind: o.deadline_kind, hasGuide: !!guide, moveYear: o.deadline_rule === "move_year" }} s={s} locale={locale} now={new Date()} /></div>
       <h3 lang={title.lang}><Link href={paths.opportunity(aud, o.id)}>{title.text}</Link></h3>
       {title.codeOnly && <p className="xs muted" style={{ margin: "-6px 0 0" }}>{s.card.codeOnly}</p>}
       <div className="tags">

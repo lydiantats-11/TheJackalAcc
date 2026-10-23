@@ -68,7 +68,7 @@ describe("verification state (about the content, never the application status)",
     expect(state("art5c")).toBe("incomplete");
     expect(state("a21")).toBe("incomplete");
     expect(state("studenthousing")).toBe("incomplete");
-    expect(state("art5b")).toBe("incomplete"); // 22 Oct 2026: deadline from A.1192/2026; the start year of the 15 years is still to be checked
+    expect(state("art5b")).toBe("conflicting"); // 23 Oct 2026: first year of the 15 — A.1192/2026 vs Art. 5Β(4) as republished
     expect(state("eligibility-labels")).toBe("educational");
   });
 

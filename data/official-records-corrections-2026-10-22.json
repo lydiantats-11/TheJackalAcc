@@ -8,8 +8,8 @@
   "records": {
     "art5b": {
       "why": {
-        "el": "Η προθεσμία «31 Μαρτίου» προερχόταν από οδηγό του 2023 και την καταργημένη Α.1217/2020. Η Α.1192/2026 (ΦΕΚ Β' 5767/24.9.2026), άρθρο 4 παρ. 1, ορίζει αίτηση έως 31 Οκτωβρίου του έτους άφιξης ή του επόμενου έτους και δικαιολογητικά έως 30 Νοεμβρίου.",
-        "en": "The «31 March» deadline came from a 2023 guide and the repealed Decision A.1217/2020. Decision A.1192/2026 (Gazette B 5767/24.9.2026), Article 4(1), sets the application by 31 October of the year of arrival or the following year, and documents by 30 November."
+        "el": "Η προθεσμία «31 Μαρτίου» προερχόταν από οδηγό του 2023 και την καταργημένη Α.1217/2020. Η Α.1192/2026 (ΦΕΚ Β' 5767/24.9.2026), άρθρο 4 παρ. 1, ορίζει αίτηση έως 31 Οκτωβρίου του έτους άφιξης ή του επόμενου έτους και δικαιολογητικά έως 30 Νοεμβρίου. 23/10/2026: η σύνοψη έγραφε «15 φορολογικά έτη από το έτος μετά την αίτηση» (κείμενο ν.4714/2020)· η Α.1192/2026, άρθρο 4 παρ. 3, ορίζει «για το φορολογικό έτος για το οποίο υποβάλλεται η αίτησή του και για δεκαπέντε (15) φορολογικά έτη συνολικά». Η σύνοψη λέει πλέον μόνο ό,τι είναι τεκμηριωμένο. Οι προθεσμίες εμφανίζονται ανά έτος μεταφοράς.",
+        "en": "The «31 March» deadline came from a 2023 guide and the repealed Decision A.1217/2020. Decision A.1192/2026 (Gazette B 5767/24.9.2026), Article 4(1), sets the application by 31 October of the year of arrival or the following year, and documents by 30 November. 23 Oct 2026: the summary said «15 tax years from the year after the application» (2020 text of Law 4714/2020); Decision A.1192/2026, Article 4(3), says «for the tax year for which the application is filed and for fifteen (15) tax years in total». The summary now states only what is documented. Deadlines are shown by year of move."
       },
       "application_status": {
         "value": "open",
@@ -18,19 +18,15 @@
         "timezone": "Europe/Athens",
         "verified_time_precision": "date",
         "opens_at": null,
-        "closes_at": "2026-10-31",
+        "closes_at": null,
         "deadline_original_wording": {
-          "el": "Αίτηση έως 31 Οκτωβρίου του έτους μεταφοράς της φορολογικής κατοικίας ή του επόμενου έτους· δικαιολογητικά έως 30 Νοεμβρίου του ίδιου έτους. Μεταφορά έως 2/7: αίτηση το ίδιο ή το επόμενο έτος. Μεταφορά μετά τις 2/7: αίτηση μόνο για το επόμενο έτος. Η 31/10/2026 ισχύει για όσους μετέφεραν την κατοικία τους το 2025 ή έως 2/7/2026· όσοι τη μετέφεραν μετά τις 2/7/2026 υποβάλλουν έως 31/10/2027 (Α.1192/2026, άρθρο 4 παρ. 1).",
-          "en": "Apply by 31 October of the year the tax residence moves, or of the following year; documents by 30 November of that year. Moved by 2 Jul: apply that year or the next. Moved after 2 Jul: apply only for the next year. 31 Oct 2026 applies to those who moved in 2025 or by 2 Jul 2026; those who moved after 2 Jul 2026 apply by 31 Oct 2027 (Decision A.1192/2026, Article 4(1))."
+          "el": "Αίτηση το αργότερο έως 31 Οκτωβρίου του έτους άφιξης ή του επόμενου φορολογικού έτους· δικαιολογητικά έως 30 Νοεμβρίου του έτους της αίτησης. Μεταφορά έως 2/7: αίτηση το ίδιο ή το επόμενο έτος· μεταφορά μετά τις 2/7: αίτηση για το επόμενο έτος (Α.1192/2026, άρθρο 4 παρ. 1).",
+          "en": "Apply by 31 October of the year of arrival or of the following tax year at the latest; documents by 30 November of the year of the application. Moved by 2 Jul: apply that year or the next; moved after 2 Jul: apply for the next year (Decision A.1192/2026, Article 4(1))."
         },
         "milestones": [
           {
-            "label": "application",
-            "rule": "31 Oct of the year of the move or of the following year (A.1192/2026 art. 4(1))"
-          },
-          {
-            "label": "documents",
-            "rule": "30 Nov of the year the application is filed (A.1192/2026 art. 4(1))"
+            "label": "deadlines",
+            "rule": "by year of move — see deadline_rule"
           }
         ]
       },
@@ -69,14 +65,62 @@
         ]
       },
       "uncertainties": [
-        "UNVERIFIED: the summary says the 15 tax years run «from the year after the application»; Decision A.1192/2026 states 15 tax years in total — the start year is still to be checked against the decision",
-        "Deadline depends on the year the residence moved: moved after 2 Jul 2026 → apply by 31 Oct 2027 (A.1192/2026 art. 4(1))"
-      ]
+        "CONFLICT: first year of the 15-year period — A.1192/2026 art. 4(3) «for the tax year for which the application is filed» vs Art. 5B(4) as republished «from the next tax year»",
+        "Deadline depends on the year the residence moved (A.1192/2026 art. 4(1))"
+      ],
+      "summary": {
+        "el": "Συντελεστής 7% στο σύνολο του εισοδήματος αλλοδαπής προέλευσης, για 15 φορολογικά έτη συνολικά.",
+        "en": "A flat 7% rate on all foreign-sourced income, for 15 tax years in total."
+      },
+      "deadline_rule": {
+        "kind": "by_year_of_move",
+        "cutoff": "07-02",
+        "application_by": "10-31",
+        "documents_by": "11-30",
+        "rules_in_force_from": "2026-06-25",
+        "timezone": "Europe/Athens",
+        "regime": {
+          "years": 15,
+          "start": null
+        },
+        "basis": {
+          "el": "Α.1192/2026 (ΦΕΚ Β' 5767/24.9.2026), άρθρο 4 παρ. 1 και 3",
+          "en": "Decision A.1192/2026 (Gazette B 5767/24.9.2026), Article 4(1) and 4(3)"
+        }
+      },
+      "conflicts": [
+        {
+          "el": "Έτος έναρξης της 15ετίας: η Α.1192/2026 (άρθρο 4 παρ. 3) γράφει «για το φορολογικό έτος για το οποίο υποβάλλεται η αίτησή του και για δεκαπέντε (15) φορολογικά έτη συνολικά»· το άρθρο 5Β παρ. 4 ΚΦΕ, όπως αναδημοσιεύεται (taxheaven), γράφει «αρχίζει από το επόμενο φορολογικό έτος για το οποίο υποβάλλεται η αίτηση». Δεν έχουμε επιβεβαιώσει ποιο έτος είναι το πρώτο· ελέγξτε το στην απόφαση έγκρισης της ΑΑΔΕ.",
+          "en": "First year of the 15 years: Decision A.1192/2026 (Article 4(3)) says «for the tax year for which the application is filed and for fifteen (15) tax years in total»; Article 5B(4) of the Income Tax Code, as republished (taxheaven), says «starts from the next tax year for which the application is filed». We have not confirmed which year is the first; check it in ΑΑΔΕ's approval decision."
+        }
+      ],
+      "eligibility_evidence": {
+        "NEW:tax_residence_transfer": {
+          "source_url": "https://aade.gr/sites/default/files/2026-09/a1192_2026.pdf",
+          "location": "Α.1192/2026, άρθρο 4 παρ. 1",
+          "excerpt": null
+        },
+        "NEW:prior_tax_residence": {
+          "source_url": "https://aade.gr/sites/default/files/2026-09/a1192_2026.pdf",
+          "location": "Α.1192/2026",
+          "excerpt": "δεν ήταν φορολογικός κάτοικος της Ελλάδος τα προηγούμενα πέντε (5) από τα έξι (6) έτη"
+        },
+        "NEW:moving_from_country_group": {
+          "source_url": "https://aade.gr/sites/default/files/2026-09/a1192_2026.pdf",
+          "location": "Α.1192/2026",
+          "excerpt": null
+        },
+        "NEW:pension_income": {
+          "source_url": "https://aade.gr/sites/default/files/2026-09/a1192_2026.pdf",
+          "location": "Α.1192/2026",
+          "excerpt": null
+        }
+      }
     },
     "art5a": {
       "why": {
-        "el": "Η προθεσμία «31 Μαρτίου» προερχόταν από οδηγό του 2023. Η Α.1147/2026 (ΦΕΚ Β' 4431/20.7.2026, ορθή επανάληψη ως προς το άρθρο 3 σε ΦΕΚ Β' 4838/4.8.2026), άρθρο 4 παρ. 1, ορίζει αίτηση έως 30 Σεπτεμβρίου του έτους άφιξης ή του επόμενου έτους και δικαιολογητικά έως 31 Οκτωβρίου.",
-        "en": "The «31 March» deadline came from a 2023 guide. Decision A.1147/2026 (Gazette B 4431/20.7.2026, corrected as to Article 3 in Gazette B 4838/4.8.2026), Article 4(1), sets the application by 30 September of the year of arrival or the following year, and documents by 31 October."
+        "el": "Η προθεσμία «31 Μαρτίου» προερχόταν από οδηγό του 2023. Η Α.1147/2026 (ΦΕΚ Β' 4431/20.7.2026, ορθή επανάληψη ως προς το άρθρο 3 σε ΦΕΚ Β' 4838/4.8.2026), άρθρο 4 παρ. 1, ορίζει αίτηση έως 30 Σεπτεμβρίου του έτους άφιξης ή του επόμενου έτους και δικαιολογητικά έως 31 Οκτωβρίου. 23/10/2026: οι προθεσμίες εμφανίζονται ανά έτος μεταφοράς, χωριστά η αίτηση, τα δικαιολογητικά και η περίοδος εφαρμογής (Α.1147/2026, άρθρο 4 παρ. 1 και 4).",
+        "en": "The «31 March» deadline came from a 2023 guide. Decision A.1147/2026 (Gazette B 4431/20.7.2026, corrected as to Article 3 in Gazette B 4838/4.8.2026), Article 4(1), sets the application by 30 September of the year of arrival or the following year, and documents by 31 October. 23 Oct 2026: deadlines are shown by year of move, with the application, the documents and the period of application kept apart (Decision A.1147/2026, Article 4(1) and 4(4))."
       },
       "application_status": {
         "value": "open",
@@ -85,19 +129,15 @@
         "timezone": "Europe/Athens",
         "verified_time_precision": "date",
         "opens_at": null,
-        "closes_at": "2027-09-30",
+        "closes_at": null,
         "deadline_original_wording": {
-          "el": "Αίτηση έως 30 Σεπτεμβρίου του έτους μεταφοράς της φορολογικής κατοικίας ή του επόμενου έτους· δικαιολογητικά έως 31 Οκτωβρίου του ίδιου έτους. Μεταφορά έως 2/7: αίτηση το ίδιο ή το επόμενο έτος. Μεταφορά μετά τις 2/7: αίτηση μόνο για το επόμενο έτος. Η προθεσμία της 30/9/2026 έχει λήξει· όσοι μετέφεραν την κατοικία τους το 2026 υποβάλλουν έως 30/9/2027 (Α.1147/2026, άρθρο 4 παρ. 1).",
-          "en": "Apply by 30 September of the year the tax residence moves, or of the following year; documents by 31 October of that year. Moved by 2 Jul: apply that year or the next. Moved after 2 Jul: apply only for the next year. The 30 Sep 2026 deadline has passed; those who moved in 2026 apply by 30 Sep 2027 (Decision A.1147/2026, Article 4(1))."
+          "el": "Αίτηση το αργότερο έως 30 Σεπτεμβρίου του έτους άφιξης ή του επόμενου φορολογικού έτους· δικαιολογητικά έως 31 Οκτωβρίου του έτους της αίτησης. Μεταφορά έως 2/7: αίτηση το ίδιο ή το επόμενο έτος· μεταφορά μετά τις 2/7: αίτηση για το επόμενο έτος (Α.1147/2026, άρθρο 4 παρ. 1).",
+          "en": "Apply by 30 September of the year of arrival or of the following tax year at the latest; documents by 31 October of the year of the application. Moved by 2 Jul: apply that year or the next; moved after 2 Jul: apply for the next year (Decision A.1147/2026, Article 4(1))."
         },
         "milestones": [
           {
-            "label": "application",
-            "rule": "30 Sep of the year of the move or of the following year (A.1147/2026 art. 4(1))"
-          },
-          {
-            "label": "documents",
-            "rule": "31 Oct of the year the application is filed (A.1147/2026 art. 4(1))"
+            "label": "deadlines",
+            "rule": "by year of move — see deadline_rule"
           }
         ]
       },
@@ -131,8 +171,40 @@
         ]
       },
       "uncertainties": [
-        "Deadline depends on the year the residence moved; the 30 Sep 2026 deadline has passed, the next is 30 Sep 2027 (A.1147/2026 art. 4(1))"
-      ]
+        "Deadline depends on the year the residence moved (A.1147/2026 art. 4(1))",
+        "NOT MODELLED: Article 4(6) on applying at the start of the investment — how it combines with the 30 September deadline is still to be checked"
+      ],
+      "deadline_rule": {
+        "kind": "by_year_of_move",
+        "cutoff": "07-02",
+        "application_by": "09-30",
+        "documents_by": "10-31",
+        "rules_in_force_from": "2026-06-25",
+        "timezone": "Europe/Athens",
+        "regime": {
+          "years": 15,
+          "start": {
+            "el": "από το φορολογικό έτος για το οποίο υποβάλλεται η αίτηση",
+            "en": "from the tax year for which the application is filed"
+          }
+        },
+        "basis": {
+          "el": "Α.1147/2026 (ΦΕΚ Β' 4431/20.7.2026), άρθρο 4 παρ. 1 και 4",
+          "en": "Decision A.1147/2026 (Gazette B 4431/20.7.2026), Article 4(1) and 4(4)"
+        }
+      },
+      "eligibility_evidence": {
+        "NEW:prior_tax_residence": {
+          "source_url": "https://aade.gr/sites/default/files/2026-08/a1147_2026orthi.pdf",
+          "location": "Α.1147/2026, άρθρο 3 παρ. 1 α",
+          "excerpt": "Δεν ήταν φορολογικός κάτοικος της Ελλάδος τα προηγούμενα επτά (7) από τα οκτώ (8) έτη"
+        },
+        "NEW:investment_amount": {
+          "source_url": "https://aade.gr/sites/default/files/2026-08/a1147_2026orthi.pdf",
+          "location": "Α.1147/2026, άρθρο 3 παρ. 1 β",
+          "excerpt": "Το ποσό της επένδυσης αυτής δεν μπορεί να είναι μικρότερο των πεντακοσίων χιλιάδων (500.000) ευρώ."
+        }
+      }
     },
     "art5c": {
       "why": {
@@ -240,6 +312,39 @@
           "checked_on": "2026-10-14"
         }
       ]
+    }
+  },
+  "phase_1_1": "Owner (Lydia), 23 Oct 2026 11:14, Phase 1.1 — ΔΑΜ22/ΔΑΜ23 budget terms, 5Β fifteen-year wording, 5Α/5Β deadlines by year of move; development and preview only",
+  "business_records": {
+    "opske:23487": {
+      "label": "ΔΑΜ22",
+      "checked_on": "2026-10-23",
+      "source": {
+        "label": "ΕΦΕΠΑΕ — σελίδα της δράσης ΔΑΜ22",
+        "url": "https://efepae.gr/drasi/%ce%b5%ce%bd%ce%af%cf%83%cf%87%cf%85%cf%83%ce%b7-%ce%b5%cf%80%ce%b5%ce%bd%ce%b4%cf%85%cf%84%ce%b9%ce%ba%cf%8e%ce%bd-%cf%83%cf%87%ce%b5%ce%b4%ce%af%cf%89%ce%bd-%cf%85%cf%86%ce%b9%cf%83%cf%84%ce%ac-3/"
+      },
+      "official_wording": "Ελάχιστος / μέγιστος επιχορηγούμενος προϋπολογισμός: 300.000 ευρώ έως 12.000.000€",
+      "project_budget": {
+        "min": 300000,
+        "max": 12000000,
+        "basis": "subsidised"
+      },
+      "summary_plain": "Επενδυτικά σχέδια υφιστάμενων ΜΜΕ στις περιοχές δίκαιης μετάβασης (Δυτική Μακεδονία, Μεγαλόπολη). Ένταση 70% για πολύ μικρές και μικρές, 60% για μεσαίες. Επιχορηγούμενος προϋπολογισμός €300.000–€12.000.000."
+    },
+    "opske:23466": {
+      "label": "ΔΑΜ23",
+      "checked_on": "2026-10-23",
+      "source": {
+        "label": "ΟΠΣΚΕ — σελίδα της δράσης ΔΑΜ23",
+        "url": "https://opske.gr/el/call/enishysi-ependytikon-shedion-paragogikon-ependyseon-yfistamenon-megalon-epiheiriseon-poy-1"
+      },
+      "official_wording": "Ελάχιστος/μέγιστος προϋπόλογισμός πράξης (έργου): Από 5.000.000€ έως 40.000.000€",
+      "project_budget": {
+        "min": 5000000,
+        "max": 40000000,
+        "basis": "project"
+      },
+      "summary_plain": "Παραγωγικές επενδύσεις υφιστάμενων μεγάλων επιχειρήσεων στις περιοχές δίκαιης μετάβασης. Προϋπολογισμός πράξης (έργου) €5.000.000–€40.000.000. Ένταση 50% για ενσώματα και άυλα στοιχεία· άλλα ποσοστά για κτίρια (30%), μισθούς εργαζομένων με αναπηρία (75%) και ΑΠΕ (45%)."
     }
   }
 }

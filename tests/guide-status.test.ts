@@ -7,6 +7,7 @@ import { PROGRAMME_GUIDES } from "@/lib/site/guides";
 import { programmeStatus, statusFromVerified, verifiedCloses } from "@/lib/site/guide-status";
 import type { RecordStatus } from "@/lib/domain/record-status";
 import { SITE } from "@/lib/site/copy";
+import { verifiedFor } from "@/lib/site/verified";
 
 const at = (iso: string) => new Date(iso);
 const d = (key: string, iso: string) => statusFromVerified(key, at(iso)).display;
@@ -28,11 +29,13 @@ describe("programme status on guides (from the checked file, same rules as the d
     expect(d("manual:a21", "2026-11-13T16:00:01Z")).toBe("deadline_passed");
   });
 
-  it("Articles 5Β and 5Α: the deadlines of Decisions A.1192/2026 and A.1147/2026 (owner approval 22 Oct 2026)", () => {
-    expect(verifiedCloses("manual:art5b")!.toISOString()).toBe("2026-10-31T21:59:59.999Z"); // 31 Oct, Athens (winter time)
+  it("Articles 5Β and 5Α: the next deadline still open for someone, by year of move (A.1192/2026, A.1147/2026)", () => {
+    expect(verifiedCloses("manual:art5b", at("2026-10-23T08:00:00Z"))!.toISOString()).toBe("2026-10-31T21:59:59.999Z");
     expect(d("manual:art5b", "2026-10-23T08:00:00Z")).toBe("open");
-    expect(d("manual:art5b", "2026-10-31T22:00:01Z")).toBe("deadline_passed");
-    expect(verifiedCloses("manual:art5a")!.toISOString()).toBe("2027-09-30T20:59:59.999Z"); // next deadline, 30 Sep 2027
+    // after 31 Oct 2026 the programme stays open for people who moved after 2 Jul 2026 (next: 31 Oct 2027)
+    expect(verifiedCloses("manual:art5b", at("2026-11-02T08:00:00Z"))!.toISOString()).toBe("2027-10-31T21:59:59.999Z");
+    expect(d("manual:art5b", "2026-11-02T08:00:00Z")).toBe("open");
+    expect(verifiedCloses("manual:art5a", at("2026-10-23T08:00:00Z"))!.toISOString()).toBe("2027-09-30T20:59:59.999Z");
     expect(d("manual:art5a", "2026-10-23T08:00:00Z")).toBe("open");
     expect(d("manual:art5a", "2026-12-01T08:00:00Z")).toBe("recheck"); // checked 22 Oct, interval 30 days
   });
@@ -72,14 +75,15 @@ describe("guides follow the live record exactly", () => {
     expect(programmeStatus("manual:unemployment", now, live("rolling", "rolling")).display).toBe("rolling");
   });
   it("a verified closing time that has passed wins over a live open or re-check answer", () => {
-    const later = at("2026-11-02T12:00:00Z");
-    expect(programmeStatus("manual:art5b", later, live("open", "open")).display).toBe("deadline_passed");
-    expect(programmeStatus("manual:art5b", later, live("recheck", "open")).display).toBe("deadline_passed");
+    const later = at("2026-11-14T12:00:00Z"); // Α21 closed 13 Nov 2026, 18:00
+    expect(programmeStatus("manual:a21", later, live("open", "open")).display).toBe("deadline_passed");
+    expect(programmeStatus("manual:a21", later, live("recheck", "open")).display).toBe("deadline_passed");
   });
   it("no guide shows an actionable status once its verified closing time has passed", () => {
     for (const g of PROGRAMME_GUIDES) {
       const closes = verifiedCloses(g.recordKey);
-      if (!closes) continue;
+      // deadlines by year of move (5Α, 5Β) move on to the next one: tested above, not «passed» for everyone
+      if (!closes || verifiedFor(g.recordKey)?.deadlineRule) continue;
       const after = new Date(closes.getTime() + 1000);
       for (const s of [programmeStatus(g.recordKey, after), programmeStatus(g.recordKey, after, live("open", "open"))]) {
         expect([g.slug, s.display]).not.toEqual([g.slug, "open"]);

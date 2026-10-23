@@ -7,6 +7,9 @@ export function deadlineText(o: OpportunityRow, t: Dictionary, locale: Locale) {
   if (o.deadline_kind === "rolling") return <>{t.opp.deadlineRolling}</>;
   if (o.deadline_kind === "not_applicable") return <>{t.opp.deadlineNone}</>;
   if (o.deadline_kind !== "official" || !o.closes_at) return <span className="unknown">{t.opp.deadlineUnknown}</span>;
+  // 5Α / 5Β: the next deadline, never one date for everyone (owner, 23 Oct 2026).
+  if (o.deadline_rule === "move_year")
+    return <>{locale === "el" ? "Επόμενη: " : "Next: "}{new Intl.DateTimeFormat(locale === "el" ? "el-GR" : "en-GB", { dateStyle: "medium", timeZone: o.deadline_timezone }).format(o.closes_at)} <span className="muted small">· {locale === "el" ? "ανάλογα με το έτος μεταφοράς" : "depends on the year you moved"}</span></>;
   if (o.deadline_is_date_only)
     return <>{new Intl.DateTimeFormat(locale === "el" ? "el-GR" : "en-GB", { dateStyle: "medium", timeZone: o.deadline_timezone }).format(o.closes_at)} <span className="muted small">· {zoneLabel(o.deadline_timezone, locale)}</span></>;
   return <>{formatDate(o.closes_at, locale, o.deadline_timezone)} <span className="muted small">· {zoneLabel(o.deadline_timezone, locale)}</span></>;

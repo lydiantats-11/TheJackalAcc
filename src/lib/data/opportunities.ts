@@ -4,6 +4,8 @@ import type { OpportunityForMatching, OpportunityStatus } from "@/lib/domain/eli
 import { requirementRecordSchema, type RequirementRecord } from "@/lib/domain/engine/requirement";
 import type { OfficialDetails } from "@/lib/sources/types";
 import type { Audience } from "@/lib/site/audience";
+import { verifiedFor } from "@/lib/site/verified";
+import { nextDeadline } from "@/lib/site/move-year";
 
 export interface OpportunityRow {
   id: string;
@@ -27,6 +29,8 @@ export interface OpportunityRow {
   opens_at: Date | null;
   published_on: Date | null;
   deadline_kind: OpportunityForMatching["deadline_kind"];
+  /** "move_year": the deadline depends on the year the person moved (5Α, 5Β); closes_at is then the next one still open for someone. */
+  deadline_rule?: "move_year" | null;
   deadline_original_text: string | null;
   deadline_is_date_only: boolean;
   deadline_timezone: string;
@@ -92,10 +96,22 @@ const SELECT = (sql: postgres.Sql) => sql`
  */
 const showTestRecords = () => process.env.JACKAL_SHOW_TEST_RECORDS === "true";
 
+/**
+ * Records whose deadline depends on the year of move (5Α, 5Β): the deadline comes from the rule recorded once in the
+ * checked file (move-year.ts), computed for `now`, so no page shows a stored date as if it applied to everyone, and a
+ * passed date never closes a programme that is still open for people who moved later (owner, 23 Oct 2026).
+ */
+export function withDeadlineRule<T extends OpportunityRow>(row: T, now: Date = new Date()): T {
+  const rule = verifiedFor(row.external_key)?.deadlineRule;
+  if (!rule) return row;
+  const next = nextDeadline(rule, now);
+  return { ...row, closes_at: next, deadline_kind: next ? "official" : "not_announced", deadline_is_date_only: true, deadline_timezone: rule.timezone, deadline_rule: "move_year" };
+}
+
 /** Public listing: only approved records (pending AI extractions never appear), never test records. */
 export async function listOpportunities(sql: postgres.Sql, f: OpportunityFilters = {}): Promise<OpportunityRow[]> {
   const q = f.q?.trim().slice(0, 100);
-  return sql<OpportunityRow[]>`
+  const rows = await sql<OpportunityRow[]>`
     ${SELECT(sql)}
     WHERE o.merged_into_id IS NULL AND o.review_status = 'approved'
       ${showTestRecords() ? sql`` : sql`AND NOT o.is_synthetic`}
@@ -110,6 +126,7 @@ export async function listOpportunities(sql: postgres.Sql, f: OpportunityFilters
     -- (the EU portal keeps hundreds of expired topics labelled "open"; listing them first hid the current ones).
     ORDER BY (o.status IN ('closed','cancelled','archived')), (o.closes_at IS NOT NULL AND o.closes_at < now()), o.closes_at NULLS LAST, o.official_title
     LIMIT ${Math.min(Math.max(f.limit ?? 500, 1), 5000)}`;
+  return rows.map((r) => withDeadlineRule(r));
 }
 
 /**
@@ -119,7 +136,7 @@ export async function listOpportunities(sql: postgres.Sql, f: OpportunityFilters
 export async function getOpportunity(sql: postgres.Sql, id: string): Promise<OpportunityRow | null> {
   if (!/^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/i.test(id)) return null;
   const [row] = await sql<OpportunityRow[]>`${SELECT(sql)} WHERE o.id = ${id} AND o.review_status = 'approved' AND o.audience IS NOT NULL ${showTestRecords() ? sql`` : sql`AND NOT o.is_synthetic`} GROUP BY o.id, s.name, s.stale_after_hours`;
-  return row ?? null;
+  return row ? withDeadlineRule(row) : null;
 }
 
 interface RequirementRow {
@@ -161,6 +178,7 @@ export function toMatchable(row: OpportunityRow, requirements: RequirementRecord
     opportunity_type: row.opportunity_type,
     closes_at: row.closes_at,
     deadline_kind: row.deadline_kind,
+    deadline_depends_on_move_year: row.deadline_rule === "move_year",
     last_verified_at: row.last_verified_at,
     stale_after_hours: row.is_synthetic ? 24 * 365 * 10 : row.stale_after_days ? row.stale_after_days * 24 : row.source_stale_after_hours ?? 72,
     has_conflict: row.has_conflict,

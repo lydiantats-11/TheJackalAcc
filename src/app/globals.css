@@ -645,3 +645,11 @@ main:has(> section.band:last-child) { padding-bottom: 0; }
 .path-bar .container { display: flex; justify-content: flex-end; padding-block: 6px; }
 .path-bar .path-switch { border: 0; background: transparent; padding: 0; }
 @media (max-width: 960px) { .path-bar .container { justify-content: flex-start; } .path-bar .path-switch .muted-on-dark { display: inline; } }
+
+/* Deadlines by year of move (5Α, 5Β) */
+.move-year { margin-top: 16px; }
+.move-year table { width: 100%; border-collapse: collapse; }
+.move-year th, .move-year td { text-align: left; vertical-align: top; padding: 8px 10px; border-top: 1px solid var(--line); }
+.move-year thead th { font-size: .74rem; text-transform: uppercase; letter-spacing: .04em; color: var(--ink-2); border-top: 0; }
+.move-year td > div + div { margin-top: 4px; }
+.tag.green { background: var(--ok-bg); color: var(--ok); }

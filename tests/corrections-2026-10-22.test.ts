@@ -41,25 +41,26 @@ describe("the corrections file", () => {
 describe("Articles 5Β and 5Α — deadlines from the 2026 decisions", () => {
   it("5Β: application by 31 Oct (A.1192/2026 art. 4(1)), documents by 30 Nov; 31 March appears nowhere", () => {
     const r = rec("art5b");
-    expect(r.application_status.closes_at).toBe("2026-10-31");
+    expect(r.application_status.closes_at).toBeNull(); // 23 Oct 2026: computed by year of move (move-year.ts), not one date
+    expect(r.deadline_rule.application_by).toBe("10-31");
     expect(r.application_status.deadline_original_wording.el).toContain("31 Οκτωβρίου");
     expect(r.application_status.deadline_original_wording.el).toContain("30 Νοεμβρίου");
     expect(r.application_status.deadline_original_wording.el).toContain("Α.1192/2026");
     expect(JSON.stringify([r.application_status, r.application_steps])).not.toMatch(/31 Μαρτίου|31 March/);
   });
-  it("5Α: application by 30 Sep (A.1147/2026 art. 4(1)), documents by 31 Oct; the 2026 date has passed, the next is 30 Sep 2027", () => {
+  it("5Α: application by 30 Sep (A.1147/2026 art. 4(1)), documents by 31 Oct", () => {
     const r = rec("art5a");
-    expect(r.application_status.closes_at).toBe("2027-09-30");
+    expect(r.application_status.closes_at).toBeNull(); // 23 Oct 2026: computed by year of move (move-year.ts), not one date
+    expect(r.deadline_rule.application_by).toBe("09-30");
     expect(r.application_status.deadline_original_wording.el).toContain("30 Σεπτεμβρίου");
     expect(r.application_status.deadline_original_wording.el).toContain("31 Οκτωβρίου");
-    expect(r.application_status.deadline_original_wording.el).toContain("έχει λήξει");
     expect(JSON.stringify([r.application_status, r.application_steps])).not.toMatch(/31 Μαρτίου|31 March/);
   });
   it("the guides show the corrected deadline, steps and check date", () => {
     for (const id of ["art5a", "art5b"]) {
       const g = PROGRAMME_GUIDES.find((x) => x.recordKey === `manual:${id}`)!;
       expect(JSON.stringify([g.deadline, g.steps])).not.toMatch(/31 Μαρτίου|31 March/);
-      expect(g.checkedOn).toBe("2026-10-22");
+      expect(g.checkedOn >= "2026-10-22").toBe(true);
     }
   });
 });

@@ -43,6 +43,8 @@ export interface OpportunityForMatching {
   opportunity_type: string;
   closes_at: Date | null;
   deadline_kind: "official" | "estimated" | "not_announced" | "rolling" | "not_applicable";
+  /** The deadline depends on the year the person moved their tax residence (5Α, 5Β): closes_at is only the next one. */
+  deadline_depends_on_move_year?: boolean;
   last_verified_at: Date | null;
   stale_after_hours?: number;
   has_conflict?: boolean;
@@ -117,9 +119,12 @@ export function availabilityOf(o: OpportunityForMatching, now: Date): Availabili
   return o.status === "upcoming" ? "upcoming" : "open";
 }
 
-function deadlineFactor(o: OpportunityForMatching, now: Date): DeadlineFactor {
+export function deadlineFactor(o: OpportunityForMatching, now: Date): DeadlineFactor {
   if (o.deadline_kind === "rolling") return { state: "satisfied", fit: 0.8, reason: "deadline_rolling" };
   if (o.deadline_kind === "not_applicable") return { state: "not_applicable", fit: null, reason: "not_applicable" };
+  // Which deadline applies depends on the year the person moved, which the profile does not hold: an explicit unknown,
+  // never the next date shown as theirs (owner, 23 Oct 2026). Availability still uses closes_at (open for someone).
+  if (o.deadline_depends_on_move_year) return { state: "unknown", fit: null, reason: "deadline_depends_on_move_year" };
   // Estimated deadlines never contribute to readiness: they are not official.
   if (o.deadline_kind !== "official" || !o.closes_at) return { state: "unknown", fit: null, reason: "deadline_unknown" };
   const days = Math.floor((o.closes_at.getTime() - now.getTime()) / 86_400_000);
