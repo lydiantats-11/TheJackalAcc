@@ -59,10 +59,10 @@ jobs:
       - name: Snapshot
         run: |
           npm install --no-save --no-audit --no-fund playwright && npx playwright install --with-deps chromium
-          # Γνώση: no entry is approved yet, so the private preview shows the synthetic test entries under their banner.
-          JACKAL_KNOWLEDGE_FIXTURES=1 PORT=3000 npm start > next.log 2>&1 &
+          # Γνώση: no entry is approved yet; the private preview shows the K1 register as drafts under a banner (owner, 23 Oct 2026).
+          JACKAL_KNOWLEDGE_DRAFTS=1 PORT=3000 npm start > next.log 2>&1 &
           for i in $(seq 1 60); do curl -fs -o /dev/null http://127.0.0.1:3000/ && break; sleep 1; done
-          node scripts/static-snapshot.mjs "$OUT"
+          SNAPSHOT_MAX_PAGES=360 node scripts/static-snapshot.mjs "$OUT"
           cp scripts/snapshot-assets/* "$OUT"/assets/
           ls "$OUT" | wc -l; du -sh "$OUT"
       - name: Save to the live-test-results branch

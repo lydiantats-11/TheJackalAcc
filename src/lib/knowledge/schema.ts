@@ -56,6 +56,8 @@ export interface Entry {
   related: string[];
   /** Synthetic development fixture: never public, shown only in the preview with a banner. */
   synthetic?: boolean;
+  /** A register entry shown in the private preview as a DRAFT (owner, 23 Oct 2026): never public, never approved. */
+  draftPreview?: boolean;
   draft?: unknown;
 }
 
@@ -66,6 +68,7 @@ export interface Entry {
 export function publicationGate(e: Entry): { ok: boolean; missing: string[] } {
   const missing: string[] = [];
   if (e.synthetic) missing.push("synthetic");
+  if (e.draftPreview) missing.push("draft_preview");
   if (e.verification.status !== "verified") missing.push("verified_source");
   if (!e.sources.length || e.sources.some((s) => !/^https:\/\//.test(s.url) || !s.locator?.trim() || !s.checked_on)) missing.push("exact_source");
   if (!e.title.el?.trim() || !e.title.en?.trim()) missing.push("title_el_en");

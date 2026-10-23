@@ -1,9 +1,11 @@
 /**
  * Knowledge entries the site may show. Public pages read ONLY `visibleEntries()`:
  *   - entries of the register that pass the publication gate (today: none — nothing is approved);
- *   - in the preview, and only when JACKAL_KNOWLEDGE_FIXTURES=1, the synthetic fixtures, always flagged `synthetic`
- *     so every page shows the «test content» banner.
- * The register itself (221 planned entries, drafts included) is never rendered.
+ *   - in the private preview, and only when JACKAL_KNOWLEDGE_DRAFTS=1 (owner decision, 23 Oct 2026 16:19: «Preview
+ *     only, marked draft»), every register entry that is not published, flagged `draftPreview` so every page shows the
+ *     «draft — not verified, not approved» banner; its draft text if the workbook has one, otherwise the title only;
+ *   - for local development only, when JACKAL_KNOWLEDGE_FIXTURES=1, the synthetic fixtures, flagged `synthetic`.
+ * Without those switches (production) the register is never rendered.
  */
 import register from "../../../data/knowledge/register.json";
 import fixtures from "../../../data/knowledge/dev-fixtures.json";
@@ -13,19 +15,30 @@ const REGISTER = (register as unknown as { entries: Entry[] }).entries;
 const FIXTURES = (fixtures as unknown as { entries: Entry[] }).entries.map((e) => ({ ...e, synthetic: true as const }));
 
 export const fixturesEnabled = () => process.env.JACKAL_KNOWLEDGE_FIXTURES === "1";
+export const draftsEnabled = () => process.env.JACKAL_KNOWLEDGE_DRAFTS === "1";
+
+type DraftText = { el?: string | null; en?: string | null } | null | undefined;
+/** A register entry as a preview draft: the workbook's draft text (never approved), no source claimed. */
+function asDraft(e: Entry): Entry {
+  const d = e.draft as DraftText;
+  const el = d?.el?.trim() || null;
+  const en = d?.en?.trim() || null;
+  return { ...e, body: el ? { el, en: en ?? "" } : null, sources: [], editorial_review: null, draftPreview: true };
+}
+const DRAFTS = REGISTER.filter((e) => !publicationGate(e).ok).map(asDraft);
 
 /** Register entries that pass the gate. */
 export function publishedEntries(): Entry[] {
   return REGISTER.filter((e) => publicationGate(e).ok);
 }
 
-/** What the public pages show: published entries, plus synthetic fixtures in the preview only. */
-export function visibleEntries(withFixtures = fixturesEnabled()): Entry[] {
-  return [...publishedEntries(), ...(withFixtures ? FIXTURES : [])];
+/** What the pages show: published entries; in the private preview also the drafts (and, in development, fixtures). */
+export function visibleEntries(withFixtures = fixturesEnabled(), withDrafts = draftsEnabled()): Entry[] {
+  return [...publishedEntries(), ...(withDrafts ? DRAFTS : []), ...(withFixtures ? FIXTURES : [])];
 }
 
-export function entryById(id: string, withFixtures = fixturesEnabled()): Entry | null {
-  return visibleEntries(withFixtures).find((e) => e.id === id) ?? null;
+export function entryById(id: string, withFixtures = fixturesEnabled(), withDrafts = draftsEnabled()): Entry | null {
+  return visibleEntries(withFixtures, withDrafts).find((e) => e.id === id) ?? null;
 }
 
 /** Counts of the register by verification state — numbers only, no content. */
@@ -44,3 +57,4 @@ export function registerCounts() {
 
 export const REGISTER_FOR_TESTS = REGISTER;
 export const FIXTURES_FOR_TESTS = FIXTURES;
+export const DRAFTS_FOR_TESTS = DRAFTS;

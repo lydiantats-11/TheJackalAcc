@@ -1,6 +1,6 @@
 // Γνώση (Phase K, 23 Oct 2026): screenshots and checks of the Knowledge pages.
 // Usage: node scripts/knowledge-shots.mjs <outDir> <baseUrl> <label>
-//   label "preview"    — server with JACKAL_KNOWLEDGE_FIXTURES=1 (synthetic fixtures under the banner)
+//   label "preview"    — server with JACKAL_KNOWLEDGE_DRAFTS=1 (the K1 register as drafts, under the draft banner)
 //   label "production" — server without fixtures: what the public page would show today (no approved content)
 import { chromium } from "playwright";
 import { mkdirSync, writeFileSync } from "node:fs";
@@ -10,8 +10,8 @@ const out = `${outRoot}/knowledge/${label}`;
 mkdirSync(out, { recursive: true });
 const PAGES = [
   ["hub", "/gnosi"], ["lexiko", "/gnosi/lexiko"], ["vasika", "/gnosi/vasika"], ["faq", "/gnosi/syxnes-erotiseis"],
-  ["themata", "/gnosi/themata"], ["topic-forologia", "/gnosi/themata/forologia"], ["entry-dev-001", "/gnosi/oros/DEV-001"],
-  ["search", "/gnosi?q=%CE%B4%CE%BF%CE%BA%CE%B9%CE%BC%CE%B1%CF%83%CF%84%CE%B9%CE%BA%CE%BF"],
+  ["themata", "/gnosi/themata"], ["topic-forologia", "/gnosi/themata/forologia"], ["entry-lex-0001", "/gnosi/oros/LEX-0001"],
+  ["search", "/gnosi?q=%CE%B1%CF%86%CE%BC"],
 ];
 const checks = [];
 const ok = (name, cond, detail = "") => checks.push({ name, ok: !!cond, detail });
@@ -29,6 +29,8 @@ for (const [vp, size] of [["desktop", { width: 1440, height: 900 }], ["phone", {
       const f = await page.evaluate(() => ({
         overflow: document.documentElement.scrollWidth > window.innerWidth + 1,
         banner: !!document.querySelector("[data-fixture-banner]"),
+        draftBanner: !!document.querySelector("[data-draft-banner]"),
+        drafts: document.querySelectorAll("[data-draft]").length,
         tabs: [...document.querySelectorAll(".kn-tabs a")].map((a) => a.textContent?.trim()),
         nav: [...document.querySelectorAll("nav.main a")].map((a) => a.textContent?.trim()),
         items: document.querySelectorAll(".kn-item").length,
@@ -40,21 +42,22 @@ for (const [vp, size] of [["desktop", { width: 1440, height: 900 }], ["phone", {
       ok(`${label}/${vp}/${lang}/${name}: no server error`, !f.serverError);
       ok(`${label}/${vp}/${lang}/${name}: no sideways scroll`, !f.overflow);
       ok(`${label}/${vp}/${lang}/${name}: no opportunity or news links`, f.oppLinks === 0, String(f.oppLinks));
-      if (name !== "entry-dev-001" || label === "preview") ok(`${label}/${vp}/${lang}/${name}: page loads`, status === 200 && !f.notFound, String(status));
+      if (name !== "entry-lex-0001" || label === "preview") ok(`${label}/${vp}/${lang}/${name}: page loads`, status === 200 && !f.notFound, String(status));
       if (name === "hub") ok(`${label}/${vp}/${lang}: four section tabs`, f.tabs.length === 5, f.tabs.join(" | "));
       if (label === "production") {
-        ok(`${label}/${vp}/${lang}/${name}: no synthetic content and no banner`, f.synthetic === 0 && !f.banner);
-        if (name === "entry-dev-001") ok(`${label}: a synthetic entry is not found`, f.notFound || status === 404, String(status));
+        ok(`${label}/${vp}/${lang}/${name}: no draft or synthetic content and no banner`, f.synthetic === 0 && f.drafts === 0 && !f.banner && !f.draftBanner);
+        if (name === "entry-lex-0001") ok(`${label}: an unapproved register entry is not found`, f.notFound || status === 404, String(status));
       } else {
-        ok(`${label}/${vp}/${lang}/${name}: test-content banner shown`, f.banner);
-        if (name === "lexiko") ok(`${label}/${vp}/${lang}: dictionary lists entries`, f.items > 0, String(f.items));
+        ok(`${label}/${vp}/${lang}/${name}: draft banner shown`, f.draftBanner);
+        if (name === "lexiko") ok(`${label}/${vp}/${lang}: dictionary lists the 166 register terms, all marked draft`, f.items === 166 && f.drafts === 166, `${f.items} / ${f.drafts}`);
+        if (name === "entry-lex-0001") ok(`${label}/${vp}/${lang}: register entry shown only as a draft`, f.drafts === 1);
       }
       checks.push({ name: `${label}/${vp}/${lang}/${name}: nav`, ok: true, detail: f.nav.join(" | ") });
     }
-    // a register entry (draft, not approved) is never served
-    const r = await page.goto(`${BASE}/gnosi/oros/LEX-0001`, { waitUntil: "networkidle" });
+    // a synthetic development fixture is never served by either server
+    const r = await page.goto(`${BASE}/gnosi/oros/DEV-001`, { waitUntil: "networkidle" });
     const nf = await page.evaluate(() => document.body.innerText.includes("Η σελίδα δεν βρέθηκε") || document.body.innerText.includes("Page not found"));
-    ok(`${label}/${vp}/${lang}: unapproved register entry LEX-0001 is not served`, nf || r?.status() === 404, String(r?.status()));
+    ok(`${label}/${vp}/${lang}: synthetic fixture DEV-001 is not served`, nf || r?.status() === 404, String(r?.status()));
     await ctx.close();
   }
 }
@@ -65,13 +68,13 @@ if (label === "preview") {
   const page = await ctx.newPage();
   await page.goto(`${BASE}/gnosi/lexiko`, { waitUntil: "networkidle" });
   const all = await page.locator(".kn-item").count();
-  await page.locator(".kn-letters button", { hasText: /^Β$/ }).click();
+  await page.locator(".kn-letters button", { hasText: /^Α$/ }).click();
   const b = await page.locator(".kn-item").count();
-  ok("preview: letter Β narrows the dictionary", b > 0 && b < all, `${all} → ${b}`);
-  await page.locator(".kn-letters button", { hasText: /^Β$/ }).click();
-  await page.fill("#kn-q", "γαμμα");
-  const g = await page.locator(".kn-item").count();
-  ok("preview: accent-free search finds «Γάμμα»", g === 1, String(g));
+  ok("preview: letter Α narrows the dictionary", b > 0 && b < all, `${all} → ${b}`);
+  await page.locator(".kn-letters button", { hasText: /^Α$/ }).click();
+  await page.fill("#kn-q", "αφμ");
+  const titles = await page.locator(".kn-item .kn-item-title").allInnerTexts();
+  ok("preview: lower-case search «αφμ» finds «ΑΦΜ»", titles.includes("ΑΦΜ"), titles.slice(0, 5).join(" | "));
   await page.screenshot({ path: `${out}/desktop-el-lexiko-search.jpg`, type: "jpeg", quality: 80 });
   await ctx.close();
   // from a path, Γνώση keeps the tabs of that path

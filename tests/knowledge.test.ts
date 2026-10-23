@@ -6,7 +6,7 @@ import { afterEach, describe, expect, it } from "vitest";
 import { readFileSync, readdirSync, statSync } from "node:fs";
 import { join } from "node:path";
 import { GREEK_LETTERS, SECTIONS, TOPICS, indexLetter, linkParts, matches, publicationGate, type Entry } from "@/lib/knowledge/schema";
-import { FIXTURES_FOR_TESTS, REGISTER_FOR_TESTS, entryById, fixturesEnabled, publishedEntries, registerCounts, visibleEntries } from "@/lib/knowledge/store";
+import { DRAFTS_FOR_TESTS, FIXTURES_FOR_TESTS, REGISTER_FOR_TESTS, draftsEnabled, entryById, fixturesEnabled, publishedEntries, registerCounts, visibleEntries } from "@/lib/knowledge/store";
 import { KNOWLEDGE_PATH } from "@/lib/site/audience";
 import { SITE } from "@/lib/site/copy";
 import { browserLabels } from "@/components/knowledge";
@@ -42,9 +42,9 @@ describe("the content register (owner's workbook, 23 Oct 2026)", () => {
       expect(publicationGate(e).ok).toBe(false);
     }
     expect(publishedEntries()).toEqual([]);
-    expect(visibleEntries(false)).toEqual([]);
-    expect(visibleEntries(true).every((e) => e.synthetic)).toBe(true);
-    expect(entryById("LEX-0001", true)).toBeNull();
+    expect(visibleEntries(false, false)).toEqual([]);
+    expect(visibleEntries(true, false).every((e) => e.synthetic)).toBe(true);
+    expect(entryById("LEX-0001", true, false)).toBeNull();
     expect(registerCounts().published).toBe(0);
   });
   it("where the workbook's sheets disagree the stricter state is kept, and the disagreements are listed", () => {
@@ -103,18 +103,62 @@ describe("synthetic development fixtures", () => {
     process.env.JACKAL_KNOWLEDGE_FIXTURES = "1";
     expect(visibleEntries().length).toBe(FIXTURES_FOR_TESTS.length);
   });
-  it("only the two private preview workflows turn them on; the layout shows the test-content banner whenever one is visible", () => {
-    expect(read(".github/workflows/design-preview.yml")).toContain("JACKAL_KNOWLEDGE_FIXTURES=1 PORT=3000 npm start");
-    expect(read(".github/workflows/static-snapshot.yml")).toContain("JACKAL_KNOWLEDGE_FIXTURES=1 PORT=3000 npm start");
-    for (const f of readdirSync(join(root, ".github/workflows")).filter((x) => !["design-preview.yml", "static-snapshot.yml"].includes(x))) {
-      expect(read(`.github/workflows/${f}`), f).not.toContain("JACKAL_KNOWLEDGE_FIXTURES");
-    }
+  it("no workflow turns them on (development only); the layout shows the test-content banner whenever one is visible", () => {
+    for (const f of readdirSync(join(root, ".github/workflows"))) expect(read(`.github/workflows/${f}`), f).not.toContain("JACKAL_KNOWLEDGE_FIXTURES");
     expect(read("src/app/gnosi/layout.tsx")).toContain("{anySynthetic && <FixtureBanner s={s} />}");
     expect(SITE.el.knowledge.fixtureBanner).toMatch(/^ΔΟΚΙΜΑΣΤΙΚΟ ΠΕΡΙΕΧΟΜΕΝΟ/);
   });
   it("cover every kind and every topic, so each part of the page can be checked", () => {
     expect(new Set(FIXTURES_FOR_TESTS.map((e) => e.kind))).toEqual(new Set(["term", "article", "faq"]));
     expect(new Set(FIXTURES_FOR_TESTS.map((e) => e.topic)).size).toBe(8);
+  });
+});
+
+describe("the K1 register as drafts in the private preview (owner, 23 Oct 2026 16:19: «Preview only, marked draft»)", () => {
+  const before = process.env.JACKAL_KNOWLEDGE_DRAFTS;
+  afterEach(() => { if (before === undefined) delete process.env.JACKAL_KNOWLEDGE_DRAFTS; else process.env.JACKAL_KNOWLEDGE_DRAFTS = before; });
+  it("all 221 entries, same IDs, topics and review states as the workbook; every one marked draft, none can pass the gate", () => {
+    expect(DRAFTS_FOR_TESTS.map((e) => e.id)).toEqual(REGISTER_FOR_TESTS.map((e) => e.id));
+    expect(DRAFTS_FOR_TESTS.map((e) => [e.topic, e.kind, e.verification.status])).toEqual(REGISTER_FOR_TESTS.map((e) => [e.topic, e.kind, e.verification.status]));
+    for (const e of DRAFTS_FOR_TESTS) {
+      expect(e.draftPreview).toBe(true);
+      expect(e.publication.approved).toBe(false);
+      expect(e.sources).toEqual([]);
+      expect(publicationGate(e).missing).toContain("draft_preview");
+    }
+  });
+  it("the text shown is the workbook's draft text (40 entries); the other 181 show their title only", () => {
+    const withText = DRAFTS_FOR_TESTS.filter((e) => e.body);
+    expect(withText).toHaveLength(40);
+    for (const e of withText) {
+      const d = REGISTER_FOR_TESTS.find((x) => x.id === e.id)!.draft as { el: string; en: string };
+      expect(e.body).toEqual({ el: d.el.trim(), en: d.en.trim() });
+    }
+  });
+  it("appear only when JACKAL_KNOWLEDGE_DRAFTS=1, set only by the two private preview workflows; never by default", () => {
+    delete process.env.JACKAL_KNOWLEDGE_DRAFTS;
+    expect(draftsEnabled()).toBe(false);
+    expect(visibleEntries(false)).toEqual([]);
+    expect(entryById("LEX-0001", false)).toBeNull();
+    process.env.JACKAL_KNOWLEDGE_DRAFTS = "1";
+    expect(visibleEntries(false)).toHaveLength(221);
+    expect(entryById("LEX-0001", false)?.draftPreview).toBe(true);
+    for (const f of readdirSync(join(root, ".github/workflows"))) {
+      const has = read(`.github/workflows/${f}`).includes("JACKAL_KNOWLEDGE_DRAFTS");
+      expect(has, f).toBe(["design-preview.yml", "static-snapshot.yml"].includes(f));
+    }
+    expect(read(".github/workflows/design-preview.yml")).toContain("JACKAL_KNOWLEDGE_DRAFTS=1 PORT=3000 npm start");
+    expect(read(".github/workflows/static-snapshot.yml")).toContain("JACKAL_KNOWLEDGE_DRAFTS=1 PORT=3000 npm start");
+  });
+  it("every page says so: the draft banner, a «Πρόχειρο» tag on each item and entry, and the review status", () => {
+    expect(read("src/app/gnosi/layout.tsx")).toContain("{anyDraft && <DraftBanner s={s} />}");
+    expect(SITE.el.knowledge.draftBanner).toMatch(/^ΠΡΟΧΕΙΡΟ ΠΕΡΙΕΧΟΜΕΝΟ — ΜΟΝΟ ΓΙΑ ΕΣΩΤΕΡΙΚΟ ΕΛΕΓΧΟ/);
+    expect(SITE.en.knowledge.draftBanner).toMatch(/^DRAFT CONTENT — FOR INTERNAL REVIEW ONLY/);
+    expect(read("src/components/knowledge-browser.tsx")).toContain("{i.isDraft && <span className=\"tag gold\">{labels.draftTag}</span>}");
+    const entry = read("src/app/gnosi/oros/[id]/page.tsx");
+    expect(entry).toContain("{e.draftPreview && <span className=\"tag gold\">{k.draftTag}</span>}");
+    expect(entry).toContain("k.draftStates[v.status]");
+    expect(SITE.el.knowledge.draftStates).toEqual({ unverified: "Δεν έχει ελεγχθεί", draft: "Προσχέδιο κειμένου", source_located: "Βρέθηκε πιθανή επίσημη πηγή" });
   });
 });
 

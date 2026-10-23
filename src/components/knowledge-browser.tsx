@@ -18,6 +18,8 @@ export interface BrowserItem {
   snippet: string;
   letter: string;
   synthetic: boolean;
+  /** A register entry shown in the private preview as a draft. */
+  isDraft: boolean;
   /** Folded text of both languages, for search. */
   hay: string;
 }
@@ -26,7 +28,7 @@ export interface BrowserLabels {
   searchLabel: string; searchPlaceholder: string; searchButton: string; all: string; allTopics: string; topicLabel: string;
   letters: string; noResults: string;
   /** Plain strings only: a client component cannot receive functions from the server. */
-  results: { one: string; many: string }; fixtureTag: string; empty: string;
+  results: { one: string; many: string }; fixtureTag: string; draftTag: string; empty: string;
   kindName: Record<string, string>;
 }
 
@@ -75,7 +77,7 @@ export function KnowledgeBrowser({ items, topics, letters, labels, initialQ = ""
       {!items.length ? <p className="kn-empty">{labels.empty}</p> : !shown.length ? <p className="kn-empty">{labels.noResults}</p> : (
         <ul className="kn-list">
           {shown.map((i) => (
-            <li key={i.id} className="kn-item" data-synthetic={i.synthetic || undefined} data-topic={i.topic} data-letter={i.letter} data-hay={i.hay}>
+            <li key={i.id} className="kn-item" data-synthetic={i.synthetic || undefined} data-draft={i.isDraft || undefined} data-topic={i.topic} data-letter={i.letter} data-hay={i.hay}>
               <Link href={`${base}/${i.id}`}>
                 <span className="kn-item-title">{i.title}</span>
                 {i.alt && <span className="kn-item-alt">{i.alt}</span>}
@@ -85,6 +87,7 @@ export function KnowledgeBrowser({ items, topics, letters, labels, initialQ = ""
                 {showKind && <span className="tag">{labels.kindName[i.kind]}</span>}
                 <span className="tag">{topics.find((t) => t.id === i.topic)?.name}</span>
                 {i.synthetic && <span className="tag gold">{labels.fixtureTag}</span>}
+                {i.isDraft && <span className="tag gold">{labels.draftTag}</span>}
               </div>
             </li>
           ))}

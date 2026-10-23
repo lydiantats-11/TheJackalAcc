@@ -102,6 +102,8 @@ for (const locale of ["el", "en"]) {
     const res = await page.goto(BASE + key, { waitUntil: "networkidle" });
     if (!res || res.status() >= 400) { console.log(`skip ${locale} ${key} (${res?.status()})`); continue; }
     const { html, links } = await capture(page, ctx, locale);
+    // Γνώση drafts: an English entry page is kept only when the entry has English text; links go to the Greek page.
+    if (locale === "en" && key.startsWith("/gnosi/oros/") && html.includes('data-complete="false"')) continue;
     pages[locale].set(key, { html, file: fileOf(locale, key) });
     for (const l of links) {
       if (!l || !l.startsWith("/") || l.startsWith("/_next")) continue;
@@ -145,7 +147,8 @@ for (const l of ["el", "en"]) {
       const h = href.replace(/&amp;/g, "&");
       if (h.startsWith("/_next") || h.startsWith("assets/")) return m;
       const [path, hash] = h.split("#");
-      const file = manifest[l][keyOf(path || "/")] ?? `${l}--missing.html`;
+      const k = keyOf(path || "/");
+      const file = manifest[l][k] ?? (k.startsWith("/gnosi/oros/") ? manifest[l === "el" ? "en" : "el"][k] : undefined) ?? `${l}--missing.html`;
       return `href="${file}${hash ? "#" + hash : ""}"`;
     });
     html = html.replace(/<\/head>/, `<link rel="stylesheet" href="assets/snap.css"><script src="assets/manifest.js"></script><script src="assets/snap.js" defer></script></head>`)

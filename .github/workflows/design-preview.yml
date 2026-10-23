@@ -85,7 +85,7 @@ jobs:
           psql "$DATABASE_URL" -At -c "SELECT coalesce(json_agg(json_build_object('id',id,'external_key',external_key,'audience',audience,'review_status',review_status,'status',status,'closes_at',closes_at,'title',official_title) ORDER BY external_key),'[]') FROM opportunities WHERE NOT is_synthetic AND merged_into_id IS NULL AND review_status = 'approved'" > classification.json
           export CLASSIFICATION_FILE=classification.json
           echo "$PREVIEW_IDS"
-          JACKAL_KNOWLEDGE_FIXTURES=1 PORT=3000 npm start > next.log 2>&1 &   # preview only: synthetic Knowledge fixtures under a banner
+          JACKAL_KNOWLEDGE_DRAFTS=1 PORT=3000 npm start > next.log 2>&1 &   # private preview only: the K1 register as drafts, under a banner
           for i in $(seq 1 60); do curl -fs -o /dev/null http://127.0.0.1:3000/ && break; sleep 1; done
           node scripts/design-preview.mjs "$OUT"
           export RECORD_IDS=$(psql "$DATABASE_URL" -At -c "SELECT coalesce(json_agg(json_build_object('key', k, 'id', o.id, 'audience', o.audience) ORDER BY k), '[]') FROM unnest(ARRAY['manual:art5a','manual:art5b','manual:art5c','manual:a21','opske:23467','opske:24506','opske:23486','manual:discovereu','opske:23487','opske:23466']) k LEFT JOIN opportunities o ON o.external_key = k AND o.merged_into_id IS NULL")

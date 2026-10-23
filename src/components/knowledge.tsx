@@ -27,7 +27,7 @@ export function toItems(entries: Entry[], l: Locale): BrowserItem[] {
     return {
       id: e.id, kind: e.kind, topic: e.topic, title: t, alt: other && other !== t ? other : null,
       snippet: body.length > 180 ? `${body.slice(0, 177).trimEnd()}…` : body,
-      letter: indexLetter(t), synthetic: !!e.synthetic,
+      letter: indexLetter(t), synthetic: !!e.synthetic, isDraft: !!e.draftPreview,
       hay: fold([e.title.el, e.title.en, e.body?.el, e.body?.en].filter(Boolean).join(" ")),
     };
   });
@@ -37,7 +37,7 @@ export function browserLabels(s: SiteCopy, l: Locale): BrowserLabels {
   const k = s.knowledge;
   return {
     searchLabel: k.searchLabel, searchPlaceholder: k.searchPlaceholder, searchButton: k.searchButton, all: k.all, allTopics: k.allTopics,
-    topicLabel: k.topicLabel, letters: k.letters, noResults: k.noResults, results: { one: k.results(1).replace(/^1 /, ""), many: k.results(2).replace(/^2 /, "") }, fixtureTag: k.fixtureTag, empty: k.empty,
+    topicLabel: k.topicLabel, letters: k.letters, noResults: k.noResults, results: { one: k.results(1).replace(/^1 /, ""), many: k.results(2).replace(/^2 /, "") }, fixtureTag: k.fixtureTag, draftTag: k.draftTag, empty: k.empty,
     kindName: { term: SECTIONS[0].name[l], article: SECTIONS[1].name[l], faq: SECTIONS[2].name[l] },
   };
 }
@@ -60,6 +60,11 @@ export function RichText({ text, locale }: { text: string; locale: Locale }) {
 
 export function FixtureBanner({ s }: { s: SiteCopy }) {
   return <div className="notice kn-fixture" role="note" data-fixture-banner><strong>{s.knowledge.fixtureBanner}</strong></div>;
+}
+
+/** Private preview of the K1 register: every page says the entries are drafts, not verified and not approved. */
+export function DraftBanner({ s }: { s: SiteCopy }) {
+  return <div className="notice kn-fixture" role="note" data-draft-banner><strong>{s.knowledge.draftBanner}</strong></div>;
 }
 
 /** Card of one entry, by id, for "see also" lists. */
