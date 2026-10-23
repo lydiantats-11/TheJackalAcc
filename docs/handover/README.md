@@ -41,7 +41,7 @@ Jackal is not a government service and never applies on anyone's behalf.
 
 ## Status on 23 October 2026
 
-- CI on `consolidation`: 420 tests in 37 files, 0 TypeScript errors, production build, database seeds with real
+- CI on `consolidation`: 424 tests in 37 files, 0 TypeScript errors, production build, database seeds with real
   data, quality report and browser checks — all passing; any failure turns the run red.
 - 19 hand-checked programmes are approved for the preview (9 citizen, 10 business). 1,009 EU calls are imported and
   held back from both paths until their applicant types are classified.

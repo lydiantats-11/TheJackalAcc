@@ -5,7 +5,7 @@ or news. Built 23 Oct 2026 (Phase K).
 
 ## Structure
 
-- **Four sections**, in the owner's order (23 Oct 16:37): **Θέματα · Λεξικό · Μάθε τα βασικά · Συχνές Ερωτήσεις**
+- **Four sections**, in the owner's order (23 Oct 16:37): **Θέματα · Λεξικό · Μάθε τα βασικά · Συχνές Ερωτήσεις** — Θέματα is the main way in
   (`SECTIONS` in `src/lib/knowledge/schema.ts`). Λεξικό, Μάθε τα βασικά and Συχνές Ερωτήσεις are entry kinds
   (`term`, `article`, `faq`); Θέματα is a view over all of them.
 - **Eight topics** (`TOPICS`): Φορολογία, Επιχειρηματικότητα, Οικονομικά & Χρηματοδότηση, Εργασία & Ασφάλιση,
@@ -15,6 +15,29 @@ or news. Built 23 Oct 2026 (Phase K).
   `[[ID]]` or `[[ID|label]]` in its text.
 - Routes: `/gnosi`, `/gnosi/themata`, `/gnosi/themata/[topic]`, `/gnosi/lexiko`, `/gnosi/vasika`,
   `/gnosi/syxnes-erotiseis`, `/gnosi/oros/[id]`.
+
+## Page layout (owner review, 23 Oct 2026 18:07 — final UX revision before handover)
+
+| Page | What it shows |
+| --- | --- |
+| `/gnosi` | Prominent search: results appear only while typing, never a 221-entry list. Then the eight topics as cards with counts per kind, «Μάθετε και συγκρίνετε», the three entry sections and «Πώς δημοσιεύουμε» |
+| `/gnosi/themata/[topic]` | Everything on one topic, grouped as page sections (not tabs): Μάθε τα βασικά · Συγκρίσεις (when any) · Λεξικό (with letter headings) · Συχνές Ερωτήσεις |
+| `/gnosi/lexiko` | Compact alphabetical rows with letter headings, search, Α–Ω index (Latin letters only when used), topic chips that wrap |
+| `/gnosi/oros/[id]` | The entry; «Περιεχόμενο υπό προετοιμασία» when it has no text; source or candidate source; «Άλλα στο ίδιο θέμα» (same primary topic — a grouping, not a claimed relation) |
+
+- **Sub-navigation.** The section name «Γνώση» is followed by its four parts, styled apart from the site's main
+  navigation.
+- **Markers.** In the private preview, a banner explains that entries are under verification. A per-row «υπό
+  επαλήθευση» marker appears only when a list mixes verified and unverified entries.
+- **Comparisons.** Comparison tables live in `data/knowledge/comparisons.json` and are rendered by `ComparisonTable`
+  (`src/components/knowledge.tsx`). A cell may hold a value only with an official source (url, exact locator, date);
+  otherwise it shows «Υπό τεκμηρίωση».
+- **The first comparison.** CMP-001 compares Ατομική επιχείρηση, ΟΕ, ΕΕ, ΙΚΕ, ΕΠΕ and ΑΕ on taxation, liability,
+  social insurance, management and administrative requirements. It holds no values yet, and comparisons appear only
+  in the private preview until approved (`visibleComparisons`).
+- **Content audit.** `scripts/knowledge_content_audit.py` writes `data/knowledge/content-audit.json`, which lists
+  every entry without Greek or English text or an English title. On 23 Oct: 181 of 221 have no text and no English
+  title (all 28 basics, all 27 FAQ and 126 terms); there are no duplicate IDs or titles.
 
 ## Search
 

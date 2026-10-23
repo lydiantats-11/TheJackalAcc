@@ -2,7 +2,7 @@
 
 ## Test suites
 
-- `npm test` runs vitest over `tests/**/*.test.ts`: 37 files, 420 tests on 23 Oct 2026.
+- `npm test` runs vitest over `tests/**/*.test.ts`: 37 files, 424 tests on 23 Oct 2026.
 - Tests that need PostgreSQL use `tests/db-helper.ts`. They run only when `TEST_DATABASE_URL` is set, rebuild a fresh
   schema per file, and run serially.
 
@@ -51,7 +51,7 @@ delete).
 | --- | --- |
 | `audience-check.mjs` | No programme, news item or guide appears in the wrong path |
 | `record-shots.mjs` | The 10 key records: apply button, deadline lines, pending labels, 5Α/5Β tables, before/after screenshots |
-| `knowledge-shots.mjs` | Γνώση on desktop and phone, EL and EN, for two servers. With drafts: banner, 166 terms marked, the owner's search examples, section order. Production-like: no draft, no test entry, unapproved IDs give «not found» |
+| `knowledge-shots.mjs` | Γνώση on desktop and phone, EL and EN, for two servers. With drafts: banner, 166 terms each once, «content in preparation» on the 126 terms without text, home page lists nothing until a search, the owner's search examples, section order, all 8 topic pages with their sections (221 entries, each once), the comparison placeholder with no values. Production-like: no draft, no test entry, unapproved IDs give «not found» |
 
 ## Quality report
 
