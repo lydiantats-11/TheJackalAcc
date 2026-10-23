@@ -9,6 +9,7 @@ import { GREEK_LETTERS, SECTIONS, TOPICS, indexLetter, linkParts, matches, publi
 import { FIXTURES_FOR_TESTS, REGISTER_FOR_TESTS, entryById, fixturesEnabled, publishedEntries, registerCounts, visibleEntries } from "@/lib/knowledge/store";
 import { KNOWLEDGE_PATH } from "@/lib/site/audience";
 import { SITE } from "@/lib/site/copy";
+import { browserLabels } from "@/components/knowledge";
 
 const root = join(__dirname, "..");
 const read = (p: string) => readFileSync(join(root, p), "utf8");
@@ -132,6 +133,13 @@ describe("structure: four sections over one content system, eight topics", () =>
       expect(t, f).not.toMatch(/register\.json|REGISTER_FOR_TESTS|publishedEntries\(\)\s*\.|\.draft\b/);
       expect(t, f).not.toMatch(/@\/lib\/data\/opportunities|@\/lib\/site\/listing|@\/lib\/site\/news|audienceParam|@\/lib\/db/);
     }
+  });
+  it("labels passed to the client component are plain data (functions cannot cross to the client)", () => {
+    for (const l of ["el", "en"] as const) {
+      const lab = browserLabels(SITE[l], l);
+      expect(JSON.parse(JSON.stringify(lab))).toEqual(lab);
+    }
+    expect(browserLabels(SITE.el, "el").results).toEqual({ one: "αποτέλεσμα", many: "αποτελέσματα" });
   });
   it("the client component receives display fields only", () => {
     expect(read("src/components/knowledge-browser.tsx")).not.toMatch(/@\/lib\/knowledge\/store/);

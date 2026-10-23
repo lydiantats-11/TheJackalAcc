@@ -23,7 +23,9 @@ export interface BrowserItem {
 
 export interface BrowserLabels {
   searchLabel: string; searchPlaceholder: string; searchButton: string; all: string; allTopics: string; topicLabel: string;
-  letters: string; noResults: string; results: (n: number) => string; fixtureTag: string; empty: string;
+  letters: string; noResults: string;
+  /** Plain strings only: a client component cannot receive functions from the server. */
+  results: { one: string; many: string }; fixtureTag: string; empty: string;
   kindName: Record<string, string>;
 }
 
@@ -67,7 +69,7 @@ export function KnowledgeBrowser({ items, topics, letters, labels, initialQ = ""
         </nav>
       )}
 
-      <p className="small muted" aria-live="polite" style={{ margin: "4px 0 12px" }}>{items.length ? labels.results(shown.length) : null}</p>
+      <p className="small muted" aria-live="polite" style={{ margin: "4px 0 12px" }}>{items.length ? `${shown.length} ${shown.length === 1 ? labels.results.one : labels.results.many}` : null}</p>
 
       {!items.length ? <p className="kn-empty">{labels.empty}</p> : !shown.length ? <p className="kn-empty">{labels.noResults}</p> : (
         <ul className="kn-list">

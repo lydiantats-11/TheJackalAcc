@@ -37,7 +37,7 @@ export function browserLabels(s: SiteCopy, l: Locale): BrowserLabels {
   const k = s.knowledge;
   return {
     searchLabel: k.searchLabel, searchPlaceholder: k.searchPlaceholder, searchButton: k.searchButton, all: k.all, allTopics: k.allTopics,
-    topicLabel: k.topicLabel, letters: k.letters, noResults: k.noResults, results: k.results, fixtureTag: k.fixtureTag, empty: k.empty,
+    topicLabel: k.topicLabel, letters: k.letters, noResults: k.noResults, results: { one: k.results(1).replace(/^1 /, ""), many: k.results(2).replace(/^2 /, "") }, fixtureTag: k.fixtureTag, empty: k.empty,
     kindName: { term: SECTIONS[0].name[l], article: SECTIONS[1].name[l], faq: SECTIONS[2].name[l] },
   };
 }

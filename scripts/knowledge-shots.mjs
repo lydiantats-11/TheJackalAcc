@@ -35,7 +35,9 @@ for (const [vp, size] of [["desktop", { width: 1440, height: 900 }], ["phone", {
         synthetic: document.querySelectorAll("[data-synthetic]").length,
         oppLinks: [...document.querySelectorAll("a[href]")].filter((a) => /\/(politis|epixeiriseis)\/(eukairies\/[0-9a-f-]{36}|nea)/.test(a.getAttribute("href") ?? "")).length,
         notFound: document.body.innerText.includes("Η σελίδα δεν βρέθηκε") || document.body.innerText.includes("Page not found"),
+        serverError: /couldn.t load|server error occurred|Application error/i.test(document.body.innerText),
       }));
+      ok(`${label}/${vp}/${lang}/${name}: no server error`, !f.serverError);
       ok(`${label}/${vp}/${lang}/${name}: no sideways scroll`, !f.overflow);
       ok(`${label}/${vp}/${lang}/${name}: no opportunity or news links`, f.oppLinks === 0, String(f.oppLinks));
       if (name !== "entry-dev-001" || label === "preview") ok(`${label}/${vp}/${lang}/${name}: page loads`, status === 200 && !f.notFound, String(status));
