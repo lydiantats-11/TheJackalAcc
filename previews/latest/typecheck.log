@@ -2,3 +2,5 @@
 > funding-radar@0.1.0 typecheck
 > tsc --noEmit
 
+src/lib/knowledge/schema.ts(83,14): error TS2451: Cannot redeclare block-scoped variable 'sectionById'.
+src/lib/knowledge/schema.ts(85,14): error TS2451: Cannot redeclare block-scoped variable 'sectionById'.
