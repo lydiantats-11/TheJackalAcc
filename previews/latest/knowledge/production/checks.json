@@ -26,7 +26,7 @@
       "detail": "Γνώση | Λεξικό | Μάθε τα βασικά | Συχνές Ερωτήσεις | Θέματα"
     },
     {
-      "name": "production/desktop/el/hub: no synthetic content and no banner",
+      "name": "production/desktop/el/hub: no draft or synthetic content and no banner",
       "ok": true,
       "detail": ""
     },
@@ -56,7 +56,7 @@
       "detail": "200"
     },
     {
-      "name": "production/desktop/el/lexiko: no synthetic content and no banner",
+      "name": "production/desktop/el/lexiko: no draft or synthetic content and no banner",
       "ok": true,
       "detail": ""
     },
@@ -86,7 +86,7 @@
       "detail": "200"
     },
     {
-      "name": "production/desktop/el/vasika: no synthetic content and no banner",
+      "name": "production/desktop/el/vasika: no draft or synthetic content and no banner",
       "ok": true,
       "detail": ""
     },
@@ -116,7 +116,7 @@
       "detail": "200"
     },
     {
-      "name": "production/desktop/el/faq: no synthetic content and no banner",
+      "name": "production/desktop/el/faq: no draft or synthetic content and no banner",
       "ok": true,
       "detail": ""
     },
@@ -146,7 +146,7 @@
       "detail": "200"
     },
     {
-      "name": "production/desktop/el/themata: no synthetic content and no banner",
+      "name": "production/desktop/el/themata: no draft or synthetic content and no banner",
       "ok": true,
       "detail": ""
     },
@@ -176,7 +176,7 @@
       "detail": "200"
     },
     {
-      "name": "production/desktop/el/topic-forologia: no synthetic content and no banner",
+      "name": "production/desktop/el/topic-forologia: no draft or synthetic content and no banner",
       "ok": true,
       "detail": ""
     },
@@ -186,32 +186,32 @@
       "detail": "Γνώση | Τι είναι το Jackal"
     },
     {
-      "name": "production/desktop/el/entry-dev-001: no server error",
+      "name": "production/desktop/el/entry-lex-0001: no server error",
       "ok": true,
       "detail": ""
     },
     {
-      "name": "production/desktop/el/entry-dev-001: no sideways scroll",
+      "name": "production/desktop/el/entry-lex-0001: no sideways scroll",
       "ok": true,
       "detail": ""
     },
     {
-      "name": "production/desktop/el/entry-dev-001: no opportunity or news links",
+      "name": "production/desktop/el/entry-lex-0001: no opportunity or news links",
       "ok": true,
       "detail": "0"
     },
     {
-      "name": "production/desktop/el/entry-dev-001: no synthetic content and no banner",
+      "name": "production/desktop/el/entry-lex-0001: no draft or synthetic content and no banner",
       "ok": true,
       "detail": ""
     },
     {
-      "name": "production: a synthetic entry is not found",
+      "name": "production: an unapproved register entry is not found",
       "ok": true,
       "detail": "200"
     },
     {
-      "name": "production/desktop/el/entry-dev-001: nav",
+      "name": "production/desktop/el/entry-lex-0001: nav",
       "ok": true,
       "detail": "Γνώση | Τι είναι το Jackal"
     },
@@ -236,7 +236,7 @@
       "detail": "200"
     },
     {
-      "name": "production/desktop/el/search: no synthetic content and no banner",
+      "name": "production/desktop/el/search: no draft or synthetic content and no banner",
       "ok": true,
       "detail": ""
     },
@@ -246,7 +246,7 @@
       "detail": "Γνώση | Τι είναι το Jackal"
     },
     {
-      "name": "production/desktop/el: unapproved register entry LEX-0001 is not served",
+      "name": "production/desktop/el: synthetic fixture DEV-001 is not served",
       "ok": true,
       "detail": "200"
     },
@@ -276,7 +276,7 @@
       "detail": "Knowledge | Dictionary | Learn the Basics | FAQ | Topics"
     },
     {
-      "name": "production/desktop/en/hub: no synthetic content and no banner",
+      "name": "production/desktop/en/hub: no draft or synthetic content and no banner",
       "ok": true,
       "detail": ""
     },
@@ -306,7 +306,7 @@
       "detail": "200"
     },
     {
-      "name": "production/desktop/en/lexiko: no synthetic content and no banner",
+      "name": "production/desktop/en/lexiko: no draft or synthetic content and no banner",
       "ok": true,
       "detail": ""
     },
@@ -336,7 +336,7 @@
       "detail": "200"
     },
     {
-      "name": "production/desktop/en/vasika: no synthetic content and no banner",
+      "name": "production/desktop/en/vasika: no draft or synthetic content and no banner",
       "ok": true,
       "detail": ""
     },
@@ -366,7 +366,7 @@
       "detail": "200"
     },
     {
-      "name": "production/desktop/en/faq: no synthetic content and no banner",
+      "name": "production/desktop/en/faq: no draft or synthetic content and no banner",
       "ok": true,
       "detail": ""
     },
@@ -396,7 +396,7 @@
       "detail": "200"
     },
     {
-      "name": "production/desktop/en/themata: no synthetic content and no banner",
+      "name": "production/desktop/en/themata: no draft or synthetic content and no banner",
       "ok": true,
       "detail": ""
     },
@@ -426,7 +426,7 @@
       "detail": "200"
     },
     {
-      "name": "production/desktop/en/topic-forologia: no synthetic content and no banner",
+      "name": "production/desktop/en/topic-forologia: no draft or synthetic content and no banner",
       "ok": true,
       "detail": ""
     },
@@ -436,32 +436,32 @@
       "detail": "Knowledge | What is Jackal"
     },
     {
-      "name": "production/desktop/en/entry-dev-001: no server error",
+      "name": "production/desktop/en/entry-lex-0001: no server error",
       "ok": true,
       "detail": ""
     },
     {
-      "name": "production/desktop/en/entry-dev-001: no sideways scroll",
+      "name": "production/desktop/en/entry-lex-0001: no sideways scroll",
       "ok": true,
       "detail": ""
     },
     {
-      "name": "production/desktop/en/entry-dev-001: no opportunity or news links",
+      "name": "production/desktop/en/entry-lex-0001: no opportunity or news links",
       "ok": true,
       "detail": "0"
     },
     {
-      "name": "production/desktop/en/entry-dev-001: no synthetic content and no banner",
+      "name": "production/desktop/en/entry-lex-0001: no draft or synthetic content and no banner",
       "ok": true,
       "detail": ""
     },
     {
-      "name": "production: a synthetic entry is not found",
+      "name": "production: an unapproved register entry is not found",
       "ok": true,
       "detail": "200"
     },
     {
-      "name": "production/desktop/en/entry-dev-001: nav",
+      "name": "production/desktop/en/entry-lex-0001: nav",
       "ok": true,
       "detail": "Knowledge | What is Jackal"
     },
@@ -486,7 +486,7 @@
       "detail": "200"
     },
     {
-      "name": "production/desktop/en/search: no synthetic content and no banner",
+      "name": "production/desktop/en/search: no draft or synthetic content and no banner",
       "ok": true,
       "detail": ""
     },
@@ -496,7 +496,7 @@
       "detail": "Knowledge | What is Jackal"
     },
     {
-      "name": "production/desktop/en: unapproved register entry LEX-0001 is not served",
+      "name": "production/desktop/en: synthetic fixture DEV-001 is not served",
       "ok": true,
       "detail": "200"
     },
@@ -526,7 +526,7 @@
       "detail": "Γνώση | Λεξικό | Μάθε τα βασικά | Συχνές Ερωτήσεις | Θέματα"
     },
     {
-      "name": "production/phone/el/hub: no synthetic content and no banner",
+      "name": "production/phone/el/hub: no draft or synthetic content and no banner",
       "ok": true,
       "detail": ""
     },
@@ -556,7 +556,7 @@
       "detail": "200"
     },
     {
-      "name": "production/phone/el/lexiko: no synthetic content and no banner",
+      "name": "production/phone/el/lexiko: no draft or synthetic content and no banner",
       "ok": true,
       "detail": ""
     },
@@ -586,7 +586,7 @@
       "detail": "200"
     },
     {
-      "name": "production/phone/el/vasika: no synthetic content and no banner",
+      "name": "production/phone/el/vasika: no draft or synthetic content and no banner",
       "ok": true,
       "detail": ""
     },
@@ -616,7 +616,7 @@
       "detail": "200"
     },
     {
-      "name": "production/phone/el/faq: no synthetic content and no banner",
+      "name": "production/phone/el/faq: no draft or synthetic content and no banner",
       "ok": true,
       "detail": ""
     },
@@ -646,7 +646,7 @@
       "detail": "200"
     },
     {
-      "name": "production/phone/el/themata: no synthetic content and no banner",
+      "name": "production/phone/el/themata: no draft or synthetic content and no banner",
       "ok": true,
       "detail": ""
     },
@@ -676,7 +676,7 @@
       "detail": "200"
     },
     {
-      "name": "production/phone/el/topic-forologia: no synthetic content and no banner",
+      "name": "production/phone/el/topic-forologia: no draft or synthetic content and no banner",
       "ok": true,
       "detail": ""
     },
@@ -686,32 +686,32 @@
       "detail": "Γνώση | Τι είναι το Jackal"
     },
     {
-      "name": "production/phone/el/entry-dev-001: no server error",
+      "name": "production/phone/el/entry-lex-0001: no server error",
       "ok": true,
       "detail": ""
     },
     {
-      "name": "production/phone/el/entry-dev-001: no sideways scroll",
+      "name": "production/phone/el/entry-lex-0001: no sideways scroll",
       "ok": true,
       "detail": ""
     },
     {
-      "name": "production/phone/el/entry-dev-001: no opportunity or news links",
+      "name": "production/phone/el/entry-lex-0001: no opportunity or news links",
       "ok": true,
       "detail": "0"
     },
     {
-      "name": "production/phone/el/entry-dev-001: no synthetic content and no banner",
+      "name": "production/phone/el/entry-lex-0001: no draft or synthetic content and no banner",
       "ok": true,
       "detail": ""
     },
     {
-      "name": "production: a synthetic entry is not found",
+      "name": "production: an unapproved register entry is not found",
       "ok": true,
       "detail": "200"
     },
     {
-      "name": "production/phone/el/entry-dev-001: nav",
+      "name": "production/phone/el/entry-lex-0001: nav",
       "ok": true,
       "detail": "Γνώση | Τι είναι το Jackal"
     },
@@ -736,7 +736,7 @@
       "detail": "200"
     },
     {
-      "name": "production/phone/el/search: no synthetic content and no banner",
+      "name": "production/phone/el/search: no draft or synthetic content and no banner",
       "ok": true,
       "detail": ""
     },
@@ -746,7 +746,7 @@
       "detail": "Γνώση | Τι είναι το Jackal"
     },
     {
-      "name": "production/phone/el: unapproved register entry LEX-0001 is not served",
+      "name": "production/phone/el: synthetic fixture DEV-001 is not served",
       "ok": true,
       "detail": "200"
     }

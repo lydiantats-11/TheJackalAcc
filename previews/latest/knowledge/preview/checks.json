@@ -26,7 +26,7 @@
       "detail": "Γνώση | Λεξικό | Μάθε τα βασικά | Συχνές Ερωτήσεις | Θέματα"
     },
     {
-      "name": "preview/desktop/el/hub: test-content banner shown",
+      "name": "preview/desktop/el/hub: draft banner shown",
       "ok": true,
       "detail": ""
     },
@@ -56,14 +56,14 @@
       "detail": "200"
     },
     {
-      "name": "preview/desktop/el/lexiko: test-content banner shown",
+      "name": "preview/desktop/el/lexiko: draft banner shown",
       "ok": true,
       "detail": ""
     },
     {
-      "name": "preview/desktop/el: dictionary lists entries",
+      "name": "preview/desktop/el: dictionary lists the 166 register terms, all marked draft",
       "ok": true,
-      "detail": "11"
+      "detail": "166 / 166"
     },
     {
       "name": "preview/desktop/el/lexiko: nav",
@@ -91,7 +91,7 @@
       "detail": "200"
     },
     {
-      "name": "preview/desktop/el/vasika: test-content banner shown",
+      "name": "preview/desktop/el/vasika: draft banner shown",
       "ok": true,
       "detail": ""
     },
@@ -121,7 +121,7 @@
       "detail": "200"
     },
     {
-      "name": "preview/desktop/el/faq: test-content banner shown",
+      "name": "preview/desktop/el/faq: draft banner shown",
       "ok": true,
       "detail": ""
     },
@@ -151,7 +151,7 @@
       "detail": "200"
     },
     {
-      "name": "preview/desktop/el/themata: test-content banner shown",
+      "name": "preview/desktop/el/themata: draft banner shown",
       "ok": true,
       "detail": ""
     },
@@ -181,7 +181,7 @@
       "detail": "200"
     },
     {
-      "name": "preview/desktop/el/topic-forologia: test-content banner shown",
+      "name": "preview/desktop/el/topic-forologia: draft banner shown",
       "ok": true,
       "detail": ""
     },
@@ -191,32 +191,37 @@
       "detail": "Γνώση | Τι είναι το Jackal"
     },
     {
-      "name": "preview/desktop/el/entry-dev-001: no server error",
+      "name": "preview/desktop/el/entry-lex-0001: no server error",
       "ok": true,
       "detail": ""
     },
     {
-      "name": "preview/desktop/el/entry-dev-001: no sideways scroll",
+      "name": "preview/desktop/el/entry-lex-0001: no sideways scroll",
       "ok": true,
       "detail": ""
     },
     {
-      "name": "preview/desktop/el/entry-dev-001: no opportunity or news links",
+      "name": "preview/desktop/el/entry-lex-0001: no opportunity or news links",
       "ok": true,
       "detail": "0"
     },
     {
-      "name": "preview/desktop/el/entry-dev-001: page loads",
+      "name": "preview/desktop/el/entry-lex-0001: page loads",
       "ok": true,
       "detail": "200"
     },
     {
-      "name": "preview/desktop/el/entry-dev-001: test-content banner shown",
+      "name": "preview/desktop/el/entry-lex-0001: draft banner shown",
       "ok": true,
       "detail": ""
     },
     {
-      "name": "preview/desktop/el/entry-dev-001: nav",
+      "name": "preview/desktop/el: register entry shown only as a draft",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "preview/desktop/el/entry-lex-0001: nav",
       "ok": true,
       "detail": "Γνώση | Τι είναι το Jackal"
     },
@@ -241,7 +246,7 @@
       "detail": "200"
     },
     {
-      "name": "preview/desktop/el/search: test-content banner shown",
+      "name": "preview/desktop/el/search: draft banner shown",
       "ok": true,
       "detail": ""
     },
@@ -251,7 +256,7 @@
       "detail": "Γνώση | Τι είναι το Jackal"
     },
     {
-      "name": "preview/desktop/el: unapproved register entry LEX-0001 is not served",
+      "name": "preview/desktop/el: synthetic fixture DEV-001 is not served",
       "ok": true,
       "detail": "200"
     },
@@ -281,7 +286,7 @@
       "detail": "Knowledge | Dictionary | Learn the Basics | FAQ | Topics"
     },
     {
-      "name": "preview/desktop/en/hub: test-content banner shown",
+      "name": "preview/desktop/en/hub: draft banner shown",
       "ok": true,
       "detail": ""
     },
@@ -311,14 +316,14 @@
       "detail": "200"
     },
     {
-      "name": "preview/desktop/en/lexiko: test-content banner shown",
+      "name": "preview/desktop/en/lexiko: draft banner shown",
       "ok": true,
       "detail": ""
     },
     {
-      "name": "preview/desktop/en: dictionary lists entries",
+      "name": "preview/desktop/en: dictionary lists the 166 register terms, all marked draft",
       "ok": true,
-      "detail": "11"
+      "detail": "166 / 166"
     },
     {
       "name": "preview/desktop/en/lexiko: nav",
@@ -346,7 +351,7 @@
       "detail": "200"
     },
     {
-      "name": "preview/desktop/en/vasika: test-content banner shown",
+      "name": "preview/desktop/en/vasika: draft banner shown",
       "ok": true,
       "detail": ""
     },
@@ -376,7 +381,7 @@
       "detail": "200"
     },
     {
-      "name": "preview/desktop/en/faq: test-content banner shown",
+      "name": "preview/desktop/en/faq: draft banner shown",
       "ok": true,
       "detail": ""
     },
@@ -406,7 +411,7 @@
       "detail": "200"
     },
     {
-      "name": "preview/desktop/en/themata: test-content banner shown",
+      "name": "preview/desktop/en/themata: draft banner shown",
       "ok": true,
       "detail": ""
     },
@@ -436,7 +441,7 @@
       "detail": "200"
     },
     {
-      "name": "preview/desktop/en/topic-forologia: test-content banner shown",
+      "name": "preview/desktop/en/topic-forologia: draft banner shown",
       "ok": true,
       "detail": ""
     },
@@ -446,32 +451,37 @@
       "detail": "Knowledge | What is Jackal"
     },
     {
-      "name": "preview/desktop/en/entry-dev-001: no server error",
+      "name": "preview/desktop/en/entry-lex-0001: no server error",
       "ok": true,
       "detail": ""
     },
     {
-      "name": "preview/desktop/en/entry-dev-001: no sideways scroll",
+      "name": "preview/desktop/en/entry-lex-0001: no sideways scroll",
       "ok": true,
       "detail": ""
     },
     {
-      "name": "preview/desktop/en/entry-dev-001: no opportunity or news links",
+      "name": "preview/desktop/en/entry-lex-0001: no opportunity or news links",
       "ok": true,
       "detail": "0"
     },
     {
-      "name": "preview/desktop/en/entry-dev-001: page loads",
+      "name": "preview/desktop/en/entry-lex-0001: page loads",
       "ok": true,
       "detail": "200"
     },
     {
-      "name": "preview/desktop/en/entry-dev-001: test-content banner shown",
+      "name": "preview/desktop/en/entry-lex-0001: draft banner shown",
       "ok": true,
       "detail": ""
     },
     {
-      "name": "preview/desktop/en/entry-dev-001: nav",
+      "name": "preview/desktop/en: register entry shown only as a draft",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "preview/desktop/en/entry-lex-0001: nav",
       "ok": true,
       "detail": "Knowledge | What is Jackal"
     },
@@ -496,7 +506,7 @@
       "detail": "200"
     },
     {
-      "name": "preview/desktop/en/search: test-content banner shown",
+      "name": "preview/desktop/en/search: draft banner shown",
       "ok": true,
       "detail": ""
     },
@@ -506,7 +516,7 @@
       "detail": "Knowledge | What is Jackal"
     },
     {
-      "name": "preview/desktop/en: unapproved register entry LEX-0001 is not served",
+      "name": "preview/desktop/en: synthetic fixture DEV-001 is not served",
       "ok": true,
       "detail": "200"
     },
@@ -536,7 +546,7 @@
       "detail": "Γνώση | Λεξικό | Μάθε τα βασικά | Συχνές Ερωτήσεις | Θέματα"
     },
     {
-      "name": "preview/phone/el/hub: test-content banner shown",
+      "name": "preview/phone/el/hub: draft banner shown",
       "ok": true,
       "detail": ""
     },
@@ -566,14 +576,14 @@
       "detail": "200"
     },
     {
-      "name": "preview/phone/el/lexiko: test-content banner shown",
+      "name": "preview/phone/el/lexiko: draft banner shown",
       "ok": true,
       "detail": ""
     },
     {
-      "name": "preview/phone/el: dictionary lists entries",
+      "name": "preview/phone/el: dictionary lists the 166 register terms, all marked draft",
       "ok": true,
-      "detail": "11"
+      "detail": "166 / 166"
     },
     {
       "name": "preview/phone/el/lexiko: nav",
@@ -601,7 +611,7 @@
       "detail": "200"
     },
     {
-      "name": "preview/phone/el/vasika: test-content banner shown",
+      "name": "preview/phone/el/vasika: draft banner shown",
       "ok": true,
       "detail": ""
     },
@@ -631,7 +641,7 @@
       "detail": "200"
     },
     {
-      "name": "preview/phone/el/faq: test-content banner shown",
+      "name": "preview/phone/el/faq: draft banner shown",
       "ok": true,
       "detail": ""
     },
@@ -661,7 +671,7 @@
       "detail": "200"
     },
     {
-      "name": "preview/phone/el/themata: test-content banner shown",
+      "name": "preview/phone/el/themata: draft banner shown",
       "ok": true,
       "detail": ""
     },
@@ -691,7 +701,7 @@
       "detail": "200"
     },
     {
-      "name": "preview/phone/el/topic-forologia: test-content banner shown",
+      "name": "preview/phone/el/topic-forologia: draft banner shown",
       "ok": true,
       "detail": ""
     },
@@ -701,32 +711,37 @@
       "detail": "Γνώση | Τι είναι το Jackal"
     },
     {
-      "name": "preview/phone/el/entry-dev-001: no server error",
+      "name": "preview/phone/el/entry-lex-0001: no server error",
       "ok": true,
       "detail": ""
     },
     {
-      "name": "preview/phone/el/entry-dev-001: no sideways scroll",
+      "name": "preview/phone/el/entry-lex-0001: no sideways scroll",
       "ok": true,
       "detail": ""
     },
     {
-      "name": "preview/phone/el/entry-dev-001: no opportunity or news links",
+      "name": "preview/phone/el/entry-lex-0001: no opportunity or news links",
       "ok": true,
       "detail": "0"
     },
     {
-      "name": "preview/phone/el/entry-dev-001: page loads",
+      "name": "preview/phone/el/entry-lex-0001: page loads",
       "ok": true,
       "detail": "200"
     },
     {
-      "name": "preview/phone/el/entry-dev-001: test-content banner shown",
+      "name": "preview/phone/el/entry-lex-0001: draft banner shown",
       "ok": true,
       "detail": ""
     },
     {
-      "name": "preview/phone/el/entry-dev-001: nav",
+      "name": "preview/phone/el: register entry shown only as a draft",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "preview/phone/el/entry-lex-0001: nav",
       "ok": true,
       "detail": "Γνώση | Τι είναι το Jackal"
     },
@@ -751,7 +766,7 @@
       "detail": "200"
     },
     {
-      "name": "preview/phone/el/search: test-content banner shown",
+      "name": "preview/phone/el/search: draft banner shown",
       "ok": true,
       "detail": ""
     },
@@ -761,19 +776,19 @@
       "detail": "Γνώση | Τι είναι το Jackal"
     },
     {
-      "name": "preview/phone/el: unapproved register entry LEX-0001 is not served",
+      "name": "preview/phone/el: synthetic fixture DEV-001 is not served",
       "ok": true,
       "detail": "200"
     },
     {
-      "name": "preview: letter Β narrows the dictionary",
+      "name": "preview: letter Α narrows the dictionary",
       "ok": true,
-      "detail": "11 → 1"
+      "detail": "166 → 16"
     },
     {
-      "name": "preview: accent-free search finds «Γάμμα»",
+      "name": "preview: lower-case search «αφμ» finds «ΑΦΜ»",
       "ok": true,
-      "detail": "1"
+      "detail": "ΑΦΜ"
     },
     {
       "name": "from /epixeiriseis, Γνώση shows the five tabs of that path",

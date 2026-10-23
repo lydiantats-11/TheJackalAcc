@@ -16,7 +16,7 @@
     },
     {
       "name": "desktop-el-c2-detail",
-      "path": "/politis/eukairies/aecec564-9e46-4466-a73e-8f9f64793223",
+      "path": "/politis/eukairies/48bc5950-015f-4a33-868b-4d682af9b41b",
       "file": "desktop-el-c2-detail.jpg",
       "status": 200,
       "overflow": false
@@ -65,7 +65,7 @@
     },
     {
       "name": "desktop-el-b2-detail",
-      "path": "/epixeiriseis/eukairies/482c5ea0-6afd-49ed-b9bc-8cc9051be684",
+      "path": "/epixeiriseis/eukairies/bc7b4951-cc85-4ce4-be28-dc87b62894da",
       "file": "desktop-el-b2-detail.jpg",
       "status": 200,
       "overflow": false
@@ -114,21 +114,21 @@
     },
     {
       "name": "desktop-el-c9-detail-nea-eykairia",
-      "path": "/politis/eukairies/9425bd1c-f01f-4955-a1b1-80362a1731aa",
+      "path": "/politis/eukairies/49b31742-57d4-4ecb-9684-c9f204e4d26c",
       "file": "desktop-el-c9-detail-nea-eykairia.jpg",
       "status": 200,
       "overflow": false
     },
     {
       "name": "desktop-el-b8-detail-dam22",
-      "path": "/epixeiriseis/eukairies/0e493da8-0869-40ca-b2b0-1b62d7a37b63",
+      "path": "/epixeiriseis/eukairies/7c28f923-0d37-4f28-ba19-332c43997f5c",
       "file": "desktop-el-b8-detail-dam22.jpg",
       "status": 200,
       "overflow": false
     },
     {
       "name": "desktop-el-x1-wrong-path-redirect",
-      "path": "/epixeiriseis/eukairies/aecec564-9e46-4466-a73e-8f9f64793223",
+      "path": "/epixeiriseis/eukairies/48bc5950-015f-4a33-868b-4d682af9b41b",
       "file": "desktop-el-x1-wrong-path-redirect.jpg",
       "status": 200,
       "overflow": false
@@ -191,7 +191,7 @@
     },
     {
       "name": "desktop-el-17-detail-logged-in",
-      "path": "/politis/eukairies/aecec564-9e46-4466-a73e-8f9f64793223",
+      "path": "/politis/eukairies/48bc5950-015f-4a33-868b-4d682af9b41b",
       "file": "desktop-el-17-detail-logged-in.jpg",
       "status": 200,
       "overflow": false
@@ -212,7 +212,7 @@
     },
     {
       "name": "desktop-en-c2-detail",
-      "path": "/politis/eukairies/aecec564-9e46-4466-a73e-8f9f64793223",
+      "path": "/politis/eukairies/48bc5950-015f-4a33-868b-4d682af9b41b",
       "file": "desktop-en-c2-detail.jpg",
       "status": 200,
       "overflow": false
@@ -240,7 +240,7 @@
     },
     {
       "name": "desktop-en-b2-detail",
-      "path": "/epixeiriseis/eukairies/482c5ea0-6afd-49ed-b9bc-8cc9051be684",
+      "path": "/epixeiriseis/eukairies/bc7b4951-cc85-4ce4-be28-dc87b62894da",
       "file": "desktop-en-b2-detail.jpg",
       "status": 200,
       "overflow": false
@@ -282,7 +282,7 @@
     },
     {
       "name": "desktop-en-17-detail-logged-in",
-      "path": "/politis/eukairies/aecec564-9e46-4466-a73e-8f9f64793223",
+      "path": "/politis/eukairies/48bc5950-015f-4a33-868b-4d682af9b41b",
       "file": "desktop-en-17-detail-logged-in.jpg",
       "status": 200,
       "overflow": false
@@ -303,7 +303,7 @@
     },
     {
       "name": "phone-el-c2-detail",
-      "path": "/politis/eukairies/aecec564-9e46-4466-a73e-8f9f64793223",
+      "path": "/politis/eukairies/48bc5950-015f-4a33-868b-4d682af9b41b",
       "file": "phone-el-c2-detail.jpg",
       "status": 200,
       "overflow": false
@@ -331,7 +331,7 @@
     },
     {
       "name": "phone-el-b2-detail",
-      "path": "/epixeiriseis/eukairies/482c5ea0-6afd-49ed-b9bc-8cc9051be684",
+      "path": "/epixeiriseis/eukairies/bc7b4951-cc85-4ce4-be28-dc87b62894da",
       "file": "phone-el-b2-detail.jpg",
       "status": 200,
       "overflow": false
@@ -359,14 +359,14 @@
     },
     {
       "name": "phone-el-c9-detail-nea-eykairia",
-      "path": "/politis/eukairies/9425bd1c-f01f-4955-a1b1-80362a1731aa",
+      "path": "/politis/eukairies/49b31742-57d4-4ecb-9684-c9f204e4d26c",
       "file": "phone-el-c9-detail-nea-eykairia.jpg",
       "status": 200,
       "overflow": false
     },
     {
       "name": "phone-el-b8-detail-dam22",
-      "path": "/epixeiriseis/eukairies/0e493da8-0869-40ca-b2b0-1b62d7a37b63",
+      "path": "/epixeiriseis/eukairies/7c28f923-0d37-4f28-ba19-332c43997f5c",
       "file": "phone-el-b8-detail-dam22.jpg",
       "status": 200,
       "overflow": false
@@ -394,7 +394,7 @@
     },
     {
       "name": "phone-el-17-detail-logged-in",
-      "path": "/politis/eukairies/aecec564-9e46-4466-a73e-8f9f64793223",
+      "path": "/politis/eukairies/48bc5950-015f-4a33-868b-4d682af9b41b",
       "file": "phone-el-17-detail-logged-in.jpg",
       "status": 200,
       "overflow": false
