@@ -2,9 +2,9 @@ import { getDict } from "@/lib/i18n/server";
 import { SITE } from "@/lib/site/copy";
 import { titled } from "@/lib/site/page-title";
 import { GREEK_LETTERS, LATIN_LETTERS, sectionById, byTitle } from "@/lib/knowledge/schema";
-import { visibleEntries } from "@/lib/knowledge/store";
+import { visibleComparisons, visibleEntries } from "@/lib/knowledge/store";
 import { KnowledgeBrowser } from "@/components/knowledge-browser";
-import { browserLabels, toItems, topicOptions } from "@/components/knowledge";
+import { ComparisonTable, browserLabels, toItems, topicOptions } from "@/components/knowledge";
 
 const SECTION = sectionById("vasika");
 export const generateMetadata = titled(({ s }) => `${SECTION.name[s === SITE.el ? "el" : "en"]} · ${s.knowledge.title}`);
@@ -22,7 +22,13 @@ export default async function Page({ searchParams }: { searchParams: Promise<{ q
         <p className="lead">{SECTION.lead[locale]}</p>
       </header>
       <KnowledgeBrowser items={toItems(entries, locale)} topics={topicOptions(locale)} letters={[...GREEK_LETTERS, ...LATIN_LETTERS]}
-        labels={browserLabels(s, locale)} initialQ={(sp.q ?? "").slice(0, 100)} initialTopic={sp.topic ?? ""} showLetters={false} />
+        labels={browserLabels(s, locale)} initialQ={(sp.q ?? "").slice(0, 100)} initialTopic={sp.topic ?? ""} showLetters={false} compact />
+      {visibleComparisons().length > 0 && (
+        <section className="kn-topic-section" aria-labelledby="sec-compare" data-topic-section="sygkriseis">
+          <div className="kn-topic-section-head"><h2 id="sec-compare">{s.knowledge.comparisons}</h2></div>
+          {visibleComparisons().map((c) => <ComparisonTable key={c.id} c={c} locale={locale} s={s} />)}
+        </section>
+      )}
     </>
   );
 }

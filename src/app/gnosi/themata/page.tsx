@@ -11,13 +11,14 @@ export const generateMetadata = titled(({ s }) => `${SECTION.name[s === SITE.el 
 /** Γνώση — «Θέματα»: the eight topics, a view over the same entries (no copies). */
 export default async function TopicsPage() {
   const { locale } = await getDict();
+  const s = SITE[locale];
   return (
     <>
       <header className="page-head">
         <h1>{SECTION.name[locale]}</h1>
         <p className="lead">{SECTION.lead[locale]}</p>
       </header>
-      <TopicTiles entries={visibleEntries()} locale={locale} />
+      <TopicTiles entries={visibleEntries()} locale={locale} s={s} />
     </>
   );
 }

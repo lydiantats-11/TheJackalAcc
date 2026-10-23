@@ -656,16 +656,19 @@ main:has(> section.band:last-child) { padding-bottom: 0; }
 
 /* ── Γνώση (Knowledge hub, Phase K, 23 Oct 2026) ─────────────────────────────────────────────────────────────── */
 .kn { padding-top: var(--sp-5); padding-bottom: var(--sp-7); }
-.kn-fixture { background: var(--warn-bg); color: var(--warn); border: 1px solid var(--warn); border-radius: var(--radius); padding: var(--sp-3) var(--sp-4); margin-bottom: var(--sp-4); font-size: .9rem; }
-.kn-tabs { display: flex; gap: var(--sp-2); overflow-x: auto; padding-bottom: var(--sp-2); margin-bottom: var(--sp-5); border-bottom: 1px solid var(--line); scrollbar-width: thin; }
-.kn-tabs a { white-space: nowrap; text-decoration: none; color: var(--ink-2); font-weight: 600; padding: 8px 14px; border-radius: var(--radius-pill); }
+.kn-fixture { background: var(--warn-bg); color: var(--ink-2); border-left: 3px solid var(--warn); border-radius: var(--radius-sm); padding: 10px 14px; margin-bottom: var(--sp-4); font-size: .85rem; line-height: 1.5; }
+.kn-fixture strong { font-weight: 600; }
+/* Γνώση sub-navigation (owner review, 23 Oct 2026): the section name as a label, its parts as underlined links. */
+.kn-tabs { display: flex; flex-wrap: wrap; align-items: center; gap: 2px 18px; margin-bottom: var(--sp-5); border-bottom: 1px solid var(--line); }
+.kn-tabs a { text-decoration: none; color: var(--ink-2); font-weight: 600; font-size: .95rem; padding: 10px 0; border-bottom: 2px solid transparent; margin-bottom: -1px; }
 .kn-tabs a:hover { color: var(--accent); }
-.kn-tabs a[aria-current="page"] { background: var(--brand); color: var(--brand-ink); }
+.kn-tabs a[aria-current="page"] { color: var(--ink); border-bottom-color: var(--accent); }
+.kn-tabs a.kn-tabs-home { color: var(--ink); font-weight: 800; font-size: 1rem; margin-right: 6px; padding-right: 18px; border-right: 1px solid var(--line); border-bottom-color: transparent; }
 .kn-block { margin-top: var(--sp-6); }
 .kn-search { display: flex; gap: var(--sp-2); margin-bottom: var(--sp-3); }
 .kn-search input { flex: 1; min-width: 0; font: inherit; padding: 12px 16px; border: 1px solid var(--line-strong); border-radius: var(--radius-pill); background: var(--surface); color: var(--ink); }
 .kn-search input:focus { outline: 2px solid var(--accent); outline-offset: 1px; }
-.kn-chips { display: flex; gap: var(--sp-2); overflow-x: auto; padding-bottom: 6px; margin-bottom: var(--sp-3); scrollbar-width: thin; }
+.kn-chips { display: flex; flex-wrap: wrap; gap: var(--sp-2); margin-bottom: var(--sp-3); }
 .kn-chips .chip { cursor: pointer; }
 .kn-chips .chip[aria-pressed="true"] { background: var(--brand); border-color: var(--brand); color: var(--brand-ink); }
 .kn-letters { display: flex; flex-wrap: wrap; gap: 4px; margin-bottom: var(--sp-3); }
@@ -681,13 +684,52 @@ main:has(> section.band:last-child) { padding-bottom: 0; }
 .kn-item p { margin: 6px 0 8px; color: var(--ink-2); font-size: .93rem; }
 .kn-item-tags { display: flex; flex-wrap: wrap; gap: 6px; }
 .kn-empty { background: var(--surface-2); border-radius: var(--radius); padding: var(--sp-4); color: var(--ink-2); margin: 0; }
-.kn-sections { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: var(--sp-3); }
+.kn-sections { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: var(--sp-3); }
 .kn-section { display: flex; flex-direction: column; gap: 6px; height: 100%; text-decoration: none; color: var(--ink); }
 .kn-section strong { font-size: 1.05rem; }
 .kn-section:hover strong { color: var(--accent); }
 .kn-topics { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: var(--sp-3); }
 .kn-topic { display: flex; flex-direction: column; gap: 4px; height: 100%; padding: var(--sp-4); border-radius: var(--radius); background: var(--surface-tint); text-decoration: none; color: var(--ink); border: 1px solid transparent; }
 .kn-topic:hover { border-color: var(--accent); }
+.kn-hero h1 { font-size: clamp(1.9rem, 4vw, 2.5rem); margin-bottom: 6px; }
+.kn-hero .lead { max-width: 52ch; }
+.kn-hub-search .kn-search input { padding: 15px 20px; font-size: 1.05rem; box-shadow: 0 1px 2px rgba(16, 43, 73, .06); }
+.kn-block h2, .kn-topic-section h2 { font-size: 1.2rem; margin: 0 0 var(--sp-3); }
+.kn-topic strong { font-size: 1.02rem; }
+.kn-topic-count { color: var(--accent); font-weight: 600; margin-top: auto; padding-top: 6px; }
+.kn-teasers { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: var(--sp-3); }
+.kn-teaser { display: flex; flex-direction: column; gap: 6px; text-decoration: none; color: var(--ink); height: 100%; }
+.kn-teaser:hover strong { color: var(--accent); }
+.kn-status { border-top: 1px solid var(--line); padding-top: var(--sp-4); }
+.kn-status h2 { font-size: 1rem; }
+.kn-status p { margin: 0 0 6px; }
+/* Small markers instead of repeated badges */
+.kn-flag { display: inline-flex; align-items: center; gap: 5px; font-size: .74rem; font-weight: 600; color: var(--warn); letter-spacing: .01em; }
+.kn-flag::before { content: ""; width: 6px; height: 6px; border-radius: 50%; background: currentColor; flex: none; }
+p.kn-flag { margin: 0 0 4px; }
+.kn-pending { font-size: .8rem; color: var(--muted); font-style: italic; }
+p.kn-pending { margin: 6px 0 8px; }
+.kn-pending-block { font-size: 1rem; background: var(--surface-2); border-radius: var(--radius); padding: var(--sp-3) var(--sp-4); }
+/* Compact one-line lists (dictionary, topic sections) */
+.kn-compact { list-style: none; margin: 0; padding: 0; border-top: 1px solid var(--line); }
+.kn-row { display: flex; flex-wrap: wrap; align-items: baseline; justify-content: space-between; gap: 2px 12px; padding: 9px 2px; border-bottom: 1px solid var(--line); }
+.kn-row a { text-decoration: none; display: flex; flex-wrap: wrap; align-items: baseline; gap: 2px 10px; min-width: 0; }
+.kn-row-title { font-weight: 650; color: var(--ink); }
+.kn-row a:hover .kn-row-title { color: var(--accent); }
+.kn-row-alt { color: var(--muted); font-size: .86rem; }
+.kn-row-meta { display: inline-flex; gap: 10px; align-items: baseline; }
+.kn-letter-head { font-weight: 800; color: var(--accent); font-size: .95rem; padding: 14px 2px 4px; border-bottom: 1px solid var(--line); }
+.kn-topic-section { margin-top: var(--sp-6); }
+.kn-topic-section-head { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: baseline; gap: 4px 12px; }
+.kn-n { font-size: .8rem; font-weight: 700; color: var(--muted); background: var(--surface-2); border-radius: var(--radius-pill); padding: 1px 8px; vertical-align: middle; }
+/* Comparison tables */
+.kn-compare { background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); padding: var(--sp-4); margin-top: var(--sp-3); }
+.kn-compare h3 { margin: 2px 0 4px; font-size: 1.05rem; }
+.kn-compare-scroll { overflow-x: auto; margin: var(--sp-3) 0 var(--sp-2); }
+.kn-compare table { border-collapse: collapse; width: 100%; min-width: 640px; font-size: .9rem; }
+.kn-compare th, .kn-compare td { border-bottom: 1px solid var(--line); padding: 8px 10px; text-align: left; vertical-align: top; }
+.kn-compare thead th { font-weight: 700; white-space: nowrap; }
+.kn-compare tbody th { font-weight: 600; color: var(--ink-2); white-space: nowrap; }
 .kn-entry { max-width: 760px; }
 .kn-alt { color: var(--muted); margin-top: -6px; }
 .kn-body p { font-size: 1.05rem; line-height: 1.65; }
@@ -695,8 +737,14 @@ main:has(> section.band:last-child) { padding-bottom: 0; }
 .kn-sources h2, .kn-related h2 { font-size: 1.05rem; }
 .kn-related ul, .kn-sources ul { padding-left: 18px; }
 .kn-note { margin-top: var(--sp-5); }
-@media (max-width: 960px) { .kn-sections, .kn-topics { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (max-width: 960px) { .kn-topics { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (max-width: 720px) { .kn-sections, .kn-teasers { grid-template-columns: 1fr; } }
 @media (max-width: 560px) {
-  .kn-sections, .kn-topics { grid-template-columns: 1fr; }
+  .kn-topics { gap: var(--sp-2); }
+  .kn-topic { padding: 12px; }
+  .kn-topic .small.muted { display: none; }
   .kn-search .btn { display: none; }
+  .kn-tabs { gap: 0 14px; }
+  .kn-tabs a.kn-tabs-home { width: 100%; border-right: 0; padding-bottom: 2px; }
+  .kn-row { padding: 10px 0; }
 }

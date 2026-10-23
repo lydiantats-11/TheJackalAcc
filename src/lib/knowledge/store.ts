@@ -9,6 +9,7 @@
  */
 import register from "../../../data/knowledge/register.json";
 import fixtures from "../../../data/knowledge/dev-fixtures.json";
+import comparisons from "../../../data/knowledge/comparisons.json";
 import { KINDS, TOPICS, publicationGate, type Entry, type Kind, type TopicId } from "./schema";
 
 const REGISTER = (register as unknown as { entries: Entry[] }).entries;
@@ -58,3 +59,24 @@ export function registerCounts() {
 export const REGISTER_FOR_TESTS = REGISTER;
 export const FIXTURES_FOR_TESTS = FIXTURES;
 export const DRAFTS_FOR_TESTS = DRAFTS;
+
+/** A comparison table (owner, 23 Oct 2026 18:07). A cell holds a value only with an official source; otherwise null. */
+export interface Comparison {
+  id: string;
+  topic: TopicId;
+  title: { el: string; en: string };
+  lead: { el: string; en: string };
+  columns: string[];
+  rows: Array<{ id: string; label: { el: string; en: string } }>;
+  cells: Record<string, Record<string, { el: string; en: string; source: { url: string; locator: string; checked_on: string } } | null>>;
+  sources: unknown[];
+  verification: { status: string };
+  publication: { approved: boolean; approved_by: string | null; approved_on: string | null };
+}
+const COMPARISONS = (comparisons as unknown as { comparisons: Comparison[] }).comparisons;
+
+/** Comparisons the pages may show: approved ones; in the private preview also placeholders (never in production). */
+export function visibleComparisons(withDrafts = draftsEnabled()): Comparison[] {
+  return COMPARISONS.filter((c) => (c.publication.approved && !!c.publication.approved_by) || withDrafts);
+}
+export const COMPARISONS_FOR_TESTS = COMPARISONS;

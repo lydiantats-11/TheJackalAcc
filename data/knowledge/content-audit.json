@@ -1,0 +1,2024 @@
+{
+ "generated_from": "data/knowledge/register.json",
+ "summary": {
+  "term": {
+   "total": 166,
+   "no_text_el": 126,
+   "no_text_en": 126,
+   "no_title_en": 126
+  },
+  "article": {
+   "total": 28,
+   "no_text_el": 28,
+   "no_text_en": 28,
+   "no_title_en": 28
+  },
+  "faq": {
+   "total": 27,
+   "no_text_el": 27,
+   "no_text_en": 27,
+   "no_title_en": 27
+  }
+ },
+ "totals": {
+  "entries": 221,
+  "no_text_el": 181,
+  "no_text_en": 181,
+  "no_title_en": 181,
+  "duplicate_ids": 0,
+  "duplicate_titles_el": []
+ },
+ "missing_text": [
+  {
+   "id": "LEX-0003",
+   "title_el": "Taxisnet",
+   "kind": "term",
+   "topic": "forologia",
+   "missing": [
+    "text_el",
+    "text_en",
+    "title_en"
+   ]
+  },
+  {
+   "id": "LEX-0004",
+   "title_el": "myAADE",
+   "kind": "term",
+   "topic": "forologia",
+   "missing": [
+    "text_el",
+    "text_en",
+    "title_en"
+   ]
+  },
+  {
+   "id": "LEX-0006",
+   "title_el": "Ε2",
+   "kind": "term",
+   "topic": "forologia",
+   "missing": [
+    "text_el",
+    "text_en",
+    "title_en"
+   ]
+  },
+  {
+   "id": "LEX-0007",
+   "title_el": "Ε3",
+   "kind": "term",
+   "topic": "forologia",
+   "missing": [
+    "text_el",
+    "text_en",
+    "title_en"
+   ]
+  },
+  {
+   "id": "LEX-0009",
+   "title_el": "εκκαθαριστικό",
+   "kind": "term",
+   "topic": "forologia",
+   "missing": [
+    "text_el",
+    "text_en",
+    "title_en"
+   ]
+  },
+  {
+   "id": "LEX-0011",
+   "title_el": "καθαρό εισόδημα",
+   "kind": "term",
+   "topic": "forologia",
+   "missing": [
+    "text_el",
+    "text_en",
+    "title_en"
+   ]
+  },
+  {
+   "id": "LEX-0013",
+   "title_el": "τεκμήρια",
+   "kind": "term",
+   "topic": "forologia",
+   "missing": [
+    "text_el",
+    "text_en",
+    "title_en"
+   ]
+  },
+  {
+   "id": "LEX-0015",
+   "title_el": "παρακράτηση φόρου",
+   "kind": "term",
+   "topic": "forologia",
+   "missing": [
+    "text_el",
+    "text_en",
+    "title_en"
+   ]
+  },
+  {
+   "id": "LEX-0018",
+   "title_el": "διπλή φορολογία",
+   "kind": "term",
+   "topic": "forologia",
+   "missing": [
+    "text_el",
+    "text_en",
+    "title_en"
+   ]
+  },
+  {
+   "id": "LEX-0019",
+   "title_el": "φορολογική απαλλαγή",
+   "kind": "term",
+   "topic": "forologia",
+   "missing": [
+    "text_el",
+    "text_en",
+    "title_en"
+   ]
+  },
+  {
+   "id": "LEX-0020",
+   "title_el": "φορολογική πίστωση",
+   "kind": "term",
+   "topic": "forologia",
+   "missing": [
+    "text_el",
+    "text_en",
+    "title_en"
+   ]
+  },
+  {
+   "id": "LEX-0021",
+   "title_el": "φορολογική δήλωση",
+   "kind": "term",
+   "topic": "forologia",
+   "missing": [
+    "text_el",
+    "text_en",
+    "title_en"
+   ]
+  },
+  {
+   "id": "LEX-0022",
+   "title_el": "κέντρο ζωτικών συμφερόντων",
+   "kind": "term",
+   "topic": "forologia",
+   "missing": [
+    "text_el",
+    "text_en",
+    "title_en"
+   ]
+  },
+  {
+   "id": "BAS-0023",
+   "title_el": "Πώς λειτουργεί η φορολογία εισοδήματος;",
+   "kind": "article",
+   "topic": "forologia",
+   "missing": [
+    "text_el",
+    "text_en",
+    "title_en"
+   ]
+  },
+  {
+   "id": "BAS-0024",
+   "title_el": "Τι είναι ο ΦΠΑ;",
+   "kind": "article",
+   "topic": "forologia",
+   "missing": [
+    "text_el",
+    "text_en",
+    "title_en"
+   ]
+  },
+  {
+   "id": "BAS-0025",
+   "title_el": "Τι σημαίνει φορολογική κατοικία;",
+   "kind": "article",
+   "topic": "forologia",
+   "missing": [
+    "text_el",
+    "text_en",
+    "title_en"
+   ]
+  },
+  {
+   "id": "BAS-0026",
+   "title_el": "Ποια η διαφορά εισοδήματος και φορολογητέου εισοδήματος;",
+   "kind": "article",
+   "topic": "forologia",
+   "missing": [
+    "text_el",
+    "text_en",
+    "title_en"
+   ]
+  },
+  {
+   "id": "FAQ-0027",
+   "title_el": "Πού βρίσκω το εκκαθαριστικό μου;",
+   "kind": "faq",
+   "topic": "forologia",
+   "missing": [
+    "text_el",
+    "text_en",
+    "title_en"
+   ]
+  },
+  {
+   "id": "FAQ-0028",
+   "title_el": "Πώς ελέγχω τις φορολογικές μου οφειλές;",
+   "kind": "faq",
+   "topic": "forologia",
+   "missing": [
+    "text_el",
+    "text_en",
+    "title_en"
+   ]
+  },
+  {
+   "id": "FAQ-0029",
+   "title_el": "Πότε χρειάζεται φορολογική ενημερότητα;",
+   "kind": "faq",
+   "topic": "forologia",
+   "missing": [
+    "text_el",
+    "text_en",
+    "title_en"
+   ]
+  },
+  {
+   "id": "FAQ-0030",
+   "title_el": "Τι ισχύει αν έχω εισόδημα από το εξωτερικό;",
+   "kind": "faq",
+   "topic": "forologia",
+   "missing": [
+    "text_el",
+    "text_en",
+    "title_en"
+   ]
+  },
+  {
+   "id": "LEX-0037",
+   "title_el": "ΚοινΣΕπ",
+   "kind": "term",
+   "topic": "epixeirimatikotita",
+   "missing": [
+    "text_el",
+    "text_en",
+    "title_en"
+   ]
+  },
+  {
+   "id": "LEX-0038",
+   "title_el": "ΓΕΜΗ",
+   "kind": "term",
+   "topic": "epixeirimatikotita",
+   "missing": [
+    "text_el",
+    "text_en",
+    "title_en"
+   ]
+  },
+  {
+   "id": "LEX-0039",
+   "title_el": "ΥΜΣ",
+   "kind": "term",
+   "topic": "epixeirimatikotita",
+   "missing": [
+    "text_el",
+    "text_en",
+    "title_en"
+   ]
+  },
+  {
+   "id": "LEX-0040",
+   "title_el": "καταστατικό",
+   "kind": "term",
+   "topic": "epixeirimatikotita",
+   "missing": [
+    "text_el",
+    "text_en",
+    "title_en"
+   ]
+  },
+  {
+   "id": "LEX-0042",
+   "title_el": "κύριος ΚΑΔ",
+   "kind": "term",
+   "topic": "epixeirimatikotita",
+   "missing": [
+    "text_el",
+    "text_en",
+    "title_en"
+   ]
+  },
+  {
+   "id": "LEX-0043",
+   "title_el": "δευτερεύων ΚΑΔ",
+   "kind": "term",
+   "topic": "epixeirimatikotita",
+   "missing": [
+    "text_el",
+    "text_en",
+    "title_en"
+   ]
+  },
+  {
+   "id": "LEX-0044",
+   "title_el": "νεοσύστατη επιχείρηση",
+   "kind": "term",
+   "topic": "epixeirimatikotita",
+   "missing": [
+    "text_el",
+    "text_en",
+    "title_en"
+   ]
+  },
+  {
+   "id": "LEX-0045",
+   "title_el": "υπό σύσταση επιχείρηση",
+   "kind": "term",
+   "topic": "epixeirimatikotita",
+   "missing": [
+    "text_el",
+    "text_en",
+    "title_en"
+   ]
+  },
+  {
+   "id": "LEX-0046",
+   "title_el": "υφιστάμενη επιχείρηση",
+   "kind": "term",
+   "topic": "epixeirimatikotita",
+   "missing": [
+    "text_el",
+    "text_en",
+    "title_en"
+   ]
+  },
+  {
+   "id": "LEX-0050",
+   "title_el": "συνεργαζόμενη επιχείρηση",
+   "kind": "term",
+   "topic": "epixeirimatikotita",
+   "missing": [
+    "text_el",
+    "text_en",
+    "title_en"
+   ]
+  },
+  {
+   "id": "LEX-0051",
+   "title_el": "αυτόνομη επιχείρηση",
+   "kind": "term",
+   "topic": "epixeirimatikotita",
+   "missing": [
+    "text_el",
+    "text_en",
+    "title_en"
+   ]
+  },
+  {
+   "id": "LEX-0052",
+   "title_el": "πραγματικός δικαιούχος",
+   "kind": "term",
+   "topic": "epixeirimatikotita",
+   "missing": [
+    "text_el",
+    "text_en",
+    "title_en"
+   ]
+  },
+  {
+   "id": "LEX-0053",
+   "title_el": "υποκατάστημα",
+   "kind": "term",
+   "topic": "epixeirimatikotita",
+   "missing": [
+    "text_el",
+    "text_en",
+    "title_en"
+   ]
+  },
+  {
+   "id": "BAS-0056",
+   "title_el": "Τι είναι μια επιχείρηση;",
+   "kind": "article",
+   "topic": "epixeirimatikotita",
+   "missing": [
+    "text_el",
+    "text_en",
+    "title_en"
+   ]
+  },
+  {
+   "id": "BAS-0057",
+   "title_el": "Ποιες είναι οι νομικές μορφές στην Ελλάδα;",
+   "kind": "article",
+   "topic": "epixeirimatikotita",
+   "missing": [
+    "text_el",
+    "text_en",
+    "title_en"
+   ]
+  },
+  {
+   "id": "BAS-0058",
+   "title_el": "Πώς ορίζεται το μέγεθος μιας επιχείρησης;",
+   "kind": "article",
+   "topic": "epixeirimatikotita",
+   "missing": [
+    "text_el",
+    "text_en",
+    "title_en"
+   ]
+  },
+  {
+   "id": "BAS-0059",
+   "title_el": "Τι είναι ο ΚΑΔ;",
+   "kind": "article",
+   "topic": "epixeirimatikotita",
+   "missing": [
+    "text_el",
+    "text_en",
+    "title_en"
+   ]
+  },
+  {
+   "id": "FAQ-0060",
+   "title_el": "Ποια η διαφορά ΙΚΕ και ατομικής επιχείρησης;",
+   "kind": "faq",
+   "topic": "epixeirimatikotita",
+   "missing": [
+    "text_el",
+    "text_en",
+    "title_en"
+   ]
+  },
+  {
+   "id": "FAQ-0061",
+   "title_el": "Πώς βρίσκω τον ΚΑΔ μου;",
+   "kind": "faq",
+   "topic": "epixeirimatikotita",
+   "missing": [
+    "text_el",
+    "text_en",
+    "title_en"
+   ]
+  },
+  {
+   "id": "FAQ-0062",
+   "title_el": "Πώς γνωρίζω αν η επιχείρησή μου είναι μικρή ή μεσαία;",
+   "kind": "faq",
+   "topic": "epixeirimatikotita",
+   "missing": [
+    "text_el",
+    "text_en",
+    "title_en"
+   ]
+  },
+  {
+   "id": "FAQ-0063",
+   "title_el": "Τι γίνεται αν δεν έχω κλεισμένη χρήση;",
+   "kind": "faq",
+   "topic": "epixeirimatikotita",
+   "missing": [
+    "text_el",
+    "text_en",
+    "title_en"
+   ]
+  },
+  {
+   "id": "LEX-0064",
+   "title_el": "έσοδα",
+   "kind": "term",
+   "topic": "oikonomika",
+   "missing": [
+    "text_el",
+    "text_en",
+    "title_en"
+   ]
+  },
+  {
+   "id": "LEX-0065",
+   "title_el": "έξοδα",
+   "kind": "term",
+   "topic": "oikonomika",
+   "missing": [
+    "text_el",
+    "text_en",
+    "title_en"
+   ]
+  },
+  {
+   "id": "LEX-0066",
+   "title_el": "κέρδος",
+   "kind": "term",
+   "topic": "oikonomika",
+   "missing": [
+    "text_el",
+    "text_en",
+    "title_en"
+   ]
+  },
+  {
+   "id": "LEX-0067",
+   "title_el": "ζημία",
+   "kind": "term",
+   "topic": "oikonomika",
+   "missing": [
+    "text_el",
+    "text_en",
+    "title_en"
+   ]
+  },
+  {
+   "id": "LEX-0068",
+   "title_el": "EBITDA",
+   "kind": "term",
+   "topic": "oikonomika",
+   "missing": [
+    "text_el",
+    "text_en",
+    "title_en"
+   ]
+  },
+  {
+   "id": "LEX-0070",
+   "title_el": "ενεργητικό",
+   "kind": "term",
+   "topic": "oikonomika",
+   "missing": [
+    "text_el",
+    "text_en",
+    "title_en"
+   ]
+  },
+  {
+   "id": "LEX-0071",
+   "title_el": "παθητικό",
+   "kind": "term",
+   "topic": "oikonomika",
+   "missing": [
+    "text_el",
+    "text_en",
+    "title_en"
+   ]
+  },
+  {
+   "id": "LEX-0072",
+   "title_el": "ίδια κεφάλαια",
+   "kind": "term",
+   "topic": "oikonomika",
+   "missing": [
+    "text_el",
+    "text_en",
+    "title_en"
+   ]
+  },
+  {
+   "id": "LEX-0073",
+   "title_el": "κεφάλαιο κίνησης",
+   "kind": "term",
+   "topic": "oikonomika",
+   "missing": [
+    "text_el",
+    "text_en",
+    "title_en"
+   ]
+  },
+  {
+   "id": "LEX-0074",
+   "title_el": "ταμειακές ροές",
+   "kind": "term",
+   "topic": "oikonomika",
+   "missing": [
+    "text_el",
+    "text_en",
+    "title_en"
+   ]
+  },
+  {
+   "id": "LEX-0075",
+   "title_el": "ρευστότητα",
+   "kind": "term",
+   "topic": "oikonomika",
+   "missing": [
+    "text_el",
+    "text_en",
+    "title_en"
+   ]
+  },
+  {
+   "id": "LEX-0076",
+   "title_el": "δάνειο",
+   "kind": "term",
+   "topic": "oikonomika",
+   "missing": [
+    "text_el",
+    "text_en",
+    "title_en"
+   ]
+  },
+  {
+   "id": "LEX-0077",
+   "title_el": "επιτόκιο",
+   "kind": "term",
+   "topic": "oikonomika",
+   "missing": [
+    "text_el",
+    "text_en",
+    "title_en"
+   ]
+  },
+  {
+   "id": "LEX-0078",
+   "title_el": "εγγύηση",
+   "kind": "term",
+   "topic": "oikonomika",
+   "missing": [
+    "text_el",
+    "text_en",
+    "title_en"
+   ]
+  },
+  {
+   "id": "LEX-0079",
+   "title_el": "επένδυση",
+   "kind": "term",
+   "topic": "oikonomika",
+   "missing": [
+    "text_el",
+    "text_en",
+    "title_en"
+   ]
+  },
+  {
+   "id": "LEX-0080",
+   "title_el": "απόσβεση",
+   "kind": "term",
+   "topic": "oikonomika",
+   "missing": [
+    "text_el",
+    "text_en",
+    "title_en"
+   ]
+  },
+  {
+   "id": "LEX-0081",
+   "title_el": "οικονομική χρήση",
+   "kind": "term",
+   "topic": "oikonomika",
+   "missing": [
+    "text_el",
+    "text_en",
+    "title_en"
+   ]
+  },
+  {
+   "id": "LEX-0082",
+   "title_el": "ετήσιος προϋπολογισμός",
+   "kind": "term",
+   "topic": "oikonomika",
+   "missing": [
+    "text_el",
+    "text_en",
+    "title_en"
+   ]
+  },
+  {
+   "id": "BAS-0083",
+   "title_el": "Ποια η διαφορά εσόδων, κερδών και ταμειακών ροών;",
+   "kind": "article",
+   "topic": "oikonomika",
+   "missing": [
+    "text_el",
+    "text_en",
+    "title_en"
+   ]
+  },
+  {
+   "id": "BAS-0084",
+   "title_el": "Τι είναι ο ισολογισμός;",
+   "kind": "article",
+   "topic": "oikonomika",
+   "missing": [
+    "text_el",
+    "text_en",
+    "title_en"
+   ]
+  },
+  {
+   "id": "BAS-0085",
+   "title_el": "Πώς λειτουργεί ένα δάνειο;",
+   "kind": "article",
+   "topic": "oikonomika",
+   "missing": [
+    "text_el",
+    "text_en",
+    "title_en"
+   ]
+  },
+  {
+   "id": "BAS-0086",
+   "title_el": "Τι είναι τα ίδια κεφάλαια;",
+   "kind": "article",
+   "topic": "oikonomika",
+   "missing": [
+    "text_el",
+    "text_en",
+    "title_en"
+   ]
+  },
+  {
+   "id": "FAQ-0087",
+   "title_el": "Ο τζίρος είναι το ίδιο με το κέρδος;",
+   "kind": "faq",
+   "topic": "oikonomika",
+   "missing": [
+    "text_el",
+    "text_en",
+    "title_en"
+   ]
+  },
+  {
+   "id": "FAQ-0088",
+   "title_el": "Μπορώ να λάβω χρηματοδότηση χωρίς ίδια κεφάλαια;",
+   "kind": "faq",
+   "topic": "oikonomika",
+   "missing": [
+    "text_el",
+    "text_en",
+    "title_en"
+   ]
+  },
+  {
+   "id": "FAQ-0089",
+   "title_el": "Ποια οικονομικά στοιχεία μπορεί να ζητήσει ένα πρόγραμμα;",
+   "kind": "faq",
+   "topic": "oikonomika",
+   "missing": [
+    "text_el",
+    "text_en",
+    "title_en"
+   ]
+  },
+  {
+   "id": "LEX-0091",
+   "title_el": "ΕΡΓΑΝΗ",
+   "kind": "term",
+   "topic": "ergasia",
+   "missing": [
+    "text_el",
+    "text_en",
+    "title_en"
+   ]
+  },
+  {
+   "id": "LEX-0092",
+   "title_el": "e-ΕΦΚΑ",
+   "kind": "term",
+   "topic": "ergasia",
+   "missing": [
+    "text_el",
+    "text_en",
+    "title_en"
+   ]
+  },
+  {
+   "id": "LEX-0093",
+   "title_el": "ΑΜΚΑ",
+   "kind": "term",
+   "topic": "ergasia",
+   "missing": [
+    "text_el",
+    "text_en",
+    "title_en"
+   ]
+  },
+  {
+   "id": "LEX-0094",
+   "title_el": "μισθωτός",
+   "kind": "term",
+   "topic": "ergasia",
+   "missing": [
+    "text_el",
+    "text_en",
+    "title_en"
+   ]
+  },
+  {
+   "id": "LEX-0095",
+   "title_el": "αυτοαπασχολούμενος",
+   "kind": "term",
+   "topic": "ergasia",
+   "missing": [
+    "text_el",
+    "text_en",
+    "title_en"
+   ]
+  },
+  {
+   "id": "LEX-0096",
+   "title_el": "άνεργος",
+   "kind": "term",
+   "topic": "ergasia",
+   "missing": [
+    "text_el",
+    "text_en",
+    "title_en"
+   ]
+  },
+  {
+   "id": "LEX-0098",
+   "title_el": "μακροχρόνια ανεργία",
+   "kind": "term",
+   "topic": "ergasia",
+   "missing": [
+    "text_el",
+    "text_en",
+    "title_en"
+   ]
+  },
+  {
+   "id": "LEX-0099",
+   "title_el": "σύμβαση εργασίας",
+   "kind": "term",
+   "topic": "ergasia",
+   "missing": [
+    "text_el",
+    "text_en",
+    "title_en"
+   ]
+  },
+  {
+   "id": "LEX-0100",
+   "title_el": "πλήρης απασχόληση",
+   "kind": "term",
+   "topic": "ergasia",
+   "missing": [
+    "text_el",
+    "text_en",
+    "title_en"
+   ]
+  },
+  {
+   "id": "LEX-0101",
+   "title_el": "μερική απασχόληση",
+   "kind": "term",
+   "topic": "ergasia",
+   "missing": [
+    "text_el",
+    "text_en",
+    "title_en"
+   ]
+  },
+  {
+   "id": "LEX-0102",
+   "title_el": "μικτός μισθός",
+   "kind": "term",
+   "topic": "ergasia",
+   "missing": [
+    "text_el",
+    "text_en",
+    "title_en"
+   ]
+  },
+  {
+   "id": "LEX-0103",
+   "title_el": "καθαρός μισθός",
+   "kind": "term",
+   "topic": "ergasia",
+   "missing": [
+    "text_el",
+    "text_en",
+    "title_en"
+   ]
+  },
+  {
+   "id": "LEX-0105",
+   "title_el": "ασφαλιστική ικανότητα",
+   "kind": "term",
+   "topic": "ergasia",
+   "missing": [
+    "text_el",
+    "text_en",
+    "title_en"
+   ]
+  },
+  {
+   "id": "LEX-0106",
+   "title_el": "ένσημα",
+   "kind": "term",
+   "topic": "ergasia",
+   "missing": [
+    "text_el",
+    "text_en",
+    "title_en"
+   ]
+  },
+  {
+   "id": "LEX-0107",
+   "title_el": "εποχική απασχόληση",
+   "kind": "term",
+   "topic": "ergasia",
+   "missing": [
+    "text_el",
+    "text_en",
+    "title_en"
+   ]
+  },
+  {
+   "id": "LEX-0108",
+   "title_el": "εργοδότης",
+   "kind": "term",
+   "topic": "ergasia",
+   "missing": [
+    "text_el",
+    "text_en",
+    "title_en"
+   ]
+  },
+  {
+   "id": "LEX-0109",
+   "title_el": "ασφαλιστική ενημερότητα",
+   "kind": "term",
+   "topic": "ergasia",
+   "missing": [
+    "text_el",
+    "text_en",
+    "title_en"
+   ]
+  },
+  {
+   "id": "BAS-0110",
+   "title_el": "Ποια η διαφορά μισθωτού και αυτοαπασχολούμενου;",
+   "kind": "article",
+   "topic": "ergasia",
+   "missing": [
+    "text_el",
+    "text_en",
+    "title_en"
+   ]
+  },
+  {
+   "id": "BAS-0111",
+   "title_el": "Πώς λειτουργεί η κοινωνική ασφάλιση;",
+   "kind": "article",
+   "topic": "ergasia",
+   "missing": [
+    "text_el",
+    "text_en",
+    "title_en"
+   ]
+  },
+  {
+   "id": "BAS-0112",
+   "title_el": "Τι σημαίνει εγγεγραμμένος άνεργος;",
+   "kind": "article",
+   "topic": "ergasia",
+   "missing": [
+    "text_el",
+    "text_en",
+    "title_en"
+   ]
+  },
+  {
+   "id": "FAQ-0113",
+   "title_el": "Μπορώ να εργάζομαι και να διατηρώ επιχείρηση;",
+   "kind": "faq",
+   "topic": "ergasia",
+   "missing": [
+    "text_el",
+    "text_en",
+    "title_en"
+   ]
+  },
+  {
+   "id": "FAQ-0114",
+   "title_el": "Πώς ελέγχω την ασφαλιστική μου κατάσταση;",
+   "kind": "faq",
+   "topic": "ergasia",
+   "missing": [
+    "text_el",
+    "text_en",
+    "title_en"
+   ]
+  },
+  {
+   "id": "FAQ-0115",
+   "title_el": "Τι συμβαίνει αν αλλάξει η εργασιακή μου κατάσταση;",
+   "kind": "faq",
+   "topic": "ergasia",
+   "missing": [
+    "text_el",
+    "text_en",
+    "title_en"
+   ]
+  },
+  {
+   "id": "LEX-0118",
+   "title_el": "ΕΦΕΠΑΕ",
+   "kind": "term",
+   "topic": "epidotiseis",
+   "missing": [
+    "text_el",
+    "text_en",
+    "title_en"
+   ]
+  },
+  {
+   "id": "LEX-0121",
+   "title_el": "ωφελούμενος",
+   "kind": "term",
+   "topic": "epidotiseis",
+   "missing": [
+    "text_el",
+    "text_en",
+    "title_en"
+   ]
+  },
+  {
+   "id": "LEX-0124",
+   "title_el": "επιδότηση",
+   "kind": "term",
+   "topic": "epidotiseis",
+   "missing": [
+    "text_el",
+    "text_en",
+    "title_en"
+   ]
+  },
+  {
+   "id": "LEX-0125",
+   "title_el": "χρηματοδότηση",
+   "kind": "term",
+   "topic": "epidotiseis",
+   "missing": [
+    "text_el",
+    "text_en",
+    "title_en"
+   ]
+  },
+  {
+   "id": "LEX-0128",
+   "title_el": "δημόσια δαπάνη",
+   "kind": "term",
+   "topic": "epidotiseis",
+   "missing": [
+    "text_el",
+    "text_en",
+    "title_en"
+   ]
+  },
+  {
+   "id": "LEX-0130",
+   "title_el": "ένταση ενίσχυσης",
+   "kind": "term",
+   "topic": "epidotiseis",
+   "missing": [
+    "text_el",
+    "text_en",
+    "title_en"
+   ]
+  },
+  {
+   "id": "LEX-0133",
+   "title_el": "σώρευση ενισχύσεων",
+   "kind": "term",
+   "topic": "epidotiseis",
+   "missing": [
+    "text_el",
+    "text_en",
+    "title_en"
+   ]
+  },
+  {
+   "id": "LEX-0134",
+   "title_el": "ένταξη",
+   "kind": "term",
+   "topic": "epidotiseis",
+   "missing": [
+    "text_el",
+    "text_en",
+    "title_en"
+   ]
+  },
+  {
+   "id": "LEX-0135",
+   "title_el": "εκταμίευση",
+   "kind": "term",
+   "topic": "epidotiseis",
+   "missing": [
+    "text_el",
+    "text_en",
+    "title_en"
+   ]
+  },
+  {
+   "id": "LEX-0136",
+   "title_el": "επενδυτικό σχέδιο",
+   "kind": "term",
+   "topic": "epidotiseis",
+   "missing": [
+    "text_el",
+    "text_en",
+    "title_en"
+   ]
+  },
+  {
+   "id": "LEX-0137",
+   "title_el": "προκαταβολή",
+   "kind": "term",
+   "topic": "epidotiseis",
+   "missing": [
+    "text_el",
+    "text_en",
+    "title_en"
+   ]
+  },
+  {
+   "id": "LEX-0138",
+   "title_el": "εγγυητική επιστολή",
+   "kind": "term",
+   "topic": "epidotiseis",
+   "missing": [
+    "text_el",
+    "text_en",
+    "title_en"
+   ]
+  },
+  {
+   "id": "LEX-0139",
+   "title_el": "επαλήθευση δαπανών",
+   "kind": "term",
+   "topic": "epidotiseis",
+   "missing": [
+    "text_el",
+    "text_en",
+    "title_en"
+   ]
+  },
+  {
+   "id": "LEX-0140",
+   "title_el": "υποχρέωση διατήρησης",
+   "kind": "term",
+   "topic": "epidotiseis",
+   "missing": [
+    "text_el",
+    "text_en",
+    "title_en"
+   ]
+  },
+  {
+   "id": "LEX-0141",
+   "title_el": "προθεσμία υποβολής",
+   "kind": "term",
+   "topic": "epidotiseis",
+   "missing": [
+    "text_el",
+    "text_en",
+    "title_en"
+   ]
+  },
+  {
+   "id": "LEX-0142",
+   "title_el": "ανοιχτή πρόσκληση",
+   "kind": "term",
+   "topic": "epidotiseis",
+   "missing": [
+    "text_el",
+    "text_en",
+    "title_en"
+   ]
+  },
+  {
+   "id": "LEX-0143",
+   "title_el": "κλειστή πρόσκληση",
+   "kind": "term",
+   "topic": "epidotiseis",
+   "missing": [
+    "text_el",
+    "text_en",
+    "title_en"
+   ]
+  },
+  {
+   "id": "LEX-0144",
+   "title_el": "υπό επιβεβαίωση",
+   "kind": "term",
+   "topic": "epidotiseis",
+   "missing": [
+    "text_el",
+    "text_en",
+    "title_en"
+   ]
+  },
+  {
+   "id": "BAS-0145",
+   "title_el": "Τι είναι το ΕΣΠΑ;",
+   "kind": "article",
+   "topic": "epidotiseis",
+   "missing": [
+    "text_el",
+    "text_en",
+    "title_en"
+   ]
+  },
+  {
+   "id": "BAS-0146",
+   "title_el": "Ποια η διαφορά επιδότησης, επιχορήγησης και δανείου;",
+   "kind": "article",
+   "topic": "epidotiseis",
+   "missing": [
+    "text_el",
+    "text_en",
+    "title_en"
+   ]
+  },
+  {
+   "id": "BAS-0147",
+   "title_el": "Τι είναι οι κρατικές ενισχύσεις;",
+   "kind": "article",
+   "topic": "epidotiseis",
+   "missing": [
+    "text_el",
+    "text_en",
+    "title_en"
+   ]
+  },
+  {
+   "id": "BAS-0148",
+   "title_el": "Τι σημαίνει επιλεξιμότητα;",
+   "kind": "article",
+   "topic": "epidotiseis",
+   "missing": [
+    "text_el",
+    "text_en",
+    "title_en"
+   ]
+  },
+  {
+   "id": "FAQ-0149",
+   "title_el": "Μπορώ να συμμετέχω σε περισσότερα από ένα προγράμματα;",
+   "kind": "faq",
+   "topic": "epidotiseis",
+   "missing": [
+    "text_el",
+    "text_en",
+    "title_en"
+   ]
+  },
+  {
+   "id": "FAQ-0150",
+   "title_el": "Πρέπει να επιστρέψω μια επιχορήγηση;",
+   "kind": "faq",
+   "topic": "epidotiseis",
+   "missing": [
+    "text_el",
+    "text_en",
+    "title_en"
+   ]
+  },
+  {
+   "id": "FAQ-0151",
+   "title_el": "Τι γίνεται αν η αίτησή μου απορριφθεί;",
+   "kind": "faq",
+   "topic": "epidotiseis",
+   "missing": [
+    "text_el",
+    "text_en",
+    "title_en"
+   ]
+  },
+  {
+   "id": "FAQ-0152",
+   "title_el": "Πότε καταβάλλονται τα χρήματα;",
+   "kind": "faq",
+   "topic": "epidotiseis",
+   "missing": [
+    "text_el",
+    "text_en",
+    "title_en"
+   ]
+  },
+  {
+   "id": "LEX-0153",
+   "title_el": "κύρια κατοικία",
+   "kind": "term",
+   "topic": "akinita",
+   "missing": [
+    "text_el",
+    "text_en",
+    "title_en"
+   ]
+  },
+  {
+   "id": "LEX-0154",
+   "title_el": "πρώτη κατοικία",
+   "kind": "term",
+   "topic": "akinita",
+   "missing": [
+    "text_el",
+    "text_en",
+    "title_en"
+   ]
+  },
+  {
+   "id": "LEX-0155",
+   "title_el": "μισθωτήριο",
+   "kind": "term",
+   "topic": "akinita",
+   "missing": [
+    "text_el",
+    "text_en",
+    "title_en"
+   ]
+  },
+  {
+   "id": "LEX-0156",
+   "title_el": "ιδιοκτήτης",
+   "kind": "term",
+   "topic": "akinita",
+   "missing": [
+    "text_el",
+    "text_en",
+    "title_en"
+   ]
+  },
+  {
+   "id": "LEX-0157",
+   "title_el": "μισθωτής",
+   "kind": "term",
+   "topic": "akinita",
+   "missing": [
+    "text_el",
+    "text_en",
+    "title_en"
+   ]
+  },
+  {
+   "id": "LEX-0159",
+   "title_el": "αντικειμενική αξία",
+   "kind": "term",
+   "topic": "akinita",
+   "missing": [
+    "text_el",
+    "text_en",
+    "title_en"
+   ]
+  },
+  {
+   "id": "LEX-0160",
+   "title_el": "Κτηματολόγιο",
+   "kind": "term",
+   "topic": "akinita",
+   "missing": [
+    "text_el",
+    "text_en",
+    "title_en"
+   ]
+  },
+  {
+   "id": "LEX-0161",
+   "title_el": "ΚΑΕΚ",
+   "kind": "term",
+   "topic": "akinita",
+   "missing": [
+    "text_el",
+    "text_en",
+    "title_en"
+   ]
+  },
+  {
+   "id": "LEX-0162",
+   "title_el": "ΠΕΑ",
+   "kind": "term",
+   "topic": "akinita",
+   "missing": [
+    "text_el",
+    "text_en",
+    "title_en"
+   ]
+  },
+  {
+   "id": "LEX-0163",
+   "title_el": "ενεργειακή κλάση",
+   "kind": "term",
+   "topic": "akinita",
+   "missing": [
+    "text_el",
+    "text_en",
+    "title_en"
+   ]
+  },
+  {
+   "id": "LEX-0164",
+   "title_el": "επικαρπία",
+   "kind": "term",
+   "topic": "akinita",
+   "missing": [
+    "text_el",
+    "text_en",
+    "title_en"
+   ]
+  },
+  {
+   "id": "LEX-0165",
+   "title_el": "ψιλή κυριότητα",
+   "kind": "term",
+   "topic": "akinita",
+   "missing": [
+    "text_el",
+    "text_en",
+    "title_en"
+   ]
+  },
+  {
+   "id": "LEX-0166",
+   "title_el": "συνιδιοκτησία",
+   "kind": "term",
+   "topic": "akinita",
+   "missing": [
+    "text_el",
+    "text_en",
+    "title_en"
+   ]
+  },
+  {
+   "id": "LEX-0167",
+   "title_el": "κύριος χώρος",
+   "kind": "term",
+   "topic": "akinita",
+   "missing": [
+    "text_el",
+    "text_en",
+    "title_en"
+   ]
+  },
+  {
+   "id": "LEX-0168",
+   "title_el": "εμπράγματο δικαίωμα",
+   "kind": "term",
+   "topic": "akinita",
+   "missing": [
+    "text_el",
+    "text_en",
+    "title_en"
+   ]
+  },
+  {
+   "id": "BAS-0169",
+   "title_el": "Ποια η διαφορά κύριας και πρώτης κατοικίας;",
+   "kind": "article",
+   "topic": "akinita",
+   "missing": [
+    "text_el",
+    "text_en",
+    "title_en"
+   ]
+  },
+  {
+   "id": "BAS-0170",
+   "title_el": "Πώς λειτουργεί η φορολογία ακινήτων;",
+   "kind": "article",
+   "topic": "akinita",
+   "missing": [
+    "text_el",
+    "text_en",
+    "title_en"
+   ]
+  },
+  {
+   "id": "BAS-0171",
+   "title_el": "Τι είναι η ενεργειακή απόδοση κτιρίου;",
+   "kind": "article",
+   "topic": "akinita",
+   "missing": [
+    "text_el",
+    "text_en",
+    "title_en"
+   ]
+  },
+  {
+   "id": "FAQ-0172",
+   "title_el": "Πού βρίσκω το Ε9;",
+   "kind": "faq",
+   "topic": "akinita",
+   "missing": [
+    "text_el",
+    "text_en",
+    "title_en"
+   ]
+  },
+  {
+   "id": "FAQ-0173",
+   "title_el": "Τι διαφορά έχει η ψιλή κυριότητα από την επικαρπία;",
+   "kind": "faq",
+   "topic": "akinita",
+   "missing": [
+    "text_el",
+    "text_en",
+    "title_en"
+   ]
+  },
+  {
+   "id": "FAQ-0174",
+   "title_el": "Μπορώ να αιτηθώ ενίσχυση για ακίνητο που ενοικιάζω;",
+   "kind": "faq",
+   "topic": "akinita",
+   "missing": [
+    "text_el",
+    "text_en",
+    "title_en"
+   ]
+  },
+  {
+   "id": "LEX-0175",
+   "title_el": "ΟΠΕΚΑ",
+   "kind": "term",
+   "topic": "koinonikes-paroxes",
+   "missing": [
+    "text_el",
+    "text_en",
+    "title_en"
+   ]
+  },
+  {
+   "id": "LEX-0177",
+   "title_el": "επίδομα στέγασης",
+   "kind": "term",
+   "topic": "koinonikes-paroxes",
+   "missing": [
+    "text_el",
+    "text_en",
+    "title_en"
+   ]
+  },
+  {
+   "id": "LEX-0178",
+   "title_el": "επίδομα γέννησης",
+   "kind": "term",
+   "topic": "koinonikes-paroxes",
+   "missing": [
+    "text_el",
+    "text_en",
+    "title_en"
+   ]
+  },
+  {
+   "id": "LEX-0179",
+   "title_el": "ελάχιστο εγγυημένο εισόδημα",
+   "kind": "term",
+   "topic": "koinonikes-paroxes",
+   "missing": [
+    "text_el",
+    "text_en",
+    "title_en"
+   ]
+  },
+  {
+   "id": "LEX-0181",
+   "title_el": "εξαρτώμενο μέλος",
+   "kind": "term",
+   "topic": "koinonikes-paroxes",
+   "missing": [
+    "text_el",
+    "text_en",
+    "title_en"
+   ]
+  },
+  {
+   "id": "LEX-0182",
+   "title_el": "οικογενειακό εισόδημα",
+   "kind": "term",
+   "topic": "koinonikes-paroxes",
+   "missing": [
+    "text_el",
+    "text_en",
+    "title_en"
+   ]
+  },
+  {
+   "id": "LEX-0183",
+   "title_el": "μονογονεϊκή οικογένεια",
+   "kind": "term",
+   "topic": "koinonikes-paroxes",
+   "missing": [
+    "text_el",
+    "text_en",
+    "title_en"
+   ]
+  },
+  {
+   "id": "LEX-0184",
+   "title_el": "αναπηρία",
+   "kind": "term",
+   "topic": "koinonikes-paroxes",
+   "missing": [
+    "text_el",
+    "text_en",
+    "title_en"
+   ]
+  },
+  {
+   "id": "LEX-0185",
+   "title_el": "ΚΕΠΑ",
+   "kind": "term",
+   "topic": "koinonikes-paroxes",
+   "missing": [
+    "text_el",
+    "text_en",
+    "title_en"
+   ]
+  },
+  {
+   "id": "LEX-0186",
+   "title_el": "κοινωνικό τιμολόγιο",
+   "kind": "term",
+   "topic": "koinonikes-paroxes",
+   "missing": [
+    "text_el",
+    "text_en",
+    "title_en"
+   ]
+  },
+  {
+   "id": "LEX-0187",
+   "title_el": "περιουσιακό κριτήριο",
+   "kind": "term",
+   "topic": "koinonikes-paroxes",
+   "missing": [
+    "text_el",
+    "text_en",
+    "title_en"
+   ]
+  },
+  {
+   "id": "LEX-0188",
+   "title_el": "εισοδηματικό κριτήριο",
+   "kind": "term",
+   "topic": "koinonikes-paroxes",
+   "missing": [
+    "text_el",
+    "text_en",
+    "title_en"
+   ]
+  },
+  {
+   "id": "LEX-0189",
+   "title_el": "προστατευόμενο τέκνο",
+   "kind": "term",
+   "topic": "koinonikes-paroxes",
+   "missing": [
+    "text_el",
+    "text_en",
+    "title_en"
+   ]
+  },
+  {
+   "id": "BAS-0190",
+   "title_el": "Πώς λειτουργούν τα κοινωνικά επιδόματα;",
+   "kind": "article",
+   "topic": "koinonikes-paroxes",
+   "missing": [
+    "text_el",
+    "text_en",
+    "title_en"
+   ]
+  },
+  {
+   "id": "BAS-0191",
+   "title_el": "Τι είναι το νοικοκυριό;",
+   "kind": "article",
+   "topic": "koinonikes-paroxes",
+   "missing": [
+    "text_el",
+    "text_en",
+    "title_en"
+   ]
+  },
+  {
+   "id": "BAS-0192",
+   "title_el": "Πώς χρησιμοποιούνται τα εισοδηματικά και περιουσιακά κριτήρια;",
+   "kind": "article",
+   "topic": "koinonikes-paroxes",
+   "missing": [
+    "text_el",
+    "text_en",
+    "title_en"
+   ]
+  },
+  {
+   "id": "FAQ-0193",
+   "title_el": "Πώς υπολογίζεται το νοικοκυριό μου;",
+   "kind": "faq",
+   "topic": "koinonikes-paroxes",
+   "missing": [
+    "text_el",
+    "text_en",
+    "title_en"
+   ]
+  },
+  {
+   "id": "FAQ-0194",
+   "title_el": "Τι γίνεται αν αλλάξει το εισόδημά μου;",
+   "kind": "faq",
+   "topic": "koinonikes-paroxes",
+   "missing": [
+    "text_el",
+    "text_en",
+    "title_en"
+   ]
+  },
+  {
+   "id": "FAQ-0195",
+   "title_el": "Μπορώ να λαμβάνω δύο διαφορετικά επιδόματα;",
+   "kind": "faq",
+   "topic": "koinonikes-paroxes",
+   "missing": [
+    "text_el",
+    "text_en",
+    "title_en"
+   ]
+  },
+  {
+   "id": "LEX-0197",
+   "title_el": "νόμος",
+   "kind": "term",
+   "topic": "nomothesia",
+   "missing": [
+    "text_el",
+    "text_en",
+    "title_en"
+   ]
+  },
+  {
+   "id": "LEX-0198",
+   "title_el": "υπουργική απόφαση",
+   "kind": "term",
+   "topic": "nomothesia",
+   "missing": [
+    "text_el",
+    "text_en",
+    "title_en"
+   ]
+  },
+  {
+   "id": "LEX-0199",
+   "title_el": "ΚΥΑ",
+   "kind": "term",
+   "topic": "nomothesia",
+   "missing": [
+    "text_el",
+    "text_en",
+    "title_en"
+   ]
+  },
+  {
+   "id": "LEX-0200",
+   "title_el": "εγκύκλιος",
+   "kind": "term",
+   "topic": "nomothesia",
+   "missing": [
+    "text_el",
+    "text_en",
+    "title_en"
+   ]
+  },
+  {
+   "id": "LEX-0201",
+   "title_el": "κανονισμός ΕΕ",
+   "kind": "term",
+   "topic": "nomothesia",
+   "missing": [
+    "text_el",
+    "text_en",
+    "title_en"
+   ]
+  },
+  {
+   "id": "LEX-0202",
+   "title_el": "οδηγία ΕΕ",
+   "kind": "term",
+   "topic": "nomothesia",
+   "missing": [
+    "text_el",
+    "text_en",
+    "title_en"
+   ]
+  },
+  {
+   "id": "LEX-0203",
+   "title_el": "gov.gr",
+   "kind": "term",
+   "topic": "nomothesia",
+   "missing": [
+    "text_el",
+    "text_en",
+    "title_en"
+   ]
+  },
+  {
+   "id": "LEX-0204",
+   "title_el": "Μίτος",
+   "kind": "term",
+   "topic": "nomothesia",
+   "missing": [
+    "text_el",
+    "text_en",
+    "title_en"
+   ]
+  },
+  {
+   "id": "LEX-0205",
+   "title_el": "υπεύθυνη δήλωση",
+   "kind": "term",
+   "topic": "nomothesia",
+   "missing": [
+    "text_el",
+    "text_en",
+    "title_en"
+   ]
+  },
+  {
+   "id": "LEX-0206",
+   "title_el": "εξουσιοδότηση",
+   "kind": "term",
+   "topic": "nomothesia",
+   "missing": [
+    "text_el",
+    "text_en",
+    "title_en"
+   ]
+  },
+  {
+   "id": "LEX-0207",
+   "title_el": "δημόσια σύμβαση",
+   "kind": "term",
+   "topic": "nomothesia",
+   "missing": [
+    "text_el",
+    "text_en",
+    "title_en"
+   ]
+  },
+  {
+   "id": "LEX-0208",
+   "title_el": "ΕΣΗΔΗΣ",
+   "kind": "term",
+   "topic": "nomothesia",
+   "missing": [
+    "text_el",
+    "text_en",
+    "title_en"
+   ]
+  },
+  {
+   "id": "LEX-0209",
+   "title_el": "ΚΗΜΔΗΣ",
+   "kind": "term",
+   "topic": "nomothesia",
+   "missing": [
+    "text_el",
+    "text_en",
+    "title_en"
+   ]
+  },
+  {
+   "id": "LEX-0210",
+   "title_el": "TED",
+   "kind": "term",
+   "topic": "nomothesia",
+   "missing": [
+    "text_el",
+    "text_en",
+    "title_en"
+   ]
+  },
+  {
+   "id": "LEX-0211",
+   "title_el": "CPV",
+   "kind": "term",
+   "topic": "nomothesia",
+   "missing": [
+    "text_el",
+    "text_en",
+    "title_en"
+   ]
+  },
+  {
+   "id": "LEX-0212",
+   "title_el": "δημόσιος διαγωνισμός",
+   "kind": "term",
+   "topic": "nomothesia",
+   "missing": [
+    "text_el",
+    "text_en",
+    "title_en"
+   ]
+  },
+  {
+   "id": "LEX-0213",
+   "title_el": "διοικητική πράξη",
+   "kind": "term",
+   "topic": "nomothesia",
+   "missing": [
+    "text_el",
+    "text_en",
+    "title_en"
+   ]
+  },
+  {
+   "id": "LEX-0214",
+   "title_el": "τροποποίηση",
+   "kind": "term",
+   "topic": "nomothesia",
+   "missing": [
+    "text_el",
+    "text_en",
+    "title_en"
+   ]
+  },
+  {
+   "id": "LEX-0215",
+   "title_el": "επίσημη πηγή",
+   "kind": "term",
+   "topic": "nomothesia",
+   "missing": [
+    "text_el",
+    "text_en",
+    "title_en"
+   ]
+  },
+  {
+   "id": "BAS-0216",
+   "title_el": "Πώς διαβάζουμε ένα ΦΕΚ;",
+   "kind": "article",
+   "topic": "nomothesia",
+   "missing": [
+    "text_el",
+    "text_en",
+    "title_en"
+   ]
+  },
+  {
+   "id": "BAS-0217",
+   "title_el": "Ποια η διαφορά νόμου, ΚΥΑ και εγκυκλίου;",
+   "kind": "article",
+   "topic": "nomothesia",
+   "missing": [
+    "text_el",
+    "text_en",
+    "title_en"
+   ]
+  },
+  {
+   "id": "BAS-0218",
+   "title_el": "Πώς αναγνωρίζουμε μια επίσημη δημόσια πηγή;",
+   "kind": "article",
+   "topic": "nomothesia",
+   "missing": [
+    "text_el",
+    "text_en",
+    "title_en"
+   ]
+  },
+  {
+   "id": "FAQ-0219",
+   "title_el": "Πώς βρίσκω το επίσημο ΦΕΚ;",
+   "kind": "faq",
+   "topic": "nomothesia",
+   "missing": [
+    "text_el",
+    "text_en",
+    "title_en"
+   ]
+  },
+  {
+   "id": "FAQ-0220",
+   "title_el": "Πώς γνωρίζω αν ένας νόμος έχει τροποποιηθεί;",
+   "kind": "faq",
+   "topic": "nomothesia",
+   "missing": [
+    "text_el",
+    "text_en",
+    "title_en"
+   ]
+  },
+  {
+   "id": "FAQ-0221",
+   "title_el": "Ποια πηγή υπερισχύει όταν υπάρχουν αντικρουόμενες πληροφορίες;",
+   "kind": "faq",
+   "topic": "nomothesia",
+   "missing": [
+    "text_el",
+    "text_en",
+    "title_en"
+   ]
+  }
+ ]
+}

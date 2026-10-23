@@ -22,7 +22,7 @@ export default async function Page({ searchParams }: { searchParams: Promise<{ q
         <p className="lead">{SECTION.lead[locale]}</p>
       </header>
       <KnowledgeBrowser items={toItems(entries, locale)} topics={topicOptions(locale)} letters={[...GREEK_LETTERS, ...LATIN_LETTERS]}
-        labels={browserLabels(s, locale)} initialQ={(sp.q ?? "").slice(0, 100)} initialTopic={sp.topic ?? ""} showLetters={false} />
+        labels={browserLabels(s, locale)} initialQ={(sp.q ?? "").slice(0, 100)} initialTopic={sp.topic ?? ""} showLetters={false} compact />
     </>
   );
 }

@@ -6,7 +6,7 @@ import { afterEach, describe, expect, it } from "vitest";
 import { readFileSync, readdirSync, statSync } from "node:fs";
 import { join } from "node:path";
 import { GREEK_LETTERS, SECTIONS, TOPICS, indexLetter, linkParts, matches, publicationGate, type Entry } from "@/lib/knowledge/schema";
-import { DRAFTS_FOR_TESTS, FIXTURES_FOR_TESTS, REGISTER_FOR_TESTS, draftsEnabled, entryById, fixturesEnabled, publishedEntries, registerCounts, visibleEntries } from "@/lib/knowledge/store";
+import { COMPARISONS_FOR_TESTS, visibleComparisons, DRAFTS_FOR_TESTS, FIXTURES_FOR_TESTS, REGISTER_FOR_TESTS, draftsEnabled, entryById, fixturesEnabled, publishedEntries, registerCounts, visibleEntries } from "@/lib/knowledge/store";
 import { KNOWLEDGE_PATH } from "@/lib/site/audience";
 import { SITE } from "@/lib/site/copy";
 import { browserLabels, toItems } from "@/components/knowledge";
@@ -171,11 +171,48 @@ describe("the K1 register as drafts in the private preview (owner, 23 Oct 2026 1
     expect(SITE.el.knowledge.draftBanner).toMatch(/^ΥΠΟ ΕΠΑΛΗΘΕΥΣΗ — ΜΟΝΟ ΓΙΑ ΕΣΩΤΕΡΙΚΟ ΕΛΕΓΧΟ/);
     expect(SITE.el.knowledge.draftTag).toBe("Υπό επαλήθευση");
     expect(SITE.en.knowledge.draftBanner).toMatch(/^UNDER VERIFICATION — FOR INTERNAL REVIEW ONLY/);
-    expect(read("src/components/knowledge-browser.tsx")).toContain("{i.isDraft && <span className=\"tag gold\">{labels.draftTag}</span>}");
+    expect(read("src/components/knowledge-browser.tsx")).toContain("{i.isDraft && <span className=\"kn-flag\">{labels.reviewFlag}</span>}");
     const entry = read("src/app/gnosi/oros/[id]/page.tsx");
-    expect(entry).toContain("{e.draftPreview && <span className=\"tag gold\">{k.draftTag}</span>}");
+    expect(entry).toContain("{e.draftPreview && <span className=\"kn-flag\">{k.reviewFlag}</span>}");
     expect(entry).toContain("k.draftStates[v.status]");
     expect(SITE.el.knowledge.draftStates).toEqual({ unverified: "Δεν έχει ελεγχθεί", draft: "Προσχέδιο κειμένου", source_located: "Βρέθηκε πιθανή επίσημη πηγή" });
+  });
+});
+
+describe("UX revision (owner review, 23 Oct 2026 18:07)", () => {
+  it("the home page lists entries only when searching; topics come first, as a card grid", () => {
+    const hub = read("src/app/gnosi/page.tsx");
+    expect(hub).toContain("searchOnly");
+    expect(hub.indexOf("k.exploreTopics")).toBeLessThan(hub.indexOf("k.browseSections"));
+    expect(read("src/components/knowledge-browser.tsx")).toContain('hidden={searchOnly && !searching}');
+    expect(read("src/app/globals.css")).toContain(".kn-chips { display: flex; flex-wrap: wrap;");
+    expect(read("src/app/globals.css")).not.toMatch(/\.kn-(chips|tabs) \{[^}]*overflow-x: auto/);
+  });
+  it("a topic page groups its entries: Μάθε τα βασικά · Συγκρίσεις · Λεξικό · Συχνές Ερωτήσεις (sections, not tabs)", () => {
+    const page = read("src/app/gnosi/themata/[topic]/page.tsx");
+    const order = ['group("article", "vasika")', 'data-topic-section="sygkriseis"', 'group("term", "lexiko")', 'group("faq", "syxnes-erotiseis")'].map((x) => page.indexOf(x));
+    expect(order.every((i) => i > 0)).toBe(true);
+    expect([...order].sort((a, b) => a - b)).toEqual(order);
+  });
+  it("comparisons: the legal-forms table compares six dictionary entries on five rows and holds NO values yet", () => {
+    const c = COMPARISONS_FOR_TESTS.find((x) => x.id === "CMP-001")!;
+    expect(c.columns).toEqual(["LEX-0031", "LEX-0032", "LEX-0033", "LEX-0034", "LEX-0035", "LEX-0036"]);
+    for (const id of c.columns) expect(REGISTER_FOR_TESTS.some((e) => e.id === id && e.topic === "epixeirimatikotita")).toBe(true);
+    expect(c.rows.map((r) => r.id)).toEqual(["taxation", "liability", "insurance", "management", "admin"]);
+    expect(c.cells).toEqual({});
+    expect(c.publication.approved).toBe(false);
+    expect(visibleComparisons(false)).toEqual([]);
+    expect(visibleComparisons(true).map((x) => x.id)).toEqual(["CMP-001"]);
+    expect(read("src/components/knowledge.tsx")).toContain("k.comparisonPending");
+  });
+  it("missing content is stated, never an empty card; the audit matches the register", () => {
+    const audit = JSON.parse(read("data/knowledge/content-audit.json"));
+    expect(audit.totals).toMatchObject({ entries: 221, no_text_el: 181, no_text_en: 181, no_title_en: 181, duplicate_ids: 0 });
+    expect(DRAFTS_FOR_TESTS.filter((e) => !e.body).length).toBe(audit.totals.no_text_el);
+    expect(audit.missing_text.map((m: { id: string }) => m.id)).toEqual(expect.arrayContaining(["LEX-0003", "LEX-0004"])); // Taxisnet, myAADE
+    expect(SITE.el.knowledge.pendingContent).toBe("Περιεχόμενο υπό προετοιμασία");
+    expect(read("src/components/knowledge-browser.tsx")).toContain("{i.snippet ? <p>{i.snippet}</p> : <p className=\"kn-pending\" data-pending>{labels.pending}</p>}");
+    expect(read("src/app/gnosi/oros/[id]/page.tsx")).toContain("{k.pendingContent}");
   });
 });
 

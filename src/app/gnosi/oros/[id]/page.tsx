@@ -3,9 +3,9 @@ import { notFound } from "next/navigation";
 import { getDict } from "@/lib/i18n/server";
 import { SITE } from "@/lib/site/copy";
 import { formatDay } from "@/lib/format";
-import { sectionOfKind, topicById } from "@/lib/knowledge/schema";
-import { entryById } from "@/lib/knowledge/store";
-import { RelatedList, RichText, sectionHref, topicHref } from "@/components/knowledge";
+import { byTitle, sectionOfKind, topicById } from "@/lib/knowledge/schema";
+import { entryById, visibleEntries } from "@/lib/knowledge/store";
+import { CompactList, RelatedList, RichText, sectionHref, topicHref } from "@/components/knowledge";
 
 export async function generateMetadata({ params }: { params: Promise<{ id: string }> }) {
   const { locale } = await getDict();
@@ -31,6 +31,9 @@ export default async function EntryPage({ params }: { params: Promise<{ id: stri
   const other = locale === "el" ? e.title.en : e.title.el;
   const v = e.verification as { status: string; candidate_authority?: string | null; official_source_candidate?: { url?: string | null; scope?: string | null } | null };
   const text = e.body ? (e.body[locale] || e.body.el) : null;
+  // «Άλλα στο ίδιο θέμα» (owner review, 23 Oct 2026): same primary topic, same kind first — a grouping, not a claimed link.
+  const sameTopic = visibleEntries().filter((x) => x.topic === e.topic && x.id !== e.id)
+    .sort((a, b) => Number(b.kind === e.kind) - Number(a.kind === e.kind) || byTitle(locale)(a, b)).slice(0, 8);
   const candidate = e.draftPreview && v.official_source_candidate?.url?.startsWith("https://") ? v.official_source_candidate : null;
   return (
     <article className="kn-entry" data-entry={e.id} data-synthetic={e.synthetic || undefined} data-draft={e.draftPreview || undefined}
@@ -45,7 +48,7 @@ export default async function EntryPage({ params }: { params: Promise<{ id: stri
           <span className="tag">{section.name[locale]}</span>
           <Link className="tag" href={topicHref(topic.id)}>{topic.name[locale]}</Link>
           {e.synthetic && <span className="tag gold">{k.fixtureTag}</span>}
-          {e.draftPreview && <span className="tag gold">{k.draftTag}</span>}
+          {e.draftPreview && <span className="kn-flag">{k.reviewFlag}</span>}
         </div>
       </header>
       {e.draftPreview && (
@@ -58,7 +61,7 @@ export default async function EntryPage({ params }: { params: Promise<{ id: stri
           <p><RichText text={text} locale={locale} /></p>
           {locale === "en" && e.draftPreview && !e.body?.en && <p className="muted small">{k.draftNoEn}</p>}
         </div>
-      ) : e.draftPreview ? <p className="muted">{k.draftNoText}</p> : null}
+      ) : <p className="kn-pending kn-pending-block" data-pending>{k.pendingContent}</p>}
       <section className="kn-sources" aria-labelledby="kn-src">
         <h2 id="kn-src">{k.source}</h2>
         {e.sources.length ? (
@@ -79,6 +82,12 @@ export default async function EntryPage({ params }: { params: Promise<{ id: stri
         {e.editorial_review && <p className="xs muted">{k.reviewed}: {day(e.editorial_review.on, locale)}</p>}
       </section>
       <RelatedList ids={e.related} locale={locale} s={s} />
+      {sameTopic.length > 0 && (
+        <section className="kn-related" aria-labelledby="kn-same">
+          <h2 id="kn-same">{k.sameTopic}: <Link href={topicHref(topic.id)}>{topic.name[locale]}</Link></h2>
+          <CompactList entries={sameTopic} locale={locale} s={s} />
+        </section>
+      )}
       <p className="xs muted kn-note">{k.notAdvice}</p>
       <p><Link href="/gnosi">← {k.back}</Link></p>
     </article>

@@ -1,0 +1,24 @@
+{
+  "schema": "jackal-knowledge-comparisons/1",
+  "note": "Comparison tables for Γνώση (owner request, 23 Oct 2026 18:07). Cells are filled ONLY from official sources (url + exact locator). A cell without a verified value is null and is shown as «Υπό τεκμηρίωση». Nothing here is published until the owner approves it.",
+  "comparisons": [
+    {
+      "id": "CMP-001",
+      "topic": "epixeirimatikotita",
+      "title": { "el": "Ατομική επιχείρηση, ΟΕ, ΕΕ, ΙΚΕ, ΕΠΕ, ΑΕ", "en": "Sole proprietorship, OE, EE, IKE, EPE, AE" },
+      "lead": { "el": "Νομικές μορφές επιχείρησης: φορολογία, ευθύνη, ασφάλιση, διοίκηση και διοικητικές υποχρεώσεις.", "en": "Business legal forms: taxation, liability, social insurance, management and administrative requirements." },
+      "columns": ["LEX-0031", "LEX-0032", "LEX-0033", "LEX-0034", "LEX-0035", "LEX-0036"],
+      "rows": [
+        { "id": "taxation", "label": { "el": "Φορολογία", "en": "Taxation" } },
+        { "id": "liability", "label": { "el": "Ευθύνη για χρέη", "en": "Liability for debts" } },
+        { "id": "insurance", "label": { "el": "Ασφάλιση", "en": "Social insurance" } },
+        { "id": "management", "label": { "el": "Διοίκηση", "en": "Management" } },
+        { "id": "admin", "label": { "el": "Διοικητικές υποχρεώσεις", "en": "Administrative requirements" } }
+      ],
+      "cells": {},
+      "sources": [],
+      "verification": { "status": "placeholder" },
+      "publication": { "approved": false, "approved_by": null, "approved_on": null }
+    }
+  ]
+}
