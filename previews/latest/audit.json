@@ -1,0 +1,1850 @@
+{
+  "pages": {
+    "el-desktop /": {
+      "status": 200,
+      "title": "Jackal Accountant",
+      "lang": "el",
+      "errors": []
+    },
+    "el-desktop /politis/eukairies": {
+      "status": 200,
+      "title": "Ευκαιρίες · Jackal Accountant",
+      "lang": "el",
+      "errors": []
+    },
+    "el-desktop /politis/nea": {
+      "status": 200,
+      "title": "Νέα · Jackal Accountant",
+      "lang": "el",
+      "errors": []
+    },
+    "el-desktop /politis/odigoi": {
+      "status": 200,
+      "title": "Οδηγοί · Jackal Accountant",
+      "lang": "el",
+      "errors": []
+    },
+    "el-desktop /politis/jackal": {
+      "status": 200,
+      "title": "Τι είναι το Jackal · Jackal Accountant",
+      "lang": "el",
+      "errors": []
+    },
+    "el-desktop /politis/logariasmos": {
+      "status": 200,
+      "title": "Ο λογαριασμός μου · Jackal Accountant",
+      "lang": "el",
+      "errors": []
+    },
+    "el-desktop /epixeiriseis/eukairies": {
+      "status": 200,
+      "title": "Ευκαιρίες · Jackal Accountant",
+      "lang": "el",
+      "errors": []
+    },
+    "el-desktop /epixeiriseis/nea": {
+      "status": 200,
+      "title": "Νέα · Jackal Accountant",
+      "lang": "el",
+      "errors": []
+    },
+    "el-desktop /epixeiriseis/odigoi": {
+      "status": 200,
+      "title": "Οδηγοί · Jackal Accountant",
+      "lang": "el",
+      "errors": []
+    },
+    "el-desktop /epixeiriseis/jackal": {
+      "status": 200,
+      "title": "Τι είναι το Jackal · Jackal Accountant",
+      "lang": "el",
+      "errors": []
+    },
+    "el-desktop /epixeiriseis/logariasmos": {
+      "status": 200,
+      "title": "Ο λογαριασμός μου · Jackal Accountant",
+      "lang": "el",
+      "errors": []
+    },
+    "el-desktop /about": {
+      "status": 200,
+      "title": "Τι είναι το Jackal · Jackal Accountant",
+      "lang": "el",
+      "errors": []
+    },
+    "el-desktop /login": {
+      "status": 200,
+      "title": "Σύνδεση · Jackal Accountant",
+      "lang": "el",
+      "errors": []
+    },
+    "el-desktop /register": {
+      "status": 200,
+      "title": "Εγγραφή · Jackal Accountant",
+      "lang": "el",
+      "errors": []
+    },
+    "el-desktop /profile": {
+      "status": 200,
+      "title": "Σύνδεση · Jackal Accountant",
+      "lang": "el",
+      "errors": []
+    },
+    "el-desktop /gnosi": {
+      "status": 200,
+      "title": "Γνώση · Jackal Accountant",
+      "lang": "el",
+      "errors": []
+    },
+    "el-desktop /politis/eukairies?cat=employment": {
+      "status": 200,
+      "title": "Ευκαιρίες · Jackal Accountant",
+      "lang": "el",
+      "errors": []
+    },
+    "el-desktop /politis/eukairies?cat=education": {
+      "status": 200,
+      "title": "Ευκαιρίες · Jackal Accountant",
+      "lang": "el",
+      "errors": []
+    },
+    "el-desktop /politis/eukairies?cat=housing-energy": {
+      "status": 200,
+      "title": "Ευκαιρίες · Jackal Accountant",
+      "lang": "el",
+      "errors": []
+    },
+    "el-desktop /politis/eukairies?cat=family": {
+      "status": 200,
+      "title": "Ευκαιρίες · Jackal Accountant",
+      "lang": "el",
+      "errors": []
+    },
+    "el-desktop /politis/eukairies?cat=tax": {
+      "status": 200,
+      "title": "Ευκαιρίες · Jackal Accountant",
+      "lang": "el",
+      "errors": []
+    },
+    "el-desktop /politis/eukairies?status=all": {
+      "status": 200,
+      "title": "Ευκαιρίες · Jackal Accountant",
+      "lang": "el",
+      "errors": []
+    },
+    "el-desktop /politis/eukairies/22b1c095-c191-462f-ab5e-da2c928fb142": {
+      "status": 200,
+      "title": "Άρθρο 5Β ΚΦΕ — 7% φόρος για συνταξιούχους με σύνταξη εξωτερικού · Jackal Accountant",
+      "lang": "el",
+      "errors": []
+    },
+    "el-desktop /politis/odigoi/art5b": {
+      "status": 200,
+      "title": "Άρθρο 5Β ΚΦΕ — 7% φόρος για συνταξιούχους με σύνταξη εξωτερικού · Jackal Accountant",
+      "lang": "el",
+      "errors": []
+    },
+    "el-desktop /politis/eukairies/b14f7d98-2f0a-4edd-9998-5de850122e50": {
+      "status": 200,
+      "title": "Α21 — Επίδομα παιδιού · Jackal Accountant",
+      "lang": "el",
+      "errors": []
+    },
+    "el-desktop /politis/odigoi/a21": {
+      "status": 200,
+      "title": "Α21 — Επίδομα παιδιού · Jackal Accountant",
+      "lang": "el",
+      "errors": []
+    },
+    "el-desktop /politis/eukairies/5ec82afb-0f1d-414e-8174-e4a12ddf7a0f": {
+      "status": 200,
+      "title": "Άρθρο 5Γ ΚΦΕ — 50% απαλλαγή φόρου για όσους μεταφέρουν τη φορολογική κατοικία τους στην Ελλάδα · Jackal Accountant",
+      "lang": "el",
+      "errors": []
+    },
+    "el-desktop /politis/odigoi/art5c": {
+      "status": 200,
+      "title": "Άρθρο 5Γ ΚΦΕ — 50% απαλλαγή φόρου για όσους μεταφέρουν τη φορολογική κατοικία τους στην Ελλάδα · Jackal Accountant",
+      "lang": "el",
+      "errors": []
+    },
+    "el-desktop /politis/eukairies/4e3208ed-2913-4591-b190-c79fbe70067c": {
+      "status": 200,
+      "title": "Τακτική επιδότηση ανεργίας · Jackal Accountant",
+      "lang": "el",
+      "errors": []
+    },
+    "el-desktop /politis/odigoi/unemployment": {
+      "status": 200,
+      "title": "Τακτική επιδότηση ανεργίας · Jackal Accountant",
+      "lang": "el",
+      "errors": []
+    },
+    "el-desktop /politis/eukairies/e9c59834-68af-4294-a4bb-d090fd9d8d2c": {
+      "status": 200,
+      "title": "Άρθρο 5Α ΚΦΕ — εναλλακτική φορολόγηση επενδυτών · Jackal Accountant",
+      "lang": "el",
+      "errors": []
+    },
+    "el-desktop /politis/odigoi/art5a": {
+      "status": 200,
+      "title": "Άρθρο 5Α ΚΦΕ — εναλλακτική φορολόγηση επενδυτών · Jackal Accountant",
+      "lang": "el",
+      "errors": []
+    },
+    "el-desktop /politis/eukairies/ecf7ecf8-3a7f-4431-b3a4-aa4c8630e890": {
+      "status": 200,
+      "title": "DiscoverEU — δωρεάν ταξιδιωτικό πάσο για 18χρονους · Jackal Accountant",
+      "lang": "el",
+      "errors": []
+    },
+    "el-desktop /politis/odigoi/discovereu": {
+      "status": 200,
+      "title": "DiscoverEU — δωρεάν ταξιδιωτικό πάσο για 18χρονους · Jackal Accountant",
+      "lang": "el",
+      "errors": []
+    },
+    "el-desktop /politis/odigoi?cat=benefits": {
+      "status": 200,
+      "title": "Οδηγοί · Jackal Accountant",
+      "lang": "el",
+      "errors": []
+    },
+    "el-desktop /politis/odigoi?cat=business-grants": {
+      "status": 200,
+      "title": "Οδηγοί · Jackal Accountant",
+      "lang": "el",
+      "errors": []
+    },
+    "el-desktop /politis/odigoi?cat=employment-education": {
+      "status": 200,
+      "title": "Οδηγοί · Jackal Accountant",
+      "lang": "el",
+      "errors": []
+    },
+    "el-desktop /politis/odigoi?cat=housing-energy": {
+      "status": 200,
+      "title": "Οδηγοί · Jackal Accountant",
+      "lang": "el",
+      "errors": []
+    },
+    "el-desktop /politis/odigoi?cat=eu-programmes": {
+      "status": 200,
+      "title": "Οδηγοί · Jackal Accountant",
+      "lang": "el",
+      "errors": []
+    },
+    "el-desktop /politis/odigoi/spiti2": {
+      "status": 200,
+      "title": "«Σπίτι μου ΙΙ» — δάνεια πρώτης κατοικίας · Jackal Accountant",
+      "lang": "el",
+      "errors": []
+    },
+    "el-desktop /politis/odigoi/studenthousing": {
+      "status": 200,
+      "title": "Φοιτητικό στεγαστικό επίδομα · Jackal Accountant",
+      "lang": "el",
+      "errors": []
+    },
+    "el-desktop /politis/odigoi/eligibility-labels": {
+      "status": 200,
+      "title": "Τι σημαίνουν οι ενδείξεις επιλεξιμότητας · Jackal Accountant",
+      "lang": "el",
+      "errors": []
+    },
+    "el-desktop /politis/odigoi/applying-officially": {
+      "status": 200,
+      "title": "Πώς γίνεται μια αίτηση σε επίσημη πλατφόρμα · Jackal Accountant",
+      "lang": "el",
+      "errors": []
+    },
+    "el-desktop /epixeiriseis/eukairies?status=all": {
+      "status": 200,
+      "title": "Ευκαιρίες · Jackal Accountant",
+      "lang": "el",
+      "errors": []
+    },
+    "el-desktop /epixeiriseis/eukairies/842e328b-263f-4ff0-aea7-7f044911ac74": {
+      "status": 200,
+      "title": "Ενίσχυση επενδυτικών σχεδίων νέων και υπό σύσταση ΜΜΕ που υλοποιούνται στις ηπειρωτικές περιοχές ΕΣΔΙΜ (ΔΑΜ21) · Jackal Accountant",
+      "lang": "el",
+      "errors": []
+    },
+    "el-desktop /epixeiriseis/eukairies/7f6de95c-573c-42cb-a05a-ce2afaa4de68": {
+      "status": 200,
+      "title": "Ενίσχυση επενδυτικών σχεδίων παραγωγικών επενδύσεων νέων και υπό σύσταση μεγάλων επιχειρήσεων που υλοποιούνται στις ηπειρωτικές περιοχές ΕΣΔΙΜ (ΔΑΜ24) · Jackal Accountant",
+      "lang": "el",
+      "errors": []
+    },
+    "el-desktop /epixeiriseis/eukairies/57f7f61c-c2dc-4b8c-9e86-e62e74d593ad": {
+      "status": 200,
+      "title": "Υποστήριξη νέων καινοτόμων επιχειρήσεων στην Περιφέρεια Κρήτης («Καινοτομώ στην Κρήτη») · Jackal Accountant",
+      "lang": "el",
+      "errors": []
+    },
+    "el-desktop /epixeiriseis/eukairies/9fed4d7a-30e4-41c0-a1a7-4c98420580be": {
+      "status": 200,
+      "title": "«Επιχειρώ Στερεά» · Jackal Accountant",
+      "lang": "el",
+      "errors": []
+    },
+    "el-desktop /epixeiriseis/eukairies/429c4e65-7075-46c7-9d11-fef07c6734b0": {
+      "status": 200,
+      "title": "Ενίσχυση επιχειρηματικότητας στους τομείς προτεραιότητας της Περιφέρειας Νοτίου Αιγαίου · Jackal Accountant",
+      "lang": "el",
+      "errors": []
+    },
+    "el-desktop /epixeiriseis/eukairies/bfa2a848-4868-4bf1-8e08-4640a6ee9c38": {
+      "status": 200,
+      "title": "Ενίσχυση επενδυτικών σχεδίων παραγωγικών επενδύσεων υφιστάμενων μεγάλων επιχειρήσεων που υλοποιούνται στις ηπειρωτικές περιοχές ΕΣΔΙΜ (ΔΑΜ23) · Jackal Accountant",
+      "lang": "el",
+      "errors": []
+    },
+    "el-desktop /epixeiriseis/eukairies/64deea15-a2f3-412d-9d55-7e699a551d77": {
+      "status": 200,
+      "title": "Ενίσχυση επενδυτικών σχεδίων Υφιστάμενων ΜΜΕ που υλοποιούνται στις ηπειρωτικές περιοχές ΕΣΔΙΜ (ΔΑΜ22) · Jackal Accountant",
+      "lang": "el",
+      "errors": []
+    },
+    "el-desktop /epixeiriseis/eukairies/cc0ca161-caf4-464b-bfb2-d637bb6b0b39": {
+      "status": 200,
+      "title": "Ενίσχυση επιχειρηματικότητας με έμφαση στον τουρισμό και τη δεύτερη μεταποίηση αγροτικών προϊόντων (Χίος, Μυτιλήνη, μικρά νησιά — Βόρειο Αιγαίο) · Jackal Accountant",
+      "lang": "el",
+      "errors": []
+    },
+    "el-desktop /epixeiriseis/eukairies/9370f729-d564-48af-a566-a72517f16893": {
+      "status": 200,
+      "title": "Ενίσχυση συνεργασίας μεταξύ επιχειρήσεων και ερευνητικών φορέων στους τομείς προτεραιότητας της Περιφέρειας Νοτίου Αιγαίου · Jackal Accountant",
+      "lang": "el",
+      "errors": []
+    },
+    "el-desktop /epixeiriseis/eukairies/ed0fa2b4-2b39-4211-864b-26c5f325cb9d": {
+      "status": 200,
+      "title": "Συμπράξεις Έρευνας και Καινοτομίας στην Αττική · Jackal Accountant",
+      "lang": "el",
+      "errors": []
+    },
+    "el-desktop /epixeiriseis/odigoi/eligibility-labels": {
+      "status": 200,
+      "title": "Τι σημαίνουν οι ενδείξεις επιλεξιμότητας · Jackal Accountant",
+      "lang": "el",
+      "errors": []
+    },
+    "el-desktop /epixeiriseis/odigoi/applying-officially": {
+      "status": 200,
+      "title": "Πώς γίνεται μια αίτηση σε επίσημη πλατφόρμα · Jackal Accountant",
+      "lang": "el",
+      "errors": []
+    },
+    "el-desktop /gnosi/themata": {
+      "status": 200,
+      "title": "Θέματα · Γνώση · Jackal Accountant",
+      "lang": "el",
+      "errors": []
+    },
+    "el-desktop /gnosi/lexiko": {
+      "status": 200,
+      "title": "Λεξικό · Γνώση · Jackal Accountant",
+      "lang": "el",
+      "errors": []
+    },
+    "el-desktop /gnosi/vasika": {
+      "status": 200,
+      "title": "Μάθε τα βασικά · Γνώση · Jackal Accountant",
+      "lang": "el",
+      "errors": []
+    },
+    "el-desktop /gnosi/syxnes-erotiseis": {
+      "status": 200,
+      "title": "Συχνές Ερωτήσεις · Γνώση · Jackal Accountant",
+      "lang": "el",
+      "errors": []
+    },
+    "el-desktop /gnosi/oros/LEX-0001": {
+      "status": 200,
+      "title": "ΑΦΜ · Γνώση · Jackal Accountant",
+      "lang": "el",
+      "errors": []
+    },
+    "el-desktop /gnosi/oros/LEX-0002": {
+      "status": 200,
+      "title": "ΑΑΔΕ · Γνώση · Jackal Accountant",
+      "lang": "el",
+      "errors": []
+    },
+    "el-desktop /gnosi/oros/LEX-0003": {
+      "status": 200,
+      "title": "Taxisnet · Γνώση · Jackal Accountant",
+      "lang": "el",
+      "errors": []
+    },
+    "el-desktop /gnosi/oros/LEX-0004": {
+      "status": 200,
+      "title": "myAADE · Γνώση · Jackal Accountant",
+      "lang": "el",
+      "errors": []
+    },
+    "el-desktop /gnosi/oros/LEX-0005": {
+      "status": 200,
+      "title": "Ε1 · Γνώση · Jackal Accountant",
+      "lang": "el",
+      "errors": []
+    },
+    "el-desktop /gnosi/oros/LEX-0006": {
+      "status": 200,
+      "title": "Ε2 · Γνώση · Jackal Accountant",
+      "lang": "el",
+      "errors": []
+    },
+    "el-desktop /gnosi/oros/LEX-0007": {
+      "status": 200,
+      "title": "Ε3 · Γνώση · Jackal Accountant",
+      "lang": "el",
+      "errors": []
+    },
+    "el-desktop /gnosi/oros/LEX-0008": {
+      "status": 200,
+      "title": "Ε9 · Γνώση · Jackal Accountant",
+      "lang": "el",
+      "errors": []
+    },
+    "el-desktop /gnosi/oros/LEX-0009": {
+      "status": 200,
+      "title": "εκκαθαριστικό · Γνώση · Jackal Accountant",
+      "lang": "el",
+      "errors": []
+    },
+    "el-desktop /gnosi/oros/LEX-0010": {
+      "status": 200,
+      "title": "φορολογητέο εισόδημα · Γνώση · Jackal Accountant",
+      "lang": "el",
+      "errors": []
+    },
+    "en-desktop /": {
+      "status": 200,
+      "title": "Jackal Accountant",
+      "lang": "en",
+      "errors": []
+    },
+    "en-desktop /politis/eukairies": {
+      "status": 200,
+      "title": "Opportunities · Jackal Accountant",
+      "lang": "en",
+      "errors": []
+    },
+    "en-desktop /politis/nea": {
+      "status": 200,
+      "title": "News · Jackal Accountant",
+      "lang": "en",
+      "errors": []
+    },
+    "en-desktop /politis/odigoi": {
+      "status": 200,
+      "title": "Guides · Jackal Accountant",
+      "lang": "en",
+      "errors": []
+    },
+    "en-desktop /politis/jackal": {
+      "status": 200,
+      "title": "What is Jackal · Jackal Accountant",
+      "lang": "en",
+      "errors": []
+    },
+    "en-desktop /politis/logariasmos": {
+      "status": 200,
+      "title": "My account · Jackal Accountant",
+      "lang": "en",
+      "errors": []
+    },
+    "en-desktop /epixeiriseis/eukairies": {
+      "status": 200,
+      "title": "Opportunities · Jackal Accountant",
+      "lang": "en",
+      "errors": []
+    },
+    "en-desktop /epixeiriseis/nea": {
+      "status": 200,
+      "title": "News · Jackal Accountant",
+      "lang": "en",
+      "errors": []
+    },
+    "en-desktop /epixeiriseis/odigoi": {
+      "status": 200,
+      "title": "Guides · Jackal Accountant",
+      "lang": "en",
+      "errors": []
+    },
+    "en-desktop /epixeiriseis/jackal": {
+      "status": 200,
+      "title": "What is Jackal · Jackal Accountant",
+      "lang": "en",
+      "errors": []
+    },
+    "en-desktop /epixeiriseis/logariasmos": {
+      "status": 200,
+      "title": "My account · Jackal Accountant",
+      "lang": "en",
+      "errors": []
+    },
+    "en-desktop /about": {
+      "status": 200,
+      "title": "What is Jackal · Jackal Accountant",
+      "lang": "en",
+      "errors": []
+    },
+    "en-desktop /login": {
+      "status": 200,
+      "title": "Log in · Jackal Accountant",
+      "lang": "en",
+      "errors": []
+    },
+    "en-desktop /register": {
+      "status": 200,
+      "title": "Sign up · Jackal Accountant",
+      "lang": "en",
+      "errors": []
+    },
+    "en-desktop /profile": {
+      "status": 200,
+      "title": "Log in · Jackal Accountant",
+      "lang": "en",
+      "errors": []
+    },
+    "en-desktop /gnosi": {
+      "status": 200,
+      "title": "Knowledge · Jackal Accountant",
+      "lang": "en",
+      "errors": []
+    },
+    "en-desktop /politis/eukairies?cat=employment": {
+      "status": 200,
+      "title": "Opportunities · Jackal Accountant",
+      "lang": "en",
+      "errors": []
+    },
+    "en-desktop /politis/eukairies?cat=education": {
+      "status": 200,
+      "title": "Opportunities · Jackal Accountant",
+      "lang": "en",
+      "errors": []
+    },
+    "en-desktop /politis/eukairies?cat=housing-energy": {
+      "status": 200,
+      "title": "Opportunities · Jackal Accountant",
+      "lang": "en",
+      "errors": []
+    },
+    "en-desktop /politis/eukairies?cat=family": {
+      "status": 200,
+      "title": "Opportunities · Jackal Accountant",
+      "lang": "en",
+      "errors": []
+    },
+    "en-desktop /politis/eukairies?cat=tax": {
+      "status": 200,
+      "title": "Opportunities · Jackal Accountant",
+      "lang": "en",
+      "errors": []
+    },
+    "en-desktop /politis/eukairies?status=all": {
+      "status": 200,
+      "title": "Opportunities · Jackal Accountant",
+      "lang": "en",
+      "errors": []
+    },
+    "en-desktop /politis/eukairies/22b1c095-c191-462f-ab5e-da2c928fb142": {
+      "status": 200,
+      "title": "Article 5B — 7% tax for pensioners with a foreign pension · Jackal Accountant",
+      "lang": "en",
+      "errors": []
+    },
+    "en-desktop /politis/odigoi/art5b": {
+      "status": 200,
+      "title": "Article 5B — 7% tax for pensioners with a foreign pension · Jackal Accountant",
+      "lang": "en",
+      "errors": []
+    },
+    "en-desktop /politis/eukairies/b14f7d98-2f0a-4edd-9998-5de850122e50": {
+      "status": 200,
+      "title": "A21 — Child benefit · Jackal Accountant",
+      "lang": "en",
+      "errors": []
+    },
+    "en-desktop /politis/odigoi/a21": {
+      "status": 200,
+      "title": "A21 — Child benefit · Jackal Accountant",
+      "lang": "en",
+      "errors": []
+    },
+    "en-desktop /politis/eukairies/5ec82afb-0f1d-414e-8174-e4a12ddf7a0f": {
+      "status": 200,
+      "title": "Article 5C — 50% income-tax exemption for people moving tax residence to Greece · Jackal Accountant",
+      "lang": "en",
+      "errors": []
+    },
+    "en-desktop /politis/odigoi/art5c": {
+      "status": 200,
+      "title": "Article 5C — 50% income-tax exemption for people moving tax residence to Greece · Jackal Accountant",
+      "lang": "en",
+      "errors": []
+    },
+    "en-desktop /politis/eukairies/4e3208ed-2913-4591-b190-c79fbe70067c": {
+      "status": 200,
+      "title": "Regular unemployment benefit · Jackal Accountant",
+      "lang": "en",
+      "errors": []
+    },
+    "en-desktop /politis/odigoi/unemployment": {
+      "status": 200,
+      "title": "Regular unemployment benefit · Jackal Accountant",
+      "lang": "en",
+      "errors": []
+    },
+    "en-desktop /politis/eukairies/e9c59834-68af-4294-a4bb-d090fd9d8d2c": {
+      "status": 200,
+      "title": "Article 5A — alternative taxation for investors · Jackal Accountant",
+      "lang": "en",
+      "errors": []
+    },
+    "en-desktop /politis/odigoi/art5a": {
+      "status": 200,
+      "title": "Article 5A — alternative taxation for investors · Jackal Accountant",
+      "lang": "en",
+      "errors": []
+    },
+    "en-desktop /politis/eukairies/ecf7ecf8-3a7f-4431-b3a4-aa4c8630e890": {
+      "status": 200,
+      "title": "DiscoverEU — free travel pass for 18-year-olds · Jackal Accountant",
+      "lang": "en",
+      "errors": []
+    },
+    "en-desktop /politis/odigoi/discovereu": {
+      "status": 200,
+      "title": "DiscoverEU — free travel pass for 18-year-olds · Jackal Accountant",
+      "lang": "en",
+      "errors": []
+    },
+    "en-desktop /politis/odigoi?cat=benefits": {
+      "status": 200,
+      "title": "Guides · Jackal Accountant",
+      "lang": "en",
+      "errors": []
+    },
+    "en-desktop /politis/odigoi?cat=business-grants": {
+      "status": 200,
+      "title": "Guides · Jackal Accountant",
+      "lang": "en",
+      "errors": []
+    },
+    "en-desktop /politis/odigoi?cat=employment-education": {
+      "status": 200,
+      "title": "Guides · Jackal Accountant",
+      "lang": "en",
+      "errors": []
+    },
+    "en-desktop /politis/odigoi?cat=housing-energy": {
+      "status": 200,
+      "title": "Guides · Jackal Accountant",
+      "lang": "en",
+      "errors": []
+    },
+    "en-desktop /politis/odigoi?cat=eu-programmes": {
+      "status": 200,
+      "title": "Guides · Jackal Accountant",
+      "lang": "en",
+      "errors": []
+    },
+    "en-desktop /politis/odigoi/spiti2": {
+      "status": 200,
+      "title": "\"Spiti mou II\" — first-home loans · Jackal Accountant",
+      "lang": "en",
+      "errors": []
+    },
+    "en-desktop /politis/odigoi/studenthousing": {
+      "status": 200,
+      "title": "Student housing allowance · Jackal Accountant",
+      "lang": "en",
+      "errors": []
+    },
+    "en-desktop /politis/odigoi/eligibility-labels": {
+      "status": 200,
+      "title": "What the eligibility labels mean · Jackal Accountant",
+      "lang": "en",
+      "errors": []
+    },
+    "en-desktop /politis/odigoi/applying-officially": {
+      "status": 200,
+      "title": "How to apply on an official platform · Jackal Accountant",
+      "lang": "en",
+      "errors": []
+    },
+    "en-desktop /epixeiriseis/eukairies?status=all": {
+      "status": 200,
+      "title": "Opportunities · Jackal Accountant",
+      "lang": "en",
+      "errors": []
+    },
+    "en-desktop /epixeiriseis/eukairies/842e328b-263f-4ff0-aea7-7f044911ac74": {
+      "status": 200,
+      "title": "Ενίσχυση επενδυτικών σχεδίων νέων και υπό σύσταση ΜΜΕ που υλοποιούνται στις ηπειρωτικές περιοχές ΕΣΔΙΜ (ΔΑΜ21) · Jackal Accountant",
+      "lang": "en",
+      "errors": []
+    },
+    "en-desktop /epixeiriseis/eukairies/7f6de95c-573c-42cb-a05a-ce2afaa4de68": {
+      "status": 200,
+      "title": "Ενίσχυση επενδυτικών σχεδίων παραγωγικών επενδύσεων νέων και υπό σύσταση μεγάλων επιχειρήσεων που υλοποιούνται στις ηπειρωτικές περιοχές ΕΣΔΙΜ (ΔΑΜ24) · Jackal Accountant",
+      "lang": "en",
+      "errors": []
+    },
+    "en-desktop /epixeiriseis/eukairies/57f7f61c-c2dc-4b8c-9e86-e62e74d593ad": {
+      "status": 200,
+      "title": "Υποστήριξη νέων καινοτόμων επιχειρήσεων στην Περιφέρεια Κρήτης («Καινοτομώ στην Κρήτη») · Jackal Accountant",
+      "lang": "en",
+      "errors": []
+    },
+    "en-desktop /epixeiriseis/eukairies/9fed4d7a-30e4-41c0-a1a7-4c98420580be": {
+      "status": 200,
+      "title": "«Επιχειρώ Στερεά» · Jackal Accountant",
+      "lang": "en",
+      "errors": []
+    },
+    "en-desktop /epixeiriseis/eukairies/429c4e65-7075-46c7-9d11-fef07c6734b0": {
+      "status": 200,
+      "title": "Ενίσχυση επιχειρηματικότητας στους τομείς προτεραιότητας της Περιφέρειας Νοτίου Αιγαίου · Jackal Accountant",
+      "lang": "en",
+      "errors": []
+    },
+    "en-desktop /epixeiriseis/eukairies/bfa2a848-4868-4bf1-8e08-4640a6ee9c38": {
+      "status": 200,
+      "title": "Ενίσχυση επενδυτικών σχεδίων παραγωγικών επενδύσεων υφιστάμενων μεγάλων επιχειρήσεων που υλοποιούνται στις ηπειρωτικές περιοχές ΕΣΔΙΜ (ΔΑΜ23) · Jackal Accountant",
+      "lang": "en",
+      "errors": []
+    },
+    "en-desktop /epixeiriseis/eukairies/64deea15-a2f3-412d-9d55-7e699a551d77": {
+      "status": 200,
+      "title": "Ενίσχυση επενδυτικών σχεδίων Υφιστάμενων ΜΜΕ που υλοποιούνται στις ηπειρωτικές περιοχές ΕΣΔΙΜ (ΔΑΜ22) · Jackal Accountant",
+      "lang": "en",
+      "errors": []
+    },
+    "en-desktop /epixeiriseis/eukairies/cc0ca161-caf4-464b-bfb2-d637bb6b0b39": {
+      "status": 200,
+      "title": "Ενίσχυση επιχειρηματικότητας με έμφαση στον τουρισμό και τη δεύτερη μεταποίηση αγροτικών προϊόντων (Χίος, Μυτιλήνη, μικρά νησιά — Βόρειο Αιγαίο) · Jackal Accountant",
+      "lang": "en",
+      "errors": []
+    },
+    "en-desktop /epixeiriseis/eukairies/9370f729-d564-48af-a566-a72517f16893": {
+      "status": 200,
+      "title": "Ενίσχυση συνεργασίας μεταξύ επιχειρήσεων και ερευνητικών φορέων στους τομείς προτεραιότητας της Περιφέρειας Νοτίου Αιγαίου · Jackal Accountant",
+      "lang": "en",
+      "errors": []
+    },
+    "en-desktop /epixeiriseis/eukairies/ed0fa2b4-2b39-4211-864b-26c5f325cb9d": {
+      "status": 200,
+      "title": "Συμπράξεις Έρευνας και Καινοτομίας στην Αττική · Jackal Accountant",
+      "lang": "en",
+      "errors": []
+    },
+    "en-desktop /epixeiriseis/odigoi/eligibility-labels": {
+      "status": 200,
+      "title": "What the eligibility labels mean · Jackal Accountant",
+      "lang": "en",
+      "errors": []
+    },
+    "en-desktop /epixeiriseis/odigoi/applying-officially": {
+      "status": 200,
+      "title": "How to apply on an official platform · Jackal Accountant",
+      "lang": "en",
+      "errors": []
+    },
+    "en-desktop /gnosi/themata": {
+      "status": 200,
+      "title": "Topics · Knowledge · Jackal Accountant",
+      "lang": "en",
+      "errors": []
+    },
+    "en-desktop /gnosi/lexiko": {
+      "status": 200,
+      "title": "Dictionary · Knowledge · Jackal Accountant",
+      "lang": "en",
+      "errors": []
+    },
+    "en-desktop /gnosi/vasika": {
+      "status": 200,
+      "title": "Learn the Basics · Knowledge · Jackal Accountant",
+      "lang": "en",
+      "errors": []
+    },
+    "en-desktop /gnosi/syxnes-erotiseis": {
+      "status": 200,
+      "title": "FAQ · Knowledge · Jackal Accountant",
+      "lang": "en",
+      "errors": []
+    },
+    "en-desktop /gnosi/oros/LEX-0001": {
+      "status": 200,
+      "title": "Tax Identification Number (AFM) · Knowledge · Jackal Accountant",
+      "lang": "en",
+      "errors": []
+    },
+    "en-desktop /gnosi/oros/LEX-0002": {
+      "status": 200,
+      "title": "Independent Authority for Public Revenue (AADE) · Knowledge · Jackal Accountant",
+      "lang": "en",
+      "errors": []
+    },
+    "en-desktop /gnosi/oros/LEX-0003": {
+      "status": 200,
+      "title": "Taxisnet · Knowledge · Jackal Accountant",
+      "lang": "en",
+      "errors": []
+    },
+    "en-desktop /gnosi/oros/LEX-0004": {
+      "status": 200,
+      "title": "myAADE · Knowledge · Jackal Accountant",
+      "lang": "en",
+      "errors": []
+    },
+    "en-desktop /gnosi/oros/LEX-0005": {
+      "status": 200,
+      "title": "E1 income tax return · Knowledge · Jackal Accountant",
+      "lang": "en",
+      "errors": []
+    },
+    "en-desktop /gnosi/oros/LEX-0006": {
+      "status": 200,
+      "title": "Ε2 · Knowledge · Jackal Accountant",
+      "lang": "en",
+      "errors": []
+    },
+    "en-desktop /gnosi/oros/LEX-0007": {
+      "status": 200,
+      "title": "Ε3 · Knowledge · Jackal Accountant",
+      "lang": "en",
+      "errors": []
+    },
+    "en-desktop /gnosi/oros/LEX-0008": {
+      "status": 200,
+      "title": "E9 property declaration · Knowledge · Jackal Accountant",
+      "lang": "en",
+      "errors": []
+    },
+    "en-desktop /gnosi/oros/LEX-0009": {
+      "status": 200,
+      "title": "εκκαθαριστικό · Knowledge · Jackal Accountant",
+      "lang": "en",
+      "errors": []
+    },
+    "en-desktop /gnosi/oros/LEX-0010": {
+      "status": 200,
+      "title": "Taxable income · Knowledge · Jackal Accountant",
+      "lang": "en",
+      "errors": []
+    },
+    "el-phone /": {
+      "status": 200,
+      "title": "Jackal Accountant",
+      "lang": "el",
+      "errors": []
+    },
+    "el-phone /politis/eukairies": {
+      "status": 200,
+      "title": "Ευκαιρίες · Jackal Accountant",
+      "lang": "el",
+      "errors": []
+    },
+    "el-phone /politis/nea": {
+      "status": 200,
+      "title": "Νέα · Jackal Accountant",
+      "lang": "el",
+      "errors": []
+    },
+    "el-phone /politis/odigoi": {
+      "status": 200,
+      "title": "Οδηγοί · Jackal Accountant",
+      "lang": "el",
+      "errors": []
+    },
+    "el-phone /politis/jackal": {
+      "status": 200,
+      "title": "Τι είναι το Jackal · Jackal Accountant",
+      "lang": "el",
+      "errors": []
+    },
+    "el-phone /politis/logariasmos": {
+      "status": 200,
+      "title": "Ο λογαριασμός μου · Jackal Accountant",
+      "lang": "el",
+      "errors": []
+    },
+    "el-phone /epixeiriseis/eukairies": {
+      "status": 200,
+      "title": "Ευκαιρίες · Jackal Accountant",
+      "lang": "el",
+      "errors": []
+    },
+    "el-phone /epixeiriseis/nea": {
+      "status": 200,
+      "title": "Νέα · Jackal Accountant",
+      "lang": "el",
+      "errors": []
+    },
+    "el-phone /epixeiriseis/odigoi": {
+      "status": 200,
+      "title": "Οδηγοί · Jackal Accountant",
+      "lang": "el",
+      "errors": []
+    },
+    "el-phone /epixeiriseis/jackal": {
+      "status": 200,
+      "title": "Τι είναι το Jackal · Jackal Accountant",
+      "lang": "el",
+      "errors": []
+    },
+    "el-phone /epixeiriseis/logariasmos": {
+      "status": 200,
+      "title": "Ο λογαριασμός μου · Jackal Accountant",
+      "lang": "el",
+      "errors": []
+    },
+    "el-phone /about": {
+      "status": 200,
+      "title": "Τι είναι το Jackal · Jackal Accountant",
+      "lang": "el",
+      "errors": []
+    },
+    "el-phone /login": {
+      "status": 200,
+      "title": "Σύνδεση · Jackal Accountant",
+      "lang": "el",
+      "errors": []
+    },
+    "el-phone /register": {
+      "status": 200,
+      "title": "Εγγραφή · Jackal Accountant",
+      "lang": "el",
+      "errors": []
+    },
+    "el-phone /profile": {
+      "status": 200,
+      "title": "Σύνδεση · Jackal Accountant",
+      "lang": "el",
+      "errors": []
+    },
+    "el-phone /gnosi": {
+      "status": 200,
+      "title": "Γνώση · Jackal Accountant",
+      "lang": "el",
+      "errors": []
+    },
+    "el-phone /politis/eukairies?cat=employment": {
+      "status": 200,
+      "title": "Ευκαιρίες · Jackal Accountant",
+      "lang": "el",
+      "errors": []
+    },
+    "el-phone /politis/eukairies?cat=education": {
+      "status": 200,
+      "title": "Ευκαιρίες · Jackal Accountant",
+      "lang": "el",
+      "errors": []
+    },
+    "el-phone /politis/eukairies?cat=housing-energy": {
+      "status": 200,
+      "title": "Ευκαιρίες · Jackal Accountant",
+      "lang": "el",
+      "errors": []
+    },
+    "el-phone /politis/eukairies?cat=family": {
+      "status": 200,
+      "title": "Ευκαιρίες · Jackal Accountant",
+      "lang": "el",
+      "errors": []
+    },
+    "el-phone /politis/eukairies?cat=tax": {
+      "status": 200,
+      "title": "Ευκαιρίες · Jackal Accountant",
+      "lang": "el",
+      "errors": []
+    },
+    "el-phone /politis/eukairies?status=all": {
+      "status": 200,
+      "title": "Ευκαιρίες · Jackal Accountant",
+      "lang": "el",
+      "errors": []
+    },
+    "el-phone /politis/eukairies/22b1c095-c191-462f-ab5e-da2c928fb142": {
+      "status": 200,
+      "title": "Άρθρο 5Β ΚΦΕ — 7% φόρος για συνταξιούχους με σύνταξη εξωτερικού · Jackal Accountant",
+      "lang": "el",
+      "errors": []
+    },
+    "el-phone /politis/odigoi/art5b": {
+      "status": 200,
+      "title": "Άρθρο 5Β ΚΦΕ — 7% φόρος για συνταξιούχους με σύνταξη εξωτερικού · Jackal Accountant",
+      "lang": "el",
+      "errors": []
+    },
+    "el-phone /politis/eukairies/b14f7d98-2f0a-4edd-9998-5de850122e50": {
+      "status": 200,
+      "title": "Α21 — Επίδομα παιδιού · Jackal Accountant",
+      "lang": "el",
+      "errors": []
+    },
+    "el-phone /politis/odigoi/a21": {
+      "status": 200,
+      "title": "Α21 — Επίδομα παιδιού · Jackal Accountant",
+      "lang": "el",
+      "errors": []
+    },
+    "el-phone /politis/eukairies/5ec82afb-0f1d-414e-8174-e4a12ddf7a0f": {
+      "status": 200,
+      "title": "Άρθρο 5Γ ΚΦΕ — 50% απαλλαγή φόρου για όσους μεταφέρουν τη φορολογική κατοικία τους στην Ελλάδα · Jackal Accountant",
+      "lang": "el",
+      "errors": []
+    },
+    "el-phone /politis/odigoi/art5c": {
+      "status": 200,
+      "title": "Άρθρο 5Γ ΚΦΕ — 50% απαλλαγή φόρου για όσους μεταφέρουν τη φορολογική κατοικία τους στην Ελλάδα · Jackal Accountant",
+      "lang": "el",
+      "errors": []
+    },
+    "el-phone /politis/eukairies/4e3208ed-2913-4591-b190-c79fbe70067c": {
+      "status": 200,
+      "title": "Τακτική επιδότηση ανεργίας · Jackal Accountant",
+      "lang": "el",
+      "errors": []
+    },
+    "el-phone /politis/odigoi/unemployment": {
+      "status": 200,
+      "title": "Τακτική επιδότηση ανεργίας · Jackal Accountant",
+      "lang": "el",
+      "errors": []
+    },
+    "el-phone /politis/eukairies/e9c59834-68af-4294-a4bb-d090fd9d8d2c": {
+      "status": 200,
+      "title": "Άρθρο 5Α ΚΦΕ — εναλλακτική φορολόγηση επενδυτών · Jackal Accountant",
+      "lang": "el",
+      "errors": []
+    },
+    "el-phone /politis/odigoi/art5a": {
+      "status": 200,
+      "title": "Άρθρο 5Α ΚΦΕ — εναλλακτική φορολόγηση επενδυτών · Jackal Accountant",
+      "lang": "el",
+      "errors": []
+    },
+    "el-phone /politis/eukairies/ecf7ecf8-3a7f-4431-b3a4-aa4c8630e890": {
+      "status": 200,
+      "title": "DiscoverEU — δωρεάν ταξιδιωτικό πάσο για 18χρονους · Jackal Accountant",
+      "lang": "el",
+      "errors": []
+    },
+    "el-phone /politis/odigoi/discovereu": {
+      "status": 200,
+      "title": "DiscoverEU — δωρεάν ταξιδιωτικό πάσο για 18χρονους · Jackal Accountant",
+      "lang": "el",
+      "errors": []
+    },
+    "el-phone /politis/odigoi?cat=benefits": {
+      "status": 200,
+      "title": "Οδηγοί · Jackal Accountant",
+      "lang": "el",
+      "errors": []
+    },
+    "el-phone /politis/odigoi?cat=business-grants": {
+      "status": 200,
+      "title": "Οδηγοί · Jackal Accountant",
+      "lang": "el",
+      "errors": []
+    },
+    "el-phone /politis/odigoi?cat=employment-education": {
+      "status": 200,
+      "title": "Οδηγοί · Jackal Accountant",
+      "lang": "el",
+      "errors": []
+    },
+    "el-phone /politis/odigoi?cat=housing-energy": {
+      "status": 200,
+      "title": "Οδηγοί · Jackal Accountant",
+      "lang": "el",
+      "errors": []
+    },
+    "el-phone /politis/odigoi?cat=eu-programmes": {
+      "status": 200,
+      "title": "Οδηγοί · Jackal Accountant",
+      "lang": "el",
+      "errors": []
+    },
+    "el-phone /politis/odigoi/spiti2": {
+      "status": 200,
+      "title": "«Σπίτι μου ΙΙ» — δάνεια πρώτης κατοικίας · Jackal Accountant",
+      "lang": "el",
+      "errors": []
+    },
+    "el-phone /politis/odigoi/studenthousing": {
+      "status": 200,
+      "title": "Φοιτητικό στεγαστικό επίδομα · Jackal Accountant",
+      "lang": "el",
+      "errors": []
+    },
+    "el-phone /politis/odigoi/eligibility-labels": {
+      "status": 200,
+      "title": "Τι σημαίνουν οι ενδείξεις επιλεξιμότητας · Jackal Accountant",
+      "lang": "el",
+      "errors": []
+    },
+    "el-phone /politis/odigoi/applying-officially": {
+      "status": 200,
+      "title": "Πώς γίνεται μια αίτηση σε επίσημη πλατφόρμα · Jackal Accountant",
+      "lang": "el",
+      "errors": []
+    },
+    "el-phone /epixeiriseis/eukairies?status=all": {
+      "status": 200,
+      "title": "Ευκαιρίες · Jackal Accountant",
+      "lang": "el",
+      "errors": []
+    },
+    "el-phone /epixeiriseis/eukairies/842e328b-263f-4ff0-aea7-7f044911ac74": {
+      "status": 200,
+      "title": "Ενίσχυση επενδυτικών σχεδίων νέων και υπό σύσταση ΜΜΕ που υλοποιούνται στις ηπειρωτικές περιοχές ΕΣΔΙΜ (ΔΑΜ21) · Jackal Accountant",
+      "lang": "el",
+      "errors": []
+    },
+    "el-phone /epixeiriseis/eukairies/7f6de95c-573c-42cb-a05a-ce2afaa4de68": {
+      "status": 200,
+      "title": "Ενίσχυση επενδυτικών σχεδίων παραγωγικών επενδύσεων νέων και υπό σύσταση μεγάλων επιχειρήσεων που υλοποιούνται στις ηπειρωτικές περιοχές ΕΣΔΙΜ (ΔΑΜ24) · Jackal Accountant",
+      "lang": "el",
+      "errors": []
+    },
+    "el-phone /epixeiriseis/eukairies/57f7f61c-c2dc-4b8c-9e86-e62e74d593ad": {
+      "status": 200,
+      "title": "Υποστήριξη νέων καινοτόμων επιχειρήσεων στην Περιφέρεια Κρήτης («Καινοτομώ στην Κρήτη») · Jackal Accountant",
+      "lang": "el",
+      "errors": []
+    },
+    "el-phone /epixeiriseis/eukairies/9fed4d7a-30e4-41c0-a1a7-4c98420580be": {
+      "status": 200,
+      "title": "«Επιχειρώ Στερεά» · Jackal Accountant",
+      "lang": "el",
+      "errors": []
+    },
+    "el-phone /epixeiriseis/eukairies/429c4e65-7075-46c7-9d11-fef07c6734b0": {
+      "status": 200,
+      "title": "Ενίσχυση επιχειρηματικότητας στους τομείς προτεραιότητας της Περιφέρειας Νοτίου Αιγαίου · Jackal Accountant",
+      "lang": "el",
+      "errors": []
+    },
+    "el-phone /epixeiriseis/eukairies/bfa2a848-4868-4bf1-8e08-4640a6ee9c38": {
+      "status": 200,
+      "title": "Ενίσχυση επενδυτικών σχεδίων παραγωγικών επενδύσεων υφιστάμενων μεγάλων επιχειρήσεων που υλοποιούνται στις ηπειρωτικές περιοχές ΕΣΔΙΜ (ΔΑΜ23) · Jackal Accountant",
+      "lang": "el",
+      "errors": []
+    },
+    "el-phone /epixeiriseis/eukairies/64deea15-a2f3-412d-9d55-7e699a551d77": {
+      "status": 200,
+      "title": "Ενίσχυση επενδυτικών σχεδίων Υφιστάμενων ΜΜΕ που υλοποιούνται στις ηπειρωτικές περιοχές ΕΣΔΙΜ (ΔΑΜ22) · Jackal Accountant",
+      "lang": "el",
+      "errors": []
+    },
+    "el-phone /epixeiriseis/eukairies/cc0ca161-caf4-464b-bfb2-d637bb6b0b39": {
+      "status": 200,
+      "title": "Ενίσχυση επιχειρηματικότητας με έμφαση στον τουρισμό και τη δεύτερη μεταποίηση αγροτικών προϊόντων (Χίος, Μυτιλήνη, μικρά νησιά — Βόρειο Αιγαίο) · Jackal Accountant",
+      "lang": "el",
+      "errors": []
+    },
+    "el-phone /epixeiriseis/eukairies/9370f729-d564-48af-a566-a72517f16893": {
+      "status": 200,
+      "title": "Ενίσχυση συνεργασίας μεταξύ επιχειρήσεων και ερευνητικών φορέων στους τομείς προτεραιότητας της Περιφέρειας Νοτίου Αιγαίου · Jackal Accountant",
+      "lang": "el",
+      "errors": []
+    },
+    "el-phone /epixeiriseis/eukairies/ed0fa2b4-2b39-4211-864b-26c5f325cb9d": {
+      "status": 200,
+      "title": "Συμπράξεις Έρευνας και Καινοτομίας στην Αττική · Jackal Accountant",
+      "lang": "el",
+      "errors": []
+    },
+    "el-phone /epixeiriseis/odigoi/eligibility-labels": {
+      "status": 200,
+      "title": "Τι σημαίνουν οι ενδείξεις επιλεξιμότητας · Jackal Accountant",
+      "lang": "el",
+      "errors": []
+    },
+    "el-phone /epixeiriseis/odigoi/applying-officially": {
+      "status": 200,
+      "title": "Πώς γίνεται μια αίτηση σε επίσημη πλατφόρμα · Jackal Accountant",
+      "lang": "el",
+      "errors": []
+    },
+    "el-phone /gnosi/themata": {
+      "status": 200,
+      "title": "Θέματα · Γνώση · Jackal Accountant",
+      "lang": "el",
+      "errors": []
+    },
+    "el-phone /gnosi/lexiko": {
+      "status": 200,
+      "title": "Λεξικό · Γνώση · Jackal Accountant",
+      "lang": "el",
+      "errors": []
+    },
+    "el-phone /gnosi/vasika": {
+      "status": 200,
+      "title": "Μάθε τα βασικά · Γνώση · Jackal Accountant",
+      "lang": "el",
+      "errors": []
+    },
+    "el-phone /gnosi/syxnes-erotiseis": {
+      "status": 200,
+      "title": "Συχνές Ερωτήσεις · Γνώση · Jackal Accountant",
+      "lang": "el",
+      "errors": []
+    },
+    "el-phone /gnosi/oros/LEX-0001": {
+      "status": 200,
+      "title": "ΑΦΜ · Γνώση · Jackal Accountant",
+      "lang": "el",
+      "errors": []
+    },
+    "el-phone /gnosi/oros/LEX-0002": {
+      "status": 200,
+      "title": "ΑΑΔΕ · Γνώση · Jackal Accountant",
+      "lang": "el",
+      "errors": []
+    },
+    "el-phone /gnosi/oros/LEX-0003": {
+      "status": 200,
+      "title": "Taxisnet · Γνώση · Jackal Accountant",
+      "lang": "el",
+      "errors": []
+    },
+    "el-phone /gnosi/oros/LEX-0004": {
+      "status": 200,
+      "title": "myAADE · Γνώση · Jackal Accountant",
+      "lang": "el",
+      "errors": []
+    },
+    "el-phone /gnosi/oros/LEX-0005": {
+      "status": 200,
+      "title": "Ε1 · Γνώση · Jackal Accountant",
+      "lang": "el",
+      "errors": []
+    },
+    "el-phone /gnosi/oros/LEX-0006": {
+      "status": 200,
+      "title": "Ε2 · Γνώση · Jackal Accountant",
+      "lang": "el",
+      "errors": []
+    },
+    "el-phone /gnosi/oros/LEX-0007": {
+      "status": 200,
+      "title": "Ε3 · Γνώση · Jackal Accountant",
+      "lang": "el",
+      "errors": []
+    },
+    "el-phone /gnosi/oros/LEX-0008": {
+      "status": 200,
+      "title": "Ε9 · Γνώση · Jackal Accountant",
+      "lang": "el",
+      "errors": []
+    },
+    "el-phone /gnosi/oros/LEX-0009": {
+      "status": 200,
+      "title": "εκκαθαριστικό · Γνώση · Jackal Accountant",
+      "lang": "el",
+      "errors": []
+    },
+    "el-phone /gnosi/oros/LEX-0010": {
+      "status": 200,
+      "title": "φορολογητέο εισόδημα · Γνώση · Jackal Accountant",
+      "lang": "el",
+      "errors": []
+    },
+    "el-signed-in /profile?path=politis": {
+      "status": 200,
+      "title": "Το προφίλ μου · Jackal Accountant",
+      "lang": "el",
+      "errors": []
+    },
+    "el-signed-in /politis/logariasmos": {
+      "status": 200,
+      "title": "Ο λογαριασμός μου · Jackal Accountant",
+      "lang": "el",
+      "errors": []
+    },
+    "el-signed-in /epixeiriseis/logariasmos": {
+      "status": 200,
+      "title": "Ο λογαριασμός μου · Jackal Accountant",
+      "lang": "el",
+      "errors": []
+    },
+    "el-signed-in /politis/eukairies": {
+      "status": 200,
+      "title": "Ευκαιρίες · Jackal Accountant",
+      "lang": "el",
+      "errors": []
+    },
+    "el-signed-in /": {
+      "status": 200,
+      "title": "Jackal Accountant",
+      "lang": "el",
+      "errors": []
+    },
+    "el-signed-in /gnosi": {
+      "status": 200,
+      "title": "Γνώση · Jackal Accountant",
+      "lang": "el",
+      "errors": []
+    },
+    "el-signed-in /about": {
+      "status": 200,
+      "title": "Τι είναι το Jackal · Jackal Accountant",
+      "lang": "el",
+      "errors": []
+    },
+    "el-signed-in /profile": {
+      "status": 200,
+      "title": "Το προφίλ μου · Jackal Accountant",
+      "lang": "el",
+      "errors": []
+    },
+    "el-signed-in /epixeiriseis/eukairies": {
+      "status": 200,
+      "title": "Ευκαιρίες · Jackal Accountant",
+      "lang": "el",
+      "errors": []
+    },
+    "el-signed-in /politis/nea": {
+      "status": 200,
+      "title": "Νέα · Jackal Accountant",
+      "lang": "el",
+      "errors": []
+    },
+    "el-signed-in /politis/jackal": {
+      "status": 200,
+      "title": "Τι είναι το Jackal · Jackal Accountant",
+      "lang": "el",
+      "errors": []
+    },
+    "el-signed-in /politis/eukairies/4e3208ed-2913-4591-b190-c79fbe70067c": {
+      "status": 200,
+      "title": "Τακτική επιδότηση ανεργίας · Jackal Accountant",
+      "lang": "el",
+      "errors": []
+    },
+    "el-signed-in /politis/odigoi/unemployment": {
+      "status": 200,
+      "title": "Τακτική επιδότηση ανεργίας · Jackal Accountant",
+      "lang": "el",
+      "errors": []
+    },
+    "el-signed-in /politis/eukairies/5ec82afb-0f1d-414e-8174-e4a12ddf7a0f": {
+      "status": 200,
+      "title": "Άρθρο 5Γ ΚΦΕ — 50% απαλλαγή φόρου για όσους μεταφέρουν τη φορολογική κατοικία τους στην Ελλάδα · Jackal Accountant",
+      "lang": "el",
+      "errors": []
+    },
+    "el-signed-in /politis/odigoi/art5c": {
+      "status": 200,
+      "title": "Άρθρο 5Γ ΚΦΕ — 50% απαλλαγή φόρου για όσους μεταφέρουν τη φορολογική κατοικία τους στην Ελλάδα · Jackal Accountant",
+      "lang": "el",
+      "errors": []
+    },
+    "el-signed-in /epixeiriseis/nea": {
+      "status": 200,
+      "title": "Νέα · Jackal Accountant",
+      "lang": "el",
+      "errors": []
+    },
+    "el-signed-in /epixeiriseis/jackal": {
+      "status": 200,
+      "title": "Τι είναι το Jackal · Jackal Accountant",
+      "lang": "el",
+      "errors": []
+    },
+    "el-signed-in /politis/eukairies?cat=employment": {
+      "status": 200,
+      "title": "Ευκαιρίες · Jackal Accountant",
+      "lang": "el",
+      "errors": []
+    },
+    "el-signed-in /politis/eukairies?cat=education": {
+      "status": 200,
+      "title": "Ευκαιρίες · Jackal Accountant",
+      "lang": "el",
+      "errors": []
+    },
+    "el-signed-in /politis/eukairies?cat=housing-energy": {
+      "status": 200,
+      "title": "Ευκαιρίες · Jackal Accountant",
+      "lang": "el",
+      "errors": []
+    },
+    "el-signed-in /politis/eukairies?cat=family": {
+      "status": 200,
+      "title": "Ευκαιρίες · Jackal Accountant",
+      "lang": "el",
+      "errors": []
+    },
+    "el-signed-in /politis/eukairies?cat=tax": {
+      "status": 200,
+      "title": "Ευκαιρίες · Jackal Accountant",
+      "lang": "el",
+      "errors": []
+    },
+    "el-signed-in /politis/eukairies?status=all": {
+      "status": 200,
+      "title": "Ευκαιρίες · Jackal Accountant",
+      "lang": "el",
+      "errors": []
+    },
+    "el-signed-in /politis/eukairies/22b1c095-c191-462f-ab5e-da2c928fb142": {
+      "status": 200,
+      "title": "Άρθρο 5Β ΚΦΕ — 7% φόρος για συνταξιούχους με σύνταξη εξωτερικού · Jackal Accountant",
+      "lang": "el",
+      "errors": []
+    },
+    "el-signed-in /politis/odigoi/art5b": {
+      "status": 200,
+      "title": "Άρθρο 5Β ΚΦΕ — 7% φόρος για συνταξιούχους με σύνταξη εξωτερικού · Jackal Accountant",
+      "lang": "el",
+      "errors": []
+    },
+    "el-signed-in /politis/eukairies/b14f7d98-2f0a-4edd-9998-5de850122e50": {
+      "status": 200,
+      "title": "Α21 — Επίδομα παιδιού · Jackal Accountant",
+      "lang": "el",
+      "errors": []
+    },
+    "el-signed-in /politis/odigoi/a21": {
+      "status": 200,
+      "title": "Α21 — Επίδομα παιδιού · Jackal Accountant",
+      "lang": "el",
+      "errors": []
+    },
+    "el-signed-in /politis/eukairies/e9c59834-68af-4294-a4bb-d090fd9d8d2c": {
+      "status": 200,
+      "title": "Άρθρο 5Α ΚΦΕ — εναλλακτική φορολόγηση επενδυτών · Jackal Accountant",
+      "lang": "el",
+      "errors": []
+    },
+    "el-signed-in /politis/odigoi/art5a": {
+      "status": 200,
+      "title": "Άρθρο 5Α ΚΦΕ — εναλλακτική φορολόγηση επενδυτών · Jackal Accountant",
+      "lang": "el",
+      "errors": []
+    },
+    "el-signed-in /politis/eukairies/ecf7ecf8-3a7f-4431-b3a4-aa4c8630e890": {
+      "status": 200,
+      "title": "DiscoverEU — δωρεάν ταξιδιωτικό πάσο για 18χρονους · Jackal Accountant",
+      "lang": "el",
+      "errors": []
+    },
+    "el-signed-in /politis/odigoi/discovereu": {
+      "status": 200,
+      "title": "DiscoverEU — δωρεάν ταξιδιωτικό πάσο για 18χρονους · Jackal Accountant",
+      "lang": "el",
+      "errors": []
+    },
+    "el-signed-in /gnosi/themata": {
+      "status": 200,
+      "title": "Θέματα · Γνώση · Jackal Accountant",
+      "lang": "el",
+      "errors": []
+    },
+    "el-signed-in /gnosi/lexiko": {
+      "status": 200,
+      "title": "Λεξικό · Γνώση · Jackal Accountant",
+      "lang": "el",
+      "errors": []
+    },
+    "el-signed-in /gnosi/vasika": {
+      "status": 200,
+      "title": "Μάθε τα βασικά · Γνώση · Jackal Accountant",
+      "lang": "el",
+      "errors": []
+    },
+    "el-signed-in /gnosi/syxnes-erotiseis": {
+      "status": 200,
+      "title": "Συχνές Ερωτήσεις · Γνώση · Jackal Accountant",
+      "lang": "el",
+      "errors": []
+    },
+    "el-signed-in /gnosi/oros/LEX-0001": {
+      "status": 200,
+      "title": "ΑΦΜ · Γνώση · Jackal Accountant",
+      "lang": "el",
+      "errors": []
+    },
+    "el-signed-in /gnosi/oros/LEX-0002": {
+      "status": 200,
+      "title": "ΑΑΔΕ · Γνώση · Jackal Accountant",
+      "lang": "el",
+      "errors": []
+    },
+    "el-signed-in /gnosi/oros/LEX-0003": {
+      "status": 200,
+      "title": "Taxisnet · Γνώση · Jackal Accountant",
+      "lang": "el",
+      "errors": []
+    },
+    "el-signed-in /gnosi/oros/LEX-0004": {
+      "status": 200,
+      "title": "myAADE · Γνώση · Jackal Accountant",
+      "lang": "el",
+      "errors": []
+    },
+    "el-signed-in /gnosi/oros/LEX-0005": {
+      "status": 200,
+      "title": "Ε1 · Γνώση · Jackal Accountant",
+      "lang": "el",
+      "errors": []
+    },
+    "el-signed-in /gnosi/oros/LEX-0006": {
+      "status": 200,
+      "title": "Ε2 · Γνώση · Jackal Accountant",
+      "lang": "el",
+      "errors": []
+    },
+    "el-signed-in /gnosi/oros/LEX-0007": {
+      "status": 200,
+      "title": "Ε3 · Γνώση · Jackal Accountant",
+      "lang": "el",
+      "errors": []
+    },
+    "el-signed-in /gnosi/oros/LEX-0008": {
+      "status": 200,
+      "title": "Ε9 · Γνώση · Jackal Accountant",
+      "lang": "el",
+      "errors": []
+    },
+    "el-signed-in /gnosi/oros/LEX-0009": {
+      "status": 200,
+      "title": "εκκαθαριστικό · Γνώση · Jackal Accountant",
+      "lang": "el",
+      "errors": []
+    },
+    "el-signed-in /gnosi/oros/LEX-0010": {
+      "status": 200,
+      "title": "φορολογητέο εισόδημα · Γνώση · Jackal Accountant",
+      "lang": "el",
+      "errors": []
+    },
+    "el-signed-in /gnosi/oros/LEX-0011": {
+      "status": 200,
+      "title": "καθαρό εισόδημα · Γνώση · Jackal Accountant",
+      "lang": "el",
+      "errors": []
+    },
+    "el-signed-in /gnosi/oros/LEX-0012": {
+      "status": 200,
+      "title": "τεκμαρτό εισόδημα · Γνώση · Jackal Accountant",
+      "lang": "el",
+      "errors": []
+    },
+    "el-signed-in /gnosi/oros/LEX-0013": {
+      "status": 200,
+      "title": "τεκμήρια · Γνώση · Jackal Accountant",
+      "lang": "el",
+      "errors": []
+    },
+    "el-signed-in /gnosi/oros/LEX-0014": {
+      "status": 200,
+      "title": "ΦΠΑ · Γνώση · Jackal Accountant",
+      "lang": "el",
+      "errors": []
+    },
+    "el-signed-in /gnosi/oros/LEX-0015": {
+      "status": 200,
+      "title": "παρακράτηση φόρου · Γνώση · Jackal Accountant",
+      "lang": "el",
+      "errors": []
+    },
+    "el-signed-in /gnosi/oros/LEX-0016": {
+      "status": 200,
+      "title": "φορολογική ενημερότητα · Γνώση · Jackal Accountant",
+      "lang": "el",
+      "errors": []
+    },
+    "el-signed-in /gnosi/oros/LEX-0017": {
+      "status": 200,
+      "title": "φορολογική κατοικία · Γνώση · Jackal Accountant",
+      "lang": "el",
+      "errors": []
+    },
+    "el-signed-in /gnosi/oros/LEX-0018": {
+      "status": 200,
+      "title": "διπλή φορολογία · Γνώση · Jackal Accountant",
+      "lang": "el",
+      "errors": []
+    },
+    "el-signed-in /gnosi/oros/LEX-0019": {
+      "status": 200,
+      "title": "φορολογική απαλλαγή · Γνώση · Jackal Accountant",
+      "lang": "el",
+      "errors": []
+    },
+    "el-signed-in /gnosi/oros/LEX-0020": {
+      "status": 200,
+      "title": "φορολογική πίστωση · Γνώση · Jackal Accountant",
+      "lang": "el",
+      "errors": []
+    },
+    "el-signed-in /gnosi/oros/LEX-0021": {
+      "status": 200,
+      "title": "φορολογική δήλωση · Γνώση · Jackal Accountant",
+      "lang": "el",
+      "errors": []
+    },
+    "el-signed-in /gnosi/oros/LEX-0022": {
+      "status": 200,
+      "title": "κέντρο ζωτικών συμφερόντων · Γνώση · Jackal Accountant",
+      "lang": "el",
+      "errors": []
+    },
+    "el-signed-in /gnosi/oros/BAS-0023": {
+      "status": 200,
+      "title": "Πώς λειτουργεί η φορολογία εισοδήματος; · Γνώση · Jackal Accountant",
+      "lang": "el",
+      "errors": []
+    },
+    "el-signed-in /gnosi/oros/BAS-0024": {
+      "status": 200,
+      "title": "Τι είναι ο ΦΠΑ; · Γνώση · Jackal Accountant",
+      "lang": "el",
+      "errors": []
+    },
+    "el-signed-in /gnosi/oros/BAS-0025": {
+      "status": 200,
+      "title": "Τι σημαίνει φορολογική κατοικία; · Γνώση · Jackal Accountant",
+      "lang": "el",
+      "errors": []
+    },
+    "el-signed-in /gnosi/oros/BAS-0026": {
+      "status": 200,
+      "title": "Ποια η διαφορά εισοδήματος και φορολογητέου εισοδήματος; · Γνώση · Jackal Accountant",
+      "lang": "el",
+      "errors": []
+    },
+    "el-signed-in /gnosi/oros/FAQ-0027": {
+      "status": 200,
+      "title": "Πού βρίσκω το εκκαθαριστικό μου; · Γνώση · Jackal Accountant",
+      "lang": "el",
+      "errors": []
+    },
+    "el-signed-in /gnosi/oros/FAQ-0028": {
+      "status": 200,
+      "title": "Πώς ελέγχω τις φορολογικές μου οφειλές; · Γνώση · Jackal Accountant",
+      "lang": "el",
+      "errors": []
+    },
+    "el-signed-in /gnosi/oros/FAQ-0029": {
+      "status": 200,
+      "title": "Πότε χρειάζεται φορολογική ενημερότητα; · Γνώση · Jackal Accountant",
+      "lang": "el",
+      "errors": []
+    },
+    "el-signed-in /gnosi/oros/FAQ-0030": {
+      "status": 200,
+      "title": "Τι ισχύει αν έχω εισόδημα από το εξωτερικό; · Γνώση · Jackal Accountant",
+      "lang": "el",
+      "errors": []
+    },
+    "el-signed-in /gnosi/oros/LEX-0031": {
+      "status": 200,
+      "title": "Ατομική επιχείρηση · Γνώση · Jackal Accountant",
+      "lang": "el",
+      "errors": []
+    },
+    "el-signed-in /gnosi/oros/LEX-0032": {
+      "status": 200,
+      "title": "ΟΕ · Γνώση · Jackal Accountant",
+      "lang": "el",
+      "errors": []
+    },
+    "el-signed-in /gnosi/oros/LEX-0033": {
+      "status": 200,
+      "title": "ΕΕ · Γνώση · Jackal Accountant",
+      "lang": "el",
+      "errors": []
+    },
+    "el-signed-in /gnosi/oros/LEX-0034": {
+      "status": 200,
+      "title": "ΙΚΕ · Γνώση · Jackal Accountant",
+      "lang": "el",
+      "errors": []
+    },
+    "el-signed-in /gnosi/oros/LEX-0035": {
+      "status": 200,
+      "title": "ΕΠΕ · Γνώση · Jackal Accountant",
+      "lang": "el",
+      "errors": []
+    }
+  },
+  "broken_links": [],
+  "issues": [],
+  "journey": [
+    {
+      "step": "1 homepage offers exactly the two paths",
+      "ok": true,
+      "detail": "/politis/eukairies, /epixeiriseis/eukairies"
+    },
+    {
+      "step": "2b open records due for re-check stay listed (A21 in «Οικογένεια»)",
+      "ok": true,
+      "detail": "1 cards, 0 «Χρειάζεται νέος έλεγχος» labels"
+    },
+    {
+      "step": "2 citizen opportunities list shows cards",
+      "ok": true,
+      "detail": "6 cards"
+    },
+    {
+      "step": "2a business opportunities list shows cards",
+      "ok": true,
+      "detail": "10 cards"
+    },
+    {
+      "step": "3 opportunity detail opens with official links",
+      "ok": true,
+      "detail": "/politis/eukairies/22b1c095-c191-462f-ab5e-da2c928fb142, 11 official links"
+    },
+    {
+      "step": "4 register leads to the profile",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "step": "5 profile answers are saved",
+      "ok": true,
+      "detail": "employment_status after reload = unemployed"
+    },
+    {
+      "step": "6 «Ο λογαριασμός μου» (citizen) shows personalised results",
+      "ok": true,
+      "detail": "2 cards; labels: Ανοιχτές αιτήσεις / Πιθανώς επιλέξιμος/η — χρειάζεται επιβεβαίωση / Συνεχής υποβολή / Χρειάζονται περισσότερα στοιχεία"
+    },
+    {
+      "step": "6b no EU call of unconfirmed applicant type among an individual's personal matches",
+      "ok": true,
+      "detail": "0 EU cards in the personal results"
+    },
+    {
+      "step": "7 opened match explains eligibility",
+      "ok": true,
+      "detail": "/politis/eukairies/4e3208ed-2913-4591-b190-c79fbe70067c; decision record: true"
+    },
+    {
+      "step": "8 official source link present",
+      "ok": true,
+      "detail": "https://www.gov.gr/el/services/1001289/aitese-epidomatos-anergias"
+    }
+  ],
+  "interactions": [
+    {
+      "check": "crawl el-desktop",
+      "pages": 70
+    },
+    {
+      "check": "crawl en-desktop",
+      "pages": 70
+    },
+    {
+      "check": "crawl el-phone",
+      "pages": 70
+    },
+    {
+      "check": "homepage choices",
+      "targets": [
+        "/politis/eukairies",
+        "/epixeiriseis/eukairies"
+      ]
+    },
+    {
+      "check": "language switch to EN",
+      "nav": "OpportunitiesNewsKnowledgeWhat is JackalMy account",
+      "htmlLangBeforeReload": "en",
+      "htmlLangAfterReload": "en"
+    },
+    {
+      "check": "category chips /politis/eukairies",
+      "chips": [
+        "/politis/eukairies?cat=employment",
+        "/politis/eukairies?cat=education",
+        "/politis/eukairies?cat=housing-energy",
+        "/politis/eukairies?cat=family",
+        "/politis/eukairies?cat=tax"
+      ]
+    },
+    {
+      "check": "category chips /epixeiriseis/eukairies",
+      "chips": []
+    },
+    {
+      "check": "search «επίδομα»",
+      "cards": 2
+    },
+    {
+      "check": "search «επιδομα» (no accents)",
+      "cards": 2
+    },
+    {
+      "check": "filter cat=family",
+      "cards": 1
+    },
+    {
+      "check": "filter cat=employment",
+      "cards": 1
+    },
+    {
+      "check": "filter scope=gr",
+      "cards": 5
+    },
+    {
+      "check": "filter status=open",
+      "cards": 4
+    },
+    {
+      "check": "filter type=benefit",
+      "cards": 2
+    },
+    {
+      "check": "filter audience=employee_jobseeker",
+      "cards": 2
+    },
+    {
+      "check": "profile form fields visible",
+      "fields": 121
+    },
+    {
+      "check": "profile save feedback",
+      "text": "Το προφίλ αποθηκεύτηκε."
+    },
+    {
+      "check": "programmes not confirmed for individuals listed apart",
+      "present": false
+    },
+    {
+      "check": "For Me mentions missing information / questions",
+      "hits": 8
+    },
+    {
+      "check": "guides search «ανεργια»",
+      "cards": 1
+    },
+    {
+      "check": "guides category benefits",
+      "cards": 4
+    },
+    {
+      "check": "crawl el-signed-in",
+      "pages": 70
+    }
+  ],
+  "summary": {
+    "critical": 0,
+    "high": 0,
+    "medium": 0,
+    "low": 0
+  }
+}

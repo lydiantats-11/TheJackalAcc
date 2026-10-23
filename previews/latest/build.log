@@ -3,29 +3,60 @@
 > next build
 
 ▲ Next.js 16.4.0 (Turbopack)
-✓ Running next.config.ts took 31ms
+✓ Running next.config.ts took 22ms
 ⚠ No build cache found. Please configure build caching for faster rebuilds. Read more: https://nextjs.org/docs/messages/no-cache
 
   Creating an optimized production build ...
+✓ Compiled successfully in 5.1s
+  Running TypeScript ...
+  Finished TypeScript in 7.5s ...
+  Collecting page data using 3 workers ...
+  Generating static pages using 3 workers (0/21) ...
+  Generating static pages using 3 workers (5/21) 
+  Generating static pages using 3 workers (10/21) 
+  Generating static pages using 3 workers (15/21) 
+✓ Generating static pages using 3 workers (21/21) in 205ms
+  Finalizing page optimization ...
 
-> Build error occurred
-Error: Turbopack build failed with 1 error:
-./src/lib/knowledge/schema.ts:85:14
-Error: the name `sectionById` is defined multiple times
-  [90m83 |[0m [36mexport[0m [36mconst[0m sectionById = (id: [33mSectionId[0m) => [33mSECTIONS[0m.find((s) => s.id === id)!;
-  [90m84 |[0m [36mexport[0m [36mconst[0m topicById = (id: string) => [33mTOPICS[0m.find((t) => t.id === id) ?? [36mnull[0m;
-[31m[1m>[0m [90m85 |[0m [36mexport[0m [36mconst[0m sectionById = (id: string) => [33mSECTIONS[0m.find((s) => s.id === id) ?? [36mnull[0m;
-  [90m   |[0m              [31m[1m^^^^^^^^^^^[0m
-  [90m86 |[0m
-  [90m87 |[0m [90m/** Greek alphabet, then Latin, for the dictionary index. */[0m
-  [90m88 |[0m [36mexport[0m [36mconst[0m [33mGREEK_LETTERS[0m = [32m"ΑΒΓΔΕΖΗΘΙΚΛΜΝΞΟΠΡΣΤΥΦΧΨΩ"[0m.split([32m""[0m);
+Route (app)
+┌ ƒ /
+├ ƒ /_not-found
+├ ƒ /[aud]
+├ ƒ /[aud]/eukairies
+├ ƒ /[aud]/eukairies/[id]
+├ ƒ /[aud]/jackal
+├ ƒ /[aud]/logariasmos
+├ ƒ /[aud]/nea
+├ ƒ /[aud]/odigoi
+├ ƒ /[aud]/odigoi/[slug]
+├ ƒ /about
+├ ƒ /admin
+├ ƒ /admin/review
+├ ƒ /admin/sources
+├ ƒ /api/health
+├ ƒ /api/me/export
+├ ƒ /categories
+├ ƒ /dashboard
+├ ƒ /for-me
+├ ƒ /gnosi
+├ ƒ /gnosi/lexiko
+├ ƒ /gnosi/oros/[id]
+├ ƒ /gnosi/syxnes-erotiseis
+├ ƒ /gnosi/themata
+├ ƒ /gnosi/themata/[topic]
+├ ƒ /gnosi/vasika
+├ ƒ /guides
+├ ƒ /guides/[slug]
+├ ƒ /lab/espa-example
+├ ƒ /login
+├ ƒ /opportunities
+├ ƒ /opportunities/[id]
+├ ƒ /opportunities/[id]/decision
+├ ƒ /profile
+└ ƒ /register
 
-Ecmascript file had an error
 
-Import trace:
-  Server Component:
-    ./src/lib/knowledge/schema.ts
-    ./src/app/gnosi/layout.tsx
+ƒ Proxy (Middleware)
 
+ƒ  (Dynamic)  server-rendered on demand
 
-    at ignore-listed frames
