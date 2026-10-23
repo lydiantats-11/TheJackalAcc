@@ -47,7 +47,7 @@ describe("1. ΔΑΜ22 and ΔΑΜ23 — the exact budget term of the official cal
   it("the database seed carries the same amounts, basis and summaries", () => {
     for (const k of ["opske:23487", "opske:23466"]) {
       const block = sql.slice(sql.indexOf(`-- ${b[k].label}:`), sql.indexOf(`WHERE external_key = '${k}'`));
-      expect(block).toContain(JSON.stringify(b[k].project_budget));
+      expect(block.replace(/\s+/g, "")).toContain(JSON.stringify(b[k].project_budget));
       expect(block).toContain(b[k].summary_plain.replace(/'/g, "''"));
     }
   });
