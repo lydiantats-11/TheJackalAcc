@@ -16,11 +16,12 @@ export const KINDS = ["term", "article", "faq"] as const;
 export type Kind = (typeof KINDS)[number];
 
 /** The four sections; the first three are kinds, «Θέματα» is a view over all of them. */
+/** Section order (owner, 23 Oct 2026 16:37): Θέματα · Λεξικό · Μάθε τα βασικά · Συχνές Ερωτήσεις. */
 export const SECTIONS = [
+  { id: "themata", kind: null, name: { el: "Θέματα", en: "Topics" }, lead: { el: "Όλο το περιεχόμενο της Γνώσης, οργανωμένο σε οκτώ θεματικές.", en: "All Knowledge content, organised into eight topics." } },
   { id: "lexiko", kind: "term", name: { el: "Λεξικό", en: "Dictionary" }, lead: { el: "Όροι από φορολογία, επιχειρήσεις, χρηματοδότηση και δημόσια διοίκηση, με την επίσημη πηγή τους.", en: "Terms from tax, business, funding and public administration, with their official source." } },
   { id: "vasika", kind: "article", name: { el: "Μάθε τα βασικά", en: "Learn the Basics" }, lead: { el: "Σύντομα κείμενα που εξηγούν βασικές έννοιες με απλά λόγια.", en: "Short pieces that explain key ideas in plain language." } },
   { id: "syxnes-erotiseis", kind: "faq", name: { el: "Συχνές Ερωτήσεις", en: "FAQ" }, lead: { el: "Σύντομες απαντήσεις σε πρακτικές ερωτήσεις, με επίσημες παραπομπές.", en: "Short answers to practical questions, with official references." } },
-  { id: "themata", kind: null, name: { el: "Θέματα", en: "Topics" }, lead: { el: "Όλο το περιεχόμενο της Γνώσης, οργανωμένο σε οκτώ θεματικές.", en: "All Knowledge content, organised into eight topics." } },
 ] as const;
 export type SectionId = (typeof SECTIONS)[number]["id"];
 
@@ -79,6 +80,7 @@ export function publicationGate(e: Entry): { ok: boolean; missing: string[] } {
 }
 
 export const sectionOfKind = (k: Kind) => SECTIONS.find((s) => s.kind === k)!;
+export const sectionById = (id: SectionId) => SECTIONS.find((s) => s.id === id)!;
 export const topicById = (id: string) => TOPICS.find((t) => t.id === id) ?? null;
 export const sectionById = (id: string) => SECTIONS.find((s) => s.id === id) ?? null;
 

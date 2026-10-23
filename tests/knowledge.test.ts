@@ -9,7 +9,8 @@ import { GREEK_LETTERS, SECTIONS, TOPICS, indexLetter, linkParts, matches, publi
 import { DRAFTS_FOR_TESTS, FIXTURES_FOR_TESTS, REGISTER_FOR_TESTS, draftsEnabled, entryById, fixturesEnabled, publishedEntries, registerCounts, visibleEntries } from "@/lib/knowledge/store";
 import { KNOWLEDGE_PATH } from "@/lib/site/audience";
 import { SITE } from "@/lib/site/copy";
-import { browserLabels } from "@/components/knowledge";
+import { browserLabels, toItems } from "@/components/knowledge";
+import { filterAndRank } from "@/lib/knowledge/search";
 
 const root = join(__dirname, "..");
 const read = (p: string) => readFileSync(join(root, p), "utf8");
@@ -150,10 +151,25 @@ describe("the K1 register as drafts in the private preview (owner, 23 Oct 2026 1
     expect(read(".github/workflows/design-preview.yml")).toContain("JACKAL_KNOWLEDGE_DRAFTS=1 PORT=3000 npm start");
     expect(read(".github/workflows/static-snapshot.yml")).toContain("JACKAL_KNOWLEDGE_DRAFTS=1 PORT=3000 npm start");
   });
-  it("every page says so: the draft banner, a «Πρόχειρο» tag on each item and entry, and the review status", () => {
+  it("search over the real terms: «φορολογια», «ΚΑΔ», «ΕΣΠΑ», «ΙΚΕ» (owner's examples) — accents ignored, exact title first", () => {
+    const items = toItems(DRAFTS_FOR_TESTS, "el");
+    const ids = (q: string) => filterAndRank(items, q).map((i) => i.id);
+    expect(ids("φορολογια")).toEqual(expect.arrayContaining(["LEX-0018", "BAS-0023", "BAS-0170"]));
+    expect(ids("φορολογία")).toEqual(ids("φορολογια"));
+    expect(ids("ΚΑΔ")[0]).toBe("LEX-0041");
+    expect(ids("καδ")).toEqual(ids("ΚΑΔ"));
+    expect(ids("ΕΣΠΑ")[0]).toBe("LEX-0116");
+    expect(ids("ΕΣΠΑ")).toEqual(expect.arrayContaining(["BAS-0145"]));
+    expect(ids("ΙΚΕ")[0]).toBe("LEX-0034");
+    expect(ids("ΙΚΕ").indexOf("FAQ-0060")).toBeLessThan(ids("ΙΚΕ").indexOf("LEX-0002"));
+    expect(filterAndRank(items, "").length).toBe(221);
+    expect(filterAndRank(items, "", "forologia").every((i) => i.topic === "forologia")).toBe(true);
+  });
+  it("every page says so: the banner, an «Υπό επαλήθευση» tag on each item and entry, and the review status", () => {
     expect(read("src/app/gnosi/layout.tsx")).toContain("{anyDraft && <DraftBanner s={s} />}");
-    expect(SITE.el.knowledge.draftBanner).toMatch(/^ΠΡΟΧΕΙΡΟ ΠΕΡΙΕΧΟΜΕΝΟ — ΜΟΝΟ ΓΙΑ ΕΣΩΤΕΡΙΚΟ ΕΛΕΓΧΟ/);
-    expect(SITE.en.knowledge.draftBanner).toMatch(/^DRAFT CONTENT — FOR INTERNAL REVIEW ONLY/);
+    expect(SITE.el.knowledge.draftBanner).toMatch(/^ΥΠΟ ΕΠΑΛΗΘΕΥΣΗ — ΜΟΝΟ ΓΙΑ ΕΣΩΤΕΡΙΚΟ ΕΛΕΓΧΟ/);
+    expect(SITE.el.knowledge.draftTag).toBe("Υπό επαλήθευση");
+    expect(SITE.en.knowledge.draftBanner).toMatch(/^UNDER VERIFICATION — FOR INTERNAL REVIEW ONLY/);
     expect(read("src/components/knowledge-browser.tsx")).toContain("{i.isDraft && <span className=\"tag gold\">{labels.draftTag}</span>}");
     const entry = read("src/app/gnosi/oros/[id]/page.tsx");
     expect(entry).toContain("{e.draftPreview && <span className=\"tag gold\">{k.draftTag}</span>}");
@@ -163,10 +179,10 @@ describe("the K1 register as drafts in the private preview (owner, 23 Oct 2026 1
 });
 
 describe("structure: four sections over one content system, eight topics", () => {
-  it("exactly four sections; the first three are kinds of entry, «Θέματα» is a view", () => {
-    expect(SECTIONS.map((s) => s.name.el)).toEqual(["Λεξικό", "Μάθε τα βασικά", "Συχνές Ερωτήσεις", "Θέματα"]);
-    expect(SECTIONS.map((s) => s.name.en)).toEqual(["Dictionary", "Learn the Basics", "FAQ", "Topics"]);
-    expect(SECTIONS.map((s) => s.kind)).toEqual(["term", "article", "faq", null]);
+  it("exactly four sections in the owner's order (23 Oct 2026 16:37); «Θέματα» is a view, the other three are kinds of entry", () => {
+    expect(SECTIONS.map((s) => s.name.el)).toEqual(["Θέματα", "Λεξικό", "Μάθε τα βασικά", "Συχνές Ερωτήσεις"]);
+    expect(SECTIONS.map((s) => s.name.en)).toEqual(["Topics", "Dictionary", "Learn the Basics", "FAQ"]);
+    expect(SECTIONS.map((s) => s.kind)).toEqual([null, "term", "article", "faq"]);
   });
   it("the eight topics, in the owner's order", () => {
     expect(TOPICS.map((t) => t.name.el)).toEqual(["Φορολογία", "Επιχειρηματικότητα", "Οικονομικά & Χρηματοδότηση", "Εργασία & Ασφάλιση",

@@ -7,7 +7,7 @@
  */
 import Link from "next/link";
 import { useMemo, useState } from "react";
-import { fold } from "@/lib/text/search";
+import { filterAndRank } from "@/lib/knowledge/search";
 
 export interface BrowserItem {
   id: string;
@@ -22,6 +22,8 @@ export interface BrowserItem {
   isDraft: boolean;
   /** Folded text of both languages, for search. */
   hay: string;
+  /** Folded titles (both languages): matches in the title come first. */
+  ft: string;
 }
 
 export interface BrowserLabels {
@@ -40,10 +42,7 @@ export function KnowledgeBrowser({ items, topics, letters, labels, initialQ = ""
   const [topic, setTopic] = useState(initialTopic);
   const [letter, setLetter] = useState("");
   const present = useMemo(() => new Set(items.map((i) => i.letter)), [items]);
-  const shown = useMemo(() => {
-    const words = fold(q).split(/[^\p{L}\p{N}]+/u).filter(Boolean);
-    return items.filter((i) => (!topic || i.topic === topic) && (!letter || i.letter === letter) && words.every((w) => i.hay.includes(w)));
-  }, [items, q, topic, letter]);
+  const shown = useMemo(() => filterAndRank(items, q, topic, letter), [items, q, topic, letter]);
   const usedTopics = topics.filter((t) => items.some((i) => i.topic === t.id));
 
   return (
@@ -77,7 +76,7 @@ export function KnowledgeBrowser({ items, topics, letters, labels, initialQ = ""
       {!items.length ? <p className="kn-empty">{labels.empty}</p> : !shown.length ? <p className="kn-empty">{labels.noResults}</p> : (
         <ul className="kn-list">
           {shown.map((i) => (
-            <li key={i.id} className="kn-item" data-synthetic={i.synthetic || undefined} data-draft={i.isDraft || undefined} data-topic={i.topic} data-letter={i.letter} data-hay={i.hay}>
+            <li key={i.id} className="kn-item" data-synthetic={i.synthetic || undefined} data-draft={i.isDraft || undefined} data-topic={i.topic} data-letter={i.letter} data-hay={i.hay} data-ft={i.ft}>
               <Link href={`${base}/${i.id}`}>
                 <span className="kn-item-title">{i.title}</span>
                 {i.alt && <span className="kn-item-alt">{i.alt}</span>}

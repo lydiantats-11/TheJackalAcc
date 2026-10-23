@@ -1,12 +1,12 @@
 import { getDict } from "@/lib/i18n/server";
 import { SITE } from "@/lib/site/copy";
 import { titled } from "@/lib/site/page-title";
-import { GREEK_LETTERS, LATIN_LETTERS, SECTIONS, byTitle } from "@/lib/knowledge/schema";
+import { GREEK_LETTERS, LATIN_LETTERS, sectionById, byTitle } from "@/lib/knowledge/schema";
 import { visibleEntries } from "@/lib/knowledge/store";
 import { KnowledgeBrowser } from "@/components/knowledge-browser";
 import { browserLabels, toItems, topicOptions } from "@/components/knowledge";
 
-const SECTION = SECTIONS[1];
+const SECTION = sectionById("vasika");
 export const generateMetadata = titled(({ s }) => `${SECTION.name[s === SITE.el ? "el" : "en"]} · ${s.knowledge.title}`);
 
 /** Γνώση — «${SECTION.name.el}»: entries of one kind only (the same records the other sections link to). */

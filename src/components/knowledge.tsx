@@ -3,7 +3,7 @@
  */
 import Link from "next/link";
 import { fold } from "@/lib/text/search";
-import { SECTIONS, TOPICS, indexLetter, linkParts, sectionOfKind, type Entry, type Locale } from "@/lib/knowledge/schema";
+import { TOPICS, indexLetter, linkParts, sectionOfKind, type Entry, type Locale } from "@/lib/knowledge/schema";
 import { entryById } from "@/lib/knowledge/store";
 import type { SiteCopy } from "@/lib/site/copy";
 import type { BrowserItem, BrowserLabels } from "./knowledge-browser";
@@ -29,6 +29,7 @@ export function toItems(entries: Entry[], l: Locale): BrowserItem[] {
       snippet: body.length > 180 ? `${body.slice(0, 177).trimEnd()}…` : body,
       letter: indexLetter(t), synthetic: !!e.synthetic, isDraft: !!e.draftPreview,
       hay: fold([e.title.el, e.title.en, e.body?.el, e.body?.en].filter(Boolean).join(" ")),
+      ft: [e.title.el, e.title.en].filter(Boolean).map((x) => fold(x!).replace(/[^\p{L}\p{N}]+/gu, " ").trim()).join("|"),
     };
   });
 }
@@ -38,7 +39,7 @@ export function browserLabels(s: SiteCopy, l: Locale): BrowserLabels {
   return {
     searchLabel: k.searchLabel, searchPlaceholder: k.searchPlaceholder, searchButton: k.searchButton, all: k.all, allTopics: k.allTopics,
     topicLabel: k.topicLabel, letters: k.letters, noResults: k.noResults, results: { one: k.results(1).replace(/^1 /, ""), many: k.results(2).replace(/^2 /, "") }, fixtureTag: k.fixtureTag, draftTag: k.draftTag, empty: k.empty,
-    kindName: { term: SECTIONS[0].name[l], article: SECTIONS[1].name[l], faq: SECTIONS[2].name[l] },
+    kindName: { term: sectionOfKind("term").name[l], article: sectionOfKind("article").name[l], faq: sectionOfKind("faq").name[l] },
   };
 }
 

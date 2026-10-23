@@ -1,11 +1,11 @@
 import { getDict } from "@/lib/i18n/server";
 import { SITE } from "@/lib/site/copy";
 import { titled } from "@/lib/site/page-title";
-import { SECTIONS } from "@/lib/knowledge/schema";
+import { sectionById } from "@/lib/knowledge/schema";
 import { visibleEntries } from "@/lib/knowledge/store";
 import { TopicTiles } from "@/components/knowledge";
 
-const SECTION = SECTIONS[3];
+const SECTION = sectionById("themata");
 export const generateMetadata = titled(({ s }) => `${SECTION.name[s === SITE.el ? "el" : "en"]} · ${s.knowledge.title}`);
 
 /** Γνώση — «Θέματα»: the eight topics, a view over the same entries (no copies). */

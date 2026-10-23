@@ -75,6 +75,19 @@ if (label === "preview") {
   await page.fill("#kn-q", "αφμ");
   const titles = await page.locator(".kn-item .kn-item-title").allInnerTexts();
   ok("preview: lower-case search «αφμ» finds «ΑΦΜ»", titles.includes("ΑΦΜ"), titles.slice(0, 5).join(" | "));
+  // the owner's search examples (23 Oct 2026), on the Γνώση home page over all 221 entries
+  await page.goto(`${BASE}/gnosi`, { waitUntil: "networkidle" });
+  const tabs = await page.locator(".kn-tabs a").allInnerTexts();
+  ok("preview: section order Θέματα · Λεξικό · Μάθε τα βασικά · Συχνές Ερωτήσεις", tabs.slice(1).join(" · ") === "Θέματα · Λεξικό · Μάθε τα βασικά · Συχνές Ερωτήσεις", tabs.join(" · "));
+  for (const [q, first] of [["ΙΚΕ", "ΙΚΕ"], ["ικε", "ΙΚΕ"], ["ΚΑΔ", "ΚΑΔ"], ["ΕΣΠΑ", "ΕΣΠΑ"], ["φορολογια", null]]) {
+    await page.fill("#kn-q", q);
+    const got = await page.locator(".kn-item .kn-item-title").allInnerTexts();
+    ok(`preview: search «${q}»${first ? ` lists «${first}» first` : " finds entries"}`, first ? got[0] === first : got.length > 0, `${got.length}: ${got.slice(0, 4).join(" | ")}`);
+  }
+  await page.fill("#kn-q", "ΙΚΕ");
+  await page.screenshot({ path: `${out}/desktop-el-search-ike.jpg`, type: "jpeg", quality: 80 });
+  await page.goto(`${BASE}/gnosi/lexiko`, { waitUntil: "networkidle" });
+  await page.fill("#kn-q", "αφμ");
   await page.screenshot({ path: `${out}/desktop-el-lexiko-search.jpg`, type: "jpeg", quality: 80 });
   await ctx.close();
   // from a path, Γνώση keeps the tabs of that path

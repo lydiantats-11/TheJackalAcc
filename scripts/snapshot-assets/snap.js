@@ -54,13 +54,22 @@
       box.querySelectorAll(sel).forEach(function (b) { b.setAttribute("aria-pressed", String(b.getAttribute(attr) === value)); });
     }
     function apply() {
-      var words = fold(input ? input.value : "").split(/[^\p{L}\p{N}]+/u).filter(Boolean), n = 0;
+      var words = fold(input ? input.value : "").split(/[^\p{L}\p{N}]+/u).filter(Boolean), n = 0, whole = words.join(" ");
+      function rank(li) {
+        var ft = li.getAttribute("data-ft") || "";
+        if (!words.length) return 0;
+        return ft.split("|").indexOf(whole) !== -1 ? 0 : words.every(function (w) { return ft.indexOf(w) !== -1; }) ? 1 : 2;
+      }
       items.forEach(function (li) {
         var hay = li.getAttribute("data-hay") || "";
         var show = (!state.topic || li.getAttribute("data-topic") === state.topic) && (!state.letter || li.getAttribute("data-letter") === state.letter)
           && words.every(function (w) { return hay.indexOf(w) !== -1; });
         li.hidden = !show; if (show) n++;
       });
+      // Same order as the app: exact title, then title matches, then text matches; otherwise alphabetical.
+      var list = items.length && items[0].parentNode;
+      if (list) items.map(function (li, k) { return { li: li, k: k, r: rank(li) }; })
+        .sort(function (a, b) { return a.r - b.r || a.k - b.k; }).forEach(function (x) { list.appendChild(x.li); });
       if (count) count.textContent = n + " " + (n === 1 ? count.getAttribute("data-one") : count.getAttribute("data-many"));
     }
     if (input) input.addEventListener("input", apply);
