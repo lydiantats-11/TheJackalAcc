@@ -5,104 +5,51 @@
 
 [1m[30m[46m RUN [49m[39m[22m [36mv5.0.4 [39m[90m/home/runner/work/TheJackalAcc/TheJackalAcc[39m
 
- [32m✓[39m tests/ingestion.test.ts [2m([22m[2m27 tests[22m[2m)[22m[33m 1734[2mms[22m[39m
- [32m✓[39m tests/knowledge.test.ts [2m([22m[2m29 tests[22m[2m)[22m[32m 58[2mms[22m[39m
- [32m✓[39m tests/engine.test.ts [2m([22m[2m27 tests[22m[2m)[22m[32m 100[2mms[22m[39m
- [32m✓[39m tests/corrections-2026-10-23.test.ts [2m([22m[2m22 tests[22m[2m)[22m[32m 54[2mms[22m[39m
- [32m✓[39m tests/extraction.test.ts [2m([22m[2m13 tests[22m[2m)[22m[33m 1276[2mms[22m[39m
- [32m✓[39m tests/real-calls.test.ts [2m([22m[2m22 tests[22m[2m)[22m[32m 35[2mms[22m[39m
- [32m✓[39m tests/audience.test.ts [2m([22m[2m21 tests[22m[2m)[22m[32m 22[2mms[22m[39m
- [32m✓[39m tests/credibility-money.test.ts [2m([22m[2m18 tests[22m[2m)[22m[32m 16[2mms[22m[39m
- [32m✓[39m tests/guides-catalog.test.ts [2m([22m[2m20 tests[22m[2m)[22m[32m 18[2mms[22m[39m
- [32m✓[39m tests/corrections-2026-10-22.test.ts [2m([22m[2m15 tests[22m[2m)[22m[32m 10[2mms[22m[39m
- [32m✓[39m tests/auth-and-access.test.ts [2m([22m[2m11 tests[22m[2m)[22m[33m 1194[2mms[22m[39m
+ [32m✓[39m tests/ingestion.test.ts [2m([22m[2m27 tests[22m[2m)[22m[33m 1585[2mms[22m[39m
+ [32m✓[39m tests/knowledge.test.ts [2m([22m[2m29 tests[22m[2m)[22m[32m 63[2mms[22m[39m
+ [32m✓[39m tests/engine.test.ts [2m([22m[2m27 tests[22m[2m)[22m[32m 136[2mms[22m[39m
+ [32m✓[39m tests/corrections-2026-10-23.test.ts [2m([22m[2m22 tests[22m[2m)[22m[32m 65[2mms[22m[39m
+ [32m✓[39m tests/extraction.test.ts [2m([22m[2m13 tests[22m[2m)[22m[33m 1217[2mms[22m[39m
+ [32m✓[39m tests/real-calls.test.ts [2m([22m[2m22 tests[22m[2m)[22m[32m 39[2mms[22m[39m
+ [32m✓[39m tests/audience.test.ts [2m([22m[2m21 tests[22m[2m)[22m[32m 26[2mms[22m[39m
+ [32m✓[39m tests/credibility-money.test.ts [2m([22m[2m18 tests[22m[2m)[22m[32m 17[2mms[22m[39m
+ [32m✓[39m tests/guides-catalog.test.ts [2m([22m[2m20 tests[22m[2m)[22m[32m 21[2mms[22m[39m
+ [32m✓[39m tests/corrections-2026-10-22.test.ts [2m([22m[2m15 tests[22m[2m)[22m[32m 12[2mms[22m[39m
+ [32m✓[39m tests/auth-and-access.test.ts [2m([22m[2m11 tests[22m[2m)[22m[33m 1198[2mms[22m[39m
    [32m✓[39m auth & access control (PostgreSQL) [2m(11)[22m
-     [33m[2m✓[22m[39m rate-limits repeated failed logins[33m 396[2mms[22m[39m
- [32m✓[39m tests/end-to-end-flow.test.ts [2m([22m[2m3 tests[22m[2m)[22m[33m 564[2mms[22m[39m
- [32m✓[39m tests/personas.test.ts [2m([22m[2m13 tests[22m[2m)[22m[32m 69[2mms[22m[39m
- [32m✓[39m tests/seed-corrections-db.test.ts [2m([22m[2m7 tests[22m[2m)[22m[33m 449[2mms[22m[39m
- [32m✓[39m tests/residence-and-records.test.ts [2m([22m[2m15 tests[22m[2m)[22m[32m 17[2mms[22m[39m
- [32m✓[39m tests/official-details.test.ts [2m([22m[2m7 tests[22m[2m)[22m[32m 9[2mms[22m[39m
- [32m✓[39m tests/guide-status.test.ts [2m([22m[2m13 tests[22m[2m)[22m[32m 32[2mms[22m[39m
- [32m✓[39m tests/business-records.test.ts [2m([22m[2m9 tests[22m[2m)[22m[32m 25[2mms[22m[39m
- [32m✓[39m tests/discovery.test.ts [2m([22m[2m11 tests[22m[2m)[22m[32m 11[2mms[22m[39m
- [32m✓[39m tests/record-status.test.ts [2m([22m[2m10 tests[22m[2m)[22m[32m 7[2mms[22m[39m
- [32m✓[39m tests/status-and-sources.test.ts [2m([22m[2m12 tests[22m[2m)[22m[32m 40[2mms[22m[39m
- [32m✓[39m tests/brief-feed.test.ts [2m([22m[2m7 tests[22m[2m)[22m[32m 7[2mms[22m[39m
- [32m✓[39m tests/scenarios-and-money.test.ts [2m([22m[2m8 tests[22m[2m)[22m[32m 26[2mms[22m[39m
- [31m❯[39m tests/i18n.test.ts [2m([22m[2m26 tests[22m[2m | [22m[31m1 failed[39m[2m)[22m[32m 21[2mms[22m[39m
-   [31m❯[39m interface language (EL + EN) [2m(26)[22m
-     [32m✓[39m guide categories: same keys in both languages[32m 2[2mms[22m[39m
-     [32m✓[39m guide categories: Greek addresses the reader formally (εσείς), never informally[32m 1[2mms[22m[39m
-     [32m✓[39m guide categories: English contains no Greek except official names and acronyms[32m 0[2mms[22m[39m
-     [32m✓[39m guide categories: no empty strings, doubled spaces or stray spaces before punctuation[32m 0[2mms[22m[39m
-     [32m✓[39m guide categories: no time-zone codes in visible text[32m 0[2mms[22m[39m
-     [32m✓[39m dictionary: same keys in both languages[32m 0[2mms[22m[39m
-     [32m✓[39m dictionary: Greek addresses the reader formally (εσείς), never informally[32m 1[2mms[22m[39m
-     [32m✓[39m dictionary: English contains no Greek except official names and acronyms[32m 0[2mms[22m[39m
-     [32m✓[39m dictionary: no empty strings, doubled spaces or stray spaces before punctuation[32m 2[2mms[22m[39m
-     [32m✓[39m dictionary: no time-zone codes in visible text[32m 0[2mms[22m[39m
-     [32m✓[39m site copy: same keys in both languages[32m 0[2mms[22m[39m
-[31m     [31m×[31m site copy: Greek addresses the reader formally (εσείς), never informally[39m[32m 7[2mms[22m[39m
-     [32m✓[39m site copy: English contains no Greek except official names and acronyms[32m 0[2mms[22m[39m
-     [32m✓[39m site copy: no empty strings, doubled spaces or stray spaces before punctuation[32m 1[2mms[22m[39m
-     [32m✓[39m site copy: no time-zone codes in visible text[32m 0[2mms[22m[39m
-     [32m✓[39m guides: same keys in both languages[32m 0[2mms[22m[39m
-     [32m✓[39m guides: Greek addresses the reader formally (εσείς), never informally[32m 0[2mms[22m[39m
-     [32m✓[39m guides: English contains no Greek except official names and acronyms[32m 0[2mms[22m[39m
-     [32m✓[39m guides: no empty strings, doubled spaces or stray spaces before punctuation[32m 0[2mms[22m[39m
-     [32m✓[39m guides: no time-zone codes in visible text[32m 0[2mms[22m[39m
-     [32m✓[39m categories: same keys in both languages[32m 0[2mms[22m[39m
-     [32m✓[39m categories: Greek addresses the reader formally (εσείς), never informally[32m 0[2mms[22m[39m
-     [32m✓[39m categories: English contains no Greek except official names and acronyms[32m 0[2mms[22m[39m
-     [32m✓[39m categories: no empty strings, doubled spaces or stray spaces before punctuation[32m 0[2mms[22m[39m
-     [32m✓[39m categories: no time-zone codes in visible text[32m 0[2mms[22m[39m
-     [32m✓[39m Greek category names use sentence case (Greek does not capitalise every word)[32m 0[2mms[22m[39m
- [32m✓[39m tests/industries.test.ts [2m([22m[2m5 tests[22m[2m)[22m[32m 65[2mms[22m[39m
- [32m✓[39m tests/daily-report.test.ts [2m([22m[2m6 tests[22m[2m)[22m[32m 6[2mms[22m[39m
- [32m✓[39m tests/profile-update.test.ts [2m([22m[2m6 tests[22m[2m)[22m[33m 374[2mms[22m[39m
- [32m✓[39m tests/credibility.test.ts [2m([22m[2m7 tests[22m[2m)[22m[32m 7[2mms[22m[39m
- [32m✓[39m tests/decision-record.test.ts [2m([22m[2m5 tests[22m[2m)[22m[32m 15[2mms[22m[39m
- [32m✓[39m tests/govgr-watch.test.ts [2m([22m[2m5 tests[22m[2m)[22m[32m 7[2mms[22m[39m
- [32m✓[39m tests/taxonomy.test.ts [2m([22m[2m5 tests[22m[2m)[22m[32m 7[2mms[22m[39m
- [32m✓[39m tests/apply-cta.test.ts [2m([22m[2m5 tests[22m[2m)[22m[32m 4[2mms[22m[39m
- [32m✓[39m tests/record-audit.test.ts [2m([22m[2m3 tests[22m[2m)[22m[32m 9[2mms[22m[39m
- [32m✓[39m tests/document-lists.test.ts [2m([22m[2m5 tests[22m[2m)[22m[32m 6[2mms[22m[39m
- [32m✓[39m tests/change-detection.test.ts [2m([22m[2m2 tests[22m[2m)[22m[32m 4[2mms[22m[39m
- [32m✓[39m tests/proxy.test.ts [2m([22m[2m2 tests[22m[2m)[22m[32m 9[2mms[22m[39m
- [32m✓[39m tests/question-impact.test.ts [2m([22m[2m2 tests[22m[2m)[22m[32m 7[2mms[22m[39m
+     [33m[2m✓[22m[39m rate-limits repeated failed logins[33m 398[2mms[22m[39m
+ [32m✓[39m tests/end-to-end-flow.test.ts [2m([22m[2m3 tests[22m[2m)[22m[33m 590[2mms[22m[39m
+ [32m✓[39m tests/personas.test.ts [2m([22m[2m13 tests[22m[2m)[22m[32m 91[2mms[22m[39m
+ [32m✓[39m tests/seed-corrections-db.test.ts [2m([22m[2m7 tests[22m[2m)[22m[33m 334[2mms[22m[39m
+ [32m✓[39m tests/residence-and-records.test.ts [2m([22m[2m15 tests[22m[2m)[22m[32m 19[2mms[22m[39m
+ [32m✓[39m tests/official-details.test.ts [2m([22m[2m7 tests[22m[2m)[22m[32m 11[2mms[22m[39m
+ [32m✓[39m tests/guide-status.test.ts [2m([22m[2m13 tests[22m[2m)[22m[32m 39[2mms[22m[39m
+ [32m✓[39m tests/business-records.test.ts [2m([22m[2m9 tests[22m[2m)[22m[32m 28[2mms[22m[39m
+ [32m✓[39m tests/discovery.test.ts [2m([22m[2m11 tests[22m[2m)[22m[32m 12[2mms[22m[39m
+ [32m✓[39m tests/record-status.test.ts [2m([22m[2m10 tests[22m[2m)[22m[32m 9[2mms[22m[39m
+ [32m✓[39m tests/status-and-sources.test.ts [2m([22m[2m12 tests[22m[2m)[22m[32m 43[2mms[22m[39m
+ [32m✓[39m tests/brief-feed.test.ts [2m([22m[2m7 tests[22m[2m)[22m[32m 8[2mms[22m[39m
+ [32m✓[39m tests/scenarios-and-money.test.ts [2m([22m[2m8 tests[22m[2m)[22m[32m 29[2mms[22m[39m
+ [32m✓[39m tests/i18n.test.ts [2m([22m[2m26 tests[22m[2m)[22m[32m 17[2mms[22m[39m
+ [32m✓[39m tests/industries.test.ts [2m([22m[2m5 tests[22m[2m)[22m[32m 83[2mms[22m[39m
+ [32m✓[39m tests/daily-report.test.ts [2m([22m[2m6 tests[22m[2m)[22m[32m 7[2mms[22m[39m
+ [32m✓[39m tests/profile-update.test.ts [2m([22m[2m6 tests[22m[2m)[22m[33m 377[2mms[22m[39m
+ [32m✓[39m tests/credibility.test.ts [2m([22m[2m7 tests[22m[2m)[22m[32m 8[2mms[22m[39m
+ [32m✓[39m tests/decision-record.test.ts [2m([22m[2m5 tests[22m[2m)[22m[32m 16[2mms[22m[39m
+ [32m✓[39m tests/govgr-watch.test.ts [2m([22m[2m5 tests[22m[2m)[22m[32m 9[2mms[22m[39m
+ [32m✓[39m tests/taxonomy.test.ts [2m([22m[2m5 tests[22m[2m)[22m[32m 9[2mms[22m[39m
+ [32m✓[39m tests/apply-cta.test.ts [2m([22m[2m5 tests[22m[2m)[22m[32m 5[2mms[22m[39m
+ [32m✓[39m tests/record-audit.test.ts [2m([22m[2m3 tests[22m[2m)[22m[32m 12[2mms[22m[39m
+ [32m✓[39m tests/document-lists.test.ts [2m([22m[2m5 tests[22m[2m)[22m[32m 10[2mms[22m[39m
+ [32m✓[39m tests/change-detection.test.ts [2m([22m[2m2 tests[22m[2m)[22m[32m 5[2mms[22m[39m
+ [32m✓[39m tests/proxy.test.ts [2m([22m[2m2 tests[22m[2m)[22m[32m 14[2mms[22m[39m
+ [32m✓[39m tests/question-impact.test.ts [2m([22m[2m2 tests[22m[2m)[22m[32m 8[2mms[22m[39m
 
-[31m⎯⎯⎯⎯⎯⎯⎯[39m[1m[41m Failed Tests 1 [49m[22m[31m⎯⎯⎯⎯⎯⎯⎯[39m
+[2m Test Files [22m [1m[32m37 passed[39m[22m[90m (37)[39m
+[2m      Tests [22m [1m[32m424 passed[39m[22m[90m (424)[39m
+[2m   Start at [22m 15:22:07
+[2m   Duration [22m 13.19s[2m (tests 67%, import 22%, transform 9%, worker 2%)[22m
 
-[41m[1m FAIL [22m[49m tests/i18n.test.ts[2m > [22minterface language (EL + EN)[2m > [22msite copy: Greek addresses the reader formally (εσείς), never informally
-[31m[1mAssertionError[22m: expected [ Array(1) ] to deeply equal [][39m
+[2m    Isolate [22m [33m37 workers spawned[39m[2m · ~99ms startup each (spawn + environment, per file)[22m
+[2m            [22m [2mat least ~3.56s faster with [22m[33misolate: false[39m[2m — reuses workers across files instead of one per file[22m
 
-[32m- Expected[39m
-[31m+ Received[39m
-
-[32m- [][39m
-[31m+ [[39m
-[31m+   "knowledge.searchPrompt: Τι θέλεις να μάθεις;",[39m
-[31m+ ][39m
-
-[36m [2m❯[22m tests/i18n.test.ts:[2m49:92[22m[39m
-    [90m 47|[39m     });
-    [90m 48|[39m     it(`${name}: Greek addresses the reader formally (εσείς), never in…
-    [90m 49|[39m       expect([...el].filter(([, v]) => INFORMAL_EL.test(v)).map(([k, v…
-    [90m   |[39m                                                                                            [31m^[39m
-    [90m 50|[39m     });
-    [90m 51|[39m     it(`${name}: English contains no Greek except official names and a…
-
-[31m[2m⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯[22m[39m
-
-
-[2m Test Files [22m [1m[31m1 failed[39m[22m[2m | [22m[1m[32m36 passed[39m[22m[90m (37)[39m
-[2m      Tests [22m [1m[31m1 failed[39m[22m[2m | [22m[1m[32m423 passed[39m[22m[90m (424)[39m
-[2m   Start at [22m 15:13:10
-[2m   Duration [22m 12.49s[2m (tests 70%, import 19%, transform 9%, worker 1%)[22m
-
-[2m    Isolate [22m [33m37 workers spawned[39m[2m · ~88ms startup each (spawn + environment, per file)[22m
-[2m            [22m [2mat least ~3.15s faster with [22m[33misolate: false[39m[2m — reuses workers across files instead of one per file[22m
-
-
-::error file=/home/runner/work/TheJackalAcc/TheJackalAcc/tests/i18n.test.ts,title=tests/i18n.test.ts > interface language (EL + EN) > site copy%3A Greek addresses the reader formally (εσείς)%2C never informally,line=49,column=92::AssertionError: expected [ Array(1) ] to deeply equal []%0A%0A- Expected%0A+ Received%0A%0A- []%0A+ [%0A+   "knowledge.searchPrompt: Τι θέλεις να μάθεις;",%0A+ ]%0A%0A ❯ tests/i18n.test.ts:49:92%0A%0A
