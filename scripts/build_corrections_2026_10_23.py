@@ -90,7 +90,9 @@ def main() -> None:
             f"summary_plain = {q(summary + ' Ποσό / όφελος: ' + benefit)}",
             f"deadline_original_text = {q(f['application_status']['deadline_original_wording']['el'])}",
             # no confirmed window open → no date and «Υπό επιβεβαίωση» (owner, 23 Oct 2026 14:32)
-            (f"closes_at = {q(nd)}, status = 'open'" if (nd := next_deadline_utc(rule, now)) else "closes_at = NULL, status = 'unverified'"),
+            # (the schema requires deadline_state = 'known' exactly when closes_at is set)
+            (f"closes_at = {q(nd)}, deadline_state = 'known', deadline_kind = 'official', status = 'open'" if (nd := next_deadline_utc(rule, now))
+             else "closes_at = NULL, deadline_state = 'unknown', deadline_kind = 'not_announced', status = 'unverified'"),
             f"status_evidence = status_evidence || {j({'rechecked_at': CHECKED_AT, 'deadline_rule': 'by_year_of_move', 'governing_document': rule['basis']['el']})}",
             f"last_retrieved_at = {q(CHECKED_AT)}, last_verified_at = {q(CHECKED_AT)}",
             "version = version + 1, updated_at = now()",

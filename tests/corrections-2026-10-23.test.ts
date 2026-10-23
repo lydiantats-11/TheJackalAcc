@@ -141,8 +141,8 @@ describe("4. one source for every page", () => {
   });
   it("the database seed carries the same confirmed deadline, or none", () => {
     const iso = (d: Date) => d.toISOString().replace(/\.\d{3}Z$/, "Z");
-    expect(sql).toContain(`closes_at = '${iso(nextDeadline(rule("art5b"), at("2026-10-23T09:00:00Z"))!)}', status = 'open'`);
-    expect(sql).toMatch(/closes_at = NULL, status = 'unverified'[\s\S]*?WHERE external_key = 'manual:art5a'/);
+    expect(sql).toContain(`closes_at = '${iso(nextDeadline(rule("art5b"), at("2026-10-23T09:00:00Z"))!)}', deadline_state = 'known', deadline_kind = 'official', status = 'open'`);
+    expect(sql).toMatch(/closes_at = NULL, deadline_state = 'unknown', deadline_kind = 'not_announced', status = 'unverified'[\s\S]*?WHERE external_key = 'manual:art5a'/);
     expect(sql).not.toContain("2027-");
     for (const id of ["art5a", "art5b"]) expect(sql).toContain(`deadline_original_text = '${rec(id).application_status.deadline_original_wording.el}'`);
   });
