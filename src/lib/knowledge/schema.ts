@@ -82,7 +82,6 @@ export function publicationGate(e: Entry): { ok: boolean; missing: string[] } {
 export const sectionOfKind = (k: Kind) => SECTIONS.find((s) => s.kind === k)!;
 export const sectionById = (id: SectionId) => SECTIONS.find((s) => s.id === id)!;
 export const topicById = (id: string) => TOPICS.find((t) => t.id === id) ?? null;
-export const sectionById = (id: string) => SECTIONS.find((s) => s.id === id) ?? null;
 
 /** Greek alphabet, then Latin, for the dictionary index. */
 export const GREEK_LETTERS = "ΑΒΓΔΕΖΗΘΙΚΛΜΝΞΟΠΡΣΤΥΦΧΨΩ".split("");
