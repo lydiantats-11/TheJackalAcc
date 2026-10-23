@@ -4,6 +4,9 @@
     "applyButton": true,
     "briefApplyButton": true,
     "mentions31March": false,
+    "moveYearTable": false,
+    "oldStartWording": false,
+    "eligibleLabel": false,
     "pending": []
   },
   {
@@ -11,6 +14,9 @@
     "applyButton": true,
     "briefApplyButton": true,
     "mentions31March": false,
+    "moveYearTable": false,
+    "oldStartWording": false,
+    "eligibleLabel": false,
     "pending": []
   },
   {
@@ -18,6 +24,9 @@
     "applyButton": true,
     "briefApplyButton": true,
     "mentions31March": false,
+    "moveYearTable": false,
+    "oldStartWording": true,
+    "eligibleLabel": false,
     "pending": []
   },
   {
@@ -25,6 +34,9 @@
     "applyButton": true,
     "briefApplyButton": true,
     "mentions31March": false,
+    "moveYearTable": false,
+    "oldStartWording": false,
+    "eligibleLabel": false,
     "pending": []
   },
   {
@@ -32,15 +44,31 @@
     "applyButton": false,
     "briefApplyButton": false,
     "mentions31March": false,
+    "moveYearTable": false,
+    "oldStartWording": false,
+    "eligibleLabel": false,
     "pending": [
       "Υπό επιβεβαίωση"
     ]
+  },
+  {
+    "key": "opske:23466",
+    "applyButton": true,
+    "briefApplyButton": true,
+    "mentions31March": false,
+    "moveYearTable": false,
+    "oldStartWording": false,
+    "eligibleLabel": true,
+    "pending": []
   },
   {
     "key": "opske:23467",
     "applyButton": true,
     "briefApplyButton": true,
     "mentions31March": false,
+    "moveYearTable": false,
+    "oldStartWording": false,
+    "eligibleLabel": false,
     "pending": []
   },
   {
@@ -48,16 +76,32 @@
     "applyButton": true,
     "briefApplyButton": true,
     "mentions31March": false,
+    "moveYearTable": false,
+    "oldStartWording": false,
+    "eligibleLabel": false,
     "pending": [
       "Υπό επιβεβαίωση",
       "Προϋπολογισμός έργου: Υπό επιβεβαίωση"
     ]
   },
   {
+    "key": "opske:23487",
+    "applyButton": true,
+    "briefApplyButton": true,
+    "mentions31March": false,
+    "moveYearTable": false,
+    "oldStartWording": false,
+    "eligibleLabel": true,
+    "pending": []
+  },
+  {
     "key": "opske:24506",
     "applyButton": true,
     "briefApplyButton": true,
     "mentions31March": false,
+    "moveYearTable": false,
+    "oldStartWording": false,
+    "eligibleLabel": false,
     "pending": []
   }
 ]

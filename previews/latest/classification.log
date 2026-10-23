@@ -2,14 +2,14 @@
 ----------+-------
  business |    10
  citizen  |     9
- HOLD     |  1011
+ HOLD     |  1009
 (3 rows)
 
    path   | current_programmes 
 ----------+--------------------
  business |                 10
  citizen  |                  5
- HOLD     |                421
+ HOLD     |                419
 (3 rows)
 
    path   |                        external_key                         |                official_identifier                 |                                           title                                            
@@ -153,8 +153,6 @@
  HOLD     | eu-topic:EDF-EDIP-USI-2026-LS-IRA-MAB                       | EDF-EDIP-USI-2026-LS-IRA-MAB                       | Missiles, ammunition and bombs
  HOLD     | eu-topic:EDF-EDIP-USI-2027-LS-IRA-CUXS                      | EDF-EDIP-USI-2027-LS-IRA-CUXS                      | Unmanned systems and counter-unmanned systems
  HOLD     | eu-topic:EMFAF-2023-PIA-FISHERIESSCIENTIFICADVICE           | EMFAF-2023-PIA-FisheriesScientificAdvice           | Improving scientific knowledge to strengthen the science-basis of management decisions und
- HOLD     | eu-topic:EOI-ECCC-2027-DIGITAL-DEPLOY-CYBER-12-CEI-CBCH     | EOI-ECCC-2027-DIGITAL-DEPLOY-CYBER-12-CEI-CBCH     | Cross-Border Cyber Hubs
- HOLD     | eu-topic:EOI-ECCC-2027-DIGITAL-DEPLOY-CYBER-12-CEI-NATCH    | EOI-ECCC-2027-DIGITAL-DEPLOY-CYBER-12-CEI-NATCH    | National Cyber Hubs
  HOLD     | eu-topic:EP-COMM-SUBV-NAT-E-2023-CHANGE-MAKERS              | EP-COMM-SUBV-NAT-E-2023-CHANGE-MAKERS              | ENGAGEMENT ACTIONS BY CHANGE-MAKERS
  HOLD     | eu-topic:EP-COMM-SUBV-NAT-E-2023-CIVIL-SOCIETY              | EP-COMM-SUBV-NAT-E-2023-CIVIL-SOCIETY              | CIVIL SOCIETY ENGAGEMENT ACTIONS
  HOLD     | eu-topic:ERASMUS-EDU-2022-ECHE-CERT-FP                      | ERASMUS-EDU-2022-ECHE-CERT-FP                      | Erasmus Charter for Higher Education
@@ -1044,5 +1042,5 @@
  HOLD     | eu-topic:SOCPL-2023-INFO-WK                                 | SOCPL-2023-INFO-WK                                 | Information and training measures for workers' organisations
  HOLD     | eu-topic:SOCPL-2023-SOC-DIALOG                              | SOCPL-2023-SOC-DIALOG                              | Support for social dialogue
  HOLD     | eu-topic:SOCPL-2026-INFO-REPR                               | SOCPL-2026-INFO-REPR                               | SOCPL-2026-INFO-REPR
-(1030 rows)
+(1028 rows)
 
