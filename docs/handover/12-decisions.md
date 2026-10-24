@@ -18,6 +18,7 @@ Claude; the column «Recorded in» points to where the decision is reflected in 
 
 | Date | Decision | Recorded in |
 | --- | --- | --- |
+| 23 Oct 2026 18:07 | Final substantial UX revision of Γνώση before handover: Θέματα as the main entry, topic pages grouped into page sections, compact dictionary, a reusable comparison component (CMP-001 placeholder only), a missing-content state and audit; palette unchanged | `07-knowledge.md`, `src/components/knowledge*.tsx`, `data/knowledge/comparisons.json` |
 | 23 Oct 2026 16:37 | Γνώση: real K1 content in a **private** preview only, labelled «Υπό επαλήθευση»; section order Θέματα · Λεξικό · Μάθε τα βασικά · Συχνές Ερωτήσεις; repository to be made private | `07-knowledge.md`, `src/lib/knowledge/schema.ts`, `src/lib/site/copy.ts` |
 | 23 Oct 2026 16:31 | Handover to a developer on 31 Oct. Priorities: verified Γνώση content and complete documentation. No cosmetic changes until the owner reviews the design. Do not merge into `main` without approval. `ci-failcheck` stays until the owner deletes it | This folder |
 | 23 Oct 2026 16:19 | All 221 K1 entries in the preview only, marked as not verified | `src/lib/knowledge/store.ts` (`JACKAL_KNOWLEDGE_DRAFTS`) |

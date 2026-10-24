@@ -29,6 +29,7 @@ the project, how it is built, why it is built that way, and what is left. Older 
 | 10 | [Deployment requirements](10-deployment.md) | What a production setup needs |
 | 11 | [Backlog](11-backlog.md) | Remaining work, open approvals, paused work |
 | 12 | [Decisions log](12-decisions.md) | Owner decisions with dates, and where each is recorded |
+| 13 | [K1 source evidence](13-source-evidence.md) | Where the 40 priority Γνώση terms stand against official sources |
 
 ## The product in one paragraph
 
@@ -45,6 +46,7 @@ Jackal is not a government service and never applies on anyone's behalf.
   data, quality report and browser checks — all passing; any failure turns the run red.
 - 19 hand-checked programmes are approved for the preview (9 citizen, 10 business). 1,009 EU calls are imported and
   held back from both paths until their applicant types are classified.
-- Γνώση: 221 planned entries (166 terms, 28 basics, 27 FAQ), 0 approved; 40 have a draft EL/EN text.
+- Γνώση: 221 planned entries (166 terms, 28 basics, 27 FAQ), 0 approved; 40 have a draft EL/EN text. On 24 Oct, 21
+  of the 40 priority terms had an official source confirmed, 9 partly, 10 not ([13](13-source-evidence.md)).
 - Readiness assessment and remaining effort: see the owner's «31 October readiness assessment» document and
   [11 — Backlog](11-backlog.md).

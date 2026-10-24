@@ -18,10 +18,23 @@ must be re-estimated by the developer.
 | Γνώση editorial workflow | 0.5–1 | Admin screens for verification, review and approval of entries |
 | Γνώση UX follow-ups (after the owner's design review) | 0.5 | Comparison table as stacked cards on phones (it scrolls inside its box today); optional «Σχετικοί όροι» once the register has related IDs; fill CMP-001 from official sources |
 
+## Found 24 Oct — needs a decision before any change
+
+- **Two NACE versions in the code.** Since 1 Mar 2026 Greek activity codes (ΚΑΔ 2025) follow NACE Rev. 2.1, whose
+  section letters differ from Rev. 2 from J onwards (Rev. 2.1: K = telecommunication and computer programming, L =
+  financial, M = real estate, N = professional, Q = education, R = health, S = arts; Eurostat, *NACE Rev. 2.1*,
+  table 4). `src/lib/domain/industries.ts` uses Rev. 2.1 (A–V). The business profile's `sectors` question
+  (`src/components/profile-form.tsx`) and the engine's sector rule (`src/lib/domain/requirements.ts`, letters A–U)
+  use Rev. 2 letters («K Finance», «L Real estate»…). No real record uses a sector rule today (only the synthetic
+  seed), so nothing shown is wrong yet. Before any call is coded with a sector rule, the owner and developer must
+  choose one version for both the profile and the rules, with a migration for saved profiles. This touches
+  eligibility, so it was not changed.
+
 ## Content and owner work
 
-- **Γνώση K1:** verify the 40 priority terms, then the rest. Each entry needs an official source with exact
-  locator, EL/EN text, review and approval. 0 of 221 are approved.
+- **Γνώση K1:** 40 priority terms checked against official sources on 23–24 Oct: 21 confirmed, 9 partly, 10 not
+  ([13](13-source-evidence.md)). Then the rest. Each entry still needs EL/EN text, review and approval. 0 of 221 are
+  approved.
 - **Credibility backlog** from the 22–23 Oct reviews:
   - 5Β: the start of the 15-year period. Α.1192/2026 art. 4(3) and the ΚΦΕ text as republished disagree; check the
     ΦΕΚ / official codification.
